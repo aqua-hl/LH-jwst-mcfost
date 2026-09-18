@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "workflow_id": "strict_continuum_refinement_v1",
+  "classification": "live_scheduler_only_nonphysics_amendment",
+  "recorded_at": "2026-07-24T10:37:20+02:00",
+  "user_authorized": true,
+  "authorization": "Use up to 64 cores when reservation capacity is free.",
+  "refinement_input_manifest_sha256": "580b43d6d3e154ec5e6db508172fb753bb33c2b78ee5218ea3b6c997a4bdde10",
+  "slurm_array_job_id": 15157026,
+  "change": {
+    "array_task_throttle_before": 3,
+    "array_task_throttle_after": 4,
+    "cpus_per_task_unchanged": 16,
+    "maximum_concurrent_cpus_before": 48,
+    "maximum_concurrent_cpus_after": 64
+  },
+  "capacity_check": {
+    "reservation_nodes": [
+      "s92node196",
+      "s92node197",
+      "s92node198",
+      "s92node199"
+    ],
+    "free_cpus_immediately_before": 64,
+    "free_cpus_immediately_after_fourth_task_started": 48
+  },
+  "invariants": {
+    "per_task_openmp_threads": 16,
+    "model_inputs_changed": false,
+    "parameter_files_changed": false,
+    "wavelengths_changed": false,
+    "seed_changed": false,
+    "accepted_packets_changed": false,
+    "output_paths_changed": false,
+    "scientific_estimator_changed": false
+  },
+  "rationale": "Independent task throughput was increased only after checking free reservation capacity; per-task MCFOST scaling and all frozen scientific inputs remain unchanged."
+}

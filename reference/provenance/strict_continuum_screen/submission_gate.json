@@ -1,0 +1,19 @@
+{
+  "authorized_actions": [
+    "strict_continuum_temperature_screen",
+    "strict_continuum_rt_screen"
+  ],
+  "classification": "strict_continuum_submission_gate_accepted",
+  "input_manifest_sha256": "79ed48b6619e3c57c501f6a7421655deda2ec34d9b42134f5193f61a997b92b9",
+  "max_array_concurrency": 3,
+  "n4801_auto_submitted": false,
+  "near_ir_hard_pass": true,
+  "near_ir_report": "jwst_mcfost/output/matched_method2_nearir_validation.json",
+  "near_ir_report_classification": "accepted_preferred_1pct",
+  "near_ir_report_sha256": "16386c1111392382ee4af9c8aa9738f5701f5817f1a0f0aa5425973efd0d7e96",
+  "production_final": false,
+  "schema_version": 1,
+  "screen_only": true,
+  "selected_openmp_threads": 16,
+  "valid": true
+}

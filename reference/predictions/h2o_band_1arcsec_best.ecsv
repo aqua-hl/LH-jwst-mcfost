@@ -1,0 +1,111 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - {name: source_task_index, datatype: int64}
+# - {name: variant_token, datatype: string}
+# - {name: envelope_dhs_vmax, datatype: string}
+# - {name: envelope_amax_um, datatype: string}
+# - {name: inclination_deg, datatype: string}
+# - {name: parent_kind, datatype: string}
+# - {name: parent_id, datatype: string}
+# - {name: lsf_node_index, datatype: int64}
+# - {name: wavelength_um, datatype: float64}
+# - {name: analysis_partition, datatype: string}
+# - {name: signed_aperture_flux_140pc_w_m2, datatype: float64}
+# - {name: signed_aperture_flux_147pc_w_m2, datatype: float64}
+# - {name: plane0_edge_positive_flux_fraction, datatype: float64}
+# - {name: all_strict_v2_gates_green, datatype: bool}
+# - {name: aperture_radius_arcsec, datatype: float64}
+# - {name: measurement_kernel_id, datatype: string}
+# meta: !!omap
+# - comments: [Read-only re-measurement of frozen h2o_3um_dust_axis_band_v1 products., 'Variant v02_vmax0p1_amax0p4: DHS vmax 0.1, envelope
+#       amax 0.4 um, inclination 70.0 deg,', 'H2O mass fraction 0.04, silicate 0.96.', 'Aperture is 1.0 arcsec (strict-v2), NOT the 0.35
+#       arcsec H2O science aperture.', No ray tracing was performed and no frozen product was modified., The accepted continuum temperature
+#       is reused and is NOT self-consistent, for the changed dust; this is screening only.]
+# schema: astropy-2.0
+source_task_index variant_token envelope_dhs_vmax envelope_amax_um inclination_deg parent_kind parent_id lsf_node_index wavelength_um analysis_partition signed_aperture_flux_140pc_w_m2 signed_aperture_flux_147pc_w_m2 plane0_edge_positive_flux_fraction all_strict_v2_gates_green aperture_radius_arcsec measurement_kernel_id
+55 v02_vmax0p1_amax0p4 0.1 0.4 70.0 continuum_support h2o_continuum_blue_q20 0 2.5734735113823457 h2o_feature_optical_depth 1.2048453136880038e-13 1.0928302164970556e-13 0.0002255085104324116 True 1.0 strict_continuum_method2_signed_aperture_v2
+56 v02_vmax0p1_amax0p4 0.1 0.4 70.0 continuum_support h2o_continuum_blue_q20 1 2.574157247604404 h2o_feature_optical_depth 1.201973901826124e-13 1.0902257612935364e-13 0.00022360429256442562 True 1.0 strict_continuum_method2_signed_aperture_v2
+57 v02_vmax0p1_amax0p4 0.1 0.4 70.0 continuum_support h2o_continuum_blue_q20 2 2.5747747777204344 h2o_feature_optical_depth 1.2201162829105826e-13 1.1066814357465601e-13 0.00022473923013035187 True 1.0 strict_continuum_method2_signed_aperture_v2
+58 v02_vmax0p1_amax0p4 0.1 0.4 70.0 continuum_support h2o_continuum_blue_q20 3 2.5753924559794905 h2o_feature_optical_depth 1.2318187366961295e-13 1.1172959063003442e-13 0.0002238187045006148 True 1.0 strict_continuum_method2_signed_aperture_v2
+59 v02_vmax0p1_amax0p4 0.1 0.4 70.0 continuum_support h2o_continuum_blue_q20 4 2.5760767020385162 h2o_feature_optical_depth 1.2326811377351802e-13 1.118078129465016e-13 0.00022359633822594845 True 1.0 strict_continuum_method2_signed_aperture_v2
+0 v02_vmax0p1_amax0p4 0.1 0.4 70.0 logical_target h2o_3um_v3_w001 0 2.6109757956979753 h2o_feature_optical_depth 1.309920500970674e-13 1.188136508816938e-13 0.0002104156296072142 True 1.0 strict_continuum_method2_signed_aperture_v2
+60 v02_vmax0p1_amax0p4 0.1 0.4 70.0 continuum_support h2o_continuum_blue_q50 0 2.6109757956979753 h2o_feature_optical_depth 1.3096350745838812e-13 1.187877618670187e-13 0.0002102543199872539 True 1.0 strict_continuum_method2_signed_aperture_v2
+1 v02_vmax0p1_amax0p4 0.1 0.4 70.0 logical_target h2o_3um_v3_w001 1 2.61166949575688 h2o_feature_optical_depth 1.3086620672081767e-13 1.186995072297666e-13 0.00021039160543401337 True 1.0 strict_continuum_method2_signed_aperture_v2
+61 v02_vmax0p1_amax0p4 0.1 0.4 70.0 continuum_support h2o_continuum_blue_q50 1 2.61166949575688 h2o_feature_optical_depth 1.3086975989752053e-13 1.1870273006577824e-13 0.00021029895095096585 True 1.0 strict_continuum_method2_signed_aperture_v2
+2 v02_vmax0p1_amax0p4 0.1 0.4 70.0 logical_target h2o_3um_v3_w001 2 2.6122960249124896 h2o_feature_optical_depth 1.3002128663201447e-13 1.1793313980228068e-13 0.00020986039534818578 True 1.0 strict_continuum_method2_signed_aperture_v2
+62 v02_vmax0p1_amax0p4 0.1 0.4 70.0 continuum_support h2o_continuum_blue_q50 2 2.6122960249124896 h2o_feature_optical_depth 1.3001900041188514e-13 1.1793106613322915e-13 0.0002098037063194907 True 1.0 strict_continuum_method2_signed_aperture_v2
+3 v02_vmax0p1_amax0p4 0.1 0.4 70.0 logical_target h2o_3um_v3_w001 3 2.612922704369959 h2o_feature_optical_depth 1.3060496880782503e-13 1.184625567417914e-13 0.00020974982121637695 True 1.0 strict_continuum_method2_signed_aperture_v2
+63 v02_vmax0p1_amax0p4 0.1 0.4 70.0 continuum_support h2o_continuum_blue_q50 3 2.612922704369959 h2o_feature_optical_depth 1.3057551020480891e-13 1.184358369204616e-13 0.00020965548327070194 True 1.0 strict_continuum_method2_signed_aperture_v2
+4 v02_vmax0p1_amax0p4 0.1 0.4 70.0 logical_target h2o_3um_v3_w001 4 2.6136169216954976 h2o_feature_optical_depth 1.3087481514843737e-13 1.1870731532738083e-13 0.00021043111725437179 True 1.0 strict_continuum_method2_signed_aperture_v2
+64 v02_vmax0p1_amax0p4 0.1 0.4 70.0 continuum_support h2o_continuum_blue_q50 4 2.6136169216954976 h2o_feature_optical_depth 1.3111721987971438e-13 1.1892718356436678e-13 0.00021005664502989847 True 1.0 strict_continuum_method2_signed_aperture_v2
+65 v02_vmax0p1_amax0p4 0.1 0.4 70.0 continuum_support h2o_continuum_blue_q80 0 2.6486525287917937 h2o_feature_optical_depth 1.3379374372617576e-13 1.2135486959290317e-13 0.00019635279520582665 True 1.0 strict_continuum_method2_signed_aperture_v2
+66 v02_vmax0p1_amax0p4 0.1 0.4 70.0 continuum_support h2o_continuum_blue_q80 1 2.6493562390361665 h2o_feature_optical_depth 1.3460950636295598e-13 1.220947903518875e-13 0.0001972930329369141 True 1.0 strict_continuum_method2_signed_aperture_v2
+67 v02_vmax0p1_amax0p4 0.1 0.4 70.0 continuum_support h2o_continuum_blue_q80 2 2.649991809092044 h2o_feature_optical_depth 1.3443290497922276e-13 1.2193460769090498e-13 0.00019611420829741884 True 1.0 strict_continuum_method2_signed_aperture_v2
+68 v02_vmax0p1_amax0p4 0.1 0.4 70.0 continuum_support h2o_continuum_blue_q80 3 2.6506275316186576 h2o_feature_optical_depth 1.336043586933621e-13 1.2118309178536245e-13 0.0001968746634406221 True 1.0 strict_continuum_method2_signed_aperture_v2
+69 v02_vmax0p1_amax0p4 0.1 0.4 70.0 continuum_support h2o_continuum_blue_q80 4 2.6513317665938914 h2o_feature_optical_depth 1.344457648499671e-13 1.2194627197275927e-13 0.00019588011301925886 True 1.0 strict_continuum_method2_signed_aperture_v2
+5 v02_vmax0p1_amax0p4 0.1 0.4 70.0 logical_target h2o_3um_v3_w002 0 2.8557601830607644 h2o_feature_optical_depth 1.074921054638791e-13 9.749850835725995e-14 0.00014384813919694466 True 1.0 strict_continuum_method2_signed_aperture_v2
+6 v02_vmax0p1_amax0p4 0.1 0.4 70.0 logical_target h2o_3um_v3_w002 1 2.856518918936628 h2o_feature_optical_depth 1.0673170927220863e-13 9.68088065961076e-14 0.00014239407729675386 True 1.0 strict_continuum_method2_signed_aperture_v2
+7 v02_vmax0p1_amax0p4 0.1 0.4 70.0 logical_target h2o_3um_v3_w002 2 2.8572041864979223 h2o_feature_optical_depth 1.0656674564981816e-13 9.665917972772621e-14 0.0001427446807581909 True 1.0 strict_continuum_method2_signed_aperture_v2
+8 v02_vmax0p1_amax0p4 0.1 0.4 70.0 logical_target h2o_3um_v3_w002 3 2.857889618452187 h2o_feature_optical_depth 1.058822465436188e-13 9.60383188604252e-14 0.00014203075251990213 True 1.0 strict_continuum_method2_signed_aperture_v2
+9 v02_vmax0p1_amax0p4 0.1 0.4 70.0 logical_target h2o_3um_v3_w002 4 2.8586489200895024 h2o_feature_optical_depth 1.0535229342104428e-13 9.555763575604923e-14 0.00014262603511476374 True 1.0 strict_continuum_method2_signed_aperture_v2
+10 v02_vmax0p1_amax0p4 0.1 0.4 70.0 logical_target h2o_3um_v3_w003 0 2.9010411558798523 h2o_feature_optical_depth 6.441801286798487e-14 5.842903661495226e-14 0.00013689172003488893 True 1.0 strict_continuum_method2_signed_aperture_v2
+11 v02_vmax0p1_amax0p4 0.1 0.4 70.0 logical_target h2o_3um_v3_w003 1 2.9018119222822203 h2o_feature_optical_depth 6.393463210101323e-14 5.799059600998932e-14 0.00013787160246454328 True 1.0 strict_continuum_method2_signed_aperture_v2
+12 v02_vmax0p1_amax0p4 0.1 0.4 70.0 logical_target h2o_3um_v3_w003 2 2.90250805545541 h2o_feature_optical_depth 6.419639213807677e-14 5.822802007988822e-14 0.00013811198158142192 True 1.0 strict_continuum_method2_signed_aperture_v2
+13 v02_vmax0p1_amax0p4 0.1 0.4 70.0 logical_target h2o_3um_v3_w003 3 2.903204355628188 h2o_feature_optical_depth 6.370000981044144e-14 5.777778667613735e-14 0.0001376481824755269 True 1.0 strict_continuum_method2_signed_aperture_v2
+14 v02_vmax0p1_amax0p4 0.1 0.4 70.0 logical_target h2o_3um_v3_w003 4 2.903975696762729 h2o_feature_optical_depth 6.287024232474571e-14 5.702516310634531e-14 0.00013870125777728462 True 1.0 strict_continuum_method2_signed_aperture_v2
+15 v02_vmax0p1_amax0p4 0.1 0.4 70.0 logical_target h2o_3um_v3_w004 0 2.9474540773955487 h2o_feature_optical_depth 3.750269363289136e-14 3.4016048646613477e-14 0.0001338423901923936 True 1.0 strict_continuum_method2_signed_aperture_v2
+16 v02_vmax0p1_amax0p4 0.1 0.4 70.0 logical_target h2o_3um_v3_w004 1 2.9482371750674914 h2o_feature_optical_depth 3.715356026093734e-14 3.369937438633772e-14 0.00013457878112132317 True 1.0 strict_continuum_method2_signed_aperture_v2
+17 v02_vmax0p1_amax0p4 0.1 0.4 70.0 logical_target h2o_3um_v3_w004 2 2.948944445474728 h2o_feature_optical_depth 3.6819094621835626e-14 3.3396004192141155e-14 0.00013246031827545643 True 1.0 strict_continuum_method2_signed_aperture_v2
+18 v02_vmax0p1_amax0p4 0.1 0.4 70.0 logical_target h2o_3um_v3_w004 3 2.9496518855533305 h2o_feature_optical_depth 3.661228852589839e-14 3.320842496680126e-14 0.0001336572818743951 True 1.0 strict_continuum_method2_signed_aperture_v2
+19 v02_vmax0p1_amax0p4 0.1 0.4 70.0 logical_target h2o_3um_v3_w004 4 2.9504355671524207 h2o_feature_optical_depth 3.6400001850225304e-14 3.3015874694081904e-14 0.0001332644376842161 True 1.0 strict_continuum_method2_signed_aperture_v2
+20 v02_vmax0p1_amax0p4 0.1 0.4 70.0 logical_target h2o_3um_v3_w005 0 3.007254936133442 h2o_feature_optical_depth 2.2924577946457326e-14 2.07932679786461e-14 0.00013019757480562535 True 1.0 strict_continuum_method2_signed_aperture_v2
+21 v02_vmax0p1_amax0p4 0.1 0.4 70.0 logical_target h2o_3um_v3_w005 1 3.0080539220642097 h2o_feature_optical_depth 2.23970868135367e-14 2.031481797146186e-14 0.00012917082725592816 True 1.0 strict_continuum_method2_signed_aperture_v2
+22 v02_vmax0p1_amax0p4 0.1 0.4 70.0 logical_target h2o_3um_v3_w005 2 3.008775542271851 h2o_feature_optical_depth 2.2712863803520314e-14 2.0601237009995748e-14 0.00012878064320338454 True 1.0 strict_continuum_method2_signed_aperture_v2
+23 v02_vmax0p1_amax0p4 0.1 0.4 70.0 logical_target h2o_3um_v3_w005 3 3.0094973355933186 h2o_feature_optical_depth 2.245939730081123e-14 2.0371335420236944e-14 0.0001281352921022516 True 1.0 strict_continuum_method2_signed_aperture_v2
+24 v02_vmax0p1_amax0p4 0.1 0.4 70.0 logical_target h2o_3um_v3_w005 4 3.0102969172985246 h2o_feature_optical_depth 2.2492887933015793e-14 2.0401712410898676e-14 0.00013022072544277018 True 1.0 strict_continuum_method2_signed_aperture_v2
+25 v02_vmax0p1_amax0p4 0.1 0.4 70.0 logical_target h2o_3um_v3_w006 0 3.0749247259775636 h2o_feature_optical_depth 2.281169823981666e-14 2.0690882757203318e-14 0.0001218886514223685 True 1.0 strict_continuum_method2_signed_aperture_v2
+26 v02_vmax0p1_amax0p4 0.1 0.4 70.0 logical_target h2o_3um_v3_w006 1 3.0757416908330226 h2o_feature_optical_depth 2.3009655926316807e-14 2.0870436214346307e-14 0.00012335891248265655 True 1.0 strict_continuum_method2_signed_aperture_v2
+27 v02_vmax0p1_amax0p4 0.1 0.4 70.0 logical_target h2o_3um_v3_w006 2 3.0764795490679795 h2o_feature_optical_depth 2.31330469664692e-14 2.098235552514213e-14 0.00012301856705862474 True 1.0 strict_continuum_method2_signed_aperture_v2
+28 v02_vmax0p1_amax0p4 0.1 0.4 70.0 logical_target h2o_3um_v3_w006 3 3.077217584312201 h2o_feature_optical_depth 2.3282882113164553e-14 2.1118260420103902e-14 0.00012401990462954888 True 1.0 strict_continuum_method2_signed_aperture_v2
+29 v02_vmax0p1_amax0p4 0.1 0.4 70.0 logical_target h2o_3um_v3_w006 4 3.0780351583483214 h2o_feature_optical_depth 2.3330907905087582e-14 2.116182122910438e-14 0.00012002441303739845 True 1.0 strict_continuum_method2_signed_aperture_v2
+30 v02_vmax0p1_amax0p4 0.1 0.4 70.0 logical_target h2o_3um_v3_w007 0 3.1176371880268876 h2o_feature_optical_depth 3.4372581758324976e-14 3.117694490551018e-14 0.0001154275910181045 True 1.0 strict_continuum_method2_signed_aperture_v2
+31 v02_vmax0p1_amax0p4 0.1 0.4 70.0 logical_target h2o_3um_v3_w007 1 3.1184655009911606 h2o_feature_optical_depth 3.530641013129019e-14 3.202395476761015e-14 0.00011531112463312849 True 1.0 strict_continuum_method2_signed_aperture_v2
+32 v02_vmax0p1_amax0p4 0.1 0.4 70.0 logical_target h2o_3um_v3_w007 2 3.1192136084987556 h2o_feature_optical_depth 3.6491413082813364e-14 3.309878737670146e-14 0.00011460732960379789 True 1.0 strict_continuum_method2_signed_aperture_v2
+33 v02_vmax0p1_amax0p4 0.1 0.4 70.0 logical_target h2o_3um_v3_w007 3 3.119961895474375 h2o_feature_optical_depth 3.695601186062702e-14 3.352019216383403e-14 0.0001151848121997952 True 1.0 strict_continuum_method2_signed_aperture_v2
+34 v02_vmax0p1_amax0p4 0.1 0.4 70.0 logical_target h2o_3um_v3_w007 4 3.120790826081177 h2o_feature_optical_depth 3.7279557417590334e-14 3.381365752162388e-14 0.00011393301059668593 True 1.0 strict_continuum_method2_signed_aperture_v2
+35 v02_vmax0p1_amax0p4 0.1 0.4 70.0 logical_target h2o_3um_v3_w008 0 3.156706402582794 h2o_feature_optical_depth 5.758115633324333e-14 5.222780619795313e-14 0.00010739124418692242 True 1.0 strict_continuum_method2_signed_aperture_v2
+36 v02_vmax0p1_amax0p4 0.1 0.4 70.0 logical_target h2o_3um_v3_w008 1 3.1575450956955473 h2o_feature_optical_depth 5.849912350263139e-14 5.306042948084479e-14 0.00010701255360829621 True 1.0 strict_continuum_method2_signed_aperture_v2
+37 v02_vmax0p1_amax0p4 0.1 0.4 70.0 logical_target h2o_3um_v3_w008 2 3.158302578242944 h2o_feature_optical_depth 5.915324734356845e-14 5.3653739087136906e-14 0.00010584763914556376 True 1.0 strict_continuum_method2_signed_aperture_v2
+38 v02_vmax0p1_amax0p4 0.1 0.4 70.0 logical_target h2o_3um_v3_w008 3 3.1590602425074 h2o_feature_optical_depth 5.974351029923947e-14 5.418912498797231e-14 0.00010748779591051593 True 1.0 strict_continuum_method2_signed_aperture_v2
+39 v02_vmax0p1_amax0p4 0.1 0.4 70.0 logical_target h2o_3um_v3_w008 4 3.159899561002778 h2o_feature_optical_depth 6.042141970465e-14 5.480400880240363e-14 0.0001080932068466039 True 1.0 strict_continuum_method2_signed_aperture_v2
+40 v02_vmax0p1_amax0p4 0.1 0.4 70.0 logical_target h2o_3um_v3_w009 0 3.2165382685408774 h2o_feature_optical_depth 1.1980377021319313e-13 1.086655512137806e-13 9.567477900470313e-05 True 1.0 strict_continuum_method2_signed_aperture_v2
+41 v02_vmax0p1_amax0p4 0.1 0.4 70.0 logical_target h2o_3um_v3_w009 1 3.2173928581506446 h2o_feature_optical_depth 1.2098239196415704e-13 1.0973459588585672e-13 9.560607855664184e-05 True 1.0 strict_continuum_method2_signed_aperture_v2
+42 v02_vmax0p1_amax0p4 0.1 0.4 70.0 logical_target h2o_3um_v3_w009 2 3.218164697938932 h2o_feature_optical_depth 1.2200598422779788e-13 1.1066302424290056e-13 9.537547192006252e-05 True 1.0 strict_continuum_method2_signed_aperture_v2
+43 v02_vmax0p1_amax0p4 0.1 0.4 70.0 logical_target h2o_3um_v3_w009 3 3.218936722888523 h2o_feature_optical_depth 1.2276719647775735e-13 1.1135346619297718e-13 9.471294826455802e-05 True 1.0 strict_continuum_method2_signed_aperture_v2
+44 v02_vmax0p1_amax0p4 0.1 0.4 70.0 logical_target h2o_3um_v3_w009 4 3.2197919497343483 h2o_feature_optical_depth 1.2409219163658194e-13 1.125552758608453e-13 9.484288433600914e-05 True 1.0 strict_continuum_method2_signed_aperture_v2
+45 v02_vmax0p1_amax0p4 0.1 0.4 70.0 logical_target h2o_3um_v3_w010 0 3.29450302814748 h2o_feature_optical_depth 2.1227979631496307e-13 1.92544032938742e-13 8.226510517415339e-05 True 1.0 strict_continuum_method2_signed_aperture_v2
+46 v02_vmax0p1_amax0p4 0.1 0.4 70.0 logical_target h2o_3um_v3_w010 1 3.2953783319126297 h2o_feature_optical_depth 2.130688989633952e-13 1.9325977230239928e-13 8.198909432554065e-05 True 1.0 strict_continuum_method2_signed_aperture_v2
+47 v02_vmax0p1_amax0p4 0.1 0.4 70.0 logical_target h2o_3um_v3_w010 2 3.2961688801068254 h2o_feature_optical_depth 2.135445118494238e-13 1.9369116721036172e-13 8.156287328882376e-05 True 1.0 strict_continuum_method2_signed_aperture_v2
+48 v02_vmax0p1_amax0p4 0.1 0.4 70.0 logical_target h2o_3um_v3_w010 3 3.2969596179503977 h2o_feature_optical_depth 2.1417820911502275e-13 1.9426594931067822e-13 8.197374071254158e-05 True 1.0 strict_continuum_method2_signed_aperture_v2
+49 v02_vmax0p1_amax0p4 0.1 0.4 70.0 logical_target h2o_3um_v3_w010 4 3.2978355743973897 h2o_feature_optical_depth 2.300342722384793e-13 2.0864786597594494e-13 7.563991184760338e-05 True 1.0 strict_continuum_method2_signed_aperture_v2
+70 v02_vmax0p1_amax0p4 0.1 0.4 70.0 continuum_support h2o_continuum_red_q20 0 3.547388718774951 h2o_feature_optical_depth 2.8068508135836977e-13 2.545896429554374e-13 5.79109945925439e-05 True 1.0 strict_continuum_method2_signed_aperture_v2
+71 v02_vmax0p1_amax0p4 0.1 0.4 70.0 continuum_support h2o_continuum_red_q20 1 3.5483312107609843 h2o_feature_optical_depth 2.8080055455156707e-13 2.5469438054563905e-13 5.777200833886715e-05 True 1.0 strict_continuum_method2_signed_aperture_v2
+72 v02_vmax0p1_amax0p4 0.1 0.4 70.0 continuum_support h2o_continuum_red_q20 2 3.549182441347746 h2o_feature_optical_depth 2.810188906926842e-13 2.5489241786184503e-13 5.785733257290238e-05 True 1.0 strict_continuum_method2_signed_aperture_v2
+73 v02_vmax0p1_amax0p4 0.1 0.4 70.0 continuum_support h2o_continuum_red_q20 3 3.5500338761413497 h2o_feature_optical_depth 2.808887671774477e-13 2.5477439199768497e-13 5.748456991284503e-05 True 1.0 strict_continuum_method2_signed_aperture_v2
+74 v02_vmax0p1_amax0p4 0.1 0.4 70.0 continuum_support h2o_continuum_red_q20 4 3.550977070909012 h2o_feature_optical_depth 2.8099817182392853e-13 2.548736252371234e-13 5.736749636257382e-05 True 1.0 strict_continuum_method2_signed_aperture_v2
+50 v02_vmax0p1_amax0p4 0.1 0.4 70.0 logical_target h2o_3um_v3_w011 0 3.5726258173944934 h2o_feature_optical_depth 2.830308176339415e-13 2.5671729490606936e-13 5.584985379221513e-05 True 1.0 strict_continuum_method2_signed_aperture_v2
+75 v02_vmax0p1_amax0p4 0.1 0.4 70.0 continuum_support h2o_continuum_red_q50 0 3.5726258173944934 h2o_feature_optical_depth 2.8305574294239437e-13 2.567399028955958e-13 5.588819162755995e-05 True 1.0 strict_continuum_method2_signed_aperture_v2
+51 v02_vmax0p1_amax0p4 0.1 0.4 70.0 logical_target h2o_3um_v3_w011 1 3.5735750145276324 h2o_feature_optical_depth 2.8356084446640297e-13 2.5719804486748565e-13 5.5886758761577894e-05 True 1.0 strict_continuum_method2_signed_aperture_v2
+76 v02_vmax0p1_amax0p4 0.1 0.4 70.0 continuum_support h2o_continuum_red_q50 1 3.5735750145276324 h2o_feature_optical_depth 2.8359694845172285e-13 2.572307922464606e-13 5.5888678778511674e-05 True 1.0 strict_continuum_method2_signed_aperture_v2
+52 v02_vmax0p1_amax0p4 0.1 0.4 70.0 logical_target h2o_3um_v3_w011 2 3.574432301002815 h2o_feature_optical_depth 2.836987973688244e-13 2.5732317221662077e-13 5.5796198311887046e-05 True 1.0 strict_continuum_method2_signed_aperture_v2
+77 v02_vmax0p1_amax0p4 0.1 0.4 70.0 continuum_support h2o_continuum_red_q50 2 3.574432301002815 h2o_feature_optical_depth 2.8378719104183636e-13 2.5740334788375176e-13 5.5767822354144846e-05 True 1.0 strict_continuum_method2_signed_aperture_v2
+53 v02_vmax0p1_amax0p4 0.1 0.4 70.0 logical_target h2o_3um_v3_w011 3 3.5752897931376233 h2o_feature_optical_depth 2.797716861165303e-13 2.537611665456057e-13 5.583578278047844e-05 True 1.0 strict_continuum_method2_signed_aperture_v2
+78 v02_vmax0p1_amax0p4 0.1 0.4 70.0 continuum_support h2o_continuum_red_q50 3 3.5752897931376233 h2o_feature_optical_depth 2.79844889496931e-13 2.5382756416955193e-13 5.590065971033926e-05 True 1.0 strict_continuum_method2_signed_aperture_v2
+54 v02_vmax0p1_amax0p4 0.1 0.4 70.0 logical_target h2o_3um_v3_w011 4 3.5762396980521727 h2o_feature_optical_depth 2.8016104026491883e-13 2.5411432223575403e-13 5.589193704816499e-05 True 1.0 strict_continuum_method2_signed_aperture_v2
+79 v02_vmax0p1_amax0p4 0.1 0.4 70.0 continuum_support h2o_continuum_red_q50 4 3.5762396980521727 h2o_feature_optical_depth 2.8024287725573574e-13 2.5418855079885323e-13 5.591254893728746e-05 True 1.0 strict_continuum_method2_signed_aperture_v2
+80 v02_vmax0p1_amax0p4 0.1 0.4 70.0 continuum_support h2o_continuum_red_q80 0 3.596663975741349 h2o_feature_optical_depth 2.8800190192248444e-13 2.612262148956775e-13 5.446710340511788e-05 True 1.0 strict_continuum_method2_signed_aperture_v2
+81 v02_vmax0p1_amax0p4 0.1 0.4 70.0 continuum_support h2o_continuum_red_q80 1 3.5976195594797904 h2o_feature_optical_depth 2.8833604262767146e-13 2.615292903652349e-13 5.431770468155349e-05 True 1.0 strict_continuum_method2_signed_aperture_v2
+82 v02_vmax0p1_amax0p4 0.1 0.4 70.0 continuum_support h2o_continuum_red_q80 2 3.5984826141459596 h2o_feature_optical_depth 2.8808149016706907e-13 2.612984037796545e-13 5.391335043601409e-05 True 1.0 strict_continuum_method2_signed_aperture_v2
+83 v02_vmax0p1_amax0p4 0.1 0.4 70.0 continuum_support h2o_continuum_red_q80 3 3.5993458758555206 h2o_feature_optical_depth 2.881959521903227e-13 2.614022242089095e-13 5.4227503903891345e-05 True 1.0 strict_continuum_method2_signed_aperture_v2
+84 v02_vmax0p1_amax0p4 0.1 0.4 70.0 continuum_support h2o_continuum_red_q80 4 3.600302172137629 h2o_feature_optical_depth 2.884222491891819e-13 2.6160748225776134e-13 5.428101682712934e-05 True 1.0 strict_continuum_method2_signed_aperture_v2

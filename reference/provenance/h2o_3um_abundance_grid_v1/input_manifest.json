@@ -1,0 +1,116 @@
+{
+  "classification": "h2o_abundance_screening_grid_reused_temperature_not_self_consistent",
+  "mcfost_runtime": {
+    "MCFOST_UTILS": "/home/uhlo01/mcfost/utils",
+    "MY_MCFOST_UTILS": "jwst_mcfost/runs/h2o_3um_method2_screen_v3/my_mcfost_utils_overlay",
+    "binary": {
+      "path": "/home/uhlo01/mcfost-custom/v4.1.13-rt_sed2-92bf1b1e086e/bin/mcfost",
+      "sha256": "d96bbc7cb71c09fce93edcef5908e6af1eb0e90e40193a3afdd259c2a7786401"
+    }
+  },
+  "measurement_dependencies": {
+    "closure_validator": {
+      "path": "jwst_mcfost/validate_rt_sed_spatial_sampler.py",
+      "sha256": "87035e977ab7bcbcd8aee25e175a9b855dc59d72671f958188400b002d8b81ff"
+    },
+    "strict_v2": {
+      "path": "jwst_mcfost/strict_continuum_measurement_kernel_v2.py",
+      "sha256": "89ccb15d8712785eb8cb8c598a277ab71deec698e153c04c44d9572e829ed1af"
+    }
+  },
+  "parameters": {
+    "h2o_selected_x0p02": {
+      "derived_from_source_by": "zone2_mass_fraction_substitution_only",
+      "h2o_mass_fraction": 0.02,
+      "path": "jwst_mcfost/runs/h2o_3um_abundance_grid_v1/parameters/h2o_x0p02_rt.para",
+      "sha256": "1bf5e1b037fd810c4a875a51ee0c868e9e1ba6045f3e673249945ce67707bbbc",
+      "silicate_mass_fraction": 0.98
+    },
+    "h2o_selected_x0p03": {
+      "derived_from_source_by": "zone2_mass_fraction_substitution_only",
+      "h2o_mass_fraction": 0.03,
+      "path": "jwst_mcfost/runs/h2o_3um_abundance_grid_v1/parameters/h2o_x0p03_rt.para",
+      "sha256": "bf4257382851e20e1f8e05bef03bc663bd1f5803032e9c9af381a7331a302fde",
+      "silicate_mass_fraction": 0.97
+    },
+    "h2o_selected_x0p04": {
+      "derived_from_source_by": "zone2_mass_fraction_substitution_only",
+      "h2o_mass_fraction": 0.04,
+      "path": "jwst_mcfost/runs/h2o_3um_abundance_grid_v1/parameters/h2o_x0p04_rt.para",
+      "sha256": "9c4c70e8b4348d36edd1af8b24b37c3ed573b5897459b34c593e173e09e95f0b",
+      "silicate_mass_fraction": 0.96
+    }
+  },
+  "schema_version": 1,
+  "scientific_scope": {
+    "abundance_posterior": false,
+    "formal_likelihood": false,
+    "holds_fixed": [
+      "accepted_continuum_geometry",
+      "reused_accepted_continuum_temperature",
+      "selected_disjoint_population_dhs_representation",
+      "85_constant_R2400_gauss_hermite_nodes",
+      "seed_52001",
+      "128000_packets",
+      "expanded_n2401_field",
+      "0.35_arcsec_aperture"
+    ],
+    "motivating_postpilot_metrics": {
+      "effective_depth_scale_alpha": 0.861177815684671,
+      "mean_signed_tau_residual": 0.17499898371648642,
+      "unweighted_rms_tau_residual": 0.3109497762878781
+    },
+    "new_h2o_mass_fractions": [
+      0.02,
+      0.03,
+      0.04
+    ],
+    "reference_h2o_mass_fraction": 0.05,
+    "reference_point_is_reused_never_recomputed": true,
+    "temperature_self_consistent_for_changed_dust": false,
+    "varies": [
+      "zone2_species_mass_fractions"
+    ]
+  },
+  "slurm": {
+    "array_dependency": "afterok:<authorization_job_id>",
+    "finalizer_dependency": "afterany:<array_job_id>",
+    "memory_per_task": "48G",
+    "openmp_threads": 16,
+    "partial_publication_forbidden": true,
+    "partition": "Cascade-GPU",
+    "processes_per_task": 1,
+    "reservation": "Houches2026",
+    "reserved_nodes": [
+      "s92node196",
+      "s92node197",
+      "s92node198",
+      "s92node199"
+    ],
+    "walltime": "04:00:00"
+  },
+  "source": {
+    "postpilot_composite_seal_sha256": "a437cd4a0a3de8c2ea1ee1062827ffb2a9335dd9582ac69e90ed08a21d28fe56",
+    "source_parameter": {
+      "h2o_mass_fraction": 0.05,
+      "path": "jwst_mcfost/runs/h2o_3um_method2_screen_v3/parameters/h2o_selected_rt.para",
+      "sha256": "53e7d2af20d3803c95144bc0809885d44da2324ffb8e6800d228c85b67412cdc",
+      "silicate_mass_fraction": 0.95
+    },
+    "v3_manifest_sha256": "6faf36dd78b9cab8776d1634f6e2859782c2e4c2a8ba9b5e78aabfbc19999c79",
+    "v3_phase": "full_h2o",
+    "v3_task_table_sha256": "fadcef787ccbaf05920ed2a4bc0800e24886fbb966e2343f8d45b6e74582cf98"
+  },
+  "task_table": {
+    "nodes_per_abundance": 85,
+    "path": "jwst_mcfost/runs/h2o_3um_abundance_grid_v1/abundance_grid_tasks.tsv",
+    "sha256": "0b00d97cc1b5e3e8e4627d9e83fad026d5eb64bfbb0f7b249b4f166a6c03dce4",
+    "task_count": 255
+  },
+  "temperature": {
+    "path": "jwst_mcfost/runs/strict_continuum_cavity_mass_q_v1/models/m2p25_c17p5_a0p40_q2p75_i0p05/temperature/seed=41001/data_th/Temperature.fits.gz",
+    "role": "reused_accepted_continuum_temperature",
+    "sha256": "1bd212f2f54dd8c1701a6064e129ba7fdb5721cb3fe296472433bbdd3b79ec1c"
+  },
+  "workflow_id": "h2o_3um_abundance_grid_v1"
+}

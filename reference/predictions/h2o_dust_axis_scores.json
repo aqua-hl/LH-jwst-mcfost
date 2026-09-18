@@ -1,0 +1,931 @@
+{
+  "apertures_never_pooled": true,
+  "classification": "dust_axis_screening_scores_not_a_posterior",
+  "formal_likelihood": false,
+  "near_infrared_1arcsec": {
+    "accepted_original_dust_slope_rms_dex": 0.08605400202815323,
+    "scored_anchors": [
+      "w001",
+      "w002",
+      "w003",
+      "w004",
+      "w005"
+    ],
+    "sealed_selected_dust_slope_rms_dex": 0.3936768550084442,
+    "variants": [
+      {
+        "accepted_original_dust_slope_rms_dex": 0.08605400202815323,
+        "anchors": {
+          "w001": {
+            "log10_model_over_accepted_dex": 0.5815722205065172,
+            "log10_model_over_observed_dex": 0.4967573300507108,
+            "model_flux_147pc_w_m2": 1.5213049207898598e-15,
+            "observed_flux_w_m2": 4.846842863764708e-16,
+            "wavelength_um": 1.2028117593024095
+          },
+          "w002": {
+            "log10_model_over_accepted_dex": 0.5027102180471229,
+            "log10_model_over_observed_dex": 0.5242283328577332,
+            "model_flux_147pc_w_m2": 1.1151384543772745e-14,
+            "observed_flux_w_m2": 3.335035486575138e-15,
+            "wavelength_um": 1.4987957445436022
+          },
+          "w003": {
+            "log10_model_over_accepted_dex": 0.37077752569153016,
+            "log10_model_over_observed_dex": 0.40194537888227394,
+            "model_flux_147pc_w_m2": 3.204091314370307e-14,
+            "observed_flux_w_m2": 1.2698707089394036e-14,
+            "wavelength_um": 1.7588530996181813
+          },
+          "w004": {
+            "log10_model_over_accepted_dex": 0.14047185369964482,
+            "log10_model_over_observed_dex": 0.10634421472888073,
+            "model_flux_147pc_w_m2": 7.57034683345687e-14,
+            "observed_flux_w_m2": 5.926135295233495e-14,
+            "wavelength_um": 2.1916659199557045
+          },
+          "w005": {
+            "log10_model_over_accepted_dex": 0.0154088515668195,
+            "log10_model_over_observed_dex": -0.14961760268532578,
+            "model_flux_147pc_w_m2": 1.0361224747136073e-13,
+            "observed_flux_w_m2": 1.4622737938338476e-13,
+            "wavelength_um": 2.546352514425122
+          },
+          "w006": {
+            "log10_model_over_accepted_dex": -0.05606303730281042,
+            "log10_model_over_observed_dex": -0.13328079565145162,
+            "model_flux_147pc_w_m2": 2.6547665959611126e-13,
+            "observed_flux_w_m2": 3.608337402571153e-13,
+            "wavelength_um": 3.9143995604061015
+          },
+          "w007": {
+            "log10_model_over_accepted_dex": -0.031964366703342934,
+            "log10_model_over_observed_dex": -0.23339028247091254,
+            "model_flux_147pc_w_m2": 4.5224291042603103e-13,
+            "observed_flux_w_m2": 7.740375860447664e-13,
+            "wavelength_um": 5.3906283153397085
+          },
+          "w008": {
+            "log10_model_over_accepted_dex": -0.20677126748617286,
+            "log10_model_over_observed_dex": -0.10323032205703336,
+            "model_flux_147pc_w_m2": 3.880655911755051e-13,
+            "observed_flux_w_m2": 4.92193029273742e-13,
+            "wavelength_um": 13.799908320389276
+          }
+        },
+        "baseline_selected_dust_slope_rms_dex": 0.3936768550084442,
+        "blue_minus_red_dex": 0.6463749327360366,
+        "dhs_vmax": "0.8",
+        "envelope_amax_um": "0.4",
+        "inclination_deg": "70.0",
+        "rationale": "control: the selected screening dust at the grid abundance, so every comparison in this grid is made at one x and one field",
+        "slope_mean_dex": 0.27593153076685456,
+        "slope_rms_dex": 0.3786390884666638,
+        "variant_token": "v00_base"
+      },
+      {
+        "accepted_original_dust_slope_rms_dex": 0.08605400202815323,
+        "anchors": {
+          "w001": {
+            "log10_model_over_accepted_dex": 0.2652903675891397,
+            "log10_model_over_observed_dex": 0.18047547713333326,
+            "model_flux_147pc_w_m2": 7.344029574647198e-16,
+            "observed_flux_w_m2": 4.846842863764708e-16,
+            "wavelength_um": 1.2028117593024095
+          },
+          "w002": {
+            "log10_model_over_accepted_dex": 0.2725738195467238,
+            "log10_model_over_observed_dex": 0.29409193435733394,
+            "model_flux_147pc_w_m2": 6.5643600502389555e-15,
+            "observed_flux_w_m2": 3.335035486575138e-15,
+            "wavelength_um": 1.4987957445436022
+          },
+          "w003": {
+            "log10_model_over_accepted_dex": 0.23230552138094257,
+            "log10_model_over_observed_dex": 0.2634733745716863,
+            "model_flux_147pc_w_m2": 2.32933997750829e-14,
+            "observed_flux_w_m2": 1.2698707089394036e-14,
+            "wavelength_um": 1.7588530996181813
+          },
+          "w004": {
+            "log10_model_over_accepted_dex": 0.08950335102578129,
+            "log10_model_over_observed_dex": 0.055375712055017234,
+            "model_flux_147pc_w_m2": 6.732049092880211e-14,
+            "observed_flux_w_m2": 5.926135295233495e-14,
+            "wavelength_um": 2.1916659199557045
+          },
+          "w005": {
+            "log10_model_over_accepted_dex": 0.01431530790433443,
+            "log10_model_over_observed_dex": -0.15071114634781085,
+            "model_flux_147pc_w_m2": 1.0335168236670278e-13,
+            "observed_flux_w_m2": 1.4622737938338476e-13,
+            "wavelength_um": 2.546352514425122
+          },
+          "w006": {
+            "log10_model_over_accepted_dex": -0.02526401468841322,
+            "log10_model_over_observed_dex": -0.10248177303705443,
+            "model_flux_147pc_w_m2": 2.849872082826291e-13,
+            "observed_flux_w_m2": 3.608337402571153e-13,
+            "wavelength_um": 3.9143995604061015
+          },
+          "w007": {
+            "log10_model_over_accepted_dex": -0.012693261438670849,
+            "log10_model_over_observed_dex": -0.2141191772062405,
+            "model_flux_147pc_w_m2": 4.727623389805736e-13,
+            "observed_flux_w_m2": 7.740375860447664e-13,
+            "wavelength_um": 5.3906283153397085
+          },
+          "w008": {
+            "log10_model_over_accepted_dex": -0.10256559182833733,
+            "log10_model_over_observed_dex": 0.0009753536008022014,
+            "model_flux_147pc_w_m2": 4.932996556238617e-13,
+            "observed_flux_w_m2": 4.92193029273742e-13,
+            "wavelength_um": 13.799908320389276
+          }
+        },
+        "baseline_selected_dust_slope_rms_dex": 0.3936768550084442,
+        "blue_minus_red_dex": 0.33118662348114414,
+        "dhs_vmax": "0.4",
+        "envelope_amax_um": "0.4",
+        "inclination_deg": "70.0",
+        "rationale": "half the vacuum fraction; local kappa_ext recovery 0.82 of accepted",
+        "slope_mean_dex": 0.12854107035391196,
+        "slope_rms_dex": 0.20700724718125513,
+        "variant_token": "v01_vmax0p4_amax0p4"
+      },
+      {
+        "accepted_original_dust_slope_rms_dex": 0.08605400202815323,
+        "anchors": {
+          "w001": {
+            "log10_model_over_accepted_dex": 0.12044595475516352,
+            "log10_model_over_observed_dex": 0.035631064299357,
+            "model_flux_147pc_w_m2": 5.261262908289409e-16,
+            "observed_flux_w_m2": 4.846842863764708e-16,
+            "wavelength_um": 1.2028117593024095
+          },
+          "w002": {
+            "log10_model_over_accepted_dex": 0.13260304035344248,
+            "log10_model_over_observed_dex": 0.15412115516405275,
+            "model_flux_147pc_w_m2": 4.755778449423153e-15,
+            "observed_flux_w_m2": 3.335035486575138e-15,
+            "wavelength_um": 1.4987957445436022
+          },
+          "w003": {
+            "log10_model_over_accepted_dex": 0.1220102586970793,
+            "log10_model_over_observed_dex": 0.15317811188782302,
+            "model_flux_147pc_w_m2": 1.8069145610953597e-14,
+            "observed_flux_w_m2": 1.2698707089394036e-14,
+            "wavelength_um": 1.7588530996181813
+          },
+          "w004": {
+            "log10_model_over_accepted_dex": 0.16983616492787898,
+            "log10_model_over_observed_dex": 0.13570852595711486,
+            "model_flux_147pc_w_m2": 8.099908040077307e-14,
+            "observed_flux_w_m2": 5.926135295233495e-14,
+            "wavelength_um": 2.1916659199557045
+          },
+          "w005": {
+            "log10_model_over_accepted_dex": 0.01634122736799561,
+            "log10_model_over_observed_dex": -0.14868522688414962,
+            "model_flux_147pc_w_m2": 1.0383492892491795e-13,
+            "observed_flux_w_m2": 1.4622737938338476e-13,
+            "wavelength_um": 2.546352514425122
+          },
+          "w006": {
+            "log10_model_over_accepted_dex": -0.001551711994406904,
+            "log10_model_over_observed_dex": -0.07876947034304811,
+            "model_flux_147pc_w_m2": 3.0098002208824055e-13,
+            "observed_flux_w_m2": 3.608337402571153e-13,
+            "wavelength_um": 3.9143995604061015
+          },
+          "w007": {
+            "log10_model_over_accepted_dex": 0.0008175821784823024,
+            "log10_model_over_observed_dex": -0.2006083335890873,
+            "model_flux_147pc_w_m2": 4.877010788050182e-13,
+            "observed_flux_w_m2": 7.740375860447664e-13,
+            "wavelength_um": 5.3906283153397085
+          },
+          "w008": {
+            "log10_model_over_accepted_dex": -0.042334281593016,
+            "log10_model_over_observed_dex": 0.06120666383612354,
+            "model_flux_147pc_w_m2": 5.666855289541475e-13,
+            "observed_flux_w_m2": 4.92193029273742e-13,
+            "wavelength_um": 13.799908320389276
+          }
+        },
+        "baseline_selected_dust_slope_rms_dex": 0.3936768550084442,
+        "blue_minus_red_dex": 0.18431629118350662,
+        "dhs_vmax": "0.1",
+        "envelope_amax_um": "0.4",
+        "inclination_deg": "70.0",
+        "rationale": "near-Mie vacuum fraction; local kappa_ext recovery ~0.93 of accepted with the band-core opacity essentially unchanged",
+        "slope_mean_dex": 0.06599072608483961,
+        "slope_rms_dex": 0.1334245388860455,
+        "variant_token": "v02_vmax0p1_amax0p4"
+      },
+      {
+        "accepted_original_dust_slope_rms_dex": 0.08605400202815323,
+        "anchors": {
+          "w001": {
+            "log10_model_over_accepted_dex": 0.25215358791696457,
+            "log10_model_over_observed_dex": 0.16733869746115806,
+            "model_flux_147pc_w_m2": 7.125209486352958e-16,
+            "observed_flux_w_m2": 4.846842863764708e-16,
+            "wavelength_um": 1.2028117593024095
+          },
+          "w002": {
+            "log10_model_over_accepted_dex": -0.19776554753485365,
+            "log10_model_over_observed_dex": -0.17624743272424337,
+            "model_flux_147pc_w_m2": 2.2225576085865916e-15,
+            "observed_flux_w_m2": 3.335035486575138e-15,
+            "wavelength_um": 1.4987957445436022
+          },
+          "w003": {
+            "log10_model_over_accepted_dex": -0.4976227759756488,
+            "log10_model_over_observed_dex": -0.4664549227849051,
+            "model_flux_147pc_w_m2": 4.338150184743384e-15,
+            "observed_flux_w_m2": 1.2698707089394036e-14,
+            "wavelength_um": 1.7588530996181813
+          },
+          "w004": {
+            "log10_model_over_accepted_dex": -0.777842346376728,
+            "log10_model_over_observed_dex": -0.8119699853474921,
+            "model_flux_147pc_w_m2": 9.136956913973727e-15,
+            "observed_flux_w_m2": 5.926135295233495e-14,
+            "wavelength_um": 2.1916659199557045
+          },
+          "w005": {
+            "log10_model_over_accepted_dex": -0.8898586279661157,
+            "log10_model_over_observed_dex": -1.054885082218261,
+            "model_flux_147pc_w_m2": 1.288675626818685e-14,
+            "observed_flux_w_m2": 1.4622737938338476e-13,
+            "wavelength_um": 2.546352514425122
+          },
+          "w006": {
+            "log10_model_over_accepted_dex": -0.4958907881551168,
+            "log10_model_over_observed_dex": -0.573108546503758,
+            "model_flux_147pc_w_m2": 9.642698627902439e-14,
+            "observed_flux_w_m2": 3.608337402571153e-13,
+            "wavelength_um": 3.9143995604061015
+          },
+          "w007": {
+            "log10_model_over_accepted_dex": -0.17466003568115912,
+            "log10_model_over_observed_dex": -0.37608595144872875,
+            "model_flux_147pc_w_m2": 3.2559377900690756e-13,
+            "observed_flux_w_m2": 7.740375860447664e-13,
+            "wavelength_um": 5.3906283153397085
+          },
+          "w008": {
+            "log10_model_over_accepted_dex": -0.241926060768361,
+            "log10_model_over_observed_dex": -0.1383851153392215,
+            "model_flux_147pc_w_m2": 3.578906424784519e-13,
+            "observed_flux_w_m2": 4.92193029273742e-13,
+            "wavelength_um": 13.799908320389276
+          }
+        },
+        "baseline_selected_dust_slope_rms_dex": 0.3936768550084442,
+        "blue_minus_red_dex": 1.222223779679419,
+        "dhs_vmax": "0.8",
+        "envelope_amax_um": "1.0",
+        "inclination_deg": "70.0",
+        "rationale": "grain growth at the selected vmax; smoke-measured 0.442x the sealed 1.2028 um flux, i.e. +0.167 dex instead of +0.522",
+        "slope_mean_dex": -0.46844374512274867,
+        "slope_rms_dex": 0.6401130190820976,
+        "variant_token": "v03_vmax0p8_amax1p0"
+      },
+      {
+        "accepted_original_dust_slope_rms_dex": 0.08605400202815323,
+        "anchors": {
+          "w001": {
+            "log10_model_over_accepted_dex": -0.10702932625493038,
+            "log10_model_over_observed_dex": -0.19184421671073684,
+            "model_flux_147pc_w_m2": 3.1161239428513416e-16,
+            "observed_flux_w_m2": 4.846842863764708e-16,
+            "wavelength_um": 1.2028117593024095
+          },
+          "w002": {
+            "log10_model_over_accepted_dex": -0.5942859941314456,
+            "log10_model_over_observed_dex": -0.5727678793208352,
+            "model_flux_147pc_w_m2": 8.919337141032787e-16,
+            "observed_flux_w_m2": 3.335035486575138e-15,
+            "wavelength_um": 1.4987957445436022
+          },
+          "w003": {
+            "log10_model_over_accepted_dex": -0.8791153278490967,
+            "log10_model_over_observed_dex": -0.847947474658353,
+            "model_flux_147pc_w_m2": 1.8022375378531236e-15,
+            "observed_flux_w_m2": 1.2698707089394036e-14,
+            "wavelength_um": 1.7588530996181813
+          },
+          "w004": {
+            "log10_model_over_accepted_dex": -1.10423966891836,
+            "log10_model_over_observed_dex": -1.138367307889124,
+            "model_flux_147pc_w_m2": 4.309275442406131e-15,
+            "observed_flux_w_m2": 5.926135295233495e-14,
+            "wavelength_um": 2.1916659199557045
+          },
+          "w005": {
+            "log10_model_over_accepted_dex": -1.1273405837832056,
+            "log10_model_over_observed_dex": -1.292367038035351,
+            "model_flux_147pc_w_m2": 7.45867456970799e-15,
+            "observed_flux_w_m2": 1.4622737938338476e-13,
+            "wavelength_um": 2.546352514425122
+          },
+          "w006": {
+            "log10_model_over_accepted_dex": -0.5698940152449067,
+            "log10_model_over_observed_dex": -0.6471117735935478,
+            "model_flux_147pc_w_m2": 8.131962485573871e-14,
+            "observed_flux_w_m2": 3.608337402571153e-13,
+            "wavelength_um": 3.9143995604061015
+          },
+          "w007": {
+            "log10_model_over_accepted_dex": -0.1857025563648095,
+            "log10_model_over_observed_dex": -0.38712847213237916,
+            "model_flux_147pc_w_m2": 3.1741948137012443e-13,
+            "observed_flux_w_m2": 7.740375860447664e-13,
+            "wavelength_um": 5.3906283153397085
+          },
+          "w008": {
+            "log10_model_over_accepted_dex": -0.1380697141070985,
+            "log10_model_over_observed_dex": -0.03452876867795901,
+            "model_flux_147pc_w_m2": 4.545761959557452e-13,
+            "observed_flux_w_m2": 4.92193029273742e-13,
+            "wavelength_um": 13.799908320389276
+          }
+        },
+        "baseline_selected_dust_slope_rms_dex": 0.3936768550084442,
+        "blue_minus_red_dex": 1.100522821324614,
+        "dhs_vmax": "0.4",
+        "envelope_amax_um": "1.0",
+        "inclination_deg": "70.0",
+        "rationale": "interior of the dust plane",
+        "slope_mean_dex": -0.8086587833228801,
+        "slope_rms_dex": 0.8999972061642768,
+        "variant_token": "v04_vmax0p4_amax1p0"
+      },
+      {
+        "accepted_original_dust_slope_rms_dex": 0.08605400202815323,
+        "anchors": {
+          "w001": {
+            "log10_model_over_accepted_dex": -0.2475163214108013,
+            "log10_model_over_observed_dex": -0.3323312118666078,
+            "model_flux_147pc_w_m2": 2.2549022923477583e-16,
+            "observed_flux_w_m2": 4.846842863764708e-16,
+            "wavelength_um": 1.2028117593024095
+          },
+          "w002": {
+            "log10_model_over_accepted_dex": -0.7424906759702684,
+            "log10_model_over_observed_dex": -0.7209725611596581,
+            "model_flux_147pc_w_m2": 6.3405641121659445e-16,
+            "observed_flux_w_m2": 3.335035486575138e-15,
+            "wavelength_um": 1.4987957445436022
+          },
+          "w003": {
+            "log10_model_over_accepted_dex": -1.0260562431969693,
+            "log10_model_over_observed_dex": -0.9948883900062256,
+            "model_flux_147pc_w_m2": 1.2849052860495994e-15,
+            "observed_flux_w_m2": 1.2698707089394036e-14,
+            "wavelength_um": 1.7588530996181813
+          },
+          "w004": {
+            "log10_model_over_accepted_dex": -1.224841119376535,
+            "log10_model_over_observed_dex": -1.258968758347299,
+            "model_flux_147pc_w_m2": 3.264395751521323e-15,
+            "observed_flux_w_m2": 5.926135295233495e-14,
+            "wavelength_um": 2.1916659199557045
+          },
+          "w005": {
+            "log10_model_over_accepted_dex": -1.2321312687057184,
+            "log10_model_over_observed_dex": -1.3971577229578638,
+            "model_flux_147pc_w_m2": 5.859640524832507e-15,
+            "observed_flux_w_m2": 1.4622737938338476e-13,
+            "wavelength_um": 2.546352514425122
+          },
+          "w006": {
+            "log10_model_over_accepted_dex": -0.6275912773053424,
+            "log10_model_over_observed_dex": -0.7048090356539836,
+            "model_flux_147pc_w_m2": 7.120296921717888e-14,
+            "observed_flux_w_m2": 3.608337402571153e-13,
+            "wavelength_um": 3.9143995604061015
+          },
+          "w007": {
+            "log10_model_over_accepted_dex": -0.19608459957596255,
+            "log10_model_over_observed_dex": -0.3975105153435322,
+            "model_flux_147pc_w_m2": 3.099213780917735e-13,
+            "observed_flux_w_m2": 7.740375860447664e-13,
+            "wavelength_um": 5.3906283153397085
+          },
+          "w008": {
+            "log10_model_over_accepted_dex": -0.07678631285171014,
+            "log10_model_over_observed_dex": 0.026754632577429344,
+            "model_flux_147pc_w_m2": 5.234679435699465e-13,
+            "observed_flux_w_m2": 4.92193029273742e-13,
+            "wavelength_um": 13.799908320389276
+          }
+        },
+        "baseline_selected_dust_slope_rms_dex": 0.3936768550084442,
+        "blue_minus_red_dex": 1.064826511091256,
+        "dhs_vmax": "0.1",
+        "envelope_amax_um": "1.0",
+        "inclination_deg": "70.0",
+        "rationale": "both dust levers at their strongest admitted setting",
+        "slope_mean_dex": -0.9408637288675308,
+        "slope_rms_dex": 1.0155885401293545,
+        "variant_token": "v05_vmax0p1_amax1p0"
+      },
+      {
+        "accepted_original_dust_slope_rms_dex": 0.08605400202815323,
+        "anchors": {
+          "w001": {
+            "log10_model_over_accepted_dex": 0.9848955045973811,
+            "log10_model_over_observed_dex": 0.9000806141415746,
+            "model_flux_147pc_w_m2": 3.850698839890048e-15,
+            "observed_flux_w_m2": 4.846842863764708e-16,
+            "wavelength_um": 1.2028117593024095
+          },
+          "w002": {
+            "log10_model_over_accepted_dex": 0.27537888184587067,
+            "log10_model_over_observed_dex": 0.2968969966564809,
+            "model_flux_147pc_w_m2": 6.6068957791719786e-15,
+            "observed_flux_w_m2": 3.335035486575138e-15,
+            "wavelength_um": 1.4987957445436022
+          },
+          "w003": {
+            "log10_model_over_accepted_dex": -0.2140543539530605,
+            "log10_model_over_observed_dex": -0.18288650076231666,
+            "model_flux_147pc_w_m2": 8.334374379456215e-15,
+            "observed_flux_w_m2": 1.2698707089394036e-14,
+            "wavelength_um": 1.7588530996181813
+          },
+          "w004": {
+            "log10_model_over_accepted_dex": -0.7726868927697735,
+            "log10_model_over_observed_dex": -0.8068145317405376,
+            "model_flux_147pc_w_m2": 9.2460668812504e-15,
+            "observed_flux_w_m2": 5.926135295233495e-14,
+            "wavelength_um": 2.1916659199557045
+          },
+          "w005": {
+            "log10_model_over_accepted_dex": -0.9690341952746866,
+            "log10_model_over_observed_dex": -1.134060649526832,
+            "model_flux_147pc_w_m2": 1.0739103978064174e-14,
+            "observed_flux_w_m2": 1.4622737938338476e-13,
+            "wavelength_um": 2.546352514425122
+          },
+          "w006": {
+            "log10_model_over_accepted_dex": -0.865037912720283,
+            "log10_model_over_observed_dex": -0.9422556710689243,
+            "model_flux_147pc_w_m2": 4.121463603951107e-14,
+            "observed_flux_w_m2": 3.608337402571153e-13,
+            "wavelength_um": 3.9143995604061015
+          },
+          "w007": {
+            "log10_model_over_accepted_dex": -0.44977906719885696,
+            "log10_model_over_observed_dex": -0.6512049829664266,
+            "model_flux_147pc_w_m2": 1.7280530341017616e-13,
+            "observed_flux_w_m2": 7.740375860447664e-13,
+            "wavelength_um": 5.3906283153397085
+          },
+          "w008": {
+            "log10_model_over_accepted_dex": -0.3439274210991582,
+            "log10_model_over_observed_dex": -0.24038647567001872,
+            "model_flux_147pc_w_m2": 2.829755958093823e-13,
+            "observed_flux_w_m2": 4.92193029273742e-13,
+            "wavelength_um": 13.799908320389276
+          }
+        },
+        "baseline_selected_dust_slope_rms_dex": 0.3936768550084442,
+        "blue_minus_red_dex": 2.0341412636684066,
+        "dhs_vmax": "0.8",
+        "envelope_amax_um": "2.0",
+        "inclination_deg": "70.0",
+        "rationale": "brackets amax at the selected vmax",
+        "slope_mean_dex": -0.18535681424632616,
+        "slope_rms_dex": 0.7574673136408092,
+        "variant_token": "v06_vmax0p8_amax2p0"
+      },
+      {
+        "accepted_original_dust_slope_rms_dex": 0.08605400202815323,
+        "anchors": {
+          "w001": {
+            "log10_model_over_accepted_dex": 0.7033146584288795,
+            "log10_model_over_observed_dex": 0.618499767973073,
+            "model_flux_147pc_w_m2": 2.0135327971869197e-15,
+            "observed_flux_w_m2": 4.846842863764708e-16,
+            "wavelength_um": 1.2028117593024095
+          },
+          "w002": {
+            "log10_model_over_accepted_dex": -0.007138195639584804,
+            "log10_model_over_observed_dex": 0.014379919171025376,
+            "model_flux_147pc_w_m2": 3.4473103127350403e-15,
+            "observed_flux_w_m2": 3.335035486575138e-15,
+            "wavelength_um": 1.4987957445436022
+          },
+          "w003": {
+            "log10_model_over_accepted_dex": -0.5067882974464638,
+            "log10_model_over_observed_dex": -0.47562044425572003,
+            "model_flux_147pc_w_m2": 4.247555493385386e-15,
+            "observed_flux_w_m2": 1.2698707089394036e-14,
+            "wavelength_um": 1.7588530996181813
+          },
+          "w004": {
+            "log10_model_over_accepted_dex": -1.0149122764861531,
+            "log10_model_over_observed_dex": -1.0490399154569172,
+            "model_flux_147pc_w_m2": 5.293362627951003e-15,
+            "observed_flux_w_m2": 5.926135295233495e-14,
+            "wavelength_um": 2.1916659199557045
+          },
+          "w005": {
+            "log10_model_over_accepted_dex": -1.2058332981942814,
+            "log10_model_over_observed_dex": -1.3708597524464265,
+            "model_flux_147pc_w_m2": 6.2254241258574036e-15,
+            "observed_flux_w_m2": 1.4622737938338476e-13,
+            "wavelength_um": 2.546352514425122
+          },
+          "w006": {
+            "log10_model_over_accepted_dex": -1.0357193471723238,
+            "log10_model_over_observed_dex": -1.1129371055209651,
+            "model_flux_147pc_w_m2": 2.782082692933577e-14,
+            "observed_flux_w_m2": 3.608337402571153e-13,
+            "wavelength_um": 3.9143995604061015
+          },
+          "w007": {
+            "log10_model_over_accepted_dex": -0.5164284012376895,
+            "log10_model_over_observed_dex": -0.7178543170052591,
+            "model_flux_147pc_w_m2": 1.4822031532224395e-13,
+            "observed_flux_w_m2": 7.740375860447664e-13,
+            "wavelength_um": 5.3906283153397085
+          },
+          "w008": {
+            "log10_model_over_accepted_dex": -0.2595884444546571,
+            "log10_model_over_observed_dex": -0.1560474990255177,
+            "model_flux_147pc_w_m2": 3.436275373124393e-13,
+            "observed_flux_w_m2": 4.92193029273742e-13,
+            "wavelength_um": 13.799908320389276
+          }
+        },
+        "baseline_selected_dust_slope_rms_dex": 0.3936768550084442,
+        "blue_minus_red_dex": 1.9893595204194996,
+        "dhs_vmax": "0.4",
+        "envelope_amax_um": "2.0",
+        "inclination_deg": "70.0",
+        "rationale": "brackets amax at intermediate vmax",
+        "slope_mean_dex": -0.45252808500299313,
+        "slope_rms_dex": 0.8471959344982072,
+        "variant_token": "v07_vmax0p4_amax2p0"
+      },
+      {
+        "accepted_original_dust_slope_rms_dex": 0.08605400202815323,
+        "anchors": {
+          "w001": {
+            "log10_model_over_accepted_dex": 0.5111871814266618,
+            "log10_model_over_observed_dex": 0.42637229097085527,
+            "model_flux_147pc_w_m2": 1.2936930080623063e-15,
+            "observed_flux_w_m2": 4.846842863764708e-16,
+            "wavelength_um": 1.2028117593024095
+          },
+          "w002": {
+            "log10_model_over_accepted_dex": -0.18174745339170656,
+            "log10_model_over_observed_dex": -0.1602293385810963,
+            "model_flux_147pc_w_m2": 2.3060627508937586e-15,
+            "observed_flux_w_m2": 3.335035486575138e-15,
+            "wavelength_um": 1.4987957445436022
+          },
+          "w003": {
+            "log10_model_over_accepted_dex": -0.662490723496669,
+            "log10_model_over_observed_dex": -0.6313228703059253,
+            "model_flux_147pc_w_m2": 2.967813701399458e-15,
+            "observed_flux_w_m2": 1.2698707089394036e-14,
+            "wavelength_um": 1.7588530996181813
+          },
+          "w004": {
+            "log10_model_over_accepted_dex": -1.1574862252289504,
+            "log10_model_over_observed_dex": -1.1916138641997145,
+            "model_flux_147pc_w_m2": 3.812042185986141e-15,
+            "observed_flux_w_m2": 5.926135295233495e-14,
+            "wavelength_um": 2.1916659199557045
+          },
+          "w005": {
+            "log10_model_over_accepted_dex": -1.3453420521949087,
+            "log10_model_over_observed_dex": -1.510368506447054,
+            "model_flux_147pc_w_m2": 4.5150253225601924e-15,
+            "observed_flux_w_m2": 1.4622737938338476e-13,
+            "wavelength_um": 2.546352514425122
+          },
+          "w006": {
+            "log10_model_over_accepted_dex": -1.114093359672507,
+            "log10_model_over_observed_dex": -1.1913111180211484,
+            "model_flux_147pc_w_m2": 2.3227155212024083e-14,
+            "observed_flux_w_m2": 3.608337402571153e-13,
+            "wavelength_um": 3.9143995604061015
+          },
+          "w007": {
+            "log10_model_over_accepted_dex": -0.5619908674375776,
+            "log10_model_over_observed_dex": -0.7634167832051473,
+            "model_flux_147pc_w_m2": 1.3345820110037192e-13,
+            "observed_flux_w_m2": 7.740375860447664e-13,
+            "wavelength_um": 5.3906283153397085
+          },
+          "w008": {
+            "log10_model_over_accepted_dex": -0.20682323784773865,
+            "log10_model_over_observed_dex": -0.10328229241859917,
+            "model_flux_147pc_w_m2": 3.880191556271277e-13,
+            "observed_flux_w_m2": 4.92193029273742e-13,
+            "wavelength_um": 13.799908320389276
+          }
+        },
+        "baseline_selected_dust_slope_rms_dex": 0.3936768550084442,
+        "blue_minus_red_dex": 1.9367407974179094,
+        "dhs_vmax": "0.1",
+        "envelope_amax_um": "2.0",
+        "inclination_deg": "70.0",
+        "rationale": "brackets amax at near-Mie vmax",
+        "slope_mean_dex": -0.613432457712587,
+        "slope_rms_dex": 0.9281370550345746,
+        "variant_token": "v08_vmax0p1_amax2p0"
+      },
+      {
+        "accepted_original_dust_slope_rms_dex": 0.08605400202815323,
+        "anchors": {
+          "w001": {
+            "log10_model_over_accepted_dex": 0.6690440495711499,
+            "log10_model_over_observed_dex": 0.5842291591153435,
+            "model_flux_147pc_w_m2": 1.860750306056739e-15,
+            "observed_flux_w_m2": 4.846842863764708e-16,
+            "wavelength_um": 1.2028117593024095
+          },
+          "w002": {
+            "log10_model_over_accepted_dex": 0.5718665115780113,
+            "log10_model_over_observed_dex": 0.5933846263886214,
+            "model_flux_147pc_w_m2": 1.3076306325043508e-14,
+            "observed_flux_w_m2": 3.335035486575138e-15,
+            "wavelength_um": 1.4987957445436022
+          },
+          "w003": {
+            "log10_model_over_accepted_dex": 0.4299034427761061,
+            "log10_model_over_observed_dex": 0.4610712959668499,
+            "model_flux_147pc_w_m2": 3.671392376308009e-14,
+            "observed_flux_w_m2": 1.2698707089394036e-14,
+            "wavelength_um": 1.7588530996181813
+          },
+          "w004": {
+            "log10_model_over_accepted_dex": 0.18113163946200594,
+            "log10_model_over_observed_dex": 0.14700400049124185,
+            "model_flux_147pc_w_m2": 8.313340384987186e-14,
+            "observed_flux_w_m2": 5.926135295233495e-14,
+            "wavelength_um": 2.1916659199557045
+          },
+          "w005": {
+            "log10_model_over_accepted_dex": 0.04460948299876202,
+            "log10_model_over_observed_dex": -0.1204169712533832,
+            "model_flux_147pc_w_m2": 1.1081836174626502e-13,
+            "observed_flux_w_m2": 1.4622737938338476e-13,
+            "wavelength_um": 2.546352514425122
+          },
+          "w006": {
+            "log10_model_over_accepted_dex": -0.03132550466212667,
+            "log10_model_over_observed_dex": -0.10854326301076789,
+            "model_flux_147pc_w_m2": 2.8103724346925494e-13,
+            "observed_flux_w_m2": 3.608337402571153e-13,
+            "wavelength_um": 3.9143995604061015
+          },
+          "w007": {
+            "log10_model_over_accepted_dex": 0.01724377532404103,
+            "log10_model_over_observed_dex": -0.18418214044352865,
+            "model_flux_147pc_w_m2": 5.065005361418285e-13,
+            "observed_flux_w_m2": 7.740375860447664e-13,
+            "wavelength_um": 5.3906283153397085
+          },
+          "w008": {
+            "log10_model_over_accepted_dex": -0.14087278476088463,
+            "log10_model_over_observed_dex": -0.037331839331745144,
+            "model_flux_147pc_w_m2": 4.51651668911148e-13,
+            "observed_flux_w_m2": 4.92193029273742e-13,
+            "wavelength_um": 13.799908320389276
+          }
+        },
+        "baseline_selected_dust_slope_rms_dex": 0.3936768550084442,
+        "blue_minus_red_dex": 0.7046461303687267,
+        "dhs_vmax": "0.8",
+        "envelope_amax_um": "0.4",
+        "inclination_deg": "60.0",
+        "rationale": "published inclination, middle of the range, dust unchanged",
+        "slope_mean_dex": 0.33305442214173475,
+        "slope_rms_dex": 0.4340797595571125,
+        "variant_token": "v09_base_incl60"
+      },
+      {
+        "accepted_original_dust_slope_rms_dex": 0.08605400202815323,
+        "anchors": {
+          "w001": {
+            "log10_model_over_accepted_dex": 0.7581929511755886,
+            "log10_model_over_observed_dex": 0.6733780607197821,
+            "model_flux_147pc_w_m2": 2.2847411339515647e-15,
+            "observed_flux_w_m2": 4.846842863764708e-16,
+            "wavelength_um": 1.2028117593024095
+          },
+          "w002": {
+            "log10_model_over_accepted_dex": 0.6344151241742972,
+            "log10_model_over_observed_dex": 0.6559332389849075,
+            "model_flux_147pc_w_m2": 1.51019733097743e-14,
+            "observed_flux_w_m2": 3.335035486575138e-15,
+            "wavelength_um": 1.4987957445436022
+          },
+          "w003": {
+            "log10_model_over_accepted_dex": 0.4771721722418798,
+            "log10_model_over_observed_dex": 0.5083400254326236,
+            "model_flux_147pc_w_m2": 4.09354464478301e-14,
+            "observed_flux_w_m2": 1.2698707089394036e-14,
+            "wavelength_um": 1.7588530996181813
+          },
+          "w004": {
+            "log10_model_over_accepted_dex": 0.2062193023163279,
+            "log10_model_over_observed_dex": 0.17209166334556378,
+            "model_flux_147pc_w_m2": 8.807714439612805e-14,
+            "observed_flux_w_m2": 5.926135295233495e-14,
+            "wavelength_um": 2.1916659199557045
+          },
+          "w005": {
+            "log10_model_over_accepted_dex": 0.054618448345400375,
+            "log10_model_over_observed_dex": -0.11040800590674489,
+            "model_flux_147pc_w_m2": 1.1340199397788359e-13,
+            "observed_flux_w_m2": 1.4622737938338476e-13,
+            "wavelength_um": 2.546352514425122
+          },
+          "w006": {
+            "log10_model_over_accepted_dex": -0.030000821075971924,
+            "log10_model_over_observed_dex": -0.10721857942461313,
+            "model_flux_147pc_w_m2": 2.8189577100909717e-13,
+            "observed_flux_w_m2": 3.608337402571153e-13,
+            "wavelength_um": 3.9143995604061015
+          },
+          "w007": {
+            "log10_model_over_accepted_dex": 0.045746932361203606,
+            "log10_model_over_observed_dex": -0.15567898340636602,
+            "model_flux_147pc_w_m2": 5.408577615948889e-13,
+            "observed_flux_w_m2": 7.740375860447664e-13,
+            "wavelength_um": 5.3906283153397085
+          },
+          "w008": {
+            "log10_model_over_accepted_dex": -0.08798268843446902,
+            "log10_model_over_observed_dex": 0.01555825699467042,
+            "model_flux_147pc_w_m2": 5.101450954305178e-13,
+            "observed_flux_w_m2": 4.92193029273742e-13,
+            "wavelength_um": 13.799908320389276
+          }
+        },
+        "baseline_selected_dust_slope_rms_dex": 0.3936768550084442,
+        "blue_minus_red_dex": 0.7837860666265271,
+        "dhs_vmax": "0.8",
+        "envelope_amax_um": "0.4",
+        "inclination_deg": "50.0",
+        "rationale": "published inclination, blue end of the range, dust unchanged",
+        "slope_mean_dex": 0.37986699651522643,
+        "slope_rms_dex": 0.48660075554445115,
+        "variant_token": "v10_base_incl50"
+      },
+      {
+        "accepted_original_dust_slope_rms_dex": 0.08605400202815323,
+        "anchors": {
+          "w001": {
+            "log10_model_over_accepted_dex": -0.16799919752608206,
+            "log10_model_over_observed_dex": -0.2528140879818885,
+            "model_flux_147pc_w_m2": 2.7079762556148034e-16,
+            "observed_flux_w_m2": 4.846842863764708e-16,
+            "wavelength_um": 1.2028117593024095
+          },
+          "w002": {
+            "log10_model_over_accepted_dex": -0.6750388707756826,
+            "log10_model_over_observed_dex": -0.6535207559650723,
+            "model_flux_147pc_w_m2": 7.40593171565017e-16,
+            "observed_flux_w_m2": 3.335035486575138e-15,
+            "wavelength_um": 1.4987957445436022
+          },
+          "w003": {
+            "log10_model_over_accepted_dex": -0.9694501355082693,
+            "log10_model_over_observed_dex": -0.9382822823175255,
+            "model_flux_147pc_w_m2": 1.4637847675242317e-15,
+            "observed_flux_w_m2": 1.2698707089394036e-14,
+            "wavelength_um": 1.7588530996181813
+          },
+          "w004": {
+            "log10_model_over_accepted_dex": -1.1733055787518614,
+            "log10_model_over_observed_dex": -1.2074332177226255,
+            "model_flux_147pc_w_m2": 3.675685495860235e-15,
+            "observed_flux_w_m2": 5.926135295233495e-14,
+            "wavelength_um": 2.1916659199557045
+          },
+          "w005": {
+            "log10_model_over_accepted_dex": -1.1822103608173522,
+            "log10_model_over_observed_dex": -1.3472368150694973,
+            "model_flux_147pc_w_m2": 6.573427567002765e-15,
+            "observed_flux_w_m2": 1.4622737938338476e-13,
+            "wavelength_um": 2.546352514425122
+          },
+          "w006": {
+            "log10_model_over_accepted_dex": -0.5820825202212266,
+            "log10_model_over_observed_dex": -0.6593002785698678,
+            "model_flux_147pc_w_m2": 7.906911201857148e-14,
+            "observed_flux_w_m2": 3.608337402571153e-13,
+            "wavelength_um": 3.9143995604061015
+          },
+          "w007": {
+            "log10_model_over_accepted_dex": -0.14837558169676082,
+            "log10_model_over_observed_dex": -0.3498014974643305,
+            "model_flux_147pc_w_m2": 3.459079570646254e-13,
+            "observed_flux_w_m2": 7.740375860447664e-13,
+            "wavelength_um": 5.3906283153397085
+          },
+          "w008": {
+            "log10_model_over_accepted_dex": -0.006247626669000462,
+            "log10_model_over_observed_dex": 0.09729331876013902,
+            "model_flux_147pc_w_m2": 6.157845346269409e-13,
+            "observed_flux_w_m2": 4.92193029273742e-13,
+            "wavelength_um": 13.799908320389276
+          }
+        },
+        "baseline_selected_dust_slope_rms_dex": 0.3936768550084442,
+        "blue_minus_red_dex": 1.0944227270876088,
+        "dhs_vmax": "0.1",
+        "envelope_amax_um": "1.0",
+        "inclination_deg": "60.0",
+        "rationale": "published inclination with the strongest dust correction",
+        "slope_mean_dex": -0.8798574318113218,
+        "slope_rms_dex": 0.9637759069419483,
+        "variant_token": "v11_vmax0p1_amax1p0_incl60"
+      },
+      {
+        "accepted_original_dust_slope_rms_dex": 0.08605400202815323,
+        "anchors": {
+          "w001": {
+            "log10_model_over_accepted_dex": -0.0688747453022299,
+            "log10_model_over_observed_dex": -0.15368963575803637,
+            "model_flux_147pc_w_m2": 3.402274140268626e-16,
+            "observed_flux_w_m2": 4.846842863764708e-16,
+            "wavelength_um": 1.2028117593024095
+          },
+          "w002": {
+            "log10_model_over_accepted_dex": -0.5918018409783109,
+            "log10_model_over_observed_dex": -0.5702837261677007,
+            "model_flux_147pc_w_m2": 8.970501708244303e-16,
+            "observed_flux_w_m2": 3.335035486575138e-15,
+            "wavelength_um": 1.4987957445436022
+          },
+          "w003": {
+            "log10_model_over_accepted_dex": -0.9030359332704787,
+            "log10_model_over_observed_dex": -0.8718680800797349,
+            "model_flux_147pc_w_m2": 1.7056559191134889e-15,
+            "observed_flux_w_m2": 1.2698707089394036e-14,
+            "wavelength_um": 1.7588530996181813
+          },
+          "w004": {
+            "log10_model_over_accepted_dex": -1.1176973876001741,
+            "log10_model_over_observed_dex": -1.1518250265709382,
+            "model_flux_147pc_w_m2": 4.1777893238794315e-15,
+            "observed_flux_w_m2": 5.926135295233495e-14,
+            "wavelength_um": 2.1916659199557045
+          },
+          "w005": {
+            "log10_model_over_accepted_dex": -1.1327030131430167,
+            "log10_model_over_observed_dex": -1.297729467395162,
+            "model_flux_147pc_w_m2": 7.367145199125495e-15,
+            "observed_flux_w_m2": 1.4622737938338476e-13,
+            "wavelength_um": 2.546352514425122
+          },
+          "w006": {
+            "log10_model_over_accepted_dex": -0.5486270358601227,
+            "log10_model_over_observed_dex": -0.6258447942087639,
+            "model_flux_147pc_w_m2": 8.540088000658746e-14,
+            "observed_flux_w_m2": 3.608337402571153e-13,
+            "wavelength_um": 3.9143995604061015
+          },
+          "w007": {
+            "log10_model_over_accepted_dex": -0.1212091328883774,
+            "log10_model_over_observed_dex": -0.32263504865594705,
+            "model_flux_147pc_w_m2": 3.682366417292852e-13,
+            "observed_flux_w_m2": 7.740375860447664e-13,
+            "wavelength_um": 5.3906283153397085
+          },
+          "w008": {
+            "log10_model_over_accepted_dex": 0.046585453525824,
+            "log10_model_over_observed_dex": 0.1501263989549635,
+            "model_flux_147pc_w_m2": 6.954435085027472e-13,
+            "observed_flux_w_m2": 4.92193029273742e-13,
+            "wavelength_um": 13.799908320389276
+          }
+        },
+        "baseline_selected_dust_slope_rms_dex": 0.3936768550084442,
+        "blue_minus_red_dex": 1.1440398316371256,
+        "dhs_vmax": "0.1",
+        "envelope_amax_um": "1.0",
+        "inclination_deg": "50.0",
+        "rationale": "published inclination, blue end, with the strongest dust correction",
+        "slope_mean_dex": -0.8090791871943145,
+        "slope_rms_dex": 0.9077224954702787,
+        "variant_token": "v12_vmax0p1_amax1p0_incl50"
+      }
+    ]
+  },
+  "task_table_sha256": "00d57a97fca368bf5d265cd32114f61fa1ec2aaa2bfdc55606b04799fc43c3ee",
+  "temperature_self_consistent_for_changed_dust": false,
+  "workflow_id": "h2o_3um_dust_axis_grid_v1"
+}

@@ -1,0 +1,215 @@
+{
+  "acceptance": {
+    "max_coeval_sed_map_relative_difference": 1e-05,
+    "max_convolution_flux_loss_fraction": 0.0001,
+    "max_edge_positive_flux_fraction": 0.001,
+    "max_internal_component_closure_fraction": 0.001,
+    "max_negative_flux_fraction": 0.001,
+    "wcs_relative_tolerance": 5e-06
+  },
+  "anchor_count_per_model": 10,
+  "aperture": {
+    "centre": "FITS CRPIX - 1; no recentering",
+    "distance_rescaling": "(140/147)^2",
+    "psf": "Gaussian diagnostic: NIRSpec 0.033*lambda; MIRI 0.033*lambda+0.106 arcsec",
+    "psf_truncation_sigma": 6.0,
+    "radius_arcsec": 1.0,
+    "shape": "circle"
+  },
+  "coeval_map_packet_source": "same accepted-packet SED Stokes realization",
+  "common_module": "jwst_mcfost/strict_continuum_screen_common.py",
+  "common_module_sha256": "18a5c661cc52d5e5cb5081e059007a9d46ec987864bac8feef0d991c6f7eb558",
+  "component_planes_zero_based": [
+    4,
+    5,
+    6,
+    7
+  ],
+  "custom_binary": {
+    "build_manifest": "/home/uhlo01/mcfost-custom/v4.1.13-rt_sed2-92bf1b1e086e/provenance/manifest.txt",
+    "build_manifest_sha256": "195b1decedf314ab5a6620c3573354bf94758bb71b30a1fab5e596b68a66b1b2",
+    "git_sha": "92bf1b1e086e433a2b18e16b70e428ff4b5a1bd2",
+    "mcfost_utils": "/home/uhlo01/mcfost/utils",
+    "path": "/home/uhlo01/mcfost-custom/v4.1.13-rt_sed2-92bf1b1e086e/bin/mcfost",
+    "required_help_marker": "method 2 with one SED wavelength also writes a coeval RT.fits.gz map",
+    "required_runtime_marker": "Writing coeval spatial-method-2 SED map from the same ray-tracing realization",
+    "sha256": "d96bbc7cb71c09fce93edcef5908e6af1eb0e90e40193a3afdd259c2a7786401"
+  },
+  "final_winner_claim_allowed": false,
+  "fixed_physics": {
+    "cavity_command_tokens": [
+      "274.7",
+      "100",
+      "1.0"
+    ],
+    "disk_and_stellar_records": "byte-identical to source parameter",
+    "distance_model_pc": 140.0,
+    "distance_target_pc": 147.0,
+    "envelope_amin_um": 0.03,
+    "envelope_core_fraction": 0.95,
+    "envelope_ice_fraction": 0.05,
+    "envelope_size_exponent": 3.5,
+    "inclination_deg": 70.0,
+    "mdot_msun_per_year_token": "7.3011756855e-08",
+    "target_total_lsun": 1.9
+  },
+  "fresh_temperature_precedes_rt": true,
+  "frozen_files": {
+    "jwst_mcfost/runs/strict_continuum_screen/anchors.tsv": "d89d29eab14518840be6cd8700ce1124152008d28d12a8b0202b04df08aceba9",
+    "jwst_mcfost/runs/strict_continuum_screen/anchors/w000/strict_continuum_anchor.lambda": "5e0fe7e726e460092394135e5d86a4f329f3adf9446ff8f022ee68ce91e8928e",
+    "jwst_mcfost/runs/strict_continuum_screen/anchors/w001/strict_continuum_anchor.lambda": "334e806dac74f3cab0db03b39807968472f2e194cb77ac7d5efc0c9e0d0a305e",
+    "jwst_mcfost/runs/strict_continuum_screen/anchors/w002/strict_continuum_anchor.lambda": "132b8ae57ad0eddc7816e3f45e121643727120e30a1d5ab9708202d2a9310d54",
+    "jwst_mcfost/runs/strict_continuum_screen/anchors/w003/strict_continuum_anchor.lambda": "90ac5acad1cc9a08e5697ce6d65ffd414b4b9f8cdea8cade92e91a9025a2a68e",
+    "jwst_mcfost/runs/strict_continuum_screen/anchors/w004/strict_continuum_anchor.lambda": "651e2bf7f7383323e2c48df2e732fe3cc01f7c5816c25ccc82154fd902c5f7a4",
+    "jwst_mcfost/runs/strict_continuum_screen/anchors/w005/strict_continuum_anchor.lambda": "9a4c5d5cdb08e1cfbcaa2b5b0eb958d5026b54a4ecfae6683606dcf96e8edb75",
+    "jwst_mcfost/runs/strict_continuum_screen/anchors/w006/strict_continuum_anchor.lambda": "c0f32299968b99649726432a9298eb8e93020139584fa61fd0f35fa3abaab4e0",
+    "jwst_mcfost/runs/strict_continuum_screen/anchors/w007/strict_continuum_anchor.lambda": "d04ad31c2c028e1669b8a052960e0edcf8bb08a87f52c27820b2fb215fc11399",
+    "jwst_mcfost/runs/strict_continuum_screen/anchors/w008/strict_continuum_anchor.lambda": "dc00d786476769c0d6165f9b9aea7c4cbe1e85dc4b0bc2512f8e12e8ce9d942b",
+    "jwst_mcfost/runs/strict_continuum_screen/anchors/w009/strict_continuum_anchor.lambda": "7d1ac3036216489ffa93c81d5de564ce57ec16820cf043dfb5a36c68cd83f6bd",
+    "jwst_mcfost/runs/strict_continuum_screen/models.tsv": "68e7476f1bbbc98a63d11958ae7a46bbd1478aa82478b6fede10e4729fc18d3b",
+    "jwst_mcfost/runs/strict_continuum_screen/models/m1p25_a0p10_i0p05/disk_envelope_m1p25_a0p10_i0p05_rt.para": "45152018cef34b6b06dfad68bd8b4dce501262de0be8427439e421ebe85c9f13",
+    "jwst_mcfost/runs/strict_continuum_screen/models/m1p25_a0p10_i0p05/disk_envelope_m1p25_a0p10_i0p05_temperature.para": "79769b39b7328636e316b9fffbeb03b023cfe51320dc3d410ee294b003ebf5ae",
+    "jwst_mcfost/runs/strict_continuum_screen/models/m1p25_a0p20_i0p05/disk_envelope_m1p25_a0p20_i0p05_rt.para": "bac80674c03183f4659cdd2c9a3ea260d847064a527b707f3e451383435dbf52",
+    "jwst_mcfost/runs/strict_continuum_screen/models/m1p25_a0p20_i0p05/disk_envelope_m1p25_a0p20_i0p05_temperature.para": "8eecfb78148f72905147bdbe6aacf1ed115017d784ef3eacf96bf81739e803dc",
+    "jwst_mcfost/runs/strict_continuum_screen/models/m1p25_a0p35_i0p05/disk_envelope_m1p25_a0p35_i0p05_rt.para": "23b9bc57d95d954b1ca5c62ba1d198de65a90db52421e83910de4282a6a35564",
+    "jwst_mcfost/runs/strict_continuum_screen/models/m1p25_a0p35_i0p05/disk_envelope_m1p25_a0p35_i0p05_temperature.para": "e19080c1632052ede564b2ac226a3c1863fc1d0259f262ad2235dceedff47adc",
+    "jwst_mcfost/runs/strict_continuum_screen/models/m1p25_a0p50_i0p05/disk_envelope_m1p25_a0p50_i0p05_rt.para": "e3fc3d6ac990ecd28e78d29e95bf3004fc3f84da2980445d9a58a945dc08c5fd",
+    "jwst_mcfost/runs/strict_continuum_screen/models/m1p25_a0p50_i0p05/disk_envelope_m1p25_a0p50_i0p05_temperature.para": "08ffecf2701842adcf69b9394f9f7a29d2fd9bf109cfbbcf5f87b9c6761bb481",
+    "jwst_mcfost/runs/strict_continuum_screen/models/m1p50_a0p10_i0p05/disk_envelope_m1p50_a0p10_i0p05_rt.para": "98f98891a302ba6ddfe7407195762187de8b7c0701ef05a40dc3bde302a9a480",
+    "jwst_mcfost/runs/strict_continuum_screen/models/m1p50_a0p10_i0p05/disk_envelope_m1p50_a0p10_i0p05_temperature.para": "f85bfe1cc470e0350da180d5654f4883cbfdb79c3bf05b63f8dc7d0b400e5513",
+    "jwst_mcfost/runs/strict_continuum_screen/models/m1p50_a0p20_i0p05/disk_envelope_m1p50_a0p20_i0p05_rt.para": "577990d8a9d1159bea07652c3b9a32f6c395c15ddc95ea6ac9727a55d0f39712",
+    "jwst_mcfost/runs/strict_continuum_screen/models/m1p50_a0p20_i0p05/disk_envelope_m1p50_a0p20_i0p05_temperature.para": "e2d60b4a9f82ddcbca9b80b5936c2a11e4ffb8db38f965055ddb28d347e2deb0",
+    "jwst_mcfost/runs/strict_continuum_screen/models/m1p50_a0p35_i0p05/disk_envelope_m1p50_a0p35_i0p05_rt.para": "4a24e98ef5dcf99df95f9a8421000cf02180c6cd8a4561505ff8d86993af0e01",
+    "jwst_mcfost/runs/strict_continuum_screen/models/m1p50_a0p35_i0p05/disk_envelope_m1p50_a0p35_i0p05_temperature.para": "37f5ae645ff0cd253629e74d00423c7e9da432ff900b0ecce1d6143388736dc2",
+    "jwst_mcfost/runs/strict_continuum_screen/models/m1p50_a0p50_i0p05/disk_envelope_m1p50_a0p50_i0p05_rt.para": "ac122143d66e81cc851f5981acd507f334ad6d2c81eddeaadc3d0b8b9a97aec4",
+    "jwst_mcfost/runs/strict_continuum_screen/models/m1p50_a0p50_i0p05/disk_envelope_m1p50_a0p50_i0p05_temperature.para": "3d693fedb991518675985a4e83295daa3f147baaf7131cfb2bb1ab87988c2dd2",
+    "jwst_mcfost/runs/strict_continuum_screen/models/m1p75_a0p10_i0p05/disk_envelope_m1p75_a0p10_i0p05_rt.para": "d2d1db46c828da7465b26f18a5dd211e1da3475b43ade0e3e4bc2839d74a084f",
+    "jwst_mcfost/runs/strict_continuum_screen/models/m1p75_a0p10_i0p05/disk_envelope_m1p75_a0p10_i0p05_temperature.para": "c7e40b6b22640ed4e4cb59d601186782218ddfcf93d6da89e5927f90b41718a3",
+    "jwst_mcfost/runs/strict_continuum_screen/models/m1p75_a0p20_i0p05/disk_envelope_m1p75_a0p20_i0p05_rt.para": "b59b7bf5495c4c07b48aa2f46a2387f28448b094eeaa6638a09633630611e2cf",
+    "jwst_mcfost/runs/strict_continuum_screen/models/m1p75_a0p20_i0p05/disk_envelope_m1p75_a0p20_i0p05_temperature.para": "61819bbe61cbe7f49e3b0d7541da61f69e7018647acf1cc91e65962dc13ba57a",
+    "jwst_mcfost/runs/strict_continuum_screen/models/m1p75_a0p35_i0p05/disk_envelope_m1p75_a0p35_i0p05_rt.para": "c37947930983858c3ad35535472ee329526f0878473df19dea7e415a1ba113c9",
+    "jwst_mcfost/runs/strict_continuum_screen/models/m1p75_a0p35_i0p05/disk_envelope_m1p75_a0p35_i0p05_temperature.para": "e5f94a4a12f305ea2c4196c64226632d7443d0eeb9ddb6fb742f5179c341f060",
+    "jwst_mcfost/runs/strict_continuum_screen/models/m1p75_a0p50_i0p05/disk_envelope_m1p75_a0p50_i0p05_rt.para": "07c9d9351f1011a45b972bf3ac8669bed9a5cb73289c6deee82b57365060764c",
+    "jwst_mcfost/runs/strict_continuum_screen/models/m1p75_a0p50_i0p05/disk_envelope_m1p75_a0p50_i0p05_temperature.para": "2661a1137271eef4672d133f7cde6516cd09e7d6d14027948a5ac8c7b1a6f85c",
+    "jwst_mcfost/runs/strict_continuum_screen/models/m2p00_a0p10_i0p05/disk_envelope_m2p00_a0p10_i0p05_rt.para": "5d6b8710378d78d9b311f8f01a969098280b5c0d77236b909ad695e4dfdba4f4",
+    "jwst_mcfost/runs/strict_continuum_screen/models/m2p00_a0p10_i0p05/disk_envelope_m2p00_a0p10_i0p05_temperature.para": "510348ed907b35ee1d77dd0162041f6f5f252a6b6a6c5d89fff54d8f9330386d",
+    "jwst_mcfost/runs/strict_continuum_screen/models/m2p00_a0p20_i0p05/disk_envelope_m2p00_a0p20_i0p05_rt.para": "ab57679182f298622de33c6a933786996db8f5710a906226b1a31b63ef087463",
+    "jwst_mcfost/runs/strict_continuum_screen/models/m2p00_a0p20_i0p05/disk_envelope_m2p00_a0p20_i0p05_temperature.para": "5369bdded540057e98a1ac3e40d9795edf76df4c47bb542c4a9bd56698d77e5c",
+    "jwst_mcfost/runs/strict_continuum_screen/models/m2p00_a0p35_i0p05/disk_envelope_m2p00_a0p35_i0p05_rt.para": "6a53800a595e879b849faa8ad2481d4922cb1f3aafcd45a62e560eefa96ab46e",
+    "jwst_mcfost/runs/strict_continuum_screen/models/m2p00_a0p35_i0p05/disk_envelope_m2p00_a0p35_i0p05_temperature.para": "55913e0750a5002a5ed4aa8274534007357d7110591ed544abb0f6ad7f1ffccf",
+    "jwst_mcfost/runs/strict_continuum_screen/models/m2p00_a0p50_i0p05/disk_envelope_m2p00_a0p50_i0p05_rt.para": "2a02b092455191897c32f918372080d7a9950f112814e58322e41dd8e7b54c45",
+    "jwst_mcfost/runs/strict_continuum_screen/models/m2p00_a0p50_i0p05/disk_envelope_m2p00_a0p50_i0p05_temperature.para": "310d8e97f04a8783df630370ee74f5d38204a4a3ce311035f92bac8f03bce92c",
+    "jwst_mcfost/runs/strict_continuum_screen/rt_tasks.tsv": "ac115db5d87b3c44bda87010596813a8693b390f856a901126f7816b6722959f",
+    "jwst_mcfost/runs/strict_continuum_screen/temperature_tasks.tsv": "258bbfdc5b97abb5cfba93bf6d11be9f5a788c6ced89f148033ef4d2304164af"
+  },
+  "generator": "jwst_mcfost/make_strict_continuum_screen_inputs.py",
+  "generator_sha256": "29a03b381edb12cbc1e2aa4a175a5df20160cf2eb468f5194ca5eb0fec4891e9",
+  "grid": {
+    "envelope_amax_um": [
+      0.1,
+      0.2,
+      0.35,
+      0.5
+    ],
+    "mass_factors": [
+      1.25,
+      1.5,
+      1.75,
+      2.0
+    ]
+  },
+  "model_count": 16,
+  "multiwavelength_method2_forbidden": true,
+  "nbr_photons_image_consumed": false,
+  "post_screen_requirements": {
+    "accepted_packets": 512000,
+    "independent_seed": 41002,
+    "promoted_scope": "nominal winner, every near tie, and every robustness winner",
+    "screen_result_may_not_bypass": true,
+    "spatial_refinement": "repeat promoted models at the convergence-control finer grid"
+  },
+  "production_final": false,
+  "purpose": "16-model strict-continuum coeval Cartesian method-2 screen",
+  "rt_task_count": 160,
+  "schema_version": 1,
+  "score_contract": {
+    "fixed_flux_normalization": true,
+    "free_scale_forbidden": true,
+    "mandatory_robustness": [
+      "half global weight for bins 96 and 139",
+      "drop bins 96 and 139"
+    ],
+    "monte_carlo_scatter": "not yet measured for this screen; never represented as zero measured scatter",
+    "observational_fractional_floors": {
+      "MIRI": 0.15,
+      "NIRSpec": 0.1
+    },
+    "one_physical_datum_per_bin": true,
+    "overlap_combination": "geometric mean in log10 flux; correlated instrument floor is not reduced",
+    "primary": "all ten anchors, region-balanced log10-flux RMS",
+    "regions_equal_weight": [
+      "near_ir_short",
+      "near_ir_rise",
+      "window_3p9",
+      "window_5p4",
+      "window_13p8",
+      "window_27p5"
+    ]
+  },
+  "screen_only": true,
+  "screen_sed_accepted_packets_per_task": 128000,
+  "screen_seed": 41001,
+  "sed_spatial_method": 2,
+  "separate_img_invocation_forbidden": true,
+  "source_function_method": 2,
+  "source_inputs": {
+    "closure_report": "jwst_mcfost/output/matched_method2_closure_4p5um_validation.json",
+    "closure_report_sha256": "069d3f9629fe760569bcffd54966bb5711edd8cd269de6810b82ec50491d4085",
+    "continuum": "jwst_mcfost/output/continuum_sed_R100.ecsv",
+    "continuum_sha256": "d2d51c6b0c0c229145b147d8793b03fa721e6a4cca191d790fb2082625d3e0d6",
+    "mask_manifest": "jwst_mcfost/output/continuum_fit_mask_v1_manifest.json",
+    "mask_manifest_sha256": "f93ee4cfeec9a80b612c3c3ef1777ca990cb1eadf2ac37a7db4e6b71d85ce414",
+    "parameter": "jwst_mcfost/runs/matched_method2_closure_4p5um/inputs/disk_envelope_L1p9_i70_method2_closure.para",
+    "parameter_sha256": "c7fcdc163adb80852a0b425015924a30bbcb877d9b48fc391f8d0bf54dd36181",
+    "strict_mask": "jwst_mcfost/output/continuum_fit_mask_v1_major_ice_both_silicates_retained.ecsv",
+    "strict_mask_sha256": "a8d5c28ddeeec6727e5c68e800ddba920d7b475170066fa6a5493d4a01c3375b",
+    "unstitched_aperture_radius_arcsec": 1.0,
+    "unstitched_spectrum": "jwst_mcfost/output/tmc1a_sed_unstitched.ecsv",
+    "unstitched_spectrum_sha256": "2a253bfdb23bc5fa30dd7064fa61229c1dc5cc62b5b8d1fcb1216a7dcc3d0569"
+  },
+  "spatial_configurations": {
+    "full_n2401": {
+      "expected_fov_au": 6000.0,
+      "nx": 2401,
+      "ny": 2401,
+      "zoom_token": "1"
+    },
+    "zoom_n1201": {
+      "expected_fov_au": 1502.4989583259237,
+      "nx": 1201,
+      "ny": 1201,
+      "zoom_token": "3.9933471945199667"
+    }
+  },
+  "strict_mask_scenario": "defer_major_ice_and_both_silicates",
+  "submission_gate": {
+    "gate_file": "jwst_mcfost/runs/strict_continuum_screen/submission_gate.json",
+    "max_array_concurrency": 3,
+    "near_ir_aperture_convergence_required": true,
+    "near_ir_report_path_and_sha_are_operator_supplied_then_frozen": true,
+    "required": true,
+    "selected_openmp_threads_must_be": [
+      8,
+      16
+    ]
+  },
+  "tables": {
+    "anchors": "jwst_mcfost/runs/strict_continuum_screen/anchors.tsv",
+    "models": "jwst_mcfost/runs/strict_continuum_screen/models.tsv",
+    "rt_tasks": "jwst_mcfost/runs/strict_continuum_screen/rt_tasks.tsv",
+    "temperature_tasks": "jwst_mcfost/runs/strict_continuum_screen/temperature_tasks.tsv"
+  },
+  "temperature_photon_packets": 128000,
+  "temperature_recomputed_for_every_model": true,
+  "temperature_task_count": 16
+}

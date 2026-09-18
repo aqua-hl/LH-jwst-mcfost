@@ -1,0 +1,32 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - {name: task_index, datatype: int64}
+# - {name: wavelength_um, datatype: float64}
+# - {name: silicate_role, datatype: string}
+# - {name: instrument, datatype: string}
+# - {name: jwst_source, datatype: string}
+# - {name: jwst_segment, datatype: string}
+# - {name: nearest_r100_bin_wavelength_um, datatype: float64}
+# - {name: jwst_observed_flux_w_m2, datatype: float64}
+# - {name: jwst_observed_error_w_m2, datatype: float64}
+# - {name: best_model_flux_147pc_w_m2, datatype: float64}
+# - {name: log10_model_over_observed_dex, datatype: float64}
+# - {name: measurement_kernel, datatype: string}
+# - {name: aperture_radius_arcsec, datatype: float64}
+# - {name: all_physical_quality_gates_pass, datatype: bool}
+# - {name: completion_sha256, datatype: string}
+# - {name: measurement_sha256, datatype: string}
+# meta: !!omap
+# - {workflow_id: h2o_silicate_demo_image_anchors_v1}
+# - {classification: presentation_only_image_method2_no_fit_no_ranking_no_rescaling}
+# - {scoring_role: none}
+# - {fit_or_rescaling_performed: false}
+# - {aperture: 1.0 arcsec}
+# - {best_variant_token: v02_vmax0p1_amax0p4}
+# schema: astropy-2.0
+task_index wavelength_um silicate_role instrument jwst_source jwst_segment nearest_r100_bin_wavelength_um jwst_observed_flux_w_m2 jwst_observed_error_w_m2 best_model_flux_147pc_w_m2 log10_model_over_observed_dex measurement_kernel aperture_radius_arcsec all_physical_quality_gates_pass completion_sha256 measurement_sha256
+0 8.3 presentation_only_unscored MIRI "continuum_sed_R100 log-interpolated within one detector segment" CH2_short 8.286783934408364 4.66607986635445e-13 7.000154111274904e-14 1.2680364034335569e-13 -0.5658204463954549 strict_continuum_method2_signed_aperture_v2 1.0 True 3e46c7d240e1f3f38f0b62da07555cd033a006f55993469f3103895be83f487b 481c977abb53108f4e9ae659978b9de9521d964ac592158903d9b448882731a2
+1 9.7 presentation_only_unscored MIRI "continuum_sed_R100 log-interpolated within one detector segment" CH2_medium 9.7246310325885 1.4577492659303726e-13 2.1866765715832102e-14 1.3468775199558023e-14 -1.0343547270084148 strict_continuum_method2_signed_aperture_v2 1.0 True 7cee438c9c8a248f0cbc1e934811aba93d57192a988a3bc223a7cd1172261e72 5a9e68159149a915c0ffe2950f2429a1b90969a84679883abd785f51d50b2773
+2 11.0 presentation_only_unscored MIRI "continuum_sed_R100 log-interpolated within one detector segment" CH2_long 10.964490872014625 2.685092566544405e-13 4.027934950878784e-14 7.45723091817088e-14 -0.5563816707493043 strict_continuum_method2_signed_aperture_v2 1.0 True 7e11f6742c2b86c3d27c872dbec6a49ce058f2b8ee602d32c76153eeb35ce0f5 589697a77ecb7dd0bf6d3ed369d08837d099f863ca66eab745decf662f1483b9
+3 12.5 presentation_only_unscored MIRI "continuum_sed_R100 log-interpolated within one detector segment" CH3_short 12.486673413753987 4.220590706389381e-13 6.331210969830283e-14 2.9189433761285014e-13 -0.1601475680041463 strict_continuum_method2_signed_aperture_v2 1.0 True 402688cc5652d4aa96c7061daf590a4b8cbff43fbe997295d29222f5273cd47a 427dc6a2fde6c879958db5cae607b4b86d311391371c074ff8ce9e448270cbde

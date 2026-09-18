@@ -1,0 +1,66 @@
+diff --git a/lib/install.sh b/lib/install.sh
+index 8104cd1b..6ee522d6 100755
+--- a/lib/install.sh
++++ b/lib/install.sh
+@@ -133,8 +133,14 @@ pushd .
+ git clone https://github.com/cpinte/sprng2.0b.git
+ git clone https://github.com/HEASARC/cfitsio.git
+ git clone https://github.com/cpinte/voro
++git -C sprng2.0b checkout --detach bfc763d770b993fce1040ba6bb8fbcd200670671
++git -C cfitsio checkout --detach 6ba7e3319c02c0831c860c37212f37f37a726cce
++git -C voro checkout --detach d25518318c50bbb0d9c25b9371c1613b7f7d2b3a
+ if [ "$SKIP_HDF5" != "yes" ]; then
+     wget -N https://support.hdfgroup.org/releases/hdf5/v1_14/v1_14_6/downloads/hdf5-1.14.6.tar.gz
++    printf '%s  %s\n' \
++        e4defbac30f50d64e1556374aa49e574417c9e72c6b1de7a4ff88c4b1bea6e9b \
++        hdf5-1.14.6.tar.gz | sha256sum -c -
+ fi
+ if [ "$MCFOST_XGBOOST" = "yes" ]; then
+     git clone --recursive https://github.com/dmlc/xgboost
+@@ -178,7 +184,7 @@ echo "Done"
+ #-------------------------------------------
+ echo "Compiling CFITSIO ..."
+ cd cfitsio
+-git checkout cfitsio-4.4.1
++test "$(git rev-parse HEAD)" = 6ba7e3319c02c0831c860c37212f37f37a726cce
+ ./configure --enable-ssse3 --disable-curl
+ 
+ make
+@@ -285,13 +291,15 @@ if [ "$SKIP_HDF5" != "yes" ]; then
+     echo "Compiling HDF5 ..."
+     tar xzvf hdf5-1.14.6.tar.gz
+     cd hdf5-1.14.6
+-    mkdir -p "$HOME/hdf5_install_tmp"
+-    ./configure --prefix="$HOME/hdf5_install_tmp" --enable-fortran --disable-shared
++    hdf5_stage="$MCFOST_INSTALL/.deps/hdf5_install_tmp"
++    rm -rf "$hdf5_stage"
++    mkdir -p "$hdf5_stage"
++    ./configure --prefix="$hdf5_stage" --enable-fortran --disable-shared
+     make install
+     cd ~1
+-    \cp "$HOME/hdf5_install_tmp/lib/libhdf5.a" "$HOME/hdf5_install_tmp/lib/libhdf5_fortran.a" lib/
+-    \cp "$HOME"/hdf5_install_tmp/include/*.h include/hdf5/
+-    \cp "$HOME"/hdf5_install_tmp/include/*.mod "include/$SYSTEM"
++    \cp "$hdf5_stage/lib/libhdf5.a" "$hdf5_stage/lib/libhdf5_fortran.a" lib/
++    \cp "$hdf5_stage"/include/*.h include/hdf5/
++    \cp "$hdf5_stage"/include/*.mod "include/$SYSTEM"
+     echo "Done"
+ else
+     echo "Skipping HDF5 ..."
+diff --git a/BUILD_DEPENDENCIES.lock b/BUILD_DEPENDENCIES.lock
+new file mode 100644
+index 00000000..a1b8ed57
+--- /dev/null
++++ b/BUILD_DEPENDENCIES.lock
+@@ -0,0 +1,10 @@
++MCFOST_BASE_GIT_SHA=fc14f46491616224d993503b2a3293c1dab7b47a
++SPRNG_GIT_SHA=bfc763d770b993fce1040ba6bb8fbcd200670671
++CFITSIO_GIT_SHA=6ba7e3319c02c0831c860c37212f37f37a726cce
++VORO_GIT_SHA=d25518318c50bbb0d9c25b9371c1613b7f7d2b3a
++HDF5_VERSION=1.14.6
++HDF5_TAR_SHA256=e4defbac30f50d64e1556374aa49e574417c9e72c6b1de7a4ff88c4b1bea6e9b
++COMPILER_MODULE=GCC/13.3.0
++SYSTEM=gfortran
++OPENMP=yes
++MCFOST_XGBOOST=no
++MCFOST_NO_XGBOOST=yes

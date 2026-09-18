@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "run_name": "continuum_grid_example",
+  "output_dir": "../runs",
+  "smoke_test": false,
+  "notes": "Editable example, NOT an approved final search or literature prior. 3 x 2 x 2 = 12 models, nine strict continuum anchors each.",
+  "fixed": {
+    "envelope_amax_um": 0.4,
+    "envelope_size_exponent": 2.75,
+    "envelope_ice_volume_fraction": 0.05,
+    "distance_pc": 140.0,
+    "stellar_temperature_k": 4000.0,
+    "stellar_radius_rsun": 2.5,
+    "stellar_mass_msun": 0.5,
+    "accretion_rate_msun_per_year": 7.3011756855e-8
+  },
+  "grid": {
+    "inclination_deg": [50.0, 60.0, 70.0],
+    "envelope_dust_mass_msun": [0.00015, 0.000225],
+    "cavity_half_opening_deg": [17.5, 25.0]
+  },
+  "numerics": {
+    "photons_temperature": 128000,
+    "photons_image": 128000,
+    "photons_sed": 128000
+  },
+  "observations": {
+    "preset": "strict9",
+    "aperture_radius_arcsec": 1.0,
+    "target_distance_pc": 147.0,
+    "aperture_subpixels": 64
+  }
+}

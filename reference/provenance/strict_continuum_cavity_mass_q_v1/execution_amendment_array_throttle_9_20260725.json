@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "classification": "prospective_administrative_array_throttle_amendment",
+  "workflow_id": "strict_continuum_cavity_mass_q_v1",
+  "declared_utc": "2026-07-25T21:20:43Z",
+  "slurm_array_job_id": 15164641,
+  "frozen_parent_contract": {
+    "design_config_sha256": "f49c95212f0039dda207797d046211f9406c8e925620e911ed3e0e4736411a8d",
+    "input_manifest_sha256": "2b4424009fcf9ad5e8f25a672d0a76ff84f835c1770beb52b0cd53be20bb7ed2",
+    "measurement_kernel_sha256": "8cfb9aa37e1a4eb6410d84ee2b66b58a00d574f43d94720ab0e513d69a4d951a"
+  },
+  "scheduler_change": {
+    "field": "ArrayTaskThrottle",
+    "from": 4,
+    "to": 9,
+    "reason": "The user explicitly authorized taking the five additional whole 16-CPU slots available during the late-evening run.",
+    "capacity_observed": {
+      "s92node196_idle_cpus": 24,
+      "s92node197_idle_cpus": 24,
+      "s92node198_idle_cpus": 24,
+      "s92node199_idle_cpus": 32,
+      "reserved_idle_cpus_total": 104,
+      "additional_whole_16_cpu_slots": 5
+    }
+  },
+  "scientific_contract_unchanged": {
+    "rt_task_table": true,
+    "logical_task_count": 405,
+    "accepted_packets_each": 128000,
+    "seed": 41001,
+    "openmp_threads_each": 16,
+    "rt_sed_method": 2,
+    "physical_inputs": true,
+    "measurement_policy": true,
+    "extra_tasks_or_retries_permitted": false
+  },
+  "prospective_state": {
+    "newly_unthrottled_children_started_before_declaration": false,
+    "grid_score_rank_winner_or_likelihood_consulted": false
+  }
+}

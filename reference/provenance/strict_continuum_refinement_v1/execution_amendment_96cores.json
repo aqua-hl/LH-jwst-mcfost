@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "workflow_id": "strict_continuum_refinement_v1",
+  "classification": "live_scheduler_only_nonphysics_amendment",
+  "recorded_at": "2026-07-24T11:58:38+02:00",
+  "user_authorized": true,
+  "authorization": "Take 32 more cores for this run when reservation capacity is free.",
+  "refinement_input_manifest_sha256": "580b43d6d3e154ec5e6db508172fb753bb33c2b78ee5218ea3b6c997a4bdde10",
+  "slurm_array_job_id": 15157026,
+  "completed_rt_markers_before_amendment": 61,
+  "change": {
+    "array_task_throttle_before": 4,
+    "array_task_throttle_after": 6,
+    "cpus_per_task_unchanged": 16,
+    "maximum_concurrent_cpus_before": 64,
+    "maximum_concurrent_cpus_after": 96
+  },
+  "capacity_check": {
+    "free_cpus_immediately_before": 48,
+    "free_cpus_by_node": {
+      "s92node196": 8,
+      "s92node197": 16,
+      "s92node198": 8,
+      "s92node199": 16
+    },
+    "expected_free_cpus_after_sixth_task_started": 16,
+    "reservation": "Houches2026",
+    "partition": "Cascade-GPU"
+  },
+  "invariants": {
+    "per_task_openmp_threads": 16,
+    "model_inputs_changed": false,
+    "parameter_files_changed": false,
+    "wavelengths_changed": false,
+    "seed_changed": false,
+    "accepted_packets_changed": false,
+    "output_paths_changed": false,
+    "scientific_estimator_changed": false
+  },
+  "slurm_update": "scontrol update JobId=15157026 ArrayTaskThrottle=6",
+  "rationale": "Two more independent wavelength tasks fit on nodes with 16 contiguous idle CPUs each; scientific commands and per-task parallelism remain unchanged."
+}

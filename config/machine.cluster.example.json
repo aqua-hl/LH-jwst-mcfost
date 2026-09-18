@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "mcfost_executable": "/EDIT/cluster/path/to/mcfost",
+  "mcfost_utils": "/EDIT/cluster/path/to/mcfost/utils",
+  "backend": "image_method2",
+  "threads": 16,
+  "timeout_seconds": 36000,
+  "max_memory_gb": 12,
+  "slurm": {
+    "partition": "EDIT_PARTITION",
+    "time": "12:00:00",
+    "memory": "16G",
+    "max_parallel": 4,
+    "python": "/EDIT/cluster/venv/bin/python",
+    "setup_lines": [],
+    "analysis_cpus": 2,
+    "analysis_memory": "4G",
+    "analysis_time": "00:30:00"
+  },
+  "notes": "Edit for the NEW cluster. Add account/reservation/module setup only if required. Four concurrent 16-core models = at most 64 CPUs. No mpirun."
+}

@@ -1,0 +1,114 @@
+{
+  "classification": "screening_bracket_not_an_abundance_posterior",
+  "degenerate_with_envelope_column": true,
+  "formal_likelihood": false,
+  "points": [
+    {
+      "core_w006_model_minus_observed_tau": -1.1938043214486607,
+      "core_w006_model_tau": 1.155724844734245,
+      "h2o_mass_fraction": 0.02,
+      "max_abs_tau_residual": 1.1938043214486607,
+      "mean_signed_tau_residual": -0.8257687490244137,
+      "tau_profile": [
+        -0.011536419078513773,
+        0.28182123761890915,
+        0.5665487368791815,
+        0.842902882658342,
+        1.0858488550073182,
+        1.155724844734245,
+        0.9920564820797516,
+        0.7650988017339121,
+        0.3914909138606223,
+        0.10192990932583515,
+        0.0051148817354104035
+      ],
+      "unweighted_rms_tau_residual": 0.8734082767959456
+    },
+    {
+      "core_w006_model_minus_observed_tau": -0.635128998141584,
+      "core_w006_model_tau": 1.7144001680413217,
+      "h2o_mass_fraction": 0.03,
+      "max_abs_tau_residual": 0.6526671618629691,
+      "mean_signed_tau_residual": -0.5029627323376441,
+      "tau_profile": [
+        -0.009650020989866531,
+        0.40716587111173624,
+        0.829177646287274,
+        1.2413301684749847,
+        1.6031657595201356,
+        1.7144001680413217,
+        1.463435765884791,
+        1.1271147520057976,
+        0.5678647751908393,
+        0.13502190756216295,
+        0.005159846879030993
+      ],
+      "unweighted_rms_tau_residual": 0.5242585580626729
+    },
+    {
+      "core_w006_model_minus_observed_tau": -0.07738255059400867,
+      "core_w006_model_tau": 2.272146615588897,
+      "h2o_mass_fraction": 0.04,
+      "max_abs_tau_residual": 0.4257662849782882,
+      "mean_signed_tau_residual": -0.14747979291645896,
+      "tau_profile": [
+        -0.013204187211414916,
+        0.5303153754019786,
+        1.0895039749977304,
+        1.6372274511027314,
+        2.121039266741075,
+        2.272146615588897,
+        1.9349484705270887,
+        1.489875310795088,
+        1.0441252051696825,
+        0.16884159854543784,
+        0.00524507146671559
+      ],
+      "unweighted_rms_tau_residual": 0.19158597371400365
+    },
+    {
+      "core_w006_model_minus_observed_tau": 0.4801170090208644,
+      "core_w006_model_tau": 2.82964617520377,
+      "h2o_mass_fraction": 0.05,
+      "max_abs_drift_vs_sealed": 1.6653345369377348e-16,
+      "max_abs_tau_residual": 0.5279984627600212,
+      "mean_signed_tau_residual": 0.1749989837164866,
+      "reproduces_sealed_postpilot_values": true,
+      "tau_profile": [
+        -0.010319539144335588,
+        0.6548732116555798,
+        1.351245891206951,
+        2.0336002278190333,
+        2.6379303611559055,
+        2.82964617520377,
+        2.4057735157540496,
+        1.8528611142814366,
+        1.2203562466751754,
+        0.2040455148143186,
+        0.0038826319272332174
+      ],
+      "unweighted_rms_tau_residual": 0.3109497762878782
+    }
+  ],
+  "reference_reproduces_sealed_postpilot": true,
+  "summary": {
+    "core_matching_h2o_mass_fraction": 0.041388028909789015,
+    "core_tau_by_abundance": {
+      "0.02": 1.155724844734245,
+      "0.03": 1.7144001680413217,
+      "0.04": 2.272146615588897,
+      "0.05": 2.82964617520377
+    },
+    "observed_core_tau": 2.3495291661829056,
+    "rms_at_minimum": 0.17900384600852884,
+    "rms_by_abundance": {
+      "0.02": 0.8734082767959456,
+      "0.03": 0.5242585580626729,
+      "0.04": 0.19158597371400365,
+      "0.05": 0.3109497762878782
+    },
+    "rms_minimising_h2o_mass_fraction": 0.04235942047969852
+  },
+  "temperature_self_consistent_for_changed_dust": false,
+  "workflow_id": "h2o_3um_abundance_grid_v1"
+}

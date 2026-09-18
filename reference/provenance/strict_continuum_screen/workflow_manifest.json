@@ -1,0 +1,25 @@
+{
+  "classification": "strict_continuum_workflow_frozen",
+  "file_count": 15,
+  "files": {
+    "jwst_mcfost/analyze_strict_continuum_screen.py": "f91e1f9eef81e24cd7a10d03c075ba6800ee3951e6a7141282dc2446b079e44b",
+    "jwst_mcfost/freeze_strict_continuum_workflow.py": "014eb686086db4ac0cb52a9434bad8b43e16c8bbe5940417bb22b031b5376ae4",
+    "jwst_mcfost/job_strict_continuum_postprocess.sh": "a7a93211d5b88ff23465bc86e1cdaace688deb253272fbb032cf3cdd7b50da06",
+    "jwst_mcfost/job_strict_continuum_rt_array.sh": "7436723e474f44bb629283b716736e9dec863fe3e920a37d5d9711f2cd323f1c",
+    "jwst_mcfost/job_strict_continuum_temperature_array.sh": "3aa6203153a11051c158b5092891f5094bb076df06fc75802f1b03bd3b3e84e9",
+    "jwst_mcfost/make_strict_continuum_screen_inputs.py": "29a03b381edb12cbc1e2aa4a175a5df20160cf2eb468f5194ca5eb0fec4891e9",
+    "jwst_mcfost/run_strict_continuum_rt_task.sh": "d9244463b67c7c2974e05cd794f728a82537873d0a9e7666ea6831b5c96413b5",
+    "jwst_mcfost/run_strict_continuum_temperature_task.sh": "c564dfa4fa2c3627aabe57b8d77c71ad3950ea06c4178dbfda26b2580847043a",
+    "jwst_mcfost/strict_continuum_screen_common.py": "18a5c661cc52d5e5cb5081e059007a9d46ec987864bac8feef0d991c6f7eb558",
+    "jwst_mcfost/submit_strict_continuum_screen.sh": "2055aae86e76e689aaffca2cd4e83f951779185efafe5f9909ad68122b216ee6",
+    "jwst_mcfost/test_strict_continuum_workflow.py": "f8aa11635a2a4e592466056c47e3a86e5d81960462f536ca093a7f36540fa77c",
+    "jwst_mcfost/validate_rt_sed_spatial_sampler.py": "87035e977ab7bcbcd8aee25e175a9b855dc59d72671f958188400b002d8b81ff",
+    "jwst_mcfost/validate_strict_continuum_rt.py": "dac9ae7abae7181e7cf64c580b921a783411cf05bffc002c247b0fe20ed9110a",
+    "jwst_mcfost/validate_strict_continuum_submission_gate.py": "0b7fe2481344a902fef1a6c58aa8d178e66e5eb7b1f3fdee0d225b632f622923",
+    "jwst_mcfost/validate_strict_continuum_temperature.py": "6976370b1cacb4cf15ae0810596f9446bb46d3d449328065483c02b0f4519ca3"
+  },
+  "input_manifest_sha256": "79ed48b6619e3c57c501f6a7421655deda2ec34d9b42134f5193f61a997b92b9",
+  "production_final": false,
+  "schema_version": 1,
+  "screen_only": true
+}

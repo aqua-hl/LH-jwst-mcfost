@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "mcfost_executable": "/Users/harrisonlo/mcfost/bin/mcfost",
+  "mcfost_utils": "/Users/harrisonlo/mcfost/utils",
+  "backend": "image_method2",
+  "threads": 2,
+  "timeout_seconds": 300,
+  "max_memory_gb": 2,
+  "notes": "Laptop smoke only. Each simulator command has a five-minute bound. No auto-update."
+}

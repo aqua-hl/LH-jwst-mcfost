@@ -1,0 +1,6 @@
+# Tested laptop environment; use these or compatible packages on the new cluster.
+# MCFOST and its full utilities must be installed separately.
+numpy==2.2.6
+scipy==1.15.2
+astropy==7.1.0
+matplotlib==3.10.1

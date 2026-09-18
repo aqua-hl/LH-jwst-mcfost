@@ -1,0 +1,41 @@
+{
+  "array_dependency_to_bind": "afterok:15172412",
+  "authorization_job_id": "15172412",
+  "classification": "abundance_grid_authorized_after_full_live_revalidation",
+  "historical_dependency": "none_manifest_and_parameters_revalidated_here",
+  "manifest_sha256": "695d8214cbc87a4979971351ae78f931d11eab6ecc26796e5c4aac27e3c1c993",
+  "mcfost_binary_sha256": "d96bbc7cb71c09fce93edcef5908e6af1eb0e90e40193a3afdd259c2a7786401",
+  "new_h2o_mass_fractions": [
+    0.02,
+    0.03,
+    0.04
+  ],
+  "nodes_per_abundance": 85,
+  "parameters": {
+    "h2o_selected_x0p02": {
+      "h2o_mass_fraction": 0.02,
+      "path": "jwst_mcfost/runs/h2o_3um_abundance_grid_v1/parameters/h2o_x0p02_rt.para",
+      "sha256": "1bf5e1b037fd810c4a875a51ee0c868e9e1ba6045f3e673249945ce67707bbbc"
+    },
+    "h2o_selected_x0p03": {
+      "h2o_mass_fraction": 0.03,
+      "path": "jwst_mcfost/runs/h2o_3um_abundance_grid_v1/parameters/h2o_x0p03_rt.para",
+      "sha256": "bf4257382851e20e1f8e05bef03bc663bd1f5803032e9c9af381a7331a302fde"
+    },
+    "h2o_selected_x0p04": {
+      "h2o_mass_fraction": 0.04,
+      "path": "jwst_mcfost/runs/h2o_3um_abundance_grid_v1/parameters/h2o_x0p04_rt.para",
+      "sha256": "9c4c70e8b4348d36edd1af8b24b37c3ed573b5897459b34c593e173e09e95f0b"
+    }
+  },
+  "postpilot_composite_seal_sha256": "a437cd4a0a3de8c2ea1ee1062827ffb2a9335dd9582ac69e90ed08a21d28fe56",
+  "reference_h2o_mass_fraction": 0.05,
+  "schema_version": 1,
+  "source_parameter_sha256": "53e7d2af20d3803c95144bc0809885d44da2324ffb8e6800d228c85b67412cdc",
+  "task_count": 255,
+  "task_table_sha256": "0b00d97cc1b5e3e8e4627d9e83fad026d5eb64bfbb0f7b249b4f166a6c03dce4",
+  "temperature_sha256": "1bd212f2f54dd8c1701a6064e129ba7fdb5721cb3fe296472433bbdd3b79ec1c",
+  "v3_manifest_sha256": "6faf36dd78b9cab8776d1634f6e2859782c2e4c2a8ba9b5e78aabfbc19999c79",
+  "valid": true,
+  "workflow_id": "h2o_3um_abundance_grid_v1"
+}

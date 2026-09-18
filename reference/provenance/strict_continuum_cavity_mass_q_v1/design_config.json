@@ -1,0 +1,137 @@
+{
+  "schema_version": 1,
+  "workflow_id": "strict_continuum_cavity_mass_q_v1",
+  "classification": "frozen_parallel_strict_method2_cavity_mass_q_screen",
+  "screen_only": true,
+  "production_final": false,
+  "formal_likelihood": false,
+  "selection_basis": {
+    "source_workflow": "strict_continuum_3d_q_v1_task024_seed41002_recovery_primary9_v1_w000_diagnostic",
+    "source_summary_sha256": "cbfecf8316b03c36b0de2c625258b5c116349bea5056c445d432b06b9f8339f0",
+    "source_validation_sha256": "d8c3aa8969cdd2a97d82476091ab834475cdabcad36ee397721d61123397c5db",
+    "source_scores_sha256": "a449a31a8a139d571168080955bf55fc90a243c598a51117c5a3a57522f1b781",
+    "source_predictions_sha256": "2a051f8a8f1669eeeed2e6b54e21a9c46dbe51ed65699f7eb9ca3cd259e33ed0",
+    "source_scores_or_ranks_read_by_next_analyzer": false,
+    "nine_anchor_rank1_model": "m2p50_a0p40_q3p25_i0p05",
+    "nine_anchor_rank1_score_dex": 0.115951458180168
+  },
+  "grid": {
+    "ordering": "mass_then_q_then_cavity",
+    "envelope_mass_factors": [2.25, 2.5, 2.75],
+    "envelope_size_exponents": [2.75, 3.0, 3.25],
+    "cavity_states": [
+      {
+        "tag": "c15p0",
+        "requested_half_opening_deg": 15.0,
+        "h0_token": "373.205080756888",
+        "r0_token": "100",
+        "exponent_token": "1.0",
+        "emptied_polar_center_rows": 2
+      },
+      {
+        "tag": "c17p5",
+        "requested_half_opening_deg": 17.5,
+        "h0_token": "317.159480236321",
+        "r0_token": "100",
+        "exponent_token": "1.0",
+        "emptied_polar_center_rows": 3
+      },
+      {
+        "tag": "c20p0",
+        "requested_half_opening_deg": 20.0,
+        "h0_token": "274.7",
+        "r0_token": "100",
+        "exponent_token": "1.0",
+        "implied_half_opening_deg": 20.00320031521819,
+        "historical_overlap_token_preserved": true,
+        "emptied_polar_center_rows": 4
+      },
+      {
+        "tag": "c22p0",
+        "requested_half_opening_deg": 22.0,
+        "h0_token": "247.508685341630",
+        "r0_token": "100",
+        "exponent_token": "1.0",
+        "emptied_polar_center_rows": 5
+      },
+      {
+        "tag": "c24p0",
+        "requested_half_opening_deg": 24.0,
+        "h0_token": "224.603677390422",
+        "r0_token": "100",
+        "exponent_token": "1.0",
+        "emptied_polar_center_rows": 6
+      }
+    ],
+    "logical_model_count": 45,
+    "all_models_fresh": true,
+    "exact_overlap": {
+      "envelope_mass_factor": 2.5,
+      "envelope_size_exponent": 3.25,
+      "cavity_tag": "c20p0",
+      "envelope_amax_um": 0.4
+    }
+  },
+  "fixed_physics": {
+    "inclination_deg": 70.0,
+    "envelope_amax_um": 0.4,
+    "envelope_amin_um": 0.03,
+    "envelope_ice_fraction": 0.05,
+    "envelope_core_fraction": 0.95,
+    "mdot_msun_per_year_token": "7.3011756855e-08"
+  },
+  "execution": {
+    "seed": 41001,
+    "temperature_photons": 128000,
+    "accepted_packets_per_anchor": 128000,
+    "openmp_threads_per_task": 16,
+    "processes_per_task": 1,
+    "temperature_task_count": 45,
+    "scientific_anchor_tags": [
+      "w001",
+      "w002",
+      "w003",
+      "w004",
+      "w005",
+      "w006",
+      "w007",
+      "w008",
+      "w009"
+    ],
+    "scientific_anchor_ordinals": [1, 2, 3, 4, 5, 6, 7, 8, 9],
+    "anchors_per_model": 9,
+    "rt_task_count": 405,
+    "w000_generated": false,
+    "w000_raytraced": false,
+    "w000_scored": false,
+    "rt_sed_method": 2,
+    "coeval_method2": true,
+    "capacity_policy": "sum_floor_idle_cpus_per_reserved_node_divided_by_16_at_submission",
+    "reserved_nodes": ["s92node196", "s92node197", "s92node198", "s92node199"]
+  },
+  "measurement_and_score": {
+    "estimator": "signed_direct_coeval_method2_polarized_total_i_plane0",
+    "aperture_radius_arcsec": 1.0,
+    "aperture_subpixels_per_axis": 64,
+    "model_distance_pc": 140.0,
+    "target_distance_pc": 147.0,
+    "measurement_published_inside_each_rt_task": true,
+    "final_analysis_worker_processes": 4,
+    "equal_weight_region_count": 6,
+    "near_ir_short_denominator": 2,
+    "boundary_sensitivity_anchor_tags": ["w005", "w006"],
+    "score_scenarios": {
+      "primary": 1.0,
+      "boundary_half": 0.5,
+      "boundary_drop": 0.0
+    },
+    "free_flux_normalization": false
+  },
+  "interpretation": {
+    "cavity_values_are_discrete_polar_grid_states": true,
+    "sub_grid_angle_precision_claim_allowed": false,
+    "fresh_temperature_required_for_every_model": true,
+    "smaller_q_direction_is_an_explicit_boundary_extension": true,
+    "mass_grid_brackets_both_cavity_degeneracy_and_the_previous_upper_boundary": true
+  }
+}

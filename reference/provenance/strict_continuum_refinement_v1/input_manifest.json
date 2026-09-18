@@ -1,0 +1,108 @@
+{
+  "classification": "frozen_parallel_strict_method2_refinement_screen",
+  "custom_binary": {
+    "build_manifest": "/home/uhlo01/mcfost-custom/v4.1.13-rt_sed2-92bf1b1e086e/provenance/manifest.txt",
+    "build_manifest_sha256": "195b1decedf314ab5a6620c3573354bf94758bb71b30a1fab5e596b68a66b1b2",
+    "git_sha": "92bf1b1e086e433a2b18e16b70e428ff4b5a1bd2",
+    "mcfost_utils": "/home/uhlo01/mcfost/utils",
+    "path": "/home/uhlo01/mcfost-custom/v4.1.13-rt_sed2-92bf1b1e086e/bin/mcfost",
+    "runtime_marker": "Writing coeval spatial-method-2 SED map from the same ray-tracing realization",
+    "sha256": "d96bbc7cb71c09fce93edcef5908e6af1eb0e90e40193a3afdd259c2a7786401"
+  },
+  "execution": {
+    "accepted_packets": 128000,
+    "anchors_per_model": 10,
+    "fresh_model_count": 8,
+    "max_array_concurrency": 3,
+    "one_wave_coeval_method2": true,
+    "openmp_threads": 16,
+    "reused_model_count": 1,
+    "rt_task_count": 80,
+    "seed": 41001,
+    "temperature_task_count": 8
+  },
+  "frozen_files": {
+    "jwst_mcfost/runs/strict_continuum_refinement_v1/fresh_models.tsv": "0a9a4c3c47301de8365381a6637894106e1aa341b31df18734e1b1e2cb863bc2",
+    "jwst_mcfost/runs/strict_continuum_refinement_v1/job_rt_array.sh": "4b1d76cadccd37d92644c1379820ad126b87b6d119fd11922a8cc9b507796f1f",
+    "jwst_mcfost/runs/strict_continuum_refinement_v1/job_temperature_array.sh": "5c12d2dc20ac566294c7c210be1746f3deffb8c7f761e2bc048e6d7d5e35ae37",
+    "jwst_mcfost/runs/strict_continuum_refinement_v1/make_inputs.py": "5439fc79220217ed1c5c5424153e9157ce5a14cc0e67f9f835f8f8793fdf602d",
+    "jwst_mcfost/runs/strict_continuum_refinement_v1/models.tsv": "1119921cae1f4814375d10b9fe99b82c4bb4482bce95114c33210248647bf942",
+    "jwst_mcfost/runs/strict_continuum_refinement_v1/models/m2p00_a0p60_i0p05/disk_envelope_m2p00_a0p60_i0p05_rt.para": "cd7c92aff5a5692816a0b8915587d121f2e974c8bca0b6a56fcd78559ee03521",
+    "jwst_mcfost/runs/strict_continuum_refinement_v1/models/m2p00_a0p60_i0p05/disk_envelope_m2p00_a0p60_i0p05_temperature.para": "706c298341b3436cbc577e82593ef24fd041c1ada0da9ad1a72fa6bce8bb3842",
+    "jwst_mcfost/runs/strict_continuum_refinement_v1/models/m2p00_a0p70_i0p05/disk_envelope_m2p00_a0p70_i0p05_rt.para": "1aa3d6c9ef1d83598849144c6e7f70d5e97202fd5c998b7df9b954882a0affab",
+    "jwst_mcfost/runs/strict_continuum_refinement_v1/models/m2p00_a0p70_i0p05/disk_envelope_m2p00_a0p70_i0p05_temperature.para": "dee23a2bb53bb678c5bbbb98473e5d592e03a0ee8ac5e020a305839b3d89edc7",
+    "jwst_mcfost/runs/strict_continuum_refinement_v1/models/m2p25_a0p50_i0p05/disk_envelope_m2p25_a0p50_i0p05_rt.para": "898323fff2f3a9928fb5b3f8da8b37aff0f46bdddb603f61340b3fb803c4e4ca",
+    "jwst_mcfost/runs/strict_continuum_refinement_v1/models/m2p25_a0p50_i0p05/disk_envelope_m2p25_a0p50_i0p05_temperature.para": "273ebd038f85adb9c773a96ed1cdcaf862286c6db00741cb134cc7bc34473af3",
+    "jwst_mcfost/runs/strict_continuum_refinement_v1/models/m2p25_a0p60_i0p05/disk_envelope_m2p25_a0p60_i0p05_rt.para": "da60f8ea014931f81d63e497ccfe27d2099d33324e54921315b44e1f698ec8eb",
+    "jwst_mcfost/runs/strict_continuum_refinement_v1/models/m2p25_a0p60_i0p05/disk_envelope_m2p25_a0p60_i0p05_temperature.para": "0e15b0b98c76994e754764d9576e6931c8fbdac2ef8e8819b7524a7bfbe85046",
+    "jwst_mcfost/runs/strict_continuum_refinement_v1/models/m2p25_a0p70_i0p05/disk_envelope_m2p25_a0p70_i0p05_rt.para": "743d4b6795b250997c6e1aa1dc38d593ef47057f564b32a3606cf54a84cf9668",
+    "jwst_mcfost/runs/strict_continuum_refinement_v1/models/m2p25_a0p70_i0p05/disk_envelope_m2p25_a0p70_i0p05_temperature.para": "823f813957b06684184d0ee432bb75cfff62557eb88b3841d45fd1f0e8e5d595",
+    "jwst_mcfost/runs/strict_continuum_refinement_v1/models/m2p50_a0p50_i0p05/disk_envelope_m2p50_a0p50_i0p05_rt.para": "8d55db51f9ebd14d5e6f729a8aa08a3c84de43fe46b179d2a567098a95e1e602",
+    "jwst_mcfost/runs/strict_continuum_refinement_v1/models/m2p50_a0p50_i0p05/disk_envelope_m2p50_a0p50_i0p05_temperature.para": "26dc7739700575c0e2ed0ad9a5acd53d4eae15ec06d1531ba13711aa7fe09e9a",
+    "jwst_mcfost/runs/strict_continuum_refinement_v1/models/m2p50_a0p60_i0p05/disk_envelope_m2p50_a0p60_i0p05_rt.para": "933474319241fde2c7a8de01d9d4554c5fcd0e05b7f66fa56d9f7cb1cc2a8d1e",
+    "jwst_mcfost/runs/strict_continuum_refinement_v1/models/m2p50_a0p60_i0p05/disk_envelope_m2p50_a0p60_i0p05_temperature.para": "f5749d8cfaeefad34926080739bc50494623d9488c1ab9d6df3524ba058269e4",
+    "jwst_mcfost/runs/strict_continuum_refinement_v1/models/m2p50_a0p70_i0p05/disk_envelope_m2p50_a0p70_i0p05_rt.para": "aee16e49244e684e2ee7b97e9cd7e8b399c09399b35cb1ed6a915e611e00cda0",
+    "jwst_mcfost/runs/strict_continuum_refinement_v1/models/m2p50_a0p70_i0p05/disk_envelope_m2p50_a0p70_i0p05_temperature.para": "a7aeff28950c8cc08ea6c6113a1b2cff82987e2269b8d1b2f4e06e3cef3a2728",
+    "jwst_mcfost/runs/strict_continuum_refinement_v1/rt_tasks.tsv": "cc0bdb82938ea753cf930ce55c3e67f92603cb5b90f5439cf3e880246ec3eaba",
+    "jwst_mcfost/runs/strict_continuum_refinement_v1/run_task.py": "fc52f0f98f3535c9ef6e1bd714f3082b2c80f6011e855d8ff95dafe34b939fe0",
+    "jwst_mcfost/runs/strict_continuum_refinement_v1/submit.sh": "06a6560dfb3a0767a3ed360dcb923227f228cafdc45cc568f71a3e7ffab8bfde",
+    "jwst_mcfost/runs/strict_continuum_refinement_v1/temperature_tasks.tsv": "0cc288028039665cd7a8778395d4783562672850e4e248d81e9f5a032a2f4df6"
+  },
+  "grid": {
+    "envelope_amax_um": [
+      0.5,
+      0.6,
+      0.7
+    ],
+    "mass_factors": [
+      2.0,
+      2.25,
+      2.5
+    ],
+    "model_count": 9
+  },
+  "physics": {
+    "cavity_tokens": [
+      "274.7",
+      "100",
+      "1.0"
+    ],
+    "envelope_amin_um": 0.03,
+    "envelope_ice_fraction": 0.05,
+    "inclination_deg": 70.0,
+    "mdot_token": "7.3011756855e-08",
+    "size_exponent": 3.5
+  },
+  "pinned_upstream": {
+    "jwst_mcfost/output/strict_continuum_method2_fit_v1_validation.json": "90aabddb0342783941fb5c34e2d9a32b0bf1deaabd89709c80eb36cc9edf0814",
+    "jwst_mcfost/runs/matched_method2_closure_4p5um/inputs/disk_envelope_L1p9_i70_method2_closure.para": "c7fcdc163adb80852a0b425015924a30bbcb877d9b48fc391f8d0bf54dd36181",
+    "jwst_mcfost/runs/strict_continuum_screen/anchors.tsv": "d89d29eab14518840be6cd8700ce1124152008d28d12a8b0202b04df08aceba9",
+    "jwst_mcfost/runs/strict_continuum_screen/input_manifest.json": "79ed48b6619e3c57c501f6a7421655deda2ec34d9b42134f5193f61a997b92b9",
+    "jwst_mcfost/runs/strict_continuum_screen/models.tsv": "68e7476f1bbbc98a63d11958ae7a46bbd1478aa82478b6fede10e4729fc18d3b",
+    "jwst_mcfost/runs/strict_continuum_screen/rt_tasks.tsv": "ac115db5d87b3c44bda87010596813a8693b390f856a901126f7816b6722959f"
+  },
+  "post_analysis_included": false,
+  "production_final": false,
+  "reuse": {
+    "copy_or_symlink_performed": false,
+    "fit_validation": "jwst_mcfost/output/strict_continuum_method2_fit_v1_validation.json",
+    "fit_validation_sha256": "90aabddb0342783941fb5c34e2d9a32b0bf1deaabd89709c80eb36cc9edf0814",
+    "model_label": "m2p00_a0p50_i0p05",
+    "upstream_model_index": 15,
+    "upstream_rt_task_indices": [
+      150,
+      151,
+      152,
+      153,
+      154,
+      155,
+      156,
+      157,
+      158,
+      159
+    ]
+  },
+  "schema_version": 1,
+  "screen_only": true,
+  "workflow_id": "strict_continuum_refinement_v1"
+}

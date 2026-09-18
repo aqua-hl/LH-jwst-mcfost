@@ -1,0 +1,673 @@
+{
+  "canonical_observable": {
+    "G395H_is_untouched_raw_flux": false,
+    "aperture": "0.35-arcsec_circle_provider_exact_fractional_pixel_extraction",
+    "aperture_corrected_to_1p2_arcsec": false,
+    "background_subtracted": false,
+    "coordinate": {
+      "dec_deg": 25.695572371372172,
+      "icrs": "04h39m35.222735s +25d41m44.060537s",
+      "mcfost_east_arcsec": 0.0,
+      "mcfost_north_arcsec": 0.0,
+      "ra_deg": 69.89676139522149
+    },
+    "flux_input_column": "flux_raw_Jy",
+    "mcfost_identification": "G395H_stellar_centroid_is_model_star_at_0_0",
+    "published_flux_semantics": "F_nu_Jy_raw_aperture_then_G395H_scaled_to_G235H_overlap"
+  },
+  "classification": "screening_observation_operator_not_formal_likelihood",
+  "continuum_contract": {
+    "application_rule": "same_scale_invariant_kernel_on_observed_and_converted_model_Fnu_Jy",
+    "canonical_sparse_fitting_operator": {
+      "application_side": "observation_only_never_model",
+      "canonical_delta": 0.0,
+      "flux_representation": "F_nu_Jy",
+      "gauge": "zero_sum_log_gain_g235_exp_minus_delta_over_2_g395_exp_plus_delta_over_2",
+      "kernel_id": "tmc1a_h2o_observation_measurement_v3",
+      "neutral_operator": {
+        "continuum": {
+          "converged": true,
+          "dimensionless_intercept": 1.0255204229775574,
+          "dimensionless_slope": 0.967783604658402,
+          "final_relative_coefficient_change": 8.141112510407507e-14,
+          "huber_tuning": 1.345,
+          "iterations": 16,
+          "kernel_id": "six_support_scale_invariant_huber_continuum_v2",
+          "maximum_iterations": 10000,
+          "method": "median_normalized_deterministic_huber_irls_line_on_six_supports",
+          "relative_coefficient_tolerance": 1e-13,
+          "schema_version": 2,
+          "support_count": 6,
+          "support_value_normalization": "median_of_six_positive_support_values",
+          "support_value_scale_in_input_units": 0.182419654008858,
+          "support_weights": [
+            0.7069851295320722,
+            1.0,
+            1.0,
+            0.1777499355338692,
+            1.0,
+            1.0
+          ],
+          "wavelength_center_um": 3.0931933280369144,
+          "wavelength_scale_um": 1.0237078364255252
+        },
+        "flux_representation": "F_nu_Jy",
+        "kernel_id": "tmc1a_h2o_observation_measurement_v3",
+        "operator": "neutral_identical_Fnu_continuum_and_tau_for_observation_or_model",
+        "schema_version": 3
+      },
+      "nonzero_delta_role": "predeclared_robustness_scenario_not_fit_or_optimized",
+      "nuisance_application": "multiply_all_targets_and_six_supports_by_parent_segment_gain_then_refit_scale_invariant_huber_continuum_and_recompute_tau",
+      "relative_log_gain_delta_ln_g395_over_g235": 0.0,
+      "schema_version": 3,
+      "segment_gains": {
+        "G235H": 1.0,
+        "G395H": 1.0
+      }
+    },
+    "dense_reference": {
+      "candidate_point_count": 648,
+      "clip_sigma": 3.0,
+      "continuum_windows_um": [
+        [
+          2.55,
+          2.68
+        ],
+        [
+          3.45,
+          3.65
+        ]
+      ],
+      "intercept_Jy_at_pivot": 0.11454145081417308,
+      "maximum_clip_iterations": 8,
+      "method": "iterative_3sigma_clipped_unweighted_linear",
+      "pivot_um": 2.668855761517163,
+      "retained_by_window": [
+        342,
+        118
+      ],
+      "retained_point_count": 460,
+      "slope_Jy_per_um": 0.16544028092140586
+    },
+    "support_segment_mapping": "exactly_three_blue_G235H_and_three_red_G395H",
+    "support_selection": "q20_q50_q80_from_each_retained_dense_continuum_window",
+    "windows_um": [
+      [
+        2.55,
+        2.68
+      ],
+      [
+        3.45,
+        3.65
+      ]
+    ]
+  },
+  "immutability": {
+    "check_mode_writes": false,
+    "publication_rule": "create_if_missing_or_require_byte_identity",
+    "v2_products_modified": false
+  },
+  "metrics": {
+    "canonical_sparse_huber": {
+      "h2o_column_density_cm-2": 3.9441530855913733e+18,
+      "integrated_optical_depth_cm-1": 788.8306171182746,
+      "peak_optical_depth": 2.3495291661829056,
+      "peak_wavelength_um": 3.0764795490679795
+    },
+    "dense_unweighted_reference": {
+      "h2o_column_density_cm-2": 3.912275080968842e+18,
+      "integrated_optical_depth_cm-1": 782.4550161937684,
+      "peak_optical_depth": 2.337437014545161,
+      "peak_wavelength_um": 3.0764795490679795
+    }
+  },
+  "old_notebook_coordinate_sensitivity": {
+    "icrs": "04h39m35.2216793062s +25d41m44.181522s",
+    "included_in_frozen_products": false,
+    "mcfost_east_arcsec": -0.0142674672164,
+    "mcfost_north_arcsec": 0.12098503874,
+    "pairing_rule": "extract_observed_and_measure_model_at_the_same_offset_or_do_not_compare",
+    "role": "report_only_sensitivity_not_part_of_canonical_contract"
+  },
+  "products": {
+    "h2o_3um_observation_contract_v3.png": {
+      "sha256": "c331d83a42db9bb15982586c2c22544095080445da59359ef326116595d668de",
+      "size_bytes": 277092
+    },
+    "stellar_center_h2o_continuum_lsf_nodes_R2400_v3.tsv": {
+      "row_count": 30,
+      "sha256": "07f25fef793bf100873ab1f963bc44c55e49b0f171865ef57da62eb4db1d56d2",
+      "size_bytes": 8345
+    },
+    "stellar_center_h2o_continuum_supports_v3.tsv": {
+      "row_count": 6,
+      "sha256": "85ed565e146e08a2e4c101f00506c860c8f23f85e30a67327a33f81560a08b02",
+      "size_bytes": 2530
+    },
+    "stellar_center_h2o_dense_R2400_v3.csv": {
+      "row_count": 2187,
+      "sha256": "abeec0f827f875a38d2511807efe0057529f42851b5e98e41acd4bd805fada24",
+      "size_bytes": 1047920
+    },
+    "stellar_center_h2o_logical_targets_v3.tsv": {
+      "row_count": 11,
+      "sha256": "87e06fad6ba261bdc56bd2100be5606e5754d4ff472f0aa3c4cf37275a5580e7",
+      "size_bytes": 5196
+    },
+    "stellar_center_h2o_target_lsf_nodes_R2400_v3.tsv": {
+      "row_count": 55,
+      "sha256": "bc54da8f9e376921527db29400677e165b6e2f4aed158fd3aaa5162a66b325a7",
+      "size_bytes": 14514
+    }
+  },
+  "representation_contract": {
+    "aggregation_output": "F_nu_Jy",
+    "continuum_fit_representation": "F_nu_Jy_for_both_observation_and_model",
+    "conversion_timing": "validate_roster_then_convert_each_MCFOST_node_before_Gauss_Hermite_aggregation",
+    "conversion_wavelength": "exact_requested_wavelength_never_rounded_FITS_WAVE",
+    "exact_requested_wavelength_source": "hash_bound_lambda_or_task_token_matching_the_frozen_node_roster",
+    "mcfost_fits_wave_validation": "product_WAVE_must_match_exact_request_within_half_unit_at_7_significant_digits",
+    "mcfost_method2_plane0_input": "lambda_F_lambda_W_m-2",
+    "node_implementation": "h2o_observation_measurement_kernel_v3.aggregate_model_lsf_nodes_to_fnu_jy",
+    "observed_dense_and_support_flux": "F_nu_Jy",
+    "required_node_conversion": "F_nu[Jy]=(lambda_F_lambda[W m-2])*lambda_um*1e20/299792458",
+    "shared_neutral_continuum_tau_implementation": "h2o_observation_measurement_kernel_v3.compute_fnu_continuum_and_tau"
+  },
+  "runtime": {
+    "generator_path": "jwst_mcfost/freeze_h2o_3um_observation_v3.py",
+    "generator_sha256": "0067d6ef1aa5484aecf827f46d900c958f4eade1397c70d3b29ac47970c382e3",
+    "matplotlib": "3.10.1",
+    "numpy": "2.2.6",
+    "pandas": "2.3.0",
+    "python": "3.12.2",
+    "scipy": "1.15.2"
+  },
+  "schema_version": 3,
+  "segment_gain_sensitivity": {
+    "application_side": "observation_only_never_model",
+    "canonical_value": 0.0,
+    "common_gain_role": "removed_by_zero_sum_log_gain_gauge_and_cancels_from_tau",
+    "gauge": "g235=exp(-delta/2); g395=exp(+delta/2)",
+    "groups": [
+      "G235H",
+      "G395H"
+    ],
+    "implementation": "h2o_observation_measurement_kernel_v3.recompute_observation_relative_segment_gain_continuum_and_tau",
+    "mandatory_recomputation": "multiply_every_target_and_all_six_supports_by_parent_segment_gain, refit_scale-invariant_Huber_continuum, then recompute_every_tau",
+    "optimization": "forbidden_in_v3_screen_fixed_sensitivity_scenarios_only",
+    "parameter": "delta=ln(g395/g235)",
+    "results": {
+      "application_side": "observation_only_model_is_never_rescaled",
+      "canonical_relative_log_gain_delta": 0.0,
+      "canonical_v3_stitch_normalization_sensitivity_fraction": 0.019743895453561453,
+      "gauge": "g235_exp_minus_delta_over_2_g395_exp_plus_delta_over_2",
+      "optional_independent_segment_calibration_fraction_each": 0.03,
+      "optional_relative_gain_fraction_sqrt2_sigma_linearized": 0.042426406871192854,
+      "per_anchor_calibration_variance_added": false,
+      "scenario_role": "fixed_robustness_screens_not_fit_or_optimized",
+      "scenarios": [
+        {
+          "basis": "v3_recomputed_empirical_stitch_overlap_relative_scatter",
+          "feature_metrics": {
+            "h2o_column_density_cm-2": 3.936161201575537e+18,
+            "integrated_optical_depth_cm-1": 787.2322403151074,
+            "peak_optical_depth": 2.355581907342687,
+            "peak_wavelength_um": 3.0764795490679795
+          },
+          "g235_gain_zero_sum_gauge": 1.01002057824374,
+          "g395_gain_zero_sum_gauge": 0.9900788375409498,
+          "maximum_absolute_tau_change_dense": 0.01261447179199271,
+          "maximum_absolute_tau_change_nine_feature_anchors": 0.01259728179713715,
+          "relative_log_gain_delta_ln_g395_over_g235": -0.019941410288726435,
+          "requested_relative_ratio_shift_g395_over_g235": -0.019743895453561453,
+          "rms_tau_change_nine_feature_anchors": 0.00802630318267936,
+          "scenario": "v3_stitch_overlap_minus"
+        },
+        {
+          "basis": "v3_recomputed_empirical_stitch_overlap_relative_scatter",
+          "feature_metrics": {
+            "h2o_column_density_cm-2": 3.950222704035358e+18,
+            "integrated_optical_depth_cm-1": 790.0445408070716,
+            "peak_optical_depth": 2.343138723290923,
+            "peak_wavelength_um": 3.0764795490679795
+          },
+          "g235_gain_zero_sum_gauge": 0.9902718709422805,
+          "g395_gain_zero_sum_gauge": 1.0098236952327675,
+          "maximum_absolute_tau_change_dense": 0.011888688022749783,
+          "maximum_absolute_tau_change_nine_feature_anchors": 0.011871500352763853,
+          "relative_log_gain_delta_ln_g395_over_g235": 0.019551512880928594,
+          "requested_relative_ratio_shift_g395_over_g235": 0.019743895453561453,
+          "rms_tau_change_nine_feature_anchors": 0.007711764090604824,
+          "scenario": "v3_stitch_overlap_plus"
+        },
+        {
+          "basis": "quarantined_v2_empirical_overlap_statistic_comparison_only",
+          "feature_metrics": {
+            "h2o_column_density_cm-2": 3.936351761144997e+18,
+            "integrated_optical_depth_cm-1": 787.2703522289994,
+            "peak_optical_depth": 2.3554653987135787,
+            "peak_wavelength_um": 3.0764795490679795
+          },
+          "g235_gain_zero_sum_gauge": 1.0098149563759382,
+          "g395_gain_zero_sum_gauge": 0.9902804406748317,
+          "maximum_absolute_tau_change_dense": 0.012349390234496216,
+          "maximum_absolute_tau_change_nine_feature_anchors": 0.01233254558874508,
+          "relative_log_gain_delta_ln_g395_over_g235": -0.019534205117834543,
+          "requested_relative_ratio_shift_g395_over_g235": -0.019344648816861203,
+          "rms_tau_change_nine_feature_anchors": 0.007859699758109517,
+          "scenario": "v2_predecessor_stitch_comparison_minus"
+        },
+        {
+          "basis": "quarantined_v2_empirical_overlap_statistic_comparison_only",
+          "feature_metrics": {
+            "h2o_column_density_cm-2": 3.950097093358975e+18,
+            "integrated_optical_depth_cm-1": 790.0194186717949,
+            "peak_optical_depth": 2.343265600801967,
+            "peak_wavelength_um": 3.0764795490679795
+          },
+          "g235_gain_zero_sum_gauge": 0.990465781808939,
+          "g395_gain_zero_sum_gauge": 1.0096259945231507,
+          "maximum_absolute_tau_change_dense": 0.011649321812934321,
+          "maximum_absolute_tau_change_nine_feature_anchors": 0.011632476787313717,
+          "relative_log_gain_delta_ln_g395_over_g235": 0.019159919643916962,
+          "requested_relative_ratio_shift_g395_over_g235": 0.019344648816861203,
+          "rms_tau_change_nine_feature_anchors": 0.007556850362828887,
+          "scenario": "v2_predecessor_stitch_comparison_plus"
+        },
+        {
+          "basis": "sqrt_2_times_3_percent_if_segment_calibrations_are_independent",
+          "feature_metrics": {
+            "h2o_column_density_cm-2": 3.925404744187033e+18,
+            "integrated_optical_depth_cm-1": 785.0809488374066,
+            "peak_optical_depth": 2.3623392269324124,
+            "peak_wavelength_um": 3.0764795490679795
+          },
+          "g235_gain_zero_sum_gauge": 1.0219129894249865,
+          "g395_gain_zero_sum_gauge": 0.9785568931486851,
+          "maximum_absolute_tau_change_dense": 0.027789572073143365,
+          "maximum_absolute_tau_change_nine_feature_anchors": 0.02775245867651721,
+          "relative_log_gain_delta_ln_g395_over_g235": -0.04335270121633809,
+          "requested_relative_ratio_shift_g395_over_g235": -0.042426406871192854,
+          "rms_tau_change_nine_feature_anchors": 0.017583017318482958,
+          "scenario": "optional_independent_calibration_minus"
+        },
+        {
+          "basis": "sqrt_2_times_3_percent_if_segment_calibrations_are_independent",
+          "feature_metrics": {
+            "h2o_column_density_cm-2": 3.9582852485657953e+18,
+            "integrated_optical_depth_cm-1": 791.657049713159,
+            "peak_optical_depth": 2.336239320337316,
+            "peak_wavelength_um": 3.0764795490679795
+          },
+          "g235_gain_zero_sum_gauge": 0.9794387850853775,
+          "g395_gain_zero_sum_gauge": 1.0209928534868364,
+          "maximum_absolute_tau_change_dense": 0.025610440303089455,
+          "maximum_absolute_tau_change_nine_feature_anchors": 0.02557460766354236,
+          "relative_log_gain_delta_ln_g395_over_g235": 0.041551079269709905,
+          "requested_relative_ratio_shift_g395_over_g235": 0.042426406871192854,
+          "rms_tau_change_nine_feature_anchors": 0.016544660429130446,
+          "scenario": "optional_independent_calibration_plus"
+        }
+      ],
+      "v2_predecessor_fraction_role": "comparison_only_not_a_v3_scientific_dependency",
+      "v2_predecessor_stitch_comparison_fraction": 0.019344648816861203
+    }
+  },
+  "sources": {
+    "continuum_kernel_dependency": {
+      "path": "jwst_mcfost/h2o_sparse_continuum_kernel_v2.py",
+      "sha256": "b14f05cfd4b46262ac4fe65f12807b1b14405191c240f81557293921dd30a521",
+      "size_bytes": 8528
+    },
+    "cube_g235h": {
+      "path": "cubes/jw04537-o001_t001_nirspec_clean_jun26_ns_clean_g235h-f170lp_s3d.fits",
+      "sha256": "88a6e6e07fe1fcd4901cdff1888c68ce54b0e8fd34d87e71e911f0190b4ec498",
+      "size_bytes": 178116480
+    },
+    "cube_g395h": {
+      "path": "cubes/jw04537-o001_t001_nirspec_clean_jun26_ns_clean_g395h-f290lp_s3d.fits",
+      "sha256": "0bc1867a4fc5851bfb31e489de4ca35821cf329537f54246377a1ac70bc4fb81",
+      "size_bytes": 168600960
+    },
+    "gap_processing_dependency": {
+      "path": "jwst_mcfost/build_reproducible_ice_h2o_audit_v1.py",
+      "sha256": "225bd289cd9fbf3af73590acdd9bafcacc3c302a7149353f0b3f2a2d404bc3de",
+      "size_bytes": 50616
+    },
+    "input_cube_manifest": {
+      "path": "DATA/reproducible_ice_extraction/products/input_cube_manifest.csv",
+      "sha256": "5ba2d8f2bedcc34d59a79e2cca9b5de5d98bb506a5550411865b5cd7523e2341",
+      "size_bytes": 5401
+    },
+    "measurement_kernel_dependency": {
+      "path": "jwst_mcfost/h2o_observation_measurement_kernel_v3.py",
+      "sha256": "a90f104f252ba97c6a1f0f78d703807c8b3aea3ca3503d12c0146eb37747ea72",
+      "size_bytes": 17749
+    },
+    "native_g235h": {
+      "path": "DATA/reproducible_ice_extraction/products/stellar_center_G235H_native.csv",
+      "sha256": "bbbdc2714d88984eed7b40a2602b75e1d7749f5d2474a75a38fe6b8c58ecbf95",
+      "size_bytes": 1729584
+    },
+    "native_g395h": {
+      "path": "DATA/reproducible_ice_extraction/products/stellar_center_G395H_native.csv",
+      "sha256": "9594beb1744f91cf3ba125d8132e8cc6a5c7afbcd020316d2d80bbdddab790c2",
+      "size_bytes": 1617566
+    },
+    "observable_coordinates": {
+      "path": "DATA/reproducible_ice_extraction/products/observable_coordinates.csv",
+      "sha256": "dff69a8443cc6109c18be23466f288358d3a1332770f24b59d4f5e990fa014be",
+      "size_bytes": 282
+    },
+    "package_config": {
+      "path": "DATA/reproducible_ice_extraction/config.json",
+      "sha256": "5e97ba720c15f77419ff1d7a59516b81ca4090815eb82ab7927b175dfc782c92",
+      "size_bytes": 3577
+    },
+    "package_generator": {
+      "path": "DATA/reproducible_ice_extraction/extract_tmc1a_ice.py",
+      "sha256": "831cf25cf0e39097539965239eb765550a7809c1cfbe12057566a67640cf9c6e",
+      "size_bytes": 75743
+    },
+    "package_provenance": {
+      "path": "DATA/reproducible_ice_extraction/products/provenance.json",
+      "sha256": "02f02ff84a49b48e2a9ec542f9a315a0b346e3386566b5a21acad3b6e635015c",
+      "size_bytes": 2182
+    }
+  },
+  "spectral_operator": {
+    "classification": "nominal_Gaussian_screening_LSF_with_realized_resolution_validation",
+    "gaussian_kernel_truncation_sigma": 5.0,
+    "homogenization_ledgers": {
+      "G235H": {
+        "contiguous_run_count": 2,
+        "native_resolution_R": 2700.0,
+        "native_row_count": 3814,
+        "native_valid_row_count": 3673,
+        "nominal_native_dlog_lambda": 0.00016589472491490564,
+        "runs": [
+          {
+            "added_gaussian_sigma_fine_pixels": 6.671555563871458,
+            "added_gaussian_sigma_log_discrete": 8.106093677407538e-05,
+            "added_gaussian_sigma_log_intended": 8.106119196234435e-05,
+            "added_sigma_relative_error": -3.1480942086492547e-06,
+            "base_dlog_lambda": 0.00019440429731576447,
+            "end_to_end_synthetic_gaussian_recovery": [
+              {
+                "phase_native_sample": 0.0,
+                "recovered_resolving_power_R": 2396.501035943475,
+                "relative_error_from_R2400": -0.0014579016902187547
+              },
+              {
+                "phase_native_sample": 0.33,
+                "recovered_resolving_power_R": 2390.129004773382,
+                "relative_error_from_R2400": -0.00411291467775754
+              },
+              {
+                "phase_native_sample": 0.5,
+                "recovered_resolving_power_R": 2389.2534419241847,
+                "relative_error_from_R2400": -0.004477732531589673
+              }
+            ],
+            "fine_dlog_lambda": 1.215026858223528e-05,
+            "kernel_sample_count": 69,
+            "kernel_truncation_sigma": 5.0,
+            "native_first_index": 0,
+            "native_last_index": 1903,
+            "native_max_um": 2.413785944809206,
+            "native_min_um": 1.6601979666156694,
+            "native_sample_count": 1904,
+            "native_to_uniform_interpolation": "scipy_CubicSpline_not_a_knot_in_log_lambda",
+            "operator_max_l1_norm": 1.2658204446038255,
+            "operator_row_sum_max_abs_error": 7.771561172376096e-16,
+            "output_max_um": 2.412303045424811,
+            "output_min_um": 1.66116649787549,
+            "output_sample_count": 1920,
+            "oversample_factor": 16,
+            "run_id": "G235H_run00",
+            "uncertainty_conservative": "sum_i abs(W_i) sigma_i",
+            "uncertainty_diagonal": "sqrt(sum_i W_i^2 sigma_i^2)",
+            "uniform_base_sample_count": 1926,
+            "uniform_to_oversampled_interpolation": "scipy_CubicSpline_not_a_knot_in_log_lambda"
+          },
+          {
+            "added_gaussian_sigma_fine_pixels": 9.233737679700095,
+            "added_gaussian_sigma_log_discrete": 8.106089698491805e-05,
+            "added_gaussian_sigma_log_intended": 8.106119196234435e-05,
+            "added_sigma_relative_error": -3.638947555062444e-06,
+            "base_dlog_lambda": 0.0001404608963766485,
+            "end_to_end_synthetic_gaussian_recovery": [
+              {
+                "phase_native_sample": 0.0,
+                "recovered_resolving_power_R": 2400.0059778301516,
+                "relative_error_from_R2400": 2.4907625630898877e-06
+              },
+              {
+                "phase_native_sample": 0.33,
+                "recovered_resolving_power_R": 2399.9931429912094,
+                "relative_error_from_R2400": -2.857086996099767e-06
+              },
+              {
+                "phase_native_sample": 0.5,
+                "recovered_resolving_power_R": 2399.9902943847505,
+                "relative_error_from_R2400": -4.044006353898233e-06
+              }
+            ],
+            "fine_dlog_lambda": 8.77880602354053e-06,
+            "kernel_sample_count": 95,
+            "kernel_truncation_sigma": 5.0,
+            "native_first_index": 2043,
+            "native_last_index": 3811,
+            "native_max_um": 3.1693539229454473,
+            "native_min_um": 2.469225943204947,
+            "native_sample_count": 1769,
+            "native_to_uniform_interpolation": "scipy_CubicSpline_not_a_knot_in_log_lambda",
+            "operator_max_l1_norm": 1.1096667863139535,
+            "operator_row_sum_max_abs_error": 6.661338147750939e-16,
+            "output_max_um": 3.1679425787058695,
+            "output_min_um": 2.4702666515258,
+            "output_sample_count": 1772,
+            "oversample_factor": 16,
+            "run_id": "G235H_run01",
+            "uncertainty_conservative": "sum_i abs(W_i) sigma_i",
+            "uncertainty_diagonal": "sqrt(sum_i W_i^2 sigma_i^2)",
+            "uniform_base_sample_count": 1778,
+            "uniform_to_oversampled_interpolation": "scipy_CubicSpline_not_a_knot_in_log_lambda"
+          }
+        ],
+        "segment": "G235H",
+        "target_resolution_R": 2400.0
+      },
+      "G395H": {
+        "contiguous_run_count": 2,
+        "native_resolution_R": 2700.0,
+        "native_row_count": 3610,
+        "native_valid_row_count": 3466,
+        "nominal_native_dlog_lambda": 0.00016533600804924387,
+        "runs": [
+          {
+            "added_gaussian_sigma_fine_pixels": 6.769308912506476,
+            "added_gaussian_sigma_log_discrete": 8.106082245892873e-05,
+            "added_gaussian_sigma_log_intended": 8.106119196234435e-05,
+            "added_sigma_relative_error": -4.558326946235702e-06,
+            "base_dlog_lambda": 0.00019159696922699254,
+            "end_to_end_synthetic_gaussian_recovery": [
+              {
+                "phase_native_sample": 0.0,
+                "recovered_resolving_power_R": 2396.1094271271304,
+                "relative_error_from_R2400": -0.001621072030362325
+              },
+              {
+                "phase_native_sample": 0.33,
+                "recovered_resolving_power_R": 2391.345139849145,
+                "relative_error_from_R2400": -0.003606191729522812
+              },
+              {
+                "phase_native_sample": 0.5,
+                "recovered_resolving_power_R": 2389.807420014067,
+                "relative_error_from_R2400": -0.00424690832747221
+              }
+            ],
+            "fine_dlog_lambda": 1.1974810576687034e-05,
+            "kernel_sample_count": 69,
+            "kernel_truncation_sigma": 5.0,
+            "native_first_index": 0,
+            "native_last_index": 1806,
+            "native_max_um": 4.071322384785161,
+            "native_min_um": 2.870332385558868,
+            "native_sample_count": 1807,
+            "native_to_uniform_interpolation": "scipy_CubicSpline_not_a_knot_in_log_lambda",
+            "operator_max_l1_norm": 1.2442952230511437,
+            "operator_row_sum_max_abs_error": 6.661338147750939e-16,
+            "output_max_um": 4.068709682292068,
+            "output_min_um": 2.87198270076376,
+            "output_sample_count": 1819,
+            "oversample_factor": 16,
+            "run_id": "G395H_run00",
+            "uncertainty_conservative": "sum_i abs(W_i) sigma_i",
+            "uncertainty_diagonal": "sqrt(sum_i W_i^2 sigma_i^2)",
+            "uniform_base_sample_count": 1825,
+            "uniform_to_oversampled_interpolation": "scipy_CubicSpline_not_a_knot_in_log_lambda"
+          },
+          {
+            "added_gaussian_sigma_fine_pixels": 9.203738651430909,
+            "added_gaussian_sigma_log_discrete": 8.106092056075324e-05,
+            "added_gaussian_sigma_log_intended": 8.106119196234435e-05,
+            "added_sigma_relative_error": -3.3481075782937353e-06,
+            "base_dlog_lambda": 0.00014091872015464801,
+            "end_to_end_synthetic_gaussian_recovery": [
+              {
+                "phase_native_sample": 0.0,
+                "recovered_resolving_power_R": 2399.987751212487,
+                "relative_error_from_R2400": -5.103661463667919e-06
+              },
+              {
+                "phase_native_sample": 0.33,
+                "recovered_resolving_power_R": 2399.9562235598314,
+                "relative_error_from_R2400": -1.8240183403572807e-05
+              },
+              {
+                "phase_native_sample": 0.5,
+                "recovered_resolving_power_R": 2399.9206731005747,
+                "relative_error_from_R2400": -3.305287476051966e-05
+              }
+            ],
+            "fine_dlog_lambda": 8.807420009665501e-06,
+            "kernel_sample_count": 95,
+            "kernel_truncation_sigma": 5.0,
+            "native_first_index": 1951,
+            "native_last_index": 3609,
+            "native_max_um": 5.27031738401274,
+            "native_min_um": 4.167747384723041,
+            "native_sample_count": 1659,
+            "native_to_uniform_interpolation": "scipy_CubicSpline_not_a_knot_in_log_lambda",
+            "operator_max_l1_norm": 1.1088576777087393,
+            "operator_row_sum_max_abs_error": 6.661338147750939e-16,
+            "output_max_um": 5.267640857695157,
+            "output_min_um": 4.16950969809336,
+            "output_sample_count": 1660,
+            "oversample_factor": 16,
+            "run_id": "G395H_run01",
+            "uncertainty_conservative": "sum_i abs(W_i) sigma_i",
+            "uncertainty_diagonal": "sqrt(sum_i W_i^2 sigma_i^2)",
+            "uniform_base_sample_count": 1666,
+            "uniform_to_oversampled_interpolation": "scipy_CubicSpline_not_a_knot_in_log_lambda"
+          }
+        ],
+        "segment": "G395H",
+        "target_resolution_R": 2400.0
+      }
+    },
+    "interpolation": "actual_native_to_uniform_log_grid_CubicSpline_then_16x_log_grid_CubicSpline",
+    "model_lsf": {
+      "full_kernel_safety_sigma": 5.0,
+      "profile": "Gaussian_in_log_lambda_constant_R2400",
+      "quadrature": "five_point_Gauss_Hermite",
+      "safety_boundary": "actual_parent_native_valid_run",
+      "stitch_seam_crossing_allowed": true
+    },
+    "native_gap_rule": "split_before_any_interpolation_and_never_cross_a_native_invalid_run",
+    "nominal_native_resolving_power_R": 2700.0,
+    "oversample_factor": 16,
+    "stitch": {
+      "candidate_overlap_sample_count": 382,
+      "gap_aware_interpolation": true,
+      "left_segment": "G235H",
+      "overlap_um": [
+        2.9,
+        3.12
+      ],
+      "relative_robust_ratio_scatter": 0.019743895453561453,
+      "retained_overlap_sample_count": 360,
+      "right_segment": "G395H",
+      "right_to_left_multiplicative_scale": 0.9813582392248438,
+      "robust_ratio_scatter": 0.019375834477746465,
+      "seam_um": 3.01
+    },
+    "stitch_order": "homogenize_segments_then_scale_G395H_overlap_then_cut_at_3p01um",
+    "target_resolving_power_R": 2400.0
+  },
+  "status": "frozen_observation_contract_ready_for_v3_model_preflight",
+  "supersedes": {
+    "products_preserved_byte_identically": {
+      "h2o_3um_observation_contract_v2.json": {
+        "sha256": "45d0397d551b10bc774f499bc5cb565cfaae2bd7f58f36fa5cf24d8b4c347f93",
+        "size_bytes": 14278
+      },
+      "h2o_3um_observation_contract_v2.png": {
+        "sha256": "3885a11892c9327f84ad822cce3b4ee681f78f99683785db680431d3f74357ee",
+        "size_bytes": 316963
+      },
+      "stellar_center_h2o_continuum_lsf_nodes_R2400_v2.tsv": {
+        "sha256": "22e5f4826cd8acefc6fcd3efda0400972a2b8d6ba501af16246871af8d72eb97",
+        "size_bytes": 5600
+      },
+      "stellar_center_h2o_continuum_supports_v2.tsv": {
+        "sha256": "403dd774774b7ab9ed6c8b9e7a14159ccf1882629a28f17d6352411ff2693b31",
+        "size_bytes": 2373
+      },
+      "stellar_center_h2o_dense_R2400_v2.csv": {
+        "sha256": "994fa6a0cfeff818e151998e082e7abac0d4524fc64808b06beaad0b72aac89d",
+        "size_bytes": 935378
+      },
+      "stellar_center_h2o_logical_targets_v2.tsv": {
+        "sha256": "28cd6182160c1a1cca6eb3e599aabc7e7257b8692f14fd68bbbf2e2f47bb6306",
+        "size_bytes": 5538
+      },
+      "stellar_center_h2o_target_lsf_nodes_R2400_v2.tsv": {
+        "sha256": "cd2e613306ce70d2d229ce1c579846d8212ed35d33c6106e5b32780aa1b84923",
+        "size_bytes": 9590
+      }
+    },
+    "reason": [
+      "observed_Fnu_and_model_lambdaFlambda_continuum_representations_differed",
+      "legacy_Huber_was_not_flux_scale_invariant",
+      "artificial_stitch_seam_veto_displaced_B90_by_1p9635_R2400_FWHM",
+      "native_to_R2400_added_kernel_was_undersampled"
+    ],
+    "status": "failed_preflight_quarantined_never_use_for_model_scoring",
+    "workflow_id": "h2o_3um_observation_v2"
+  },
+  "target_contract": {
+    "B90_selected_wavelength_um": 3.008775542271851,
+    "continuum_wing_count": 2,
+    "feature_anchor_count": 9,
+    "logical_target_count": 11,
+    "maximum_allowed_row_distance_R2400_fwhm": 0.5,
+    "measured_maximum_row_distance_R2400_fwhm": 0.2125019274141097,
+    "native_run_full_kernel_safety_required": true,
+    "selection": "peak_plus_first_outward_90_75_50_25_percent_tau_crossings",
+    "stitch_seam_veto": false
+  },
+  "uncertainty_contract": {
+    "calibration_or_stitch_terms_in_point_variance": false,
+    "canonical_conservative_proxy": "sum_i abs(W_i) sigma_i",
+    "canonical_proxy_property": "upper bound for arbitrary correlations given source marginal sigmas; never averages down",
+    "linear_operator_diagonal_error": "sqrt(sum_i W_i^2 sigma_i^2)",
+    "optional_independent_segment_calibration_fraction_each": 0.03,
+    "optional_relative_gain_fraction_sqrt2_sigma_linearized": 0.042426406871192854,
+    "source_column": "error_spectral_covariance_Jy",
+    "source_semantics": "provider covariance-inflated error from stellar background-subtracted extraction; used as conservative raw-aperture proxy and includes background-estimate variance"
+  },
+  "workflow_id": "h2o_3um_observation_v3"
+}

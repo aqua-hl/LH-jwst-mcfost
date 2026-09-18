@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "analysis_id": "strict_continuum_refinement_v1_analysis",
+  "classification": "strict_continuum_refinement_v1_analysis_frozen_rank_blind",
+  "screen_only": true,
+  "provisional": true,
+  "formal_likelihood": false,
+  "production_final": false,
+  "final_winner_claim_allowed": false,
+  "refinement_outputs_or_ranks_read_before_freeze": false,
+  "source_screen_used_to_define_refinement_grid": true,
+  "source_scores_or_ranks_consumed_by_refinement_analyzer": false,
+  "entry_point": "jwst_mcfost/analyze_strict_continuum_refinement_v1.py",
+  "analyzer_sha256": "d7cd2990e3f6f07a449ef6d00bf37a2bb21b27d57aa655a6f7363e2f44cd471a",
+  "input_manifest": "jwst_mcfost/runs/strict_continuum_refinement_v1/input_manifest.json",
+  "input_manifest_sha256": "580b43d6d3e154ec5e6db508172fb753bb33c2b78ee5218ea3b6c997a4bdde10",
+  "exact_matrix": {
+    "models": 9,
+    "anchors_per_model": 10,
+    "expected_cells": 90,
+    "fresh_rt_tasks": 80,
+    "reused_cells": 10
+  },
+  "canonical_observable": "seed41001_128k_signed_direct_coeval_method2_polarized_total_i_plane0_after_same_gaussian_psf_and_nominal_1arcsec_radius_64x64_fractional_pixel_aperture_scaled_140pc_to_147pc",
+  "uniform_quality_policy": {
+    "significant_component_coeval_relative_difference_max": 1e-05,
+    "component_significant_fraction": 1e-08,
+    "component_active_fraction": 0.01,
+    "active_component_negative_fraction_max_exclusive": 0.001,
+    "positive_edge_fraction_max_exclusive": 0.001,
+    "psf_convolution_flux_loss_fraction_max_exclusive": 0.0001,
+    "component_aperture_fraction_min": -1e-06,
+    "component_aperture_fraction_max": 1.0001,
+    "aperture_clip_symmetric_fraction_max": 0.001,
+    "retain_intrinsic_separated_component_product_integrity_gates": true,
+    "plane0_vs_sum_planes4to7_gate_applied": false,
+    "aggregate_componentwise_flux_gate_applied": false,
+    "signed_flux_used_for_scoring": true,
+    "zero_clipped_flux_used_for_scoring": false,
+    "full_plane_negative_fraction_role": "diagnostic_only"
+  },
+  "ranking_policy": {
+    "metric": "unchanged_six_region_balanced_fixed_normalization_log10_rms",
+    "free_normalization_fitted": false,
+    "boundary_scenarios": {
+      "primary": 1.0,
+      "boundary_half": 0.5,
+      "boundary_drop": 0.0
+    },
+    "boundary_bins": [
+      96,
+      139
+    ],
+    "promotion_margin_dex": 0.010857927588208284,
+    "promotion_set": "union_of_rank1_and_near_ties_in_all_three_scenarios",
+    "independent_seed41002_512k_confirmation_required_before_production_claim": true
+  },
+  "pinned_inputs": {
+    "jwst_mcfost/output/strict_continuum_method2_fit_v1_predictions.ecsv": "f6a7ce537a9ab4adbfdae55dc868dc5fb36017266897aff6bdc94f9bb89d0568",
+    "jwst_mcfost/output/strict_continuum_method2_fit_v1_validation.json": "90aabddb0342783941fb5c34e2d9a32b0bf1deaabd89709c80eb36cc9edf0814",
+    "jwst_mcfost/runs/strict_continuum_screen/amendments/fit_policy_v1/policy.json": "efb248506438f316756a29ead33b1d963968a32702d08f6eff5105cb45784f8e",
+    "jwst_mcfost/runs/strict_continuum_screen/amendments/fit_policy_v1/workflow_manifest.json": "06c4afb4d7ea1c4557aaf3ee9caef400a0f78de5971c925a0d2319eca6bf6946",
+    "jwst_mcfost/output/strict_continuum_screen_validation_polarized_plane0_v3.json": "efa02d1c64ff462a9d35f7f39e389d51ad2ef557ff790c80203b2040841375ff",
+    "jwst_mcfost/output/continuum_fit_mask_v1_major_ice_both_silicates_retained.ecsv": "a8d5c28ddeeec6727e5c68e800ddba920d7b475170066fa6a5493d4a01c3375b"
+  },
+  "outputs_absent_at_freeze": [
+    "jwst_mcfost/output/strict_continuum_refinement_v1_validation.json",
+    "jwst_mcfost/output/strict_continuum_refinement_v1_predictions.ecsv",
+    "jwst_mcfost/output/strict_continuum_refinement_v1_scores.ecsv",
+    "jwst_mcfost/output/strict_continuum_refinement_v1_regions.ecsv",
+    "jwst_mcfost/output/strict_continuum_refinement_v1_summary.json",
+    "jwst_mcfost/output/strict_continuum_refinement_v1.png"
+  ],
+  "outputs_absent_at_freeze_verified": true,
+  "real_run_requires_declared_outputs_absent": true,
+  "real_run_requires_explicit_analysis_manifest_sha256": true
+}

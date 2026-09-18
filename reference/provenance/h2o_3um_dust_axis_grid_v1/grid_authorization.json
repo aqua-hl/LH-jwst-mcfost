@@ -1,0 +1,247 @@
+{
+  "abundance_grid_completion_index_sha256": "c8435f0f56a6b14c9507f68d2d92af137cefdb3fd6373b13db5d47f42e2b3049",
+  "array_dependency_to_bind": "afterok:15172895",
+  "authorization_job_id": "15172895",
+  "census": {
+    "v00_base/broadband_guardrail": 8,
+    "v01_vmax0p4_amax0p4/broadband_guardrail": 8,
+    "v02_vmax0p1_amax0p4/broadband_guardrail": 8,
+    "v03_vmax0p8_amax1p0/broadband_guardrail": 8,
+    "v04_vmax0p4_amax1p0/broadband_guardrail": 8,
+    "v05_vmax0p1_amax1p0/broadband_guardrail": 8,
+    "v06_vmax0p8_amax2p0/broadband_guardrail": 8,
+    "v07_vmax0p4_amax2p0/broadband_guardrail": 8,
+    "v08_vmax0p1_amax2p0/broadband_guardrail": 8,
+    "v09_base_incl60/broadband_guardrail": 8,
+    "v10_base_incl50/broadband_guardrail": 8,
+    "v11_vmax0p1_amax1p0_incl60/broadband_guardrail": 8,
+    "v12_vmax0p1_amax1p0_incl50/broadband_guardrail": 8
+  },
+  "classification": "dust_axis_grid_authorized_after_full_live_revalidation",
+  "guard_field_recovery_seal_sha256": "6744c9b58b3bb9a11d02720b90aedc87685aa88186220ae1f1a68525051f1d86",
+  "h2o_mass_fraction": "0.04",
+  "historical_dependency": "none_manifest_and_parameters_revalidated_here",
+  "manifest_sha256": "6ddb1c8aefb2a9c20112c912f40f003c58a2b53898949e470d1d99861024925c",
+  "mcfost_binary_sha256": "d96bbc7cb71c09fce93edcef5908e6af1eb0e90e40193a3afdd259c2a7786401",
+  "parameters": {
+    "dust_axis_v00_base": {
+      "dhs_vmax": "0.8",
+      "envelope_amax_um": "0.4",
+      "inclination_deg": "70.0",
+      "path": "jwst_mcfost/runs/h2o_3um_dust_axis_grid_v1/parameters/dust_v00_base_rt.para",
+      "sha256": "9c4c70e8b4348d36edd1af8b24b37c3ed573b5897459b34c593e173e09e95f0b"
+    },
+    "dust_axis_v01_vmax0p4_amax0p4": {
+      "dhs_vmax": "0.4",
+      "envelope_amax_um": "0.4",
+      "inclination_deg": "70.0",
+      "path": "jwst_mcfost/runs/h2o_3um_dust_axis_grid_v1/parameters/dust_v01_vmax0p4_amax0p4_rt.para",
+      "sha256": "7828f6de4e66de125d2b0250cb1a6399095098e33a10bc7ca2ddbef463d7f37f"
+    },
+    "dust_axis_v02_vmax0p1_amax0p4": {
+      "dhs_vmax": "0.1",
+      "envelope_amax_um": "0.4",
+      "inclination_deg": "70.0",
+      "path": "jwst_mcfost/runs/h2o_3um_dust_axis_grid_v1/parameters/dust_v02_vmax0p1_amax0p4_rt.para",
+      "sha256": "28e8ce08b312e24af72cf45cb679b895e70d6ea7d2dd1e03b1cab2169f03b9ca"
+    },
+    "dust_axis_v03_vmax0p8_amax1p0": {
+      "dhs_vmax": "0.8",
+      "envelope_amax_um": "1.0",
+      "inclination_deg": "70.0",
+      "path": "jwst_mcfost/runs/h2o_3um_dust_axis_grid_v1/parameters/dust_v03_vmax0p8_amax1p0_rt.para",
+      "sha256": "1de9dcd8abc5aee913c4c0ededad5d79f7494de88c195562fcfcadb931a49a40"
+    },
+    "dust_axis_v04_vmax0p4_amax1p0": {
+      "dhs_vmax": "0.4",
+      "envelope_amax_um": "1.0",
+      "inclination_deg": "70.0",
+      "path": "jwst_mcfost/runs/h2o_3um_dust_axis_grid_v1/parameters/dust_v04_vmax0p4_amax1p0_rt.para",
+      "sha256": "59c4abb99f4170fd55e0ccfcd2d2c3b064f804b133122a05f356ff59229d94b0"
+    },
+    "dust_axis_v05_vmax0p1_amax1p0": {
+      "dhs_vmax": "0.1",
+      "envelope_amax_um": "1.0",
+      "inclination_deg": "70.0",
+      "path": "jwst_mcfost/runs/h2o_3um_dust_axis_grid_v1/parameters/dust_v05_vmax0p1_amax1p0_rt.para",
+      "sha256": "4facba63ee7310b2767ec82ec0abc63dc5bd709637f01f754c49375372002eed"
+    },
+    "dust_axis_v06_vmax0p8_amax2p0": {
+      "dhs_vmax": "0.8",
+      "envelope_amax_um": "2.0",
+      "inclination_deg": "70.0",
+      "path": "jwst_mcfost/runs/h2o_3um_dust_axis_grid_v1/parameters/dust_v06_vmax0p8_amax2p0_rt.para",
+      "sha256": "106a4f3d16faf38096e4e115cb5ce87f820336ddb0a340734dae31caab167a76"
+    },
+    "dust_axis_v07_vmax0p4_amax2p0": {
+      "dhs_vmax": "0.4",
+      "envelope_amax_um": "2.0",
+      "inclination_deg": "70.0",
+      "path": "jwst_mcfost/runs/h2o_3um_dust_axis_grid_v1/parameters/dust_v07_vmax0p4_amax2p0_rt.para",
+      "sha256": "a486a7454bd0499390a0b01511eb64bbf650c8a43c66140e34a489b583f91438"
+    },
+    "dust_axis_v08_vmax0p1_amax2p0": {
+      "dhs_vmax": "0.1",
+      "envelope_amax_um": "2.0",
+      "inclination_deg": "70.0",
+      "path": "jwst_mcfost/runs/h2o_3um_dust_axis_grid_v1/parameters/dust_v08_vmax0p1_amax2p0_rt.para",
+      "sha256": "35c5b3c7d164e483e57e031874897680ab022b4ad46f22e680fb2a4053d6ad58"
+    },
+    "dust_axis_v09_base_incl60": {
+      "dhs_vmax": "0.8",
+      "envelope_amax_um": "0.4",
+      "inclination_deg": "60.0",
+      "path": "jwst_mcfost/runs/h2o_3um_dust_axis_grid_v1/parameters/dust_v09_base_incl60_rt.para",
+      "sha256": "b1d004037d1138f386c4759fd005a7cb2170782bab006c6ed3d031952960504d"
+    },
+    "dust_axis_v10_base_incl50": {
+      "dhs_vmax": "0.8",
+      "envelope_amax_um": "0.4",
+      "inclination_deg": "50.0",
+      "path": "jwst_mcfost/runs/h2o_3um_dust_axis_grid_v1/parameters/dust_v10_base_incl50_rt.para",
+      "sha256": "cfd9f8741b081f1f1ced7dd326d9e9eb66f9c518f1cb65b022b1c50082a40279"
+    },
+    "dust_axis_v11_vmax0p1_amax1p0_incl60": {
+      "dhs_vmax": "0.1",
+      "envelope_amax_um": "1.0",
+      "inclination_deg": "60.0",
+      "path": "jwst_mcfost/runs/h2o_3um_dust_axis_grid_v1/parameters/dust_v11_vmax0p1_amax1p0_incl60_rt.para",
+      "sha256": "e5bef92ac0e146c6f1213afd71aabc4ac6b1b45ef4bb093b1f59e7a887fc7c92"
+    },
+    "dust_axis_v12_vmax0p1_amax1p0_incl50": {
+      "dhs_vmax": "0.1",
+      "envelope_amax_um": "1.0",
+      "inclination_deg": "50.0",
+      "path": "jwst_mcfost/runs/h2o_3um_dust_axis_grid_v1/parameters/dust_v12_vmax0p1_amax1p0_incl50_rt.para",
+      "sha256": "d0bc7329dc28ee3c40d8d693c1ada943de80410a6223bce5219d55d1e03f8f5b"
+    }
+  },
+  "postpilot_composite_seal_sha256": "a437cd4a0a3de8c2ea1ee1062827ffb2a9335dd9582ac69e90ed08a21d28fe56",
+  "schema_version": 1,
+  "source_parameter_sha256": "53e7d2af20d3803c95144bc0809885d44da2324ffb8e6800d228c85b67412cdc",
+  "task_count": 104,
+  "task_table_sha256": "00d57a97fca368bf5d265cd32114f61fa1ec2aaa2bfdc55606b04799fc43c3ee",
+  "temperature_sha256": "1bd212f2f54dd8c1701a6064e129ba7fdb5721cb3fe296472433bbdd3b79ec1c",
+  "v3_manifest_sha256": "6faf36dd78b9cab8776d1634f6e2859782c2e4c2a8ba9b5e78aabfbc19999c79",
+  "valid": true,
+  "variants": [
+    {
+      "dhs_vmax": "0.8",
+      "envelope_amax_um": "0.4",
+      "inclination_deg": "70.0",
+      "phases": [
+        "broadband_guardrail"
+      ],
+      "token": "v00_base"
+    },
+    {
+      "dhs_vmax": "0.4",
+      "envelope_amax_um": "0.4",
+      "inclination_deg": "70.0",
+      "phases": [
+        "broadband_guardrail"
+      ],
+      "token": "v01_vmax0p4_amax0p4"
+    },
+    {
+      "dhs_vmax": "0.1",
+      "envelope_amax_um": "0.4",
+      "inclination_deg": "70.0",
+      "phases": [
+        "broadband_guardrail"
+      ],
+      "token": "v02_vmax0p1_amax0p4"
+    },
+    {
+      "dhs_vmax": "0.8",
+      "envelope_amax_um": "1.0",
+      "inclination_deg": "70.0",
+      "phases": [
+        "broadband_guardrail"
+      ],
+      "token": "v03_vmax0p8_amax1p0"
+    },
+    {
+      "dhs_vmax": "0.4",
+      "envelope_amax_um": "1.0",
+      "inclination_deg": "70.0",
+      "phases": [
+        "broadband_guardrail"
+      ],
+      "token": "v04_vmax0p4_amax1p0"
+    },
+    {
+      "dhs_vmax": "0.1",
+      "envelope_amax_um": "1.0",
+      "inclination_deg": "70.0",
+      "phases": [
+        "broadband_guardrail"
+      ],
+      "token": "v05_vmax0p1_amax1p0"
+    },
+    {
+      "dhs_vmax": "0.8",
+      "envelope_amax_um": "2.0",
+      "inclination_deg": "70.0",
+      "phases": [
+        "broadband_guardrail"
+      ],
+      "token": "v06_vmax0p8_amax2p0"
+    },
+    {
+      "dhs_vmax": "0.4",
+      "envelope_amax_um": "2.0",
+      "inclination_deg": "70.0",
+      "phases": [
+        "broadband_guardrail"
+      ],
+      "token": "v07_vmax0p4_amax2p0"
+    },
+    {
+      "dhs_vmax": "0.1",
+      "envelope_amax_um": "2.0",
+      "inclination_deg": "70.0",
+      "phases": [
+        "broadband_guardrail"
+      ],
+      "token": "v08_vmax0p1_amax2p0"
+    },
+    {
+      "dhs_vmax": "0.8",
+      "envelope_amax_um": "0.4",
+      "inclination_deg": "60.0",
+      "phases": [
+        "broadband_guardrail"
+      ],
+      "token": "v09_base_incl60"
+    },
+    {
+      "dhs_vmax": "0.8",
+      "envelope_amax_um": "0.4",
+      "inclination_deg": "50.0",
+      "phases": [
+        "broadband_guardrail"
+      ],
+      "token": "v10_base_incl50"
+    },
+    {
+      "dhs_vmax": "0.1",
+      "envelope_amax_um": "1.0",
+      "inclination_deg": "60.0",
+      "phases": [
+        "broadband_guardrail"
+      ],
+      "token": "v11_vmax0p1_amax1p0_incl60"
+    },
+    {
+      "dhs_vmax": "0.1",
+      "envelope_amax_um": "1.0",
+      "inclination_deg": "50.0",
+      "phases": [
+        "broadband_guardrail"
+      ],
+      "token": "v12_vmax0p1_amax1p0_incl50"
+    }
+  ],
+  "workflow_id": "h2o_3um_dust_axis_grid_v1"
+}

@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "run_name": "laptop_smoke_v4",
+  "output_dir": "../runs",
+  "smoke_test": true,
+  "notes": "Two coarse models, two wavelengths. Workflow demonstration only, not a converged fit.",
+  "fixed": {
+    "envelope_dust_mass_msun": 0.000225,
+    "envelope_amax_um": 0.4,
+    "envelope_size_exponent": 2.75,
+    "cavity_half_opening_deg": 17.5,
+    "envelope_ice_volume_fraction": 0.05,
+    "distance_pc": 140.0,
+    "stellar_temperature_k": 4000.0,
+    "stellar_radius_rsun": 2.5,
+    "stellar_mass_msun": 0.5,
+    "accretion_rate_msun_per_year": 7.3011756855e-8
+  },
+  "grid": {"inclination_deg": [60.0, 70.0]},
+  "numerics": {
+    "photons_temperature": 2000,
+    "photons_image": 2000,
+    "photons_sed": 2000,
+    "grid_nr": 40,
+    "grid_ntheta": 24,
+    "grid_n_inner": 8,
+    "grains": 8,
+    "image_npix": 151,
+    "image_size_au": 6000.0
+  },
+  "observations": {
+    "preset": "strict9",
+    "anchor_ids": ["w004", "w008"],
+    "aperture_radius_arcsec": 1.0,
+    "target_distance_pc": 147.0,
+    "aperture_subpixels": 64
+  }
+}

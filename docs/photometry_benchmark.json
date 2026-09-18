@@ -1,0 +1,107 @@
+{
+  "benchmark_kind": "synthetic_single_plane_numerical_phases_only",
+  "date": "2026-09-18",
+  "environment": {
+    "platform": "macOS-26.3-arm64-arm-64bit",
+    "python": "3.12.2",
+    "numpy": "2.2.6",
+    "scipy": "1.15.2",
+    "thread_limits": 1
+  },
+  "geometry": {
+    "shape": [
+      2401,
+      2401
+    ],
+    "field_au": 6000,
+    "target_distance_pc": 147,
+    "target_pixel_arcsec": 0.016999719504628173,
+    "aperture_radius_arcsec": 1,
+    "aperture_radius_pixels": 58.8245,
+    "aperture_subpixels": 64
+  },
+  "memory": {
+    "float64_plane_bytes": 46118408,
+    "float32_eight_plane_input_bytes": 184473632,
+    "cached_weights_per_geometry_bytes": 46156824,
+    "max_cache_entries": 4,
+    "max_cached_weights_bytes": 184627296,
+    "process_peak_rss_before_methods_bytes": 265207808,
+    "process_peak_rss_after_methods_bytes": 398278656,
+    "peak_rss_scope": "macOS process cumulative high-water mark, not isolated method allocation"
+  },
+  "records": [
+    {
+      "instrument": "NIRSpec",
+      "wavelength_um": 2.19,
+      "psf_sigma_pixels": 1.8053382142838013,
+      "frozen_boundary_seconds": 0.08777941693551838,
+      "frozen_single_plane_convolution_seconds": 0.03910437482409179,
+      "frozen_aperture_and_total_reduction_seconds": 0.005663583055138588,
+      "frozen_single_plane_subtotal_seconds": 0.13254737481474876,
+      "fast_boundary64_seconds": 0.029539542039856315,
+      "fast_cold_adjoint_weights_seconds": 0.07358979200944304,
+      "fast_warm_aperture_and_total_seconds": [
+        0.008393042022362351,
+        0.008340375032275915,
+        0.008330959128215909
+      ],
+      "fast_warm_median_seconds": 0.008340375032275915,
+      "fast_cold_subtotal_seconds": 0.08193016704171896,
+      "warm_speedup_vs_frozen_single_plane_subtotal": 15.892255959931257,
+      "cold_speedup_vs_frozen_single_plane_subtotal": 1.6178091611512941,
+      "aperture_relative_difference": -3.804330183015899e-16,
+      "convolved_total_relative_difference": 1.1619036251035762e-16,
+      "boundary_weights_exactly_equal": true
+    },
+    {
+      "instrument": "MIRI",
+      "wavelength_um": 13.8,
+      "psf_sigma_pixels": 14.024033118844972,
+      "frozen_boundary_seconds": 0.08777941693551838,
+      "frozen_single_plane_convolution_seconds": 0.2637399579398334,
+      "frozen_aperture_and_total_reduction_seconds": 0.005784542066976428,
+      "frozen_single_plane_subtotal_seconds": 0.3573039169423282,
+      "fast_boundary64_seconds": 0.029539542039856315,
+      "fast_cold_adjoint_weights_seconds": 0.29318858380429447,
+      "fast_warm_aperture_and_total_seconds": [
+        0.008852707920596004,
+        0.008372792042791843,
+        0.008320583961904049
+      ],
+      "fast_warm_median_seconds": 0.008372792042791843,
+      "fast_cold_subtotal_seconds": 0.3015613758470863,
+      "warm_speedup_vs_frozen_single_plane_subtotal": 42.67440480024008,
+      "cold_speedup_vs_frozen_single_plane_subtotal": 1.1848464211925716,
+      "aperture_relative_difference": 1.3234174707742403e-16,
+      "convolved_total_relative_difference": 8.133325375733709e-16,
+      "boundary_weights_exactly_equal": true
+    }
+  ],
+  "limitations": [
+    "No MCFOST execution or real RT products used",
+    "No FITS decompression, I/O, hashing, all-component checks, or quality-check scans timed",
+    "No claim of full historic kernel equivalence; same one-plane aperture/PSF numerical operation compared",
+    "Cold path still performs one full-frame Gaussian convolution of aperture weights; warm benefit requires matching geometry and PSF within one process",
+    "Four-entry LRU may evict weights in longer wavelength cycles; new process starts cold",
+    "New reader still loads and finite-checks all eight input planes once; only subsequent calculations use plane zero",
+    "Repeated separated-component convolutions and repeated file hashing in historical workflow are not included in timing baseline",
+    "64 subpixels chosen for exact convention parity; runtime default is 16, not a convergence-equivalent claim"
+  ],
+  "lightweight_validation_review": {
+    "retained": [
+      "Signed total-I aperture and total-flux positivity; all input planes finite and expected total-I/component header labels",
+      "Angular WCS, square pixel, centred CRPIX, wavelength, units, and aperture plus six-sigma PSF support",
+      "Plane-0 positive border-flux fraction below 1e-3 and signed full-field convolution loss below 1e-4",
+      "Optional plane-0 coeval SED closure at absolute relative difference <=1e-5, without renormalization",
+      "Negative-flux fraction and adjoint zero-clipping sensitivity recorded as diagnostics, not scoring substitutions"
+    ],
+    "intentionally_omitted": [
+      "Full separated-component significance, closure, active-morphology, aperture-fraction, and intrinsic integrity gates",
+      "Historical per-pixel Python math.fsum accumulation; new float64 NumPy summation is tested on synthetic rather than all archived realizations",
+      "Repeated full input-file hashing and frozen task-identity validation inside measurement; runner handles execution provenance",
+      "Explicit multi-seed, pixel-scale, temperature, and convergence validation"
+    ],
+    "distinction": "Passing these lightweight checks is not the same claim as passing the full historical measurement contract."
+  }
+}

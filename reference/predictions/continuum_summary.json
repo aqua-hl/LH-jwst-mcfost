@@ -1,0 +1,40 @@
+{
+  "canonical_partition": {
+    "highn_replacements": 0,
+    "source_128k_v2": 405
+  },
+  "classification": "strict_continuum_cavity_mass_q_source128k_uniform_v2_v1_screen_complete",
+  "formal_likelihood": false,
+  "highn_sensitivity_sha256": "b1e3d7910a6d64fea2874dcb35dbbd919aaf2538620ebf66be6bd29bb4d31497",
+  "plot_observation_layers": {
+    "black_scored_anchors": 9,
+    "grey_unscored_jwst_bins": 312
+  },
+  "primary_nominal_rank1": {
+    "envelope_size_exponent": 2.75,
+    "mass_factor": 2.25,
+    "model_index": 1,
+    "model_label": "m2p25_c17p5_a0p40_q2p75_i0p05",
+    "requested_half_opening_deg": 17.5,
+    "score_dex": 0.10931253534441464
+  },
+  "primary_rank1_to_rank2_gap_dex": 0.0004482660089197149,
+  "promotion_model_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    22,
+    23,
+    25,
+    26,
+    27,
+    28
+  ],
+  "schema_version": 1,
+  "screen_only": true,
+  "valid": true,
+  "validation_sha256": "90c4abb64d0aa5fb489fa0474e5212c8f81591e1a175d85f7cc14f7531d07a1f"
+}

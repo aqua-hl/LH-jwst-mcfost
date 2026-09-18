@@ -1,0 +1,172 @@
+{
+  "classification": "h2o_dust_axis_screening_grid_reused_temperature_not_self_consistent",
+  "mcfost_runtime": {
+    "MCFOST_UTILS": "/home/uhlo01/mcfost/utils",
+    "MY_MCFOST_UTILS": "jwst_mcfost/runs/h2o_3um_method2_screen_v3/my_mcfost_utils_overlay",
+    "binary": {
+      "path": "/home/uhlo01/mcfost-custom/v4.1.13-rt_sed2-92bf1b1e086e/bin/mcfost",
+      "sha256": "d96bbc7cb71c09fce93edcef5908e6af1eb0e90e40193a3afdd259c2a7786401"
+    }
+  },
+  "measurement_dependencies": {
+    "closure_validator": {
+      "path": "jwst_mcfost/validate_rt_sed_spatial_sampler.py",
+      "sha256": "87035e977ab7bcbcd8aee25e175a9b855dc59d72671f958188400b002d8b81ff"
+    },
+    "strict_v2": {
+      "path": "jwst_mcfost/strict_continuum_measurement_kernel_v2.py",
+      "sha256": "89ccb15d8712785eb8cb8c598a277ab71deec698e153c04c44d9572e829ed1af"
+    }
+  },
+  "parameters": {
+    "dust_axis_v02_vmax0p1_amax0p4": {
+      "derived_from_source_by": "zone2_mass_fraction_vmax_amax_and_rt_inclination_substitution_only",
+      "dhs_vmax": "0.1",
+      "envelope_amax_um": "0.4",
+      "h2o_mass_fraction": "0.04",
+      "inclination_deg": "70.0",
+      "path": "jwst_mcfost/runs/h2o_3um_dust_axis_band_v1/parameters/dust_v02_vmax0p1_amax0p4_rt.para",
+      "sha256": "28e8ce08b312e24af72cf45cb679b895e70d6ea7d2dd1e03b1cab2169f03b9ca"
+    }
+  },
+  "schema_version": 1,
+  "scientific_scope": {
+    "apertures_never_pooled": true,
+    "dust_posterior": false,
+    "formal_likelihood": false,
+    "holds_fixed": [
+      "accepted_continuum_geometry",
+      "reused_accepted_continuum_temperature",
+      "disjoint_population_representation",
+      "h2o_mass_fraction_0p04_abundance_grid_optimum",
+      "seed_52001",
+      "128000_packets",
+      "zone1_disk_grains"
+    ],
+    "local_dust_prop_priors": {
+      "excess_opacity_red_over_core_by_amax_um": {
+        "0.4": 0.0845,
+        "1.0": 0.2139,
+        "3.0": 0.5827,
+        "observed": 0.2536
+      },
+      "kappa_ext_relative_to_accepted_at_1p2028um_by_vmax": {
+        "0.05": 0.94,
+        "0.2": 0.893,
+        "0.5": 0.819,
+        "0.8": 0.736,
+        "Mie": 0.962
+      },
+      "note": "opacity-only proxy; it predicts direction, not flux"
+    },
+    "motivating_metrics": {
+      "abundance_grid_rms_floor_at_x_0p04": 0.19158597371400365,
+      "accepted_original_dust_minus_observed_dex": {
+        "1.2028": -0.0848148904558065,
+        "1.4988": 0.021518114810610257,
+        "1.7589": 0.031167853190743722
+      },
+      "modelled_red_anchor_tau_x_0p04": 0.16899,
+      "near_ir_model_minus_observed_dex": {
+        "1.2028": 0.5219903139114425,
+        "1.4988": 0.5448685068058907,
+        "1.7589": 0.4145225682239659
+      },
+      "observed_red_anchor_tau_3p2962um": 0.5949
+    },
+    "published_tmc1a_priors": {
+      "envelope_grain_size_um_lower_bound_from_polarization": 10,
+      "extinction_A_V_mag": [
+        17,
+        20
+      ],
+      "inclination_deg": [
+        50,
+        65
+      ],
+      "model_inclination_deg_before_this_grid": 70
+    },
+    "scored_observables": [
+      "1.0_arcsec_broadband_near_infrared_continuum_w001_to_w008",
+      "0.35_arcsec_3um_h2o_optical_depth_85_nodes"
+    ],
+    "temperature_reuse_is_coarser_here_because_amax_changes_all_wavelengths": true,
+    "temperature_self_consistent_for_changed_dust": false,
+    "varies": [
+      "zone2_dhs_vmax",
+      "zone2_envelope_amax_um",
+      "rt_inclination_deg"
+    ]
+  },
+  "slurm": {
+    "array_dependency": "afterok:<authorization_job_id>",
+    "finalizer_dependency": "afterany:<array_job_id>",
+    "memory_per_task": "48G",
+    "openmp_threads": 16,
+    "partial_publication_forbidden": true,
+    "partition": "Cascade-GPU",
+    "processes_per_task": 1,
+    "reservation": "Houches2026",
+    "reserved_nodes": [
+      "s92node196",
+      "s92node197",
+      "s92node198",
+      "s92node199"
+    ],
+    "walltime": "04:00:00"
+  },
+  "source": {
+    "abundance_grid_completion_index_sha256": "c8435f0f56a6b14c9507f68d2d92af137cefdb3fd6373b13db5d47f42e2b3049",
+    "guard_field_recovery_seal_sha256": "6744c9b58b3bb9a11d02720b90aedc87685aa88186220ae1f1a68525051f1d86",
+    "postpilot_composite_seal_sha256": "a437cd4a0a3de8c2ea1ee1062827ffb2a9335dd9582ac69e90ed08a21d28fe56",
+    "source_parameter": {
+      "dhs_vmax": "0.8",
+      "envelope_amax_um": "0.4",
+      "h2o_mass_fraction": "0.05",
+      "inclination_deg": "70.0",
+      "path": "jwst_mcfost/runs/h2o_3um_method2_screen_v3/parameters/h2o_selected_rt.para",
+      "sha256": "53e7d2af20d3803c95144bc0809885d44da2324ffb8e6800d228c85b67412cdc",
+      "silicate_mass_fraction": "0.95"
+    },
+    "v3_band_phase": "full_h2o",
+    "v3_band_task_table_sha256": "fadcef787ccbaf05920ed2a4bc0800e24886fbb966e2343f8d45b6e74582cf98",
+    "v3_manifest_sha256": "6faf36dd78b9cab8776d1634f6e2859782c2e4c2a8ba9b5e78aabfbc19999c79",
+    "v3_nearir_phase": "broadband_guardrail",
+    "v3_nearir_source_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "v3_nearir_task_table_sha256": "b9755f852f622536d62803514e3892b92f71a6d71b4c939790fea92e1fab034a"
+  },
+  "task_table": {
+    "band_nodes_per_variant": 85,
+    "nearir_anchors_per_variant": 8,
+    "path": "jwst_mcfost/runs/h2o_3um_dust_axis_band_v1/dust_axis_band_tasks.tsv",
+    "sha256": "04c0e06c98141528f46a9d4d89b57035b0fd6ab8d183758ed5e7dbf2658c7384",
+    "task_count": 85
+  },
+  "temperature": {
+    "path": "jwst_mcfost/runs/strict_continuum_cavity_mass_q_v1/models/m2p25_c17p5_a0p40_q2p75_i0p05/temperature/seed=41001/data_th/Temperature.fits.gz",
+    "role": "reused_accepted_continuum_temperature",
+    "sha256": "1bd212f2f54dd8c1701a6064e129ba7fdb5721cb3fe296472433bbdd3b79ec1c"
+  },
+  "variants": [
+    {
+      "dhs_vmax": "0.1",
+      "envelope_amax_um": "0.4",
+      "inclination_deg": "70.0",
+      "phases": [
+        "full_h2o"
+      ],
+      "rationale": "near-infrared grid winner; the only dust that flattens the continuum residual, now scored on the 3-micron band",
+      "token": "v02_vmax0p1_amax0p4"
+    }
+  ],
+  "workflow_id": "h2o_3um_dust_axis_band_v1"
+}

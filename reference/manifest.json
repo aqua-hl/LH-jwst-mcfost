@@ -1,0 +1,667 @@
+{
+  "created_for": "2026-09-18_restart_design",
+  "role": "historical_references_not_runnable_new_fit",
+  "runtime_included": false,
+  "full_MCFOST_utils_included": false,
+  "source_modules_are_reference_copies_not_self_contained_package": false,
+  "files": [
+    {
+      "path": "observations/tmc1a_sed_unstitched.ecsv",
+      "source": "jwst_mcfost/output/tmc1a_sed_unstitched.ecsv",
+      "sha256": "2a253bfdb23bc5fa30dd7064fa61229c1dc5cc62b5b8d1fcb1216a7dcc3d0569",
+      "bytes": 4042143
+    },
+    {
+      "path": "observations/continuum_sed_R100.ecsv",
+      "source": "jwst_mcfost/output/continuum_sed_R100.ecsv",
+      "sha256": "d2d51c6b0c0c229145b147d8793b03fa721e6a4cca191d790fb2082625d3e0d6",
+      "bytes": 100036
+    },
+    {
+      "path": "observations/continuum_fit_mask_v1_manifest.json",
+      "source": "jwst_mcfost/output/continuum_fit_mask_v1_manifest.json",
+      "sha256": "f93ee4cfeec9a80b612c3c3ef1777ca990cb1eadf2ac37a7db4e6b71d85ce414",
+      "bytes": 6258
+    },
+    {
+      "path": "predictions/continuum_predictions.ecsv",
+      "source": "jwst_mcfost/output/strict_continuum_cavity_mass_q_source128k_uniform_v2_v1_predictions.ecsv",
+      "sha256": "a3b7201d627c336183deca111f81aefb2bac04860839d00cf748f5a03a73cf05",
+      "bytes": 295624
+    },
+    {
+      "path": "predictions/continuum_scores.ecsv",
+      "source": "jwst_mcfost/output/strict_continuum_cavity_mass_q_source128k_uniform_v2_v1_scores.ecsv",
+      "sha256": "6465c213e9dedfad544206b7bee378628bcd0535128220ea400df5adcf503631",
+      "bytes": 42502
+    },
+    {
+      "path": "predictions/continuum_summary.json",
+      "source": "jwst_mcfost/output/strict_continuum_cavity_mass_q_source128k_uniform_v2_v1_summary.json",
+      "sha256": "6e48b43ba851af22e22bd06d95a65defa1308329f1301d1cd380a1c31ad987f1",
+      "bytes": 999
+    },
+    {
+      "path": "predictions/h2o_abundance_curve.json",
+      "source": "jwst_mcfost/output/h2o_abundance_grid_v1_curve.json",
+      "sha256": "af0ec7011af71e04ed54d585ecd10f877fd472d799cab4844bb09015a4bf644c",
+      "bytes": 3640
+    },
+    {
+      "path": "predictions/h2o_dust_axis_scores.json",
+      "source": "jwst_mcfost/output/h2o_dust_axis_grid_v1_scores.json",
+      "sha256": "7fea40f34e741e7ec3ba8455c0b039f2071f9cd3433add51d6f56170f4b85cea",
+      "bytes": 42261
+    },
+    {
+      "path": "predictions/h2o_best_dust_tau.json",
+      "source": "jwst_mcfost/output/h2o_dust_axis_band_v1_tau.json",
+      "sha256": "032bd7d4c0328c3caf71eed7b03c73106f256dac1cd9fd65b06fbc10445579b1",
+      "bytes": 2232
+    },
+    {
+      "path": "predictions/silicate_demo_anchors.ecsv",
+      "source": "jwst_mcfost/output/h2o_silicate_demo_anchors_v1.ecsv",
+      "sha256": "bf81868bac4190b0f800dfe1dafa53f0775274cf036da45fae9683bd7bfd8055",
+      "bytes": 3083
+    },
+    {
+      "path": "predictions/h2o_band_1arcsec_best.ecsv",
+      "source": "jwst_mcfost/output/h2o_band_1arcsec_dust_axis_v02_vmax0p1_amax0p4_v1.ecsv",
+      "sha256": "2c3a439f4e7160610772a012b28f7b4486565bb22f19065451a72eee83f3d71f",
+      "bytes": 21869
+    },
+    {
+      "path": "parameters/continuum_original_dust.para",
+      "source": "jwst_mcfost/runs/h2o_3um_method2_screen_v3/parameters/original_dust_guardrail_rt.para",
+      "sha256": "032695c231782ff7cb11dd114b6f265703427e345297e0fb424f731ae461e26f",
+      "bytes": 6034
+    },
+    {
+      "path": "parameters/ice_v02_dust.para",
+      "source": "jwst_mcfost/runs/h2o_silicate_demo_image_anchors_v1/inputs/dust_v02_vmax0p1_amax0p4_rt.para",
+      "sha256": "28e8ce08b312e24af72cf45cb679b895e70d6ea7d2dd1e03b1cab2169f03b9ca",
+      "bytes": 6192
+    },
+    {
+      "path": "parameters/continuum_cavity20.para",
+      "source": "jwst_mcfost/runs/strict_continuum_cavity_mass_q_v1/models/m2p25_c20p0_a0p40_q2p75_i0p05/disk_envelope_m2p25_c20p0_a0p40_q2p75_i0p05_rt.para",
+      "sha256": "cee9777a7faf269300008ff9d29e985962fdf5d36fcdff61124cfa92a71d3da5",
+      "bytes": 6040
+    },
+    {
+      "path": "parameters/original_continuum_Temperature.fits.gz",
+      "source": "jwst_mcfost/runs/h2o_silicate_demo_image_anchors_v1/inputs/Temperature.fits.gz",
+      "sha256": "1bd212f2f54dd8c1701a6064e129ba7fdb5721cb3fe296472433bbdd3b79ec1c",
+      "bytes": 24535
+    },
+    {
+      "path": "source/mcfost_v4.1.13_rt_sed_spatial_method.patch",
+      "source": "jwst_mcfost/mcfost_v4.1.13_rt_sed_spatial_method.patch",
+      "sha256": "b2586e83699d3129d10948f8ea4d2b21edd4c8fbe26f53c34d01440e095f9eae",
+      "bytes": 6978
+    },
+    {
+      "path": "source/mcfost_v4.1.13_build_dependency_lock.patch",
+      "source": "jwst_mcfost/mcfost_v4.1.13_build_dependency_lock.patch",
+      "sha256": "fac773a1ddb1d0e641cf8ab1a7de3c01dc8779ae43659f594ea47da4a30e6698",
+      "bytes": 2714
+    },
+    {
+      "path": "source/extract_tmc1a_sed.py",
+      "source": "jwst_mcfost/extract_tmc1a_sed.py",
+      "sha256": "4644f44d308d48ea9f13aeb2d9091b3a22fdd5552addbbee59f161f846eb9367",
+      "bytes": 12902
+    },
+    {
+      "path": "source/h2o_observation_measurement_kernel_v3.py",
+      "source": "jwst_mcfost/h2o_observation_measurement_kernel_v3.py",
+      "sha256": "a90f104f252ba97c6a1f0f78d703807c8b3aea3ca3503d12c0146eb37747ea72",
+      "bytes": 17749
+    },
+    {
+      "path": "source/strict_continuum_measurement_kernel_v1.py",
+      "source": "jwst_mcfost/strict_continuum_measurement_kernel_v1.py",
+      "sha256": "8cfb9aa37e1a4eb6410d84ee2b66b58a00d574f43d94720ab0e513d69a4d951a",
+      "bytes": 44347
+    },
+    {
+      "path": "source/strict_continuum_measurement_kernel_v3.py",
+      "source": "jwst_mcfost/strict_continuum_measurement_kernel_v3.py",
+      "sha256": "791ad275a72736245de157fac5a58dfa7f6b08d1316d00f021b8df02a7a15754",
+      "bytes": 41663
+    },
+    {
+      "path": "dust/H2O_30K_Leiden_mcfost.dat",
+      "source": "jwst_mcfost/runs/h2o_3um_method2_screen_v3/my_mcfost_utils_overlay/Dust/H2O_30K_Leiden_mcfost.dat",
+      "sha256": "29b572f8907993870d0b15823e1182a9c4813b8cdb8f4fbdd40ef39cf28fb00c",
+      "bytes": 153377
+    },
+    {
+      "path": "dust/Draine_Si_sUV.dat",
+      "source": "jwst_mcfost/runs/h2o_3um_method2_screen_v3/my_mcfost_utils_overlay/Dust/Draine_Si_sUV.dat",
+      "sha256": "3a6af751429f6f8dc948e60675b13be01ffcbed0662eec62934ec6d9c61dea80",
+      "bytes": 53561
+    },
+    {
+      "path": "observations/h2o_v3/h2o_3um_observation_contract_v3.json",
+      "source": "jwst_mcfost/output/h2o_3um_observation_v3/h2o_3um_observation_contract_v3.json",
+      "sha256": "519203acdb1271c02f10c927af7225e404d43856ae4bda1dd4a7dab9fba4a9e7",
+      "bytes": 30588
+    },
+    {
+      "path": "observations/h2o_v3/h2o_3um_observation_contract_v3.json.sha256",
+      "source": "jwst_mcfost/output/h2o_3um_observation_v3/h2o_3um_observation_contract_v3.json.sha256",
+      "sha256": "268201fb5d93865cb338f649a46fd2cb8b039df08e1c99dfe99cb80c8bf0fe3e",
+      "bytes": 103
+    },
+    {
+      "path": "observations/h2o_v3/h2o_3um_observation_contract_v3.png",
+      "source": "jwst_mcfost/output/h2o_3um_observation_v3/h2o_3um_observation_contract_v3.png",
+      "sha256": "c331d83a42db9bb15982586c2c22544095080445da59359ef326116595d668de",
+      "bytes": 277092
+    },
+    {
+      "path": "observations/h2o_v3/h2o_3um_observation_contract_v3.png.sha256",
+      "source": "jwst_mcfost/output/h2o_3um_observation_v3/h2o_3um_observation_contract_v3.png.sha256",
+      "sha256": "a6585172c61700ad9b876feed9b020308dc769be395efaa38be8ed60dcf50d3b",
+      "bytes": 102
+    },
+    {
+      "path": "observations/h2o_v3/stellar_center_h2o_continuum_lsf_nodes_R2400_v3.tsv",
+      "source": "jwst_mcfost/output/h2o_3um_observation_v3/stellar_center_h2o_continuum_lsf_nodes_R2400_v3.tsv",
+      "sha256": "07f25fef793bf100873ab1f963bc44c55e49b0f171865ef57da62eb4db1d56d2",
+      "bytes": 8345
+    },
+    {
+      "path": "observations/h2o_v3/stellar_center_h2o_continuum_lsf_nodes_R2400_v3.tsv.sha256",
+      "source": "jwst_mcfost/output/h2o_3um_observation_v3/stellar_center_h2o_continuum_lsf_nodes_R2400_v3.tsv.sha256",
+      "sha256": "f7901a78de217a22d9c6cf19b1c8b2037335cf122433c82a71ab37aff8862c33",
+      "bytes": 118
+    },
+    {
+      "path": "observations/h2o_v3/stellar_center_h2o_continuum_supports_v3.tsv",
+      "source": "jwst_mcfost/output/h2o_3um_observation_v3/stellar_center_h2o_continuum_supports_v3.tsv",
+      "sha256": "85ed565e146e08a2e4c101f00506c860c8f23f85e30a67327a33f81560a08b02",
+      "bytes": 2530
+    },
+    {
+      "path": "observations/h2o_v3/stellar_center_h2o_continuum_supports_v3.tsv.sha256",
+      "source": "jwst_mcfost/output/h2o_3um_observation_v3/stellar_center_h2o_continuum_supports_v3.tsv.sha256",
+      "sha256": "d3b97870dfcc048262fbf6ef5e218ec23939d0dad21ec1617bb0c9c76b467131",
+      "bytes": 111
+    },
+    {
+      "path": "observations/h2o_v3/stellar_center_h2o_dense_R2400_v3.csv",
+      "source": "jwst_mcfost/output/h2o_3um_observation_v3/stellar_center_h2o_dense_R2400_v3.csv",
+      "sha256": "abeec0f827f875a38d2511807efe0057529f42851b5e98e41acd4bd805fada24",
+      "bytes": 1047920
+    },
+    {
+      "path": "observations/h2o_v3/stellar_center_h2o_dense_R2400_v3.csv.sha256",
+      "source": "jwst_mcfost/output/h2o_3um_observation_v3/stellar_center_h2o_dense_R2400_v3.csv.sha256",
+      "sha256": "916f798f7be6b15e57beaea0ce30303e7c324e9126cd9a7979d4f30b0f275d96",
+      "bytes": 104
+    },
+    {
+      "path": "observations/h2o_v3/stellar_center_h2o_logical_targets_v3.tsv",
+      "source": "jwst_mcfost/output/h2o_3um_observation_v3/stellar_center_h2o_logical_targets_v3.tsv",
+      "sha256": "87e06fad6ba261bdc56bd2100be5606e5754d4ff472f0aa3c4cf37275a5580e7",
+      "bytes": 5196
+    },
+    {
+      "path": "observations/h2o_v3/stellar_center_h2o_logical_targets_v3.tsv.sha256",
+      "source": "jwst_mcfost/output/h2o_3um_observation_v3/stellar_center_h2o_logical_targets_v3.tsv.sha256",
+      "sha256": "b3beced6f0a00594107a6f8cf18b4ea8e9ecc8b4d55aa52973cbedd4d6202004",
+      "bytes": 108
+    },
+    {
+      "path": "observations/h2o_v3/stellar_center_h2o_target_lsf_nodes_R2400_v3.tsv",
+      "source": "jwst_mcfost/output/h2o_3um_observation_v3/stellar_center_h2o_target_lsf_nodes_R2400_v3.tsv",
+      "sha256": "bc54da8f9e376921527db29400677e165b6e2f4aed158fd3aaa5162a66b325a7",
+      "bytes": 14514
+    },
+    {
+      "path": "observations/h2o_v3/stellar_center_h2o_target_lsf_nodes_R2400_v3.tsv.sha256",
+      "source": "jwst_mcfost/output/h2o_3um_observation_v3/stellar_center_h2o_target_lsf_nodes_R2400_v3.tsv.sha256",
+      "sha256": "b29f1c9278ebaa096cfa7bc5d5d22896516de25b36ac7bffd4ebeb4b42608290",
+      "bytes": 115
+    },
+    {
+      "path": "source/strict_continuum_measurement_kernel_v2.py",
+      "source": "jwst_mcfost/strict_continuum_measurement_kernel_v2.py",
+      "sha256": "89ccb15d8712785eb8cb8c598a277ab71deec698e153c04c44d9572e829ed1af",
+      "bytes": 18024
+    },
+    {
+      "path": "source/h2o_sparse_continuum_kernel_v2.py",
+      "source": "jwst_mcfost/h2o_sparse_continuum_kernel_v2.py",
+      "sha256": "b14f05cfd4b46262ac4fe65f12807b1b14405191c240f81557293921dd30a521",
+      "bytes": 8528
+    },
+    {
+      "path": "parameters/continuum_nominal.para",
+      "source": "jwst_mcfost/runs/strict_continuum_cavity_mass_q_v1/models/m2p25_c17p5_a0p40_q2p75_i0p05/disk_envelope_m2p25_c17p5_a0p40_q2p75_i0p05_rt.para",
+      "sha256": "cee9777a7faf269300008ff9d29e985962fdf5d36fcdff61124cfa92a71d3da5",
+      "bytes": 6040
+    },
+    {
+      "path": "provenance/CONTINUE_HERE_legacy.md",
+      "source": "jwst_mcfost/CONTINUE_HERE.md",
+      "sha256": "54cb33f7a3ddc64e800e039075c6691aa9762d621529d1cdfd7c6853e86653ed",
+      "bytes": 104000
+    },
+    {
+      "path": "provenance/README_legacy.md",
+      "source": "jwst_mcfost/README.md",
+      "sha256": "0723803fd3cb840c0774a2af3a4d57f9e63b0d898e315506073c00e1380de0f0",
+      "bytes": 27545
+    },
+    {
+      "path": "source/test_strict_continuum_measurement_kernel_v1.py",
+      "source": "jwst_mcfost/test_strict_continuum_measurement_kernel_v1.py",
+      "sha256": "95db7718b93afe49059dfa2170969f591bc4ee20df20c8979de717d6bf28e0b9",
+      "bytes": 11974
+    },
+    {
+      "path": "source/test_strict_continuum_measurement_kernel_v3.py",
+      "source": "jwst_mcfost/test_strict_continuum_measurement_kernel_v3.py",
+      "sha256": "09b9563563d252c1cfa06f5112d9cb7d0711e2e7ebf8d02cc2083e6e91979ada",
+      "bytes": 24279
+    },
+    {
+      "path": "source/test_h2o_sparse_continuum_kernel_v2.py",
+      "source": "jwst_mcfost/test_h2o_sparse_continuum_kernel_v2.py",
+      "sha256": "963bc2179449b4480615e894c5f9b823cd2b704a612797bade5441367e041cdc",
+      "bytes": 8183
+    },
+    {
+      "path": "provenance/strict_continuum_screen/rt_tasks.tsv",
+      "source": "jwst_mcfost/runs/strict_continuum_screen/rt_tasks.tsv",
+      "sha256": "ac115db5d87b3c44bda87010596813a8693b390f856a901126f7816b6722959f",
+      "bytes": 112819
+    },
+    {
+      "path": "provenance/strict_continuum_screen/input_manifest.json",
+      "source": "jwst_mcfost/runs/strict_continuum_screen/input_manifest.json",
+      "sha256": "79ed48b6619e3c57c501f6a7421655deda2ec34d9b42134f5193f61a997b92b9",
+      "bytes": 14496
+    },
+    {
+      "path": "provenance/strict_continuum_screen/temperature_tasks.tsv",
+      "source": "jwst_mcfost/runs/strict_continuum_screen/temperature_tasks.tsv",
+      "sha256": "258bbfdc5b97abb5cfba93bf6d11be9f5a788c6ced89f148033ef4d2304164af",
+      "bytes": 4756
+    },
+    {
+      "path": "provenance/strict_continuum_screen/models.tsv",
+      "source": "jwst_mcfost/runs/strict_continuum_screen/models.tsv",
+      "sha256": "68e7476f1bbbc98a63d11958ae7a46bbd1478aa82478b6fede10e4729fc18d3b",
+      "bytes": 7848
+    },
+    {
+      "path": "provenance/strict_continuum_screen/anchors.tsv",
+      "source": "jwst_mcfost/runs/strict_continuum_screen/anchors.tsv",
+      "sha256": "d89d29eab14518840be6cd8700ce1124152008d28d12a8b0202b04df08aceba9",
+      "bytes": 3869
+    },
+    {
+      "path": "provenance/strict_continuum_screen/submission_gate.json",
+      "source": "jwst_mcfost/runs/strict_continuum_screen/submission_gate.json",
+      "sha256": "4c9437a3f40b231aa05f9aca4dc4fa4db2d777b08702b57337fd97ddb884980d",
+      "bytes": 725
+    },
+    {
+      "path": "provenance/strict_continuum_screen/workflow_manifest.json",
+      "source": "jwst_mcfost/runs/strict_continuum_screen/workflow_manifest.json",
+      "sha256": "ca56075768b33cb1feed2696a4a244299a4ee22db54b6867f3f12593d0f275e3",
+      "bytes": 2120
+    },
+    {
+      "path": "provenance/strict_continuum_refinement_v1/rt_tasks.tsv",
+      "source": "jwst_mcfost/runs/strict_continuum_refinement_v1/rt_tasks.tsv",
+      "sha256": "cc0bdb82938ea753cf930ce55c3e67f92603cb5b90f5439cf3e880246ec3eaba",
+      "bytes": 58382
+    },
+    {
+      "path": "provenance/strict_continuum_refinement_v1/input_manifest.json",
+      "source": "jwst_mcfost/runs/strict_continuum_refinement_v1/input_manifest.json",
+      "sha256": "580b43d6d3e154ec5e6db508172fb753bb33c2b78ee5218ea3b6c997a4bdde10",
+      "bytes": 7243
+    },
+    {
+      "path": "provenance/strict_continuum_refinement_v1/temperature_tasks.tsv",
+      "source": "jwst_mcfost/runs/strict_continuum_refinement_v1/temperature_tasks.tsv",
+      "sha256": "0cc288028039665cd7a8778395d4783562672850e4e248d81e9f5a032a2f4df6",
+      "bytes": 2541
+    },
+    {
+      "path": "provenance/strict_continuum_refinement_v1/models.tsv",
+      "source": "jwst_mcfost/runs/strict_continuum_refinement_v1/models.tsv",
+      "sha256": "1119921cae1f4814375d10b9fe99b82c4bb4482bce95114c33210248647bf942",
+      "bytes": 3864
+    },
+    {
+      "path": "provenance/strict_continuum_refinement_v1/execution_amendment_96cores.json",
+      "source": "jwst_mcfost/runs/strict_continuum_refinement_v1/execution_amendment_96cores.json",
+      "sha256": "42c3a0ae2a5470eb1447b37161ccb6e6484ba4e8965ef9b7d588d8b3ab2aced5",
+      "bytes": 1560
+    },
+    {
+      "path": "provenance/strict_continuum_refinement_v1/analysis_manifest.json",
+      "source": "jwst_mcfost/runs/strict_continuum_refinement_v1/analysis_manifest.json",
+      "sha256": "48f18203a3071a3182c9171d3029bf6085c2dde0a7355ef03de943be110ab1a6",
+      "bytes": 4099
+    },
+    {
+      "path": "provenance/strict_continuum_refinement_v1/execution_amendment_64cores.json",
+      "source": "jwst_mcfost/runs/strict_continuum_refinement_v1/execution_amendment_64cores.json",
+      "sha256": "75ca8534c157de69d7c9109a89069f95ee832cb6475ce1a89105ff39fe0e0611",
+      "bytes": 1367
+    },
+    {
+      "path": "provenance/strict_continuum_refinement_v1/fresh_models.tsv",
+      "source": "jwst_mcfost/runs/strict_continuum_refinement_v1/fresh_models.tsv",
+      "sha256": "0a9a4c3c47301de8365381a6637894106e1aa341b31df18734e1b1e2cb863bc2",
+      "bytes": 223
+    },
+    {
+      "path": "provenance/strict_continuum_3d_q_v1/rt_tasks.tsv",
+      "source": "jwst_mcfost/runs/strict_continuum_3d_q_v1/rt_tasks.tsv",
+      "sha256": "38a2b8738cd5baa68d3f61ed88ff01068c77c1ef0fb7b3e13128a381dd8b5332",
+      "bytes": 224495
+    },
+    {
+      "path": "provenance/strict_continuum_3d_q_v1/input_manifest.json",
+      "source": "jwst_mcfost/runs/strict_continuum_3d_q_v1/input_manifest.json",
+      "sha256": "d424e3248b5e2de478e573c5d580f0ce882510567b80761f7a85f6cf91bd96ef",
+      "bytes": 21363
+    },
+    {
+      "path": "provenance/strict_continuum_3d_q_v1/temperature_tasks.tsv",
+      "source": "jwst_mcfost/runs/strict_continuum_3d_q_v1/temperature_tasks.tsv",
+      "sha256": "93664bb40901ff50a665759a7448b553adff6c6f8b634be7b4bbec0139683165",
+      "bytes": 9902
+    },
+    {
+      "path": "provenance/strict_continuum_3d_q_v1/models.tsv",
+      "source": "jwst_mcfost/runs/strict_continuum_3d_q_v1/models.tsv",
+      "sha256": "95a9d50712158e41e56f6177210f72047333c4d8c6bbaab358ee7734a1d97f13",
+      "bytes": 16094
+    },
+    {
+      "path": "provenance/strict_continuum_3d_q_v1/anchors.tsv",
+      "source": "jwst_mcfost/runs/strict_continuum_3d_q_v1/anchors.tsv",
+      "sha256": "d089218938f9e7dfcb1742002f0f8a3a676d9d977d8f6b32611e7b55d9f63c80",
+      "bytes": 3536
+    },
+    {
+      "path": "provenance/strict_continuum_3d_q_v1/analysis_manifest.json",
+      "source": "jwst_mcfost/runs/strict_continuum_3d_q_v1/analysis_manifest.json",
+      "sha256": "856b7b8d9edeb7aa3905679c88d852539442c13166b6ff29282c8905abb08e91",
+      "bytes": 5009
+    },
+    {
+      "path": "provenance/strict_continuum_3d_q_v1/reused_cells.tsv",
+      "source": "jwst_mcfost/runs/strict_continuum_3d_q_v1/reused_cells.tsv",
+      "sha256": "86e1e0f9ee738eb49a3139e15c499c83774efd64fc6fbf34f3eac67ebd04a751",
+      "bytes": 47363
+    },
+    {
+      "path": "provenance/strict_continuum_3d_q_v1/fresh_models.tsv",
+      "source": "jwst_mcfost/runs/strict_continuum_3d_q_v1/fresh_models.tsv",
+      "sha256": "77070088c4b559f66f8061cf6c1c4ae1e1072e8e5352847ef21e96b347190269",
+      "bytes": 929
+    },
+    {
+      "path": "provenance/strict_continuum_cavity_mass_q_v1/rt_tasks.tsv",
+      "source": "jwst_mcfost/runs/strict_continuum_cavity_mass_q_v1/rt_tasks.tsv",
+      "sha256": "63022ba26267fb04559c846154216075c4e5e322d9f5145133e21333fa092f58",
+      "bytes": 359150
+    },
+    {
+      "path": "provenance/strict_continuum_cavity_mass_q_v1/input_manifest.json",
+      "source": "jwst_mcfost/runs/strict_continuum_cavity_mass_q_v1/input_manifest.json",
+      "sha256": "2b4424009fcf9ad5e8f25a672d0a76ff84f835c1770beb52b0cd53be20bb7ed2",
+      "bytes": 29692
+    },
+    {
+      "path": "provenance/strict_continuum_cavity_mass_q_v1/temperature_tasks.tsv",
+      "source": "jwst_mcfost/runs/strict_continuum_cavity_mass_q_v1/temperature_tasks.tsv",
+      "sha256": "b1aa1c76e1ce3f2f6b8ac9a3c414ecbca8c3f46b612bd45ee63da31fc813fb6a",
+      "bytes": 19939
+    },
+    {
+      "path": "provenance/strict_continuum_cavity_mass_q_v1/models.tsv",
+      "source": "jwst_mcfost/runs/strict_continuum_cavity_mass_q_v1/models.tsv",
+      "sha256": "24e210b4a5304beb2b4fe27f31cc6f3db664a0c20f6ffba6539972a157181e19",
+      "bytes": 24572
+    },
+    {
+      "path": "provenance/strict_continuum_cavity_mass_q_v1/anchors.tsv",
+      "source": "jwst_mcfost/runs/strict_continuum_cavity_mass_q_v1/anchors.tsv",
+      "sha256": "4ee1fafdd881f94402dc82fddeb60b58e2ac46c08372aa5d99880cb710879d6f",
+      "bytes": 3341
+    },
+    {
+      "path": "provenance/strict_continuum_cavity_mass_q_v1/design_config.json",
+      "source": "jwst_mcfost/runs/strict_continuum_cavity_mass_q_v1/design_config.json",
+      "sha256": "f49c95212f0039dda207797d046211f9406c8e925620e911ed3e0e4736411a8d",
+      "bytes": 4568
+    },
+    {
+      "path": "provenance/strict_continuum_cavity_mass_q_v1/execution_amendment_array_throttle_9_20260725.json",
+      "source": "jwst_mcfost/runs/strict_continuum_cavity_mass_q_v1/execution_amendment_array_throttle_9_20260725.json",
+      "sha256": "0ab8760ba77de0c31ab706944f1ca0a8184e1206c0e0579655ae217396157e90",
+      "bytes": 1508
+    },
+    {
+      "path": "provenance/h2o_3um_method2_screen_v3/input_manifest.json",
+      "source": "jwst_mcfost/runs/h2o_3um_method2_screen_v3/input_manifest.json",
+      "sha256": "6faf36dd78b9cab8776d1634f6e2859782c2e4c2a8ba9b5e78aabfbc19999c79",
+      "bytes": 34696
+    },
+    {
+      "path": "provenance/h2o_3um_method2_screen_v3/field_pilot_tasks.tsv",
+      "source": "jwst_mcfost/runs/h2o_3um_method2_screen_v3/field_pilot_tasks.tsv",
+      "sha256": "bcec528a3e252602b76ac3923ed56c9a2ea819718af8976e90e524c535e2317a",
+      "bytes": 79494
+    },
+    {
+      "path": "provenance/h2o_3um_method2_screen_v3/broadband_guardrail_tasks.tsv",
+      "source": "jwst_mcfost/runs/h2o_3um_method2_screen_v3/broadband_guardrail_tasks.tsv",
+      "sha256": "b9755f852f622536d62803514e3892b92f71a6d71b4c939790fea92e1fab034a",
+      "bytes": 15616
+    },
+    {
+      "path": "provenance/h2o_3um_method2_screen_v3/full_h2o_tasks.tsv",
+      "source": "jwst_mcfost/runs/h2o_3um_method2_screen_v3/full_h2o_tasks.tsv",
+      "sha256": "fadcef787ccbaf05920ed2a4bc0800e24886fbb966e2343f8d45b6e74582cf98",
+      "bytes": 143754
+    },
+    {
+      "path": "provenance/h2o_3um_abundance_grid_v1/input_manifest.json",
+      "source": "jwst_mcfost/runs/h2o_3um_abundance_grid_v1/input_manifest.json",
+      "sha256": "695d8214cbc87a4979971351ae78f931d11eab6ecc26796e5c4aac27e3c1c993",
+      "bytes": 4545
+    },
+    {
+      "path": "provenance/h2o_3um_abundance_grid_v1/completion_index.json",
+      "source": "jwst_mcfost/runs/h2o_3um_abundance_grid_v1/completion_index.json",
+      "sha256": "c8435f0f56a6b14c9507f68d2d92af137cefdb3fd6373b13db5d47f42e2b3049",
+      "bytes": 145894
+    },
+    {
+      "path": "provenance/h2o_3um_abundance_grid_v1/abundance_grid_tasks.tsv",
+      "source": "jwst_mcfost/runs/h2o_3um_abundance_grid_v1/abundance_grid_tasks.tsv",
+      "sha256": "0b00d97cc1b5e3e8e4627d9e83fad026d5eb64bfbb0f7b249b4f166a6c03dce4",
+      "bytes": 455385
+    },
+    {
+      "path": "provenance/h2o_3um_abundance_grid_v1/grid_authorization.json",
+      "source": "jwst_mcfost/runs/h2o_3um_abundance_grid_v1/grid_authorization.json",
+      "sha256": "673f159b1173eebe51b1ca4934d4c103ed983e35b8cbeb81b93632e4d6c162a2",
+      "bytes": 1886
+    },
+    {
+      "path": "provenance/h2o_3um_dust_axis_grid_v1/input_manifest.json",
+      "source": "jwst_mcfost/runs/h2o_3um_dust_axis_grid_v1/input_manifest.json",
+      "sha256": "6ddb1c8aefb2a9c20112c912f40f003c58a2b53898949e470d1d99861024925c",
+      "bytes": 14989
+    },
+    {
+      "path": "provenance/h2o_3um_dust_axis_grid_v1/completion_index.json",
+      "source": "jwst_mcfost/runs/h2o_3um_dust_axis_grid_v1/completion_index.json",
+      "sha256": "55cae076bcb99aa1fd911d1576e77539022970ba4220044d455323225af38bda",
+      "bytes": 86552
+    },
+    {
+      "path": "provenance/h2o_3um_dust_axis_grid_v1/dust_axis_grid_tasks.tsv",
+      "source": "jwst_mcfost/runs/h2o_3um_dust_axis_grid_v1/dust_axis_grid_tasks.tsv",
+      "sha256": "00d57a97fca368bf5d265cd32114f61fa1ec2aaa2bfdc55606b04799fc43c3ee",
+      "bytes": 167318
+    },
+    {
+      "path": "provenance/h2o_3um_dust_axis_grid_v1/grid_authorization.json",
+      "source": "jwst_mcfost/runs/h2o_3um_dust_axis_grid_v1/grid_authorization.json",
+      "sha256": "3bd5021b13d1c755c4a3781252a03bb8dada61fe2ef27e0de16f637f91840a72",
+      "bytes": 8737
+    },
+    {
+      "path": "provenance/h2o_3um_dust_axis_band_v1/input_manifest.json",
+      "source": "jwst_mcfost/runs/h2o_3um_dust_axis_band_v1/input_manifest.json",
+      "sha256": "ab9513cd0a79b0fce834864fed57fd23a55c7e0fef36415ceffe0dd087dbdd9d",
+      "bytes": 6077
+    },
+    {
+      "path": "provenance/h2o_3um_dust_axis_band_v1/dust_axis_band_tasks.tsv",
+      "source": "jwst_mcfost/runs/h2o_3um_dust_axis_band_v1/dust_axis_band_tasks.tsv",
+      "sha256": "04c0e06c98141528f46a9d4d89b57035b0fd6ab8d183758ed5e7dbf2658c7384",
+      "bytes": 155903
+    },
+    {
+      "path": "provenance/h2o_3um_dust_axis_band_v1/completion_index.json",
+      "source": "jwst_mcfost/runs/h2o_3um_dust_axis_band_v1/completion_index.json",
+      "sha256": "57d611f38161f284e8915a0c3c235f5e60cfef1266450e45222a1cf4a4d1260d",
+      "bytes": 68297
+    },
+    {
+      "path": "provenance/h2o_silicate_demo_image_anchors_v1/input_manifest.json",
+      "source": "jwst_mcfost/runs/h2o_silicate_demo_image_anchors_v1/input_manifest.json",
+      "sha256": "5a6cf53337afbdca3c0dd92a39d5399a4a2a6b6e1155184efbc80715baedd0b0",
+      "bytes": 3451
+    },
+    {
+      "path": "parameters/continuum_anchors/w008/strict_continuum_anchor.lambda",
+      "source": "jwst_mcfost/runs/strict_continuum_cavity_mass_q_v1/anchors/w008/strict_continuum_anchor.lambda",
+      "sha256": "6095ab5c3fa56c0623b01f21835d7c8f1fba5d60d5f1f03735e495109c6381d3",
+      "bytes": 85
+    },
+    {
+      "path": "parameters/continuum_anchors/w001/strict_continuum_anchor.lambda",
+      "source": "jwst_mcfost/runs/strict_continuum_cavity_mass_q_v1/anchors/w001/strict_continuum_anchor.lambda",
+      "sha256": "3a4c05f3e67c2a1c93b19eb17fbfc715bf9582d86bbc727fc0416e86fc3bcfdb",
+      "bytes": 85
+    },
+    {
+      "path": "parameters/continuum_anchors/w006/strict_continuum_anchor.lambda",
+      "source": "jwst_mcfost/runs/strict_continuum_cavity_mass_q_v1/anchors/w006/strict_continuum_anchor.lambda",
+      "sha256": "a1d444714c9de2dd1e9aa1d5669069a1be6dae0324e94c47a0b9c4ab6e1f11d0",
+      "bytes": 85
+    },
+    {
+      "path": "parameters/continuum_anchors/w007/strict_continuum_anchor.lambda",
+      "source": "jwst_mcfost/runs/strict_continuum_cavity_mass_q_v1/anchors/w007/strict_continuum_anchor.lambda",
+      "sha256": "2c99cc57bcad833e9a4a9cfca63390c89d9538a1049959460c43c1c449c61679",
+      "bytes": 85
+    },
+    {
+      "path": "parameters/continuum_anchors/w009/strict_continuum_anchor.lambda",
+      "source": "jwst_mcfost/runs/strict_continuum_cavity_mass_q_v1/anchors/w009/strict_continuum_anchor.lambda",
+      "sha256": "41fd9d2d54ef93ed35fec02dd7d1d9a393b88e9fcc443fc088d958a549ab4723",
+      "bytes": 85
+    },
+    {
+      "path": "parameters/continuum_anchors/w005/strict_continuum_anchor.lambda",
+      "source": "jwst_mcfost/runs/strict_continuum_cavity_mass_q_v1/anchors/w005/strict_continuum_anchor.lambda",
+      "sha256": "9f7b6faedc4a44f32c6ae5b8b39d492d3c9ec0dc73b4dd191c2f6d60af0cd529",
+      "bytes": 84
+    },
+    {
+      "path": "parameters/continuum_anchors/w002/strict_continuum_anchor.lambda",
+      "source": "jwst_mcfost/runs/strict_continuum_cavity_mass_q_v1/anchors/w002/strict_continuum_anchor.lambda",
+      "sha256": "7c9f0b769ebc9634e2a3203ac84f4fbc00b323b2ba59b01aed9c107319f2ee5f",
+      "bytes": 85
+    },
+    {
+      "path": "parameters/continuum_anchors/w003/strict_continuum_anchor.lambda",
+      "source": "jwst_mcfost/runs/strict_continuum_cavity_mass_q_v1/anchors/w003/strict_continuum_anchor.lambda",
+      "sha256": "ca23ebfe8f0349583e11ddd47bbd4cca509749dd6ae81b3fe7eb58a679cdd3b2",
+      "bytes": 85
+    },
+    {
+      "path": "parameters/continuum_anchors/w004/strict_continuum_anchor.lambda",
+      "source": "jwst_mcfost/runs/strict_continuum_cavity_mass_q_v1/anchors/w004/strict_continuum_anchor.lambda",
+      "sha256": "9605b60fa355a7a0a695ed93588c2e13ae03a474ff5df9fa6d55609f7e399107",
+      "bytes": 85
+    },
+    {
+      "path": "parameters/silicate_anchors/silicate_08.30.lambda",
+      "source": "jwst_mcfost/runs/h2o_silicate_demo_image_anchors_v1/inputs/silicate_08.30.lambda",
+      "sha256": "683df05a28452891e4433839fe04f40cc9169e1dab0873e9c3d4509408af457a",
+      "bytes": 5
+    },
+    {
+      "path": "parameters/silicate_anchors/silicate_11.00.lambda",
+      "source": "jwst_mcfost/runs/h2o_silicate_demo_image_anchors_v1/inputs/silicate_11.00.lambda",
+      "sha256": "f95d8cb7474efe335eb1ee2bb54ccee77c8ca4525f88afc0ab2fe8a1a2a7c32e",
+      "bytes": 6
+    },
+    {
+      "path": "parameters/silicate_anchors/silicate_12.50.lambda",
+      "source": "jwst_mcfost/runs/h2o_silicate_demo_image_anchors_v1/inputs/silicate_12.50.lambda",
+      "sha256": "e1e62844b9aeb4c7fec236a17450618a7f946e9a8304b6e8c46dbc95f70be859",
+      "bytes": 6
+    },
+    {
+      "path": "parameters/silicate_anchors/silicate_09.70.lambda",
+      "source": "jwst_mcfost/runs/h2o_silicate_demo_image_anchors_v1/inputs/silicate_09.70.lambda",
+      "sha256": "4a7aeae55b057e8081842e683d2f89344f90fe3913c5d5b9e04f80c9ebf9dd16",
+      "bytes": 5
+    },
+    {
+      "path": "runtime_assets/Dust/ac_opct.dat",
+      "source": "/Users/harrisonlo/mcfost/utils/Dust/ac_opct.dat",
+      "sha256": "ef8f09849580a0859f29f61216486e7e249103759f851bcfa7abe11c09a44de2",
+      "bytes": 37105
+    },
+    {
+      "path": "runtime_assets/Dust/ice_opct.dat",
+      "source": "/Users/harrisonlo/mcfost/utils/Dust/ice_opct.dat",
+      "sha256": "44625b4918b7015e97d3c92b3f19e9e06eb57d209f3b1a946ee8f141215c8697",
+      "bytes": 37012
+    },
+    {
+      "path": "runtime_assets/Stellar_Spectra/lte4000-3.5.NextGen.fits.gz",
+      "source": "/Users/harrisonlo/mcfost/utils/Stellar_Spectra/lte4000-3.5.NextGen.fits.gz",
+      "sha256": "a626d82c52e07dec12b7fe141aeb2c9af974516ffe39178a4c9a2094c2a6d87d",
+      "bytes": 146966
+    },
+    {
+      "path": "source/analyze_strict_continuum_refinement_v1.py",
+      "source": "jwst_mcfost/analyze_strict_continuum_refinement_v1.py",
+      "sha256": "d7cd2990e3f6f07a449ef6d00bf37a2bb21b27d57aa655a6f7363e2f44cd471a",
+      "bytes": 102537
+    },
+    {
+      "path": "source/parity_strict_continuum_measurement_kernel_v1.py",
+      "source": "jwst_mcfost/parity_strict_continuum_measurement_kernel_v1.py",
+      "sha256": "b576221af0be29521e03f5c6cca375919bed0c484980892042898da2734ae61d",
+      "bytes": 21310
+    }
+  ],
+  "total_bytes": 9267941,
+  "measurement_kernel_import_closure_included": true,
+  "extraction_and_simulation_workflows_require_porting": true,
+  "complete_legacy_source_archive": "archive/jwst_mcfost_legacy_2026-09-18.tar.gz"
+}

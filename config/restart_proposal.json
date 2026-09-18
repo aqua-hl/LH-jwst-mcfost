@@ -1,0 +1,42 @@
+{
+  "status": "proposed_design_not_a_frozen_likelihood_or_run_manifest",
+  "launch_authorized": false,
+  "old_cluster_available": false,
+  "exclude_first_anchor_wavelength_um": 0.994676,
+  "method": "signed spatial Method-2 total-I aperture photometry",
+  "temperature_policy": "recompute for every changed physical dust/heating model",
+  "pilot": {
+    "inclination_deg": [50, 60, 70],
+    "source_heating_target_Lsun": [1.9, 2.7],
+    "dust_families": ["original_Mie_silicate_generic_ice_mantle_5pct_volume", "disjoint_DHS_vmax0.1_H2O_30K_4pct_species_mass"],
+    "physical_model_count": 12,
+    "fixed_envelope_mass_factor": 2.25,
+    "fixed_grain_size_q": 2.75,
+    "fixed_cavity_half_opening_deg": 17.5,
+    "continuum_anchors_per_model": 9,
+    "silicate_wavelengths_um": [8.3, 9.7, 11.0, 12.5],
+    "initial_H2O_shortlist_models": 3,
+    "H2O_spectral_nodes_per_shortlist_model": 85,
+    "initial_packets_per_wavelength": 128000,
+    "packets_and_pixels_require_validation": true
+  },
+  "adaptive_search_design_bounds_not_priors": {
+    "inclination_deg": [45, 70],
+    "priority_inclination_deg": [50, 65],
+    "source_heating_Lsun": [1.5, 3.0],
+    "envelope_dust_mass_Msun": [0.000075, 0.0004],
+    "envelope_amax_um": [0.1, 3.0],
+    "grain_size_q": [2.5, 4.0],
+    "cavity_half_opening_deg": [10, 30],
+    "initial_models": [48, 96],
+    "condition_geometry_on_spatial_constraints": true,
+    "extend_bounds_if_minimum_unbracketed": true
+  },
+  "before_any_launch": [
+    "choose and document distance, source centres and observation versions",
+    "reproduce archived controls on the new executable",
+    "specify new cluster resource configuration",
+    "verify dust resources and Method-2 capabilities",
+    "calibrate numerical error against intended observational tolerance"
+  ]
+}

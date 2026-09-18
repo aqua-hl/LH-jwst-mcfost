@@ -1,0 +1,191 @@
+{
+  "classification_semantics": {
+    "broad_features_in_source": "retained in immutable source; deferred only in these derived products",
+    "fit_weighting_applied": false,
+    "interval_endpoints": "inclusive: lower <= wavelength_um <= upper",
+    "overlapping_detector_rows": "preserved independently with original values/errors/metadata; no collapsing, stitching, or rescaling",
+    "overlapping_intervals": "all matching reasons are retained in audit order",
+    "scorer_modified": false,
+    "wavelength_column": "wavelength_um",
+    "wavelength_role": "R=100 bin centre"
+  },
+  "generator": {
+    "path": "jwst_mcfost/make_continuum_fit_mask_diagnostic.py",
+    "sha256": "0acd5d4d92158d556b2bcb03511f34386defbe8738c109b6428163384013073b"
+  },
+  "manifest_self_hash_included": false,
+  "manifest_self_hash_reason": "a file cannot contain its own cryptographic hash",
+  "outputs": {
+    "audit_ecsv": {
+      "path": "jwst_mcfost/output/continuum_fit_mask_v1_audit.ecsv",
+      "sha256": "a8770bbc17e463cf6366dd1612ea4f0af6915ba8594992052c2f168145554564"
+    },
+    "diagnostic_png": {
+      "path": "jwst_mcfost/output/continuum_fit_mask_v1.png",
+      "sha256": "55743c59c9f7c95d3ce789a6313ef7838765e404659ba17356785a40dd0f2934"
+    },
+    "retained_defer_major_ice_and_9p7_silicate_only": {
+      "path": "jwst_mcfost/output/continuum_fit_mask_v1_major_ice_9p7_silicate_retained.ecsv",
+      "sha256": "87d301ebbd9bebebca7d241cbc259444abd4a06faa0d293b4529018e07d35863"
+    },
+    "retained_defer_major_ice_and_both_silicates": {
+      "path": "jwst_mcfost/output/continuum_fit_mask_v1_major_ice_both_silicates_retained.ecsv",
+      "sha256": "a8d5c28ddeeec6727e5c68e800ddba920d7b475170066fa6a5493d4a01c3375b"
+    }
+  },
+  "product_version": "continuum_fit_mask_v1",
+  "purpose": "non-destructive continuum-fit feature-mask diagnostic; no scorer, likelihood, or fitting weights are modified",
+  "scenario_order": [
+    "defer_major_ice_and_9p7_silicate_only",
+    "defer_major_ice_and_both_silicates"
+  ],
+  "scenarios": {
+    "defer_major_ice_and_9p7_silicate_only": {
+      "counts": {
+        "masked_multirow_overlap_bin_count": 29,
+        "masked_row_count": 188,
+        "masked_rows_by_instrument": {
+          "MIRI": 119,
+          "NIRSpec": 69
+        },
+        "masked_unique_bin_count": 159,
+        "retained_multirow_overlap_bin_count": 17,
+        "retained_row_count": 170,
+        "retained_rows_by_instrument": {
+          "MIRI": 76,
+          "NIRSpec": 94
+        },
+        "retained_unique_bin_count": 153,
+        "source_multirow_overlap_bin_count": 46,
+        "source_row_count": 358,
+        "source_unique_bin_count": 312
+      },
+      "intervals_um": [
+        {
+          "lower_um": 2.6,
+          "reason": "major_ice_3um_complex",
+          "upper_um": 3.85
+        },
+        {
+          "lower_um": 4.1,
+          "reason": "major_ice_4p27um_complex",
+          "upper_um": 4.5
+        },
+        {
+          "lower_um": 4.55,
+          "reason": "major_ice_4p67um_complex",
+          "upper_um": 5.25
+        },
+        {
+          "lower_um": 5.5,
+          "reason": "major_ice_6um_and_6p85um_complexes",
+          "upper_um": 8.05
+        },
+        {
+          "lower_um": 8.0,
+          "reason": "silicate_9p7um_complex",
+          "upper_um": 13.3
+        },
+        {
+          "lower_um": 14.5,
+          "reason": "major_ice_15p2um_complex",
+          "upper_um": 16.5
+        }
+      ],
+      "name": "defer all major ice complexes and 9.7um silicate only",
+      "retained_output": "jwst_mcfost/output/continuum_fit_mask_v1_major_ice_9p7_silicate_retained.ecsv"
+    },
+    "defer_major_ice_and_both_silicates": {
+      "counts": {
+        "masked_multirow_overlap_bin_count": 34,
+        "masked_row_count": 245,
+        "masked_rows_by_instrument": {
+          "MIRI": 176,
+          "NIRSpec": 69
+        },
+        "masked_unique_bin_count": 211,
+        "retained_multirow_overlap_bin_count": 12,
+        "retained_row_count": 113,
+        "retained_rows_by_instrument": {
+          "MIRI": 19,
+          "NIRSpec": 94
+        },
+        "retained_unique_bin_count": 101,
+        "source_multirow_overlap_bin_count": 46,
+        "source_row_count": 358,
+        "source_unique_bin_count": 312
+      },
+      "intervals_um": [
+        {
+          "lower_um": 2.6,
+          "reason": "major_ice_3um_complex",
+          "upper_um": 3.85
+        },
+        {
+          "lower_um": 4.1,
+          "reason": "major_ice_4p27um_complex",
+          "upper_um": 4.5
+        },
+        {
+          "lower_um": 4.55,
+          "reason": "major_ice_4p67um_complex",
+          "upper_um": 5.25
+        },
+        {
+          "lower_um": 5.5,
+          "reason": "major_ice_6um_and_6p85um_complexes",
+          "upper_um": 8.05
+        },
+        {
+          "lower_um": 8.0,
+          "reason": "silicate_9p7um_complex",
+          "upper_um": 13.3
+        },
+        {
+          "lower_um": 14.5,
+          "reason": "major_ice_15p2um_complex",
+          "upper_um": 16.5
+        },
+        {
+          "lower_um": 14.2,
+          "reason": "silicate_18um_complex_and_wings",
+          "upper_um": 27.0
+        }
+      ],
+      "name": "defer all major ice complexes and both 9.7um and 18um silicates",
+      "retained_output": "jwst_mcfost/output/continuum_fit_mask_v1_major_ice_both_silicates_retained.ecsv"
+    }
+  },
+  "schema_version": 1,
+  "source": {
+    "original_columns": [
+      "instrument",
+      "segment",
+      "bin_index",
+      "wavelength_um",
+      "sample_median_wavelength_um",
+      "bin_left_um",
+      "bin_right_um",
+      "effective_resolution",
+      "flux_jy",
+      "formal_error_jy",
+      "within_bin_scatter_jy",
+      "fit_error_jy",
+      "systematic_fraction",
+      "lambda_f_lambda_w_m2",
+      "lambda_f_lambda_error_w_m2",
+      "n_input",
+      "n_quality_valid",
+      "n_manual_masked",
+      "n_auto_clipped",
+      "n_used",
+      "used_fraction_of_quality_samples",
+      "median_coverage_fraction"
+    ],
+    "original_metadata_preserved_in_ecsv_outputs": true,
+    "path": "jwst_mcfost/output/continuum_sed_R100.ecsv",
+    "row_count": 358,
+    "sha256": "d2d51c6b0c0c229145b147d8793b03fa721e6a4cca191d790fb2082625d3e0d6",
+    "unique_bin_count": 312
+  }
+}

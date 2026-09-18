@@ -1,0 +1,83 @@
+{
+  "anchors": [
+    {
+      "instrument": "MIRI",
+      "task_index": 0,
+      "wavelength_file": "jwst_mcfost/runs/h2o_silicate_demo_image_anchors_v1/inputs/silicate_08.30.lambda",
+      "wavelength_file_sha256": "683df05a28452891e4433839fe04f40cc9169e1dab0873e9c3d4509408af457a",
+      "wavelength_um": 8.3
+    },
+    {
+      "instrument": "MIRI",
+      "task_index": 1,
+      "wavelength_file": "jwst_mcfost/runs/h2o_silicate_demo_image_anchors_v1/inputs/silicate_09.70.lambda",
+      "wavelength_file_sha256": "4a7aeae55b057e8081842e683d2f89344f90fe3913c5d5b9e04f80c9ebf9dd16",
+      "wavelength_um": 9.7
+    },
+    {
+      "instrument": "MIRI",
+      "task_index": 2,
+      "wavelength_file": "jwst_mcfost/runs/h2o_silicate_demo_image_anchors_v1/inputs/silicate_11.00.lambda",
+      "wavelength_file_sha256": "f95d8cb7474efe335eb1ee2bb54ccee77c8ca4525f88afc0ab2fe8a1a2a7c32e",
+      "wavelength_um": 11.0
+    },
+    {
+      "instrument": "MIRI",
+      "task_index": 3,
+      "wavelength_file": "jwst_mcfost/runs/h2o_silicate_demo_image_anchors_v1/inputs/silicate_12.50.lambda",
+      "wavelength_file_sha256": "e1e62844b9aeb4c7fec236a17450618a7f946e9a8304b6e8c46dbc95f70be859",
+      "wavelength_um": 12.5
+    }
+  ],
+  "best_variant": {
+    "envelope_amax_um": 0.4,
+    "envelope_dhs_vmax": 0.1,
+    "h2o_mass_fraction": 0.04,
+    "inclination_deg": 70.0,
+    "silicate_mass_fraction": 0.96,
+    "token": "v02_vmax0p1_amax0p4"
+  },
+  "classification": "presentation_only_image_method2_no_fit_no_ranking_no_rescaling",
+  "cluster_runtime": {
+    "mcfost_binary": "/home/uhlo01/mcfost-custom/v4.1.13-rt_sed2-92bf1b1e086e/bin/mcfost",
+    "mcfost_binary_sha256": "d96bbc7cb71c09fce93edcef5908e6af1eb0e90e40193a3afdd259c2a7786401",
+    "mcfost_utils": "/home/uhlo01/mcfost/utils",
+    "my_mcfost_utils": "jwst_mcfost/runs/h2o_3um_method2_screen_v3/my_mcfost_utils_overlay",
+    "openmp_threads_per_task": 16
+  },
+  "method": {
+    "aperture_radius_arcsec": 1.0,
+    "cavity": [
+      317.159480236321,
+      100.0,
+      1.0
+    ],
+    "coeval_sed_required": false,
+    "estimator": "signed_full_mueller_total_i_plane0_after_MIRI_PSF_in_1arcsec_radius",
+    "expected_cdelt_deg": 9.912374608461204e-06,
+    "field_size_au": 6000.0,
+    "mdot_msun_per_year": 7.3011756855e-08,
+    "measurement_kernel": "strict_continuum_method2_signed_aperture_v2",
+    "model_distance_pc": 140.0,
+    "nx": 1201,
+    "ny": 1201,
+    "packets": 128000,
+    "ray_tracing": "MCFOST -img with -rt2",
+    "seed": 52001,
+    "target_distance_pc": 147.0,
+    "zoom": 1
+  },
+  "parameter": {
+    "path": "jwst_mcfost/runs/h2o_silicate_demo_image_anchors_v1/inputs/dust_v02_vmax0p1_amax0p4_rt.para",
+    "sha256": "28e8ce08b312e24af72cf45cb679b895e70d6ea7d2dd1e03b1cab2169f03b9ca"
+  },
+  "reason_for_image_route": "the custom coeval SED+image path stopped without products inside the high-opacity silicate complex; standalone -img is the previously validated Method-2 image estimator and supplies the same signed plane-0 aperture quantity",
+  "schema_version": 1,
+  "supersedes_failed_execution": "h2o_silicate_demo_anchors_v1",
+  "temperature": {
+    "path": "jwst_mcfost/runs/h2o_silicate_demo_image_anchors_v1/inputs/Temperature.fits.gz",
+    "role": "reused_accepted_continuum_temperature_not_self_consistent_for_changed_dust",
+    "sha256": "1bd212f2f54dd8c1701a6064e129ba7fdb5721cb3fe296472433bbdd3b79ec1c"
+  },
+  "workflow_id": "h2o_silicate_demo_image_anchors_v1"
+}

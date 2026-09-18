@@ -1,0 +1,427 @@
+{
+  "accepted_continuum": {
+    "authority_handoff_sha256": "4f7878eb995991811eddce0055deb8a0f09589edc54b302c20792fb04751a33a",
+    "model": {
+      "cavity_tag": "c17p5",
+      "cavity_tokens": [
+        "317.159480236321",
+        "100",
+        "1.0"
+      ],
+      "envelope_amax_um": 0.4,
+      "envelope_amin_um": 0.03,
+      "envelope_size_exponent": 2.75,
+      "inclination_deg": 70.0,
+      "mass_factor": 2.25,
+      "mdot_token": "7.3011756855e-08",
+      "model_index": 1,
+      "model_label": "m2p25_c17p5_a0p40_q2p75_i0p05",
+      "requested_half_opening_deg": 17.5
+    },
+    "source_rt_parameter": {
+      "path": "jwst_mcfost/runs/strict_continuum_cavity_mass_q_v1/models/m2p25_c17p5_a0p40_q2p75_i0p05/disk_envelope_m2p25_c17p5_a0p40_q2p75_i0p05_rt.para",
+      "sha256": "cee9777a7faf269300008ff9d29e985962fdf5d36fcdff61124cfa92a71d3da5"
+    },
+    "temperature": {
+      "path": "jwst_mcfost/runs/strict_continuum_cavity_mass_q_v1/models/m2p25_c17p5_a0p40_q2p75_i0p05/temperature/seed=41001/data_th/Temperature.fits.gz",
+      "sha256": "1bd212f2f54dd8c1701a6064e129ba7fdb5721cb3fe296472433bbdd3b79ec1c"
+    },
+    "temperature_availability": "cluster_authority_hash_bound_local_compact_copy_optional"
+  },
+  "accepted_packets": 128000,
+  "aperture": {
+    "east_arcsec": 0.0,
+    "name": "stellar_center",
+    "north_arcsec": 0.0,
+    "radius_arcsec": 0.35
+  },
+  "broadband_guardrail_aperture": {
+    "east_arcsec": 0.0,
+    "name": "stellar_center",
+    "north_arcsec": 0.0,
+    "radius_arcsec": 1.0,
+    "role": "report_only_not_pooled_with_h2o_feature"
+  },
+  "canceled_v1_archive": {
+    "classification": "red_superseded_never_reused",
+    "document": {
+      "path": "jwst_mcfost/H2O_3UM_METHOD2_CANCELLED_CONVERGENCE_ARCHIVE_V1.md",
+      "sha256": "a7c54975ffeedd145155da59734ea157eae959e1f1f3502e40227972290b549b"
+    },
+    "files": {
+      "archive_manifest.json": {
+        "path": "jwst_mcfost/source_archives/h2o_3um_method2_screen_v1_cancelled_convergence/archive_manifest.json",
+        "sha256": "524a56de0c613f549f6843d7086ff3e7cef881ca596f7b4b8711ce23d27aae83"
+      },
+      "archive_manifest.sha256": {
+        "path": "jwst_mcfost/source_archives/h2o_3um_method2_screen_v1_cancelled_convergence/archive_manifest.sha256",
+        "sha256": "fea1336eb9a8d9db3006d04c8cfdae3a1324a8ab7dfa576862b91df0a32886bc"
+      },
+      "support_failure_summary.json": {
+        "path": "jwst_mcfost/source_archives/h2o_3um_method2_screen_v1_cancelled_convergence/support_failure_summary.json",
+        "sha256": "a82bc1056ef2f39727156015c08c9d5f04eac2f864f4da3582e3ef2ab51bc12d"
+      }
+    }
+  },
+  "classification": "screening_only_h2o_method2_observation_v3_field_convergence_v3",
+  "execution": {
+    "openmp_threads": 16,
+    "partition": "Cascade-GPU",
+    "processes_per_task": 1,
+    "reservation": "Houches2026"
+  },
+  "field_pilot_policy": {
+    "classification": "paired_field_support_and_seed_convergence_gate_v3",
+    "expanded_n2401": {
+      "all_per_task_gates_must_be_green": true,
+      "exceptions_allowed": false,
+      "role": "required_science_geometry"
+    },
+    "full_h2o_launch_requires_green_seal": true,
+    "legacy_n1201": {
+      "failure_never_counts_as_green": true,
+      "only_permitted_failure": "component_scattered_star:convolution_flux_loss_lt_1e-4",
+      "permitted_component": "scattered_star",
+      "permitted_component_plane_zero_based": 5,
+      "role": "diagnostic_comparator_only",
+      "total_plane_or_any_other_component_failure_allowed": false
+    },
+    "matched_field_gate": {
+      "aperture_radius_arcsec": 0.35,
+      "comparison": "exclusive_less_than",
+      "east_arcsec": 0.0,
+      "limit": 0.02,
+      "metric": "symmetric_fraction_abs_a_minus_b_over_mean_abs",
+      "north_arcsec": 0.0
+    },
+    "pilot_products_may_be_reused_by_full_h2o": false,
+    "seed_gates": {
+      "max_core_continuum_symmetric_fraction_inclusive": 0.05,
+      "max_core_optical_depth_absolute_difference_inclusive": 0.1,
+      "max_lsf_target_flux_symmetric_fraction_inclusive": 0.2
+    }
+  },
+  "field_pilot_seals": {
+    "green_path": "jwst_mcfost/runs/h2o_3um_method2_screen_v3/field_pilot_green_seal.json",
+    "green_sidecar": "jwst_mcfost/runs/h2o_3um_method2_screen_v3/field_pilot_green_seal.json.sha256",
+    "mutually_exclusive": true,
+    "partial_or_nonterminal_publishes_neither": true,
+    "red_path": "jwst_mcfost/runs/h2o_3um_method2_screen_v3/field_pilot_red_seal.json",
+    "red_sidecar": "jwst_mcfost/runs/h2o_3um_method2_screen_v3/field_pilot_red_seal.json.sha256"
+  },
+  "formal_likelihood": false,
+  "full_h2o_status": {
+    "fresh_task_root_required": true,
+    "launch_state": "blocked_until_immutable_field_pilot_green_seal",
+    "pilot_product_reuse_allowed": false
+  },
+  "lambda_contract_smoke": {
+    "accepted_packets": 1024,
+    "cavity_tokens": [
+      "317.159480236321",
+      "100",
+      "1.0"
+    ],
+    "classification": "mandatory_custom_mcfost_exact_request_and_rounded_wave_smoke_v3",
+    "lsf_node_index": 2,
+    "mdot_token": "7.3011756855e-08",
+    "nx": 33,
+    "ny": 33,
+    "openmp_threads": 16,
+    "parameter": {
+      "path": "jwst_mcfost/runs/h2o_3um_method2_screen_v3/parameters/lambda_contract_smoke_rt.para",
+      "sha256": "e551e4e307c1450c3870bfe21c2497a275c72e12b8542cdbbcccffa6212f4899"
+    },
+    "parent_id": "h2o_3um_v3_w006",
+    "parent_kind": "logical_target",
+    "processes": 1,
+    "required_before_science": true,
+    "rt_sed_method": 2,
+    "runtime_marker": "Writing coeval spatial-method-2 SED map from the same ray-tracing realization",
+    "seed": 52099,
+    "source_row_sha256": "2cc093809e70c4e77232f365a7f4d89ee53d9c5dd9799984dc81bed364faca58",
+    "source_table": "jwst_mcfost/output/h2o_3um_observation_v3/stellar_center_h2o_target_lsf_nodes_R2400_v3.tsv",
+    "temperature": {
+      "path": "jwst_mcfost/runs/strict_continuum_cavity_mass_q_v1/models/m2p25_c17p5_a0p40_q2p75_i0p05/temperature/seed=41001/data_th/Temperature.fits.gz",
+      "sha256": "1bd212f2f54dd8c1701a6064e129ba7fdb5721cb3fe296472433bbdd3b79ec1c"
+    },
+    "wavelength_file": {
+      "path": "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/lambda_contract_smoke/anchor.lambda",
+      "sha256": "ccda11e0440c3d2374e801ae505d1627e1529bc086bd9713d80ef5869fa4f24e"
+    },
+    "wavelength_um": 3.0764795490679795,
+    "workdir": "jwst_mcfost/runs/h2o_3um_method2_screen_v3/lambda_contract_smoke_execution",
+    "zoom_token": "1.9975051980918284"
+  },
+  "mcfost_runtime": {
+    "MCFOST_UTILS": {
+      "path": "/home/uhlo01/mcfost/utils",
+      "required_files": {
+        "Dust/Draine_Si_sUV.dat": "3a6af751429f6f8dc948e60675b13be01ffcbed0662eec62934ec6d9c61dea80",
+        "Dust/ac_opct.dat": "ef8f09849580a0859f29f61216486e7e249103759f851bcfa7abe11c09a44de2",
+        "Dust/ice_opct.dat": "44625b4918b7015e97d3c92b3f19e9e06eb57d209f3b1a946ee8f141215c8697",
+        "Stellar_Spectra/lte4000-3.5.NextGen.fits.gz": "a626d82c52e07dec12b7fe141aeb2c9af974516ffe39178a4c9a2094c2a6d87d"
+      }
+    },
+    "MY_MCFOST_UTILS": "jwst_mcfost/runs/h2o_3um_method2_screen_v3/my_mcfost_utils_overlay",
+    "binary": {
+      "path": "/home/uhlo01/mcfost-custom/v4.1.13-rt_sed2-92bf1b1e086e/bin/mcfost",
+      "sha256": "d96bbc7cb71c09fce93edcef5908e6af1eb0e90e40193a3afdd259c2a7786401"
+    },
+    "runtime_marker": "Writing coeval spatial-method-2 SED map from the same ray-tracing realization"
+  },
+  "measurement_dependencies": {
+    "closure_validator": {
+      "path": "jwst_mcfost/validate_rt_sed_spatial_sampler.py",
+      "sha256": "87035e977ab7bcbcd8aee25e175a9b855dc59d72671f958188400b002d8b81ff"
+    },
+    "method2_measurement": {
+      "path": "jwst_mcfost/h2o_3um_method2_measurement_kernel_v3.py",
+      "sha256": "232d18a1beb8d61dfcdc73f2d4d07d84d4130ab409525f95046109ab726d78ba"
+    },
+    "observation_operator": {
+      "path": "jwst_mcfost/h2o_observation_measurement_kernel_v3.py",
+      "sha256": "a90f104f252ba97c6a1f0f78d703807c8b3aea3ca3503d12c0146eb37747ea72"
+    },
+    "strict_continuum_guardrail_base": {
+      "path": "jwst_mcfost/strict_continuum_measurement_kernel_v1.py",
+      "sha256": "8cfb9aa37e1a4eb6410d84ee2b66b58a00d574f43d94720ab0e513d69a4d951a"
+    },
+    "strict_continuum_guardrail_measurement": {
+      "path": "jwst_mcfost/strict_continuum_measurement_kernel_v2.py",
+      "sha256": "89ccb15d8712785eb8cb8c598a277ab71deec698e153c04c44d9572e829ed1af"
+    }
+  },
+  "observation_v3": {
+    "h2o_3um_observation_contract_v3.json": {
+      "path": "jwst_mcfost/output/h2o_3um_observation_v3/h2o_3um_observation_contract_v3.json",
+      "sha256": "519203acdb1271c02f10c927af7225e404d43856ae4bda1dd4a7dab9fba4a9e7"
+    },
+    "stellar_center_h2o_continuum_lsf_nodes_R2400_v3.tsv": {
+      "path": "jwst_mcfost/output/h2o_3um_observation_v3/stellar_center_h2o_continuum_lsf_nodes_R2400_v3.tsv",
+      "sha256": "07f25fef793bf100873ab1f963bc44c55e49b0f171865ef57da62eb4db1d56d2"
+    },
+    "stellar_center_h2o_continuum_supports_v3.tsv": {
+      "path": "jwst_mcfost/output/h2o_3um_observation_v3/stellar_center_h2o_continuum_supports_v3.tsv",
+      "sha256": "85ed565e146e08a2e4c101f00506c860c8f23f85e30a67327a33f81560a08b02"
+    },
+    "stellar_center_h2o_dense_R2400_v3.csv": {
+      "path": "jwst_mcfost/output/h2o_3um_observation_v3/stellar_center_h2o_dense_R2400_v3.csv",
+      "sha256": "abeec0f827f875a38d2511807efe0057529f42851b5e98e41acd4bd805fada24"
+    },
+    "stellar_center_h2o_logical_targets_v3.tsv": {
+      "path": "jwst_mcfost/output/h2o_3um_observation_v3/stellar_center_h2o_logical_targets_v3.tsv",
+      "sha256": "87e06fad6ba261bdc56bd2100be5606e5754d4ff472f0aa3c4cf37275a5580e7"
+    },
+    "stellar_center_h2o_target_lsf_nodes_R2400_v3.tsv": {
+      "path": "jwst_mcfost/output/h2o_3um_observation_v3/stellar_center_h2o_target_lsf_nodes_R2400_v3.tsv",
+      "sha256": "bc54da8f9e376921527db29400677e165b6e2f4aed158fd3aaa5162a66b325a7"
+    }
+  },
+  "opacity_v2": {
+    "handoff": {
+      "path": "jwst_mcfost/runs/h2o_3um_opacity_screen_v2/h2o_opacity_handoff_v2.json",
+      "sha256": "f517a2e6a7f65a2bd387b4ae97273b1058e10ed728ad2fa933099b2d9f4155da"
+    },
+    "screening_only_no_abundance_selected": true,
+    "selected_representation": "disjoint_populations__dhs_vmax0p8"
+  },
+  "optical_overlay": {
+    "Draine_Si_sUV.dat": {
+      "path": "jwst_mcfost/runs/h2o_3um_method2_screen_v3/my_mcfost_utils_overlay/Dust/Draine_Si_sUV.dat",
+      "sha256": "3a6af751429f6f8dc948e60675b13be01ffcbed0662eec62934ec6d9c61dea80"
+    },
+    "H2O_30K_Leiden_mcfost.dat": {
+      "path": "jwst_mcfost/runs/h2o_3um_method2_screen_v3/my_mcfost_utils_overlay/Dust/H2O_30K_Leiden_mcfost.dat",
+      "sha256": "29b572f8907993870d0b15823e1182a9c4813b8cdb8f4fbdd40ef39cf28fb00c"
+    }
+  },
+  "parameters": {
+    "h2o_selected": {
+      "path": "jwst_mcfost/runs/h2o_3um_method2_screen_v3/parameters/h2o_selected_rt.para",
+      "sha256": "53e7d2af20d3803c95144bc0809885d44da2324ffb8e6800d228c85b67412cdc"
+    },
+    "lambda_contract_smoke": {
+      "path": "jwst_mcfost/runs/h2o_3um_method2_screen_v3/parameters/lambda_contract_smoke_rt.para",
+      "sha256": "e551e4e307c1450c3870bfe21c2497a275c72e12b8542cdbbcccffa6212f4899"
+    },
+    "original_dust": {
+      "path": "jwst_mcfost/runs/h2o_3um_method2_screen_v3/parameters/original_dust_guardrail_rt.para",
+      "sha256": "032695c231782ff7cb11dd114b6f265703427e345297e0fb424f731ae461e26f"
+    }
+  },
+  "rt_sed_method": 2,
+  "schema_version": 3,
+  "seeds": {
+    "primary": 52001,
+    "repeat": 52002
+  },
+  "spatial_configs": {
+    "expanded_n2401": {
+      "expected_cdelt_deg": 2.4822220872915486e-06,
+      "expected_fov_au": 3003.7468767198525,
+      "expected_pixel_au": 1.2510399319949406,
+      "known_n1201_gate_exception": "",
+      "legacy_comparator": false,
+      "nx": 2401,
+      "ny": 2401,
+      "zoom_token": "1.9975051980918284"
+    },
+    "legacy_n1201": {
+      "expected_cdelt_deg": 2.4822220872915486e-06,
+      "expected_fov_au": 1502.4989583259237,
+      "expected_pixel_au": 1.2510399319949406,
+      "known_n1201_gate_exception": "component_scattered_star:convolution_flux_loss_lt_1e-4",
+      "legacy_comparator": true,
+      "nx": 1201,
+      "ny": 1201,
+      "zoom_token": "3.9933471945199667"
+    }
+  },
+  "task_tables": {
+    "broadband_guardrail": {
+      "path": "jwst_mcfost/runs/h2o_3um_method2_screen_v3/broadband_guardrail_tasks.tsv",
+      "row_count": 9,
+      "sha256": "b9755f852f622536d62803514e3892b92f71a6d71b4c939790fea92e1fab034a"
+    },
+    "field_pilot": {
+      "path": "jwst_mcfost/runs/h2o_3um_method2_screen_v3/field_pilot_tasks.tsv",
+      "row_count": 44,
+      "sha256": "bcec528a3e252602b76ac3923ed56c9a2ea819718af8976e90e524c535e2317a"
+    },
+    "full_h2o": {
+      "path": "jwst_mcfost/runs/h2o_3um_method2_screen_v3/full_h2o_tasks.tsv",
+      "row_count": 85,
+      "sha256": "fadcef787ccbaf05920ed2a4bc0800e24886fbb966e2343f8d45b6e74582cf98"
+    }
+  },
+  "wavelength_files": {
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/broadband_guardrail/w001/anchor.lambda": "f2c711b7a22d165e60719d22fe81cbf246393fb51629f0b9dda93883c17f8e87",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/broadband_guardrail/w002/anchor.lambda": "e07fb493ca052ff264e01e5c8df0ac557154f8a40c47dfb456aad5930517c966",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/broadband_guardrail/w003/anchor.lambda": "a9c5146eec96dc1ea9604097f402a7a0eb415206f4e4b32a2836e09dfdb6b5e2",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/broadband_guardrail/w004/anchor.lambda": "f7762b5bee0778f151ac09bf2a609fcf351f2fd1c1c57b09be9d1bd19fb77e3c",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/broadband_guardrail/w005/anchor.lambda": "1097793022b13ff0ac82638d85e9d60d35080eb3937764ad07599179d97862ef",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/broadband_guardrail/w006/anchor.lambda": "b82128fc84cd81495038ead356b26b6e6be5f7ae7a55105af31d392047ae9385",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/broadband_guardrail/w007/anchor.lambda": "87caf527afb4a319fcc1a82bbc39eccb30b95cfb9beacd102a79e815c7cd8f58",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/broadband_guardrail/w008/anchor.lambda": "8a30fa7840e4a27c1d6a81fa121d610c3293460d00aa1e38428c728a91dbf63a",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/broadband_guardrail/w009/anchor.lambda": "0d0fc4cfd1b70226978ce667931a6c16f7028c988c47ed44056c1af8f3b14372",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/field_pilot/continuum_support/h2o_continuum_blue_q20/node02.lambda": "3f2e21b1cee344aa246cbd4a5236c60c2d928c11e1bae94709d4cc6a5fab49c3",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/field_pilot/continuum_support/h2o_continuum_blue_q50/node02.lambda": "0e84cf42d019b3ce7e6fc4b3a1dcf0b0a714d3cf2c881c3522bad8daa6144c6a",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/field_pilot/continuum_support/h2o_continuum_blue_q80/node02.lambda": "e1c7b3832787a15afc6d4999881341ec18cfc666e70d3224d5b183584b95f689",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/field_pilot/continuum_support/h2o_continuum_red_q20/node02.lambda": "8357429de9ad63cd1f793ad6f75351717c66ee992861eebebcddda0c2e0e0c6c",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/field_pilot/continuum_support/h2o_continuum_red_q50/node02.lambda": "6e1d7a4449544f7c599611a3f686861c29391687e12a2d6688b12a50c3dd67df",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/field_pilot/continuum_support/h2o_continuum_red_q80/node02.lambda": "645496d95c1925661b52f0374a539587284eeb93f2c69c6c91d5d1d4f0d9c2cf",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/field_pilot/logical_target/h2o_3um_v3_w006/node00.lambda": "540aaf71ff5aa769254fdac60769cd5207d108bf03ac4bda30c107ea674e2694",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/field_pilot/logical_target/h2o_3um_v3_w006/node01.lambda": "a9ad385155cf7108cfe2826e50f4a79066a845fc381755296a3acbb5982b4e2b",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/field_pilot/logical_target/h2o_3um_v3_w006/node02.lambda": "ccda11e0440c3d2374e801ae505d1627e1529bc086bd9713d80ef5869fa4f24e",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/field_pilot/logical_target/h2o_3um_v3_w006/node03.lambda": "046a3feec39160659a011b17fa1ff833439b5ae55f1474bc49cc04a7e03b9ab5",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/field_pilot/logical_target/h2o_3um_v3_w006/node04.lambda": "aca6087756645b6fb996c8799536f2e3d3c1900b5324313521836f7b13d8061e",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/full_h2o/continuum_support/h2o_continuum_blue_q20/node00.lambda": "bb5006a85014df8b9af1bfb8a5920ae7f25f6c3f60c60f2daf5e2cef5179f3da",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/full_h2o/continuum_support/h2o_continuum_blue_q20/node01.lambda": "c06eafeb605e5e51ed5019a58e632d5373e3602a43712428652fced45d904658",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/full_h2o/continuum_support/h2o_continuum_blue_q20/node02.lambda": "3f2e21b1cee344aa246cbd4a5236c60c2d928c11e1bae94709d4cc6a5fab49c3",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/full_h2o/continuum_support/h2o_continuum_blue_q20/node03.lambda": "5ab38611785e6df1bde74f9050dabc19c9c9ab0cc51551264fc3fce150e2173e",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/full_h2o/continuum_support/h2o_continuum_blue_q20/node04.lambda": "510277276b54bc7f781872f1f42ff91112187ef46de65259ac3af63d03618dce",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/full_h2o/continuum_support/h2o_continuum_blue_q50/node00.lambda": "f837effd132adde9de61efe712fb2649b30ffb3cf07b53647d3868fe89548263",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/full_h2o/continuum_support/h2o_continuum_blue_q50/node01.lambda": "c84d8d33dd33b6245a9793c7a03efa56538693ddd1e350f12834b20d0e870101",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/full_h2o/continuum_support/h2o_continuum_blue_q50/node02.lambda": "0e84cf42d019b3ce7e6fc4b3a1dcf0b0a714d3cf2c881c3522bad8daa6144c6a",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/full_h2o/continuum_support/h2o_continuum_blue_q50/node03.lambda": "1cbbaebe9d60c3234b25e42d2e2ac549ab540ac4a9e3a3de23d4d7cc5cfc1d19",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/full_h2o/continuum_support/h2o_continuum_blue_q50/node04.lambda": "34a619220145b1a7f32812f3f95f6037fbd3cbbbcc5687882aa35c347ad44da8",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/full_h2o/continuum_support/h2o_continuum_blue_q80/node00.lambda": "9d18f09890f36c21fecfc44ae15d1fe88b062c99ffe69bd1ae4daefb1696b782",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/full_h2o/continuum_support/h2o_continuum_blue_q80/node01.lambda": "08f026c5c305288a8d8d83aae112d3bc1e74ef2b40fb8796ee604c1f9bd956d8",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/full_h2o/continuum_support/h2o_continuum_blue_q80/node02.lambda": "e1c7b3832787a15afc6d4999881341ec18cfc666e70d3224d5b183584b95f689",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/full_h2o/continuum_support/h2o_continuum_blue_q80/node03.lambda": "fea3f351722c59071cda3888e41ff6d833ab17625a17cd80168d786db328dcc0",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/full_h2o/continuum_support/h2o_continuum_blue_q80/node04.lambda": "acc1b26bf00f5ec96326cf2bdbf0e14c37f1f7c563dbd3fdd9d4ac592ef2d570",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/full_h2o/continuum_support/h2o_continuum_red_q20/node00.lambda": "547f75c04262e6b2ae7b8cd968e6f07d218d3529d82fe4c5ace5720b4a1f0076",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/full_h2o/continuum_support/h2o_continuum_red_q20/node01.lambda": "bfd5fd80b017167f7032355f954eca74c7db08bf049d32191a1c6a895c1e76db",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/full_h2o/continuum_support/h2o_continuum_red_q20/node02.lambda": "8357429de9ad63cd1f793ad6f75351717c66ee992861eebebcddda0c2e0e0c6c",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/full_h2o/continuum_support/h2o_continuum_red_q20/node03.lambda": "a693775c3051c6c8566f00577ba031040c6af5a3755f76c748eac79b22d155f3",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/full_h2o/continuum_support/h2o_continuum_red_q20/node04.lambda": "5125f5fb9a4e7f9e49be883c313263dfdbd3819595c48403dfae31ea65b66031",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/full_h2o/continuum_support/h2o_continuum_red_q50/node00.lambda": "056d085f2250246eda617755302a06563ff339f5a0859cd1f7c37d52fe9e89b1",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/full_h2o/continuum_support/h2o_continuum_red_q50/node01.lambda": "8662342337a6bec65683e86fa2b2a979225e52abf507e242e1025ff10420b635",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/full_h2o/continuum_support/h2o_continuum_red_q50/node02.lambda": "6e1d7a4449544f7c599611a3f686861c29391687e12a2d6688b12a50c3dd67df",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/full_h2o/continuum_support/h2o_continuum_red_q50/node03.lambda": "09fe7051a3c425ef2a877f74c26ad7cfb24edc8806b961ec97ebd988f5e0a5b8",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/full_h2o/continuum_support/h2o_continuum_red_q50/node04.lambda": "f71150b37566b5185b79f6734bd1a71f7bd353245af44633b159b157e95eaadc",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/full_h2o/continuum_support/h2o_continuum_red_q80/node00.lambda": "29d9c513b9896376024c9b0c5295a25dc2b1db15db1a3f43b7d80138d7a95697",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/full_h2o/continuum_support/h2o_continuum_red_q80/node01.lambda": "0e21ecea7300de0a014e435084d59b3f5937d8af1dfa03a7fec15b5ff98e8ef0",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/full_h2o/continuum_support/h2o_continuum_red_q80/node02.lambda": "645496d95c1925661b52f0374a539587284eeb93f2c69c6c91d5d1d4f0d9c2cf",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/full_h2o/continuum_support/h2o_continuum_red_q80/node03.lambda": "3af4bfff9a84ef76c34dfdc2ad0eea14e8479083aa824fb25a82cc5d8979175d",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/full_h2o/continuum_support/h2o_continuum_red_q80/node04.lambda": "7306526a9120d9f85cdca7a169480487744e22e787e2a0a6e237e3a7ba47f942",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/full_h2o/logical_target/h2o_3um_v3_w001/node00.lambda": "f837effd132adde9de61efe712fb2649b30ffb3cf07b53647d3868fe89548263",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/full_h2o/logical_target/h2o_3um_v3_w001/node01.lambda": "c84d8d33dd33b6245a9793c7a03efa56538693ddd1e350f12834b20d0e870101",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/full_h2o/logical_target/h2o_3um_v3_w001/node02.lambda": "0e84cf42d019b3ce7e6fc4b3a1dcf0b0a714d3cf2c881c3522bad8daa6144c6a",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/full_h2o/logical_target/h2o_3um_v3_w001/node03.lambda": "1cbbaebe9d60c3234b25e42d2e2ac549ab540ac4a9e3a3de23d4d7cc5cfc1d19",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/full_h2o/logical_target/h2o_3um_v3_w001/node04.lambda": "34a619220145b1a7f32812f3f95f6037fbd3cbbbcc5687882aa35c347ad44da8",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/full_h2o/logical_target/h2o_3um_v3_w002/node00.lambda": "05f54abdcf1f34d96cedeea53d3618dcaef49513f685edff368ddef4d3dbe5d9",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/full_h2o/logical_target/h2o_3um_v3_w002/node01.lambda": "1440409f1d3f053263f71d95121cd45d15a666f509471b6ddc9079bcb59ad250",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/full_h2o/logical_target/h2o_3um_v3_w002/node02.lambda": "a62f238a516ba39528b9b6fcdfdda607da5c6ddd493183effbd3870e88b70a65",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/full_h2o/logical_target/h2o_3um_v3_w002/node03.lambda": "214ae06aab6c78ec0d375d1f3a89e2deeaf109beb868021e97929cc9561c2bc3",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/full_h2o/logical_target/h2o_3um_v3_w002/node04.lambda": "29f024a20bb28951e60b5d8f2ea289fa5320b9b998affa7ab3abb419bbc00364",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/full_h2o/logical_target/h2o_3um_v3_w003/node00.lambda": "2e07abaf9f7bfc35b6d62d60b449ea8381feef10ccfa3711865ab85d1bf8d96d",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/full_h2o/logical_target/h2o_3um_v3_w003/node01.lambda": "3837d7fd6ff1a3915ae5711adf5a75ad1fd25eec5730a5fecdbc028eae0354b0",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/full_h2o/logical_target/h2o_3um_v3_w003/node02.lambda": "81d5422b3abd61fe2bf0cf88a627520cc772e4bb0813b506c2f1f8e2850affc2",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/full_h2o/logical_target/h2o_3um_v3_w003/node03.lambda": "8b937b90038da38bc14235b11daeb67f6167e49013f249f19ff7b340c977791f",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/full_h2o/logical_target/h2o_3um_v3_w003/node04.lambda": "2ecad41d6da3dabd9ce432e21338d23dddacbd2efc06516ec79ded1e48fb5848",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/full_h2o/logical_target/h2o_3um_v3_w004/node00.lambda": "14ae29313f0ef2e83a67a1040506949938773f66fc81a95ef5fb827d02ccec22",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/full_h2o/logical_target/h2o_3um_v3_w004/node01.lambda": "4ad98779007b8e623fd11726cab036958b1a80f4944d0a1b272aae3c82efe04e",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/full_h2o/logical_target/h2o_3um_v3_w004/node02.lambda": "f5ec7925d3fc81a1d1e145d3a9f9cf4413b8df3e58e5d75885f9a87c3af86faf",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/full_h2o/logical_target/h2o_3um_v3_w004/node03.lambda": "21d325104915d555ef142fde6d4bcad159829add274aaee3964f5d74cabfad61",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/full_h2o/logical_target/h2o_3um_v3_w004/node04.lambda": "5af88554461142068f3abce918fb47afdd0a15470e593cbc2695b2da9c1ba49d",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/full_h2o/logical_target/h2o_3um_v3_w005/node00.lambda": "000503f9d6e8001dee5a0005bc06f284ea020e6c55f96b71958de7483bf4ffcd",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/full_h2o/logical_target/h2o_3um_v3_w005/node01.lambda": "e0b7b1db1e3a1589b1f219cd9b052b18acc51d82c355910e3d3036f5ae1f7cd2",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/full_h2o/logical_target/h2o_3um_v3_w005/node02.lambda": "8039ec1f99d3698a67790561a9666309301b94a57a491ea99789ed928f2be83c",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/full_h2o/logical_target/h2o_3um_v3_w005/node03.lambda": "12d4be248bbd36dacd0ab019520ab3b086a10ca66113e4f6404f41c911a20652",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/full_h2o/logical_target/h2o_3um_v3_w005/node04.lambda": "b780db8f022f3e86ab80f7ebc51b336fc6b11c8311461549cfdef7e65a510928",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/full_h2o/logical_target/h2o_3um_v3_w006/node00.lambda": "540aaf71ff5aa769254fdac60769cd5207d108bf03ac4bda30c107ea674e2694",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/full_h2o/logical_target/h2o_3um_v3_w006/node01.lambda": "a9ad385155cf7108cfe2826e50f4a79066a845fc381755296a3acbb5982b4e2b",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/full_h2o/logical_target/h2o_3um_v3_w006/node02.lambda": "ccda11e0440c3d2374e801ae505d1627e1529bc086bd9713d80ef5869fa4f24e",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/full_h2o/logical_target/h2o_3um_v3_w006/node03.lambda": "046a3feec39160659a011b17fa1ff833439b5ae55f1474bc49cc04a7e03b9ab5",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/full_h2o/logical_target/h2o_3um_v3_w006/node04.lambda": "aca6087756645b6fb996c8799536f2e3d3c1900b5324313521836f7b13d8061e",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/full_h2o/logical_target/h2o_3um_v3_w007/node00.lambda": "9c6ca9c5976d5f008675ddff138ed8e3fcbd17bfe8a2f5e7f2049a69220cc79c",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/full_h2o/logical_target/h2o_3um_v3_w007/node01.lambda": "cdf74bfb064b55c30dc9ea67b007a8224cb2c137dcfcb03d55b8deb4e7c8f2ba",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/full_h2o/logical_target/h2o_3um_v3_w007/node02.lambda": "2f0cc4061a98a8defbc37c26cbf096cc171d1d3c01c4865a971c12eb960ddc3b",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/full_h2o/logical_target/h2o_3um_v3_w007/node03.lambda": "bd836312f2f7a103d17822dd83cb21ee33ef61bc170b39accbd7180ea4a65c68",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/full_h2o/logical_target/h2o_3um_v3_w007/node04.lambda": "277d2a0f864a1b5280fe67df42c47a1cde5b6f114917a18dbf630a01a3a18cbc",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/full_h2o/logical_target/h2o_3um_v3_w008/node00.lambda": "a26aef8bd1a5deae634ac6488bffa33881609b301831f9213508359c4f140e43",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/full_h2o/logical_target/h2o_3um_v3_w008/node01.lambda": "c7bed5ecc044321b32068d2006cbebbd5886bfb7753a360d27221b24981ce09f",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/full_h2o/logical_target/h2o_3um_v3_w008/node02.lambda": "472ec98e3ea99ec7e776bf1c5e9215ef16ff568537014aa9016a415a135a3a5d",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/full_h2o/logical_target/h2o_3um_v3_w008/node03.lambda": "b8a2b16d6388856a7918c6f317b3c59b4d7e82bc0720188b7878ca527521695b",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/full_h2o/logical_target/h2o_3um_v3_w008/node04.lambda": "eec10978988fe80b6b7dc2ae6e0e2a53ba338db86e833f2fad2f04b84c0c9d81",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/full_h2o/logical_target/h2o_3um_v3_w009/node00.lambda": "e41f946e14f22d10a8881ff9a9aec3f8a4d4699bb40b023e00feb52932d7f6a3",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/full_h2o/logical_target/h2o_3um_v3_w009/node01.lambda": "2dc4b8a40177fb304ce53dad5cd7517d70837c255bdc0c552595790f5fa1e8a8",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/full_h2o/logical_target/h2o_3um_v3_w009/node02.lambda": "d51a0f04b8f2d4ff4db044a954980259b4dda2b544d5e29683c084b881fdeebd",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/full_h2o/logical_target/h2o_3um_v3_w009/node03.lambda": "18be5eb524d3d5370c50dc2e1de1cb0de77cf870e2a15b2f718dd1efa4f2011d",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/full_h2o/logical_target/h2o_3um_v3_w009/node04.lambda": "9fed9201c6445aa51cf58a3af97ef00c5933459669ce387a3432548a86cb0ef4",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/full_h2o/logical_target/h2o_3um_v3_w010/node00.lambda": "e2ddbd618c2c3a79c6e938d188d633981b31e62465d62cb52c4e349f6654e9cb",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/full_h2o/logical_target/h2o_3um_v3_w010/node01.lambda": "08be09f83ed4b9ef484fdde363c98b19d1ecc53afad79a1efec604a72b296edd",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/full_h2o/logical_target/h2o_3um_v3_w010/node02.lambda": "c16844f6196b6a30d76ef41da199c1ad35170cafa57e1a5b0f201ee14a68c71b",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/full_h2o/logical_target/h2o_3um_v3_w010/node03.lambda": "4bb6f4e975708a5648c155bdc3d2727c6533f5f4aa5a0148eb20bb6fde17d830",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/full_h2o/logical_target/h2o_3um_v3_w010/node04.lambda": "8ef66117ab8d7f5ff2c12c2ba91efe90e0ca1d9afc38ff7e333d1535668f307b",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/full_h2o/logical_target/h2o_3um_v3_w011/node00.lambda": "056d085f2250246eda617755302a06563ff339f5a0859cd1f7c37d52fe9e89b1",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/full_h2o/logical_target/h2o_3um_v3_w011/node01.lambda": "8662342337a6bec65683e86fa2b2a979225e52abf507e242e1025ff10420b635",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/full_h2o/logical_target/h2o_3um_v3_w011/node02.lambda": "6e1d7a4449544f7c599611a3f686861c29391687e12a2d6688b12a50c3dd67df",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/full_h2o/logical_target/h2o_3um_v3_w011/node03.lambda": "09fe7051a3c425ef2a877f74c26ad7cfb24edc8806b961ec97ebd988f5e0a5b8",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/full_h2o/logical_target/h2o_3um_v3_w011/node04.lambda": "f71150b37566b5185b79f6734bd1a71f7bd353245af44633b159b157e95eaadc",
+    "jwst_mcfost/runs/h2o_3um_method2_screen_v3/anchors/lambda_contract_smoke/anchor.lambda": "ccda11e0440c3d2374e801ae505d1627e1529bc086bd9713d80ef5869fa4f24e"
+  },
+  "workflow_files": {
+    "jwst_mcfost/H2O_3UM_METHOD2_SCREEN_V3.md": "bcd0f3e5f4d5d008ae26c6b0827b677533f215bbe33e59300edb9f2c5172dd1b",
+    "jwst_mcfost/finalize_h2o_3um_method2_screen_v3_field_pilot.py": "aa85b2d215546014f32a1a4a2203452a7177afe7ca6091f9a03d020dda6c2513",
+    "jwst_mcfost/freeze_h2o_3um_method2_screen_v3.py": "1b766015ede59ececf2069127ec4b1105cb9f145735f08126a2982c05feed5c5",
+    "jwst_mcfost/h2o_3um_method2_measurement_kernel_v3.py": "232d18a1beb8d61dfcdc73f2d4d07d84d4130ab409525f95046109ab726d78ba",
+    "jwst_mcfost/h2o_3um_method2_screen_v3_common.py": "ab32c46aaee0c6e8536786eea1d2d2433c2a961a6936d31ee6276421bc26a03a",
+    "jwst_mcfost/job_h2o_3um_method2_screen_v3_affinity_smoke.sh": "224fc31d8c3a62fd1ba5a3bb77a45d4eefec428cf21e4efdd7219cdd967d111c",
+    "jwst_mcfost/job_h2o_3um_method2_screen_v3_field_pilot_array.sh": "5b719732a9cb632da23b85b28c1a2f47b6b3442d10c64fa4b3356509de14dbe2",
+    "jwst_mcfost/job_h2o_3um_method2_screen_v3_field_pilot_finalize.sh": "40783d201340a4a645ebd4fe1f61f5ade7ec0c187b34abbf667634e90bc93cab",
+    "jwst_mcfost/job_h2o_3um_method2_screen_v3_lambda_contract_smoke.sh": "def50bbda7b3262670b3ceca0a701a802d550b997549c4c94e5539b390451052",
+    "jwst_mcfost/launch_h2o_3um_method2_screen_v3.py": "dc236bd6d837ee4d645b9cd1a8e6dc72c44155207a06be1a86d6048e6404c513",
+    "jwst_mcfost/run_h2o_3um_method2_screen_v3_affinity_smoke.py": "7f602a47891cf84450292705440bb445425a9078f561fa7c37631dc8850d7050",
+    "jwst_mcfost/run_h2o_3um_method2_screen_v3_lambda_contract_smoke.py": "3787949eb08fe1e969408d946acda3656c28d8105005dfbaf00d03b05124d89d",
+    "jwst_mcfost/run_h2o_3um_method2_screen_v3_task.py": "acae8d4e67635572d8b0d9d465337ca4b266f7a07f6c1d872092ce1e6b350227",
+    "jwst_mcfost/test_freeze_h2o_3um_method2_screen_v3.py": "ef4d6a64ea5af9377c23abd626100ca217e2a3dcd4384e7eaa87cb4f8eacfe38",
+    "jwst_mcfost/test_h2o_3um_method2_measurement_v3.py": "09690bf70f952a81a0431997b0eec889fd65587f6921c9f2d4140dc415c952ab",
+    "jwst_mcfost/test_h2o_3um_method2_screen_v3_runner.py": "1fb4cf945ac68e733d9a3c87428b949dc22b99cf6e08a1f043a10e16cd416a8c",
+    "jwst_mcfost/validate_h2o_3um_method2_screen_v3_affinity_smoke.py": "329347d5fa699697c8493f82b395509666b531d902887b3e52357960a3e3a7e6",
+    "jwst_mcfost/validate_h2o_3um_method2_screen_v3_lambda_contract_smoke.py": "618340c55892e71264f444a53f922cd6d8b2c274b51102ccd7eee03576d81e00"
+  },
+  "workflow_id": "h2o_3um_method2_screen_v3"
+}
