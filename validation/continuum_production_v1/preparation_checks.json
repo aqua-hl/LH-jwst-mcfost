@@ -1,0 +1,27 @@
+{
+  "run_id": "continuum_production_v1",
+  "passed": true,
+  "manifest_sha256": "03974162d9246a546ffc9f40dc30afdf688d3b9e7c575493c7c243279e1b9c70",
+  "frozen_inputs_checked": 351,
+  "physical_models": 12,
+  "anchors_per_model": 9,
+  "temperature_solves": 12,
+  "image_calculations": 108,
+  "parameter_files_inspected": 120,
+  "nominal_inputs_match_completed_control": true,
+  "cpus_per_task": 64,
+  "max_concurrent_tasks": 12,
+  "max_array_cpus": 768,
+  "shell_syntax": "pass",
+  "simulations_run_locally": false,
+  "submitted": false,
+  "script_sha256": {
+    "job_array.sh": "e8f072033c326dfda0ccb55b0fda84136c972fed1b94e54897fef2675adc171f",
+    "job_analysis.sh": "dbd7c4f4a8ca4f7fc8800b3ad6552b43735f7df510b9f388cbce42c292697111",
+    "submit.sh": "3892cda7beeb342ace1a0f89e4114724762456f840f2e32116e92fbcb89172c3"
+  },
+  "machine_configuration_sha256": "2b3dd5c1fceca0833cad22f69af6d1cc9fc0f9fde3179e461ca9174c90bd788a",
+  "max_array_memory_gb": 192,
+  "scientific_manifest_unchanged_after_resource_update": true,
+  "anchor_extension_decision": "User chose to retain nine anchors after reviewing broad ice/silicate exclusion intervals."
+}

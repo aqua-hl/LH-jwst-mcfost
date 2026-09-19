@@ -110,8 +110,13 @@ class WorkflowTests(unittest.TestCase):
         root_arg = command[command.index("-root_dir") + 1]
         self.assertFalse(Path(root_arg).is_absolute())
         output = (cwd / root_arg).resolve()
+        # Upstream MCFOST nests products for -seed but still reads -Tfile
+        # directly underneath root_dir. Exercise that distinction explicitly.
+        products = output
+        if "-seed" in command:
+            products = output / ("seed=" + command[command.index("-seed") + 1])
         if command[1] == "temperature.para":
-            target = output / "data_th" / "Temperature.fits.gz"
+            target = products / "data_th" / "Temperature.fits.gz"
             target.parent.mkdir(parents=True)
             target.write_bytes(b"fresh equilibrium fixture")
         else:
@@ -120,12 +125,12 @@ class WorkflowTests(unittest.TestCase):
             self.assertTrue(link.is_symlink())
             self.assertFalse(Path(os.readlink(link)).is_absolute())
             self.assertEqual(link.read_bytes(), b"fresh equilibrium fixture")
-            target = output / "data_image" / "RT.fits.gz"
+            target = products / "data_image" / "RT.fits.gz"
             target.parent.mkdir(parents=True)
             target.write_bytes(b"mock image " + cwd.name.encode())
             if "-rt-sed-method" in command:
-                (output / "data_th").mkdir()
-                (output / "data_th" / "sed_rt.fits.gz").write_bytes(b"mock coeval SED")
+                (products / "data_th").mkdir()
+                (products / "data_th" / "sed_rt.fits.gz").write_bytes(b"mock coeval SED")
             self.assertIn("-rt2", command)
             self.assertNotIn("-mol", command)
         return .001, "Using scattering method 2\nProcessing complete\n"
@@ -151,6 +156,27 @@ class WorkflowTests(unittest.TestCase):
         with self.assertRaises(FileExistsError):
             prepare_run(self.config)
         self.assertEqual(before, sha256(self.run / "manifest.json"))
+
+    def test_dotted_run_name_prepares_as_one_safe_directory(self):
+        config = load_json(self.config)
+        config["run_name"] = "continuum_production_v1.1"
+        self.config.write_text(json.dumps(config))
+        run = prepare_run(self.config)
+        self.assertEqual(run, (self.root / "runs/continuum_production_v1.1").resolve())
+        manifest = load_json(run / "manifest.json")
+        self.assertEqual(manifest["run_id"], config["run_name"])
+        runner.validate_inputs(run, manifest)
+
+    def test_run_name_rejects_paths_empty_components_and_non_strings(self):
+        config = load_json(self.config)
+        before = sorted(path.name for path in (self.root / "runs").iterdir())
+        for name in ("", ".", "..", ".hidden", "trailing.", "a..b", "../escape", "a/b", "a\\b", "a b", None, 1):
+            with self.subTest(name=name):
+                config["run_name"] = name
+                self.config.write_text(json.dumps(config))
+                with self.assertRaisesRegex(ValueError, "run_name"):
+                    prepare_run(self.config)
+        self.assertEqual(sorted(path.name for path in (self.root / "runs").iterdir()), before)
 
     def test_slurm_syntax_allocation_and_spool_safe_paths(self):
         result = write_slurm(self.run, self.machine)
@@ -182,6 +208,7 @@ class WorkflowTests(unittest.TestCase):
         self.assertEqual(first["status"], "complete")
         self.assertEqual(second["status"], "cached")
         self.assertEqual(len(self.commands), 3)
+        self.assertTrue(all("-seed" not in command for command, _ in self.commands))
         self.assertTrue(load_json(self.directory / "measurements.json")["complete"])
         self.assertEqual(load_json(self.directory / "status.json")["state"], "complete")
 
@@ -254,6 +281,38 @@ class WorkflowTests(unittest.TestCase):
         data = load_json(self.directory / "measurements.json")
         self.assertTrue(all("coeval_sed_sha256" in m for m in data["measurements"]))
         self.assertTrue(all("-rt-sed-method" in command for command, cwd in self.commands[1:]))
+
+    def test_seed_applies_to_temperature_and_both_image_backends(self):
+        for backend in ("image_method2", "coeval_method2"):
+            with self.subTest(backend=backend):
+                config = load_json(self.config)
+                config["run_name"] = "seeded_" + backend
+                config["numerics"]["random_seed"] = 41001
+                self.config.write_text(json.dumps(config))
+                run = prepare_run(self.config)
+                self.machine_value["backend"] = backend
+                self.machine.write_text(json.dumps(self.machine_value))
+                self.commands.clear()
+                with self.patches():
+                    self.assertEqual(runner.run_model(run, 0, self.machine)["status"], "complete")
+                    self.assertEqual(runner.run_model(run, 0, self.machine)["status"], "cached")
+                self.assertEqual(len(self.commands), 3)
+                for command, _ in self.commands:
+                    self.assertEqual(command.count("-seed"), 1)
+                    self.assertEqual(command[command.index("-seed") + 1], "41001")
+                manifest = load_json(run / "manifest.json")
+                directory = run / "models" / manifest["models"][0]["id"]
+                temperature = load_json(directory / "temperature_complete.json")
+                self.assertIn("/seed=41001/", temperature["path"])
+                measurements = load_json(directory / "measurements.json")["measurements"]
+                self.assertTrue(all("/seed=41001/" in m["image_path"] for m in measurements))
+                # A changed seed must not accept cached measurements, even if
+                # the caller alters the manifest rather than the frozen JSON.
+                manifest["configuration"]["numerics"]["random_seed"] = 41002
+                (run / "manifest.json").write_text(json.dumps(manifest))
+                with self.patches(), self.assertRaisesRegex(RuntimeError, "runtime or manifest changed"):
+                    runner.run_model(run, 0, self.machine)
+                self.assertEqual(len(self.commands), 3)
 
     def test_wrong_allocated_thread_count_fails_before_invocation(self):
         self.machine_value["threads"] = 8

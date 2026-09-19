@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "mcfost_executable": "mcfost",
+  "mcfost_utils": "$MCFOST_UTILS",
+  "backend": "image_method2",
+  "threads": 64,
+  "timeout_seconds": 14400,
+  "max_memory_gb": 12,
+  "slurm": {
+    "time": "12:00:00",
+    "memory": "16G",
+    "max_parallel": 16,
+    "python": "/SET/WORKING/PYTHON",
+    "setup_lines": [
+      ": \"${MCFOST_UTILS:?Export MCFOST_UTILS before configuring/submitting}\""
+    ],
+    "analysis_cpus": 2,
+    "analysis_memory": "4G",
+    "analysis_time": "00:30:00"
+  },
+  "notes": "96 models, 64 CPUs and 16 GB per array task, at most 16 tasks / 1024 CPUs / 256 GB concurrently. Four-hour timeout per MCFOST command; twelve-hour model task limit. These are resource bounds, not measured runtime predictions. Before submission run scripts/configure_slurm_environment.py with the successful shared cluster Python environment to write a separate .cluster.json and regenerate scripts with pinned Python, MCFOST and utilities plus compute-node import checks. The placeholder interpreter intentionally requires this environment configuration step. Reuse the working partition/account/reservation/module settings. Dependent analysis: 2 CPUs, 4 GB, 30 minutes."
+}

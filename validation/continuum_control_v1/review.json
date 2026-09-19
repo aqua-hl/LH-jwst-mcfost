@@ -1,0 +1,138 @@
+{
+  "run_id": "continuum_control_v1",
+  "manifest_sha256": "942c7aa0db63ff24e5afc7004efefe21c3cea3a6b768f1463f6c8a1c6f19eb67",
+  "table_checks_pass": true,
+  "reported_quality_pass_count": 9,
+  "score_dex": 0.08687053964578331,
+  "archived_score_dex": 0.10931253534441453,
+  "chi2_diagnostic": 17.896087883284856,
+  "max_absolute_archive_difference_percent": 14.457568538818478,
+  "anchors_outside_provisional_2_percent": 7,
+  "archive_reproduction_within_2_percent": false,
+  "missing_runtime_records": [
+    "runtime_binding.json",
+    "models/m0000_28e89562/runtime_binding.json",
+    "models/m0000_28e89562/measurements.json",
+    "models/m0000_28e89562/temperature_complete.json",
+    "models/m0000_28e89562/status.json"
+  ],
+  "downloaded_analysis_warnings": [],
+  "rows": [
+    {
+      "anchor_id": "w001",
+      "wavelength_um": 1.2028117593024095,
+      "region": "near_ir_short",
+      "observed_jy": 0.0001944625168664905,
+      "uncertainty_jy": 1.945982233879429e-05,
+      "new_model_jy": 0.00016332187884295852,
+      "archived_model_jy": 0.00015996354199207316,
+      "model_minus_observed_percent": -16.013696894045548,
+      "standardized_flux_residual": -1.6002529458581598,
+      "new_minus_archived_percent": 2.0994389153071946
+    },
+    {
+      "anchor_id": "w002",
+      "wavelength_um": 1.4987957445436022,
+      "region": "near_ir_short",
+      "observed_jy": 0.001667332470111946,
+      "uncertainty_jy": 0.00016703393760747346,
+      "new_model_jy": 0.0017484538584541256,
+      "archived_model_jy": 0.0017520250957217165,
+      "model_minus_observed_percent": 4.865339684576098,
+      "standardized_flux_residual": 0.4856581213622184,
+      "new_minus_archived_percent": -0.20383482384536133
+    },
+    {
+      "anchor_id": "w003",
+      "wavelength_um": 1.7588530996181813,
+      "region": "near_ir_rise",
+      "observed_jy": 0.007450207545022411,
+      "uncertainty_jy": 0.0007453175682219251,
+      "new_model_jy": 0.007348858756682528,
+      "archived_model_jy": 0.00800453714894924,
+      "model_minus_observed_percent": -1.3603485235467838,
+      "standardized_flux_residual": -0.13598067811774117,
+      "new_minus_archived_percent": -8.191334240391178
+    },
+    {
+      "anchor_id": "w004",
+      "wavelength_um": 2.1916659199557045,
+      "region": "near_ir_rise",
+      "observed_jy": 0.0433236674806872,
+      "uncertainty_jy": 0.004333786790703265,
+      "new_model_jy": 0.04098673188119988,
+      "archived_model_jy": 0.040049543933253245,
+      "model_minus_observed_percent": -5.394131511440204,
+      "standardized_flux_residual": -0.5392364027922317,
+      "new_minus_archived_percent": 2.340071461259474
+    },
+    {
+      "anchor_id": "w005",
+      "wavelength_um": 2.546352514425122,
+      "region": "near_ir_rise",
+      "observed_jy": 0.1242014084192464,
+      "uncertainty_jy": 0.01242491245973221,
+      "new_model_jy": 0.09445338715062401,
+      "archived_model_jy": 0.08493761584995246,
+      "model_minus_observed_percent": -23.951436338150735,
+      "standardized_flux_residual": -2.3942238116391152,
+      "new_minus_archived_percent": 11.203247472217438
+    },
+    {
+      "anchor_id": "w006",
+      "wavelength_um": 3.9143995604061015,
+      "region": "window_3p9",
+      "observed_jy": 0.471141750417931,
+      "uncertainty_jy": 0.047146154012933664,
+      "new_model_jy": 0.4197164096218493,
+      "archived_model_jy": 0.39439720885015417,
+      "model_minus_observed_percent": -10.915046427208864,
+      "standardized_flux_residual": -1.0907642812598055,
+      "new_minus_archived_percent": 6.419721084110108
+    },
+    {
+      "anchor_id": "w007",
+      "wavelength_um": 5.3906283153397085,
+      "region": "window_5p4",
+      "observed_jy": 1.3918125079951504,
+      "uncertainty_jy": 0.20880465124068487,
+      "new_model_jy": 1.0018422320246005,
+      "archived_model_jy": 0.875295749170859,
+      "model_minus_observed_percent": -28.018879966259703,
+      "standardized_flux_residual": -1.8676321320114613,
+      "new_minus_archived_percent": 14.457568538818478
+    },
+    {
+      "anchor_id": "w008",
+      "wavelength_um": 13.799908320389276,
+      "region": "window_13p8",
+      "observed_jy": 2.2656402783529344,
+      "uncertainty_jy": 0.3398745344272618,
+      "new_model_jy": 2.9540277902410734,
+      "archived_model_jy": 2.875622694092157,
+      "model_minus_observed_percent": 30.383795630106825,
+      "standardized_flux_residual": 2.0254165645218833,
+      "new_minus_archived_percent": 2.72654323913899
+    },
+    {
+      "anchor_id": "w009",
+      "wavelength_um": 27.513091575690556,
+      "region": "window_27p5",
+      "observed_jy": 7.851055855671131,
+      "uncertainty_jy": 1.1784484757219593,
+      "new_model_jy": 8.472078659213055,
+      "archived_model_jy": 8.386650138825637,
+      "model_minus_observed_percent": 7.910054583210413,
+      "standardized_flux_residual": 0.5269834161917549,
+      "new_minus_archived_percent": 1.018625064516887
+    }
+  ],
+  "input_sha256": {
+    "runs/continuum_control_v1/manifest.json": "942c7aa0db63ff24e5afc7004efefe21c3cea3a6b768f1463f6c8a1c6f19eb67",
+    "runs/continuum_control_v1/results/summary.json": "7d3181f40054a25bacabb4fefe6e2b2665ca34a123e410c6bcce9962e8b683d0",
+    "runs/continuum_control_v1/results/ranking.ecsv": "9b2af98de64940deabba52e4e513ec5f02ae46e8cd65806dcd9f1c0c0b07a575",
+    "runs/continuum_control_v1/results/predictions.ecsv": "7bbe9a168b7194f92dd171b9b3b38a75d6c792b9864b0e551fcfc051bd1a6804",
+    "reference/predictions/continuum_predictions.ecsv": "a3b7201d627c336183deca111f81aefb2bac04860839d00cf748f5a03a73cf05",
+    "reference/predictions/continuum_summary.json": "6e48b43ba851af22e22bd06d95a65defa1308329f1301d1cd380a1c31ad987f1"
+  }
+}

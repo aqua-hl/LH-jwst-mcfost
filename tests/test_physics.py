@@ -7,7 +7,7 @@ import unittest
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
-from mcfost_grid.physics import physical_args, render_parameter, validate_parameters
+from mcfost_grid.physics import numerical_args, physical_args, render_parameter, validate_parameters
 
 
 TEMPLATE = (ROOT / "reference/parameters/continuum_nominal.para").read_text()
@@ -84,6 +84,22 @@ class PhysicsTests(unittest.TestCase):
 
     def test_zero_accretion_is_explicit(self):
         self.assertEqual(physical_args(dict(cavity_half_opening_deg=20, accretion_rate_msun_per_year=0))[-1], "0")
+
+    def test_optional_seed_is_a_cli_numeric_not_a_parameter_row(self):
+        self.assertEqual(numerical_args({}), [])
+        for seed in (1, 41001, 2147483647):
+            with self.subTest(seed=seed):
+                self.assertEqual(numerical_args({"random_seed": seed}), ["-seed", str(seed)])
+                self.assertEqual(render_parameter(TEMPLATE, {}, {"random_seed": seed}, "temperature"),
+                                 render_parameter(TEMPLATE, {}, {}, "temperature"))
+
+    def test_seed_requires_a_positive_31_bit_json_integer(self):
+        for seed in (None, False, True, 0, -1, 1.5, 41001.0, "41001", 2147483648, float("inf")):
+            with self.subTest(seed=seed):
+                with self.assertRaisesRegex(ValueError, "random_seed"):
+                    numerical_args({"random_seed": seed})
+                with self.assertRaisesRegex(ValueError, "random_seed"):
+                    render_parameter(TEMPLATE, {}, {"random_seed": seed}, "temperature")
 
     def test_nonfinite_invalid_and_unknown_values(self):
         cases = [dict(distance_pc=0), dict(envelope_amax_um=-1), dict(inclination_deg=91),

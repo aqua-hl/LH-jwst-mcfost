@@ -8,7 +8,7 @@ This is the consolidated local workspace. The former loose `jwst_mcfost` tree is
 
 [Local test plot](runs/laptop_smoke_v4/results/spectrum_comparison.png) · [Validation and timings](validation/WORKFLOW_VALIDATION.md)
 
-`workflow.py` prepares a frozen model catalogue, runs independent physical models locally or as a Slurm array, measures Method-2 image aperture fluxes once, and generates compact rankings and plots. The cluster smoke test and one full-resolution continuum control have completed. The small laptop demonstration is not a scientific fit; the production example has not been run. The current physical template is the original coated-Mie disk/envelope model; the later DHS H₂O model needs a separate extension.
+`workflow.py` prepares a frozen model catalogue, runs independent physical models locally or as a Slurm array, measures Method-2 image aperture fluxes once, and generates compact rankings and plots. The cluster smoke test, full-resolution continuum control and initial twelve-model search have completed. A broader 96-model search is prepared below. The small laptop demonstration is not a scientific fit. The current physical template is the original coated-Mie disk/envelope model; the later DHS H₂O model needs a separate extension.
 
 ```bash
 python -B workflow.py --help
@@ -110,13 +110,13 @@ timings and logs for sizing subsequent work. Compare its predictions with the
 archived nominal control before treating the new environment as scientifically
 validated; a single run does not establish convergence.
 
-### Next batch: twelve-model continuum search
+### Completed twelve-model continuum search
 
 The [downloaded control review](validation/continuum_control_v1/REVIEW.md)
 confirms nine passing anchors and a score of 0.08687054 dex. Nominal fluxes differ
 from the archive by up to 14.46%, so reproduction and convergence remain open.
 
-The [next-run plan and cluster commands](docs/CONTINUUM_PRODUCTION_V1.md) describe
+The [run plan and cluster commands](docs/CONTINUUM_PRODUCTION_V1.md) describe
 the prepared `continuum_production_v1` search: 12 models, nine anchors each,
 **64 CPUs per task and up to 12 concurrent tasks** (768 CPUs at peak). It starts
 from archived continuum controls, adds 50°/60° inclinations and lower mass/q
@@ -124,8 +124,47 @@ directions, and retains the original dust with 5% ice mantle volume. Detailed
 ice/silicate features and heating changes are deferred.
 
 Use [grid.continuum-production.json](config/grid.continuum-production.json) and
-[machine.slurm-production.json](config/machine.slurm-production.json). The run
-is prepared locally; it has not been submitted by this workspace.
+[machine.slurm-production.json](config/machine.slurm-production.json). The
+downloaded cluster results now include all 12 models and 108 passing predictions,
+including the three previously failed tasks. The nominal model scores best
+among these twelve settings at 0.088998 dex; this does not rule out literature
+geometry with other physical parameters varied. Its repeated fluxes differ from
+the earlier control by up to 9.05%, so close rankings still need numerical checks. See the
+[production results review](validation/continuum_production_v1/RESULTS_REVIEW.md)
+and [spectrum plot](runs/continuum_production_v1/results/spectrum_comparison.png).
+
+### Next batch: continuum production v1.1
+
+[continuum_production_v1.1](docs/CONTINUUM_PRODUCTION_V1_1.md) is prepared with
+**96 models, 512,000 photons, nine anchors per model, 64 CPUs per task and
+16 concurrent tasks** (up to 1,024 CPUs). Six inclinations (45°, 50°, 55°, 60°,
+65°, 70°) each sample the same 16 combinations of envelope mass, maximum grain
+size, grain exponent, cavity opening and source heating. Three settings retain
+historical controls; thirteen explore the broader joint parameter space.
+The [catalogue](validation/continuum_production_v1.1/model_catalogue.csv) and
+[coverage plot](validation/continuum_production_v1.1/coverageplot.png) show the
+design. Dust/ice composition and the continuum-only anchors stay fixed.
+
+More photons address possible sampling noise; neither this increase nor a
+fixed seed alone establishes convergence. The earlier winner is conditional on
+the small grid. This run tests other physical settings at every inclination.
+
+Transfer the updated workspace and prepared run to the cluster. Activate the
+working shared Python environment, set MCFOST on PATH and export MCFOST_UTILS.
+Copy required partition/account/module settings into the
+[machine template](config/machine.slurm-production-v1.1.json), then run:
+
+```bash
+python -B scripts/configure_slurm_environment.py runs/continuum_production_v1.1 --machine config/machine.slurm-production-v1.1.json
+bash runs/continuum_production_v1.1/submit.sh "$PWD/config/machine.slurm-production-v1.1.cluster.json"
+```
+
+The helper pins Python, MCFOST and utilities paths in a separate cluster
+configuration, checks imports and frozen inputs, and adds checks to both Slurm
+jobs. The submission script schedules the array and dependent analysis. No jobs
+have been submitted from this local workspace. See the
+[run plan](docs/CONTINUUM_PRODUCTION_V1_1.md) for completion checks and numerical
+limitations.
 
 ## Scientific report
 

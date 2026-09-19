@@ -1,0 +1,67 @@
+{
+  "run_id": "continuum_production_v1.1",
+  "checked_utc": "2026-09-19T12:12:22.137453+00:00",
+  "prepared_manifest_sha256": "4ec2c6eefa9c38986286f960c2186fc2c308eeea931f2222143d69280f3fdc07",
+  "input_hashes_verified": 2703,
+  "unique_models": 96,
+  "anchors_per_model": 9,
+  "temperature_parameter_files": 96,
+  "image_parameter_files": 864,
+  "coeval_parameter_files": 864,
+  "physical_controls": {
+    "0": "continuum_production_v1 index 0",
+    "6": "continuum_production_v1 index 1",
+    "12": "continuum_production_v1 index 6"
+  },
+  "inclination_counts": {
+    "45.0": 16,
+    "50.0": 16,
+    "55.0": 16,
+    "60.0": 16,
+    "65.0": 16,
+    "70.0": 16
+  },
+  "shared_structural_heating_settings": 16,
+  "all_design_bounds_reached": true,
+  "design_hashes_verified": true,
+  "anchors_measurement_and_photometry_identical_to_previous_runs": true,
+  "previous_frozen_inputs_verified": {
+    "continuum_control_v1": "942c7aa0db63ff24e5afc7004efefe21c3cea3a6b768f1463f6c8a1c6f19eb67",
+    "continuum_production_v1": "03974162d9246a546ffc9f40dc30afdf688d3b9e7c575493c7c243279e1b9c70"
+  },
+  "all_frozen_python_matches_tested_active_code": true,
+  "rendered_parameters_independent_review": "All 1824 files reproduced exactly from frozen configuration by independent workflow agent",
+  "photon_packets": 512000,
+  "mcfost_seed": 41001,
+  "slurm_array": "0-95%16",
+  "cpus_per_task": 64,
+  "maximum_array_cpus": 1024,
+  "memory_per_task": "16G",
+  "maximum_array_memory_gb": 256,
+  "analysis_dependency": "afterany",
+  "analysis_cpus": 2,
+  "analysis_memory": "4G",
+  "script_syntax_checks": "passed",
+  "tests": {
+    "command": "python -B -m unittest discover -s tests -v",
+    "passed": 71
+  },
+  "file_sha256": {
+    "config/machine.slurm-production-v1.1.json": "d8d4085c27cab03ce12531a3b7406a016d7d4b34af64bec42f4659a2e6e9a95b",
+    "scripts/configure_slurm_environment.py": "11a5bb28cf255962cb0b0da35ac1282ab27b5d73e368a6dd73a8617a15dd3f3c",
+    "runs/continuum_production_v1.1/job_array.sh": "5a0d8fd7dbfc8cf308ae93ef100eb67c9a9720b16fd6a39932f7e5abe0ff378b",
+    "runs/continuum_production_v1.1/job_analysis.sh": "2c112fcbbf0a395efeeddfe96d2a6b9536ecfa1829720f4eb58b74fddd15a9be",
+    "runs/continuum_production_v1.1/submit.sh": "3892cda7beeb342ace1a0f89e4114724762456f840f2e32116e92fbcb89172c3"
+  },
+  "state_counts": {
+    "not_started": 96
+  },
+  "submitted": false,
+  "mcfost_executed_locally": false,
+  "remaining_cluster_step": "Activate working shared Python, load MCFOST and export MCFOST_UTILS; run configure_slurm_environment.py then submit.sh. Generated scripts currently contain placeholder Python and must be regenerated on cluster.",
+  "limits": [
+    "71 tests include mocked simulator runs, not a real higher-photon MCFOST calculation.",
+    "More photons and fixed seed do not establish convergence or independent sampling-noise variance.",
+    "Only sixteen shared settings of the other five axes; no unique solution or rejection of literature geometry implied."
+  ]
+}

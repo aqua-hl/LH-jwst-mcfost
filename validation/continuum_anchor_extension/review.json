@@ -1,0 +1,240 @@
+{
+  "schema_version": 1,
+  "decision": "User chose to retain nine strict continuum anchors; no additions approved. Array concurrency is handled in the production machine configuration.",
+  "scientific_anchor_change": false,
+  "candidate_status": "Evaluated alternatives, not selected or approved for the production run.",
+  "input_sha256": {
+    "reference/observations/continuum_sed_R100.ecsv": "d2d51c6b0c0c229145b147d8793b03fa721e6a4cca191d790fb2082625d3e0d6",
+    "reference/observations/continuum_fit_mask_v1_manifest.json": "f93ee4cfeec9a80b612c3c3ef1777ca990cb1eadf2ac37a7db4e6b71d85ce414",
+    "reference/provenance/strict_continuum_cavity_mass_q_v1/anchors.tsv": "4ee1fafdd881f94402dc82fddeb60b58e2ac46c08372aa5d99880cb710879d6f"
+  },
+  "requested_range_review": {
+    "range_um": [
+      5.5,
+      10.0
+    ],
+    "upper_endpoint_exclusive": true,
+    "detector_rows": 65,
+    "unique_R100_bins": 59,
+    "rows_outside_all_existing_feature_masks": 0
+  },
+  "mask_intervals_um": [
+    {
+      "lower_um": 2.6,
+      "reason": "major_ice_3um_complex",
+      "upper_um": 3.85
+    },
+    {
+      "lower_um": 4.1,
+      "reason": "major_ice_4p27um_complex",
+      "upper_um": 4.5
+    },
+    {
+      "lower_um": 4.55,
+      "reason": "major_ice_4p67um_complex",
+      "upper_um": 5.25
+    },
+    {
+      "lower_um": 5.5,
+      "reason": "major_ice_6um_and_6p85um_complexes",
+      "upper_um": 8.05
+    },
+    {
+      "lower_um": 8.0,
+      "reason": "silicate_9p7um_complex",
+      "upper_um": 13.3
+    },
+    {
+      "lower_um": 14.5,
+      "reason": "major_ice_15p2um_complex",
+      "upper_um": 16.5
+    },
+    {
+      "lower_um": 14.2,
+      "reason": "silicate_18um_complex_and_wings",
+      "upper_um": 27.0
+    }
+  ],
+  "alternative_candidates_miri_only": [
+    {
+      "source_row_index_zero_based": 170,
+      "instrument": "MIRI",
+      "segment": "CH1_short",
+      "bin_index": 169,
+      "wavelength_um": 5.2838867229858115,
+      "sample_median_wavelength_um": 5.284000085666776,
+      "bin_left_um": 5.257533228011409,
+      "bin_right_um": 5.31037231540349,
+      "effective_resolution": 99.99958333454737,
+      "flux_jy": 1.3929642544957797,
+      "formal_error_jy": 0.00047896803298891366,
+      "within_bin_scatter_jy": 0.038686444193360814,
+      "fit_error_jy": 0.20899944404337803,
+      "systematic_fraction": 0.15,
+      "lambda_f_lambda_w_m2": 7.903276501837088e-13,
+      "lambda_f_lambda_error_w_m2": 1.1858024279330489e-13,
+      "n_input": 66,
+      "n_quality_valid": 66,
+      "n_manual_masked": 0,
+      "n_auto_clipped": 0,
+      "n_used": 66,
+      "used_fraction_of_quality_samples": 1.0,
+      "median_coverage_fraction": 0.9747357044705465,
+      "centre_mask_reasons": [],
+      "full_bin_mask_intersections": []
+    },
+    {
+      "source_row_index_zero_based": 173,
+      "instrument": "MIRI",
+      "segment": "CH1_short",
+      "bin_index": 172,
+      "wavelength_um": 5.44480503059752,
+      "sample_median_wavelength_um": 5.444800081604626,
+      "bin_left_um": 5.417648952215626,
+      "bin_right_um": 5.472097229388761,
+      "effective_resolution": 99.99958333454882,
+      "flux_jy": 1.4561892130547727,
+      "formal_error_jy": 0.0004825921950442354,
+      "within_bin_scatter_jy": 0.028919206098641737,
+      "fit_error_jy": 0.21845706619544136,
+      "systematic_fraction": 0.15,
+      "lambda_f_lambda_w_m2": 8.017817737118641e-13,
+      "lambda_f_lambda_error_w_m2": 1.2028305967645075e-13,
+      "n_input": 68,
+      "n_quality_valid": 68,
+      "n_manual_masked": 0,
+      "n_auto_clipped": 0,
+      "n_used": 68,
+      "used_fraction_of_quality_samples": 1.0,
+      "median_coverage_fraction": 0.9747357044705465,
+      "centre_mask_reasons": [],
+      "full_bin_mask_intersections": []
+    }
+  ],
+  "candidate_5p284_overlapping_nirspec_row": {
+    "source_row_index_zero_based": 162,
+    "instrument": "NIRSpec",
+    "segment": "G395H_F290LP",
+    "bin_index": 169,
+    "wavelength_um": 5.2838867229858115,
+    "sample_median_wavelength_um": 5.262004884018095,
+    "bin_left_um": 5.257533228011409,
+    "bin_right_um": 5.31037231540349,
+    "effective_resolution": 99.99958333454737,
+    "flux_jy": 1.2472712827656687,
+    "formal_error_jy": 0.0008196609227924664,
+    "within_bin_scatter_jy": 0.015124405422620587,
+    "fit_error_jy": 0.12479530235247899,
+    "systematic_fraction": 0.1,
+    "lambda_f_lambda_w_m2": 7.076656697171533e-13,
+    "lambda_f_lambda_error_w_m2": 7.080524697161136e-14,
+    "n_input": 20,
+    "n_quality_valid": 20,
+    "n_manual_masked": 0,
+    "n_auto_clipped": 6,
+    "n_used": 14,
+    "used_fraction_of_quality_samples": 0.7,
+    "median_coverage_fraction": 1.0,
+    "centre_mask_reasons": [],
+    "full_bin_mask_intersections": []
+  },
+  "nearby_rejected_boundary_bin": {
+    "source_row_index_zero_based": 174,
+    "instrument": "MIRI",
+    "segment": "CH1_short",
+    "bin_index": 173,
+    "wavelength_um": 5.499526230895743,
+    "sample_median_wavelength_um": 5.488400080503197,
+    "bin_left_um": 5.472097229388761,
+    "bin_right_um": 5.527092720844932,
+    "effective_resolution": 99.99958333454747,
+    "flux_jy": 1.2608479914851405,
+    "formal_error_jy": 0.0006108449234605524,
+    "within_bin_scatter_jy": 0.01172209769131694,
+    "fit_error_jy": 0.1891454827535306,
+    "systematic_fraction": 0.15,
+    "lambda_f_lambda_w_m2": 6.873186937597846e-13,
+    "lambda_f_lambda_error_w_m2": 1.0310777113075383e-13,
+    "n_input": 69,
+    "n_quality_valid": 69,
+    "n_manual_masked": 36,
+    "n_auto_clipped": 12,
+    "n_used": 21,
+    "used_fraction_of_quality_samples": 0.30434782608695654,
+    "median_coverage_fraction": 0.9765183966146622,
+    "centre_mask_reasons": [],
+    "full_bin_mask_intersections": [
+      "major_ice_6um_and_6p85um_complexes"
+    ]
+  },
+  "existing_displayed_anchors": [
+    {
+      "source_row_index_zero_based": 172,
+      "instrument": "MIRI",
+      "segment": "CH1_short",
+      "bin_index": 171,
+      "wavelength_um": 5.3906283153397085,
+      "sample_median_wavelength_um": 5.390800082968781,
+      "bin_left_um": 5.363742444452436,
+      "bin_right_um": 5.417648952215626,
+      "effective_resolution": 99.99958333455012,
+      "flux_jy": 1.3918125079951504,
+      "formal_error_jy": 0.00046198162643842667,
+      "within_bin_scatter_jy": 0.0300444384884146,
+      "fit_error_jy": 0.20880465124068484,
+      "systematic_fraction": 0.15,
+      "lambda_f_lambda_w_m2": 7.740375860447654e-13,
+      "lambda_f_lambda_error_w_m2": 1.1612386529998188e-13,
+      "n_input": 67,
+      "n_quality_valid": 67,
+      "n_manual_masked": 0,
+      "n_auto_clipped": 0,
+      "n_used": 67,
+      "used_fraction_of_quality_samples": 1.0,
+      "median_coverage_fraction": 0.9532189791265154,
+      "centre_mask_reasons": [],
+      "full_bin_mask_intersections": []
+    },
+    {
+      "source_row_index_zero_based": 277,
+      "instrument": "MIRI",
+      "segment": "CH3_medium",
+      "bin_index": 265,
+      "wavelength_um": 13.799908320389276,
+      "sample_median_wavelength_um": 13.80000014230609,
+      "bin_left_um": 13.731080990502258,
+      "bin_right_um": 13.869080648703052,
+      "effective_resolution": 99.99958333454676,
+      "flux_jy": 2.2656402783529344,
+      "formal_error_jy": 0.000577269649040398,
+      "within_bin_scatter_jy": 0.032648028095294795,
+      "fit_error_jy": 0.3398745344272618,
+      "systematic_fraction": 0.15,
+      "lambda_f_lambda_w_m2": 4.921930292737413e-13,
+      "lambda_f_lambda_error_w_m2": 7.383514420672631e-14,
+      "n_input": 56,
+      "n_quality_valid": 56,
+      "n_manual_masked": 0,
+      "n_auto_clipped": 0,
+      "n_used": 56,
+      "used_fraction_of_quality_samples": 1.0,
+      "median_coverage_fraction": 1.0,
+      "centre_mask_reasons": [],
+      "full_bin_mask_intersections": []
+    }
+  ],
+  "candidate_region_if_later_authorized": "window_5p4",
+  "interpretation": [
+    "The union of the 5.5\u20138.05 \u00b5m ice mask and 8.0\u201313.3 \u00b5m silicate mask excludes every candidate between 5.5 and 10 \u00b5m.",
+    "The two alternatives densify the existing 5.4 \u00b5m window; they do not fill the continuum gap approaching 10 \u00b5m.",
+    "MIRI has a 15% systematic calibration floor in this observation product. Nearby samples from the same segment should not be represented as three independent calibration constraints.",
+    "The 5.284 \u00b5m alternative explicitly selects MIRI only and does not combine the separate overlapping NIRSpec detector row.",
+    "The 5.499526 \u00b5m bin centre is below 5.5 \u00b5m, but the full bin crosses the ice mask; it is not an eligible clean alternative."
+  ],
+  "outputs": [
+    "REVIEW.md",
+    "review.json",
+    "anchor_review.png",
+    "anchor_review.pdf"
+  ]
+}
