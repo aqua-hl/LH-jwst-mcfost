@@ -18,6 +18,22 @@ python -B workflow.py analyze runs/laptop_smoke_v4 --workers 2
 
 New source is in `src/mcfost_grid/`, tests in `tests/`, and each prepared experiment owns its manifest, code snapshot, model outputs and `results/` directory under `runs/`. Active code does not modify the historical reference bundle.
 
+### Quick Slurm array test
+
+To check scheduling and log creation on the cluster, submit the small Bash-only
+[array test](scripts/slurm_smoke.sh) from this workspace:
+
+```bash
+sbatch scripts/slurm_smoke.sh
+# If required by your cluster:
+# sbatch --partition=YOUR_PARTITION --account=YOUR_ACCOUNT scripts/slurm_smoke.sh
+```
+
+It runs four tasks, at most two concurrently, each requesting one CPU, 128 MB and
+a two-minute time limit. Each `slurm-smoke-JOBID_TASKID.out` log in the submission
+directory should end with `SUCCESS: task N completed`. This checks basic Slurm
+execution; MCFOST and Python are not required.
+
 ## Scientific report
 
 - [Paper-style report — PDF](reports/restart_review_2026-09-18/REPORT.pdf)
