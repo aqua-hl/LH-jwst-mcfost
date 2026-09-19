@@ -138,6 +138,15 @@ cluster configuration because queued jobs may reference it.
 
 ## Completion and interpretation
 
+Array `10514475` exposed differing system-Python packages between compute nodes.
+The [recovery instructions](RECOVER_CONTINUUM_V1_1.md) set up a shared environment
+and retry the failed tasks while preserving the running models and 16-task cap.
+
+The later array `10514573` passed the shared-environment checks. Six models
+(48–53) failed whole-image boundary checks; their aperture-invariance audit
+passed. Use the separate [aperture_v2 recovery](APERTURE_V2_RECOVERY.md) to keep
+the boundary warnings while resuming only the missing image calculations.
+
 Use `python -B workflow.py status runs/continuum_production_v1.1`. After all model
 tasks and the analysis finish, expect 96 complete/ranked models, nine completed
 anchors each, 864 prediction rows and zero exclusions. Analysis runs after the

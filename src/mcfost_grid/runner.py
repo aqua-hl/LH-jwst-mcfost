@@ -16,6 +16,7 @@ from pathlib import Path
 
 from .configuration import atomic_json, canonical_hash, load_json, now, resolve, sha256, _strict_keys
 from .physics import numerical_args, physical_args
+from .quality import STRICT_POLICY, cached_policy_error
 
 
 def runtime_config(path):
@@ -108,6 +109,9 @@ def _cached_measurements(previous, manifest, run):
     done = set()
     for item in previous.get("measurements", []):
         name = item.get("anchor_id")
+        policy_error = cached_policy_error(item, manifest.get("measurement", {}).get("quality_policy", STRICT_POLICY))
+        if policy_error:
+            raise RuntimeError(f"Cached {name}: {policy_error}")
         if name not in anchors or name in done or item.get("quality_pass") is not True:
             raise RuntimeError("Cached measurements have duplicate, unknown or failed anchors")
         try:

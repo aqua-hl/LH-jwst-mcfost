@@ -166,6 +166,16 @@ have been submitted from this local workspace. See the
 [run plan](docs/CONTINUUM_PRODUCTION_V1_1.md) for completion checks and numerical
 limitations.
 
+For the missing-SciPy failures on worker097 in array `10514475`, follow the
+[shared-environment recovery commands](docs/RECOVER_CONTINUUM_V1_1.md). They keep
+the running models and retry indices 8–10 and 16–95 after the original array ends.
+
+For the later **image-boundary failures in models 48–53**, the returned aperture
+audit passed at floating-point precision. The [aperture_v2 recovery](docs/APERTURE_V2_RECOVERY.md)
+creates a separate run, preserves boundary warnings and strict aperture checks,
+and reuses the original temperatures/images. Expected remaining work is
+16 images and no new temperature solves once the other 90 models are complete.
+
 ## Scientific report
 
 - [Paper-style report — PDF](reports/restart_review_2026-09-18/REPORT.pdf)

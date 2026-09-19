@@ -178,6 +178,36 @@ class PhotometryTests(unittest.TestCase):
             self.measure()
         self.assertIn("edge_positive_fraction_lt_1e-3", caught.exception.failed_checks)
 
+    def test_aperture_policy_records_boundary_warnings_without_changing_aperture(self):
+        self.write_image()
+        strict = self.measure()
+        aperture = self.measure(quality_policy="aperture_v2")
+        self.assertEqual(strict["flux_jy"], aperture["flux_jy"])
+        self.plane[0, 64] = 1e-14
+        self.write_image()
+        with self.assertRaises(PhotometryError):
+            self.measure()
+        boundary = self.measure(quality_policy="aperture_v2")
+        self.assertEqual(strict["flux_jy"], boundary["flux_jy"])
+        self.assertTrue(boundary["quality_pass"])
+        self.assertIn("edge_positive_fraction_lt_1e-3", boundary["quality_warnings"])
+        self.assertFalse(boundary["diagnostics"]["quality_checks"]["edge_positive_fraction_lt_1e-3"])
+        self.assertTrue(all(boundary["diagnostics"]["blocking_quality_checks"].values()))
+
+    def test_aperture_policy_keeps_support_closure_and_units_strict(self):
+        self.write_image()
+        with self.assertRaises(PhotometryError):
+            self.measure(quality_policy="aperture_v2", aperture_radius_arcsec=4)
+        sed = self.write_sed(3e-14)
+        with self.assertRaises(PhotometryError) as caught:
+            self.measure(quality_policy="aperture_v2", coeval_sed_path=sed)
+        self.assertIn("coeval_plane0_abs_relative_difference_le_1e-5", caught.exception.failed_checks)
+        self.write_image(updates={"BUNIT": "Jy"})
+        with self.assertRaises(PhotometryError):
+            self.measure(quality_policy="aperture_v2")
+        with self.assertRaisesRegex(ValueError, "Unknown quality_policy"):
+            self.measure(quality_policy="skip_checks")
+
     def test_subpixel_argument_and_psf_validation(self):
         self.write_image()
         self.measure(aperture_subpixels=16)  # A populated cache must not skip input validation.

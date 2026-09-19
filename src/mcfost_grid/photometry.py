@@ -23,6 +23,8 @@ from astropy import units as u
 from astropy.io import fits
 from scipy.ndimage import gaussian_filter, gaussian_filter1d
 
+from .quality import APERTURE_POLICY, STRICT_POLICY, classify_checks, discrete_support_clear, validate_policy
+
 
 KERNEL_ID = "restart_signed_method2_adjoint_aperture_v1"
 PSF_TRUNCATION_SIGMA = 6.0
@@ -203,7 +205,8 @@ def measure_image(path: str | Path, wavelength_um: float, instrument: str,
                   aperture_radius_arcsec: float, model_distance_pc: float,
                   target_distance_pc: float, aperture_subpixels: int = 16,
                   psf_fwhm_arcsec: float | None = None,
-                  coeval_sed_path: str | Path | None = None) -> dict[str, Any]:
+                  coeval_sed_path: str | Path | None = None,
+                  quality_policy: str = STRICT_POLICY) -> dict[str, Any]:
     """Return JSON-serializable signed plane-0 aperture flux, or raise.
 
     ``flux_w_m2`` means lambda F_lambda at the target distance. ``flux_jy``
@@ -212,6 +215,7 @@ def measure_image(path: str | Path, wavelength_um: float, instrument: str,
     The optional SED validates plane-0 closure only; it cannot normalize flux.
     Explicit PSF FWHM zero disables convolution (useful for analytical tests).
     """
+    validate_policy(quality_policy)
     wavelength_um = _positive(wavelength_um, "wavelength_um")
     aperture_radius_arcsec = _positive(aperture_radius_arcsec, "aperture_radius_arcsec")
     model_distance_pc = _positive(model_distance_pc, "model_distance_pc")
@@ -315,7 +319,11 @@ def measure_image(path: str | Path, wavelength_um: float, instrument: str,
         "temperature_consistency_verified": False,
         "convergence_verified": False,
     }
-    failed = tuple(key for key, passed in checks.items() if not passed)
+    if quality_policy == APERTURE_POLICY:
+        checks["finite_kernel_aperture_support"] = discrete_support_clear(diagnostics)
+    blocking, warnings = classify_checks(checks, quality_policy)
+    diagnostics["blocking_quality_checks"] = blocking
+    failed = tuple(key for key, passed in blocking.items() if not passed)
     if failed:
         raise PhotometryError("Image photometry failed checks: " + ", ".join(failed),
                               failed_checks=failed, diagnostics=diagnostics)
@@ -331,6 +339,8 @@ def measure_image(path: str | Path, wavelength_um: float, instrument: str,
         "kernel_id": KERNEL_ID,
         "valid": True,
         "quality_pass": True,
+        "quality_policy": quality_policy,
+        "quality_warnings": warnings,
         "quality_status": "passed" if coeval_sed_path is not None else "passed_without_coeval_closure",
         "canonical_estimator": "signed_direct_method2_polarized_total_i_plane0",
         "image_path": str(path.resolve()),

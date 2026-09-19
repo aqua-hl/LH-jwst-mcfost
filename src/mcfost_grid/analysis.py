@@ -13,6 +13,8 @@ import math
 from pathlib import Path
 from typing import Any
 
+from .quality import STRICT_POLICY, cached_policy_error, validate_policy
+
 
 class AnalysisError(ValueError):
     """The shared observation contract cannot support a comparable ranking."""
@@ -107,6 +109,7 @@ def evaluate_model(model: dict, anchors: list[dict], payload: dict | None) -> di
             "anchor_id": str(anchor["id"]), "wavelength_um": float(anchor["wavelength_um"]),
             "instrument": str(anchor.get("instrument", "")), "region": str(anchor.get("region", "")),
             "scored": anchor["score"], "quality_pass": valid,
+            "quality_warnings_json": json.dumps(measurement.get("quality_warnings", []) if measurement else []),
             "model_flux_jy": flux, "observed_flux_jy": float(observed) if _positive(observed) else None,
             "uncertainty_jy": float(anchor["uncertainty_jy"]) if _positive(anchor.get("uncertainty_jy")) else None,
             "log_residual_dex": residual})
@@ -372,6 +375,7 @@ def analyze_run(run_dir: Path, workers: int = 1) -> dict:
     manifest_bytes = (run_dir / "manifest.json").read_bytes()
     manifest_hash = hashlib.sha256(manifest_bytes).hexdigest()
     manifest = json.loads(manifest_bytes)
+    policy = validate_policy(manifest.get("measurement", {}).get("quality_policy", STRICT_POLICY))
     scored = validate_anchors(manifest["anchors"])
     observed = _verified_observation(manifest, run_dir)
     models = manifest["models"]
@@ -392,6 +396,8 @@ def analyze_run(run_dir: Path, workers: int = 1) -> dict:
             result.update(status="invalid", reason=error)
         elif isinstance(payload, dict) and result["status"] != "invalid":
             identity, fingerprint_error = _measurement_fingerprint(payload, manifest_hash, "input_hashes" in manifest)
+            policy_errors = [cached_policy_error(m, policy) for m in payload.get("measurements", [])]
+            fingerprint_error = fingerprint_error or next((e for e in policy_errors if e), None)
             if fingerprint_error:
                 result.update(status="invalid", reason=fingerprint_error,
                               score_dex=None, chi2_diagnostic=None)
@@ -411,10 +417,16 @@ def analyze_run(run_dir: Path, workers: int = 1) -> dict:
     out.mkdir(parents=True, exist_ok=True)
     _write_tables(results, out)
     warnings = provenance_warnings + _plots(manifest, results, observed, out, smoke)
+    boundary_warnings = [{"model_id": r["model_id"], "anchor_id": p["anchor_id"],
+                          "checks": json.loads(p["quality_warnings_json"])}
+                         for r in results for p in r["predictions"] if json.loads(p["quality_warnings_json"])]
+    if boundary_warnings:
+        warnings.append(f"{len(boundary_warnings)} measurements retain nonblocking whole-image boundary warnings under {policy}; see measurement_quality_warnings")
     ranked = sorted((r for r in results if r["status"] == "ranked"), key=lambda r: (r["score_dex"], r["model_index"]))
     best = {k: v for k, v in ranked[0].items() if k != "predictions"} if ranked else None
     summary = {"schema_version": 1, "run_id": manifest.get("run_id", run_dir.name),
                "manifest_sha256": manifest_hash,
+               "measurement_quality_policy": policy, "measurement_quality_warnings": boundary_warnings,
                "smoke_test": smoke, "interpretation": "SMOKE TEST, not scientific inference" if smoke else "Grid screen, not a posterior",
                "metric": "sqrt(mean_regions(mean_anchors(log10(model/observed)^2)))",
                "normalization_fitted": False, "expected_scored_anchor_ids": [str(a["id"]) for a in scored],

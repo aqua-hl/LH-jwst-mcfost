@@ -12,6 +12,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from .physics import PHYSICAL_KEYS, render_parameter, physical_args
+from .quality import validate_policy
 
 WORKSPACE = Path(__file__).resolve().parents[2]
 DEFAULT_PARAMETERS = {
@@ -130,7 +131,7 @@ def read_anchors(config, base):
     from astropy.table import Table
     selection = config.get("observations", {})
     _strict_keys(selection, {"preset", "anchor_ids", "anchors_file", "spectrum_file",
-                            "aperture_radius_arcsec", "target_distance_pc", "aperture_subpixels"}, "observations")
+                            "aperture_radius_arcsec", "target_distance_pc", "aperture_subpixels", "quality_policy"}, "observations")
     if selection.get("preset", "strict9") != "strict9" and "anchors_file" not in selection:
         raise ValueError("Unknown preset; use strict9 or an explicit anchors_file")
     spectrum = resolve(base, selection["spectrum_file"]) if "spectrum_file" in selection else WORKSPACE / "reference/observations/continuum_sed_R100.ecsv"
@@ -212,6 +213,8 @@ def read_anchors(config, base):
         _positive(value, key)
     if not isinstance(measurement["aperture_subpixels"], int) or measurement["aperture_subpixels"] > 128:
         raise ValueError("aperture_subpixels must be integer <=128")
+    if "quality_policy" in selection:
+        measurement["quality_policy"] = validate_policy(selection["quality_policy"])
     return anchors, spectrum, measurement
 
 
