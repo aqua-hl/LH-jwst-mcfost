@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "mcfost_executable": "mcfost",
+  "mcfost_utils": "$MCFOST_UTILS",
+  "backend": "image_method2",
+  "threads": 2,
+  "timeout_seconds": 300,
+  "max_memory_gb": 2,
+  "slurm": {
+    "time": "00:20:00",
+    "memory": "4G",
+    "max_parallel": 2,
+    "python": "python",
+    "setup_lines": [
+      ": \"${MCFOST_UTILS:?Export MCFOST_UTILS before submitting}\""
+    ],
+    "analysis_cpus": 1,
+    "analysis_memory": "2G",
+    "analysis_time": "00:05:00"
+  },
+  "notes": "Small MCFOST smoke test. Activate the Python environment with requirements-workflow.txt installed and export MCFOST_UTILS before submission. mcfost and python must be on PATH on compute nodes. Uses the default Slurm partition/account; add those settings if required."
+}
