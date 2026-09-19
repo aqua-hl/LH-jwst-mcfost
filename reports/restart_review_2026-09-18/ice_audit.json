@@ -1,0 +1,446 @@
+{
+  "schema_version": 1,
+  "audited_date": "2026-09-18",
+  "scope": "Local products only; no fresh cluster inventory; no model execution",
+  "latest_completed_science_date_local": "2026-07-31",
+  "joint_continuum_ice_silicate_fit_completed": false,
+  "formal_likelihood": false,
+  "ice_dust_posterior": false,
+  "original_plot_label_correction": {
+    "source": "plot_h2o_best_model_vs_jwst_full_spectrum.py:211",
+    "existing_label": "accepted continuum model, original dust (no ice)",
+    "accurate_label": "original Mie coated dust (5% generic-ice mantle by volume)",
+    "evidence": "runs/h2o_3um_method2_screen_v3/parameters/original_dust_guardrail_rt.para"
+  },
+  "accepted_continuum_geometry": {
+    "model_label": "m2p25_c17p5_a0p40_q2p75_i0p05",
+    "envelope_dust_mass_factor": 2.25,
+    "envelope_dust_mass_msun": 0.000225,
+    "envelope_rin_au": 1,
+    "envelope_rout_au": 3000,
+    "envelope_radial_density_exponent": -1.5,
+    "cavity_half_opening_deg": 17.5,
+    "inclination_deg": 70,
+    "envelope_size_distribution_exponent_q": 2.75,
+    "envelope_amin_um": 0.03,
+    "envelope_amax_um": 0.4,
+    "source_distance_pc": 140,
+    "measurement_distance_pc": 147,
+    "dust_sublimation_enabled": false,
+    "temperature_sha256": "1bd212f2f54dd8c1701a6064e129ba7fdb5721cb3fe296472433bbdd3b79ec1c",
+    "source": "runs/h2o_3um_method2_screen_v3/input_manifest.json"
+  },
+  "dust_definitions": {
+    "original_envelope": {
+      "representation": "Mie core-mantle coating",
+      "refractory": "Draine_Si_sUV.dat",
+      "ice": "ice_opct.dat",
+      "silicate_component_volume_fraction": 0.95,
+      "ice_component_volume_fraction": 0.05
+    },
+    "latest_envelope": {
+      "representation": "disjoint pure silicate and pure H2O grain populations, each DHS",
+      "refractory": "Draine_Si_sUV.dat",
+      "ice": "H2O_30K_Leiden_mcfost.dat",
+      "silicate_species_mass_fraction": 0.96,
+      "h2o_species_mass_fraction": 0.04,
+      "dhs_vmax": 0.1,
+      "material_porosity_field": 0
+    },
+    "disk": {
+      "representation": "two disjoint Mie populations",
+      "silicate_species_mass_fraction": 0.7,
+      "carbon_species_mass_fraction": 0.3,
+      "silicate": "Draine_Si_sUV.dat",
+      "carbon": "ac_opct.dat",
+      "amin_um": 0.03,
+      "amax_um": 1000,
+      "q": 3.5,
+      "dust_mass_msun": 0.0001
+    },
+    "fraction_caveat": "Original 5% volume is not equivalent to later 4-5% mass.",
+    "vmax_caveat": "DHS hollow-sphere shape parameter is not an inferred bulk physical porosity.",
+    "q_caveat": "Grain-size distribution exponent, not envelope radial density exponent."
+  },
+  "stages": [
+    {
+      "id": "ice_inputs_diagnostic",
+      "status": "completed_opacity_only",
+      "bands_um": [
+        3,
+        4.27,
+        4.67,
+        15.2
+      ],
+      "full_source_RT_fit": false
+    },
+    {
+      "id": "h2o_3um_observation_v3",
+      "status": "frozen_valid",
+      "aperture_radius_arcsec": 0.35,
+      "resolving_power": 2400,
+      "logical_targets": 11,
+      "scored_targets": 9,
+      "continuum_supports": 6,
+      "lsf_nodes_per_parent": 5,
+      "source": "output/h2o_3um_observation_v3/h2o_3um_observation_contract_v3.json"
+    },
+    {
+      "id": "h2o_3um_opacity_screen_v2",
+      "status": "completed",
+      "eligible_representation_count": 5,
+      "unranked_control_count": 1,
+      "abundance_fitted": false,
+      "full_source_RT_fit": false
+    },
+    {
+      "id": "h2o_3um_method2_screen_v3_field_pilot",
+      "status": "completed_green",
+      "task_count": 44,
+      "field_count": 2,
+      "seed_count": 2,
+      "node_count": 11,
+      "max_field_pair_symmetric_fraction": 0.00043555131254492316,
+      "max_seed_node_symmetric_fraction": 0.004103064023657486,
+      "core_tau_seed_absolute_difference": 0.0009585655006012495
+    },
+    {
+      "id": "h2o_3um_method2_postpilot_recovered_v1",
+      "status": "completed",
+      "physical_model_count": 1,
+      "h2o_node_count": 85,
+      "continuum_guardrail_count": 9,
+      "guard_field_recovery_count": 2,
+      "h2o_mass_fraction": 0.05,
+      "dhs_vmax": 0.8
+    },
+    {
+      "id": "h2o_3um_abundance_grid_v1",
+      "status": "completed_all_valid",
+      "new_physical_models": 3,
+      "reused_physical_models": 1,
+      "new_task_count": 255,
+      "node_count_per_model": 85,
+      "allocated_cpu_hours_from_array_completion": 980.2755555555556
+    },
+    {
+      "id": "h2o_3um_dust_axis_grid_v1",
+      "status": "completed_all_valid",
+      "physical_variants": 13,
+      "new_task_count": 104,
+      "anchors_per_variant": 8,
+      "nearir_scored_anchors": 5,
+      "allocated_cpu_hours_from_array_completion": 496.5466666666667
+    },
+    {
+      "id": "h2o_3um_dust_axis_band_v1",
+      "status": "completed_all_valid",
+      "physical_variants": 1,
+      "new_task_count": 85,
+      "allocated_cpu_hours_from_array_completion": 374.5155555555556
+    },
+    {
+      "id": "h2o_silicate_demo_image_anchors_v1",
+      "status": "completed_presentation_only",
+      "physical_variants": 1,
+      "accepted_tasks": 4,
+      "coeval_sed_closure": false,
+      "scoring_role": "none"
+    },
+    {
+      "id": "h2o_3um_selfconsistent_grid_v1",
+      "status": "scripts_prepared_no_local_execution_manifest_or_result",
+      "planned_ice_files": [
+        "H2O_30K_Leiden_mcfost.dat",
+        "waterice210K.dat",
+        "ice_opct.dat"
+      ],
+      "planned_inclinations_deg": [
+        70,
+        60,
+        50
+      ],
+      "planned_variants": 9,
+      "planned_temperature_recomputation": true
+    }
+  ],
+  "opacity_representation_scores": [
+    {
+      "representation": "disjoint_populations__dhs_vmax0p8",
+      "score": 0.10061788702175113
+    },
+    {
+      "representation": "disjoint_populations__mie",
+      "score": 0.12845956772582914
+    },
+    {
+      "representation": "bruggeman_emt__dhs_vmax0p8",
+      "score": 0.15091046324066085
+    },
+    {
+      "representation": "bruggeman_emt__mie",
+      "score": 0.20512178563774708
+    },
+    {
+      "representation": "two_component_coating__mie",
+      "score": 0.23919773382141013
+    }
+  ],
+  "opacity_score_source": "runs/h2o_3um_opacity_screen_v2/selected_representation_v2.json",
+  "abundance_curve": [
+    {
+      "x_h2o": 0.02,
+      "core_tau": 1.155724844734245,
+      "rms_tau": 0.8734082767959456,
+      "mean_residual_tau": -0.8257687490244137
+    },
+    {
+      "x_h2o": 0.03,
+      "core_tau": 1.7144001680413217,
+      "rms_tau": 0.5242585580626729,
+      "mean_residual_tau": -0.5029627323376441
+    },
+    {
+      "x_h2o": 0.04,
+      "core_tau": 2.272146615588897,
+      "rms_tau": 0.19158597371400365,
+      "mean_residual_tau": -0.14747979291645896
+    },
+    {
+      "x_h2o": 0.05,
+      "core_tau": 2.82964617520377,
+      "rms_tau": 0.3109497762878782,
+      "mean_residual_tau": 0.1749989837164866
+    }
+  ],
+  "abundance_curve_source": "output/h2o_abundance_grid_v1_curve.json",
+  "abundance_interpolated_diagnostic": {
+    "core_match_x": 0.041388028909789015,
+    "rms_minimizing_x": 0.04235942047969852,
+    "rms_at_minimum": 0.17900384600852884,
+    "not_a_posterior": true
+  },
+  "dust_axis_rows": [
+    {
+      "variant": "v00_base",
+      "dhs_vmax": 0.8,
+      "amax_um": 0.4,
+      "inclination_deg": 70,
+      "nearir_rms_dex": 0.3786390884666638,
+      "blue_minus_red_dex": 0.6463749327360366
+    },
+    {
+      "variant": "v01_vmax0p4_amax0p4",
+      "dhs_vmax": 0.4,
+      "amax_um": 0.4,
+      "inclination_deg": 70,
+      "nearir_rms_dex": 0.20700724718125513,
+      "blue_minus_red_dex": 0.33118662348114414
+    },
+    {
+      "variant": "v02_vmax0p1_amax0p4",
+      "dhs_vmax": 0.1,
+      "amax_um": 0.4,
+      "inclination_deg": 70,
+      "nearir_rms_dex": 0.1334245388860455,
+      "blue_minus_red_dex": 0.18431629118350662
+    },
+    {
+      "variant": "v03_vmax0p8_amax1p0",
+      "dhs_vmax": 0.8,
+      "amax_um": 1,
+      "inclination_deg": 70,
+      "nearir_rms_dex": 0.6401130190820976,
+      "blue_minus_red_dex": 1.222223779679419
+    },
+    {
+      "variant": "v04_vmax0p4_amax1p0",
+      "dhs_vmax": 0.4,
+      "amax_um": 1,
+      "inclination_deg": 70,
+      "nearir_rms_dex": 0.8999972061642768,
+      "blue_minus_red_dex": 1.100522821324614
+    },
+    {
+      "variant": "v05_vmax0p1_amax1p0",
+      "dhs_vmax": 0.1,
+      "amax_um": 1,
+      "inclination_deg": 70,
+      "nearir_rms_dex": 1.0155885401293545,
+      "blue_minus_red_dex": 1.064826511091256
+    },
+    {
+      "variant": "v06_vmax0p8_amax2p0",
+      "dhs_vmax": 0.8,
+      "amax_um": 2,
+      "inclination_deg": 70,
+      "nearir_rms_dex": 0.7574673136408092,
+      "blue_minus_red_dex": 2.0341412636684066
+    },
+    {
+      "variant": "v07_vmax0p4_amax2p0",
+      "dhs_vmax": 0.4,
+      "amax_um": 2,
+      "inclination_deg": 70,
+      "nearir_rms_dex": 0.8471959344982072,
+      "blue_minus_red_dex": 1.9893595204194996
+    },
+    {
+      "variant": "v08_vmax0p1_amax2p0",
+      "dhs_vmax": 0.1,
+      "amax_um": 2,
+      "inclination_deg": 70,
+      "nearir_rms_dex": 0.9281370550345746,
+      "blue_minus_red_dex": 1.9367407974179094
+    },
+    {
+      "variant": "v09_base_incl60",
+      "dhs_vmax": 0.8,
+      "amax_um": 0.4,
+      "inclination_deg": 60,
+      "nearir_rms_dex": 0.4340797595571125,
+      "blue_minus_red_dex": 0.7046461303687267
+    },
+    {
+      "variant": "v10_base_incl50",
+      "dhs_vmax": 0.8,
+      "amax_um": 0.4,
+      "inclination_deg": 50,
+      "nearir_rms_dex": 0.48660075554445115,
+      "blue_minus_red_dex": 0.7837860666265271
+    },
+    {
+      "variant": "v11_vmax0p1_amax1p0_incl60",
+      "dhs_vmax": 0.1,
+      "amax_um": 1,
+      "inclination_deg": 60,
+      "nearir_rms_dex": 0.9637759069419483,
+      "blue_minus_red_dex": 1.0944227270876088
+    },
+    {
+      "variant": "v12_vmax0p1_amax1p0_incl50",
+      "dhs_vmax": 0.1,
+      "amax_um": 1,
+      "inclination_deg": 50,
+      "nearir_rms_dex": 0.9077224954702787,
+      "blue_minus_red_dex": 1.1440398316371256
+    }
+  ],
+  "dust_axis_source": "output/h2o_dust_axis_grid_v1_scores.json",
+  "nearir_reference_rms_dex": {
+    "original_mie_coated_dust": 0.08605400202815323,
+    "initial_dhs_vmax0p8_x0p05": 0.3936768550084442
+  },
+  "band_comparison": {
+    "source": "output/h2o_dust_axis_band_v1_tau.json",
+    "aperture_radius_arcsec": 0.35,
+    "wavelength_um": [
+      2.6122960249124896,
+      2.8572041864979223,
+      2.90250805545541,
+      2.948944445474728,
+      3.008775542271851,
+      3.0764795490679795,
+      3.1192136084987556,
+      3.158302578242944,
+      3.218164697938932,
+      3.2961688801068254,
+      3.574432301002815
+    ],
+    "scored": [
+      false,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      false
+    ],
+    "observed_tau": [
+      -0.010995798777594016,
+      0.5876153462893544,
+      1.1727575526788416,
+      1.7586685296215654,
+      2.1099318983958844,
+      2.3495291661829056,
+      2.11610292774776,
+      1.750347823810038,
+      1.1757802768677648,
+      0.5946078835237261,
+      0.00043641890205103765
+    ],
+    "vmax0p8_x0p04_tau": [
+      -0.013204187211414916,
+      0.5303153754019786,
+      1.0895039749977304,
+      1.6372274511027314,
+      2.121039266741075,
+      2.272146615588897,
+      1.9349484705270887,
+      1.489875310795088,
+      1.0441252051696825,
+      0.16884159854543784,
+      0.00524507146671559
+    ],
+    "vmax0p1_x0p04_tau": [
+      -0.0071539971011666025,
+      0.5199864316461631,
+      1.0737852903279161,
+      1.6690688117836623,
+      2.2098740795568563,
+      2.2387780402350295,
+      1.8180805562248572,
+      1.3564223281552217,
+      0.6698170642932378,
+      0.15275543456367932,
+      0.004524343840933671
+    ],
+    "vmax0p8_x0p04_rms_tau": 0.19158597371400365,
+    "vmax0p1_x0p04_rms_tau": 0.28672064005598,
+    "red_over_core_model": 0.06823161198581476,
+    "red_over_core_observed": 0.25307533614904576
+  },
+  "silicate_rows": [
+    {
+      "wavelength_um": 8.3,
+      "observed_flux_w_m2": 4.66607986635445e-13,
+      "model_flux_w_m2": 1.2680364034335569e-13,
+      "residual_dex": -0.5658204463954549
+    },
+    {
+      "wavelength_um": 9.7,
+      "observed_flux_w_m2": 1.4577492659303726e-13,
+      "model_flux_w_m2": 1.3468775199558023e-14,
+      "residual_dex": -1.0343547270084148
+    },
+    {
+      "wavelength_um": 11,
+      "observed_flux_w_m2": 2.685092566544405e-13,
+      "model_flux_w_m2": 7.45723091817088e-14,
+      "residual_dex": -0.5563816707493043
+    },
+    {
+      "wavelength_um": 12.5,
+      "observed_flux_w_m2": 4.220590706389381e-13,
+      "model_flux_w_m2": 2.9189433761285014e-13,
+      "residual_dex": -0.1601475680041463
+    }
+  ],
+  "silicate_source": "output/h2o_silicate_demo_anchors_v1.ecsv",
+  "measurement_caveats": {
+    "h2o_aperture_radius_arcsec": 0.35,
+    "broadband_aperture_radius_arcsec": 1,
+    "apertures_never_pooled": true,
+    "temperature_self_consistent_for_changed_dust": false,
+    "all_completed_ice_dust_use_reused_original_continuum_temperature": true,
+    "source_center_offset_from_continuum_center_arcsec": 0.12182341871929363,
+    "stellar_center_to_extended_ice_peak_arcsec": 1.3536368829497032,
+    "ice_observable": "raw stellar-centered aperture, no aperture correction, no background subtraction",
+    "covariance": "Formal likelihood absent; flux-only errors omit shared fitted-continuum covariance.",
+    "interpretation": "Grain-size and abundance trends are conditional on frozen geometry/temperature/dust representation, not universal exclusions."
+  }
+}

@@ -1,0 +1,58 @@
+[
+  {
+    "run": "strict_continuum_screen",
+    "directory_present": true,
+    "RT_fits_count": 0,
+    "Temperature_fits_count": 0,
+    "parameter_count": 32
+  },
+  {
+    "run": "strict_continuum_refinement_v1",
+    "directory_present": true,
+    "RT_fits_count": 0,
+    "Temperature_fits_count": 0,
+    "parameter_count": 16
+  },
+  {
+    "run": "strict_continuum_3d_q_v1",
+    "directory_present": true,
+    "RT_fits_count": 0,
+    "Temperature_fits_count": 0,
+    "parameter_count": 72
+  },
+  {
+    "run": "strict_continuum_cavity_mass_q_v1",
+    "directory_present": true,
+    "RT_fits_count": 0,
+    "Temperature_fits_count": 1,
+    "parameter_count": 90
+  },
+  {
+    "run": "h2o_3um_abundance_grid_v1",
+    "directory_present": true,
+    "RT_fits_count": 0,
+    "Temperature_fits_count": 0,
+    "parameter_count": 0
+  },
+  {
+    "run": "h2o_3um_dust_axis_grid_v1",
+    "directory_present": true,
+    "RT_fits_count": 0,
+    "Temperature_fits_count": 0,
+    "parameter_count": 0
+  },
+  {
+    "run": "h2o_3um_dust_axis_band_v1",
+    "directory_present": true,
+    "RT_fits_count": 0,
+    "Temperature_fits_count": 0,
+    "parameter_count": 0
+  },
+  {
+    "run": "h2o_silicate_demo_image_anchors_v1",
+    "directory_present": true,
+    "RT_fits_count": 0,
+    "Temperature_fits_count": 1,
+    "parameter_count": 1
+  }
+]

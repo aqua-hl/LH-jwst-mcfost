@@ -1,0 +1,2419 @@
+{
+  "scope": "local jwst_mcfost only",
+  "date": "2026-09-18",
+  "operation": "archive_verify_then_remove_regenerable_copies",
+  "archive": "cleanup_archive/2026-09-18_regenerable_caches.tar.gz",
+  "archive_sha256": "4a417f648e6544f46bdc96d7740ec68a9716469b57387647496ede5a7158e831",
+  "archive_bytes": 4832774,
+  "original_bytes": 11875178,
+  "file_count": 481,
+  "science_data_or_source_deleted": false,
+  "records": [
+    {
+      "path": ".DS_Store",
+      "bytes": 49156,
+      "sha256": "60216684ec39df243335c1c47549850e4aadc75cb4c477a026972f4c6cb64679"
+    },
+    {
+      "path": "__pycache__/adjudicate_cmq_highn_convergence_v2.cpython-312.pyc",
+      "bytes": 8829,
+      "sha256": "17a70486a4ae390b20ac8c9471bbc29b3a599a35c434853427ac5395a89918ba"
+    },
+    {
+      "path": "__pycache__/adjudicate_h2o_3um_method2_postpilot_guard_field_recovery_v1.cpython-312.pyc",
+      "bytes": 30189,
+      "sha256": "47330e10eb6067f0b1d47e28470be3ccefb5dbb85788a39a940c66242a5725b6"
+    },
+    {
+      "path": "__pycache__/adjudicate_strict_continuum_cavity_mass_q_task371_highn_convergence_v1.cpython-312.pyc",
+      "bytes": 12612,
+      "sha256": "f96394b8ab2ef890bc03bc11ee0c3bbd9d862e36dcac8fdf0f55e739c42ddbd2"
+    },
+    {
+      "path": "__pycache__/adjudicate_strict_continuum_cavity_mass_q_task371_highn_convergence_v2.cpython-312.pyc",
+      "bytes": 23290,
+      "sha256": "7b8dfc8f42febbcbebea5a07328f32af12bd5a02f433ef5934ef6bdde1c824c8"
+    },
+    {
+      "path": "__pycache__/adjudicate_strict_continuum_task22_recovery.cpython-312.pyc",
+      "bytes": 26923,
+      "sha256": "dade2019b1da43eea027fa86ddb62f0ecba9f2b3d5ae0074676e22a6a8690356"
+    },
+    {
+      "path": "__pycache__/analyze_aperture_normalization_convergence.cpython-312.pyc",
+      "bytes": 51263,
+      "sha256": "86ce69ddc8bf453b24fcfb776792a05871c5133364723551726d42f46c3dacc9"
+    },
+    {
+      "path": "__pycache__/analyze_aperture_spatial_convergence.cpython-312.pyc",
+      "bytes": 23040,
+      "sha256": "931bf9c6947f544511ddf46ea0beab5bcd35c29ce933346fb79dc15e84d4e33f"
+    },
+    {
+      "path": "__pycache__/analyze_aperture_spatial_convergence_stage2.cpython-312.pyc",
+      "bytes": 20083,
+      "sha256": "8361f346d8434e25d16e16ee9b07d27bef973528175b3003f4ad3fba42c1d2e1"
+    },
+    {
+      "path": "__pycache__/analyze_aperture_spatial_convergence_stage3.cpython-312.pyc",
+      "bytes": 20358,
+      "sha256": "ad285cfb0bb6cb779ac118b65eb69d36176fb4488678a322e328d1fa7f824174"
+    },
+    {
+      "path": "__pycache__/analyze_aperture_spatial_convergence_stage4.cpython-312.pyc",
+      "bytes": 46340,
+      "sha256": "0c2e6d69db895471fc53767f3ddd4320733f3a4d01466eecf62dc8475ef87f8a"
+    },
+    {
+      "path": "__pycache__/analyze_aperture_spatial_convergence_stage4b.cpython-312.pyc",
+      "bytes": 80255,
+      "sha256": "67e705cb3a90fc3cc0300bd44be5560100ffeebafab2e100dbe70d0a19b87e7c"
+    },
+    {
+      "path": "__pycache__/analyze_cavity_opening_test.cpython-312.pyc",
+      "bytes": 14525,
+      "sha256": "d9fcbb14cbb94253b8b2269b4033ccc4ad78a9dd9c23f8b5987664f77eb2e7ef"
+    },
+    {
+      "path": "__pycache__/analyze_component_rt2_pilot.cpython-312.pyc",
+      "bytes": 40446,
+      "sha256": "24a894665a2148ab89d8468ea04194b36a10ab7a4185a810e039aee83d5319f8"
+    },
+    {
+      "path": "__pycache__/analyze_dust_grid_screen.cpython-312.pyc",
+      "bytes": 27823,
+      "sha256": "d8b6ffec39db7529b3e5cfe1846f451592dc496d73981fdb606e7dc99344ced4"
+    },
+    {
+      "path": "__pycache__/analyze_dust_refinement_screen.cpython-312.pyc",
+      "bytes": 36463,
+      "sha256": "719f5bdc6be6fb763c6322b4b6f59b4f07291d4397a96b20ea84092f98d17bed"
+    },
+    {
+      "path": "__pycache__/analyze_envelope_mass_test.cpython-312.pyc",
+      "bytes": 13562,
+      "sha256": "265d675a1fca3733fc976378527a5a045c2da6825e9213d1ad57ad851bdde2db"
+    },
+    {
+      "path": "__pycache__/analyze_feature_grid_screen.cpython-312.pyc",
+      "bytes": 103622,
+      "sha256": "5703037887bed01e6e674384b140b9d33cfaff3e97602a724f5867ce27590faa"
+    },
+    {
+      "path": "__pycache__/analyze_h2o_3um_abundance_grid_v1.cpython-312.pyc",
+      "bytes": 19914,
+      "sha256": "961809c29ed8aaeeb84c9a72c7a1fbdff247d20efc2810565bd4582bd20d0f38"
+    },
+    {
+      "path": "__pycache__/analyze_h2o_3um_dust_axis_band_v1.cpython-312.pyc",
+      "bytes": 7466,
+      "sha256": "13429fe7acd69b1d4c6a8e15823d8db53cc7c72dc0a16a954c1a48f899309e2d"
+    },
+    {
+      "path": "__pycache__/analyze_h2o_3um_dust_axis_grid_v1.cpython-312.pyc",
+      "bytes": 18801,
+      "sha256": "4719c03241d559705c04b7ac89066ecf25bba6b88bfbfb8c58c4b12320523795"
+    },
+    {
+      "path": "__pycache__/analyze_h2o_3um_method2_postpilot_v1.cpython-312.pyc",
+      "bytes": 74863,
+      "sha256": "edcc9838604a08d0607d5eceb420b033a0e27d9cdfbf1d8ed048aecaae7a9d8a"
+    },
+    {
+      "path": "__pycache__/analyze_h2o_3um_method2_screen_v1.cpython-312.pyc",
+      "bytes": 31171,
+      "sha256": "718a21829b7f47094163a772fab73c84a89be42d4120a5a03926fa4b9bf4a6d9"
+    },
+    {
+      "path": "__pycache__/analyze_h2o_3um_method2_screen_v1.cpython-39.pyc",
+      "bytes": 21521,
+      "sha256": "16aa61cbb6ba98bbd14ae6838608591cd6a3076dbed26739edd6b12734bfe827"
+    },
+    {
+      "path": "__pycache__/analyze_high_photon_feature_sed.cpython-312.pyc",
+      "bytes": 55039,
+      "sha256": "3c160b8d5ddd91fb77cd1b94d286f133910f4a5b8da7498fa47ba368338f79a2"
+    },
+    {
+      "path": "__pycache__/analyze_ice_feature_method2_pilot_v2_convergence.cpython-312.pyc",
+      "bytes": 26040,
+      "sha256": "83c7372b1f0fcc245b1b45f150a4a26274b5768c6911339a1cf70bdc3a645ef7"
+    },
+    {
+      "path": "__pycache__/analyze_ice_feature_method2_pilot_v2_wider.cpython-312.pyc",
+      "bytes": 48423,
+      "sha256": "9b9c8606a6f6c3656e44562776c8821d472acbb9d041a294938774ccfc2b319d"
+    },
+    {
+      "path": "__pycache__/analyze_inclination_test.cpython-312.pyc",
+      "bytes": 10895,
+      "sha256": "d5a2718d77999252ee104e0df50dfdee96efe3e0021ceb5a343787b41f1bed33"
+    },
+    {
+      "path": "__pycache__/analyze_literature_boundary.cpython-312.pyc",
+      "bytes": 51983,
+      "sha256": "b1197623a49c1a7afc18e60488682bd93a429b6436197e210e893bc051d3adb2"
+    },
+    {
+      "path": "__pycache__/analyze_literature_screen.cpython-312.pyc",
+      "bytes": 49452,
+      "sha256": "482b6c1683c5779b4f224c2f4bc97f6975b58b1790993c8f6ea49ace3c06a380"
+    },
+    {
+      "path": "__pycache__/analyze_strict_continuum_3d_q_v1.cpython-312.pyc",
+      "bytes": 84159,
+      "sha256": "2c4c9b2d5a81f860cd9405485cc71bcc7641ca828fc55c82493c43222b0639f6"
+    },
+    {
+      "path": "__pycache__/analyze_strict_continuum_3d_q_v1.cpython-39.pyc",
+      "bytes": 52427,
+      "sha256": "087213f37f6cc5c701d6e29ba8aa3fbde5a7054e692617f8f9528f325c071e03"
+    },
+    {
+      "path": "__pycache__/analyze_strict_continuum_3d_q_v1_task024_seed41002_recovery_v1.cpython-312.pyc",
+      "bytes": 22502,
+      "sha256": "0c518b520b51c578fa6ed539509e430f56e3a4c8aa8fa654e46d4a0e9ecaac98"
+    },
+    {
+      "path": "__pycache__/analyze_strict_continuum_3d_q_v1_task024_seed41002_recovery_v1.cpython-39.pyc",
+      "bytes": 13702,
+      "sha256": "b21544ca1dbe24f3b45795a089f25a278df87f6b7c2c52d156977372e37c6485"
+    },
+    {
+      "path": "__pycache__/analyze_strict_continuum_cavity_mass_q_source128k_uniform_v2_v1.cpython-312.pyc",
+      "bytes": 66447,
+      "sha256": "39386a1bc5c870bc45ef1a3705bc841eeef465f69eb64c737f9714e639fa6f08"
+    },
+    {
+      "path": "__pycache__/analyze_strict_continuum_cavity_mass_q_source128k_uniform_v2_v1.cpython-39.pyc",
+      "bytes": 41113,
+      "sha256": "51854e9cdee114dd7734ae19c2818144639df37ace0431dc99a5928d4fd5747a"
+    },
+    {
+      "path": "__pycache__/analyze_strict_continuum_cavity_mass_q_uniform_v2_v1.cpython-312.pyc",
+      "bytes": 75321,
+      "sha256": "c6a47fd3a241ea08c0282c673b1b9c2169d6fc1014680752b405b200f5eefcdc"
+    },
+    {
+      "path": "__pycache__/analyze_strict_continuum_cavity_mass_q_uniform_v2_v1.cpython-39.pyc",
+      "bytes": 48040,
+      "sha256": "82aa10c7bd93b38107cb18b036d88a947c8842390fd50f5ae88b0468cba2a9af"
+    },
+    {
+      "path": "__pycache__/analyze_strict_continuum_cavity_mass_q_uniform_v2_v2.cpython-312.pyc",
+      "bytes": 40737,
+      "sha256": "4d374400b7a156f5d15fbcc8ea5ef96f547cec3e02da6e7f1f55a0796027247e"
+    },
+    {
+      "path": "__pycache__/analyze_strict_continuum_cavity_mass_q_v1.cpython-312.pyc",
+      "bytes": 86158,
+      "sha256": "a06bcbf5ac99c48a7ea12120d598767f637f4a907b34a19472169588890e7d41"
+    },
+    {
+      "path": "__pycache__/analyze_strict_continuum_cavity_mass_q_v1.cpython-39.pyc",
+      "bytes": 53567,
+      "sha256": "d223e8eb061f21b912a83f700b6e915915acec707f5f4bc2dec05dcfe3e2b1c3"
+    },
+    {
+      "path": "__pycache__/analyze_strict_continuum_cavity_mass_q_v1_task002_seed41002_recovered_v1.cpython-312.pyc",
+      "bytes": 38401,
+      "sha256": "721a7a941a3a6c82dd799b24fffb457e5e735973246f03623cc2061f52e8abb1"
+    },
+    {
+      "path": "__pycache__/analyze_strict_continuum_cavity_mass_q_v1_terminal_recoveries_v1.cpython-312.pyc",
+      "bytes": 36530,
+      "sha256": "3c3f58479f6a5aa77178bda8afacec78c5752a85f3117c2d8973f2f3cbac4494"
+    },
+    {
+      "path": "__pycache__/analyze_strict_continuum_cavity_mass_v1.cpython-312.pyc",
+      "bytes": 82112,
+      "sha256": "56293e0f7204e4d8d6d6d7841d5c94fb22d09f92df06944e8fc7379527291922"
+    },
+    {
+      "path": "__pycache__/analyze_strict_continuum_refinement_v1.cpython-312.pyc",
+      "bytes": 118894,
+      "sha256": "d725d1e4329c10b6f2a32efd8fb93c86db5de9316abb5a88667240f0506642ca"
+    },
+    {
+      "path": "__pycache__/analyze_strict_continuum_refinement_v1.cpython-39.pyc",
+      "bytes": 71699,
+      "sha256": "6c1bb35ab6874f35131ac19fcc7f01a5c40d533e85ab29696bb6a45a4f519348"
+    },
+    {
+      "path": "__pycache__/analyze_strict_continuum_refinement_v1_support_v1.cpython-312.pyc",
+      "bytes": 70485,
+      "sha256": "d6af46674174e2df9fbf37b19bb0199cd7bc1f5096ff9258edf41513c34a236b"
+    },
+    {
+      "path": "__pycache__/analyze_strict_continuum_screen.cpython-312.pyc",
+      "bytes": 47801,
+      "sha256": "eb564672e441d195a14e48f438a2f19baacfdc0970b194bc02c501b34d3db00a"
+    },
+    {
+      "path": "__pycache__/analyze_strict_continuum_screen_amended_v1.cpython-312.pyc",
+      "bytes": 44089,
+      "sha256": "aa905f81998563b977443a0264fe68764a601c8fd41ec1f90c42bdf5bceb3e32"
+    },
+    {
+      "path": "__pycache__/analyze_strict_continuum_screen_polarized_plane0_v2.cpython-312.pyc",
+      "bytes": 31265,
+      "sha256": "0658e5b34d759dc6c1ea4af9a36701abe964be57885fbcc5fdadc29d77e018f4"
+    },
+    {
+      "path": "__pycache__/analyze_strict_continuum_screen_polarized_plane0_v3.cpython-312.pyc",
+      "bytes": 36181,
+      "sha256": "29ecb508ffddc4f1e3b50f5aab5372ac7b1965bf37be7fab6e56f1c2b7ac6c8e"
+    },
+    {
+      "path": "__pycache__/analyze_strict_continuum_screen_recovery_v2.cpython-312.pyc",
+      "bytes": 22570,
+      "sha256": "1abaeb2a491838e75dd26d4b894f83c488cb876d9ab9721569dfc82f4f029da7"
+    },
+    {
+      "path": "__pycache__/archive_h2o_3um_method2_screen_v1_convergence_attempt.cpython-312.pyc",
+      "bytes": 69905,
+      "sha256": "d2ca461d253a895694676da72efedca7d2eab060f83dd89556b287f10f757481"
+    },
+    {
+      "path": "__pycache__/assess_component_rt2_pilot_benchmark.cpython-312.pyc",
+      "bytes": 18189,
+      "sha256": "b40fe5b784a463b8d6734354e452413a8c704958f9bda15b459bbe9695217909"
+    },
+    {
+      "path": "__pycache__/assess_matched_method2_nearir_benchmark.cpython-312.pyc",
+      "bytes": 5119,
+      "sha256": "87557f4ee85340a240e011fe04a6041f7b24ba2747de581a570a698e2b1d340f"
+    },
+    {
+      "path": "__pycache__/audit_ice_input_package.cpython-312.pyc",
+      "bytes": 21892,
+      "sha256": "2e23f9c414eb1db986b6d9e628ae74a805035577c5a10bfbc475750a26cc25d5"
+    },
+    {
+      "path": "__pycache__/audit_strict_continuum_cavity_mass_q_task371_source_v1.cpython-312.pyc",
+      "bytes": 12574,
+      "sha256": "3b4aecdee49b088a9705c75ae63b966f70c610652e5604321b3232c7cf39f4f2"
+    },
+    {
+      "path": "__pycache__/audit_strict_continuum_cavity_mass_q_task371_source_v2.cpython-312.pyc",
+      "bytes": 13135,
+      "sha256": "a42721fb6f89353183d6cb7475dc473c0fcf063b274567010399cb572dae7be9"
+    },
+    {
+      "path": "__pycache__/audit_strict_continuum_partial.cpython-312.pyc",
+      "bytes": 12767,
+      "sha256": "67e6c08c9459ce75fd9c8d4825989ad7cdb3d8af92561bfcc6f21740012f94a7"
+    },
+    {
+      "path": "__pycache__/authorize_h2o_3um_abundance_grid_v1.cpython-312.pyc",
+      "bytes": 5404,
+      "sha256": "2a7ec9e4995aefcad15724d02b52ee03985c5635b71cb32f6ba49fe7227db6aa"
+    },
+    {
+      "path": "__pycache__/authorize_h2o_3um_dust_axis_band_v1.cpython-312.pyc",
+      "bytes": 6219,
+      "sha256": "f63f30e3c38690b71c08341dc80af17ac56d64b39e9d3343b0a0c7130661a677"
+    },
+    {
+      "path": "__pycache__/authorize_h2o_3um_dust_axis_grid_v1.cpython-312.pyc",
+      "bytes": 6215,
+      "sha256": "a104ab40bb328dea84805545c7141791482a8b13cc8311534e2b4004a43d7ebb"
+    },
+    {
+      "path": "__pycache__/authorize_h2o_3um_method2_postpilot_guard_field_recovery_v1.cpython-312.pyc",
+      "bytes": 7668,
+      "sha256": "f657e45e195c8317b2e143e5400513d3159d01798b2c7f3757b010d649b777f0"
+    },
+    {
+      "path": "__pycache__/authorize_h2o_3um_method2_postpilot_v1.cpython-312.pyc",
+      "bytes": 9740,
+      "sha256": "cab7b1751cdf9605b96ec16eb44bf4783202438a4f2ca7477e77694f192837ff"
+    },
+    {
+      "path": "__pycache__/build_h2o_3um_abundance_grid_v1_inputs.cpython-312.pyc",
+      "bytes": 4242,
+      "sha256": "a7928c937867450b518cce54dd3d5681ef716160ee7dbdc9ae29b1ba560d62fa"
+    },
+    {
+      "path": "__pycache__/build_h2o_3um_dust_axis_band_v1_inputs.cpython-312.pyc",
+      "bytes": 5391,
+      "sha256": "e70f0c6d987d69d4445530e6e9c24fe9e35f1668038f301dfdc8ebbbc9a610f9"
+    },
+    {
+      "path": "__pycache__/build_h2o_3um_dust_axis_grid_v1_inputs.cpython-312.pyc",
+      "bytes": 5391,
+      "sha256": "b407fb610f767d68335769fcec0c2ee385efbc84aab2acdcafd9e57ce6e82f88"
+    },
+    {
+      "path": "__pycache__/build_h2o_3um_method2_postpilot_guard_field_recovery_v1_inventory.cpython-312.pyc",
+      "bytes": 39834,
+      "sha256": "2f19a0d818f7fde3c90cf6d353a4943329d43431e477df4548392c46a1c0ce9e"
+    },
+    {
+      "path": "__pycache__/build_h2o_3um_opacity_screen_v1.cpython-312.pyc",
+      "bytes": 30412,
+      "sha256": "ec49dc05193b45b94c037ac5205381814b95c6f87c970ccd2ef351f2d041bc99"
+    },
+    {
+      "path": "__pycache__/build_h2o_3um_opacity_screen_v1.cpython-39.pyc",
+      "bytes": 19865,
+      "sha256": "859b8976bc6cff2751b2a4c8de548bec56caa994e44350d7eb55a19b8dc15a9b"
+    },
+    {
+      "path": "__pycache__/build_ice_feature_anchor_contract.cpython-312.pyc",
+      "bytes": 33168,
+      "sha256": "3c7cc0ac1c6e6b4a6db1136429c30d7fa7d740a8f6b5b8d8bac228e0c2c72e38"
+    },
+    {
+      "path": "__pycache__/build_ice_feature_method2_pilot_v2_completion_index.cpython-312.pyc",
+      "bytes": 48413,
+      "sha256": "2271b681a1366811bf37fe1ff1692c7eb458350624667d1b746dd0e97abe4e98"
+    },
+    {
+      "path": "__pycache__/build_ice_feature_method2_pilot_v2_wider_completion_index.cpython-312.pyc",
+      "bytes": 23932,
+      "sha256": "1422f6c04b2674b140491443938890da9d614f17b5e7a4a4d5c27a2cbdbe93a9"
+    },
+    {
+      "path": "__pycache__/build_reproducible_ice_h2o_audit_v1.cpython-312.pyc",
+      "bytes": 67155,
+      "sha256": "f2a8c7574cb9d7df3d37245e259a4541a2b510b38f0072bcac86adcaf26ff9c1"
+    },
+    {
+      "path": "__pycache__/build_reproducible_ice_h2o_audit_v1.cpython-39.pyc",
+      "bytes": 37966,
+      "sha256": "b7cb95f9d21faeb3766f0ddd8540e345e9ed5f7f1e6135944986150aee414448"
+    },
+    {
+      "path": "__pycache__/build_strict_continuum_cavity_mass_q_v1_task002_seed41002_recovered_v1_index.cpython-312.pyc",
+      "bytes": 35094,
+      "sha256": "50908a9f47da7b1ba1556848668586b949a9f3e40724c6ac1c8247a3cdcccc72"
+    },
+    {
+      "path": "__pycache__/build_strict_continuum_cavity_mass_q_v1_terminal_recoveries_v1_completion_index.cpython-312.pyc",
+      "bytes": 13691,
+      "sha256": "9c6b62417fed049dceda2e59758c4fb5a60a760af3d8b6993ed2e7f90bf735dd"
+    },
+    {
+      "path": "__pycache__/build_strict_continuum_cavity_mass_q_v1_terminal_recoveries_v1_recovery_map.cpython-312.pyc",
+      "bytes": 45598,
+      "sha256": "45c4c54ae0cafcdbca6ce12ac58c4694388b83e5ef9f60e77009f9e3249cb086"
+    },
+    {
+      "path": "__pycache__/build_strict_continuum_cavity_mass_q_v1_terminal_recoveries_v1_registry.cpython-312.pyc",
+      "bytes": 21708,
+      "sha256": "7de4e22764b9f93b7170a9b547edf2b81f508dbf0bedafdb187b2b78d082b977"
+    },
+    {
+      "path": "__pycache__/build_strict_continuum_cavity_mass_q_v1_terminal_recoveries_v1_terminal_accounting.cpython-312.pyc",
+      "bytes": 11323,
+      "sha256": "cb41f6324eaa4e5369e892303bda6c79219b963d1b982cd422dabbe4be5946fd"
+    },
+    {
+      "path": "__pycache__/capture_strict_continuum_cavity_mass_q_v1_terminal_recoveries_v1_accounting.cpython-312.pyc",
+      "bytes": 6348,
+      "sha256": "9ea9b519c07fa9724a61373e4a1a306868b96fc4eca9a71a762f93bb07b3bdce"
+    },
+    {
+      "path": "__pycache__/cluster_parity_strict_continuum_measurement_kernel_v1.cpython-312.pyc",
+      "bytes": 12773,
+      "sha256": "29bbd6972500a8600f05bbe58734ea2bdea521cf61374e763af6d4f3078a1b10"
+    },
+    {
+      "path": "__pycache__/cluster_parity_strict_continuum_measurement_kernel_v1.cpython-39.pyc",
+      "bytes": 7995,
+      "sha256": "d6826d7aa526ff7475cea9c9f462a2316a7facdf8a47686f1cf6ee2d0e8b06de"
+    },
+    {
+      "path": "__pycache__/cmq_highn_convergence_v2_common.cpython-312.pyc",
+      "bytes": 16722,
+      "sha256": "6f004c395b7a4a7d82099d6d119a666ff8d174e1777aa72cd639719e12d3e670"
+    },
+    {
+      "path": "__pycache__/cmq_technical_recovery_v1.cpython-312.pyc",
+      "bytes": 42126,
+      "sha256": "37c1ee7de4129c4ca16ac7b1b5ea394bdc0d48b8fefbcc7a94522167ccef530e"
+    },
+    {
+      "path": "__pycache__/collect_h2o_silicate_demo_anchors_v1.cpython-312.pyc",
+      "bytes": 8127,
+      "sha256": "3d2af4c4838e9369148862ef83900d5c16d89216f21cbca77863b51ed2c1dcc5"
+    },
+    {
+      "path": "__pycache__/compare_baseline_mcfost.cpython-312.pyc",
+      "bytes": 23656,
+      "sha256": "7afe7f2c8f095b56a2fc8be1d1e463df7220ae83240039395be32f78ca52f1d0"
+    },
+    {
+      "path": "__pycache__/compare_full_r100_aperture_finalists.cpython-312.pyc",
+      "bytes": 70367,
+      "sha256": "4ed8e9d58a6c39624a435b0a2bbc7dbce5e483f396c0d6b991b7ec40778a1937"
+    },
+    {
+      "path": "__pycache__/compare_full_r100_finalists.cpython-312.pyc",
+      "bytes": 47280,
+      "sha256": "c8b8c3123d0fdc38d6ffa35b5af932a7d7e7b842bec44652b0017b1066d90483"
+    },
+    {
+      "path": "__pycache__/compare_tmc1a_rgb_grid_2um.cpython-312.pyc",
+      "bytes": 4906,
+      "sha256": "7b053c787311b15d5ea5ab8adff589d757f9ccc35131b64a475740b91f7da4a9"
+    },
+    {
+      "path": "__pycache__/diagnose_cmq_task371_v2.cpython-312.pyc",
+      "bytes": 4595,
+      "sha256": "be896374496a0810c1bf1b9ce82dd9ba44849777369dc98159fef4714498cfb9"
+    },
+    {
+      "path": "__pycache__/diagnose_strict3d_task024_recovery_v1.cpython-312.pyc",
+      "bytes": 2739,
+      "sha256": "0f45fd9fc52ad6c99bd103ac6454e22b1e529f47512e42939839dfc1de0e3e7e"
+    },
+    {
+      "path": "__pycache__/diagnose_strict3d_task_quality.cpython-312.pyc",
+      "bytes": 5136,
+      "sha256": "ad6e2d5cf27cdfd4229e9b766fd413431af57f5acbfd37fda3b4b013cfb2aa33"
+    },
+    {
+      "path": "__pycache__/extract_tmc1a_sed.cpython-312.pyc",
+      "bytes": 15927,
+      "sha256": "4b5fcca22c82358d5adde18ab3bcb33c555f3a5f66297271ad6818e9aa0cec81"
+    },
+    {
+      "path": "__pycache__/extract_tmc1a_sed.cpython-39.pyc",
+      "bytes": 9584,
+      "sha256": "10ac19c6a858e77915ae325b2444fe1a0184af149ffe7ccca9a0a3d51df9c54a"
+    },
+    {
+      "path": "__pycache__/finalize_h2o_3um_abundance_grid_v1.cpython-312.pyc",
+      "bytes": 9828,
+      "sha256": "0ab5ed0c9888b752ae7036b57471bdfd7d0063694d7f404e3a913b2939e4a5ef"
+    },
+    {
+      "path": "__pycache__/finalize_h2o_3um_dust_axis_band_v1.cpython-312.pyc",
+      "bytes": 11254,
+      "sha256": "1f103cb149e2bd4acbf02315153abf2e6134eaf7233371c25e199a1052a25580"
+    },
+    {
+      "path": "__pycache__/finalize_h2o_3um_dust_axis_grid_v1.cpython-312.pyc",
+      "bytes": 11250,
+      "sha256": "2bb1714482fd987f113a74f66ae159dc7d81b6489bb77ca214e9901cf0fde4f5"
+    },
+    {
+      "path": "__pycache__/finalize_h2o_3um_method2_postpilot_guard_field_recovery_v1.cpython-312.pyc",
+      "bytes": 35781,
+      "sha256": "ab5f4396f42eec2f7ed7ea106187c36404972adde66330e0f09e1008d87bee9e"
+    },
+    {
+      "path": "__pycache__/finalize_h2o_3um_method2_postpilot_recovered_v1.cpython-312.pyc",
+      "bytes": 41900,
+      "sha256": "28131822a9e5479b2c8e6c55b5052d24ffe553a44e542a708584569b18a5b50c"
+    },
+    {
+      "path": "__pycache__/finalize_h2o_3um_method2_postpilot_v1.cpython-312.pyc",
+      "bytes": 30733,
+      "sha256": "5cc0ceabd6c98e1369eae443e53858d81b70c23153eff0ad33790c16312f675a"
+    },
+    {
+      "path": "__pycache__/finalize_h2o_3um_method2_screen_v1_convergence.cpython-312.pyc",
+      "bytes": 16877,
+      "sha256": "e9eaac686f6e2164e6071434b14cf6a4082075e1bb4c0bc5138f303ac4435bb7"
+    },
+    {
+      "path": "__pycache__/finalize_h2o_3um_method2_screen_v1_convergence.cpython-39.pyc",
+      "bytes": 10444,
+      "sha256": "6204b8edbdc301c8d234e44c897a63bef972522aed32ca6683f6c26bcaa5ee87"
+    },
+    {
+      "path": "__pycache__/finalize_h2o_3um_method2_screen_v3_field_pilot.cpython-312.pyc",
+      "bytes": 35015,
+      "sha256": "77c672b2978101f89082754dba2b5d7172c674d2ca3d35c7d71902ad57faa887"
+    },
+    {
+      "path": "__pycache__/fit_strict_continuum_method2_v1.cpython-312.pyc",
+      "bytes": 41926,
+      "sha256": "54301220294026889ed86c1f8369dae4fefbb8185ff4f95893591acebe2a292a"
+    },
+    {
+      "path": "__pycache__/freeze_h2o_3um_method2_postpilot_guard_field_recovery_v1.cpython-312.pyc",
+      "bytes": 12930,
+      "sha256": "d75dbe499d87d5f17fac6dc0238db87933a994a22670ba8b919c43c81ebd6ea2"
+    },
+    {
+      "path": "__pycache__/freeze_h2o_3um_method2_postpilot_v1.cpython-312.pyc",
+      "bytes": 11097,
+      "sha256": "ebce9262c9398aa5773b98158399ebf4322ec06b4a30a0c52b59edad15431728"
+    },
+    {
+      "path": "__pycache__/freeze_h2o_3um_method2_screen_v1.cpython-312.pyc",
+      "bytes": 34458,
+      "sha256": "fe78367471fbfea1a8d95134f926cf949d2177c2fce4915529bd4ffe2488101d"
+    },
+    {
+      "path": "__pycache__/freeze_h2o_3um_method2_screen_v1.cpython-39.pyc",
+      "bytes": 20834,
+      "sha256": "febc61d503c3f523ea98ac96176cdb9d4b7119199123d7135cdde2b5d03c25bc"
+    },
+    {
+      "path": "__pycache__/freeze_h2o_3um_method2_screen_v3.cpython-312.pyc",
+      "bytes": 39719,
+      "sha256": "8994dea46b3f83f85bede181690a233a576e098ad59c1785b531e4f84fc76455"
+    },
+    {
+      "path": "__pycache__/freeze_h2o_3um_observation_v2.cpython-312.pyc",
+      "bytes": 57488,
+      "sha256": "26a5b44f2ece8f818ebaff52906150e07d2acd4079ef4738a0bcca2c56bf5cdb"
+    },
+    {
+      "path": "__pycache__/freeze_h2o_3um_observation_v3.cpython-312.pyc",
+      "bytes": 75852,
+      "sha256": "3fd86286abd218e1fc3a06de447e08a4737e37024b240ab11bcd8a826fcbabe8"
+    },
+    {
+      "path": "__pycache__/freeze_ice_feature_method2_pilot_v1.cpython-312.pyc",
+      "bytes": 34958,
+      "sha256": "2747a7e27e702237d56200cc1ce79ec5112d9d331391052ce66f7dd4256a4d26"
+    },
+    {
+      "path": "__pycache__/freeze_ice_feature_method2_pilot_v1.cpython-39.pyc",
+      "bytes": 20614,
+      "sha256": "fc30088cf2e69e33fad089b8d03f484209bd43284e676a532885cc14ed6520c8"
+    },
+    {
+      "path": "__pycache__/freeze_ice_feature_method2_pilot_v2.cpython-312.pyc",
+      "bytes": 24043,
+      "sha256": "529c5977d6485c29fb15e0ab7d2420f66e5cdfe1799c0430509b21d38986370d"
+    },
+    {
+      "path": "__pycache__/freeze_strict_continuum_3d_q_task024_recovery_v1_workflow.cpython-312.pyc",
+      "bytes": 2754,
+      "sha256": "733ae3f8105360fb455b5a7b40c590ae9afe585c1794bf64f7e4185b15852cff"
+    },
+    {
+      "path": "__pycache__/freeze_strict_continuum_3d_q_task024_recovery_v1_workflow.cpython-39.pyc",
+      "bytes": 1931,
+      "sha256": "50d521cd4cba1b03ffbe9c4445ff06f9e5e94beb4fc0d869871797516d567f0f"
+    },
+    {
+      "path": "__pycache__/freeze_strict_continuum_3d_q_v1_task024_seed41002_recovery_primary9_v1_policy.cpython-312.pyc",
+      "bytes": 1848,
+      "sha256": "cbd1f40cf5e60f35efb3c64a4071c85819847146a2a75fb70997809b7ee76388"
+    },
+    {
+      "path": "__pycache__/freeze_strict_continuum_3d_q_v1_task024_seed41002_recovery_primary9_v1_policy.cpython-39.pyc",
+      "bytes": 1313,
+      "sha256": "60445a5bd192d84da51ef5f38ff28e4d147cfa4542a1919a698305f2b7ac8589"
+    },
+    {
+      "path": "__pycache__/freeze_strict_continuum_amendment_v1.cpython-312.pyc",
+      "bytes": 5394,
+      "sha256": "3a61fbba0b93a556747675b0c5bd56a8232131bdf675d95874f35814aad2a3cd"
+    },
+    {
+      "path": "__pycache__/freeze_strict_continuum_cavity_mass_q_source128k_uniform_v2_v1.cpython-312.pyc",
+      "bytes": 12497,
+      "sha256": "ad2d56b7ad47cdcdf6abc8114c1198c61730dfb51e3662bc0e514e3611dc7260"
+    },
+    {
+      "path": "__pycache__/freeze_strict_continuum_cavity_mass_q_task002_failed_recovery_audit_job15165201.cpython-312.pyc",
+      "bytes": 21583,
+      "sha256": "437d6e2afb90f66a5c83eb141a64129de09a8a7782b8ce28bcf88a9ae3d9de58"
+    },
+    {
+      "path": "__pycache__/freeze_strict_continuum_cavity_mass_q_task002_recovery_v1_policy.cpython-312.pyc",
+      "bytes": 8426,
+      "sha256": "92a725bbae921a422ef8f1e14a8ceb481fe41348baba0b22d6b158b36a6d9728"
+    },
+    {
+      "path": "__pycache__/freeze_strict_continuum_cavity_mass_q_task002_recovery_v1_policy.cpython-39.pyc",
+      "bytes": 5528,
+      "sha256": "e149b6a26134c5004e2213d644d1e180e8150c0218268d9ce28035515119145a"
+    },
+    {
+      "path": "__pycache__/freeze_strict_continuum_cavity_mass_q_task002_recovery_v1_workflow.cpython-312.pyc",
+      "bytes": 4339,
+      "sha256": "0a21fc09998846a31d042f371140488dff8a1329d30fc1e457cb43910acad952"
+    },
+    {
+      "path": "__pycache__/freeze_strict_continuum_cavity_mass_q_task002_recovery_v1_workflow.cpython-39.pyc",
+      "bytes": 2669,
+      "sha256": "ca4e88a4de91274caf1fb994e1bd38bfc436499612548860bc3f7320c943deee"
+    },
+    {
+      "path": "__pycache__/freeze_strict_continuum_cavity_mass_q_task046_recovery_v1_policy.cpython-312.pyc",
+      "bytes": 9472,
+      "sha256": "b30fd06dcf3c9b90cbe12e6de16db37c96642467bdced517d3ed240ce64c478f"
+    },
+    {
+      "path": "__pycache__/freeze_strict_continuum_cavity_mass_q_task046_recovery_v1_policy.cpython-39.pyc",
+      "bytes": 5921,
+      "sha256": "3865b7a3eb8c8fb00f839c8f8e9fc39316cb38f692e2d6ee901fb27676ea35ef"
+    },
+    {
+      "path": "__pycache__/freeze_strict_continuum_cavity_mass_q_task046_recovery_v1_workflow.cpython-312.pyc",
+      "bytes": 5482,
+      "sha256": "62c1d048121c9e1d5bdea44ded9da206cb140d64fab470535ada048fc4740697"
+    },
+    {
+      "path": "__pycache__/freeze_strict_continuum_cavity_mass_q_task046_recovery_v1_workflow.cpython-39.pyc",
+      "bytes": 3301,
+      "sha256": "8ddd7d31f199ae81ab8583b6bbd1239dbb2fdb468cb07e7075e923df90c34336"
+    },
+    {
+      "path": "__pycache__/freeze_strict_continuum_cavity_mass_q_task046_recovery_v2_policy.cpython-312.pyc",
+      "bytes": 10995,
+      "sha256": "9b2b89489339988e0c5dd7e2318f0c22510bcf65d545db4e1cdca8aecb01d7f9"
+    },
+    {
+      "path": "__pycache__/freeze_strict_continuum_cavity_mass_q_task046_recovery_v2_policy.cpython-39.pyc",
+      "bytes": 6931,
+      "sha256": "fe5ac1ae6e2dcc091c09d0e83c6ce076134a84728ec048a4a3f0abd2216586af"
+    },
+    {
+      "path": "__pycache__/freeze_strict_continuum_cavity_mass_q_task046_recovery_v2_workflow.cpython-312.pyc",
+      "bytes": 5857,
+      "sha256": "86da06086c640e548e29ab9b6dae173f998160c1d1728c23dbd2d614aeb76b04"
+    },
+    {
+      "path": "__pycache__/freeze_strict_continuum_cavity_mass_q_task046_recovery_v2_workflow.cpython-39.pyc",
+      "bytes": 3531,
+      "sha256": "03467785cc9720b3ab92c95b45b97c0d106cef26f4b176ed01014f228bb5787a"
+    },
+    {
+      "path": "__pycache__/freeze_strict_continuum_cavity_mass_q_task046_recovery_v3_policy.cpython-312.pyc",
+      "bytes": 11055,
+      "sha256": "05f3570859a354872fc0ab9a74d55b31fb3f092c71841f16d8611a3e814c5915"
+    },
+    {
+      "path": "__pycache__/freeze_strict_continuum_cavity_mass_q_task046_recovery_v3_policy.cpython-39.pyc",
+      "bytes": 7002,
+      "sha256": "85e776e13b1772c1411f4de4093071e4e947a8d29805083eecf03472b80181b8"
+    },
+    {
+      "path": "__pycache__/freeze_strict_continuum_cavity_mass_q_task046_recovery_v3_workflow.cpython-312.pyc",
+      "bytes": 5845,
+      "sha256": "55e3e7b60ca844e1eb1aa9fa844c440cd9397d226c5accba95493e328396325e"
+    },
+    {
+      "path": "__pycache__/freeze_strict_continuum_cavity_mass_q_task046_recovery_v3_workflow.cpython-39.pyc",
+      "bytes": 3531,
+      "sha256": "486ddec52c107e3a6b0d573f7ff15e59a81a26cea889ca7f731c730627d22701"
+    },
+    {
+      "path": "__pycache__/freeze_strict_continuum_cavity_mass_q_uniform_v2_v1.cpython-312.pyc",
+      "bytes": 12169,
+      "sha256": "27caca5369f7482cbb37f74d480e32800fb0dfcc43eb25ffb12ec86e8c51b905"
+    },
+    {
+      "path": "__pycache__/freeze_strict_continuum_cavity_mass_q_uniform_v2_v1_analysis_policy.cpython-312.pyc",
+      "bytes": 1572,
+      "sha256": "7fdfd9ef369efbef59c72099fe115c3715393d12e31cdf908c54e87a31aac2f4"
+    },
+    {
+      "path": "__pycache__/freeze_strict_continuum_cavity_mass_q_uniform_v2_v2.cpython-312.pyc",
+      "bytes": 11262,
+      "sha256": "b9a6a1b6221e53bd0663b04693c7206674788d0825e674b7a4ee1e2b8eaac0cf"
+    },
+    {
+      "path": "__pycache__/freeze_strict_continuum_cavity_mass_q_v1_analysis_policy.cpython-312.pyc",
+      "bytes": 1653,
+      "sha256": "f3d28f6baf0b2a2f988561b70b196c1361e046fe888612ce220e4a8b699ce871"
+    },
+    {
+      "path": "__pycache__/freeze_strict_continuum_cavity_mass_q_v1_analysis_policy.cpython-39.pyc",
+      "bytes": 1086,
+      "sha256": "3184b157cbca34bfdeffe7c9d7c2154913de4388f91418170439395198134069"
+    },
+    {
+      "path": "__pycache__/freeze_strict_continuum_cavity_mass_q_v1_task002_seed41002_recovered_v1_policy.cpython-312.pyc",
+      "bytes": 2744,
+      "sha256": "f4b9a3c9281f6c4ac24713d4ba4ab8f3b93f4384f32d850c1409756cf31cee51"
+    },
+    {
+      "path": "__pycache__/freeze_strict_continuum_cavity_mass_q_v1_task002_seed41002_recovered_v1_workflow.cpython-312.pyc",
+      "bytes": 3088,
+      "sha256": "af35485e59527f5159ba5f65409c34662dbdefce39ac4f5e03d14d00b968af7f"
+    },
+    {
+      "path": "__pycache__/freeze_strict_continuum_cavity_mass_q_v1_terminal_recoveries_v1_aggregation_policy.cpython-312.pyc",
+      "bytes": 16042,
+      "sha256": "d26d8d41562064a4da0c7f6a0294d6959c00a7fc753e3db2ca3b8ec3a4392edf"
+    },
+    {
+      "path": "__pycache__/freeze_strict_continuum_cavity_mass_q_v1_terminal_recoveries_v1_analysis_policy.cpython-312.pyc",
+      "bytes": 10698,
+      "sha256": "9389e6dcf8716043ad786233a19602e86a5a16abddb74fa97b77e09661af0401"
+    },
+    {
+      "path": "__pycache__/freeze_strict_continuum_cavity_mass_q_v1_terminal_recoveries_v1_workflow.cpython-312.pyc",
+      "bytes": 5927,
+      "sha256": "2a122bf27dbfc4efbcd1af62f6b6dd1c33145bc4b663d79ee55445b03ff508a6"
+    },
+    {
+      "path": "__pycache__/freeze_strict_continuum_cavity_mass_v1_analysis_policy.cpython-312.pyc",
+      "bytes": 1850,
+      "sha256": "e76f682c3db5801bfeb82d352cc82cd4403733fc1853177508ffc3b6d6f65ffb"
+    },
+    {
+      "path": "__pycache__/freeze_strict_continuum_polarized_plane0_v2.cpython-312.pyc",
+      "bytes": 7885,
+      "sha256": "ac5984592b526f71f6a50c0f1f34f6340a55e74c68f6235ebd54138419ae1241"
+    },
+    {
+      "path": "__pycache__/freeze_strict_continuum_polarized_plane0_v3.cpython-312.pyc",
+      "bytes": 8095,
+      "sha256": "9331516dd733397c040822df390416b63240d8b7ba0746d2f5cac628b5369956"
+    },
+    {
+      "path": "__pycache__/freeze_strict_continuum_task114_plane0_recovery_workflow.cpython-312.pyc",
+      "bytes": 3810,
+      "sha256": "c45bd94036af3e644d8a49ea208419ca803e73c673d2c2231ac8521b2fa72192"
+    },
+    {
+      "path": "__pycache__/freeze_strict_continuum_task22_recovery_policy.cpython-312.pyc",
+      "bytes": 10001,
+      "sha256": "c4634cd4ab35ce73697b987d2fd4dfd6e09102a8f7e4c30b989d1e28d2cc9740"
+    },
+    {
+      "path": "__pycache__/freeze_strict_continuum_task22_recovery_workflow.cpython-312.pyc",
+      "bytes": 3471,
+      "sha256": "c29c8c173713963eba89863f718779e6cdb105e89e23ea065ac73e64c1935645"
+    },
+    {
+      "path": "__pycache__/freeze_strict_continuum_workflow.cpython-312.pyc",
+      "bytes": 3486,
+      "sha256": "a9fed5b7f9f382a9ed6b3c2bba92a2c4f8f8e32ca527adbf5e512302549fd455"
+    },
+    {
+      "path": "__pycache__/h2o_3um_abundance_grid_v1_common.cpython-312.pyc",
+      "bytes": 31321,
+      "sha256": "d62788d446439e96da4bd68d9c6fdcfa1cc752e1ce54180d25dd19a15546c092"
+    },
+    {
+      "path": "__pycache__/h2o_3um_dust_axis_band_v1_common.cpython-312.pyc",
+      "bytes": 46762,
+      "sha256": "3d49365ce778a73c2b405a0ea2bbb2124486b7acd22cdbaf47f7545627e5a97a"
+    },
+    {
+      "path": "__pycache__/h2o_3um_dust_axis_grid_v1_common.cpython-312.pyc",
+      "bytes": 48469,
+      "sha256": "36ecc43a5b822ff9aed118fedaa8bdcd6411c6151827e2d58d6907b1df553315"
+    },
+    {
+      "path": "__pycache__/h2o_3um_method2_measurement_kernel_v3.cpython-312.pyc",
+      "bytes": 48032,
+      "sha256": "ddc2fefc4259f0507e6fb1a9650a0f58e2dce8871bf8792b2975ae5da8f55121"
+    },
+    {
+      "path": "__pycache__/h2o_3um_method2_postpilot_guard_field_recovery_v1_common.cpython-312.pyc",
+      "bytes": 49554,
+      "sha256": "3b36fdff48af63f3d3b76ddcf5729374dd7f536f9d4876b5ed75e31e6869d9ad"
+    },
+    {
+      "path": "__pycache__/h2o_3um_method2_postpilot_v1_common.cpython-312.pyc",
+      "bytes": 18625,
+      "sha256": "c69a9c1581c4bee79ae316af18ead1136f126c7896551af22efc80127bf42a1f"
+    },
+    {
+      "path": "__pycache__/h2o_3um_method2_screen_v1_common.cpython-312.pyc",
+      "bytes": 43465,
+      "sha256": "a95789d59c9ec178f9e8eb639daefec71353ff83377e2b725297a1247fd3690a"
+    },
+    {
+      "path": "__pycache__/h2o_3um_method2_screen_v1_common.cpython-39.pyc",
+      "bytes": 30040,
+      "sha256": "42bfd4168d62dc308ce9673bfccd799c7c3f6de2807f2c6289355c6f961852e1"
+    },
+    {
+      "path": "__pycache__/h2o_3um_method2_screen_v3_common.cpython-312.pyc",
+      "bytes": 65070,
+      "sha256": "f19803b79504303608995af66181402010945c0e486736df4cca38019fbaea7c"
+    },
+    {
+      "path": "__pycache__/h2o_3um_selfconsistent_grid_v1_common.cpython-312.pyc",
+      "bytes": 48670,
+      "sha256": "34ed89e53538b314d8388e1dd4ac61549eb5255c3ac46caf2f8372fc1b7e6f8e"
+    },
+    {
+      "path": "__pycache__/h2o_observation_measurement_kernel_v3.cpython-312.pyc",
+      "bytes": 22349,
+      "sha256": "25fdb754d4255da3abc7e8dae586263508799ab1061e1ff91a1efc147f46260f"
+    },
+    {
+      "path": "__pycache__/h2o_sparse_continuum_kernel_v2.cpython-312.pyc",
+      "bytes": 11352,
+      "sha256": "53dc7211d829c254fffa6349bfeb6c3fc8cf6ec4425c681053a879ffe9dd9565"
+    },
+    {
+      "path": "__pycache__/ice_feature_measurement_kernel_v1.cpython-312.pyc",
+      "bytes": 26950,
+      "sha256": "9d3857d76f8007bdd07cad1e75d377100530cafaa232e46ee456709f62ce43ed"
+    },
+    {
+      "path": "__pycache__/ice_feature_measurement_kernel_v1.cpython-39.pyc",
+      "bytes": 16615,
+      "sha256": "b33d954657eca6c558b4faefcd150c335d03141bd52ea34ba133ed3c1231076d"
+    },
+    {
+      "path": "__pycache__/ice_feature_measurement_kernel_v2.cpython-312.pyc",
+      "bytes": 12272,
+      "sha256": "858288231e2ee805595a938678330a2ec7331834b046ffee621d678e309414b5"
+    },
+    {
+      "path": "__pycache__/ice_feature_measurement_kernel_v2.cpython-39.pyc",
+      "bytes": 6790,
+      "sha256": "7d7258cf64423dab349ef5375118d6a6bd67ffcec3607836b264f897bfc20aeb"
+    },
+    {
+      "path": "__pycache__/ice_feature_method2_pilot_v1_common.cpython-312.pyc",
+      "bytes": 26670,
+      "sha256": "cc53dff98559da67ba683531fe8166a6af8216d358e467a523e851c60b37c2e3"
+    },
+    {
+      "path": "__pycache__/ice_feature_method2_pilot_v1_common.cpython-39.pyc",
+      "bytes": 18476,
+      "sha256": "56d27d68ae3bcab078127d57eb16f0abaf7db4d69aa55c30698df0265fd9519d"
+    },
+    {
+      "path": "__pycache__/ice_feature_method2_pilot_v2_common.cpython-312.pyc",
+      "bytes": 57650,
+      "sha256": "10260d9a0a04fa7a92f0f4572f941ea1b70b365cbfd2244566c5d2e40e0133b9"
+    },
+    {
+      "path": "__pycache__/ice_feature_method2_pilot_v2_common.cpython-39.pyc",
+      "bytes": 35925,
+      "sha256": "0579fb9e19c0935a9c5bee0397803e788b7ab7713402d5c41826d3620fcc1c9a"
+    },
+    {
+      "path": "__pycache__/inspect_aperture_background.cpython-312.pyc",
+      "bytes": 24628,
+      "sha256": "2101cfa32d3ac9e6be65624b85f4df81289f910b59677ce3c6a8fcd49356e2bb"
+    },
+    {
+      "path": "__pycache__/launch_h2o_3um_abundance_grid_v1.cpython-312.pyc",
+      "bytes": 17278,
+      "sha256": "f8a3e9ee0f3880a51b9079f0eaa4d620ac56be7d0833ef094afce6168fbfac53"
+    },
+    {
+      "path": "__pycache__/launch_h2o_3um_dust_axis_band_v1.cpython-312.pyc",
+      "bytes": 17220,
+      "sha256": "09277adf3d10f2a1afd25ebcee3bbcf32726b5d8e763877b7cb512e715622313"
+    },
+    {
+      "path": "__pycache__/launch_h2o_3um_dust_axis_grid_v1.cpython-312.pyc",
+      "bytes": 17216,
+      "sha256": "da650ec87eed8f17fcf3fca8e9e203156c6149684b7eb85e5fd283320de97b67"
+    },
+    {
+      "path": "__pycache__/launch_h2o_3um_method2_postpilot_guard_field_recovery_v1.cpython-312.pyc",
+      "bytes": 20736,
+      "sha256": "210866b24ee787255a298f3a55bf1ce3954791ab916c9e7f56bd577abb452572"
+    },
+    {
+      "path": "__pycache__/launch_h2o_3um_method2_postpilot_v1.cpython-312.pyc",
+      "bytes": 17383,
+      "sha256": "0b999800739a26e3fe44cc4e1bb87a59a2d453a4656749b45bc3bf225afb7f16"
+    },
+    {
+      "path": "__pycache__/launch_h2o_3um_method2_screen_v1.cpython-312.pyc",
+      "bytes": 11145,
+      "sha256": "0d29e176b2f88f9b341cd0c707ff0d4679c91d508c4e4b45ff168293187d7ab7"
+    },
+    {
+      "path": "__pycache__/launch_h2o_3um_method2_screen_v1.cpython-39.pyc",
+      "bytes": 6665,
+      "sha256": "f86694382fa2a3025e5bb0d32aa0d692f97b0fdf1e6ee783c39348bd430d350f"
+    },
+    {
+      "path": "__pycache__/launch_h2o_3um_method2_screen_v3.cpython-312.pyc",
+      "bytes": 11242,
+      "sha256": "5f987eccb3b4757ea88b735ab88a40b7a547fe5553b91b87d71a7b1c3518be0b"
+    },
+    {
+      "path": "__pycache__/launch_ice_feature_method2_pilot_v1.cpython-312.pyc",
+      "bytes": 12444,
+      "sha256": "a03de86e8048ca7df6194aa6a9207baf648b527fbd56072edbe6e50cdb13ae1a"
+    },
+    {
+      "path": "__pycache__/launch_ice_feature_method2_pilot_v2.cpython-312.pyc",
+      "bytes": 21807,
+      "sha256": "cdb88f0b94051951eaeb4e5b8c1155f49230d8b855ed575d4a2ca0299919234a"
+    },
+    {
+      "path": "__pycache__/make_aperture_normalization_convergence_inputs.cpython-312.pyc",
+      "bytes": 21527,
+      "sha256": "3e04998cd3252691aa530cff0e9baec8ffc159a6e1392ea860a38d4a92015dc8"
+    },
+    {
+      "path": "__pycache__/make_aperture_normalization_rt2_split_inputs.cpython-312.pyc",
+      "bytes": 20916,
+      "sha256": "e617f0e147503b404f57c5c6ce41d17ae51a1b48853cef48611d573b54cb66ec"
+    },
+    {
+      "path": "__pycache__/make_aperture_spatial_convergence_inputs.cpython-312.pyc",
+      "bytes": 13503,
+      "sha256": "cddf81e6638700d1cacb26266cf52ab4b8ccb507cd323e769230c7c5aee48bf5"
+    },
+    {
+      "path": "__pycache__/make_aperture_spatial_convergence_stage2_inputs.cpython-312.pyc",
+      "bytes": 14522,
+      "sha256": "f3b38535a0ae800f19c1966d71aa7c0ff783298580bb66c3f15e3f5872aff171"
+    },
+    {
+      "path": "__pycache__/make_aperture_spatial_convergence_stage3_inputs.cpython-312.pyc",
+      "bytes": 14256,
+      "sha256": "f05ff5cfac23d598952945a6b14674ce12ce6094f1f207cca0f32b954e2b979f"
+    },
+    {
+      "path": "__pycache__/make_aperture_spatial_convergence_stage4_inputs.cpython-312.pyc",
+      "bytes": 23954,
+      "sha256": "5c77cd0b7de74b10cd3d1fc70ccebc316eb2c52094fd195948bc43fc1b3dfd62"
+    },
+    {
+      "path": "__pycache__/make_aperture_spatial_convergence_stage4b_inputs.cpython-312.pyc",
+      "bytes": 48677,
+      "sha256": "37228d2be589e1e45b68a1e9207d889ecea76da4e0f017757ed30c46773f4b67"
+    },
+    {
+      "path": "__pycache__/make_cavity_inputs.cpython-312.pyc",
+      "bytes": 6382,
+      "sha256": "7b99637c7d1644d78604cf4135da806e558729e005dacf11d5236b75faf5a12b"
+    },
+    {
+      "path": "__pycache__/make_cmq_highn_convergence_v2.cpython-312.pyc",
+      "bytes": 22188,
+      "sha256": "0bc5e58b2871cac599b2cdd881fff2b1fafcd2ca24581648b4f4c0f15d10c7e7"
+    },
+    {
+      "path": "__pycache__/make_cmq_technical_recovery_package_v1.cpython-312.pyc",
+      "bytes": 18732,
+      "sha256": "24939aeb055ffa04d31d1dd65d67f0a539ff45b4360319b553fc2b6917ed108d"
+    },
+    {
+      "path": "__pycache__/make_component_rt2_pilot_inputs.cpython-312.pyc",
+      "bytes": 27794,
+      "sha256": "a80770150dd86f7ebbc92e3b7587f77fcde9f7c66093de8eadc9c3dd7118b56b"
+    },
+    {
+      "path": "__pycache__/make_continuum_fit_mask_diagnostic.cpython-312.pyc",
+      "bytes": 26808,
+      "sha256": "ba2ff8f50ecf0e7494abc038643c0efb9f705181d9827aae84456b02946b1283"
+    },
+    {
+      "path": "__pycache__/make_dust_grid_inputs.cpython-312.pyc",
+      "bytes": 15689,
+      "sha256": "bed00a41cfc13430635323ddcecc592ab86abe26cfe293c16e8ab01052dfe1d9"
+    },
+    {
+      "path": "__pycache__/make_dust_refinement_inputs.cpython-312.pyc",
+      "bytes": 8928,
+      "sha256": "84fc0417612c41a026edb371086dd94e85348544153bb3dfc8ddcbc72e1cc594"
+    },
+    {
+      "path": "__pycache__/make_envelope_mass_inputs.cpython-312.pyc",
+      "bytes": 7224,
+      "sha256": "0a21f43a569e9f0f57b7a0c5915dd441ad507f1ef4099e73e75c70730352df38"
+    },
+    {
+      "path": "__pycache__/make_feature_grid_inputs.cpython-312.pyc",
+      "bytes": 33930,
+      "sha256": "7b48f2be455dc13122ac4ddd1ec64164ad5efc5e4e6083a234b52d05019e3b9c"
+    },
+    {
+      "path": "__pycache__/make_full_r100_aperture_inputs.cpython-312.pyc",
+      "bytes": 19754,
+      "sha256": "16db644f48c1fe9e643c3071a02bf3cd963cbe94260965fb5ae9a942c2c003ba"
+    },
+    {
+      "path": "__pycache__/make_full_r100_finalist_inputs.cpython-312.pyc",
+      "bytes": 12934,
+      "sha256": "3b1bb6c387e7b433467dae7d6e46f3989b66e42a25647edc246a29301ea712ff"
+    },
+    {
+      "path": "__pycache__/make_h2o_silicate_demo_anchors_v1.cpython-312.pyc",
+      "bytes": 6439,
+      "sha256": "6b987b541b16016bda4d5b7e191517a2a7d020c946571f31e190bc3319dd2e3d"
+    },
+    {
+      "path": "__pycache__/make_h2o_silicate_demo_image_anchors_v1.cpython-312.pyc",
+      "bytes": 5799,
+      "sha256": "2b2942fa05c818554916c81e0e57db8012a03775d6265a0cf60c7c0d7212fff1"
+    },
+    {
+      "path": "__pycache__/make_high_photon_feature_sed_inputs.cpython-312.pyc",
+      "bytes": 23221,
+      "sha256": "6484df7db6f3c7f67051113800089bd2e42396f1105e1ac55964795e4f5ed799"
+    },
+    {
+      "path": "__pycache__/make_ice_feature_anchor_contract_v1.cpython-312.pyc",
+      "bytes": 40027,
+      "sha256": "2611afb95c9f0b7f6e233cdf1c8ed572ae731f3b53d0e8e8fd3f6f040d1b3250"
+    },
+    {
+      "path": "__pycache__/make_ice_feature_anchor_contract_v2.cpython-312.pyc",
+      "bytes": 7347,
+      "sha256": "2dfb3d0654c72cd5a3f14cf2dcee3df2788f62fb7f5fa2404c942a3981dd9449"
+    },
+    {
+      "path": "__pycache__/make_inclination_inputs.cpython-312.pyc",
+      "bytes": 4852,
+      "sha256": "9152dbdeb8e1aa394d221287521cb04c0fcf971336d80042bdfd7405b4f3a83f"
+    },
+    {
+      "path": "__pycache__/make_literature_boundary_inputs.cpython-312.pyc",
+      "bytes": 35803,
+      "sha256": "a96faac0b85604db9cd16879fc31d93b81f7ad687d211628e70fd3d8de2de2c2"
+    },
+    {
+      "path": "__pycache__/make_literature_screen_inputs.cpython-312.pyc",
+      "bytes": 33880,
+      "sha256": "ffd96febfa127c72ee9de7338c6fced4e9f688221e0614a6c3125006d14fa964"
+    },
+    {
+      "path": "__pycache__/make_matched_method2_closure_inputs.cpython-312.pyc",
+      "bytes": 17800,
+      "sha256": "c14f0375b05acc7c5f9c859f86a9efbd57d4f41b640664111f5418d944b60d2b"
+    },
+    {
+      "path": "__pycache__/make_matched_method2_nearir_inputs.cpython-312.pyc",
+      "bytes": 14913,
+      "sha256": "6df09afb2ad0930969119a1c2e505d52bb6324229ecbb048b6806f03bd5e4524"
+    },
+    {
+      "path": "__pycache__/make_r100_model_inputs.cpython-312.pyc",
+      "bytes": 8707,
+      "sha256": "6d725cfda4ce97cd33cfdc5b9901a67c34ebdab38f3ac255eeaf604d96cc4e0a"
+    },
+    {
+      "path": "__pycache__/make_strict_continuum_3d_q_task024_recovery_v1_inputs.cpython-312.pyc",
+      "bytes": 9965,
+      "sha256": "fe931b407dcf0ad38ac24af318296993473dae37c45270e7ae677c347d661c7c"
+    },
+    {
+      "path": "__pycache__/make_strict_continuum_3d_q_task024_recovery_v1_inputs.cpython-39.pyc",
+      "bytes": 5624,
+      "sha256": "1b3ba3fadf30ae9a173ad78ace245993e6dcc80a58f0cda0979478f05a022837"
+    },
+    {
+      "path": "__pycache__/make_strict_continuum_cavity_mass_q_task002_recovery_v1_inputs.cpython-312.pyc",
+      "bytes": 16106,
+      "sha256": "bc6c13202db62745d227e14dad5b650c1acefd9bcf403db1630b72d432e01f81"
+    },
+    {
+      "path": "__pycache__/make_strict_continuum_cavity_mass_q_task002_recovery_v1_inputs.cpython-39.pyc",
+      "bytes": 8808,
+      "sha256": "71de26c12891c0ec639036046ee60258218986f830b99f15d3105755f1845782"
+    },
+    {
+      "path": "__pycache__/make_strict_continuum_cavity_mass_q_task046_recovery_v1_inputs.cpython-312.pyc",
+      "bytes": 19755,
+      "sha256": "2093b2ef0b6868e599db6c947e35f07cea362aef1414d80d3dedff803a9adfe3"
+    },
+    {
+      "path": "__pycache__/make_strict_continuum_cavity_mass_q_task046_recovery_v1_inputs.cpython-39.pyc",
+      "bytes": 11019,
+      "sha256": "5bddad547307ad81836a85080abd2c07a199f39520ba71b925fc0143bcc0d4f1"
+    },
+    {
+      "path": "__pycache__/make_strict_continuum_cavity_mass_q_task046_recovery_v2_inputs.cpython-312.pyc",
+      "bytes": 22588,
+      "sha256": "568f3776e18ec18739984bd537999270ed93406310472490927523e2c6cbce18"
+    },
+    {
+      "path": "__pycache__/make_strict_continuum_cavity_mass_q_task046_recovery_v2_inputs.cpython-39.pyc",
+      "bytes": 12830,
+      "sha256": "fccb2159802be403449be60e76249987c4b2876ef4d7aa46d8d3088b904250dd"
+    },
+    {
+      "path": "__pycache__/make_strict_continuum_cavity_mass_q_task046_recovery_v3_inputs.cpython-312.pyc",
+      "bytes": 23089,
+      "sha256": "34a5e72f55ea2989e37657590a0028e039d8d92a589c3157ac7e9acfd62bf4e4"
+    },
+    {
+      "path": "__pycache__/make_strict_continuum_cavity_mass_q_task046_recovery_v3_inputs.cpython-39.pyc",
+      "bytes": 13208,
+      "sha256": "51eeec2030af947569104660055eeaf3bd596d64d96938ed8faba14f7f6ec697"
+    },
+    {
+      "path": "__pycache__/make_strict_continuum_cavity_mass_q_task371_highn_convergence_v1.cpython-312.pyc",
+      "bytes": 16148,
+      "sha256": "a2a0eba7b2b72b7f22671065858c02d0310654f8d7384ca42b4c36d0b796ad32"
+    },
+    {
+      "path": "__pycache__/make_strict_continuum_cavity_mass_q_task371_highn_convergence_v2.cpython-312.pyc",
+      "bytes": 18858,
+      "sha256": "a0de9c6f075f39e64a229abb3aa95ecdf0ddc485cda18b6993d1b1164f05c4d2"
+    },
+    {
+      "path": "__pycache__/make_strict_continuum_screen_inputs.cpython-312.pyc",
+      "bytes": 30365,
+      "sha256": "7319511caf029209c3de1ed7b29b5411fcf7611985c2d76e04cfbd97eb38ffa0"
+    },
+    {
+      "path": "__pycache__/make_strict_continuum_task114_plane0_recovery_inputs.cpython-312.pyc",
+      "bytes": 13100,
+      "sha256": "6efbe0963608fe950e7fde835b654b0382327a9d44a50250110d26e492735722"
+    },
+    {
+      "path": "__pycache__/make_strict_continuum_task22_recovery_inputs.cpython-312.pyc",
+      "bytes": 11152,
+      "sha256": "91b8ada6eb1655e0d4819d75375923da556c6a360162ba4a8552cc4ee6b88150"
+    },
+    {
+      "path": "__pycache__/make_tmc1a_literature_rgb_v1.cpython-312.pyc",
+      "bytes": 10958,
+      "sha256": "c7256c47e670ecb60c2dfeb1c840858083cc4e962d3412d164f43f14b50bf4cd"
+    },
+    {
+      "path": "__pycache__/measure_aperture_images.cpython-312.pyc",
+      "bytes": 28299,
+      "sha256": "6b9c96c0c1e1c807f029fc131c139483a8275880c987fc576d01fe277f373fd7"
+    },
+    {
+      "path": "__pycache__/parity_strict_continuum_measurement_kernel_v1.cpython-312.pyc",
+      "bytes": 26883,
+      "sha256": "34bf46111840fc8740f3a55cf0faf6dbfe1b29ca15c6269cac2b241d2032b6d9"
+    },
+    {
+      "path": "__pycache__/parity_strict_continuum_measurement_kernel_v1.cpython-39.pyc",
+      "bytes": 16072,
+      "sha256": "2cd7c90cf79c781bcaf6af99e7c434977f4c41518b24d020ff05e4d049974aa1"
+    },
+    {
+      "path": "__pycache__/pin_matched_method2_closure_binary.cpython-312.pyc",
+      "bytes": 17431,
+      "sha256": "1dbe341196a11871055920f872801d2abdb468cb2958b4d6349f7b36f5c60054"
+    },
+    {
+      "path": "__pycache__/pin_strict_continuum_cavity_mass_q_task002_source_v1.cpython-312.pyc",
+      "bytes": 19481,
+      "sha256": "4eff9cfe2ab8de9028f9bd99814bee9ad428ee74a418899a349ca8c017d79cba"
+    },
+    {
+      "path": "__pycache__/pin_strict_continuum_cavity_mass_q_task002_source_v1.cpython-39.pyc",
+      "bytes": 10915,
+      "sha256": "efd86e63aebab579d1f5ec5a16622e1b49cf4ca4f41ddbef0a4864c6cddbb74a"
+    },
+    {
+      "path": "__pycache__/pin_strict_continuum_cavity_mass_q_task046_source_v1.cpython-312.pyc",
+      "bytes": 26916,
+      "sha256": "941280c6174899a80f25e2e186cfd32fef6b8b83dd7eadf64eba4a04f5f253c2"
+    },
+    {
+      "path": "__pycache__/pin_strict_continuum_cavity_mass_q_task046_source_v1.cpython-39.pyc",
+      "bytes": 14750,
+      "sha256": "2f82ce3a64df0a72fde44ec37c3f88fe96d02b9586b72dd5bf405d0f1394043d"
+    },
+    {
+      "path": "__pycache__/pin_strict_continuum_cavity_mass_q_task046_source_v2.cpython-312.pyc",
+      "bytes": 29144,
+      "sha256": "9ea105e14ba13a1161f7df86cc629d88176593e490fb560ba0a76883ae983989"
+    },
+    {
+      "path": "__pycache__/pin_strict_continuum_cavity_mass_q_task046_source_v2.cpython-39.pyc",
+      "bytes": 16035,
+      "sha256": "e700b45afce98230792066bfa90ad82529ac3b35b5effb2c74f71b9b3e9e7e63"
+    },
+    {
+      "path": "__pycache__/pin_strict_continuum_cavity_mass_q_task046_source_v3.cpython-312.pyc",
+      "bytes": 30414,
+      "sha256": "450865bfa0fafcb223756a0fedd792d0fb7d42a28e1171f0cd91d1c1bd64b47a"
+    },
+    {
+      "path": "__pycache__/pin_strict_continuum_cavity_mass_q_task046_source_v3.cpython-39.pyc",
+      "bytes": 16804,
+      "sha256": "a28fcc0bab9833410ec1d76d9911337f18cbd89d14b3ea74770b829c697165fc"
+    },
+    {
+      "path": "__pycache__/pin_strict_continuum_task114_plane0_source.cpython-312.pyc",
+      "bytes": 1626,
+      "sha256": "3a3050ea1b8b774cce0db83c72a20a5b8c27f0c2ca18691b508460545a1d9ee6"
+    },
+    {
+      "path": "__pycache__/pin_strict_continuum_task22_source.cpython-312.pyc",
+      "bytes": 1592,
+      "sha256": "c5f1582b0e41432e5630e99028a65ee5180f7d20c4980e441768e0cb24ab587a"
+    },
+    {
+      "path": "__pycache__/plot_aperture_sed_image_example.cpython-312.pyc",
+      "bytes": 28638,
+      "sha256": "771fc89bd7cab631f3dc739cb3f171dc03130ecc1571183dd64396675843899e"
+    },
+    {
+      "path": "__pycache__/plot_extent_closure_correlation.cpython-312.pyc",
+      "bytes": 8210,
+      "sha256": "1a4d1b0ad6b375790722c7332932edb71f4a91c18aa5e5312201526d260237ae"
+    },
+    {
+      "path": "__pycache__/plot_h2o_3um_method2_field_pilot_v3.cpython-312.pyc",
+      "bytes": 16930,
+      "sha256": "068f38b278313c506f7730c41d5bbca7ef9eaa6af838657529c5c76b2b6c43d9"
+    },
+    {
+      "path": "__pycache__/plot_h2o_best_model_vs_jwst_full_spectrum.cpython-312.pyc",
+      "bytes": 24666,
+      "sha256": "b2f323cf047c87044dce5a3d48638147213387b2cde2c698cf9b6dfac375538c"
+    },
+    {
+      "path": "__pycache__/plot_h2o_stage1_opacity_shape_presentation.cpython-312.pyc",
+      "bytes": 17224,
+      "sha256": "93a9cba64127f754583e0945163a8b0723584a06cfcb2879e8c4d7c7203463aa"
+    },
+    {
+      "path": "__pycache__/plot_ice_opacity_vs_observed.cpython-312.pyc",
+      "bytes": 17908,
+      "sha256": "8f55534392008b6ae177c520b5a1e846ba9af2829f159f8123bb8e538cf6bb90"
+    },
+    {
+      "path": "__pycache__/plot_strict_continuum_all_wavelength_validation.cpython-312.pyc",
+      "bytes": 15996,
+      "sha256": "900c1ac7026047bc915c199f422b4081f0879d489588e3c9ab40ada7f8d55244"
+    },
+    {
+      "path": "__pycache__/plot_strict_continuum_refinement_v1_support_v1_with_jwst.cpython-312.pyc",
+      "bytes": 17727,
+      "sha256": "ad0ff7164b98b50265d425860ea30eccbef714b5656cfc113adfea445bc0ce3d"
+    },
+    {
+      "path": "__pycache__/plot_task114_plane0_convergence.cpython-312.pyc",
+      "bytes": 12761,
+      "sha256": "a70477538d12454017bb9da75c0abc12bc708d0462e755bc77ab7c42b65a6006"
+    },
+    {
+      "path": "__pycache__/plot_tmc1a_literature_rgb.cpython-312.pyc",
+      "bytes": 19843,
+      "sha256": "528172d0790ebc6f2882fed1cc8e460c5250062788ef20f0c7617d5242b040e5"
+    },
+    {
+      "path": "__pycache__/plot_tmc1a_literature_rgb_v1.cpython-312.pyc",
+      "bytes": 14279,
+      "sha256": "4bca57a1a7d3d4e8eb86aab0aa9b6d0c2209c411e2d3ef4cc18351a659cf45f6"
+    },
+    {
+      "path": "__pycache__/prepare_continuum_sed.cpython-312.pyc",
+      "bytes": 27443,
+      "sha256": "51bfe3c08bc1bb9fad24c2336b869c3defccd6966f56e7593cc7f1773e87fbdf"
+    },
+    {
+      "path": "__pycache__/prepare_tmc1a_literature_rgb.cpython-312.pyc",
+      "bytes": 12909,
+      "sha256": "dfc3f7bf1b3d9a61af4669bbb6be6c310ba72f7bf678eb548e20b3cd52b15a0a"
+    },
+    {
+      "path": "__pycache__/prepare_tmc1a_literature_rgb_v2.cpython-312.pyc",
+      "bytes": 2967,
+      "sha256": "db3901acb930813547ba6cde23f135c1cb4be6b6b50a81f8064700d2bc0a7ccf"
+    },
+    {
+      "path": "__pycache__/prepare_tmc1a_literature_rgb_v5.cpython-312.pyc",
+      "bytes": 2560,
+      "sha256": "4a4fe7823b53421590e09b53c2b948cd39a40e334fb59b41fbcbe5732e57b9d1"
+    },
+    {
+      "path": "__pycache__/remeasure_h2o_abundance_grid_1arcsec_v1.cpython-312.pyc",
+      "bytes": 8857,
+      "sha256": "b3589c5b9f301535a02d4068e26085bf5e79559d9eb11cb809beb31e7e795dc5"
+    },
+    {
+      "path": "__pycache__/remeasure_h2o_band_1arcsec_v1.cpython-312.pyc",
+      "bytes": 7275,
+      "sha256": "4903494b0dce8606916f76d3688e188602f92d125606e66e3c4e2f5f86c9e3f4"
+    },
+    {
+      "path": "__pycache__/remeasure_h2o_dust_axis_band_1arcsec_v1.cpython-312.pyc",
+      "bytes": 9450,
+      "sha256": "9bb5bf2a4b79fc66a54e380d6cfee90f164f32d1566e5e95d8a2201f5640de01"
+    },
+    {
+      "path": "__pycache__/reprocess_strict_continuum_cavity_mass_q_source128k_uniform_v2_v1.cpython-312.pyc",
+      "bytes": 48960,
+      "sha256": "bfff9ca06dc328d294b7df8adfd0eca59c8c4cc9f949f96060f01bbf428ba2af"
+    },
+    {
+      "path": "__pycache__/reprocess_strict_continuum_cavity_mass_q_uniform_v2_v1.cpython-312.pyc",
+      "bytes": 33328,
+      "sha256": "6b61c94d1d216454abbec79bce747e0c7b682cda26b4baae06c834238bbd9d65"
+    },
+    {
+      "path": "__pycache__/reprocess_strict_continuum_cavity_mass_q_uniform_v2_v2.cpython-312.pyc",
+      "bytes": 47707,
+      "sha256": "8fe7310149be864dcecdadcc81da298330c143aaedb46013df9284a7e901cf4b"
+    },
+    {
+      "path": "__pycache__/rerank_normalization_AB.cpython-312.pyc",
+      "bytes": 18688,
+      "sha256": "ef3298434b386b0c5313b7eedd47d102b300f1c3c8391664cb46228defa5ccd2"
+    },
+    {
+      "path": "__pycache__/rescore_h2o_3um_opacity_screen_v2.cpython-312.pyc",
+      "bytes": 84491,
+      "sha256": "fa0e4ff656def827a99318ca3a2ce29c8baaeae6706171132c28fcf83511665c"
+    },
+    {
+      "path": "__pycache__/rescore_strict_continuum_3d_q_v1_primary9_v1.cpython-312.pyc",
+      "bytes": 75496,
+      "sha256": "499b324c28058c18030e2ff604b8f72bcef88fcffb59d0782751fc3ae7f9790a"
+    },
+    {
+      "path": "__pycache__/rescore_strict_continuum_3d_q_v1_task024_seed41002_recovery_primary9_v1.cpython-312.pyc",
+      "bytes": 44758,
+      "sha256": "c8865bd01b7bffaaa2f2922799ac4152fcb03f6cbf0aa69a6bf9acff54726601"
+    },
+    {
+      "path": "__pycache__/rescore_strict_continuum_3d_q_v1_task024_seed41002_recovery_primary9_v1.cpython-39.pyc",
+      "bytes": 26972,
+      "sha256": "5cf1fb2f9773ae6ecb525461bd581558ec3bfe6c2d42a3213c675b2a191cc5a1"
+    },
+    {
+      "path": "__pycache__/run_cmq_highn_convergence_v2.cpython-312.pyc",
+      "bytes": 16988,
+      "sha256": "558ba9169028992e28f607c396f9cd692f84400bc765791029ab5266d50b8205"
+    },
+    {
+      "path": "__pycache__/run_cmq_technical_recovery_v1.cpython-312.pyc",
+      "bytes": 26382,
+      "sha256": "b9c9386709fd9fc14e751ea05678a477a70f75434b86412a9681b3d58e1858e6"
+    },
+    {
+      "path": "__pycache__/run_h2o_3um_abundance_grid_v1_task.cpython-312.pyc",
+      "bytes": 16324,
+      "sha256": "17b7ad9c533b896edfc54d4f61e39ef8128a98f268a76ce3e8d357da9f08efcf"
+    },
+    {
+      "path": "__pycache__/run_h2o_3um_dust_axis_band_v1_task.cpython-312.pyc",
+      "bytes": 20420,
+      "sha256": "6eafde8ac73883c1b3c2b50f3c5fcc3302ddf18536709a97ef466ddbff86957f"
+    },
+    {
+      "path": "__pycache__/run_h2o_3um_dust_axis_grid_v1_task.cpython-312.pyc",
+      "bytes": 20478,
+      "sha256": "9617ba3d51573b6596d0489b79c3405d3194bb5f758d784de24a9316da7a7764"
+    },
+    {
+      "path": "__pycache__/run_h2o_3um_method2_postpilot_guard_field_recovery_v1_task.cpython-312.pyc",
+      "bytes": 30153,
+      "sha256": "53153e89ef521804c04fdeb5c3fe247bdccc1d9c95cc33bcbd3a8e4190b873e7"
+    },
+    {
+      "path": "__pycache__/run_h2o_3um_method2_postpilot_v1_task.cpython-312.pyc",
+      "bytes": 9297,
+      "sha256": "b890346d2ca99e51290700e56d18aa3f6f8dcada36f1aba2b69fae3fcc147f5e"
+    },
+    {
+      "path": "__pycache__/run_h2o_3um_method2_screen_v1_affinity_smoke.cpython-312.pyc",
+      "bytes": 3124,
+      "sha256": "09542262c211f16f14fec961aac3d5b356d385041442209551ef631f4f9fb0cd"
+    },
+    {
+      "path": "__pycache__/run_h2o_3um_method2_screen_v1_affinity_smoke.cpython-39.pyc",
+      "bytes": 1825,
+      "sha256": "34e973a44cae93da894d7e6ac078ada436127ca1f0e2d98e8bcb9b1492a85c66"
+    },
+    {
+      "path": "__pycache__/run_h2o_3um_method2_screen_v1_lambda_contract_smoke.cpython-312.pyc",
+      "bytes": 22351,
+      "sha256": "e9376a069316bf2d45c773ba246c692e32141661dc049cccfdc26e5d44ffd3d4"
+    },
+    {
+      "path": "__pycache__/run_h2o_3um_method2_screen_v1_lambda_contract_smoke.cpython-39.pyc",
+      "bytes": 8919,
+      "sha256": "4959d1ac6d6027e507daa7b0d0d823d4f3fb8ee39b030372dd4f9291d1b9036f"
+    },
+    {
+      "path": "__pycache__/run_h2o_3um_method2_screen_v1_task.cpython-312.pyc",
+      "bytes": 36598,
+      "sha256": "0eb848948e80eb3e7e8e9d8438587822809c2bcfd7b05a2b750c67fb9c9f9276"
+    },
+    {
+      "path": "__pycache__/run_h2o_3um_method2_screen_v1_task.cpython-39.pyc",
+      "bytes": 21026,
+      "sha256": "2044cbf3656ccbfdc7a5b90aa3fcbf655b42ede749fc9794c6d46a370d645650"
+    },
+    {
+      "path": "__pycache__/run_h2o_3um_method2_screen_v3_affinity_smoke.cpython-312.pyc",
+      "bytes": 3569,
+      "sha256": "f6f6d4e729a404eb1eb100ccc6401ac04f857e000b394aabd4264bb2155e02ab"
+    },
+    {
+      "path": "__pycache__/run_h2o_3um_method2_screen_v3_lambda_contract_smoke.cpython-312.pyc",
+      "bytes": 24428,
+      "sha256": "13a6e59799c222206b9fbf68fff42787b2cddbc60d6564ef2c583acd9ac1b541"
+    },
+    {
+      "path": "__pycache__/run_h2o_3um_method2_screen_v3_task.cpython-312.pyc",
+      "bytes": 44907,
+      "sha256": "031d400376f8317facd4db66f1f40b32a49c38fafecaddf9c6aac77b0ef06a7a"
+    },
+    {
+      "path": "__pycache__/run_h2o_silicate_demo_anchor_v1.cpython-312.pyc",
+      "bytes": 11400,
+      "sha256": "8befdfc4533559317905e57cfcd0c0d1aee64e17a9aa8078f5f170eca7e3a522"
+    },
+    {
+      "path": "__pycache__/run_h2o_silicate_demo_image_anchor_v1.cpython-312.pyc",
+      "bytes": 15906,
+      "sha256": "1d947326efc5e8a9e9ab438a7d1ce57193993d28ceab777ecd29ecae3f418ef3"
+    },
+    {
+      "path": "__pycache__/run_ice_feature_method2_pilot_v1_task.cpython-312.pyc",
+      "bytes": 22300,
+      "sha256": "ec6f785d9f19c47c58615213b8db8e4ddecf2b5c851f2696b52ba4c87957d36d"
+    },
+    {
+      "path": "__pycache__/run_ice_feature_method2_pilot_v2_task.cpython-312.pyc",
+      "bytes": 40838,
+      "sha256": "c1de464988e3e9711d414c0d5fe85d9d2ccb7bd9afbf7df57bf75d10e53ed9bd"
+    },
+    {
+      "path": "__pycache__/run_strict_continuum_3d_q_task024_recovery_v1.cpython-312.pyc",
+      "bytes": 25141,
+      "sha256": "d2df91f8da24663d22ab33cddccffa1953f2b441ccdd049c5fd0abe52a11d435"
+    },
+    {
+      "path": "__pycache__/run_strict_continuum_3d_q_task024_recovery_v1.cpython-39.pyc",
+      "bytes": 13456,
+      "sha256": "85b30b9b2b3aad9961de30c830a701eb850953f5264e33780ee946405d05fd14"
+    },
+    {
+      "path": "__pycache__/run_strict_continuum_cavity_mass_q_task002_recovery_v1.cpython-312.pyc",
+      "bytes": 28618,
+      "sha256": "61e4e6d10512af0a83c5fc19365e98da7e63b3253857a88ab848ebc15c435c02"
+    },
+    {
+      "path": "__pycache__/run_strict_continuum_cavity_mass_q_task002_recovery_v1.cpython-39.pyc",
+      "bytes": 15174,
+      "sha256": "b05c470719a1d21ad38bd67e778c6baacebd989c0c9a54e854a065056c18e885"
+    },
+    {
+      "path": "__pycache__/run_strict_continuum_cavity_mass_q_task046_recovery_v1.cpython-312.pyc",
+      "bytes": 30319,
+      "sha256": "3841be46aea358e066480e5a543339cc6c3ab9adefbcacfec6951296406a1717"
+    },
+    {
+      "path": "__pycache__/run_strict_continuum_cavity_mass_q_task046_recovery_v1.cpython-39.pyc",
+      "bytes": 16088,
+      "sha256": "c124f689669e313f4a5cd93f4066dafa74ac006e10c23d3e71028fae72240586"
+    },
+    {
+      "path": "__pycache__/run_strict_continuum_cavity_mass_q_task046_recovery_v2.cpython-312.pyc",
+      "bytes": 32227,
+      "sha256": "18c96394f640d19a483a75b23f8053bab4229546f5a378771b274f3bab023711"
+    },
+    {
+      "path": "__pycache__/run_strict_continuum_cavity_mass_q_task046_recovery_v2.cpython-39.pyc",
+      "bytes": 17235,
+      "sha256": "298e7e8fd549ab06281473de716c7681a89fe3e9cb8aa9c7cd172db82a6f5415"
+    },
+    {
+      "path": "__pycache__/run_strict_continuum_cavity_mass_q_task046_recovery_v3.cpython-312.pyc",
+      "bytes": 32812,
+      "sha256": "5ad16b7bece5477eeae767857b7b2e73e1bf049d15f7ca7de6ab3060d86b1afb"
+    },
+    {
+      "path": "__pycache__/run_strict_continuum_cavity_mass_q_task046_recovery_v3.cpython-39.pyc",
+      "bytes": 17585,
+      "sha256": "1328b74bc592737d5e735bfb8aa5a4f87e47cec434231e90315c5681da0d3c5f"
+    },
+    {
+      "path": "__pycache__/run_strict_continuum_cavity_mass_q_task371_highn_convergence_v1.cpython-312.pyc",
+      "bytes": 17577,
+      "sha256": "830a38bed839773e6efdeb6dc5b71e1ae159f8f311d555f80d82fabc8614d625"
+    },
+    {
+      "path": "__pycache__/run_strict_continuum_cavity_mass_q_task371_highn_convergence_v2.cpython-312.pyc",
+      "bytes": 22737,
+      "sha256": "8b321af1ac62a9b1c654ec5887081e6679d84cd8a0b061d67dec4bd9e163dae8"
+    },
+    {
+      "path": "__pycache__/run_tmc1a_literature_rgb_v1.cpython-312.pyc",
+      "bytes": 13906,
+      "sha256": "419f8df8fa9ff5c04f9fb9d401f9e9534e3311902ee4e80d39fce56bb7f217fd"
+    },
+    {
+      "path": "__pycache__/score_component_rt2_pilot.cpython-312.pyc",
+      "bytes": 49461,
+      "sha256": "65d83014cfc30b015648bca0bcbb30c984bee59ec34db07813ffcd3aef4ac05c"
+    },
+    {
+      "path": "__pycache__/seal_h2o_3um_continuum_handoff_v1.cpython-312.pyc",
+      "bytes": 41919,
+      "sha256": "0baa03a4ad3abb025dc6b6796b730f719b1cd91ceb1238b548734aec0750d44d"
+    },
+    {
+      "path": "__pycache__/seal_h2o_3um_continuum_handoff_v1.cpython-39.pyc",
+      "bytes": 25563,
+      "sha256": "99f9edca332b32c52cda6afe3a37a9940747336c14ae4cd529a97dc1435e5af5"
+    },
+    {
+      "path": "__pycache__/seal_h2o_3um_opacity_choice_v1.cpython-312.pyc",
+      "bytes": 41506,
+      "sha256": "f8e0b88e81d79414e7758b4d9d6b3f8305d96d14fb7f6f5e3d5bfc6ed51a2a3e"
+    },
+    {
+      "path": "__pycache__/seal_h2o_3um_opacity_choice_v1.cpython-39.pyc",
+      "bytes": 24444,
+      "sha256": "f2d833082dd9a830f3b24ef42b8d4aa0f2372854322f35aa2a59b62c3fc94770"
+    },
+    {
+      "path": "__pycache__/seal_ice_feature_continuum_winner_v2.cpython-312.pyc",
+      "bytes": 31009,
+      "sha256": "64bf032601878b95feab59779c679b07ffdcdade3f054a6f7dee27dd585394d0"
+    },
+    {
+      "path": "__pycache__/seal_ice_feature_method2_pilot_v2_convergence.cpython-312.pyc",
+      "bytes": 9807,
+      "sha256": "0e64207af547a353fdf198fbbbac9271f430c3e5be7d469e3d865c672724dd05"
+    },
+    {
+      "path": "__pycache__/seal_ice_feature_opacity_choice_v2.cpython-312.pyc",
+      "bytes": 24658,
+      "sha256": "83a45b413711a4af55fceb3b13d58f680be0281b4f89dde3b561a0432e319737"
+    },
+    {
+      "path": "__pycache__/seal_strict_continuum_cavity_mass_q_source128k_uniform_v2_v1.cpython-312.pyc",
+      "bytes": 15513,
+      "sha256": "3c047fa1e65d7dd3a888c000d0f4fb3692324f1d2222389739a8c0ab85f0254e"
+    },
+    {
+      "path": "__pycache__/seal_strict_continuum_cavity_mass_q_uniform_v2_v1.cpython-312.pyc",
+      "bytes": 17460,
+      "sha256": "de5dff9fb92d67f5dd12eeb2ab9218e3719aa8d4a0d4301f1cdb00f52011d1be"
+    },
+    {
+      "path": "__pycache__/seal_strict_continuum_cavity_mass_q_uniform_v2_v2.cpython-312.pyc",
+      "bytes": 20185,
+      "sha256": "e6af16b04493abd58fb7f74b61cee67d9b5b269e7d8c6e0bda92cd31919fb645"
+    },
+    {
+      "path": "__pycache__/strict_continuum_3d_q_task024_recovery_v1_common.cpython-312.pyc",
+      "bytes": 12114,
+      "sha256": "ae3d526c18ccc0042a2d957ec5b3654f701fcb14b526069790c358af6ade6d2c"
+    },
+    {
+      "path": "__pycache__/strict_continuum_3d_q_task024_recovery_v1_common.cpython-39.pyc",
+      "bytes": 8676,
+      "sha256": "232dfa2847d33576aebc79b5cef4f37bd4fcc9dddbf4dcd7658b46b55ff9c5e8"
+    },
+    {
+      "path": "__pycache__/strict_continuum_amendment_v1_common.cpython-312.pyc",
+      "bytes": 15891,
+      "sha256": "064b0ae77970e04ffec4233e63892ff69b16739982d4b7011ef99e0ea8fa8e32"
+    },
+    {
+      "path": "__pycache__/strict_continuum_cavity_mass_q_source128k_uniform_v2_v1_common.cpython-312.pyc",
+      "bytes": 61068,
+      "sha256": "d4a8a58b39193eff224094d37307d998dbee1afc2617c26aa2d9701d35793880"
+    },
+    {
+      "path": "__pycache__/strict_continuum_cavity_mass_q_source128k_uniform_v2_v1_common.cpython-39.pyc",
+      "bytes": 38213,
+      "sha256": "7178cd3a3f84481e71650cfdf1d83c4649e18a7c100c1467d12278ee87d40799"
+    },
+    {
+      "path": "__pycache__/strict_continuum_cavity_mass_q_task002_recovery_v1_common.cpython-312.pyc",
+      "bytes": 23055,
+      "sha256": "a236560cf5fb29de1f8c6dca66b7fd6243770847a49826e5259d599c15f14100"
+    },
+    {
+      "path": "__pycache__/strict_continuum_cavity_mass_q_task002_recovery_v1_common.cpython-39.pyc",
+      "bytes": 16140,
+      "sha256": "21565f0b916d5bbfd65e5db48fb08ff9f11091cc3e5e140b999459a17f2c679d"
+    },
+    {
+      "path": "__pycache__/strict_continuum_cavity_mass_q_task046_recovery_v1_common.cpython-312.pyc",
+      "bytes": 25096,
+      "sha256": "5f0e358983e410e1e61b481230e47254375ce1c8b874549076f5cb78c97d9bdc"
+    },
+    {
+      "path": "__pycache__/strict_continuum_cavity_mass_q_task046_recovery_v1_common.cpython-39.pyc",
+      "bytes": 17968,
+      "sha256": "57937417b9919cbd7c2dede19196593380dcf795333d335a1feb40f9d6da7273"
+    },
+    {
+      "path": "__pycache__/strict_continuum_cavity_mass_q_task046_recovery_v2_common.cpython-312.pyc",
+      "bytes": 26436,
+      "sha256": "60cf3cd3d06d6dc5f654fec74e540cc0d09e24c0b708e2f2912d32dbefd7f285"
+    },
+    {
+      "path": "__pycache__/strict_continuum_cavity_mass_q_task046_recovery_v2_common.cpython-39.pyc",
+      "bytes": 19208,
+      "sha256": "75efe7b327e193f3e9556967f44a5ba40211621574ab347a3415d8d73fdca063"
+    },
+    {
+      "path": "__pycache__/strict_continuum_cavity_mass_q_task046_recovery_v3_common.cpython-312.pyc",
+      "bytes": 26585,
+      "sha256": "a75734691672b1dba258fc1b62f41a124dcb1ebd7f5470f9b288af645eb7258f"
+    },
+    {
+      "path": "__pycache__/strict_continuum_cavity_mass_q_task046_recovery_v3_common.cpython-39.pyc",
+      "bytes": 19357,
+      "sha256": "87c1a0b663127ee426242efdbba0fca9e214f494ea4d7fb328cf31ae6dbd0d36"
+    },
+    {
+      "path": "__pycache__/strict_continuum_cavity_mass_q_task371_highn_convergence_v1_common.cpython-312.pyc",
+      "bytes": 21002,
+      "sha256": "f92de60d45b97634a6bb4e1357481094aa0e969ac3b575fb5d27f54a50d9ae8e"
+    },
+    {
+      "path": "__pycache__/strict_continuum_cavity_mass_q_task371_highn_convergence_v2_common.cpython-312.pyc",
+      "bytes": 24763,
+      "sha256": "c4813d3b6de145b5dda084294f3705dc32dcbdf67f73de385b99ddbf573632d9"
+    },
+    {
+      "path": "__pycache__/strict_continuum_cavity_mass_q_uniform_v2_v1_common.cpython-312.pyc",
+      "bytes": 44563,
+      "sha256": "d4d15dc0fffe4cc756275cdeb4c9bd035604ddc0fe724ea224d6771c48e7ce33"
+    },
+    {
+      "path": "__pycache__/strict_continuum_cavity_mass_q_uniform_v2_v1_common.cpython-39.pyc",
+      "bytes": 26851,
+      "sha256": "2f77a53abfdc6362ab9cd2e1b2c446623cbe402c7e06352baf34a910d0e490c8"
+    },
+    {
+      "path": "__pycache__/strict_continuum_cavity_mass_q_uniform_v2_v2_common.cpython-312.pyc",
+      "bytes": 52344,
+      "sha256": "39638fcf8e7bad44db267baf2d20a459f2cd4482c4b0bb88d78364da73465062"
+    },
+    {
+      "path": "__pycache__/strict_continuum_cavity_mass_q_v1_task002_recovered_v1_common.cpython-312.pyc",
+      "bytes": 24398,
+      "sha256": "4b4a1ccd2880ea64e0c70e37e2ce207b0557c09cbbfac6065c5135f9b370b87d"
+    },
+    {
+      "path": "__pycache__/strict_continuum_cavity_mass_q_v1_terminal_recoveries_v1_common.cpython-312.pyc",
+      "bytes": 24769,
+      "sha256": "6be3b3fbd4931e99a4883bfa7bdf01f1e380060056149850662818906e2e702f"
+    },
+    {
+      "path": "__pycache__/strict_continuum_measurement_kernel_v1.cpython-312.pyc",
+      "bytes": 55374,
+      "sha256": "cccd75a8bffc0171edde9b120be2c3431f4fc02c79f6bc18d42c91374269336e"
+    },
+    {
+      "path": "__pycache__/strict_continuum_measurement_kernel_v1.cpython-39.pyc",
+      "bytes": 30407,
+      "sha256": "b0ad76a7818302a232f23e7a273732b45cf4c588c121040b7a083aa551bdbbc7"
+    },
+    {
+      "path": "__pycache__/strict_continuum_measurement_kernel_v2.cpython-312.pyc",
+      "bytes": 23987,
+      "sha256": "3bb67a51ec2fde516ebbab7991e5cc0bb89ec0bc5725d05858dc0d46af5d732a"
+    },
+    {
+      "path": "__pycache__/strict_continuum_measurement_kernel_v2.cpython-39.pyc",
+      "bytes": 13964,
+      "sha256": "604d6be8e2b480abb7a6fd5c09d4c2e49574c3b5380cae20fb9f407b9518671b"
+    },
+    {
+      "path": "__pycache__/strict_continuum_measurement_kernel_v3.cpython-312.pyc",
+      "bytes": 49310,
+      "sha256": "f7782962d266725eb032c5359e529d9f0ce0b76f5fc6c7382d200be45cb1352e"
+    },
+    {
+      "path": "__pycache__/strict_continuum_measurement_kernel_v3.cpython-39.pyc",
+      "bytes": 29874,
+      "sha256": "65bb163e7efc4905f10efcc25175bad20faceca16d95570fef676dd3e9f435ed"
+    },
+    {
+      "path": "__pycache__/strict_continuum_polarized_plane0_v2_common.cpython-312.pyc",
+      "bytes": 18977,
+      "sha256": "ef89ab491acd84fd5cc9b21d8eec6607ad884f27d64ce209a812d88d28852b28"
+    },
+    {
+      "path": "__pycache__/strict_continuum_polarized_plane0_v3_common.cpython-312.pyc",
+      "bytes": 17052,
+      "sha256": "619fdc9c887c0d322f8108cd249c8f22cd81e25910ea9be01fbef651d8b123fa"
+    },
+    {
+      "path": "__pycache__/strict_continuum_screen_common.cpython-312.pyc",
+      "bytes": 11964,
+      "sha256": "bf65e040f00dd603c96193b46e3e52ac102d38fb1e8690013622c6dfcfa3c6ab"
+    },
+    {
+      "path": "__pycache__/strict_continuum_task114_plane0_recovery_common.cpython-312.pyc",
+      "bytes": 13238,
+      "sha256": "39550cb0b35246855a4f1aa1be22dc63d26186880fd49d1a7dc0f2c8a4320c35"
+    },
+    {
+      "path": "__pycache__/strict_continuum_task22_recovery_common.cpython-312.pyc",
+      "bytes": 13143,
+      "sha256": "1f3f20405f2557a0fa9840d1dcfcd57168b322b977d9daed96d7c4a439ee277d"
+    },
+    {
+      "path": "__pycache__/strict_continuum_task22_recovery_policy_common.cpython-312.pyc",
+      "bytes": 20608,
+      "sha256": "9d693099516949a571f544035eee06e9ee12fe542417eb02d16ca403253cde32"
+    },
+    {
+      "path": "__pycache__/submit_strict_continuum_cavity_mass_q_task371_highn_convergence_v2.cpython-312.pyc",
+      "bytes": 14697,
+      "sha256": "837c81505ca7098baf53a2b8ac2884d8afcdc0f39251ee762fd88054010c9c97"
+    },
+    {
+      "path": "__pycache__/submit_strict_continuum_cavity_mass_q_v1_terminal_recoveries_v1.cpython-312.pyc",
+      "bytes": 11953,
+      "sha256": "b50f4369eb4f866b759ea57befb92fa3c39ef5ea92acdc9d874db1c5a258aeeb"
+    },
+    {
+      "path": "__pycache__/submit_strict_continuum_cavity_mass_q_v1_terminal_recoveries_v1_analysis.cpython-312.pyc",
+      "bytes": 12189,
+      "sha256": "ea476a27f6483ebf771dcbd139ebff99210e888aef476541273de18c3789988e"
+    },
+    {
+      "path": "__pycache__/supplement_h2o_3um_method2_screen_v1.cpython-312.pyc",
+      "bytes": 157331,
+      "sha256": "661a74f2d3eca67c783efee7ec2dfd3f9f07d021ef038fd86a4c98df619c508d"
+    },
+    {
+      "path": "__pycache__/supplement_h2o_3um_method2_screen_v1.cpython-39.pyc",
+      "bytes": 96952,
+      "sha256": "3eccae8d8b5bd561f9fa1183812c6183c94604b87f1946248159b8711722553a"
+    },
+    {
+      "path": "__pycache__/sync_h2o_3um_method2_screen_v1_compact.cpython-312.pyc",
+      "bytes": 64760,
+      "sha256": "61c4d6aeb539d79456b0155970027085b62ec549e4a20504da3bed18b3da5ff4"
+    },
+    {
+      "path": "__pycache__/sync_h2o_3um_method2_screen_v1_compact.cpython-39.pyc",
+      "bytes": 46332,
+      "sha256": "e2a62378b46bbc0ba7bad032e6f0f2192f32b5bbf1f372d530233c172759379c"
+    },
+    {
+      "path": "__pycache__/test_archive_h2o_3um_method2_screen_v1_convergence_attempt.cpython-312.pyc",
+      "bytes": 18160,
+      "sha256": "147e0b97e384ebe215dfbc48fc8451715958e137595cb8137a5bf5d7b5ec9e9c"
+    },
+    {
+      "path": "__pycache__/test_cmq_highn_convergence_v2.cpython-312.pyc",
+      "bytes": 17099,
+      "sha256": "c49ab9e933a6d409ccca7281e417ae4e6c99afa223fa2d85acc350e11788cb9f"
+    },
+    {
+      "path": "__pycache__/test_cmq_technical_recovery_v1.cpython-312.pyc",
+      "bytes": 17384,
+      "sha256": "156ed6aaa9c512ed8a751c39cb5c585c73600409b85b579c97c8d5e8b5861c79"
+    },
+    {
+      "path": "__pycache__/test_current_model_against_mrt.cpython-312.pyc",
+      "bytes": 40608,
+      "sha256": "9edc1c8721ab799c36f809d3f22d62541a03d4447da59c9879e6fffa90e45232"
+    },
+    {
+      "path": "__pycache__/test_freeze_h2o_3um_method2_postpilot_guard_field_recovery_v1.cpython-312.pyc",
+      "bytes": 6309,
+      "sha256": "20fe266ede89514f3029b7edbb3a8f1ee6928936540241cd60bcd43e1a63ec6d"
+    },
+    {
+      "path": "__pycache__/test_freeze_h2o_3um_method2_postpilot_v1.cpython-312.pyc",
+      "bytes": 4192,
+      "sha256": "560b822a5108b3395eddc521ef4e709565136cb575120d5d8b1e4830f3693fe2"
+    },
+    {
+      "path": "__pycache__/test_freeze_h2o_3um_method2_screen_v3.cpython-312.pyc",
+      "bytes": 20745,
+      "sha256": "f9aad101fffdd5474d99cfe53b9779b8ca9bc1a8c5398911066eee742c1f5d5c"
+    },
+    {
+      "path": "__pycache__/test_h2o_3um_abundance_grid_v1.cpython-312.pyc",
+      "bytes": 16636,
+      "sha256": "6078834ce22af0d24c45b22e1d22052b6586d05804ab579d1c3911ea135fdc0a"
+    },
+    {
+      "path": "__pycache__/test_h2o_3um_continuum_handoff_v1.cpython-312.pyc",
+      "bytes": 20841,
+      "sha256": "6ce99dedacab13b8e68cc8e01f1f17655327f712f9a8b7d841b177fd003721e0"
+    },
+    {
+      "path": "__pycache__/test_h2o_3um_continuum_handoff_v1.cpython-39.pyc",
+      "bytes": 12567,
+      "sha256": "90b3208a5017db7e2afc3425a8bc7bda40dcbb3ceae70aef48e7d4cdacf18bf2"
+    },
+    {
+      "path": "__pycache__/test_h2o_3um_dust_axis_band_v1.cpython-312.pyc",
+      "bytes": 29903,
+      "sha256": "b7576b707721e0c217faacd408f53784762b7f9eaed7f49cd21f3f8956eb322a"
+    },
+    {
+      "path": "__pycache__/test_h2o_3um_dust_axis_grid_v1.cpython-312.pyc",
+      "bytes": 32880,
+      "sha256": "ae4b3aee098abfa28bf543658de16b89ed715154354d88f4ee23f5ed81905402"
+    },
+    {
+      "path": "__pycache__/test_h2o_3um_method2_measurement_v3.cpython-312.pyc",
+      "bytes": 30360,
+      "sha256": "bdefb0df28e1f7313005570336a486d5c80ccd97068c654ee91450172965a480"
+    },
+    {
+      "path": "__pycache__/test_h2o_3um_method2_postpilot_guard_field_recovery_v1_analysis.cpython-312.pyc",
+      "bytes": 26654,
+      "sha256": "88a1a5f070f2234668dc845c9fd1b70d0caed061841411cb6209a9b79e84aa39"
+    },
+    {
+      "path": "__pycache__/test_h2o_3um_method2_postpilot_guard_field_recovery_v1_execution.cpython-312.pyc",
+      "bytes": 21486,
+      "sha256": "86d79b529b1b55afc60a2ad06b648b070c0ff323c912f7ae51806baa91cf4856"
+    },
+    {
+      "path": "__pycache__/test_h2o_3um_method2_postpilot_v1_analysis.cpython-312.pyc",
+      "bytes": 17897,
+      "sha256": "6f1e7151aaf5921d4281592b76d1a8c61132ca21fe6213b2bfd59f78a56634fd"
+    },
+    {
+      "path": "__pycache__/test_h2o_3um_method2_postpilot_v1_execution.cpython-312.pyc",
+      "bytes": 10792,
+      "sha256": "c6bd3dbcebf289265b8afe5683e7a9c3583424e3333b683e5dae0f5cc108cef1"
+    },
+    {
+      "path": "__pycache__/test_h2o_3um_method2_screen_v1.cpython-312.pyc",
+      "bytes": 58249,
+      "sha256": "ce5f9bb60935fcc5230c41fb36c65dd095f2a3bc8057b13f3aefdf746adb21b4"
+    },
+    {
+      "path": "__pycache__/test_h2o_3um_method2_screen_v1.cpython-39.pyc",
+      "bytes": 30176,
+      "sha256": "69769903c0e0f109a155e7fc07def476bf7a17dcb631ecd25dbd229c11b24eac"
+    },
+    {
+      "path": "__pycache__/test_h2o_3um_method2_screen_v3_runner.cpython-312.pyc",
+      "bytes": 21916,
+      "sha256": "351bf75dbe1717a823c071b76bb17a61cb5cb888b968877934594c98dcc63dc7"
+    },
+    {
+      "path": "__pycache__/test_h2o_3um_observation_v2.cpython-312.pyc",
+      "bytes": 20643,
+      "sha256": "0cba95d8aaa517566d63bfd914df67e1b5205cbfe740be360180b99b6582efd6"
+    },
+    {
+      "path": "__pycache__/test_h2o_3um_observation_v3.cpython-312.pyc",
+      "bytes": 32450,
+      "sha256": "7fa3c4cd9e0d92d093494e7e7eae9c09dfe6836a436cdcffed52d061ea681659"
+    },
+    {
+      "path": "__pycache__/test_h2o_3um_opacity_rescore_v2.cpython-312.pyc",
+      "bytes": 16485,
+      "sha256": "f53c5a53d8851b8f8625f90d42c231882f8ebef3f2fbebf833c151b0e0415862"
+    },
+    {
+      "path": "__pycache__/test_h2o_3um_opacity_screen_v1.cpython-312.pyc",
+      "bytes": 28485,
+      "sha256": "45220f5322a80aff1f38546f0c1a39936d0cf453b4611bd593386208ab4553b8"
+    },
+    {
+      "path": "__pycache__/test_h2o_3um_opacity_screen_v1.cpython-39.pyc",
+      "bytes": 16873,
+      "sha256": "da835ff30144f936aad871118e636bd7b26bc5705811fb408f797af815507a6e"
+    },
+    {
+      "path": "__pycache__/test_h2o_sparse_continuum_kernel_v2.cpython-312.pyc",
+      "bytes": 12748,
+      "sha256": "670298189b119ba8bf5ba898aca3d7a7996bfb4e7e84921fc508547e4a4bf6d8"
+    },
+    {
+      "path": "__pycache__/test_ice_feature_anchor_contract.cpython-312.pyc",
+      "bytes": 11979,
+      "sha256": "06b1d3c2ae46e97521d92dcaef60c5de594051881490c808c07febdddc33be2f"
+    },
+    {
+      "path": "__pycache__/test_ice_feature_method2_pilot_v1.cpython-312.pyc",
+      "bytes": 24161,
+      "sha256": "71430158ed5afceac50f3fb44603a5e09045ef1b675b1a5f65899baf49a1c846"
+    },
+    {
+      "path": "__pycache__/test_ice_feature_method2_pilot_v2.cpython-312.pyc",
+      "bytes": 154831,
+      "sha256": "6de01ef3213f18c89cd74dd53377da88ad6661edabfa1861b0aef0e3c5b63ad9"
+    },
+    {
+      "path": "__pycache__/test_launch_h2o_3um_method2_postpilot_guard_field_recovery_v1.cpython-312.pyc",
+      "bytes": 11240,
+      "sha256": "91035bb41ff1d7d53d1fc5a5406a3c16208476a845ef7405814750d112d6d9a3"
+    },
+    {
+      "path": "__pycache__/test_launch_h2o_3um_method2_postpilot_v1.cpython-312.pyc",
+      "bytes": 7104,
+      "sha256": "005912199f6199cb8de682bae82317596c09110768ac6c1c4e1edddc41fbed0f"
+    },
+    {
+      "path": "__pycache__/test_launch_h2o_3um_method2_screen_v3.cpython-312.pyc",
+      "bytes": 5344,
+      "sha256": "317e3c6ad17997a0c7d51080b289455ee2ebced0003d72bcf6d9081c08ae40d6"
+    },
+    {
+      "path": "__pycache__/test_miri_registration.cpython-312.pyc",
+      "bytes": 15605,
+      "sha256": "7d5332ddd895ef56dfbdb452d5e51d64f1fb5161c18fa35d41471d5de0c44aa7"
+    },
+    {
+      "path": "__pycache__/test_reproducible_ice_h2o_audit_v1.cpython-312.pyc",
+      "bytes": 16308,
+      "sha256": "08f692ac54c2b73a38b80e4ac932f0157a082121b7b800880b2f11d49d88df47"
+    },
+    {
+      "path": "__pycache__/test_strict_continuum_amendment_v1.cpython-312.pyc",
+      "bytes": 20943,
+      "sha256": "ffe84f81fa5751efed399fac97ccbbb15e32c52ea467306cc6d780cec118ac41"
+    },
+    {
+      "path": "__pycache__/test_strict_continuum_cavity_mass_q_source128k_uniform_v2_v1.cpython-312.pyc",
+      "bytes": 47278,
+      "sha256": "46a3a3ec53095693942ac99f35d9c29bde95ccf8393d13cb8bf4db5ada0735e6"
+    },
+    {
+      "path": "__pycache__/test_strict_continuum_cavity_mass_q_source128k_uniform_v2_v1_analysis.cpython-312.pyc",
+      "bytes": 24069,
+      "sha256": "e787c148bcb4cc4fe4f1e2ed7122714f9514e40136b79519ce64b7b62822b83e"
+    },
+    {
+      "path": "__pycache__/test_strict_continuum_cavity_mass_q_task002_recovery_v1.cpython-312.pyc",
+      "bytes": 14987,
+      "sha256": "daf3abc9fbae949c5d3326dc811e0c1e745bba33debd494ac0074a711b8a15f7"
+    },
+    {
+      "path": "__pycache__/test_strict_continuum_cavity_mass_q_task002_recovery_v1.cpython-39.pyc",
+      "bytes": 9100,
+      "sha256": "a3693500687314bf24ecf1608f56fa9212061199d4438404c74199647eca2806"
+    },
+    {
+      "path": "__pycache__/test_strict_continuum_cavity_mass_q_task046_recovery_v1.cpython-312.pyc",
+      "bytes": 16165,
+      "sha256": "e949a8a6f299b6ed870624cf3772ad394d257442fa3ea9ab8f5a294ffd234cb3"
+    },
+    {
+      "path": "__pycache__/test_strict_continuum_cavity_mass_q_task046_recovery_v1.cpython-39.pyc",
+      "bytes": 9695,
+      "sha256": "04fedbb6d7b0926b8d58587730b59bc6ab9ffdb0c4a422967db9ba1561e008a9"
+    },
+    {
+      "path": "__pycache__/test_strict_continuum_cavity_mass_q_task046_recovery_v2.cpython-312.pyc",
+      "bytes": 18897,
+      "sha256": "d2840251bb99741a8b62a54c50c73000b49d2b232d34bb1cddada9e897cb473b"
+    },
+    {
+      "path": "__pycache__/test_strict_continuum_cavity_mass_q_task046_recovery_v2.cpython-39.pyc",
+      "bytes": 11242,
+      "sha256": "40308742ea637f3e0718d95ef961447fdad1b277dfca8fed9d68d209e8b9b161"
+    },
+    {
+      "path": "__pycache__/test_strict_continuum_cavity_mass_q_task046_recovery_v3.cpython-312.pyc",
+      "bytes": 19515,
+      "sha256": "aee46c79953ff508310dc5b282d297163255f8e9681d9451050457ef153524c7"
+    },
+    {
+      "path": "__pycache__/test_strict_continuum_cavity_mass_q_task046_recovery_v3.cpython-39.pyc",
+      "bytes": 11523,
+      "sha256": "d53352efa22665f30343349e8bd8de7eafdf71d7f6008021ba95cbb69cc5e8f0"
+    },
+    {
+      "path": "__pycache__/test_strict_continuum_cavity_mass_q_task371_highn_convergence_v1.cpython-312.pyc",
+      "bytes": 13820,
+      "sha256": "35375e551599989d6f9b2100b56b25a90abc89922f7402545ca4fcc498dcc527"
+    },
+    {
+      "path": "__pycache__/test_strict_continuum_cavity_mass_q_task371_highn_convergence_v2.cpython-312.pyc",
+      "bytes": 23779,
+      "sha256": "84a2f7aeee2761c45c67386d0ee9934cde940d7ca472ff4616ffb7419139908e"
+    },
+    {
+      "path": "__pycache__/test_strict_continuum_cavity_mass_q_uniform_v2_v1.cpython-312.pyc",
+      "bytes": 13362,
+      "sha256": "cb0c73dc04cb58f7eacd3e17641b2fedd7f93a3c5fa8e25dc565bb883f695bad"
+    },
+    {
+      "path": "__pycache__/test_strict_continuum_cavity_mass_q_uniform_v2_v1_analysis.cpython-312.pyc",
+      "bytes": 12061,
+      "sha256": "5102a8159e0d10ee9589ad060ffee61536c6be1e0f66b8bb7397f4c2aa1acb41"
+    },
+    {
+      "path": "__pycache__/test_strict_continuum_cavity_mass_q_uniform_v2_v2.cpython-312.pyc",
+      "bytes": 35536,
+      "sha256": "137f1e6e34e2e31d9d5d4db53ff5cc0307c6ef21e0b57855ae2fece123395f99"
+    },
+    {
+      "path": "__pycache__/test_strict_continuum_cavity_mass_q_uniform_v2_v2_analysis.cpython-312.pyc",
+      "bytes": 17867,
+      "sha256": "de4caf6d491a7d295c87ac216a4f9b6d882970762be2da769b77a3339dd8c61e"
+    },
+    {
+      "path": "__pycache__/test_strict_continuum_cavity_mass_q_v1_analysis.cpython-312.pyc",
+      "bytes": 11091,
+      "sha256": "98ce185aa7e1a4bf325328b32cf052d21a23a54f7e3e1306e05191958c6b9bf1"
+    },
+    {
+      "path": "__pycache__/test_strict_continuum_cavity_mass_q_v1_analysis.cpython-39.pyc",
+      "bytes": 7325,
+      "sha256": "aba6cee587dc1f491d9b972e279432400a163f6aa009bc4acd578933ce546460"
+    },
+    {
+      "path": "__pycache__/test_strict_continuum_cavity_mass_q_v1_terminal_recoveries_v1.cpython-312.pyc",
+      "bytes": 32067,
+      "sha256": "2f27e2875163fe81542a3907fff8a6035745e485a152a19e8e3f84d661f7c548"
+    },
+    {
+      "path": "__pycache__/test_strict_continuum_cavity_mass_v1_analysis.cpython-312.pyc",
+      "bytes": 10582,
+      "sha256": "48cca7950dc800583f7ff1f308d2e7159c6e0c842db9436e55a062d9e3ba22e0"
+    },
+    {
+      "path": "__pycache__/test_strict_continuum_measurement_kernel_v1.cpython-312.pyc",
+      "bytes": 16691,
+      "sha256": "1a87d37498d07c04bcacb26c0757c277d1a484f6ee5cc920cff5c9cbb20ba4c4"
+    },
+    {
+      "path": "__pycache__/test_strict_continuum_measurement_kernel_v1.cpython-39.pyc",
+      "bytes": 9836,
+      "sha256": "9cbb758b49da95edf19bd9996f645b61f68160455d51278fa362f16a4fd8b80c"
+    },
+    {
+      "path": "__pycache__/test_strict_continuum_measurement_kernel_v3.cpython-312.pyc",
+      "bytes": 38143,
+      "sha256": "245abff65900bf9dc548261eaa5be212be2e4341690938d8ae7e77ecd2a6aff6"
+    },
+    {
+      "path": "__pycache__/test_strict_continuum_measurement_kernel_v3.cpython-39.pyc",
+      "bytes": 21818,
+      "sha256": "47e779256c22550176df49b573d1735abe4424fef3bfc32c0a7bca900b342d0d"
+    },
+    {
+      "path": "__pycache__/test_strict_continuum_polarized_plane0_v2.cpython-312.pyc",
+      "bytes": 11125,
+      "sha256": "af7a50a89136cb5a7271fdcde9df2fb04bcf7a81e44931972db8cba3f9585f0c"
+    },
+    {
+      "path": "__pycache__/test_strict_continuum_polarized_plane0_v3.cpython-312.pyc",
+      "bytes": 13385,
+      "sha256": "8fb142fa3eef5d6679fcbcba525140c426b65fe5848c1f230fa2049320b0e300"
+    },
+    {
+      "path": "__pycache__/test_strict_continuum_task114_plane0_recovery.cpython-312.pyc",
+      "bytes": 10831,
+      "sha256": "7c139b82d4ec22a5db54ad0e8da5d3b3e1991fe6455271a8f6d282b21a55ff84"
+    },
+    {
+      "path": "__pycache__/test_strict_continuum_task22_recovery.cpython-312.pyc",
+      "bytes": 10069,
+      "sha256": "d51316dc67fb1dc0526328f58c04194464ff29fe8d742abcfc57b99ca3077483"
+    },
+    {
+      "path": "__pycache__/test_strict_continuum_task22_recovery_policy.cpython-312.pyc",
+      "bytes": 32147,
+      "sha256": "292e8454289878d71c4c26786991a0da4fa3df77c1df5421ba628455d824190c"
+    },
+    {
+      "path": "__pycache__/test_strict_continuum_workflow.cpython-312.pyc",
+      "bytes": 13778,
+      "sha256": "5223b198a7484d2a46b1eb4db62b582bc25031ef072c4187019339aa24d1bdb7"
+    },
+    {
+      "path": "__pycache__/test_supplement_h2o_3um_method2_screen_v1.cpython-312.pyc",
+      "bytes": 42275,
+      "sha256": "e1792094b69b0f40846dc3ce15baf3994eae75816c01cefdf162fe17cebc1d1a"
+    },
+    {
+      "path": "__pycache__/test_supplement_h2o_3um_method2_screen_v1.cpython-39.pyc",
+      "bytes": 24428,
+      "sha256": "b140f5f1777d7ac06736df14c4644a775239e9c343d945f4fc9f631cc2e2b58d"
+    },
+    {
+      "path": "__pycache__/test_sync_h2o_3um_method2_screen_v1_compact.cpython-312.pyc",
+      "bytes": 37630,
+      "sha256": "b4cd785ee436b1d3177be1ca37ac0af74dc5936ab420e69c635ad47cb18b4bfa"
+    },
+    {
+      "path": "__pycache__/test_sync_h2o_3um_method2_screen_v1_compact.cpython-39.pyc",
+      "bytes": 21868,
+      "sha256": "9229ceb180530305557818da66c4de87c44feb911742dc5185418381ef1d80ed"
+    },
+    {
+      "path": "__pycache__/validate_aperture_normalization_convergence.cpython-312.pyc",
+      "bytes": 64372,
+      "sha256": "5244881a8e7db9deead051a02ddbd38a315c62cdb6e7752212afe7a399c58027"
+    },
+    {
+      "path": "__pycache__/validate_aperture_spatial_convergence.cpython-312.pyc",
+      "bytes": 42042,
+      "sha256": "a34606b7be909cfe7bf82ce15fdd3b7c7e4f8d7fac8099536008a6cbabb3a196"
+    },
+    {
+      "path": "__pycache__/validate_aperture_spatial_convergence_stage2.cpython-312.pyc",
+      "bytes": 28187,
+      "sha256": "ed3670e9a5e358ced6669e16bb612672bfd7d9c397e53b65681c9856fbf32e96"
+    },
+    {
+      "path": "__pycache__/validate_aperture_spatial_convergence_stage3.cpython-312.pyc",
+      "bytes": 28686,
+      "sha256": "0fafc4218496ddae00e6b6a4a81b1bfdd5e6e4e6256d39b64c40d18cac9037aa"
+    },
+    {
+      "path": "__pycache__/validate_aperture_spatial_convergence_stage4.cpython-312.pyc",
+      "bytes": 40584,
+      "sha256": "c03fc36413ac8cf910ed9589dd44ef271729777fc8ee8b8aaa494ce92c85e6fb"
+    },
+    {
+      "path": "__pycache__/validate_aperture_spatial_convergence_stage4b.cpython-312.pyc",
+      "bytes": 65309,
+      "sha256": "c527cb1f2272eec0ef39aeb7ed205b1329d6fea9a18ff8949c47b30e4ee2b8e9"
+    },
+    {
+      "path": "__pycache__/validate_component_rt2_pilot.cpython-312.pyc",
+      "bytes": 28207,
+      "sha256": "b4ee3516145eb35ff564cad906e5454d73a88a6b84db0073369576d90a562c92"
+    },
+    {
+      "path": "__pycache__/validate_dust_grid_screen.cpython-312.pyc",
+      "bytes": 32132,
+      "sha256": "56d9e9d6950951fcb21278159aa34397fa7babd4692d74fe705ff9881b865398"
+    },
+    {
+      "path": "__pycache__/validate_dust_refinement_screen.cpython-312.pyc",
+      "bytes": 54342,
+      "sha256": "bfc6c058f9e33897416d2f7a96a05ed020ea947f50f7f4ac64d4e2278d51597e"
+    },
+    {
+      "path": "__pycache__/validate_feature_grid_screen.cpython-312.pyc",
+      "bytes": 98687,
+      "sha256": "0ac1f8545d394e6094d6899cb8699b8774bed96909998a9267bc3ec475bf1232"
+    },
+    {
+      "path": "__pycache__/validate_full_r100_aperture_images.cpython-312.pyc",
+      "bytes": 58281,
+      "sha256": "aa8b60c6cfc0de7c20037e02cf1001af802c60a3291bb7c087583d092b143c5b"
+    },
+    {
+      "path": "__pycache__/validate_full_r100_finalists.cpython-312.pyc",
+      "bytes": 57556,
+      "sha256": "22f0c60bf2dc201c5433316f0f4eda900d744bc38325db1b0ef90ab0dc58b9b1"
+    },
+    {
+      "path": "__pycache__/validate_h2o_3um_method2_screen_v1_affinity_smoke.cpython-312.pyc",
+      "bytes": 4102,
+      "sha256": "0375b719bb15d13c68d8d4afbff6902d370c28e106b25aa9670a5b0b43a050c7"
+    },
+    {
+      "path": "__pycache__/validate_h2o_3um_method2_screen_v1_affinity_smoke.cpython-39.pyc",
+      "bytes": 2574,
+      "sha256": "06e99835649ed3687f040ea0d4c86d3d42101293df0717a1b5c518e76391d6d4"
+    },
+    {
+      "path": "__pycache__/validate_h2o_3um_method2_screen_v1_lambda_contract_smoke.cpython-312.pyc",
+      "bytes": 7817,
+      "sha256": "9fbad71e0206c2784cf5072e33ddb594e117f92ae4abd298ad6740e613047d61"
+    },
+    {
+      "path": "__pycache__/validate_h2o_3um_method2_screen_v1_lambda_contract_smoke.cpython-39.pyc",
+      "bytes": 4589,
+      "sha256": "30d0f8216aee505e725f75b73b8cf8684987d16041c57a398590368c45015987"
+    },
+    {
+      "path": "__pycache__/validate_h2o_3um_method2_screen_v3_affinity_smoke.cpython-312.pyc",
+      "bytes": 5334,
+      "sha256": "769be90ae4951ba8a580ec007f2b379c54c120f5346206b9a051c4188ccf9501"
+    },
+    {
+      "path": "__pycache__/validate_h2o_3um_method2_screen_v3_lambda_contract_smoke.cpython-312.pyc",
+      "bytes": 8209,
+      "sha256": "5f652799ba10c609d827b4e3ac370028830c50a39fd5fc5bea277fe72dfe88fe"
+    },
+    {
+      "path": "__pycache__/validate_high_photon_feature_sed.cpython-312.pyc",
+      "bytes": 40053,
+      "sha256": "109b5e05b7b5b5ff8afc1f530d9d1d83b04b0dceb1f43af7036354211be51b30"
+    },
+    {
+      "path": "__pycache__/validate_literature_boundary.cpython-312.pyc",
+      "bytes": 40733,
+      "sha256": "fdcce4cc0b99e2caf496879fbf2148ffbad4f81322261fbc020177132828d795"
+    },
+    {
+      "path": "__pycache__/validate_literature_screen.cpython-312.pyc",
+      "bytes": 38878,
+      "sha256": "271796eaaf2a8159f1404a7cf7c027176edcd14ada2bf47878d3f66cdf2c02a9"
+    },
+    {
+      "path": "__pycache__/validate_matched_method2_closure.cpython-312.pyc",
+      "bytes": 57974,
+      "sha256": "569f99a4b135ecf3351d1f32d7f920676b2f125dca061174a762b98fbf0ada2a"
+    },
+    {
+      "path": "__pycache__/validate_matched_method2_nearir.cpython-312.pyc",
+      "bytes": 38263,
+      "sha256": "f7eccb6d417b839ccab560846a3ee10df10f2672d687b2018088506869449fcd"
+    },
+    {
+      "path": "__pycache__/validate_rt_sed_spatial_sampler.cpython-312.pyc",
+      "bytes": 11590,
+      "sha256": "854205c76af08e1732318097f26a3155e70cc0323b86c3851c16f9de68828314"
+    },
+    {
+      "path": "__pycache__/validate_rt_sed_spatial_sampler.cpython-39.pyc",
+      "bytes": 6468,
+      "sha256": "89b8db31edbaf1948f92d1d69a09fbeb766fbc16d24eef4c4039467f99b7d870"
+    },
+    {
+      "path": "__pycache__/validate_strict_continuum_rt.cpython-312.pyc",
+      "bytes": 33070,
+      "sha256": "e5cf10edb12db01208295f9b6a87ab57769a0c6a1f2f27eb94e7669c7a3a774e"
+    },
+    {
+      "path": "__pycache__/validate_strict_continuum_rt_amended_v1.cpython-312.pyc",
+      "bytes": 24958,
+      "sha256": "e18acdea4626bf512df8a53630eb23d2612953766b614451423d342a0eb7c253"
+    },
+    {
+      "path": "__pycache__/validate_strict_continuum_rt_polarized_plane0_v2.cpython-312.pyc",
+      "bytes": 27602,
+      "sha256": "9bb505f83cd8185eee2503a6ee1317b609f500baaf9f2c3b4f3b42790de17da9"
+    },
+    {
+      "path": "__pycache__/validate_strict_continuum_rt_polarized_plane0_v3.cpython-312.pyc",
+      "bytes": 41050,
+      "sha256": "3b6bc8a2470a9af158f234376566816eb483ec1dccd79e8a3d5583d8bb3c5d9b"
+    },
+    {
+      "path": "__pycache__/validate_strict_continuum_screen_recovery_v2.cpython-312.pyc",
+      "bytes": 24265,
+      "sha256": "1536c553537840bb102a87b52b1026bad5da352d1806e7df12f96d2992626f25"
+    },
+    {
+      "path": "__pycache__/validate_strict_continuum_submission_gate.cpython-312.pyc",
+      "bytes": 7780,
+      "sha256": "abea2c6bfd240eec68b7601efb5955f50a567526d6f03b9eb6f8acd9425d5793"
+    },
+    {
+      "path": "__pycache__/validate_strict_continuum_task114_plane0_recovery.cpython-312.pyc",
+      "bytes": 48402,
+      "sha256": "b530dfd01bc8c84aa1c1a2a0623bc7bf606baca2c46ce79247931d946263173a"
+    },
+    {
+      "path": "__pycache__/validate_strict_continuum_task22_recovery.cpython-312.pyc",
+      "bytes": 55568,
+      "sha256": "aeb4016d3af417d2949a25db3a7d622dd6e61ff0d132c797d5036d11220e8445"
+    },
+    {
+      "path": "__pycache__/validate_strict_continuum_temperature.cpython-312.pyc",
+      "bytes": 14107,
+      "sha256": "e1fe6aa8542fc979314fa0557d12c087afb5e214de6e1214f725050b2da54719"
+    },
+    {
+      "path": "__pycache__/verify_cmq_technical_recovery_source_v1.cpython-312.pyc",
+      "bytes": 16634,
+      "sha256": "d292ff30cbfac22d32e9f24c876ef4c47574ccf4dd82998eb61c20e36e40453e"
+    },
+    {
+      "path": "demonstrate/__pycache__/make_method_demos.cpython-312.pyc",
+      "bytes": 17720,
+      "sha256": "f705bacda32f17a725c89f8bc31804c29102925e8514047427e12636ade9d988"
+    },
+    {
+      "path": "output/.DS_Store",
+      "bytes": 22532,
+      "sha256": "34256a135f3cdf19022574d8287b84c80944c7f5a83f87e7049f666690a16b24"
+    },
+    {
+      "path": "runs/strict_continuum_3d_q_v1/__pycache__/make_inputs.cpython-312.pyc",
+      "bytes": 29403,
+      "sha256": "85326f0128d7356f3c12af92aa8eba8c910ac6d339a2e79419de9a47d1363217"
+    },
+    {
+      "path": "runs/strict_continuum_3d_q_v1/__pycache__/run_task.cpython-312.pyc",
+      "bytes": 27481,
+      "sha256": "585fa5b44d410b572cfc55cc71870e1c25733ef3b5e047a1c5577ba8e1f5d3b1"
+    },
+    {
+      "path": "runs/strict_continuum_cavity_mass_q_v1/__pycache__/build_completion_index.cpython-312.pyc",
+      "bytes": 12493,
+      "sha256": "b4604f19f849299daee735d07e13edf65f8cc6d2d55077f3e16713ac02f0baf6"
+    },
+    {
+      "path": "runs/strict_continuum_cavity_mass_q_v1/__pycache__/launch.cpython-312.pyc",
+      "bytes": 20648,
+      "sha256": "2277e04b9784ac2d682290cdf9fae402212be33cfee3cc0d5946ef9a8b9fef1e"
+    },
+    {
+      "path": "runs/strict_continuum_cavity_mass_q_v1/__pycache__/make_inputs.cpython-312.pyc",
+      "bytes": 27793,
+      "sha256": "06af2ed32a26ba4fea1ed8e74421ff71f5c5e5c74a24afaa7f637ffce48ac241"
+    },
+    {
+      "path": "runs/strict_continuum_cavity_mass_q_v1/__pycache__/run_task.cpython-312.pyc",
+      "bytes": 33836,
+      "sha256": "139bdb1f130bc03b67dbc4215fd6e906a9ea4cd6fd7f5efd0bc9407694fa2fca"
+    },
+    {
+      "path": "runs/strict_continuum_cavity_mass_q_v1_postindex_v1/__pycache__/submit_analysis_after_index.cpython-312.pyc",
+      "bytes": 25786,
+      "sha256": "9d6bbebeaacc1f9b3987c40f6a8597ce2ec7b3c69bc1ce9a0f304b1f412f607f"
+    },
+    {
+      "path": "runs/strict_continuum_cavity_mass_q_v1_postindex_v1/__pycache__/submit_analysis_after_index.cpython-39.pyc",
+      "bytes": 16078,
+      "sha256": "1fb73b05f56138a5c1cb462f0060f0c9d7927ee81a45ca5d87769c7439dd789b"
+    },
+    {
+      "path": "runs/strict_continuum_cavity_mass_q_v1_postindex_v1/__pycache__/test_submit_analysis_after_index.cpython-312.pyc",
+      "bytes": 12015,
+      "sha256": "9a85735a8915d23d55d7b9da7fc5e7c3b6c230dd0422f10362c2e9ff18bb09eb"
+    },
+    {
+      "path": "runs/strict_continuum_cavity_mass_v1/__pycache__/build_completion_index.cpython-312.pyc",
+      "bytes": 12325,
+      "sha256": "a6ca05574d203da8efdbc4f6a4b5209a20244f8c73e030a3f9b43af2f6145c91"
+    },
+    {
+      "path": "runs/strict_continuum_cavity_mass_v1/__pycache__/build_completion_index.cpython-39.pyc",
+      "bytes": 7358,
+      "sha256": "aa935f8e61303a22a3b6702bd6c749b565bb962510c2136680b039c451e7a6e4"
+    },
+    {
+      "path": "runs/strict_continuum_cavity_mass_v1/__pycache__/launch.cpython-312.pyc",
+      "bytes": 20638,
+      "sha256": "3c6ca539cf924f6d28d5b96ae0f78cd0e15f5c937cee7ab39a618587e6b764a6"
+    },
+    {
+      "path": "runs/strict_continuum_cavity_mass_v1/__pycache__/launch.cpython-39.pyc",
+      "bytes": 12798,
+      "sha256": "828153171babdaec777c2b5e29e5b965071607b3b61032f349fd897efb9b4176"
+    },
+    {
+      "path": "runs/strict_continuum_cavity_mass_v1/__pycache__/make_inputs.cpython-312.pyc",
+      "bytes": 27176,
+      "sha256": "38306f354effdb04c59eb618b96f9e5e13dbdd22fc1f63edaa37a570c80d640e"
+    },
+    {
+      "path": "runs/strict_continuum_cavity_mass_v1/__pycache__/make_inputs.cpython-39.pyc",
+      "bytes": 17652,
+      "sha256": "5d07dc6113a647b567bb34ec53a939e5c52ce7b88f2e05be66691fc86317824a"
+    },
+    {
+      "path": "runs/strict_continuum_cavity_mass_v1/__pycache__/run_task.cpython-312.pyc",
+      "bytes": 33413,
+      "sha256": "51e80957e42a640faee4f5dd501c6ee2d300228e8351d75801de5945ecd60778"
+    },
+    {
+      "path": "runs/strict_continuum_cavity_mass_v1/__pycache__/run_task.cpython-39.pyc",
+      "bytes": 18885,
+      "sha256": "0c358eb9313adfceb6a4109458d0471dc12c1f7b3646a8b2ae326f9f24a52a59"
+    },
+    {
+      "path": "runs/strict_continuum_refinement_v1/__pycache__/make_inputs.cpython-312.pyc",
+      "bytes": 13350,
+      "sha256": "7681df65d84eb60a3c476facb3756511dd702bfcebdf716c1f6c6f79afb4b58e"
+    },
+    {
+      "path": "runs/strict_continuum_refinement_v1/__pycache__/run_task.cpython-312.pyc",
+      "bytes": 15101,
+      "sha256": "841cdc693f79c55bac5ebd40a8318981211a509a85e308e59698226bfbfec6d3"
+    },
+    {
+      "path": "runs/strict_continuum_refinement_v1_support_v1/__pycache__/make_inputs.cpython-312.pyc",
+      "bytes": 25797,
+      "sha256": "98f46da5e51ad709a41710365252beb2f8a54c8ac98d5f51bec4629d3c287df9"
+    },
+    {
+      "path": "runs/strict_continuum_refinement_v1_support_v1/__pycache__/run_task.cpython-312.pyc",
+      "bytes": 27027,
+      "sha256": "55232666a2af03b66a4df9f894ec3b65150173e4ea8df5c2b113d0addd2d9726"
+    }
+  ],
+  "restore_command": "tar -xzf cleanup_archive/2026-09-18_regenerable_caches.tar.gz -C . (from jwst_mcfost)"
+}

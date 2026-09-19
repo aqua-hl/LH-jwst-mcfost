@@ -1,0 +1,48 @@
+{
+  "audit_date": "2026-09-18",
+  "scope": "Local model comparison and primary-source literature audit; no cluster access",
+  "not_a_joint_posterior": true,
+  "inclination_convention": "0 deg face-on disk / pole-on outflow",
+  "published_constraints": [
+    {"source": "Harsono2014", "inclination_deg": 55, "inclination_uncertainty_deg": 10, "stellar_mass_msun": 0.53, "stellar_mass_error_minus_msun": 0.1, "stellar_mass_error_plus_msun": 0.2, "keplerian_radius_au": [80, 100], "envelope_mass_msun": 0.12, "envelope_measurement_aperture_arcsec": 15, "url": "https://arxiv.org/pdf/1312.5716", "locator": "Section4.3.1; Tables2,5", "caution": "Mass, inclination, opacity and spatial extent are conditional; an alternative line-transfer mass is0.8+/-0.3Msun."},
+    {"source": "Aso2015", "inclination_deg": 65, "stellar_mass_msun": 0.68, "keplerian_radius_au": 100, "lbol_lsun": 2.7, "url": "https://arxiv.org/pdf/1508.07013"},
+    {"source": "Aso2021", "inclination_deg": 53, "inclination_error_minus_deg": 0.3, "inclination_error_plus_deg": 0.2, "inclination_interval": "10th-90th percentiles conditional on their continuum model", "stellar_mass_msun": 0.72, "url": "https://arxiv.org/pdf/2107.10646", "locator": "Sections4.2,4.3"},
+    {"source": "Harsono2023", "adopted_stellar_mass_msun": 0.45, "adopted_inclination_deg": 54, "url": "https://arxiv.org/pdf/2306.08380"},
+    {"source": "Aso2024manuscript", "adopted_distance_pc": 141.8, "adopted_lbol_lsun": 2.3, "preferred_disk_amax_mm": 0.12, "alternative_disk_amax_mm": 4, "url": "https://arxiv.org/html/2411.13044v1", "caution": "Disk dust; not an envelope grain-size constraint. Distance is adopted, not newly measured."},
+    {"source": "Assani2025", "jet_av_mag_approx": [17, 20], "rat_grain_size_um_approx": 10, "rat_claim_scope": "Generic protostellar-envelope alignment models; not a TMC1A-specific measured lower bound", "url": "https://arxiv.org/html/2504.02136v1", "published_doi": "https://doi.org/10.1051/0004-6361/202555016", "caution": "Jet sightlines; MIR extinction depends on excitation assumptions."},
+    {"source": "JOYS2025", "silicate_av_mag": 33, "av_over_tau9p7": 18.5, "lbol_lsun": 2.7, "url": "https://www.aanda.org/articles/aa/pdf/2025/07/aa54444-25.pdf", "locator": "Table2", "caution": "Not interchangeable with jet AV or a foreground screen."},
+    {"source": "Chandler1996", "outflow_full_opening_deg": [30, 40], "url": "https://doi.org/10.1086/177971", "locator": "Section4.3", "caution": "Historical deprojected conical outflow angle, not an exact dust-cavity prior."},
+    {"source": "Francis2026manuscript", "h2_s1_opening_angle_deg": 39, "adopted_inclination_deg": 53, "adopted_distance_pc": 142, "rounded_lbol_lsun": 3, "url": "https://arxiv.org/html/2604.13773v1", "locator": "Table1; AppendixD Table4", "caution": "H2-emission opening angle; do not directly identify with analytic dust-cavity half-angle."}
+  ],
+  "local_comparison": {
+    "late_inclination_deg": 70,
+    "stellar_mass_msun": 0.5,
+    "stellar_temperature_k": 4000,
+    "stellar_radius_rsun": 2.5,
+    "derived_photospheric_luminosity_lsun_approx": 1.44,
+    "model_distance_pc": 140,
+    "measurement_distance_pc": 147,
+    "envelope_dust_mass_msun": 0.000225,
+    "envelope_outer_radius_au": 3000,
+    "cavity_half_opening_deg": 17.5,
+    "envelope_amax_um": 0.4,
+    "references": ["ice_audit.md", "continuum_audit.json"]
+  },
+  "local_cube_headers_verified": {
+    "method": "astropy.io.fits.getheader(path,0) for all15 local cubes/*.fits",
+    "nirspec": {"count": 3, "CAL_VER": "1.20.2", "CRDS_CTX": "jwst_1464.pmap", "PROGRAM": "02104", "filename_prefix": "jw04537"},
+    "miri": {"count": 12, "CAL_VER": "1.16.1", "CRDS_CTX": "jwst_1303.pmap", "PROGRAM": "01290"},
+    "caution": "Current cube headers do not identify earlier cached extraction inputs. The MRT filename alone proves neither pipeline provenance nor matching aperture. NIRSpec filename prefix differs from PROGRAM header."
+  },
+  "restart_recommendations": {
+    "inclination_initial_test_deg": [50, 55, 60, 65],
+    "legacy_comparison_deg": 70,
+    "literature_lbol_scale_lsun": [2.3, 2.7],
+    "luminosity_range_is_confidence_interval": false,
+    "reconcile_distance_before_sampling": true,
+    "separate_disk_and_envelope_dust": true,
+    "recompute_temperature_for_changed_dust_or_heating": true,
+    "cavity_or_jet_extinction_as_hard_prior": false,
+    "objective": "Self-consistent same-aperture JWST continuum and image fit compatible with external geometry and energy constraints, followed by joint ice/silicate validation."
+  }
+}

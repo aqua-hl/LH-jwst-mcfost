@@ -1,0 +1,31 @@
+{
+  "date": "2026-09-18",
+  "read_only_science_inputs": true,
+  "new_mcfost_runs": 0,
+  "input_sha256": {
+    "reference/observations/continuum_sed_R100.ecsv": "d2d51c6b0c0c229145b147d8793b03fa721e6a4cca191d790fb2082625d3e0d6",
+    "reference/observations/h2o_v3/stellar_center_h2o_dense_R2400_v3.csv": "abeec0f827f875a38d2511807efe0057529f42851b5e98e41acd4bd805fada24",
+    "reference/observations/tmc1a_sed_unstitched.ecsv": "2a253bfdb23bc5fa30dd7064fa61229c1dc5cc62b5b8d1fcb1216a7dcc3d0569",
+    "reference/predictions/continuum_predictions.ecsv": "a3b7201d627c336183deca111f81aefb2bac04860839d00cf748f5a03a73cf05",
+    "reference/predictions/continuum_scores.ecsv": "6465c213e9dedfad544206b7bee378628bcd0535128220ea400df5adcf503631",
+    "reference/predictions/h2o_abundance_curve.json": "af0ec7011af71e04ed54d585ecd10f877fd472d799cab4844bb09015a4bf644c",
+    "reference/predictions/h2o_band_1arcsec_best.ecsv": "2c3a439f4e7160610772a012b28f7b4486565bb22f19065451a72eee83f3d71f",
+    "reference/predictions/h2o_best_dust_tau.json": "032bd7d4c0328c3caf71eed7b03c73106f256dac1cd9fd65b06fbc10445579b1",
+    "reference/predictions/h2o_dust_axis_scores.json": "7fea40f34e741e7ec3ba8455c0b039f2071f9cd3433add51d6f56170f4b85cea",
+    "reference/predictions/silicate_demo_anchors.ecsv": "bf81868bac4190b0f800dfe1dafa53f0775274cf036da45fae9683bd7bfd8055",
+    "reports/restart_review_2026-09-18/REPORT.md": "b074570be1b2532264cbec7e2a4e7d59e880b2aae8978ed8b6fd07a500b91c2c",
+    "reports/restart_review_2026-09-18/build_review.py": "7b9ebd7c212aa019e0039ff710319aef49bcbbf1ede59a2ff468f96469f8fcbd",
+    "reports/restart_review_2026-09-18/continuum_audit.json": "01fb49a9ba2c8cd214d54bb190c7c977e60b2bb7879f40b46dc08012497eaf85",
+    "reports/restart_review_2026-09-18/paper_render.py": "96431148c81e98520301052332285665bd5b691b248c9a1c9369e05993efd4aa",
+    "reports/restart_review_2026-09-18/workspace_inventory.json": "006762f5239539e51274a9f56ec2724b836f4686f63cd433f996a80b7bb2f3f0"
+  },
+  "figure_sha256": {
+    "01_parameter_coverage.png": "4e6050a2b9671fdabce6714050c61823a0c801f00b10c6d3ffc272bdb7bd772c",
+    "02_final_continuum_landscape.png": "c881b0134898059dc881f111f5ee635b9023a45b5fd056b5e4b59601bdbc9497",
+    "03_final_continuum_spectrum.png": "d22dcc66d71cdc41b325cd1cbe005ebd61216919721cb93e590d99dedaf6339a",
+    "04_ice_dust_tradeoffs.png": "a5594a4d9f7f31d030a7e0a62158cb26b58ac0bf818a8f5bbe201b97cb45d6cf",
+    "05_latest_full_spectrum.png": "e0c85f406b20c9a761773363c575284e604201cd17078992a52781a2db7c8173",
+    "06_literature_comparison.png": "4852487a76658ff2bf12b313b201b481b302a19b7eec3e06ca500bef40807b16",
+    "07_workspace_inventory.png": "d5f50d76ea9f341b9705f2c22e86e3169c18d8f7d8de66efb532ca2e56db7f2c"
+  }
+}

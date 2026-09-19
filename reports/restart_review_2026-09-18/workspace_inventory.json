@@ -1,0 +1,740 @@
+{
+  "report_date": "2026-09-18",
+  "scope": "/Users/harrisonlo/Downloads/Project_5_Les_Houches/jwst_mcfost",
+  "logical_file_bytes_not_allocated_disk_blocks": true,
+  "excluded": [
+    "reports",
+    "cleanup_archive",
+    "symlinks"
+  ],
+  "total_files": 3930,
+  "total_bytes": 1092683351,
+  "top_level_file_count": 596,
+  "top_level_file_extensions": {
+    "(no extension)": 1,
+    ".md": 30,
+    ".py": 387,
+    ".sh": 167,
+    ".txt": 1,
+    ".json": 2,
+    ".patch": 2,
+    ".err": 3,
+    ".out": 3
+  },
+  "categories": {
+    "regenerable_cache": {
+      "files": 481,
+      "bytes": 11875178
+    },
+    "review_before_moving": {
+      "files": 14,
+      "bytes": 1163617
+    },
+    "historical_documentation": {
+      "files": 31,
+      "bytes": 307142
+    },
+    "path_sensitive_legacy_source": {
+      "files": 560,
+      "bytes": 8678926
+    },
+    "preserve_compact_science_products": {
+      "files": 407,
+      "bytes": 87409158
+    },
+    "preserve_run_inputs_products_and_provenance": {
+      "files": 2404,
+      "bytes": 983202414
+    },
+    "accounting_and_recovery_evidence": {
+      "files": 6,
+      "bytes": 9395
+    },
+    "preserve_historical_archive": {
+      "files": 27,
+      "bytes": 37521
+    }
+  },
+  "folders_largest_first": [
+    {
+      "folder": "runs/aperture_spatial_convergence_stage4",
+      "files": 90,
+      "bytes": 208320633
+    },
+    {
+      "folder": "runs/tmc1a_literature_rgb_v1",
+      "files": 35,
+      "bytes": 202166020
+    },
+    {
+      "folder": "runs/aperture_spatial_convergence_stage4b",
+      "files": 25,
+      "bytes": 186841459
+    },
+    {
+      "folder": "runs/tmc1a_literature_rgb_v5",
+      "files": 25,
+      "bytes": 69151943
+    },
+    {
+      "folder": "runs/tmc1a_literature_rgb_v4",
+      "files": 25,
+      "bytes": 68653777
+    },
+    {
+      "folder": "runs/tmc1a_literature_rgb_v2",
+      "files": 10,
+      "bytes": 59544654
+    },
+    {
+      "folder": "output",
+      "files": 212,
+      "bytes": 48768039
+    },
+    {
+      "folder": "runs/aperture_normalization_convergence",
+      "files": 111,
+      "bytes": 41398012
+    },
+    {
+      "folder": "runs/tmc1a_literature_rgb_v3",
+      "files": 9,
+      "bytes": 38461442
+    },
+    {
+      "folder": "runs/aperture_spatial_convergence_stage3",
+      "files": 18,
+      "bytes": 32611994
+    },
+    {
+      "folder": "runs/aperture_spatial_convergence_stage2",
+      "files": 18,
+      "bytes": 32574733
+    },
+    {
+      "folder": "runs/aperture_spatial_convergence",
+      "files": 18,
+      "bytes": 27462947
+    },
+    {
+      "folder": "__pycache__",
+      "files": 457,
+      "bytes": 11348717
+    },
+    {
+      "folder": "(root files)",
+      "files": 596,
+      "bytes": 9028494
+    },
+    {
+      "folder": "output/tmc1a_literature_rgb_v5",
+      "files": 7,
+      "bytes": 8285158
+    },
+    {
+      "folder": "output/tmc1a_literature_rgb_v4",
+      "files": 7,
+      "bytes": 8230456
+    },
+    {
+      "folder": "output/tmc1a_literature_rgb_v1",
+      "files": 4,
+      "bytes": 6187642
+    },
+    {
+      "folder": "output/handoff",
+      "files": 4,
+      "bytes": 5289824
+    },
+    {
+      "folder": "output/tmc1a_literature_rgb_v1_psf",
+      "files": 4,
+      "bytes": 4444785
+    },
+    {
+      "folder": "runs/strict_continuum_cavity_mass_q_highn_convergence_v2",
+      "files": 45,
+      "bytes": 3274567
+    },
+    {
+      "folder": "runs/h2o_3um_method2_screen_v3",
+      "files": 268,
+      "bytes": 2436482
+    },
+    {
+      "folder": "output/h2o_3um_observation_v3",
+      "files": 14,
+      "bytes": 1386946
+    },
+    {
+      "folder": "output/h2o_3um_observation_v2",
+      "files": 14,
+      "bytes": 1290481
+    },
+    {
+      "folder": "output/h2o_3um_method2_screen_v3_field_pilot",
+      "files": 100,
+      "bytes": 1231852
+    },
+    {
+      "folder": "runs/strict_continuum_cavity_mass_q_v1",
+      "files": 125,
+      "bytes": 1196055
+    },
+    {
+      "folder": "output/reproducible_ice_h2o_audit_v1",
+      "files": 6,
+      "bytes": 1175152
+    },
+    {
+      "folder": "demonstrate",
+      "files": 5,
+      "bytes": 1006080
+    },
+    {
+      "folder": "output/h2o_3um_method2_postpilot_recovered_v1",
+      "files": 20,
+      "bytes": 956231
+    },
+    {
+      "folder": "runs/h2o_3um_opacity_screen_v2",
+      "files": 10,
+      "bytes": 933088
+    },
+    {
+      "folder": "runs/strict_continuum_3d_q_v1",
+      "files": 99,
+      "bytes": 878648
+    },
+    {
+      "folder": "runs/h2o_3um_method2_screen_v1",
+      "files": 33,
+      "bytes": 852070
+    },
+    {
+      "folder": "runs/h2o_3um_method2_screen_v1_superseded_infeasible_dhs_coating_design",
+      "files": 16,
+      "bytes": 667335
+    },
+    {
+      "folder": "runs/h2o_3um_method2_screen_v1_superseded_unmargined_lsf_grid_design",
+      "files": 15,
+      "bytes": 662732
+    },
+    {
+      "folder": "runs/h2o_3um_abundance_grid_v1",
+      "files": 7,
+      "bytes": 607974
+    },
+    {
+      "folder": "runs/strict_continuum_cavity_mass_v1",
+      "files": 62,
+      "bytes": 567305
+    },
+    {
+      "folder": "runs/h2o_3um_method2_screen_v3_preliminary_prelauncher_20260726T1700",
+      "files": 116,
+      "bytes": 500875
+    },
+    {
+      "folder": "runs/h2o_3um_method2_screen_v3_preliminary_pretestfix_20260726T1655",
+      "files": 116,
+      "bytes": 500875
+    },
+    {
+      "folder": "runs/h2o_3um_method2_screen_v3_preliminary_unbound_execution_20260726T1650",
+      "files": 116,
+      "bytes": 497487
+    },
+    {
+      "folder": "runs/strict_continuum_screen",
+      "files": 56,
+      "bytes": 373687
+    },
+    {
+      "folder": "runs/strict_continuum_refinement_v1_support_v1",
+      "files": 35,
+      "bytes": 277930
+    },
+    {
+      "folder": "runs/h2o_3um_dust_axis_grid_v1",
+      "files": 5,
+      "bytes": 277684
+    },
+    {
+      "folder": "runs/strict_continuum_refinement_v1",
+      "files": 34,
+      "bytes": 238437
+    },
+    {
+      "folder": "runs/ice_feature_method2_pilot_v1",
+      "files": 364,
+      "bytes": 233470
+    },
+    {
+      "folder": "runs/h2o_3um_dust_axis_band_v1",
+      "files": 3,
+      "bytes": 230277
+    },
+    {
+      "folder": "runs/ice_feature_method2_pilot_v2",
+      "files": 321,
+      "bytes": 227204
+    },
+    {
+      "folder": "output/h2o_3um_method2_postpilot_guard_field_recovery_v1",
+      "files": 8,
+      "bytes": 169846
+    },
+    {
+      "folder": "runs/component_rt2_pilot",
+      "files": 29,
+      "bytes": 143968
+    },
+    {
+      "folder": ".mplconfig",
+      "files": 1,
+      "bytes": 125096
+    },
+    {
+      "folder": "runs/strict_continuum_cavity_mass_q_task371_highn_convergence_v2",
+      "files": 21,
+      "bytes": 85047
+    },
+    {
+      "folder": "runs/strict_continuum_cavity_mass_q_v1_postindex_v1",
+      "files": 6,
+      "bytes": 82898
+    },
+    {
+      "folder": "runs/h2o_3um_method2_postpilot_guard_field_recovery_v1",
+      "files": 13,
+      "bytes": 69669
+    },
+    {
+      "folder": "runs/h2o_3um_method2_postpilot_v1",
+      "files": 6,
+      "bytes": 63740
+    },
+    {
+      "folder": "runs/strict_continuum_cavity_mass_q_v1_task002_seed41002_recovery_v1",
+      "files": 9,
+      "bytes": 50129
+    },
+    {
+      "folder": "runs/strict_continuum_cavity_mass_q_v1_task046_seed41002_recovery_v3",
+      "files": 8,
+      "bytes": 47701
+    },
+    {
+      "folder": "runs/strict_continuum_cavity_mass_q_v1_task046_seed41002_recovery_v2",
+      "files": 8,
+      "bytes": 46527
+    },
+    {
+      "folder": "runs/h2o_silicate_demo_image_anchors_v1",
+      "files": 15,
+      "bytes": 43497
+    },
+    {
+      "folder": "runs/strict_continuum_cavity_mass_q_v1_task046_seed41002_recovery_v1",
+      "files": 7,
+      "bytes": 41793
+    },
+    {
+      "folder": "runs/matched_method2_closure_4p5um",
+      "files": 6,
+      "bytes": 40191
+    },
+    {
+      "folder": "runs/matched_method2_nearir_0p994676",
+      "files": 7,
+      "bytes": 40053
+    },
+    {
+      "folder": "runs/strict_continuum_task114_plane0_recovery",
+      "files": 8,
+      "bytes": 36496
+    },
+    {
+      "folder": "runs/h2o_silicate_demo_anchors_v1",
+      "files": 7,
+      "bytes": 33739
+    },
+    {
+      "folder": "runs/strict_continuum_task22_recovery_512k",
+      "files": 6,
+      "bytes": 31519
+    },
+    {
+      "folder": "local_opacity_screen",
+      "files": 5,
+      "bytes": 30397
+    },
+    {
+      "folder": "runs/strict_continuum_cavity_mass_q_task371_highn_convergence_v1",
+      "files": 7,
+      "bytes": 25576
+    },
+    {
+      "folder": "runs/strict_continuum_cavity_mass_q_v1_terminal_recoveries_v1",
+      "files": 7,
+      "bytes": 20341
+    },
+    {
+      "folder": "source_archives/h2o_3um_opacity_screen_v1_execution_records",
+      "files": 24,
+      "bytes": 19043
+    },
+    {
+      "folder": "source_archives/h2o_3um_method2_screen_v1_cancelled_convergence",
+      "files": 3,
+      "bytes": 18478
+    },
+    {
+      "folder": "demonstrate/__pycache__",
+      "files": 1,
+      "bytes": 17720
+    },
+    {
+      "folder": "output/provenance",
+      "files": 8,
+      "bytes": 15278
+    },
+    {
+      "folder": "runs/strict_continuum_3d_q_v1_task024_seed41002_recovery_primary9_v1",
+      "files": 4,
+      "bytes": 14167
+    },
+    {
+      "folder": "runs/strict_continuum_3d_q_v1_task024_recovery_v1",
+      "files": 4,
+      "bytes": 13393
+    },
+    {
+      "folder": "runs/strict_continuum_cavity_mass_q_v1_analysis_v1",
+      "files": 2,
+      "bytes": 12964
+    },
+    {
+      "folder": "runs/strict_continuum_cavity_mass_v1_analysis_v1",
+      "files": 3,
+      "bytes": 12664
+    },
+    {
+      "folder": "runs/strict_continuum_cavity_mass_q_uniform_v2_v1_analysis_v2",
+      "files": 1,
+      "bytes": 12010
+    },
+    {
+      "folder": "model_inputs/baseline_R100",
+      "files": 3,
+      "bytes": 11321
+    },
+    {
+      "folder": "runs/strict_continuum_cavity_mass_q_uniform_v2_v1_analysis_v1",
+      "files": 1,
+      "bytes": 10973
+    },
+    {
+      "folder": "runs/strict_continuum_cavity_mass_q_uniform_v2_v1",
+      "files": 2,
+      "bytes": 10504
+    },
+    {
+      "folder": "runs/strict_continuum_cavity_mass_q_v1_task002_seed41002_recovered_v1",
+      "files": 4,
+      "bytes": 9586
+    },
+    {
+      "folder": "runs/strict_continuum_3d_q_v1_primary9_v1",
+      "files": 2,
+      "bytes": 9313
+    },
+    {
+      "folder": "runs/strict_continuum_3d_q_v1_task024_seed41002_recovery_v1",
+      "files": 2,
+      "bytes": 9213
+    },
+    {
+      "folder": "tests/fixtures",
+      "files": 2,
+      "bytes": 6848
+    }
+  ],
+  "top_level_path_relative_source_count": 267,
+  "top_level_path_relative_sources": [
+    "analyze_aperture_normalization_convergence.py",
+    "analyze_aperture_spatial_convergence.py",
+    "analyze_aperture_spatial_convergence_stage2.py",
+    "analyze_aperture_spatial_convergence_stage3.py",
+    "analyze_aperture_spatial_convergence_stage4.py",
+    "analyze_aperture_spatial_convergence_stage4b.py",
+    "analyze_cavity_opening_test.py",
+    "analyze_component_rt2_pilot.py",
+    "analyze_dust_grid_screen.py",
+    "analyze_dust_refinement_screen.py",
+    "analyze_envelope_mass_test.py",
+    "analyze_feature_grid_screen.py",
+    "analyze_high_photon_feature_sed.py",
+    "analyze_inclination_test.py",
+    "analyze_literature_boundary.py",
+    "analyze_literature_screen.py",
+    "analyze_strict_continuum_3d_q_v1.py",
+    "analyze_strict_continuum_3d_q_v1_task024_seed41002_recovery_v1.py",
+    "analyze_strict_continuum_cavity_mass_q_source128k_uniform_v2_v1.py",
+    "analyze_strict_continuum_cavity_mass_q_uniform_v2_v1.py",
+    "analyze_strict_continuum_cavity_mass_q_uniform_v2_v2.py",
+    "analyze_strict_continuum_cavity_mass_q_v1.py",
+    "analyze_strict_continuum_cavity_mass_v1.py",
+    "analyze_strict_continuum_refinement_v1.py",
+    "analyze_strict_continuum_refinement_v1_support_v1.py",
+    "archive_h2o_3um_lambda_smoke_attempt.sh",
+    "archive_h2o_3um_method2_screen_v1_attempt.sh",
+    "archive_h2o_3um_method2_screen_v1_convergence_attempt.py",
+    "archive_high_photon_partial.sh",
+    "assess_component_rt2_pilot_benchmark.py",
+    "audit_ice_input_package.py",
+    "build_h2o_3um_opacity_screen_v1.py",
+    "build_ice_feature_anchor_contract.py",
+    "build_reproducible_ice_h2o_audit_v1.py",
+    "cluster_parity_strict_continuum_measurement_kernel_v1.py",
+    "cmq_highn_convergence_v2_common.py",
+    "cmq_technical_recovery_v1.py",
+    "collect_h2o_silicate_demo_anchors_v1.py",
+    "compare_baseline_mcfost.py",
+    "compare_full_r100_aperture_finalists.py",
+    "compare_full_r100_finalists.py",
+    "compare_tmc1a_rgb_grid_2um.py",
+    "compare_tmc1a_rgb_packets_1p5um.py",
+    "diagnose_cmq_task371_v2.py",
+    "diagnose_strict3d_task_quality.py",
+    "extract_tmc1a_sed.py",
+    "fit_strict_continuum_method2_v1.py",
+    "freeze_h2o_3um_observation_v2.py",
+    "freeze_h2o_3um_observation_v3.py",
+    "freeze_strict_continuum_cavity_mass_q_task002_failed_recovery_audit_job15165201.py",
+    "freeze_strict_continuum_cavity_mass_q_v1_terminal_recoveries_v1_aggregation_policy.py",
+    "h2o_3um_method2_postpilot_guard_field_recovery_v1_common.py",
+    "h2o_3um_method2_postpilot_v1_common.py",
+    "h2o_3um_method2_screen_v1_common.py",
+    "h2o_3um_method2_screen_v3_common.py",
+    "ice_feature_method2_pilot_v1_common.py",
+    "ice_feature_method2_pilot_v2_common.py",
+    "job.sh",
+    "job_aperture_normalization_convergence_array.sh",
+    "job_aperture_normalization_convergence_post.sh",
+    "job_aperture_spatial_convergence_array.sh",
+    "job_aperture_spatial_convergence_post.sh",
+    "job_aperture_spatial_convergence_stage2_array.sh",
+    "job_aperture_spatial_convergence_stage2_post.sh",
+    "job_aperture_spatial_convergence_stage3_array.sh",
+    "job_aperture_spatial_convergence_stage3_post.sh",
+    "job_aperture_spatial_convergence_stage4_array.sh",
+    "job_aperture_spatial_convergence_stage4_post.sh",
+    "job_aperture_spatial_convergence_stage4b_array.sh",
+    "job_aperture_spatial_convergence_stage4b_post.sh",
+    "job_cmq_technical_recovery_source_v1.sh",
+    "job_cmq_technical_recovery_v1.sh",
+    "job_component_rt2_pilot_array.sh",
+    "job_component_rt2_pilot_benchmark_post.sh",
+    "job_component_rt2_pilot_post.sh",
+    "job_high_photon_feature_sed_array.sh",
+    "job_high_photon_feature_sed_postprocess.sh",
+    "job_literature_boundary_array.sh",
+    "job_literature_boundary_post.sh",
+    "job_literature_screen_array.sh",
+    "job_literature_screen_post.sh",
+    "job_matched_method2_closure_array.sh",
+    "job_matched_method2_closure_post.sh",
+    "job_matched_method2_nearir_benchmark.sh",
+    "job_matched_method2_nearir_post.sh",
+    "job_matched_method2_nearir_refinement.sh",
+    "job_strict_continuum_3d_q_task024_recovery_v1.sh",
+    "job_strict_continuum_cavity_mass_q_task002_recovery_v1.sh",
+    "job_strict_continuum_cavity_mass_q_task002_source_v1.sh",
+    "job_strict_continuum_cavity_mass_q_task046_recovery_v1.sh",
+    "job_strict_continuum_cavity_mass_q_task046_recovery_v2.sh",
+    "job_strict_continuum_cavity_mass_q_task046_recovery_v3.sh",
+    "job_strict_continuum_cavity_mass_q_task046_source_v1.sh",
+    "job_strict_continuum_cavity_mass_q_task046_source_v2.sh",
+    "job_strict_continuum_cavity_mass_q_task046_source_v3.sh",
+    "job_strict_continuum_postprocess.sh",
+    "job_strict_continuum_postprocess_amended_v1.sh",
+    "job_strict_continuum_postprocess_polarized_plane0_v2.sh",
+    "job_strict_continuum_postprocess_polarized_plane0_v3.sh",
+    "job_strict_continuum_rt_array.sh",
+    "job_strict_continuum_task114_plane0_recovery_128k.sh",
+    "job_strict_continuum_task114_plane0_recovery_512k.sh",
+    "job_strict_continuum_task22_recovery.sh",
+    "job_strict_continuum_temperature_array.sh",
+    "make_aperture_normalization_convergence_inputs.py",
+    "make_aperture_normalization_rt2_split_inputs.py",
+    "make_aperture_spatial_convergence_inputs.py",
+    "make_aperture_spatial_convergence_stage2_inputs.py",
+    "make_aperture_spatial_convergence_stage3_inputs.py",
+    "make_aperture_spatial_convergence_stage4_inputs.py",
+    "make_aperture_spatial_convergence_stage4b_inputs.py",
+    "make_cavity_inputs.py",
+    "make_component_rt2_pilot_inputs.py",
+    "make_continuum_fit_mask_diagnostic.py",
+    "make_dust_grid_inputs.py",
+    "make_dust_refinement_inputs.py",
+    "make_envelope_mass_inputs.py",
+    "make_feature_grid_inputs.py",
+    "make_full_r100_aperture_inputs.py",
+    "make_full_r100_finalist_inputs.py",
+    "make_h2o_silicate_demo_anchors_v1.py",
+    "make_h2o_silicate_demo_image_anchors_v1.py",
+    "make_high_photon_feature_sed_inputs.py",
+    "make_inclination_inputs.py",
+    "make_literature_boundary_inputs.py",
+    "make_literature_screen_inputs.py",
+    "make_matched_method2_closure_inputs.py",
+    "make_matched_method2_nearir_inputs.py",
+    "make_r100_model_inputs.py",
+    "make_strict_continuum_screen_inputs.py",
+    "make_strict_continuum_task114_plane0_recovery_inputs.py",
+    "make_strict_continuum_task22_recovery_inputs.py",
+    "measure_aperture_images.py",
+    "parity_strict_continuum_measurement_kernel_v1.py",
+    "pin_matched_method2_closure_binary.py",
+    "plot_aperture_sed_image_example.py",
+    "plot_extent_closure_correlation.py",
+    "plot_h2o_3um_method2_field_pilot_v3.py",
+    "plot_h2o_abundance_grid_v1_curve.py",
+    "plot_h2o_best_model_vs_jwst_full_spectrum.py",
+    "plot_h2o_dust_axis_grid_v1_scores.py",
+    "plot_h2o_grid_x0p04_vs_jwst_full_spectrum.py",
+    "plot_h2o_screen_vs_jwst_full_spectrum.py",
+    "plot_h2o_stage1_opacity_shape_presentation.py",
+    "plot_ice_opacity_vs_observed.py",
+    "plot_strict_continuum_all_wavelength_validation.py",
+    "plot_strict_continuum_refinement_v1_support_v1_with_jwst.py",
+    "plot_task114_plane0_convergence.py",
+    "plot_tmc1a_literature_rgb.py",
+    "prepare_high_photon_feature_sed_array.sh",
+    "prepare_tmc1a_literature_rgb.py",
+    "rerank_normalization_AB.py",
+    "rescore_h2o_3um_opacity_screen_v2.py",
+    "rescore_strict_continuum_3d_q_v1_primary9_v1.py",
+    "rescore_strict_continuum_3d_q_v1_task024_seed41002_recovery_primary9_v1.py",
+    "run_aperture_images.sh",
+    "run_aperture_normalization_convergence_array_task.sh",
+    "run_aperture_spatial_convergence_array_task.sh",
+    "run_aperture_spatial_convergence_stage2_array_task.sh",
+    "run_aperture_spatial_convergence_stage3_array_task.sh",
+    "run_aperture_spatial_convergence_stage4_array_task.sh",
+    "run_aperture_spatial_convergence_stage4b_array_task.sh",
+    "run_baseline_R100.sh",
+    "run_cavity_opening_test.sh",
+    "run_component_rt2_pilot_array_task.sh",
+    "run_dust_grid_screen.sh",
+    "run_dust_refinement_screen.sh",
+    "run_envelope_mass_test.sh",
+    "run_feature_grid_screen.sh",
+    "run_full_r100_aperture_images.sh",
+    "run_full_r100_finalists.sh",
+    "run_h2o_silicate_demo_anchor_v1.py",
+    "run_h2o_silicate_demo_image_anchor_v1.py",
+    "run_high_photon_feature_sed.sh",
+    "run_high_photon_feature_sed_array_task.sh",
+    "run_inclination_test.sh",
+    "run_literature_boundary_array_task.sh",
+    "run_literature_screen_array_task.sh",
+    "run_matched_method2_closure_task.sh",
+    "run_matched_method2_nearir_task.sh",
+    "run_strict_continuum_rt_task.sh",
+    "run_strict_continuum_task114_plane0_recovery.sh",
+    "run_strict_continuum_task22_recovery.sh",
+    "run_strict_continuum_temperature_task.sh",
+    "run_tmc1a_literature_rgb.sh",
+    "score_component_rt2_pilot.py",
+    "strict_continuum_3d_q_task024_recovery_v1_common.py",
+    "strict_continuum_amendment_v1_common.py",
+    "strict_continuum_cavity_mass_q_source128k_uniform_v2_v1_common.py",
+    "strict_continuum_cavity_mass_q_task002_recovery_v1_common.py",
+    "strict_continuum_cavity_mass_q_task046_recovery_v1_common.py",
+    "strict_continuum_cavity_mass_q_task046_recovery_v2_common.py",
+    "strict_continuum_cavity_mass_q_task046_recovery_v3_common.py",
+    "strict_continuum_cavity_mass_q_task371_highn_convergence_v1_common.py",
+    "strict_continuum_cavity_mass_q_task371_highn_convergence_v2_common.py",
+    "strict_continuum_cavity_mass_q_uniform_v2_v1_common.py",
+    "strict_continuum_cavity_mass_q_uniform_v2_v2_common.py",
+    "strict_continuum_cavity_mass_q_v1_task002_recovered_v1_common.py",
+    "strict_continuum_cavity_mass_q_v1_terminal_recoveries_v1_common.py",
+    "strict_continuum_measurement_kernel_v2.py",
+    "strict_continuum_measurement_kernel_v3.py",
+    "strict_continuum_polarized_plane0_v2_common.py",
+    "strict_continuum_polarized_plane0_v3_common.py",
+    "strict_continuum_screen_common.py",
+    "strict_continuum_task114_plane0_recovery_common.py",
+    "strict_continuum_task22_recovery_common.py",
+    "strict_continuum_task22_recovery_policy_common.py",
+    "submit_aperture_normalization_convergence.sh",
+    "submit_aperture_spatial_convergence.sh",
+    "submit_aperture_spatial_convergence_stage2.sh",
+    "submit_aperture_spatial_convergence_stage3.sh",
+    "submit_aperture_spatial_convergence_stage4.sh",
+    "submit_aperture_spatial_convergence_stage4b.sh",
+    "submit_cmq_highn_convergence_v2.sh",
+    "submit_cmq_technical_recovery_held_v1.sh",
+    "submit_component_rt2_pilot.sh",
+    "submit_high_photon_feature_sed_array.sh",
+    "submit_literature_boundary.sh",
+    "submit_literature_screen.sh",
+    "submit_matched_method2_closure.sh",
+    "submit_matched_method2_nearir.sh",
+    "submit_strict_continuum_3d_q_task024_recovery_v1_held.sh",
+    "submit_strict_continuum_amended_postprocess_v1.sh",
+    "submit_strict_continuum_cavity_mass_q_source128k_uniform_v2_v1.sh",
+    "submit_strict_continuum_cavity_mass_q_task002_recovery_v1_held.sh",
+    "submit_strict_continuum_cavity_mass_q_task046_recovery_v1_held.sh",
+    "submit_strict_continuum_cavity_mass_q_task046_recovery_v2_held.sh",
+    "submit_strict_continuum_cavity_mass_q_task046_recovery_v3_held.sh",
+    "submit_strict_continuum_cavity_mass_q_uniform_v2_v1.sh",
+    "submit_strict_continuum_cavity_mass_q_uniform_v2_v2.sh",
+    "submit_strict_continuum_polarized_plane0_v2_held.sh",
+    "submit_strict_continuum_polarized_plane0_v3_held.sh",
+    "submit_strict_continuum_screen.sh",
+    "submit_strict_continuum_task114_plane0_recovery_held.sh",
+    "submit_strict_continuum_task22_recovery.sh",
+    "supplement_h2o_3um_method2_screen_v1.py",
+    "sync_h2o_3um_method2_screen_v1_compact.py",
+    "test_current_model_against_mrt.py",
+    "test_h2o_3um_continuum_handoff_v1.py",
+    "test_h2o_3um_dust_axis_band_v1.py",
+    "test_h2o_3um_dust_axis_grid_v1.py",
+    "test_h2o_3um_selfconsistent_grid_v1.py",
+    "test_strict_continuum_cavity_mass_q_source128k_uniform_v2_v1.py",
+    "test_strict_continuum_cavity_mass_q_source128k_uniform_v2_v1_analysis.py",
+    "test_strict_continuum_cavity_mass_q_uniform_v2_v2_analysis.py",
+    "test_strict_continuum_measurement_kernel_v3.py",
+    "validate_aperture_normalization_convergence.py",
+    "validate_aperture_spatial_convergence.py",
+    "validate_aperture_spatial_convergence_stage2.py",
+    "validate_aperture_spatial_convergence_stage3.py",
+    "validate_aperture_spatial_convergence_stage4.py",
+    "validate_aperture_spatial_convergence_stage4b.py",
+    "validate_component_rt2_pilot.py",
+    "validate_dust_grid_screen.py",
+    "validate_dust_refinement_screen.py",
+    "validate_feature_grid_screen.py",
+    "validate_full_r100_aperture_images.py",
+    "validate_full_r100_finalists.py",
+    "validate_high_photon_feature_sed.py",
+    "validate_literature_boundary.py",
+    "validate_literature_screen.py",
+    "validate_matched_method2_closure.py",
+    "validate_matched_method2_nearir.py",
+    "validate_strict_continuum_rt.py",
+    "validate_strict_continuum_task114_plane0_recovery.py",
+    "validate_strict_continuum_task22_recovery.py",
+    "validate_strict_continuum_temperature.py"
+  ],
+  "cluster_check": {
+    "status": "unavailable",
+    "reason": "SSH authentication/banner timeout on 2026-09-18; no remote mutation attempted"
+  },
+  "cleanup_recommendation": "Archive only regenerable caches; preserve science paths and make a separate clean restart workspace."
+}

@@ -1,0 +1,5247 @@
+{
+  "audit_date": "2026-09-18",
+  "scope": "Local preserved continuum results only; no models or cluster jobs launched. H2O follow-up is audited separately.",
+  "path_base": "jwst_mcfost",
+  "scientific_status": "Validated numerical continuum screening, not a converged joint physical fit or MCMC posterior.",
+  "history_superseded": [
+    {
+      "stage": "inclination_nearir_test",
+      "status": "completed_diagnostic_superseded_normalization",
+      "source": {
+        "path": "output/inclination_nearir_test.ecsv",
+        "sha256": "22d96fd503dfcd83f34619cf04977c811d0815316490b708d4dc4ff2bf13b6c9"
+      },
+      "row_count": 12,
+      "distinct_model_count": 3,
+      "axes": {
+        "inclination_deg": [
+          65,
+          75,
+          82
+        ]
+      },
+      "normalization": "each wavelength is calibrated to the completed i=75 R=100 aperture SED; images determine relative inclination changes",
+      "target_distance_pc": 147,
+      "fixed_inclination_deg": null,
+      "fixed_cavity": "-cavity 274.7 100 1.0",
+      "score_column": null,
+      "primary_metric": null,
+      "formal_likelihood": false
+    },
+    {
+      "stage": "cavity_opening_nearir_test",
+      "status": "completed_diagnostic_superseded_normalization",
+      "source": {
+        "path": "output/cavity_opening_nearir_test.ecsv",
+        "sha256": "1b33b3ed93264a6b832a7f259bd8be9690bc9ec0d1b88a69b7737ded3d94e12e"
+      },
+      "row_count": 30,
+      "distinct_model_count": 5,
+      "axes": {
+        "cavity_half_opening_deg": [
+          10,
+          15,
+          20,
+          25,
+          30
+        ]
+      },
+      "normalization": "at each wavelength, relative image aperture fluxes are calibrated to the completed baseline R=100 SED and the 20-degree aperture fraction",
+      "target_distance_pc": 147,
+      "fixed_inclination_deg": 75,
+      "fixed_cavity": null,
+      "score_column": "absolute_log_rms_dex",
+      "primary_metric": "absolute_log_rms_dex",
+      "formal_likelihood": false,
+      "nominal_best": {
+        "label": "c30",
+        "score": 0.7993075879394506,
+        "cavity_half_opening_deg": 30
+      },
+      "points": [
+        {
+          "cavity_half_opening_deg": 10,
+          "model": "c10",
+          "score": 0.8637355066212297
+        },
+        {
+          "cavity_half_opening_deg": 15,
+          "model": "c15",
+          "score": 0.862313311950858
+        },
+        {
+          "cavity_half_opening_deg": 20,
+          "model": "c20",
+          "score": 0.8398054745235665
+        },
+        {
+          "cavity_half_opening_deg": 25,
+          "model": "c25",
+          "score": 0.8068534920555319
+        },
+        {
+          "cavity_half_opening_deg": 30,
+          "model": "c30",
+          "score": 0.7993075879394506
+        }
+      ]
+    },
+    {
+      "stage": "envelope_mass_nearir_test",
+      "status": "completed_diagnostic_superseded_normalization",
+      "source": {
+        "path": "output/envelope_mass_nearir_test.ecsv",
+        "sha256": "3ae0a3764b03d065ce6c23607e5b627fa70b9953d9cb759a8dbed6993383182f"
+      },
+      "row_count": 30,
+      "distinct_model_count": 5,
+      "axes": {
+        "envelope_mass_factor": [
+          0.5,
+          1,
+          1.5,
+          2,
+          3
+        ]
+      },
+      "normalization": "at each wavelength, relative image aperture fluxes are calibrated to the completed baseline R=100 SED and the factor-1 aperture fraction",
+      "target_distance_pc": 147,
+      "fixed_inclination_deg": 75,
+      "fixed_cavity": "-cavity 274.7 100 1.0",
+      "score_column": "absolute_log_rms_dex",
+      "primary_metric": "absolute_log_rms_dex",
+      "formal_likelihood": false,
+      "nominal_best": {
+        "label": "m1p5",
+        "score": 0.7170834186759155,
+        "envelope_mass_factor": 1.5
+      },
+      "points": [
+        {
+          "envelope_mass_factor": 0.5,
+          "model": "m0p5",
+          "score": 1.2603777968965038
+        },
+        {
+          "envelope_mass_factor": 1,
+          "model": "m1p0",
+          "score": 0.83947530005936
+        },
+        {
+          "envelope_mass_factor": 1.5,
+          "model": "m1p5",
+          "score": 0.7170834186759155
+        },
+        {
+          "envelope_mass_factor": 2,
+          "model": "m2p0",
+          "score": 0.9939227111402839
+        },
+        {
+          "envelope_mass_factor": 3,
+          "model": "m3p0",
+          "score": 1.557307567000279
+        }
+      ]
+    },
+    {
+      "stage": "dust_grid_screen_summary",
+      "status": "completed_diagnostic_superseded_normalization",
+      "source": {
+        "path": "output/dust_grid_screen_summary.ecsv",
+        "sha256": "326fff9004efd4b35163486be880c258d2f92e948988eef45e1cf1f372868e6d"
+      },
+      "row_count": 27,
+      "distinct_model_count": 27,
+      "axes": {
+        "mass_factor": [
+          0.5,
+          1,
+          1.5
+        ],
+        "amax_um": [
+          0.3,
+          1,
+          3
+        ],
+        "ice_fraction": [
+          0.1,
+          0.3,
+          0.5
+        ]
+      },
+      "normalization": "read table metadata",
+      "target_distance_pc": 147,
+      "fixed_inclination_deg": 75,
+      "fixed_cavity": "-cavity 274.7 100 1.0",
+      "score_column": "absolute_log_rms_dex",
+      "primary_metric": "absolute_log_rms_dex",
+      "formal_likelihood": false,
+      "nominal_best": {
+        "label": "m1p5_a1p0_i0p10",
+        "score": 0.5312548089350224,
+        "mass_factor": 1.5,
+        "amax_um": 1,
+        "ice_fraction": 0.1
+      },
+      "points": [
+        {
+          "mass_factor": 0.5,
+          "amax_um": 0.3,
+          "ice_fraction": 0.1,
+          "model": "m0p5_a0p3_i0p10",
+          "score": 1.3913559984410784
+        },
+        {
+          "mass_factor": 0.5,
+          "amax_um": 0.3,
+          "ice_fraction": 0.3,
+          "model": "m0p5_a0p3_i0p30",
+          "score": 1.3970523135881385
+        },
+        {
+          "mass_factor": 0.5,
+          "amax_um": 0.3,
+          "ice_fraction": 0.5,
+          "model": "m0p5_a0p3_i0p50",
+          "score": 1.4339369252808147
+        },
+        {
+          "mass_factor": 0.5,
+          "amax_um": 1,
+          "ice_fraction": 0.1,
+          "model": "m0p5_a1p0_i0p10",
+          "score": 1.2698906585172909
+        },
+        {
+          "mass_factor": 0.5,
+          "amax_um": 1,
+          "ice_fraction": 0.3,
+          "model": "m0p5_a1p0_i0p30",
+          "score": 1.2619317940534573
+        },
+        {
+          "mass_factor": 0.5,
+          "amax_um": 1,
+          "ice_fraction": 0.5,
+          "model": "m0p5_a1p0_i0p50",
+          "score": 1.281724514726459
+        },
+        {
+          "mass_factor": 0.5,
+          "amax_um": 3,
+          "ice_fraction": 0.1,
+          "model": "m0p5_a3p0_i0p10",
+          "score": 1.3671279060916075
+        },
+        {
+          "mass_factor": 0.5,
+          "amax_um": 3,
+          "ice_fraction": 0.3,
+          "model": "m0p5_a3p0_i0p30",
+          "score": 1.3471698987937641
+        },
+        {
+          "mass_factor": 0.5,
+          "amax_um": 3,
+          "ice_fraction": 0.5,
+          "model": "m0p5_a3p0_i0p50",
+          "score": 1.3347243640588742
+        },
+        {
+          "mass_factor": 1,
+          "amax_um": 0.3,
+          "ice_fraction": 0.1,
+          "model": "m1p0_a0p3_i0p10",
+          "score": 1.1011252145887407
+        },
+        {
+          "mass_factor": 1,
+          "amax_um": 0.3,
+          "ice_fraction": 0.3,
+          "model": "m1p0_a0p3_i0p30",
+          "score": 1.1471142170296733
+        },
+        {
+          "mass_factor": 1,
+          "amax_um": 0.3,
+          "ice_fraction": 0.5,
+          "model": "m1p0_a0p3_i0p50",
+          "score": 1.2883001491222463
+        },
+        {
+          "mass_factor": 1,
+          "amax_um": 1,
+          "ice_fraction": 0.1,
+          "model": "m1p0_a1p0_i0p10",
+          "score": 0.8102297164976825
+        },
+        {
+          "mass_factor": 1,
+          "amax_um": 1,
+          "ice_fraction": 0.3,
+          "model": "m1p0_a1p0_i0p30",
+          "score": 0.8396712254089743
+        },
+        {
+          "mass_factor": 1,
+          "amax_um": 1,
+          "ice_fraction": 0.5,
+          "model": "m1p0_a1p0_i0p50",
+          "score": 1.0392371662353659
+        },
+        {
+          "mass_factor": 1,
+          "amax_um": 3,
+          "ice_fraction": 0.1,
+          "model": "m1p0_a3p0_i0p10",
+          "score": 1.0243355302213428
+        },
+        {
+          "mass_factor": 1,
+          "amax_um": 3,
+          "ice_fraction": 0.3,
+          "model": "m1p0_a3p0_i0p30",
+          "score": 1.0231225396593149
+        },
+        {
+          "mass_factor": 1,
+          "amax_um": 3,
+          "ice_fraction": 0.5,
+          "model": "m1p0_a3p0_i0p50",
+          "score": 1.081056121741826
+        },
+        {
+          "mass_factor": 1.5,
+          "amax_um": 0.3,
+          "ice_fraction": 0.1,
+          "model": "m1p5_a0p3_i0p10",
+          "score": 0.8285754885947709
+        },
+        {
+          "mass_factor": 1.5,
+          "amax_um": 0.3,
+          "ice_fraction": 0.3,
+          "model": "m1p5_a0p3_i0p30",
+          "score": 0.9493856996490135
+        },
+        {
+          "mass_factor": 1.5,
+          "amax_um": 0.3,
+          "ice_fraction": 0.5,
+          "model": "m1p5_a0p3_i0p50",
+          "score": 1.3413833941648272
+        },
+        {
+          "mass_factor": 1.5,
+          "amax_um": 1,
+          "ice_fraction": 0.1,
+          "model": "m1p5_a1p0_i0p10",
+          "score": 0.5312548089350224
+        },
+        {
+          "mass_factor": 1.5,
+          "amax_um": 1,
+          "ice_fraction": 0.3,
+          "model": "m1p5_a1p0_i0p30",
+          "score": 0.6999483448988331
+        },
+        {
+          "mass_factor": 1.5,
+          "amax_um": 1,
+          "ice_fraction": 0.5,
+          "model": "m1p5_a1p0_i0p50",
+          "score": 1.1355467227826765
+        },
+        {
+          "mass_factor": 1.5,
+          "amax_um": 3,
+          "ice_fraction": 0.1,
+          "model": "m1p5_a3p0_i0p10",
+          "score": 0.8052555651813659
+        },
+        {
+          "mass_factor": 1.5,
+          "amax_um": 3,
+          "ice_fraction": 0.3,
+          "model": "m1p5_a3p0_i0p30",
+          "score": 0.9054583876305529
+        },
+        {
+          "mass_factor": 1.5,
+          "amax_um": 3,
+          "ice_fraction": 0.5,
+          "model": "m1p5_a3p0_i0p50",
+          "score": 1.1168344071303828
+        }
+      ]
+    },
+    {
+      "stage": "dust_refinement_screen_summary",
+      "status": "completed_diagnostic_superseded_normalization",
+      "source": {
+        "path": "output/dust_refinement_screen_summary.ecsv",
+        "sha256": "82489d24154492df592a406f059ffdca14059ff015188118c9147b1064d1bd58"
+      },
+      "row_count": 12,
+      "distinct_model_count": 12,
+      "axes": {
+        "mass_factor": [
+          1.25,
+          1.5,
+          1.75
+        ],
+        "amax_um": [
+          1
+        ],
+        "ice_fraction": [
+          0.1,
+          0.15,
+          0.2,
+          0.25
+        ]
+      },
+      "normalization": "read table metadata",
+      "target_distance_pc": 147,
+      "fixed_inclination_deg": 75,
+      "fixed_cavity": "-cavity 274.7 100 1.0",
+      "score_column": "absolute_log_rms_dex",
+      "primary_metric": "absolute_log_rms_dex",
+      "formal_likelihood": false,
+      "nominal_best": {
+        "label": "m1p50_a1p0_i0p10",
+        "score": 0.523308523768513,
+        "mass_factor": 1.5,
+        "amax_um": 1,
+        "ice_fraction": 0.1
+      },
+      "points": [
+        {
+          "mass_factor": 1.25,
+          "amax_um": 1,
+          "ice_fraction": 0.1,
+          "model": "m1p25_a1p0_i0p10",
+          "score": 0.6385345049676487
+        },
+        {
+          "mass_factor": 1.25,
+          "amax_um": 1,
+          "ice_fraction": 0.15,
+          "model": "m1p25_a1p0_i0p15",
+          "score": 0.6376531662469295
+        },
+        {
+          "mass_factor": 1.25,
+          "amax_um": 1,
+          "ice_fraction": 0.2,
+          "model": "m1p25_a1p0_i0p20",
+          "score": 0.6653473544833767
+        },
+        {
+          "mass_factor": 1.25,
+          "amax_um": 1,
+          "ice_fraction": 0.25,
+          "model": "m1p25_a1p0_i0p25",
+          "score": 0.6804937460576794
+        },
+        {
+          "mass_factor": 1.5,
+          "amax_um": 1,
+          "ice_fraction": 0.1,
+          "model": "m1p50_a1p0_i0p10",
+          "score": 0.523308523768513
+        },
+        {
+          "mass_factor": 1.5,
+          "amax_um": 1,
+          "ice_fraction": 0.15,
+          "model": "m1p50_a1p0_i0p15",
+          "score": 0.5762344048606814
+        },
+        {
+          "mass_factor": 1.5,
+          "amax_um": 1,
+          "ice_fraction": 0.2,
+          "model": "m1p50_a1p0_i0p20",
+          "score": 0.6084803586802194
+        },
+        {
+          "mass_factor": 1.5,
+          "amax_um": 1,
+          "ice_fraction": 0.25,
+          "model": "m1p50_a1p0_i0p25",
+          "score": 0.6446770580301664
+        },
+        {
+          "mass_factor": 1.75,
+          "amax_um": 1,
+          "ice_fraction": 0.1,
+          "model": "m1p75_a1p0_i0p10",
+          "score": 0.552769466342838
+        },
+        {
+          "mass_factor": 1.75,
+          "amax_um": 1,
+          "ice_fraction": 0.15,
+          "model": "m1p75_a1p0_i0p15",
+          "score": 0.5813966039140607
+        },
+        {
+          "mass_factor": 1.75,
+          "amax_um": 1,
+          "ice_fraction": 0.2,
+          "model": "m1p75_a1p0_i0p20",
+          "score": 0.6579131198637418
+        },
+        {
+          "mass_factor": 1.75,
+          "amax_um": 1,
+          "ice_fraction": 0.25,
+          "model": "m1p75_a1p0_i0p25",
+          "score": 0.731790407445238
+        }
+      ]
+    },
+    {
+      "stage": "full_R100_finalists_summary",
+      "status": "completed_diagnostic_superseded_normalization",
+      "source": {
+        "path": "output/full_R100_finalists_summary.ecsv",
+        "sha256": "06ab899e15d8ecfb2036dd4e881b200a49e7a9386b78a1294c7ea2e075dcd46e"
+      },
+      "row_count": 3,
+      "distinct_model_count": 3,
+      "axes": {
+        "mass_factor": [
+          1,
+          1.5,
+          1.75
+        ],
+        "amax_um": [
+          1
+        ],
+        "ice_fraction": [
+          0.1,
+          0.15,
+          0.3
+        ]
+      },
+      "normalization": "read table metadata",
+      "target_distance_pc": 147,
+      "fixed_inclination_deg": null,
+      "fixed_cavity": null,
+      "score_column": "unweighted_log_rms_dex",
+      "primary_metric": "unweighted RMS of log10(observed/total model) over unique bins",
+      "formal_likelihood": false,
+      "nominal_best": {
+        "model_label": "m1p75_a1p0_i0p15",
+        "score": 0.5530200052964638,
+        "mass_factor": 1.75,
+        "amax_um": 1,
+        "ice_fraction": 0.15
+      },
+      "points": [
+        {
+          "mass_factor": 1,
+          "amax_um": 1,
+          "ice_fraction": 0.3,
+          "model": "baseline",
+          "score": 0.7343264684097672
+        },
+        {
+          "mass_factor": 1.5,
+          "amax_um": 1,
+          "ice_fraction": 0.1,
+          "model": "m1p50_a1p0_i0p10",
+          "score": 0.5626014395287006
+        },
+        {
+          "mass_factor": 1.75,
+          "amax_um": 1,
+          "ice_fraction": 0.15,
+          "model": "m1p75_a1p0_i0p15",
+          "score": 0.5530200052964638
+        }
+      ]
+    },
+    {
+      "stage": "full_R100_aperture_finalists_summary",
+      "status": "completed_diagnostic_superseded_normalization",
+      "source": {
+        "path": "output/full_R100_aperture_finalists_summary.ecsv",
+        "sha256": "23ec7196e494dfdacfb949b2ecd6a8f7023d655efafe21b756b36883ac63da7b"
+      },
+      "row_count": 2,
+      "distinct_model_count": 2,
+      "axes": {
+        "mass_factor": [
+          1.5,
+          1.75
+        ],
+        "amax_um": [
+          1
+        ],
+        "ice_fraction": [
+          0.1,
+          0.15
+        ]
+      },
+      "normalization": "each model own total R=100 SED times its image aperture/full-image fraction",
+      "target_distance_pc": 147,
+      "fixed_inclination_deg": null,
+      "fixed_cavity": null,
+      "score_column": "unweighted_log_rms_dex",
+      "primary_metric": "unweighted RMS of collapsed log10(observed/aperture model) over 312 unique bins",
+      "formal_likelihood": false,
+      "nominal_best": {
+        "model_label": "m1p50_a1p0_i0p10",
+        "score": 0.5046735468190302,
+        "mass_factor": 1.5,
+        "amax_um": 1,
+        "ice_fraction": 0.1
+      },
+      "points": [
+        {
+          "mass_factor": 1.5,
+          "amax_um": 1,
+          "ice_fraction": 0.1,
+          "model": "m1p50_a1p0_i0p10",
+          "score": 0.5046735468190302
+        },
+        {
+          "mass_factor": 1.75,
+          "amax_um": 1,
+          "ice_fraction": 0.15,
+          "model": "m1p75_a1p0_i0p15",
+          "score": 0.5284580129157755
+        }
+      ]
+    },
+    {
+      "stage": "feature_grid_screen_summary",
+      "status": "completed_diagnostic_superseded_normalization",
+      "source": {
+        "path": "output/feature_grid_screen_summary.ecsv",
+        "sha256": "7e22e433cd4f5a8ae2b486b245132b9652fb874358ca1c264bade008ad9ed13a"
+      },
+      "row_count": 36,
+      "distinct_model_count": 36,
+      "axes": {
+        "mass_factor": [
+          1.25,
+          1.5,
+          1.75
+        ],
+        "amax_um": [
+          0.5,
+          1,
+          2
+        ],
+        "ice_fraction": [
+          0.05,
+          0.1,
+          0.15,
+          0.2
+        ]
+      },
+      "normalization": "each model own validated 20-point sed_rt total I at 140 pc times its wavelength-specific image aperture/full fraction times (140/147)^2",
+      "target_distance_pc": 147,
+      "fixed_inclination_deg": null,
+      "fixed_cavity": null,
+      "score_column": "region_balanced_log_rms_dex",
+      "primary_metric": "sqrt(mean over seven regions of mean within-region log10(observed/model)^2)",
+      "formal_likelihood": false,
+      "nominal_best": {
+        "model_label": "m1p75_a0p5_i0p10",
+        "score": 0.4749900245125221,
+        "mass_factor": 1.75,
+        "amax_um": 0.5,
+        "ice_fraction": 0.1
+      },
+      "points": [
+        {
+          "mass_factor": 1.25,
+          "amax_um": 0.5,
+          "ice_fraction": 0.05,
+          "model": "m1p25_a0p5_i0p05",
+          "score": 0.6253698015336118
+        },
+        {
+          "mass_factor": 1.25,
+          "amax_um": 0.5,
+          "ice_fraction": 0.1,
+          "model": "m1p25_a0p5_i0p10",
+          "score": 0.6291056801735828
+        },
+        {
+          "mass_factor": 1.25,
+          "amax_um": 0.5,
+          "ice_fraction": 0.15,
+          "model": "m1p25_a0p5_i0p15",
+          "score": 0.6282417853032989
+        },
+        {
+          "mass_factor": 1.25,
+          "amax_um": 0.5,
+          "ice_fraction": 0.2,
+          "model": "m1p25_a0p5_i0p20",
+          "score": 0.6420256814414664
+        },
+        {
+          "mass_factor": 1.25,
+          "amax_um": 1,
+          "ice_fraction": 0.05,
+          "model": "m1p25_a1p0_i0p05",
+          "score": 0.5564454555342269
+        },
+        {
+          "mass_factor": 1.25,
+          "amax_um": 1,
+          "ice_fraction": 0.1,
+          "model": "m1p25_a1p0_i0p10",
+          "score": 0.5538044094314113
+        },
+        {
+          "mass_factor": 1.25,
+          "amax_um": 1,
+          "ice_fraction": 0.15,
+          "model": "m1p25_a1p0_i0p15",
+          "score": 0.5576857464469737
+        },
+        {
+          "mass_factor": 1.25,
+          "amax_um": 1,
+          "ice_fraction": 0.2,
+          "model": "m1p25_a1p0_i0p20",
+          "score": 0.5640570720938697
+        },
+        {
+          "mass_factor": 1.25,
+          "amax_um": 2,
+          "ice_fraction": 0.05,
+          "model": "m1p25_a2p0_i0p05",
+          "score": 0.6495451692335883
+        },
+        {
+          "mass_factor": 1.25,
+          "amax_um": 2,
+          "ice_fraction": 0.1,
+          "model": "m1p25_a2p0_i0p10",
+          "score": 0.6438182815166096
+        },
+        {
+          "mass_factor": 1.25,
+          "amax_um": 2,
+          "ice_fraction": 0.15,
+          "model": "m1p25_a2p0_i0p15",
+          "score": 0.6486339127448698
+        },
+        {
+          "mass_factor": 1.25,
+          "amax_um": 2,
+          "ice_fraction": 0.2,
+          "model": "m1p25_a2p0_i0p20",
+          "score": 0.6546705955430612
+        },
+        {
+          "mass_factor": 1.5,
+          "amax_um": 0.5,
+          "ice_fraction": 0.05,
+          "model": "m1p50_a0p5_i0p05",
+          "score": 0.5340784815021089
+        },
+        {
+          "mass_factor": 1.5,
+          "amax_um": 0.5,
+          "ice_fraction": 0.1,
+          "model": "m1p50_a0p5_i0p10",
+          "score": 0.5303992103342047
+        },
+        {
+          "mass_factor": 1.5,
+          "amax_um": 0.5,
+          "ice_fraction": 0.15,
+          "model": "m1p50_a0p5_i0p15",
+          "score": 0.5498058240375576
+        },
+        {
+          "mass_factor": 1.5,
+          "amax_um": 0.5,
+          "ice_fraction": 0.2,
+          "model": "m1p50_a0p5_i0p20",
+          "score": 0.5567689551467138
+        },
+        {
+          "mass_factor": 1.5,
+          "amax_um": 1,
+          "ice_fraction": 0.05,
+          "model": "m1p50_a1p0_i0p05",
+          "score": 0.4850661497795053
+        },
+        {
+          "mass_factor": 1.5,
+          "amax_um": 1,
+          "ice_fraction": 0.1,
+          "model": "m1p50_a1p0_i0p10",
+          "score": 0.488558800999206
+        },
+        {
+          "mass_factor": 1.5,
+          "amax_um": 1,
+          "ice_fraction": 0.15,
+          "model": "m1p50_a1p0_i0p15",
+          "score": 0.4887693105449896
+        },
+        {
+          "mass_factor": 1.5,
+          "amax_um": 1,
+          "ice_fraction": 0.2,
+          "model": "m1p50_a1p0_i0p20",
+          "score": 0.5125407126287679
+        },
+        {
+          "mass_factor": 1.5,
+          "amax_um": 2,
+          "ice_fraction": 0.05,
+          "model": "m1p50_a2p0_i0p05",
+          "score": 0.5917587372345965
+        },
+        {
+          "mass_factor": 1.5,
+          "amax_um": 2,
+          "ice_fraction": 0.1,
+          "model": "m1p50_a2p0_i0p10",
+          "score": 0.5916129693719255
+        },
+        {
+          "mass_factor": 1.5,
+          "amax_um": 2,
+          "ice_fraction": 0.15,
+          "model": "m1p50_a2p0_i0p15",
+          "score": 0.5975565746090826
+        },
+        {
+          "mass_factor": 1.5,
+          "amax_um": 2,
+          "ice_fraction": 0.2,
+          "model": "m1p50_a2p0_i0p20",
+          "score": 0.6077830765754271
+        },
+        {
+          "mass_factor": 1.75,
+          "amax_um": 0.5,
+          "ice_fraction": 0.05,
+          "model": "m1p75_a0p5_i0p05",
+          "score": 0.47970945345636745
+        },
+        {
+          "mass_factor": 1.75,
+          "amax_um": 0.5,
+          "ice_fraction": 0.1,
+          "model": "m1p75_a0p5_i0p10",
+          "score": 0.4749900245125221
+        },
+        {
+          "mass_factor": 1.75,
+          "amax_um": 0.5,
+          "ice_fraction": 0.15,
+          "model": "m1p75_a0p5_i0p15",
+          "score": 0.4918439791393962
+        },
+        {
+          "mass_factor": 1.75,
+          "amax_um": 0.5,
+          "ice_fraction": 0.2,
+          "model": "m1p75_a0p5_i0p20",
+          "score": 0.509196289860224
+        },
+        {
+          "mass_factor": 1.75,
+          "amax_um": 1,
+          "ice_fraction": 0.05,
+          "model": "m1p75_a1p0_i0p05",
+          "score": 0.48254255583651884
+        },
+        {
+          "mass_factor": 1.75,
+          "amax_um": 1,
+          "ice_fraction": 0.1,
+          "model": "m1p75_a1p0_i0p10",
+          "score": 0.48687290814075485
+        },
+        {
+          "mass_factor": 1.75,
+          "amax_um": 1,
+          "ice_fraction": 0.15,
+          "model": "m1p75_a1p0_i0p15",
+          "score": 0.5059721540092725
+        },
+        {
+          "mass_factor": 1.75,
+          "amax_um": 1,
+          "ice_fraction": 0.2,
+          "model": "m1p75_a1p0_i0p20",
+          "score": 0.5271022081904893
+        },
+        {
+          "mass_factor": 1.75,
+          "amax_um": 2,
+          "ice_fraction": 0.05,
+          "model": "m1p75_a2p0_i0p05",
+          "score": 0.5830059399997438
+        },
+        {
+          "mass_factor": 1.75,
+          "amax_um": 2,
+          "ice_fraction": 0.1,
+          "model": "m1p75_a2p0_i0p10",
+          "score": 0.5860829858788654
+        },
+        {
+          "mass_factor": 1.75,
+          "amax_um": 2,
+          "ice_fraction": 0.15,
+          "model": "m1p75_a2p0_i0p15",
+          "score": 0.6063452866325947
+        },
+        {
+          "mass_factor": 1.75,
+          "amax_um": 2,
+          "ice_fraction": 0.2,
+          "model": "m1p75_a2p0_i0p20",
+          "score": 0.626146582155748
+        }
+      ]
+    },
+    {
+      "stage": "high_photon_feature_sed_summary",
+      "status": "completed_diagnostic_superseded_normalization",
+      "source": {
+        "path": "output/high_photon_feature_sed_summary.ecsv",
+        "sha256": "bf7e4e6e4d5bdd133430afc5cd4b609d5c3ab85349139382dc19a747d083405d"
+      },
+      "row_count": 9,
+      "distinct_model_count": 8,
+      "axes": {
+        "mass_factor": [
+          1.5,
+          1.75
+        ],
+        "amax_um": [
+          0.5,
+          1
+        ],
+        "ice_fraction": [
+          0.05,
+          0.1,
+          0.15
+        ]
+      },
+      "normalization": "new sed_rt total I at 140 pc times stored PSF aperture fraction times (140/147)^2",
+      "target_distance_pc": 147,
+      "fixed_inclination_deg": null,
+      "fixed_cavity": null,
+      "score_column": "high_region_balanced_log_rms_dex",
+      "primary_metric": "sqrt(mean over seven regions of mean within-region log10(observed/model)^2)",
+      "formal_likelihood": false,
+      "nominal_best": {
+        "physical_model_label": "m1p75_a0p5_i0p05",
+        "score": 0.47398681023302175,
+        "mass_factor": 1.75,
+        "amax_um": 0.5,
+        "ice_fraction": 0.05
+      },
+      "note": "9 runs of 8 distinct physical models; one independent high-photon repeat. Selected shortlist, not full Cartesian product.",
+      "points": [
+        {
+          "mass_factor": 1.75,
+          "amax_um": 0.5,
+          "ice_fraction": 0.1,
+          "model": "m1p75_a0p5_i0p10",
+          "score": 0.4769568667865041
+        },
+        {
+          "mass_factor": 1.5,
+          "amax_um": 1,
+          "ice_fraction": 0.1,
+          "model": "m1p50_a1p0_i0p10",
+          "score": 0.4895413132813381
+        },
+        {
+          "mass_factor": 1.75,
+          "amax_um": 0.5,
+          "ice_fraction": 0.05,
+          "model": "m1p75_a0p5_i0p05",
+          "score": 0.47398681023302175
+        },
+        {
+          "mass_factor": 1.75,
+          "amax_um": 1,
+          "ice_fraction": 0.05,
+          "model": "m1p75_a1p0_i0p05",
+          "score": 0.47921275156403653
+        },
+        {
+          "mass_factor": 1.5,
+          "amax_um": 1,
+          "ice_fraction": 0.05,
+          "model": "m1p50_a1p0_i0p05",
+          "score": 0.4841138184957965
+        },
+        {
+          "mass_factor": 1.75,
+          "amax_um": 1,
+          "ice_fraction": 0.1,
+          "model": "m1p75_a1p0_i0p10",
+          "score": 0.4859696277285408
+        },
+        {
+          "mass_factor": 1.5,
+          "amax_um": 1,
+          "ice_fraction": 0.15,
+          "model": "m1p50_a1p0_i0p15",
+          "score": 0.49842394424329395
+        },
+        {
+          "mass_factor": 1.75,
+          "amax_um": 0.5,
+          "ice_fraction": 0.15,
+          "model": "m1p75_a0p5_i0p15",
+          "score": 0.49085329319332915
+        }
+      ]
+    },
+    {
+      "stage": "literature_screen_summary",
+      "status": "completed_diagnostic_superseded_normalization",
+      "source": {
+        "path": "output/literature_screen_summary.ecsv",
+        "sha256": "02d13548a7fdc458ab5726b52145203578acb82915cbac99da69997771f84275"
+      },
+      "row_count": 12,
+      "distinct_model_count": 12,
+      "axes": {
+        "target_total_lsun": [
+          2.3,
+          2.5,
+          2.7
+        ],
+        "inclination_deg": [
+          47,
+          50,
+          53,
+          60
+        ]
+      },
+      "normalization": "each model's own sed_rt total multiplied by its own PSF-convolved image aperture fraction; no fitted multiplicative scale",
+      "target_distance_pc": 140,
+      "fixed_inclination_deg": null,
+      "fixed_cavity": null,
+      "score_column": "region_balanced_log_rms_dex",
+      "primary_metric": "sqrt(mean over seven regions of mean within-region log10(observed/model)^2)",
+      "formal_likelihood": false,
+      "nominal_best": {
+        "model_label": "L2p3_i60",
+        "score": 0.5466567398514762,
+        "target_total_lsun": 2.3,
+        "inclination_deg": 60
+      },
+      "points": [
+        {
+          "target_total_lsun": 2.3,
+          "inclination_deg": 47,
+          "model": "L2p3_i47",
+          "score": 0.5908937275985581
+        },
+        {
+          "target_total_lsun": 2.3,
+          "inclination_deg": 50,
+          "model": "L2p3_i50",
+          "score": 0.5811041912048359
+        },
+        {
+          "target_total_lsun": 2.3,
+          "inclination_deg": 53,
+          "model": "L2p3_i53",
+          "score": 0.5683559413879515
+        },
+        {
+          "target_total_lsun": 2.3,
+          "inclination_deg": 60,
+          "model": "L2p3_i60",
+          "score": 0.5466567398514762
+        },
+        {
+          "target_total_lsun": 2.5,
+          "inclination_deg": 47,
+          "model": "L2p5_i47",
+          "score": 0.6176295484417319
+        },
+        {
+          "target_total_lsun": 2.5,
+          "inclination_deg": 50,
+          "model": "L2p5_i50",
+          "score": 0.6058901263578685
+        },
+        {
+          "target_total_lsun": 2.5,
+          "inclination_deg": 53,
+          "model": "L2p5_i53",
+          "score": 0.5935832610613055
+        },
+        {
+          "target_total_lsun": 2.5,
+          "inclination_deg": 60,
+          "model": "L2p5_i60",
+          "score": 0.5755212188354162
+        },
+        {
+          "target_total_lsun": 2.7,
+          "inclination_deg": 47,
+          "model": "L2p7_i47",
+          "score": 0.6421411623690656
+        },
+        {
+          "target_total_lsun": 2.7,
+          "inclination_deg": 50,
+          "model": "L2p7_i50",
+          "score": 0.6301445516883297
+        },
+        {
+          "target_total_lsun": 2.7,
+          "inclination_deg": 53,
+          "model": "L2p7_i53",
+          "score": 0.6171656123479065
+        },
+        {
+          "target_total_lsun": 2.7,
+          "inclination_deg": 60,
+          "model": "L2p7_i60",
+          "score": 0.5916629478209354
+        }
+      ]
+    },
+    {
+      "stage": "literature_boundary_summary",
+      "status": "completed_diagnostic_superseded_normalization",
+      "source": {
+        "path": "output/literature_boundary_summary.ecsv",
+        "sha256": "80a9561d4df9bd8704fc2fb8fdcb60833f4d90e05a3e5e0a1936e2b534abf066"
+      },
+      "row_count": 9,
+      "distinct_model_count": 9,
+      "axes": {
+        "target_total_lsun": [
+          1.9,
+          2.1,
+          2.3
+        ],
+        "inclination_deg": [
+          60,
+          65,
+          70
+        ]
+      },
+      "normalization": "each model's own sed_rt total multiplied by its own PSF-convolved image aperture fraction; no fitted multiplicative scale",
+      "target_distance_pc": 140,
+      "fixed_inclination_deg": null,
+      "fixed_cavity": null,
+      "score_column": "region_balanced_log_rms_dex",
+      "primary_metric": "sqrt(mean over seven regions of mean within-region log10(observed/model)^2)",
+      "formal_likelihood": false,
+      "nominal_best": {
+        "model_label": "L1p9_i70",
+        "score": 0.4546364755738517,
+        "target_total_lsun": 1.9,
+        "inclination_deg": 70
+      },
+      "points": [
+        {
+          "target_total_lsun": 1.9,
+          "inclination_deg": 60,
+          "model": "L1p9_i60",
+          "score": 0.49324555495932243
+        },
+        {
+          "target_total_lsun": 1.9,
+          "inclination_deg": 65,
+          "model": "L1p9_i65",
+          "score": 0.47195192597026353
+        },
+        {
+          "target_total_lsun": 1.9,
+          "inclination_deg": 70,
+          "model": "L1p9_i70",
+          "score": 0.4546364755738517
+        },
+        {
+          "target_total_lsun": 2.1,
+          "inclination_deg": 60,
+          "model": "L2p1_i60",
+          "score": 0.5210192426503761
+        },
+        {
+          "target_total_lsun": 2.1,
+          "inclination_deg": 65,
+          "model": "L2p1_i65",
+          "score": 0.4990800124766314
+        },
+        {
+          "target_total_lsun": 2.1,
+          "inclination_deg": 70,
+          "model": "L2p1_i70",
+          "score": 0.47652380428398083
+        },
+        {
+          "target_total_lsun": 2.3,
+          "inclination_deg": 60,
+          "model": "L2p3_i60",
+          "score": 0.5447846094139669
+        },
+        {
+          "target_total_lsun": 2.3,
+          "inclination_deg": 65,
+          "model": "L2p3_i65",
+          "score": 0.5210968052966611
+        },
+        {
+          "target_total_lsun": 2.3,
+          "inclination_deg": 70,
+          "model": "L2p3_i70",
+          "score": 0.49528614534829063
+        }
+      ]
+    }
+  ],
+  "method2_stages": [
+    {
+      "stage": "strict_continuum_screen",
+      "canonical_output_prefix": "strict_continuum_method2_fit_v1",
+      "status": "completed_provisional_screen",
+      "model_table": {
+        "path": "runs/strict_continuum_screen/models.tsv",
+        "sha256": "68e7476f1bbbc98a63d11958ae7a46bbd1478aa82478b6fede10e4729fc18d3b"
+      },
+      "score_source": {
+        "path": "output/strict_continuum_method2_fit_v1_scores.ecsv",
+        "sha256": "9c14a99a90d7424916c7910f8e2683c97feb907b558da5263b46f7b47b604c2b"
+      },
+      "summary_source": {
+        "path": "output/strict_continuum_method2_fit_v1_summary.json",
+        "sha256": "5905dad9166274e8895c7bd2d69aa683e5494326004d55bb752b579a8aafd6d1"
+      },
+      "logical_model_count": 16,
+      "fresh_model_temperature_count": 16,
+      "fresh_primary_rt_cell_count": 160,
+      "scored_anchors_per_model": 10,
+      "axes": {
+        "mass_factor": [
+          1.25,
+          1.5,
+          1.75,
+          2
+        ],
+        "envelope_amax_um": [
+          0.1,
+          0.2,
+          0.35,
+          0.5
+        ],
+        "envelope_size_exponent": [
+          3.5
+        ]
+      },
+      "nominal_best": {
+        "boundary_anchor_weight": 1,
+        "description": "all ten anchors at primary weight",
+        "model_index": 15,
+        "model_label": "m2p00_a0p50_i0p05",
+        "nominal_rank_only": true,
+        "score_dex": 0.1940041074515934
+      },
+      "score_column": "fixed_normalization_region_balanced_log_rms_dex",
+      "formal_likelihood": false,
+      "primary_rows": [
+        {
+          "model_index": 15,
+          "model_label": "m2p00_a0p50_i0p05",
+          "mass_factor": 2,
+          "envelope_amax_um": 0.5,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.1940041074515934,
+          "diagnostic_rank": 1,
+          "score_gap_to_scenario_rank1_dex": 0,
+          "unresolved_with_scenario_rank1": true
+        },
+        {
+          "model_index": 11,
+          "model_label": "m1p75_a0p50_i0p05",
+          "mass_factor": 1.75,
+          "envelope_amax_um": 0.5,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.30288502564419867,
+          "diagnostic_rank": 2,
+          "score_gap_to_scenario_rank1_dex": 0.10888091819260526,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 14,
+          "model_label": "m2p00_a0p35_i0p05",
+          "mass_factor": 2,
+          "envelope_amax_um": 0.35,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.4176724596529314,
+          "diagnostic_rank": 3,
+          "score_gap_to_scenario_rank1_dex": 0.22366835220133802,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 7,
+          "model_label": "m1p50_a0p50_i0p05",
+          "mass_factor": 1.5,
+          "envelope_amax_um": 0.5,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.43337064485415305,
+          "diagnostic_rank": 4,
+          "score_gap_to_scenario_rank1_dex": 0.23936653740255964,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 10,
+          "model_label": "m1p75_a0p35_i0p05",
+          "mass_factor": 1.75,
+          "envelope_amax_um": 0.35,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.5217974455884195,
+          "diagnostic_rank": 5,
+          "score_gap_to_scenario_rank1_dex": 0.32779333813682604,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 3,
+          "model_label": "m1p25_a0p50_i0p05",
+          "mass_factor": 1.25,
+          "envelope_amax_um": 0.5,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.5809245838911599,
+          "diagnostic_rank": 6,
+          "score_gap_to_scenario_rank1_dex": 0.38692047643956645,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 6,
+          "model_label": "m1p50_a0p35_i0p05",
+          "mass_factor": 1.5,
+          "envelope_amax_um": 0.35,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.6438200884333564,
+          "diagnostic_rank": 7,
+          "score_gap_to_scenario_rank1_dex": 0.44981598098176295,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 2,
+          "model_label": "m1p25_a0p35_i0p05",
+          "mass_factor": 1.25,
+          "envelope_amax_um": 0.35,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.7707081767740526,
+          "diagnostic_rank": 8,
+          "score_gap_to_scenario_rank1_dex": 0.5767040693224592,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 13,
+          "model_label": "m2p00_a0p20_i0p05",
+          "mass_factor": 2,
+          "envelope_amax_um": 0.2,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.8194477026857251,
+          "diagnostic_rank": 9,
+          "score_gap_to_scenario_rank1_dex": 0.6254435952341317,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 9,
+          "model_label": "m1p75_a0p20_i0p05",
+          "mass_factor": 1.75,
+          "envelope_amax_um": 0.2,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.9067415065596071,
+          "diagnostic_rank": 10,
+          "score_gap_to_scenario_rank1_dex": 0.7127373991080137,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 5,
+          "model_label": "m1p50_a0p20_i0p05",
+          "mass_factor": 1.5,
+          "envelope_amax_um": 0.2,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.9923763860866985,
+          "diagnostic_rank": 11,
+          "score_gap_to_scenario_rank1_dex": 0.7983722786351051,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 1,
+          "model_label": "m1p25_a0p20_i0p05",
+          "mass_factor": 1.25,
+          "envelope_amax_um": 0.2,
+          "fixed_normalization_region_balanced_log_rms_dex": 1.0810596488068238,
+          "diagnostic_rank": 12,
+          "score_gap_to_scenario_rank1_dex": 0.8870555413552303,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 12,
+          "model_label": "m2p00_a0p10_i0p05",
+          "mass_factor": 2,
+          "envelope_amax_um": 0.1,
+          "fixed_normalization_region_balanced_log_rms_dex": 1.1164829461163763,
+          "diagnostic_rank": 13,
+          "score_gap_to_scenario_rank1_dex": 0.9224788386647829,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 8,
+          "model_label": "m1p75_a0p10_i0p05",
+          "mass_factor": 1.75,
+          "envelope_amax_um": 0.1,
+          "fixed_normalization_region_balanced_log_rms_dex": 1.1696473676698416,
+          "diagnostic_rank": 14,
+          "score_gap_to_scenario_rank1_dex": 0.9756432602182481,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 4,
+          "model_label": "m1p50_a0p10_i0p05",
+          "mass_factor": 1.5,
+          "envelope_amax_um": 0.1,
+          "fixed_normalization_region_balanced_log_rms_dex": 1.2231630765377648,
+          "diagnostic_rank": 15,
+          "score_gap_to_scenario_rank1_dex": 1.0291589690861713,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 0,
+          "model_label": "m1p25_a0p10_i0p05",
+          "mass_factor": 1.25,
+          "envelope_amax_um": 0.1,
+          "fixed_normalization_region_balanced_log_rms_dex": 1.273206403262385,
+          "diagnostic_rank": 16,
+          "score_gap_to_scenario_rank1_dex": 1.0792022958107916,
+          "unresolved_with_scenario_rank1": false
+        }
+      ],
+      "scenario_winners": [
+        {
+          "scenario": "primary",
+          "model_label": "m2p00_a0p50_i0p05",
+          "fixed_normalization_region_balanced_log_rms_dex": 0.1940041074515934
+        },
+        {
+          "scenario": "boundary_half",
+          "model_label": "m2p00_a0p50_i0p05",
+          "fixed_normalization_region_balanced_log_rms_dex": 0.19219532227770794
+        },
+        {
+          "scenario": "boundary_drop",
+          "model_label": "m2p00_a0p50_i0p05",
+          "fixed_normalization_region_balanced_log_rms_dex": 0.19036935179480613
+        }
+      ]
+    },
+    {
+      "stage": "strict_continuum_refinement_v1",
+      "canonical_output_prefix": "strict_continuum_refinement_v1_support_v1",
+      "status": "completed_provisional_screen",
+      "model_table": {
+        "path": "runs/strict_continuum_refinement_v1/models.tsv",
+        "sha256": "1119921cae1f4814375d10b9fe99b82c4bb4482bce95114c33210248647bf942"
+      },
+      "score_source": {
+        "path": "output/strict_continuum_refinement_v1_support_v1_scores.ecsv",
+        "sha256": "09518218c2183f54b4725a26b39a3037f551b9a4de06ef82b45930d480a0ebe2"
+      },
+      "summary_source": {
+        "path": "output/strict_continuum_refinement_v1_support_v1_summary.json",
+        "sha256": "5f7fa38a8101f27272fe3d5c6b67af63b68881177409627f327136549538d578"
+      },
+      "logical_model_count": 9,
+      "fresh_model_temperature_count": 8,
+      "fresh_primary_rt_cell_count": 80,
+      "scored_anchors_per_model": 10,
+      "axes": {
+        "mass_factor": [
+          2,
+          2.25,
+          2.5
+        ],
+        "envelope_amax_um": [
+          0.5,
+          0.6,
+          0.7
+        ]
+      },
+      "nominal_best": {
+        "boundary_anchor_weight": 1,
+        "description": "all ten anchors at primary weight",
+        "grid_model_index": 3,
+        "model_label": "m2p25_a0p50_i0p05",
+        "nominal_rank_only": true,
+        "score_dex": 0.1344627551966839
+      },
+      "score_column": "fixed_normalization_region_balanced_log_rms_dex",
+      "formal_likelihood": false,
+      "primary_rows": [
+        {
+          "model_index": 3,
+          "model_label": "m2p25_a0p50_i0p05",
+          "mass_factor": 2.25,
+          "envelope_amax_um": 0.5,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.1344627551966839,
+          "diagnostic_rank": 1,
+          "score_gap_to_scenario_rank1_dex": 0,
+          "unresolved_with_scenario_rank1": true
+        },
+        {
+          "model_index": 6,
+          "model_label": "m2p50_a0p50_i0p05",
+          "mass_factor": 2.5,
+          "envelope_amax_um": 0.5,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.1555578919628864,
+          "diagnostic_rank": 2,
+          "score_gap_to_scenario_rank1_dex": 0.021095136766202505,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 1,
+          "model_label": "m2p00_a0p60_i0p05",
+          "mass_factor": 2,
+          "envelope_amax_um": 0.6,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.16879930033786006,
+          "diagnostic_rank": 3,
+          "score_gap_to_scenario_rank1_dex": 0.03433654514117615,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 4,
+          "model_label": "m2p25_a0p60_i0p05",
+          "mass_factor": 2.25,
+          "envelope_amax_um": 0.6,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.187368112832843,
+          "diagnostic_rank": 4,
+          "score_gap_to_scenario_rank1_dex": 0.052905357636159084,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 0,
+          "model_label": "m2p00_a0p50_i0p05",
+          "mass_factor": 2,
+          "envelope_amax_um": 0.5,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.1940397246321886,
+          "diagnostic_rank": 5,
+          "score_gap_to_scenario_rank1_dex": 0.059576969435504695,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 2,
+          "model_label": "m2p00_a0p70_i0p05",
+          "mass_factor": 2,
+          "envelope_amax_um": 0.7,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.21177994403286396,
+          "diagnostic_rank": 6,
+          "score_gap_to_scenario_rank1_dex": 0.07731718883618005,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 7,
+          "model_label": "m2p50_a0p60_i0p05",
+          "mass_factor": 2.5,
+          "envelope_amax_um": 0.6,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.263235863743723,
+          "diagnostic_rank": 7,
+          "score_gap_to_scenario_rank1_dex": 0.12877310854703908,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 5,
+          "model_label": "m2p25_a0p70_i0p05",
+          "mass_factor": 2.25,
+          "envelope_amax_um": 0.7,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.2677167279324177,
+          "diagnostic_rank": 8,
+          "score_gap_to_scenario_rank1_dex": 0.13325397273573378,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 8,
+          "model_label": "m2p50_a0p70_i0p05",
+          "mass_factor": 2.5,
+          "envelope_amax_um": 0.7,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.35603930954091156,
+          "diagnostic_rank": 9,
+          "score_gap_to_scenario_rank1_dex": 0.22157655434422766,
+          "unresolved_with_scenario_rank1": false
+        }
+      ],
+      "scenario_winners": [
+        {
+          "scenario": "primary",
+          "model_label": "m2p25_a0p50_i0p05",
+          "fixed_normalization_region_balanced_log_rms_dex": 0.1344627551966839
+        },
+        {
+          "scenario": "boundary_half",
+          "model_label": "m2p25_a0p50_i0p05",
+          "fixed_normalization_region_balanced_log_rms_dex": 0.12541267332942946
+        },
+        {
+          "scenario": "boundary_drop",
+          "model_label": "m2p25_a0p50_i0p05",
+          "fixed_normalization_region_balanced_log_rms_dex": 0.11565658099816467
+        }
+      ]
+    },
+    {
+      "stage": "strict_continuum_3d_q_v1",
+      "canonical_output_prefix": "strict_continuum_3d_q_v1_task024_seed41002_recovery_primary9_v1_w000_diagnostic",
+      "status": "completed_provisional_screen",
+      "model_table": {
+        "path": "runs/strict_continuum_3d_q_v1/models.tsv",
+        "sha256": "95a9d50712158e41e56f6177210f72047333c4d8c6bbaab358ee7734a1d97f13"
+      },
+      "score_source": {
+        "path": "output/strict_continuum_3d_q_v1_task024_seed41002_recovery_primary9_v1_w000_diagnostic_scores.ecsv",
+        "sha256": "a449a31a8a139d571168080955bf55fc90a243c598a51117c5a3a57522f1b781"
+      },
+      "summary_source": {
+        "path": "output/strict_continuum_3d_q_v1_task024_seed41002_recovery_primary9_v1_w000_diagnostic_summary.json",
+        "sha256": "cbfecf8316b03c36b0de2c625258b5c116349bea5056c445d432b06b9f8339f0"
+      },
+      "logical_model_count": 36,
+      "fresh_model_temperature_count": 30,
+      "fresh_primary_rt_cell_count": 300,
+      "scored_anchors_per_model": 9,
+      "axes": {
+        "mass_factor": [
+          2,
+          2.25,
+          2.5
+        ],
+        "envelope_amax_um": [
+          0.4,
+          0.5,
+          0.6
+        ],
+        "envelope_size_exponent": [
+          3.25,
+          3.5,
+          3.75,
+          4
+        ]
+      },
+      "nominal_best": {
+        "boundary_anchor_weight": 1,
+        "description": "all nine scored anchors at primary weight",
+        "envelope_amax_um": 0.4,
+        "envelope_size_exponent": 3.25,
+        "grid_model_index": 24,
+        "mass_factor": 2.5,
+        "model_label": "m2p50_a0p40_q3p25_i0p05",
+        "nominal_rank_only": true,
+        "score_dex": 0.115951458180168
+      },
+      "score_column": "fixed_normalization_region_balanced_log_rms_dex",
+      "formal_likelihood": false,
+      "primary_rows": [
+        {
+          "model_index": 24,
+          "model_label": "m2p50_a0p40_q3p25_i0p05",
+          "mass_factor": 2.5,
+          "envelope_amax_um": 0.4,
+          "envelope_size_exponent": 3.25,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.115951458180168,
+          "diagnostic_rank": 1,
+          "score_gap_to_scenario_rank1_dex": 0,
+          "unresolved_with_scenario_rank1": true
+        },
+        {
+          "model_index": 17,
+          "model_label": "m2p25_a0p50_q3p50_i0p05",
+          "mass_factor": 2.25,
+          "envelope_amax_um": 0.5,
+          "envelope_size_exponent": 3.5,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.14117397049241132,
+          "diagnostic_rank": 2,
+          "score_gap_to_scenario_rank1_dex": 0.025222512312243317,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 30,
+          "model_label": "m2p50_a0p50_q3p75_i0p05",
+          "mass_factor": 2.5,
+          "envelope_amax_um": 0.5,
+          "envelope_size_exponent": 3.75,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.14593598921087297,
+          "diagnostic_rank": 3,
+          "score_gap_to_scenario_rank1_dex": 0.029984531030704975,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 29,
+          "model_label": "m2p50_a0p50_q3p50_i0p05",
+          "mass_factor": 2.5,
+          "envelope_amax_um": 0.5,
+          "envelope_size_exponent": 3.5,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.14618845559701157,
+          "diagnostic_rank": 4,
+          "score_gap_to_scenario_rank1_dex": 0.030236997416843575,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 16,
+          "model_label": "m2p25_a0p50_q3p25_i0p05",
+          "mass_factor": 2.25,
+          "envelope_amax_um": 0.5,
+          "envelope_size_exponent": 3.25,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.146325894828561,
+          "diagnostic_rank": 5,
+          "score_gap_to_scenario_rank1_dex": 0.03037443664839301,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 4,
+          "model_label": "m2p00_a0p50_q3p25_i0p05",
+          "mass_factor": 2,
+          "envelope_amax_um": 0.5,
+          "envelope_size_exponent": 3.25,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.15048818608917316,
+          "diagnostic_rank": 6,
+          "score_gap_to_scenario_rank1_dex": 0.034536727909005166,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 25,
+          "model_label": "m2p50_a0p40_q3p50_i0p05",
+          "mass_factor": 2.5,
+          "envelope_amax_um": 0.4,
+          "envelope_size_exponent": 3.5,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.16567364467849466,
+          "diagnostic_rank": 7,
+          "score_gap_to_scenario_rank1_dex": 0.04972218649832666,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 22,
+          "model_label": "m2p25_a0p60_q3p75_i0p05",
+          "mass_factor": 2.25,
+          "envelope_amax_um": 0.6,
+          "envelope_size_exponent": 3.75,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.17364886180554906,
+          "diagnostic_rank": 8,
+          "score_gap_to_scenario_rank1_dex": 0.05769740362538106,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 12,
+          "model_label": "m2p25_a0p40_q3p25_i0p05",
+          "mass_factor": 2.25,
+          "envelope_amax_um": 0.4,
+          "envelope_size_exponent": 3.25,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.17377804770475097,
+          "diagnostic_rank": 9,
+          "score_gap_to_scenario_rank1_dex": 0.05782658952458297,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 9,
+          "model_label": "m2p00_a0p60_q3p50_i0p05",
+          "mass_factor": 2,
+          "envelope_amax_um": 0.6,
+          "envelope_size_exponent": 3.5,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.17734156460894876,
+          "diagnostic_rank": 10,
+          "score_gap_to_scenario_rank1_dex": 0.06139010642878076,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 35,
+          "model_label": "m2p50_a0p60_q4p00_i0p05",
+          "mass_factor": 2.5,
+          "envelope_amax_um": 0.6,
+          "envelope_size_exponent": 4,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.18239500273697734,
+          "diagnostic_rank": 11,
+          "score_gap_to_scenario_rank1_dex": 0.06644354455680934,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 34,
+          "model_label": "m2p50_a0p60_q3p75_i0p05",
+          "mass_factor": 2.5,
+          "envelope_amax_um": 0.6,
+          "envelope_size_exponent": 3.75,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.18260674075249356,
+          "diagnostic_rank": 12,
+          "score_gap_to_scenario_rank1_dex": 0.06665528257232556,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 8,
+          "model_label": "m2p00_a0p60_q3p25_i0p05",
+          "mass_factor": 2,
+          "envelope_amax_um": 0.6,
+          "envelope_size_exponent": 3.25,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.18379405532812895,
+          "diagnostic_rank": 13,
+          "score_gap_to_scenario_rank1_dex": 0.06784259714796095,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 21,
+          "model_label": "m2p25_a0p60_q3p50_i0p05",
+          "mass_factor": 2.25,
+          "envelope_amax_um": 0.6,
+          "envelope_size_exponent": 3.5,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.18662642997891124,
+          "diagnostic_rank": 14,
+          "score_gap_to_scenario_rank1_dex": 0.07067497179874324,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 18,
+          "model_label": "m2p25_a0p50_q3p75_i0p05",
+          "mass_factor": 2.25,
+          "envelope_amax_um": 0.5,
+          "envelope_size_exponent": 3.75,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.2104392377931785,
+          "diagnostic_rank": 15,
+          "score_gap_to_scenario_rank1_dex": 0.0944877796130105,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 5,
+          "model_label": "m2p00_a0p50_q3p50_i0p05",
+          "mass_factor": 2,
+          "envelope_amax_um": 0.5,
+          "envelope_size_exponent": 3.5,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.21271646650913512,
+          "diagnostic_rank": 16,
+          "score_gap_to_scenario_rank1_dex": 0.09676500832896712,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 28,
+          "model_label": "m2p50_a0p50_q3p25_i0p05",
+          "mass_factor": 2.5,
+          "envelope_amax_um": 0.5,
+          "envelope_size_exponent": 3.25,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.21799681481851232,
+          "diagnostic_rank": 17,
+          "score_gap_to_scenario_rank1_dex": 0.10204535663834433,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 31,
+          "model_label": "m2p50_a0p50_q4p00_i0p05",
+          "mass_factor": 2.5,
+          "envelope_amax_um": 0.5,
+          "envelope_size_exponent": 4,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.22529499982009366,
+          "diagnostic_rank": 18,
+          "score_gap_to_scenario_rank1_dex": 0.10934354163992566,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 10,
+          "model_label": "m2p00_a0p60_q3p75_i0p05",
+          "mass_factor": 2,
+          "envelope_amax_um": 0.6,
+          "envelope_size_exponent": 3.75,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.23717447199509772,
+          "diagnostic_rank": 19,
+          "score_gap_to_scenario_rank1_dex": 0.12122301381492973,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 23,
+          "model_label": "m2p25_a0p60_q4p00_i0p05",
+          "mass_factor": 2.25,
+          "envelope_amax_um": 0.6,
+          "envelope_size_exponent": 4,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.24665917694298242,
+          "diagnostic_rank": 20,
+          "score_gap_to_scenario_rank1_dex": 0.13070771876281442,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 26,
+          "model_label": "m2p50_a0p40_q3p75_i0p05",
+          "mass_factor": 2.5,
+          "envelope_amax_um": 0.4,
+          "envelope_size_exponent": 3.75,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.24899295005924815,
+          "diagnostic_rank": 21,
+          "score_gap_to_scenario_rank1_dex": 0.13304149187908015,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 13,
+          "model_label": "m2p25_a0p40_q3p50_i0p05",
+          "mass_factor": 2.25,
+          "envelope_amax_um": 0.4,
+          "envelope_size_exponent": 3.5,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.2507916673391079,
+          "diagnostic_rank": 22,
+          "score_gap_to_scenario_rank1_dex": 0.1348402091589399,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 20,
+          "model_label": "m2p25_a0p60_q3p25_i0p05",
+          "mass_factor": 2.25,
+          "envelope_amax_um": 0.6,
+          "envelope_size_exponent": 3.25,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.2551638707456327,
+          "diagnostic_rank": 23,
+          "score_gap_to_scenario_rank1_dex": 0.13921241256546468,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 33,
+          "model_label": "m2p50_a0p60_q3p50_i0p05",
+          "mass_factor": 2.5,
+          "envelope_amax_um": 0.6,
+          "envelope_size_exponent": 3.5,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.25839387187089374,
+          "diagnostic_rank": 24,
+          "score_gap_to_scenario_rank1_dex": 0.14244241369072574,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 0,
+          "model_label": "m2p00_a0p40_q3p25_i0p05",
+          "mass_factor": 2,
+          "envelope_amax_um": 0.4,
+          "envelope_size_exponent": 3.25,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.2725188195696936,
+          "diagnostic_rank": 25,
+          "score_gap_to_scenario_rank1_dex": 0.1565673613895256,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 6,
+          "model_label": "m2p00_a0p50_q3p75_i0p05",
+          "mass_factor": 2,
+          "envelope_amax_um": 0.5,
+          "envelope_size_exponent": 3.75,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.30561294672492856,
+          "diagnostic_rank": 26,
+          "score_gap_to_scenario_rank1_dex": 0.18966148854476056,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 19,
+          "model_label": "m2p25_a0p50_q4p00_i0p05",
+          "mass_factor": 2.25,
+          "envelope_amax_um": 0.5,
+          "envelope_size_exponent": 4,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.31451113254642743,
+          "diagnostic_rank": 27,
+          "score_gap_to_scenario_rank1_dex": 0.19855967436625943,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 14,
+          "model_label": "m2p25_a0p40_q3p75_i0p05",
+          "mass_factor": 2.25,
+          "envelope_amax_um": 0.4,
+          "envelope_size_exponent": 3.75,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.34206396084660134,
+          "diagnostic_rank": 28,
+          "score_gap_to_scenario_rank1_dex": 0.22611250266643335,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 11,
+          "model_label": "m2p00_a0p60_q4p00_i0p05",
+          "mass_factor": 2,
+          "envelope_amax_um": 0.6,
+          "envelope_size_exponent": 4,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.3438130609642598,
+          "diagnostic_rank": 29,
+          "score_gap_to_scenario_rank1_dex": 0.2278616027840918,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 27,
+          "model_label": "m2p50_a0p40_q4p00_i0p05",
+          "mass_factor": 2.5,
+          "envelope_amax_um": 0.4,
+          "envelope_size_exponent": 4,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.3487628663098001,
+          "diagnostic_rank": 30,
+          "score_gap_to_scenario_rank1_dex": 0.23281140812963208,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 1,
+          "model_label": "m2p00_a0p40_q3p50_i0p05",
+          "mass_factor": 2,
+          "envelope_amax_um": 0.4,
+          "envelope_size_exponent": 3.5,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.3531687545958495,
+          "diagnostic_rank": 31,
+          "score_gap_to_scenario_rank1_dex": 0.2372172964156815,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 32,
+          "model_label": "m2p50_a0p60_q3p25_i0p05",
+          "mass_factor": 2.5,
+          "envelope_amax_um": 0.6,
+          "envelope_size_exponent": 3.25,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.3558952334594512,
+          "diagnostic_rank": 32,
+          "score_gap_to_scenario_rank1_dex": 0.23994377527928318,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 7,
+          "model_label": "m2p00_a0p50_q4p00_i0p05",
+          "mass_factor": 2,
+          "envelope_amax_um": 0.5,
+          "envelope_size_exponent": 4,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.41472636800133544,
+          "diagnostic_rank": 33,
+          "score_gap_to_scenario_rank1_dex": 0.29877490982116744,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 15,
+          "model_label": "m2p25_a0p40_q4p00_i0p05",
+          "mass_factor": 2.25,
+          "envelope_amax_um": 0.4,
+          "envelope_size_exponent": 4,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.4387475447603901,
+          "diagnostic_rank": 34,
+          "score_gap_to_scenario_rank1_dex": 0.3227960865802221,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 2,
+          "model_label": "m2p00_a0p40_q3p75_i0p05",
+          "mass_factor": 2,
+          "envelope_amax_um": 0.4,
+          "envelope_size_exponent": 3.75,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.44570133661736744,
+          "diagnostic_rank": 35,
+          "score_gap_to_scenario_rank1_dex": 0.32974987843719944,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 3,
+          "model_label": "m2p00_a0p40_q4p00_i0p05",
+          "mass_factor": 2,
+          "envelope_amax_um": 0.4,
+          "envelope_size_exponent": 4,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.5338939627058006,
+          "diagnostic_rank": 36,
+          "score_gap_to_scenario_rank1_dex": 0.4179425045256326,
+          "unresolved_with_scenario_rank1": false
+        }
+      ],
+      "scenario_winners": [
+        {
+          "scenario": "primary",
+          "model_label": "m2p50_a0p40_q3p25_i0p05",
+          "fixed_normalization_region_balanced_log_rms_dex": 0.115951458180168
+        },
+        {
+          "scenario": "boundary_half",
+          "model_label": "m2p50_a0p40_q3p25_i0p05",
+          "fixed_normalization_region_balanced_log_rms_dex": 0.10905611998313647
+        },
+        {
+          "scenario": "boundary_drop",
+          "model_label": "m2p50_a0p40_q3p25_i0p05",
+          "fixed_normalization_region_balanced_log_rms_dex": 0.10169431624946042
+        }
+      ]
+    },
+    {
+      "stage": "strict_continuum_cavity_mass_q_v1",
+      "canonical_output_prefix": "strict_continuum_cavity_mass_q_source128k_uniform_v2_v1",
+      "status": "completed_provisional_screen",
+      "model_table": {
+        "path": "runs/strict_continuum_cavity_mass_q_v1/models.tsv",
+        "sha256": "24e210b4a5304beb2b4fe27f31cc6f3db664a0c20f6ffba6539972a157181e19"
+      },
+      "score_source": {
+        "path": "output/strict_continuum_cavity_mass_q_source128k_uniform_v2_v1_scores.ecsv",
+        "sha256": "6465c213e9dedfad544206b7bee378628bcd0535128220ea400df5adcf503631"
+      },
+      "summary_source": {
+        "path": "output/strict_continuum_cavity_mass_q_source128k_uniform_v2_v1_summary.json",
+        "sha256": "6e48b43ba851af22e22bd06d95a65defa1308329f1301d1cd380a1c31ad987f1"
+      },
+      "logical_model_count": 45,
+      "fresh_model_temperature_count": 45,
+      "fresh_primary_rt_cell_count": 405,
+      "scored_anchors_per_model": 9,
+      "axes": {
+        "mass_factor": [
+          2.25,
+          2.5,
+          2.75
+        ],
+        "envelope_amax_um": [
+          0.4
+        ],
+        "envelope_size_exponent": [
+          2.75,
+          3,
+          3.25
+        ],
+        "requested_half_opening_deg": [
+          15,
+          17.5,
+          20,
+          22,
+          24
+        ]
+      },
+      "nominal_best": {
+        "envelope_size_exponent": 2.75,
+        "mass_factor": 2.25,
+        "model_index": 1,
+        "model_label": "m2p25_c17p5_a0p40_q2p75_i0p05",
+        "requested_half_opening_deg": 17.5,
+        "score_dex": 0.10931253534441464
+      },
+      "score_column": "fixed_normalization_region_balanced_log_rms_dex",
+      "formal_likelihood": false,
+      "primary_rows": [
+        {
+          "model_index": 1,
+          "model_label": "m2p25_c17p5_a0p40_q2p75_i0p05",
+          "mass_factor": 2.25,
+          "envelope_size_exponent": 2.75,
+          "requested_half_opening_deg": 17.5,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.10931253534441464,
+          "diagnostic_rank": 1,
+          "score_gap_to_scenario_rank1_dex": 0,
+          "unresolved_with_scenario_rank1": true
+        },
+        {
+          "model_index": 2,
+          "model_label": "m2p25_c20p0_a0p40_q2p75_i0p05",
+          "mass_factor": 2.25,
+          "envelope_size_exponent": 2.75,
+          "requested_half_opening_deg": 20,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.10976080135333435,
+          "diagnostic_rank": 2,
+          "score_gap_to_scenario_rank1_dex": 0.0004482660089197149,
+          "unresolved_with_scenario_rank1": true
+        },
+        {
+          "model_index": 26,
+          "model_label": "m2p50_c17p5_a0p40_q3p25_i0p05",
+          "mass_factor": 2.5,
+          "envelope_size_exponent": 3.25,
+          "requested_half_opening_deg": 17.5,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.11302652383949478,
+          "diagnostic_rank": 3,
+          "score_gap_to_scenario_rank1_dex": 0.003713988495080145,
+          "unresolved_with_scenario_rank1": true
+        },
+        {
+          "model_index": 3,
+          "model_label": "m2p25_c22p0_a0p40_q2p75_i0p05",
+          "mass_factor": 2.25,
+          "envelope_size_exponent": 2.75,
+          "requested_half_opening_deg": 22,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.11368255413139196,
+          "diagnostic_rank": 4,
+          "score_gap_to_scenario_rank1_dex": 0.00437001878697732,
+          "unresolved_with_scenario_rank1": true
+        },
+        {
+          "model_index": 25,
+          "model_label": "m2p50_c15p0_a0p40_q3p25_i0p05",
+          "mass_factor": 2.5,
+          "envelope_size_exponent": 3.25,
+          "requested_half_opening_deg": 15,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.11678779218639507,
+          "diagnostic_rank": 5,
+          "score_gap_to_scenario_rank1_dex": 0.007475256841980429,
+          "unresolved_with_scenario_rank1": true
+        },
+        {
+          "model_index": 27,
+          "model_label": "m2p50_c20p0_a0p40_q3p25_i0p05",
+          "mass_factor": 2.5,
+          "envelope_size_exponent": 3.25,
+          "requested_half_opening_deg": 20,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.11685272495667375,
+          "diagnostic_rank": 6,
+          "score_gap_to_scenario_rank1_dex": 0.007540189612259107,
+          "unresolved_with_scenario_rank1": true
+        },
+        {
+          "model_index": 5,
+          "model_label": "m2p25_c15p0_a0p40_q3p00_i0p05",
+          "mass_factor": 2.25,
+          "envelope_size_exponent": 3,
+          "requested_half_opening_deg": 15,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.11849741375140876,
+          "diagnostic_rank": 7,
+          "score_gap_to_scenario_rank1_dex": 0.009184878406994126,
+          "unresolved_with_scenario_rank1": true
+        },
+        {
+          "model_index": 0,
+          "model_label": "m2p25_c15p0_a0p40_q2p75_i0p05",
+          "mass_factor": 2.25,
+          "envelope_size_exponent": 2.75,
+          "requested_half_opening_deg": 15,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.12010072535969984,
+          "diagnostic_rank": 8,
+          "score_gap_to_scenario_rank1_dex": 0.010788190015285207,
+          "unresolved_with_scenario_rank1": true
+        },
+        {
+          "model_index": 6,
+          "model_label": "m2p25_c17p5_a0p40_q3p00_i0p05",
+          "mass_factor": 2.25,
+          "envelope_size_exponent": 3,
+          "requested_half_opening_deg": 17.5,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.12043552751815001,
+          "diagnostic_rank": 9,
+          "score_gap_to_scenario_rank1_dex": 0.011122992173735372,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 28,
+          "model_label": "m2p50_c22p0_a0p40_q3p25_i0p05",
+          "mass_factor": 2.5,
+          "envelope_size_exponent": 3.25,
+          "requested_half_opening_deg": 22,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.12280408333154184,
+          "diagnostic_rank": 10,
+          "score_gap_to_scenario_rank1_dex": 0.013491547987127206,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 21,
+          "model_label": "m2p50_c17p5_a0p40_q3p00_i0p05",
+          "mass_factor": 2.5,
+          "envelope_size_exponent": 3,
+          "requested_half_opening_deg": 17.5,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.12369463769032547,
+          "diagnostic_rank": 11,
+          "score_gap_to_scenario_rank1_dex": 0.014382102345910835,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 7,
+          "model_label": "m2p25_c20p0_a0p40_q3p00_i0p05",
+          "mass_factor": 2.25,
+          "envelope_size_exponent": 3,
+          "requested_half_opening_deg": 20,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.12383375493894959,
+          "diagnostic_rank": 12,
+          "score_gap_to_scenario_rank1_dex": 0.014521219594534951,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 22,
+          "model_label": "m2p50_c20p0_a0p40_q3p00_i0p05",
+          "mass_factor": 2.5,
+          "envelope_size_exponent": 3,
+          "requested_half_opening_deg": 20,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.12443608415323677,
+          "diagnostic_rank": 13,
+          "score_gap_to_scenario_rank1_dex": 0.015123548808822135,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 4,
+          "model_label": "m2p25_c24p0_a0p40_q2p75_i0p05",
+          "mass_factor": 2.25,
+          "envelope_size_exponent": 2.75,
+          "requested_half_opening_deg": 24,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.12464307334354831,
+          "diagnostic_rank": 14,
+          "score_gap_to_scenario_rank1_dex": 0.01533053799913367,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 8,
+          "model_label": "m2p25_c22p0_a0p40_q3p00_i0p05",
+          "mass_factor": 2.25,
+          "envelope_size_exponent": 3,
+          "requested_half_opening_deg": 22,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.12560843782679146,
+          "diagnostic_rank": 15,
+          "score_gap_to_scenario_rank1_dex": 0.01629590248237682,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 29,
+          "model_label": "m2p50_c24p0_a0p40_q3p25_i0p05",
+          "mass_factor": 2.5,
+          "envelope_size_exponent": 3.25,
+          "requested_half_opening_deg": 24,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.12933584612458213,
+          "diagnostic_rank": 16,
+          "score_gap_to_scenario_rank1_dex": 0.02002331078016749,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 23,
+          "model_label": "m2p50_c22p0_a0p40_q3p00_i0p05",
+          "mass_factor": 2.5,
+          "envelope_size_exponent": 3,
+          "requested_half_opening_deg": 22,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.1299293985700503,
+          "diagnostic_rank": 17,
+          "score_gap_to_scenario_rank1_dex": 0.020616863225635648,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 9,
+          "model_label": "m2p25_c24p0_a0p40_q3p00_i0p05",
+          "mass_factor": 2.25,
+          "envelope_size_exponent": 3,
+          "requested_half_opening_deg": 24,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.13029550633971054,
+          "diagnostic_rank": 18,
+          "score_gap_to_scenario_rank1_dex": 0.020982970995295905,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 42,
+          "model_label": "m2p75_c20p0_a0p40_q3p25_i0p05",
+          "mass_factor": 2.75,
+          "envelope_size_exponent": 3.25,
+          "requested_half_opening_deg": 20,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.13580545487627838,
+          "diagnostic_rank": 19,
+          "score_gap_to_scenario_rank1_dex": 0.026492919531863737,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 20,
+          "model_label": "m2p50_c15p0_a0p40_q3p00_i0p05",
+          "mass_factor": 2.5,
+          "envelope_size_exponent": 3,
+          "requested_half_opening_deg": 15,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.13897361420256835,
+          "diagnostic_rank": 20,
+          "score_gap_to_scenario_rank1_dex": 0.029661078858153708,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 41,
+          "model_label": "m2p75_c17p5_a0p40_q3p25_i0p05",
+          "mass_factor": 2.75,
+          "envelope_size_exponent": 3.25,
+          "requested_half_opening_deg": 17.5,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.14109463607050754,
+          "diagnostic_rank": 21,
+          "score_gap_to_scenario_rank1_dex": 0.0317821007260929,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 24,
+          "model_label": "m2p50_c24p0_a0p40_q3p00_i0p05",
+          "mass_factor": 2.5,
+          "envelope_size_exponent": 3,
+          "requested_half_opening_deg": 24,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.14142335360425817,
+          "diagnostic_rank": 22,
+          "score_gap_to_scenario_rank1_dex": 0.032110818259843535,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 43,
+          "model_label": "m2p75_c22p0_a0p40_q3p25_i0p05",
+          "mass_factor": 2.75,
+          "envelope_size_exponent": 3.25,
+          "requested_half_opening_deg": 22,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.14604713430083482,
+          "diagnostic_rank": 23,
+          "score_gap_to_scenario_rank1_dex": 0.036734598956420186,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 40,
+          "model_label": "m2p75_c15p0_a0p40_q3p25_i0p05",
+          "mass_factor": 2.75,
+          "envelope_size_exponent": 3.25,
+          "requested_half_opening_deg": 15,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.15148549915168535,
+          "diagnostic_rank": 24,
+          "score_gap_to_scenario_rank1_dex": 0.042172963807270716,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 44,
+          "model_label": "m2p75_c24p0_a0p40_q3p25_i0p05",
+          "mass_factor": 2.75,
+          "envelope_size_exponent": 3.25,
+          "requested_half_opening_deg": 24,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.15457348423867262,
+          "diagnostic_rank": 25,
+          "score_gap_to_scenario_rank1_dex": 0.04526094889425798,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 17,
+          "model_label": "m2p50_c20p0_a0p40_q2p75_i0p05",
+          "mass_factor": 2.5,
+          "envelope_size_exponent": 2.75,
+          "requested_half_opening_deg": 20,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.16797663036685398,
+          "diagnostic_rank": 26,
+          "score_gap_to_scenario_rank1_dex": 0.05866409502243934,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 18,
+          "model_label": "m2p50_c22p0_a0p40_q2p75_i0p05",
+          "mass_factor": 2.5,
+          "envelope_size_exponent": 2.75,
+          "requested_half_opening_deg": 22,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.17023973958680808,
+          "diagnostic_rank": 27,
+          "score_gap_to_scenario_rank1_dex": 0.06092720424239344,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 14,
+          "model_label": "m2p25_c24p0_a0p40_q3p25_i0p05",
+          "mass_factor": 2.25,
+          "envelope_size_exponent": 3.25,
+          "requested_half_opening_deg": 24,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.1718668169826394,
+          "diagnostic_rank": 28,
+          "score_gap_to_scenario_rank1_dex": 0.06255428163822475,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 16,
+          "model_label": "m2p50_c17p5_a0p40_q2p75_i0p05",
+          "mass_factor": 2.5,
+          "envelope_size_exponent": 2.75,
+          "requested_half_opening_deg": 17.5,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.1727502701955353,
+          "diagnostic_rank": 29,
+          "score_gap_to_scenario_rank1_dex": 0.06343773485112066,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 13,
+          "model_label": "m2p25_c22p0_a0p40_q3p25_i0p05",
+          "mass_factor": 2.25,
+          "envelope_size_exponent": 3.25,
+          "requested_half_opening_deg": 22,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.1733241405929915,
+          "diagnostic_rank": 30,
+          "score_gap_to_scenario_rank1_dex": 0.06401160524857687,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 12,
+          "model_label": "m2p25_c20p0_a0p40_q3p25_i0p05",
+          "mass_factor": 2.25,
+          "envelope_size_exponent": 3.25,
+          "requested_half_opening_deg": 20,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.17439094794695864,
+          "diagnostic_rank": 31,
+          "score_gap_to_scenario_rank1_dex": 0.065078412602544,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 10,
+          "model_label": "m2p25_c15p0_a0p40_q3p25_i0p05",
+          "mass_factor": 2.25,
+          "envelope_size_exponent": 3.25,
+          "requested_half_opening_deg": 15,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.17502991945956461,
+          "diagnostic_rank": 32,
+          "score_gap_to_scenario_rank1_dex": 0.06571738411514998,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 11,
+          "model_label": "m2p25_c17p5_a0p40_q3p25_i0p05",
+          "mass_factor": 2.25,
+          "envelope_size_exponent": 3.25,
+          "requested_half_opening_deg": 17.5,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.17653596847328867,
+          "diagnostic_rank": 33,
+          "score_gap_to_scenario_rank1_dex": 0.06722343312887404,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 19,
+          "model_label": "m2p50_c24p0_a0p40_q2p75_i0p05",
+          "mass_factor": 2.5,
+          "envelope_size_exponent": 2.75,
+          "requested_half_opening_deg": 24,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.17728047775984015,
+          "diagnostic_rank": 34,
+          "score_gap_to_scenario_rank1_dex": 0.06796794241542552,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 37,
+          "model_label": "m2p75_c20p0_a0p40_q3p00_i0p05",
+          "mass_factor": 2.75,
+          "envelope_size_exponent": 3,
+          "requested_half_opening_deg": 20,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.191630144163313,
+          "diagnostic_rank": 35,
+          "score_gap_to_scenario_rank1_dex": 0.08231760881889837,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 38,
+          "model_label": "m2p75_c22p0_a0p40_q3p00_i0p05",
+          "mass_factor": 2.75,
+          "envelope_size_exponent": 3,
+          "requested_half_opening_deg": 22,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.1951222300347691,
+          "diagnostic_rank": 36,
+          "score_gap_to_scenario_rank1_dex": 0.08580969469035447,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 15,
+          "model_label": "m2p50_c15p0_a0p40_q2p75_i0p05",
+          "mass_factor": 2.5,
+          "envelope_size_exponent": 2.75,
+          "requested_half_opening_deg": 15,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.19517094186453207,
+          "diagnostic_rank": 37,
+          "score_gap_to_scenario_rank1_dex": 0.08585840652011743,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 36,
+          "model_label": "m2p75_c17p5_a0p40_q3p00_i0p05",
+          "mass_factor": 2.75,
+          "envelope_size_exponent": 3,
+          "requested_half_opening_deg": 17.5,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.20007006898882454,
+          "diagnostic_rank": 38,
+          "score_gap_to_scenario_rank1_dex": 0.0907575336444099,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 39,
+          "model_label": "m2p75_c24p0_a0p40_q3p00_i0p05",
+          "mass_factor": 2.75,
+          "envelope_size_exponent": 3,
+          "requested_half_opening_deg": 24,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.20435188414325278,
+          "diagnostic_rank": 39,
+          "score_gap_to_scenario_rank1_dex": 0.09503934879883814,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 35,
+          "model_label": "m2p75_c15p0_a0p40_q3p00_i0p05",
+          "mass_factor": 2.75,
+          "envelope_size_exponent": 3,
+          "requested_half_opening_deg": 15,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.2241298739418893,
+          "diagnostic_rank": 40,
+          "score_gap_to_scenario_rank1_dex": 0.11481733859747466,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 32,
+          "model_label": "m2p75_c20p0_a0p40_q2p75_i0p05",
+          "mass_factor": 2.75,
+          "envelope_size_exponent": 2.75,
+          "requested_half_opening_deg": 20,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.2532591226078467,
+          "diagnostic_rank": 41,
+          "score_gap_to_scenario_rank1_dex": 0.14394658726343207,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 33,
+          "model_label": "m2p75_c22p0_a0p40_q2p75_i0p05",
+          "mass_factor": 2.75,
+          "envelope_size_exponent": 2.75,
+          "requested_half_opening_deg": 22,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.25348429539071704,
+          "diagnostic_rank": 42,
+          "score_gap_to_scenario_rank1_dex": 0.1441717600463024,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 34,
+          "model_label": "m2p75_c24p0_a0p40_q2p75_i0p05",
+          "mass_factor": 2.75,
+          "envelope_size_exponent": 2.75,
+          "requested_half_opening_deg": 24,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.25555870283776394,
+          "diagnostic_rank": 43,
+          "score_gap_to_scenario_rank1_dex": 0.1462461674933493,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 31,
+          "model_label": "m2p75_c17p5_a0p40_q2p75_i0p05",
+          "mass_factor": 2.75,
+          "envelope_size_exponent": 2.75,
+          "requested_half_opening_deg": 17.5,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.2623475599910033,
+          "diagnostic_rank": 44,
+          "score_gap_to_scenario_rank1_dex": 0.15303502464658864,
+          "unresolved_with_scenario_rank1": false
+        },
+        {
+          "model_index": 30,
+          "model_label": "m2p75_c15p0_a0p40_q2p75_i0p05",
+          "mass_factor": 2.75,
+          "envelope_size_exponent": 2.75,
+          "requested_half_opening_deg": 15,
+          "fixed_normalization_region_balanced_log_rms_dex": 0.2970748664535748,
+          "diagnostic_rank": 45,
+          "score_gap_to_scenario_rank1_dex": 0.18776233110916013,
+          "unresolved_with_scenario_rank1": false
+        }
+      ],
+      "scenario_winners": [
+        {
+          "scenario": "primary",
+          "model_label": "m2p25_c17p5_a0p40_q2p75_i0p05",
+          "fixed_normalization_region_balanced_log_rms_dex": 0.10931253534441464
+        },
+        {
+          "scenario": "boundary_half",
+          "model_label": "m2p25_c20p0_a0p40_q2p75_i0p05",
+          "fixed_normalization_region_balanced_log_rms_dex": 0.10247335593397654
+        },
+        {
+          "scenario": "boundary_drop",
+          "model_label": "m2p25_c20p0_a0p40_q2p75_i0p05",
+          "fixed_normalization_region_balanced_log_rms_dex": 0.09462633797741919
+        }
+      ]
+    }
+  ],
+  "method2_distinct_physical_settings_count": 97,
+  "method2_union_parameters": [
+    "envelope_mass_factor",
+    "envelope_amax_um",
+    "grain_size_q",
+    "cavity_half_opening_deg"
+  ],
+  "method2_union_points": [
+    [
+      1.25,
+      0.1,
+      3.5,
+      20
+    ],
+    [
+      1.25,
+      0.2,
+      3.5,
+      20
+    ],
+    [
+      1.25,
+      0.35,
+      3.5,
+      20
+    ],
+    [
+      1.25,
+      0.5,
+      3.5,
+      20
+    ],
+    [
+      1.5,
+      0.1,
+      3.5,
+      20
+    ],
+    [
+      1.5,
+      0.2,
+      3.5,
+      20
+    ],
+    [
+      1.5,
+      0.35,
+      3.5,
+      20
+    ],
+    [
+      1.5,
+      0.5,
+      3.5,
+      20
+    ],
+    [
+      1.75,
+      0.1,
+      3.5,
+      20
+    ],
+    [
+      1.75,
+      0.2,
+      3.5,
+      20
+    ],
+    [
+      1.75,
+      0.35,
+      3.5,
+      20
+    ],
+    [
+      1.75,
+      0.5,
+      3.5,
+      20
+    ],
+    [
+      2,
+      0.1,
+      3.5,
+      20
+    ],
+    [
+      2,
+      0.2,
+      3.5,
+      20
+    ],
+    [
+      2,
+      0.35,
+      3.5,
+      20
+    ],
+    [
+      2,
+      0.4,
+      3.25,
+      20
+    ],
+    [
+      2,
+      0.4,
+      3.5,
+      20
+    ],
+    [
+      2,
+      0.4,
+      3.75,
+      20
+    ],
+    [
+      2,
+      0.4,
+      4,
+      20
+    ],
+    [
+      2,
+      0.5,
+      3.25,
+      20
+    ],
+    [
+      2,
+      0.5,
+      3.5,
+      20
+    ],
+    [
+      2,
+      0.5,
+      3.75,
+      20
+    ],
+    [
+      2,
+      0.5,
+      4,
+      20
+    ],
+    [
+      2,
+      0.6,
+      3.25,
+      20
+    ],
+    [
+      2,
+      0.6,
+      3.5,
+      20
+    ],
+    [
+      2,
+      0.6,
+      3.75,
+      20
+    ],
+    [
+      2,
+      0.6,
+      4,
+      20
+    ],
+    [
+      2,
+      0.7,
+      3.5,
+      20
+    ],
+    [
+      2.25,
+      0.4,
+      2.75,
+      15
+    ],
+    [
+      2.25,
+      0.4,
+      2.75,
+      17.5
+    ],
+    [
+      2.25,
+      0.4,
+      2.75,
+      20
+    ],
+    [
+      2.25,
+      0.4,
+      2.75,
+      22
+    ],
+    [
+      2.25,
+      0.4,
+      2.75,
+      24
+    ],
+    [
+      2.25,
+      0.4,
+      3,
+      15
+    ],
+    [
+      2.25,
+      0.4,
+      3,
+      17.5
+    ],
+    [
+      2.25,
+      0.4,
+      3,
+      20
+    ],
+    [
+      2.25,
+      0.4,
+      3,
+      22
+    ],
+    [
+      2.25,
+      0.4,
+      3,
+      24
+    ],
+    [
+      2.25,
+      0.4,
+      3.25,
+      15
+    ],
+    [
+      2.25,
+      0.4,
+      3.25,
+      17.5
+    ],
+    [
+      2.25,
+      0.4,
+      3.25,
+      20
+    ],
+    [
+      2.25,
+      0.4,
+      3.25,
+      22
+    ],
+    [
+      2.25,
+      0.4,
+      3.25,
+      24
+    ],
+    [
+      2.25,
+      0.4,
+      3.5,
+      20
+    ],
+    [
+      2.25,
+      0.4,
+      3.75,
+      20
+    ],
+    [
+      2.25,
+      0.4,
+      4,
+      20
+    ],
+    [
+      2.25,
+      0.5,
+      3.25,
+      20
+    ],
+    [
+      2.25,
+      0.5,
+      3.5,
+      20
+    ],
+    [
+      2.25,
+      0.5,
+      3.75,
+      20
+    ],
+    [
+      2.25,
+      0.5,
+      4,
+      20
+    ],
+    [
+      2.25,
+      0.6,
+      3.25,
+      20
+    ],
+    [
+      2.25,
+      0.6,
+      3.5,
+      20
+    ],
+    [
+      2.25,
+      0.6,
+      3.75,
+      20
+    ],
+    [
+      2.25,
+      0.6,
+      4,
+      20
+    ],
+    [
+      2.25,
+      0.7,
+      3.5,
+      20
+    ],
+    [
+      2.5,
+      0.4,
+      2.75,
+      15
+    ],
+    [
+      2.5,
+      0.4,
+      2.75,
+      17.5
+    ],
+    [
+      2.5,
+      0.4,
+      2.75,
+      20
+    ],
+    [
+      2.5,
+      0.4,
+      2.75,
+      22
+    ],
+    [
+      2.5,
+      0.4,
+      2.75,
+      24
+    ],
+    [
+      2.5,
+      0.4,
+      3,
+      15
+    ],
+    [
+      2.5,
+      0.4,
+      3,
+      17.5
+    ],
+    [
+      2.5,
+      0.4,
+      3,
+      20
+    ],
+    [
+      2.5,
+      0.4,
+      3,
+      22
+    ],
+    [
+      2.5,
+      0.4,
+      3,
+      24
+    ],
+    [
+      2.5,
+      0.4,
+      3.25,
+      15
+    ],
+    [
+      2.5,
+      0.4,
+      3.25,
+      17.5
+    ],
+    [
+      2.5,
+      0.4,
+      3.25,
+      20
+    ],
+    [
+      2.5,
+      0.4,
+      3.25,
+      22
+    ],
+    [
+      2.5,
+      0.4,
+      3.25,
+      24
+    ],
+    [
+      2.5,
+      0.4,
+      3.5,
+      20
+    ],
+    [
+      2.5,
+      0.4,
+      3.75,
+      20
+    ],
+    [
+      2.5,
+      0.4,
+      4,
+      20
+    ],
+    [
+      2.5,
+      0.5,
+      3.25,
+      20
+    ],
+    [
+      2.5,
+      0.5,
+      3.5,
+      20
+    ],
+    [
+      2.5,
+      0.5,
+      3.75,
+      20
+    ],
+    [
+      2.5,
+      0.5,
+      4,
+      20
+    ],
+    [
+      2.5,
+      0.6,
+      3.25,
+      20
+    ],
+    [
+      2.5,
+      0.6,
+      3.5,
+      20
+    ],
+    [
+      2.5,
+      0.6,
+      3.75,
+      20
+    ],
+    [
+      2.5,
+      0.6,
+      4,
+      20
+    ],
+    [
+      2.5,
+      0.7,
+      3.5,
+      20
+    ],
+    [
+      2.75,
+      0.4,
+      2.75,
+      15
+    ],
+    [
+      2.75,
+      0.4,
+      2.75,
+      17.5
+    ],
+    [
+      2.75,
+      0.4,
+      2.75,
+      20
+    ],
+    [
+      2.75,
+      0.4,
+      2.75,
+      22
+    ],
+    [
+      2.75,
+      0.4,
+      2.75,
+      24
+    ],
+    [
+      2.75,
+      0.4,
+      3,
+      15
+    ],
+    [
+      2.75,
+      0.4,
+      3,
+      17.5
+    ],
+    [
+      2.75,
+      0.4,
+      3,
+      20
+    ],
+    [
+      2.75,
+      0.4,
+      3,
+      22
+    ],
+    [
+      2.75,
+      0.4,
+      3,
+      24
+    ],
+    [
+      2.75,
+      0.4,
+      3.25,
+      15
+    ],
+    [
+      2.75,
+      0.4,
+      3.25,
+      17.5
+    ],
+    [
+      2.75,
+      0.4,
+      3.25,
+      20
+    ],
+    [
+      2.75,
+      0.4,
+      3.25,
+      22
+    ],
+    [
+      2.75,
+      0.4,
+      3.25,
+      24
+    ]
+  ],
+  "prepared_not_independently_ranked": [
+    {
+      "stage": "strict_continuum_cavity_mass_v1",
+      "logical_models": 15,
+      "axes": {
+        "mass_factor": [
+          2.25,
+          2.5,
+          2.75
+        ],
+        "cavity_half_opening_deg": [
+          15,
+          17.5,
+          20,
+          22,
+          24
+        ],
+        "q": [
+          3.25
+        ],
+        "amax_um": [
+          0.4
+        ]
+      },
+      "evidence": "A models.tsv and prepared workflow exist, but no local canonical score/summary bundle was located; all15 settings are contained in completed45-model cavity-mass-q grid. Do not count as15 additional completed independent fits.",
+      "source": {
+        "path": "runs/strict_continuum_cavity_mass_v1/models.tsv",
+        "sha256": "1bd11988f9914fb895af16370feeb18fc1cb83f08e846a42776c5becd8860cd2"
+      }
+    }
+  ],
+  "latest_continuum": {
+    "nominal_model": "m2p25_c17p5_a0p40_q2p75_i0p05",
+    "nominal_score_dex": 0.10931253534441464,
+    "mismatch_factor": 1.2862119355319586,
+    "runner_up_gap_dex": 0.0004482660089197149,
+    "near_tie_tolerance_dex": 0.010857927588208284,
+    "near_tie_primary_count": 8,
+    "prediction_source": {
+      "path": "output/strict_continuum_cavity_mass_q_source128k_uniform_v2_v1_predictions.ecsv",
+      "sha256": "a3b7201d627c336183deca111f81aefb2bac04860839d00cf748f5a03a73cf05"
+    },
+    "nominal_anchor_rows": [
+      {
+        "anchor_tag": "w001",
+        "region": "near_ir_short",
+        "wavelength_um": 1.2028117593024095,
+        "observed_flux_geometric_w_m2": 4.846842863764708e-16,
+        "observed_error_w_m2": 4.8502252543439655e-17,
+        "model_aperture_flux_147pc_w_m2": 3.986979930425907e-16,
+        "log10_observed_over_model_dex": 0.0848148904558065,
+        "diagnostic_standardized_log_residual": 2.047667942871625
+      },
+      {
+        "anchor_tag": "w002",
+        "region": "near_ir_short",
+        "wavelength_um": 1.4987957445436022,
+        "observed_flux_geometric_w_m2": 3.335035486575138e-15,
+        "observed_error_w_m2": 3.34104996675258e-16,
+        "model_aperture_flux_147pc_w_m2": 3.5044395598016625e-15,
+        "log10_observed_over_model_dex": -0.02151811481061023,
+        "diagnostic_standardized_log_residual": -0.5189604632651728
+      },
+      {
+        "anchor_tag": "w003",
+        "region": "near_ir_rise",
+        "wavelength_um": 1.7588530996181813,
+        "observed_flux_geometric_w_m2": 1.2698707089394036e-14,
+        "observed_error_w_m2": 1.2703766210852874e-15,
+        "model_aperture_flux_147pc_w_m2": 1.3643549126170578e-14,
+        "log10_observed_over_model_dex": -0.031167853190743784,
+        "diagnostic_standardized_log_residual": -0.7526937187058096
+      },
+      {
+        "anchor_tag": "w004",
+        "region": "near_ir_rise",
+        "wavelength_um": 2.1916659199557045,
+        "observed_flux_geometric_w_m2": 5.926135295233495e-14,
+        "observed_error_w_m2": 5.9280777357669656e-15,
+        "model_aperture_flux_147pc_w_m2": 5.478276186259099e-14,
+        "log10_observed_over_model_dex": 0.03412763897076408,
+        "diagnostic_standardized_log_residual": 0.8242270990004849
+      },
+      {
+        "anchor_tag": "w005",
+        "region": "near_ir_rise",
+        "wavelength_um": 2.546352514425122,
+        "observed_flux_geometric_w_m2": 1.4622737938338476e-13,
+        "observed_error_w_m2": 1.4628355758428443e-14,
+        "model_aperture_flux_147pc_w_m2": 1.0000051637809395e-13,
+        "log10_observed_over_model_dex": 0.1650264542521452,
+        "diagnostic_standardized_log_residual": 3.9853902673505477
+      },
+      {
+        "anchor_tag": "w006",
+        "region": "window_3p9",
+        "wavelength_um": 3.9143995604061015,
+        "observed_flux_geometric_w_m2": 3.608337402571153e-13,
+        "observed_error_w_m2": 3.6107865788022955e-14,
+        "model_aperture_flux_147pc_w_m2": 3.020573317693212e-13,
+        "log10_observed_over_model_dex": 0.07721775834864121,
+        "diagnostic_standardized_log_residual": 1.8642859291332952
+      },
+      {
+        "anchor_tag": "w007",
+        "region": "window_5p4",
+        "wavelength_um": 5.3906283153397085,
+        "observed_flux_geometric_w_m2": 7.740375860447664e-13,
+        "observed_error_w_m2": 1.1612386529998204e-13,
+        "model_aperture_flux_147pc_w_m2": 4.86783819567324e-13,
+        "log10_observed_over_model_dex": 0.2014259157675696,
+        "diagnostic_standardized_log_residual": 3.318016056791019
+      },
+      {
+        "anchor_tag": "w008",
+        "region": "window_13p8",
+        "wavelength_um": 13.799908320389276,
+        "observed_flux_geometric_w_m2": 4.92193029273742e-13,
+        "observed_error_w_m2": 7.383514420672641e-14,
+        "model_aperture_flux_147pc_w_m2": 6.247070456756132e-13,
+        "log10_observed_over_model_dex": -0.10354094542913948,
+        "diagnostic_standardized_log_residual": -1.7057088681158952
+      },
+      {
+        "anchor_tag": "w009",
+        "region": "window_27p5",
+        "wavelength_um": 27.513091575690556,
+        "observed_flux_geometric_w_m2": 8.554790458177973e-13,
+        "observed_error_w_m2": 1.2840794870002625e-13,
+        "model_aperture_flux_147pc_w_m2": 9.138393090386366e-13,
+        "log10_observed_over_model_dex": -0.028660459054516852,
+        "diagnostic_standardized_log_residual": -0.47188706674241093
+      }
+    ],
+    "all_scenario_rows": [
+      {
+        "model_index": 1,
+        "model_label": "m2p25_c17p5_a0p40_q2p75_i0p05",
+        "mass_factor": 2.25,
+        "envelope_size_exponent": 2.75,
+        "requested_half_opening_deg": 17.5,
+        "emptied_polar_center_rows": 3,
+        "scenario": "primary",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.10931253534441464,
+        "diagnostic_rank": 1,
+        "score_gap_to_scenario_rank1_dex": 0,
+        "unresolved_with_scenario_rank1": true
+      },
+      {
+        "model_index": 2,
+        "model_label": "m2p25_c20p0_a0p40_q2p75_i0p05",
+        "mass_factor": 2.25,
+        "envelope_size_exponent": 2.75,
+        "requested_half_opening_deg": 20,
+        "emptied_polar_center_rows": 4,
+        "scenario": "primary",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.10976080135333435,
+        "diagnostic_rank": 2,
+        "score_gap_to_scenario_rank1_dex": 0.0004482660089197149,
+        "unresolved_with_scenario_rank1": true
+      },
+      {
+        "model_index": 26,
+        "model_label": "m2p50_c17p5_a0p40_q3p25_i0p05",
+        "mass_factor": 2.5,
+        "envelope_size_exponent": 3.25,
+        "requested_half_opening_deg": 17.5,
+        "emptied_polar_center_rows": 3,
+        "scenario": "primary",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.11302652383949478,
+        "diagnostic_rank": 3,
+        "score_gap_to_scenario_rank1_dex": 0.003713988495080145,
+        "unresolved_with_scenario_rank1": true
+      },
+      {
+        "model_index": 3,
+        "model_label": "m2p25_c22p0_a0p40_q2p75_i0p05",
+        "mass_factor": 2.25,
+        "envelope_size_exponent": 2.75,
+        "requested_half_opening_deg": 22,
+        "emptied_polar_center_rows": 5,
+        "scenario": "primary",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.11368255413139196,
+        "diagnostic_rank": 4,
+        "score_gap_to_scenario_rank1_dex": 0.00437001878697732,
+        "unresolved_with_scenario_rank1": true
+      },
+      {
+        "model_index": 25,
+        "model_label": "m2p50_c15p0_a0p40_q3p25_i0p05",
+        "mass_factor": 2.5,
+        "envelope_size_exponent": 3.25,
+        "requested_half_opening_deg": 15,
+        "emptied_polar_center_rows": 2,
+        "scenario": "primary",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.11678779218639507,
+        "diagnostic_rank": 5,
+        "score_gap_to_scenario_rank1_dex": 0.007475256841980429,
+        "unresolved_with_scenario_rank1": true
+      },
+      {
+        "model_index": 27,
+        "model_label": "m2p50_c20p0_a0p40_q3p25_i0p05",
+        "mass_factor": 2.5,
+        "envelope_size_exponent": 3.25,
+        "requested_half_opening_deg": 20,
+        "emptied_polar_center_rows": 4,
+        "scenario": "primary",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.11685272495667375,
+        "diagnostic_rank": 6,
+        "score_gap_to_scenario_rank1_dex": 0.007540189612259107,
+        "unresolved_with_scenario_rank1": true
+      },
+      {
+        "model_index": 5,
+        "model_label": "m2p25_c15p0_a0p40_q3p00_i0p05",
+        "mass_factor": 2.25,
+        "envelope_size_exponent": 3,
+        "requested_half_opening_deg": 15,
+        "emptied_polar_center_rows": 2,
+        "scenario": "primary",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.11849741375140876,
+        "diagnostic_rank": 7,
+        "score_gap_to_scenario_rank1_dex": 0.009184878406994126,
+        "unresolved_with_scenario_rank1": true
+      },
+      {
+        "model_index": 0,
+        "model_label": "m2p25_c15p0_a0p40_q2p75_i0p05",
+        "mass_factor": 2.25,
+        "envelope_size_exponent": 2.75,
+        "requested_half_opening_deg": 15,
+        "emptied_polar_center_rows": 2,
+        "scenario": "primary",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.12010072535969984,
+        "diagnostic_rank": 8,
+        "score_gap_to_scenario_rank1_dex": 0.010788190015285207,
+        "unresolved_with_scenario_rank1": true
+      },
+      {
+        "model_index": 6,
+        "model_label": "m2p25_c17p5_a0p40_q3p00_i0p05",
+        "mass_factor": 2.25,
+        "envelope_size_exponent": 3,
+        "requested_half_opening_deg": 17.5,
+        "emptied_polar_center_rows": 3,
+        "scenario": "primary",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.12043552751815001,
+        "diagnostic_rank": 9,
+        "score_gap_to_scenario_rank1_dex": 0.011122992173735372,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 28,
+        "model_label": "m2p50_c22p0_a0p40_q3p25_i0p05",
+        "mass_factor": 2.5,
+        "envelope_size_exponent": 3.25,
+        "requested_half_opening_deg": 22,
+        "emptied_polar_center_rows": 5,
+        "scenario": "primary",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.12280408333154184,
+        "diagnostic_rank": 10,
+        "score_gap_to_scenario_rank1_dex": 0.013491547987127206,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 21,
+        "model_label": "m2p50_c17p5_a0p40_q3p00_i0p05",
+        "mass_factor": 2.5,
+        "envelope_size_exponent": 3,
+        "requested_half_opening_deg": 17.5,
+        "emptied_polar_center_rows": 3,
+        "scenario": "primary",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.12369463769032547,
+        "diagnostic_rank": 11,
+        "score_gap_to_scenario_rank1_dex": 0.014382102345910835,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 7,
+        "model_label": "m2p25_c20p0_a0p40_q3p00_i0p05",
+        "mass_factor": 2.25,
+        "envelope_size_exponent": 3,
+        "requested_half_opening_deg": 20,
+        "emptied_polar_center_rows": 4,
+        "scenario": "primary",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.12383375493894959,
+        "diagnostic_rank": 12,
+        "score_gap_to_scenario_rank1_dex": 0.014521219594534951,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 22,
+        "model_label": "m2p50_c20p0_a0p40_q3p00_i0p05",
+        "mass_factor": 2.5,
+        "envelope_size_exponent": 3,
+        "requested_half_opening_deg": 20,
+        "emptied_polar_center_rows": 4,
+        "scenario": "primary",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.12443608415323677,
+        "diagnostic_rank": 13,
+        "score_gap_to_scenario_rank1_dex": 0.015123548808822135,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 4,
+        "model_label": "m2p25_c24p0_a0p40_q2p75_i0p05",
+        "mass_factor": 2.25,
+        "envelope_size_exponent": 2.75,
+        "requested_half_opening_deg": 24,
+        "emptied_polar_center_rows": 6,
+        "scenario": "primary",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.12464307334354831,
+        "diagnostic_rank": 14,
+        "score_gap_to_scenario_rank1_dex": 0.01533053799913367,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 8,
+        "model_label": "m2p25_c22p0_a0p40_q3p00_i0p05",
+        "mass_factor": 2.25,
+        "envelope_size_exponent": 3,
+        "requested_half_opening_deg": 22,
+        "emptied_polar_center_rows": 5,
+        "scenario": "primary",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.12560843782679146,
+        "diagnostic_rank": 15,
+        "score_gap_to_scenario_rank1_dex": 0.01629590248237682,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 29,
+        "model_label": "m2p50_c24p0_a0p40_q3p25_i0p05",
+        "mass_factor": 2.5,
+        "envelope_size_exponent": 3.25,
+        "requested_half_opening_deg": 24,
+        "emptied_polar_center_rows": 6,
+        "scenario": "primary",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.12933584612458213,
+        "diagnostic_rank": 16,
+        "score_gap_to_scenario_rank1_dex": 0.02002331078016749,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 23,
+        "model_label": "m2p50_c22p0_a0p40_q3p00_i0p05",
+        "mass_factor": 2.5,
+        "envelope_size_exponent": 3,
+        "requested_half_opening_deg": 22,
+        "emptied_polar_center_rows": 5,
+        "scenario": "primary",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.1299293985700503,
+        "diagnostic_rank": 17,
+        "score_gap_to_scenario_rank1_dex": 0.020616863225635648,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 9,
+        "model_label": "m2p25_c24p0_a0p40_q3p00_i0p05",
+        "mass_factor": 2.25,
+        "envelope_size_exponent": 3,
+        "requested_half_opening_deg": 24,
+        "emptied_polar_center_rows": 6,
+        "scenario": "primary",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.13029550633971054,
+        "diagnostic_rank": 18,
+        "score_gap_to_scenario_rank1_dex": 0.020982970995295905,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 42,
+        "model_label": "m2p75_c20p0_a0p40_q3p25_i0p05",
+        "mass_factor": 2.75,
+        "envelope_size_exponent": 3.25,
+        "requested_half_opening_deg": 20,
+        "emptied_polar_center_rows": 4,
+        "scenario": "primary",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.13580545487627838,
+        "diagnostic_rank": 19,
+        "score_gap_to_scenario_rank1_dex": 0.026492919531863737,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 20,
+        "model_label": "m2p50_c15p0_a0p40_q3p00_i0p05",
+        "mass_factor": 2.5,
+        "envelope_size_exponent": 3,
+        "requested_half_opening_deg": 15,
+        "emptied_polar_center_rows": 2,
+        "scenario": "primary",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.13897361420256835,
+        "diagnostic_rank": 20,
+        "score_gap_to_scenario_rank1_dex": 0.029661078858153708,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 41,
+        "model_label": "m2p75_c17p5_a0p40_q3p25_i0p05",
+        "mass_factor": 2.75,
+        "envelope_size_exponent": 3.25,
+        "requested_half_opening_deg": 17.5,
+        "emptied_polar_center_rows": 3,
+        "scenario": "primary",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.14109463607050754,
+        "diagnostic_rank": 21,
+        "score_gap_to_scenario_rank1_dex": 0.0317821007260929,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 24,
+        "model_label": "m2p50_c24p0_a0p40_q3p00_i0p05",
+        "mass_factor": 2.5,
+        "envelope_size_exponent": 3,
+        "requested_half_opening_deg": 24,
+        "emptied_polar_center_rows": 6,
+        "scenario": "primary",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.14142335360425817,
+        "diagnostic_rank": 22,
+        "score_gap_to_scenario_rank1_dex": 0.032110818259843535,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 43,
+        "model_label": "m2p75_c22p0_a0p40_q3p25_i0p05",
+        "mass_factor": 2.75,
+        "envelope_size_exponent": 3.25,
+        "requested_half_opening_deg": 22,
+        "emptied_polar_center_rows": 5,
+        "scenario": "primary",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.14604713430083482,
+        "diagnostic_rank": 23,
+        "score_gap_to_scenario_rank1_dex": 0.036734598956420186,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 40,
+        "model_label": "m2p75_c15p0_a0p40_q3p25_i0p05",
+        "mass_factor": 2.75,
+        "envelope_size_exponent": 3.25,
+        "requested_half_opening_deg": 15,
+        "emptied_polar_center_rows": 2,
+        "scenario": "primary",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.15148549915168535,
+        "diagnostic_rank": 24,
+        "score_gap_to_scenario_rank1_dex": 0.042172963807270716,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 44,
+        "model_label": "m2p75_c24p0_a0p40_q3p25_i0p05",
+        "mass_factor": 2.75,
+        "envelope_size_exponent": 3.25,
+        "requested_half_opening_deg": 24,
+        "emptied_polar_center_rows": 6,
+        "scenario": "primary",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.15457348423867262,
+        "diagnostic_rank": 25,
+        "score_gap_to_scenario_rank1_dex": 0.04526094889425798,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 17,
+        "model_label": "m2p50_c20p0_a0p40_q2p75_i0p05",
+        "mass_factor": 2.5,
+        "envelope_size_exponent": 2.75,
+        "requested_half_opening_deg": 20,
+        "emptied_polar_center_rows": 4,
+        "scenario": "primary",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.16797663036685398,
+        "diagnostic_rank": 26,
+        "score_gap_to_scenario_rank1_dex": 0.05866409502243934,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 18,
+        "model_label": "m2p50_c22p0_a0p40_q2p75_i0p05",
+        "mass_factor": 2.5,
+        "envelope_size_exponent": 2.75,
+        "requested_half_opening_deg": 22,
+        "emptied_polar_center_rows": 5,
+        "scenario": "primary",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.17023973958680808,
+        "diagnostic_rank": 27,
+        "score_gap_to_scenario_rank1_dex": 0.06092720424239344,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 14,
+        "model_label": "m2p25_c24p0_a0p40_q3p25_i0p05",
+        "mass_factor": 2.25,
+        "envelope_size_exponent": 3.25,
+        "requested_half_opening_deg": 24,
+        "emptied_polar_center_rows": 6,
+        "scenario": "primary",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.1718668169826394,
+        "diagnostic_rank": 28,
+        "score_gap_to_scenario_rank1_dex": 0.06255428163822475,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 16,
+        "model_label": "m2p50_c17p5_a0p40_q2p75_i0p05",
+        "mass_factor": 2.5,
+        "envelope_size_exponent": 2.75,
+        "requested_half_opening_deg": 17.5,
+        "emptied_polar_center_rows": 3,
+        "scenario": "primary",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.1727502701955353,
+        "diagnostic_rank": 29,
+        "score_gap_to_scenario_rank1_dex": 0.06343773485112066,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 13,
+        "model_label": "m2p25_c22p0_a0p40_q3p25_i0p05",
+        "mass_factor": 2.25,
+        "envelope_size_exponent": 3.25,
+        "requested_half_opening_deg": 22,
+        "emptied_polar_center_rows": 5,
+        "scenario": "primary",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.1733241405929915,
+        "diagnostic_rank": 30,
+        "score_gap_to_scenario_rank1_dex": 0.06401160524857687,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 12,
+        "model_label": "m2p25_c20p0_a0p40_q3p25_i0p05",
+        "mass_factor": 2.25,
+        "envelope_size_exponent": 3.25,
+        "requested_half_opening_deg": 20,
+        "emptied_polar_center_rows": 4,
+        "scenario": "primary",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.17439094794695864,
+        "diagnostic_rank": 31,
+        "score_gap_to_scenario_rank1_dex": 0.065078412602544,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 10,
+        "model_label": "m2p25_c15p0_a0p40_q3p25_i0p05",
+        "mass_factor": 2.25,
+        "envelope_size_exponent": 3.25,
+        "requested_half_opening_deg": 15,
+        "emptied_polar_center_rows": 2,
+        "scenario": "primary",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.17502991945956461,
+        "diagnostic_rank": 32,
+        "score_gap_to_scenario_rank1_dex": 0.06571738411514998,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 11,
+        "model_label": "m2p25_c17p5_a0p40_q3p25_i0p05",
+        "mass_factor": 2.25,
+        "envelope_size_exponent": 3.25,
+        "requested_half_opening_deg": 17.5,
+        "emptied_polar_center_rows": 3,
+        "scenario": "primary",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.17653596847328867,
+        "diagnostic_rank": 33,
+        "score_gap_to_scenario_rank1_dex": 0.06722343312887404,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 19,
+        "model_label": "m2p50_c24p0_a0p40_q2p75_i0p05",
+        "mass_factor": 2.5,
+        "envelope_size_exponent": 2.75,
+        "requested_half_opening_deg": 24,
+        "emptied_polar_center_rows": 6,
+        "scenario": "primary",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.17728047775984015,
+        "diagnostic_rank": 34,
+        "score_gap_to_scenario_rank1_dex": 0.06796794241542552,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 37,
+        "model_label": "m2p75_c20p0_a0p40_q3p00_i0p05",
+        "mass_factor": 2.75,
+        "envelope_size_exponent": 3,
+        "requested_half_opening_deg": 20,
+        "emptied_polar_center_rows": 4,
+        "scenario": "primary",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.191630144163313,
+        "diagnostic_rank": 35,
+        "score_gap_to_scenario_rank1_dex": 0.08231760881889837,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 38,
+        "model_label": "m2p75_c22p0_a0p40_q3p00_i0p05",
+        "mass_factor": 2.75,
+        "envelope_size_exponent": 3,
+        "requested_half_opening_deg": 22,
+        "emptied_polar_center_rows": 5,
+        "scenario": "primary",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.1951222300347691,
+        "diagnostic_rank": 36,
+        "score_gap_to_scenario_rank1_dex": 0.08580969469035447,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 15,
+        "model_label": "m2p50_c15p0_a0p40_q2p75_i0p05",
+        "mass_factor": 2.5,
+        "envelope_size_exponent": 2.75,
+        "requested_half_opening_deg": 15,
+        "emptied_polar_center_rows": 2,
+        "scenario": "primary",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.19517094186453207,
+        "diagnostic_rank": 37,
+        "score_gap_to_scenario_rank1_dex": 0.08585840652011743,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 36,
+        "model_label": "m2p75_c17p5_a0p40_q3p00_i0p05",
+        "mass_factor": 2.75,
+        "envelope_size_exponent": 3,
+        "requested_half_opening_deg": 17.5,
+        "emptied_polar_center_rows": 3,
+        "scenario": "primary",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.20007006898882454,
+        "diagnostic_rank": 38,
+        "score_gap_to_scenario_rank1_dex": 0.0907575336444099,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 39,
+        "model_label": "m2p75_c24p0_a0p40_q3p00_i0p05",
+        "mass_factor": 2.75,
+        "envelope_size_exponent": 3,
+        "requested_half_opening_deg": 24,
+        "emptied_polar_center_rows": 6,
+        "scenario": "primary",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.20435188414325278,
+        "diagnostic_rank": 39,
+        "score_gap_to_scenario_rank1_dex": 0.09503934879883814,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 35,
+        "model_label": "m2p75_c15p0_a0p40_q3p00_i0p05",
+        "mass_factor": 2.75,
+        "envelope_size_exponent": 3,
+        "requested_half_opening_deg": 15,
+        "emptied_polar_center_rows": 2,
+        "scenario": "primary",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.2241298739418893,
+        "diagnostic_rank": 40,
+        "score_gap_to_scenario_rank1_dex": 0.11481733859747466,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 32,
+        "model_label": "m2p75_c20p0_a0p40_q2p75_i0p05",
+        "mass_factor": 2.75,
+        "envelope_size_exponent": 2.75,
+        "requested_half_opening_deg": 20,
+        "emptied_polar_center_rows": 4,
+        "scenario": "primary",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.2532591226078467,
+        "diagnostic_rank": 41,
+        "score_gap_to_scenario_rank1_dex": 0.14394658726343207,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 33,
+        "model_label": "m2p75_c22p0_a0p40_q2p75_i0p05",
+        "mass_factor": 2.75,
+        "envelope_size_exponent": 2.75,
+        "requested_half_opening_deg": 22,
+        "emptied_polar_center_rows": 5,
+        "scenario": "primary",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.25348429539071704,
+        "diagnostic_rank": 42,
+        "score_gap_to_scenario_rank1_dex": 0.1441717600463024,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 34,
+        "model_label": "m2p75_c24p0_a0p40_q2p75_i0p05",
+        "mass_factor": 2.75,
+        "envelope_size_exponent": 2.75,
+        "requested_half_opening_deg": 24,
+        "emptied_polar_center_rows": 6,
+        "scenario": "primary",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.25555870283776394,
+        "diagnostic_rank": 43,
+        "score_gap_to_scenario_rank1_dex": 0.1462461674933493,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 31,
+        "model_label": "m2p75_c17p5_a0p40_q2p75_i0p05",
+        "mass_factor": 2.75,
+        "envelope_size_exponent": 2.75,
+        "requested_half_opening_deg": 17.5,
+        "emptied_polar_center_rows": 3,
+        "scenario": "primary",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.2623475599910033,
+        "diagnostic_rank": 44,
+        "score_gap_to_scenario_rank1_dex": 0.15303502464658864,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 30,
+        "model_label": "m2p75_c15p0_a0p40_q2p75_i0p05",
+        "mass_factor": 2.75,
+        "envelope_size_exponent": 2.75,
+        "requested_half_opening_deg": 15,
+        "emptied_polar_center_rows": 2,
+        "scenario": "primary",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.2970748664535748,
+        "diagnostic_rank": 45,
+        "score_gap_to_scenario_rank1_dex": 0.18776233110916013,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 2,
+        "model_label": "m2p25_c20p0_a0p40_q2p75_i0p05",
+        "mass_factor": 2.25,
+        "envelope_size_exponent": 2.75,
+        "requested_half_opening_deg": 20,
+        "emptied_polar_center_rows": 4,
+        "scenario": "boundary_half",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.10247335593397654,
+        "diagnostic_rank": 1,
+        "score_gap_to_scenario_rank1_dex": 0,
+        "unresolved_with_scenario_rank1": true
+      },
+      {
+        "model_index": 1,
+        "model_label": "m2p25_c17p5_a0p40_q2p75_i0p05",
+        "mass_factor": 2.25,
+        "envelope_size_exponent": 2.75,
+        "requested_half_opening_deg": 17.5,
+        "emptied_polar_center_rows": 3,
+        "scenario": "boundary_half",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.1034207716868674,
+        "diagnostic_rank": 2,
+        "score_gap_to_scenario_rank1_dex": 0.0009474157528908678,
+        "unresolved_with_scenario_rank1": true
+      },
+      {
+        "model_index": 3,
+        "model_label": "m2p25_c22p0_a0p40_q2p75_i0p05",
+        "mass_factor": 2.25,
+        "envelope_size_exponent": 2.75,
+        "requested_half_opening_deg": 22,
+        "emptied_polar_center_rows": 5,
+        "scenario": "boundary_half",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.10522064014583925,
+        "diagnostic_rank": 3,
+        "score_gap_to_scenario_rank1_dex": 0.0027472842118627105,
+        "unresolved_with_scenario_rank1": true
+      },
+      {
+        "model_index": 26,
+        "model_label": "m2p50_c17p5_a0p40_q3p25_i0p05",
+        "mass_factor": 2.5,
+        "envelope_size_exponent": 3.25,
+        "requested_half_opening_deg": 17.5,
+        "emptied_polar_center_rows": 3,
+        "scenario": "boundary_half",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.10747084247881038,
+        "diagnostic_rank": 4,
+        "score_gap_to_scenario_rank1_dex": 0.00499748654483384,
+        "unresolved_with_scenario_rank1": true
+      },
+      {
+        "model_index": 27,
+        "model_label": "m2p50_c20p0_a0p40_q3p25_i0p05",
+        "mass_factor": 2.5,
+        "envelope_size_exponent": 3.25,
+        "requested_half_opening_deg": 20,
+        "emptied_polar_center_rows": 4,
+        "scenario": "boundary_half",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.10985059830313978,
+        "diagnostic_rank": 5,
+        "score_gap_to_scenario_rank1_dex": 0.007377242369163248,
+        "unresolved_with_scenario_rank1": true
+      },
+      {
+        "model_index": 25,
+        "model_label": "m2p50_c15p0_a0p40_q3p25_i0p05",
+        "mass_factor": 2.5,
+        "envelope_size_exponent": 3.25,
+        "requested_half_opening_deg": 15,
+        "emptied_polar_center_rows": 2,
+        "scenario": "boundary_half",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.112432798563466,
+        "diagnostic_rank": 6,
+        "score_gap_to_scenario_rank1_dex": 0.00995944262948946,
+        "unresolved_with_scenario_rank1": true
+      },
+      {
+        "model_index": 22,
+        "model_label": "m2p50_c20p0_a0p40_q3p00_i0p05",
+        "mass_factor": 2.5,
+        "envelope_size_exponent": 3,
+        "requested_half_opening_deg": 20,
+        "emptied_polar_center_rows": 4,
+        "scenario": "boundary_half",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.11383833059618312,
+        "diagnostic_rank": 7,
+        "score_gap_to_scenario_rank1_dex": 0.011364974662206581,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 28,
+        "model_label": "m2p50_c22p0_a0p40_q3p25_i0p05",
+        "mass_factor": 2.5,
+        "envelope_size_exponent": 3.25,
+        "requested_half_opening_deg": 22,
+        "emptied_polar_center_rows": 5,
+        "scenario": "boundary_half",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.11444737826070184,
+        "diagnostic_rank": 8,
+        "score_gap_to_scenario_rank1_dex": 0.0119740223267253,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 4,
+        "model_label": "m2p25_c24p0_a0p40_q2p75_i0p05",
+        "mass_factor": 2.25,
+        "envelope_size_exponent": 2.75,
+        "requested_half_opening_deg": 24,
+        "emptied_polar_center_rows": 6,
+        "scenario": "boundary_half",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.11474032448225345,
+        "diagnostic_rank": 9,
+        "score_gap_to_scenario_rank1_dex": 0.012266968548276913,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 21,
+        "model_label": "m2p50_c17p5_a0p40_q3p00_i0p05",
+        "mass_factor": 2.5,
+        "envelope_size_exponent": 3,
+        "requested_half_opening_deg": 17.5,
+        "emptied_polar_center_rows": 3,
+        "scenario": "boundary_half",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.11528194166255444,
+        "diagnostic_rank": 10,
+        "score_gap_to_scenario_rank1_dex": 0.012808585728577904,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 0,
+        "model_label": "m2p25_c15p0_a0p40_q2p75_i0p05",
+        "mass_factor": 2.25,
+        "envelope_size_exponent": 2.75,
+        "requested_half_opening_deg": 15,
+        "emptied_polar_center_rows": 2,
+        "scenario": "boundary_half",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.11584842790582617,
+        "diagnostic_rank": 11,
+        "score_gap_to_scenario_rank1_dex": 0.01337507197184963,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 5,
+        "model_label": "m2p25_c15p0_a0p40_q3p00_i0p05",
+        "mass_factor": 2.25,
+        "envelope_size_exponent": 3,
+        "requested_half_opening_deg": 15,
+        "emptied_polar_center_rows": 2,
+        "scenario": "boundary_half",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.11640905005474612,
+        "diagnostic_rank": 12,
+        "score_gap_to_scenario_rank1_dex": 0.013935694120769587,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 6,
+        "model_label": "m2p25_c17p5_a0p40_q3p00_i0p05",
+        "mass_factor": 2.25,
+        "envelope_size_exponent": 3,
+        "requested_half_opening_deg": 17.5,
+        "emptied_polar_center_rows": 3,
+        "scenario": "boundary_half",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.11754916804699408,
+        "diagnostic_rank": 13,
+        "score_gap_to_scenario_rank1_dex": 0.015075812113017548,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 23,
+        "model_label": "m2p50_c22p0_a0p40_q3p00_i0p05",
+        "mass_factor": 2.5,
+        "envelope_size_exponent": 3,
+        "requested_half_opening_deg": 22,
+        "emptied_polar_center_rows": 5,
+        "scenario": "boundary_half",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.11805282011462845,
+        "diagnostic_rank": 14,
+        "score_gap_to_scenario_rank1_dex": 0.015579464180651911,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 7,
+        "model_label": "m2p25_c20p0_a0p40_q3p00_i0p05",
+        "mass_factor": 2.25,
+        "envelope_size_exponent": 3,
+        "requested_half_opening_deg": 20,
+        "emptied_polar_center_rows": 4,
+        "scenario": "boundary_half",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.11985982881226799,
+        "diagnostic_rank": 15,
+        "score_gap_to_scenario_rank1_dex": 0.017386472878291453,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 29,
+        "model_label": "m2p50_c24p0_a0p40_q3p25_i0p05",
+        "mass_factor": 2.5,
+        "envelope_size_exponent": 3.25,
+        "requested_half_opening_deg": 24,
+        "emptied_polar_center_rows": 6,
+        "scenario": "boundary_half",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.12008892221693267,
+        "diagnostic_rank": 16,
+        "score_gap_to_scenario_rank1_dex": 0.01761556628295613,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 8,
+        "model_label": "m2p25_c22p0_a0p40_q3p00_i0p05",
+        "mass_factor": 2.25,
+        "envelope_size_exponent": 3,
+        "requested_half_opening_deg": 22,
+        "emptied_polar_center_rows": 5,
+        "scenario": "boundary_half",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.12076594232018759,
+        "diagnostic_rank": 17,
+        "score_gap_to_scenario_rank1_dex": 0.01829258638621105,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 42,
+        "model_label": "m2p75_c20p0_a0p40_q3p25_i0p05",
+        "mass_factor": 2.75,
+        "envelope_size_exponent": 3.25,
+        "requested_half_opening_deg": 20,
+        "emptied_polar_center_rows": 4,
+        "scenario": "boundary_half",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.12347719643221981,
+        "diagnostic_rank": 18,
+        "score_gap_to_scenario_rank1_dex": 0.021003840498243276,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 9,
+        "model_label": "m2p25_c24p0_a0p40_q3p00_i0p05",
+        "mass_factor": 2.25,
+        "envelope_size_exponent": 3,
+        "requested_half_opening_deg": 24,
+        "emptied_polar_center_rows": 6,
+        "scenario": "boundary_half",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.12446449217097993,
+        "diagnostic_rank": 19,
+        "score_gap_to_scenario_rank1_dex": 0.021991136237003397,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 24,
+        "model_label": "m2p50_c24p0_a0p40_q3p00_i0p05",
+        "mass_factor": 2.5,
+        "envelope_size_exponent": 3,
+        "requested_half_opening_deg": 24,
+        "emptied_polar_center_rows": 6,
+        "scenario": "boundary_half",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.12851679813187789,
+        "diagnostic_rank": 20,
+        "score_gap_to_scenario_rank1_dex": 0.026043442197901348,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 41,
+        "model_label": "m2p75_c17p5_a0p40_q3p25_i0p05",
+        "mass_factor": 2.75,
+        "envelope_size_exponent": 3.25,
+        "requested_half_opening_deg": 17.5,
+        "emptied_polar_center_rows": 3,
+        "scenario": "boundary_half",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.13076171326410954,
+        "diagnostic_rank": 21,
+        "score_gap_to_scenario_rank1_dex": 0.028288357330133004,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 43,
+        "model_label": "m2p75_c22p0_a0p40_q3p25_i0p05",
+        "mass_factor": 2.75,
+        "envelope_size_exponent": 3.25,
+        "requested_half_opening_deg": 22,
+        "emptied_polar_center_rows": 5,
+        "scenario": "boundary_half",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.13154392630002654,
+        "diagnostic_rank": 22,
+        "score_gap_to_scenario_rank1_dex": 0.02907057036605,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 20,
+        "model_label": "m2p50_c15p0_a0p40_q3p00_i0p05",
+        "mass_factor": 2.5,
+        "envelope_size_exponent": 3,
+        "requested_half_opening_deg": 15,
+        "emptied_polar_center_rows": 2,
+        "scenario": "boundary_half",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.13267985654376224,
+        "diagnostic_rank": 23,
+        "score_gap_to_scenario_rank1_dex": 0.030206500609785705,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 44,
+        "model_label": "m2p75_c24p0_a0p40_q3p25_i0p05",
+        "mass_factor": 2.75,
+        "envelope_size_exponent": 3.25,
+        "requested_half_opening_deg": 24,
+        "emptied_polar_center_rows": 6,
+        "scenario": "boundary_half",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.13963225250169337,
+        "diagnostic_rank": 24,
+        "score_gap_to_scenario_rank1_dex": 0.03715889656771683,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 40,
+        "model_label": "m2p75_c15p0_a0p40_q3p25_i0p05",
+        "mass_factor": 2.75,
+        "envelope_size_exponent": 3.25,
+        "requested_half_opening_deg": 15,
+        "emptied_polar_center_rows": 2,
+        "scenario": "boundary_half",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.1437086135643106,
+        "diagnostic_rank": 25,
+        "score_gap_to_scenario_rank1_dex": 0.041235257630334074,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 17,
+        "model_label": "m2p50_c20p0_a0p40_q2p75_i0p05",
+        "mass_factor": 2.5,
+        "envelope_size_exponent": 2.75,
+        "requested_half_opening_deg": 20,
+        "emptied_polar_center_rows": 4,
+        "scenario": "boundary_half",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.15673218572509973,
+        "diagnostic_rank": 26,
+        "score_gap_to_scenario_rank1_dex": 0.05425882979112319,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 18,
+        "model_label": "m2p50_c22p0_a0p40_q2p75_i0p05",
+        "mass_factor": 2.5,
+        "envelope_size_exponent": 2.75,
+        "requested_half_opening_deg": 22,
+        "emptied_polar_center_rows": 5,
+        "scenario": "boundary_half",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.15705342050668658,
+        "diagnostic_rank": 27,
+        "score_gap_to_scenario_rank1_dex": 0.054580064572710044,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 19,
+        "model_label": "m2p50_c24p0_a0p40_q2p75_i0p05",
+        "mass_factor": 2.5,
+        "envelope_size_exponent": 2.75,
+        "requested_half_opening_deg": 24,
+        "emptied_polar_center_rows": 6,
+        "scenario": "boundary_half",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.16318739816553599,
+        "diagnostic_rank": 28,
+        "score_gap_to_scenario_rank1_dex": 0.06071404223155945,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 16,
+        "model_label": "m2p50_c17p5_a0p40_q2p75_i0p05",
+        "mass_factor": 2.5,
+        "envelope_size_exponent": 2.75,
+        "requested_half_opening_deg": 17.5,
+        "emptied_polar_center_rows": 3,
+        "scenario": "boundary_half",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.16340157253287022,
+        "diagnostic_rank": 29,
+        "score_gap_to_scenario_rank1_dex": 0.06092821659889368,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 14,
+        "model_label": "m2p25_c24p0_a0p40_q3p25_i0p05",
+        "mass_factor": 2.25,
+        "envelope_size_exponent": 3.25,
+        "requested_half_opening_deg": 24,
+        "emptied_polar_center_rows": 6,
+        "scenario": "boundary_half",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.16913796520768545,
+        "diagnostic_rank": 30,
+        "score_gap_to_scenario_rank1_dex": 0.06666460927370892,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 13,
+        "model_label": "m2p25_c22p0_a0p40_q3p25_i0p05",
+        "mass_factor": 2.25,
+        "envelope_size_exponent": 3.25,
+        "requested_half_opening_deg": 22,
+        "emptied_polar_center_rows": 5,
+        "scenario": "boundary_half",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.17140836816904392,
+        "diagnostic_rank": 31,
+        "score_gap_to_scenario_rank1_dex": 0.06893501223506739,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 12,
+        "model_label": "m2p25_c20p0_a0p40_q3p25_i0p05",
+        "mass_factor": 2.25,
+        "envelope_size_exponent": 3.25,
+        "requested_half_opening_deg": 20,
+        "emptied_polar_center_rows": 4,
+        "scenario": "boundary_half",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.1728705907179021,
+        "diagnostic_rank": 32,
+        "score_gap_to_scenario_rank1_dex": 0.07039723478392555,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 10,
+        "model_label": "m2p25_c15p0_a0p40_q3p25_i0p05",
+        "mass_factor": 2.25,
+        "envelope_size_exponent": 3.25,
+        "requested_half_opening_deg": 15,
+        "emptied_polar_center_rows": 2,
+        "scenario": "boundary_half",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.17431718085925663,
+        "diagnostic_rank": 33,
+        "score_gap_to_scenario_rank1_dex": 0.07184382492528009,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 11,
+        "model_label": "m2p25_c17p5_a0p40_q3p25_i0p05",
+        "mass_factor": 2.25,
+        "envelope_size_exponent": 3.25,
+        "requested_half_opening_deg": 17.5,
+        "emptied_polar_center_rows": 3,
+        "scenario": "boundary_half",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.17547738013205172,
+        "diagnostic_rank": 34,
+        "score_gap_to_scenario_rank1_dex": 0.07300402419807518,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 37,
+        "model_label": "m2p75_c20p0_a0p40_q3p00_i0p05",
+        "mass_factor": 2.75,
+        "envelope_size_exponent": 3,
+        "requested_half_opening_deg": 20,
+        "emptied_polar_center_rows": 4,
+        "scenario": "boundary_half",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.17923552604160886,
+        "diagnostic_rank": 35,
+        "score_gap_to_scenario_rank1_dex": 0.07676217010763232,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 38,
+        "model_label": "m2p75_c22p0_a0p40_q3p00_i0p05",
+        "mass_factor": 2.75,
+        "envelope_size_exponent": 3,
+        "requested_half_opening_deg": 22,
+        "emptied_polar_center_rows": 5,
+        "scenario": "boundary_half",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.18047356643514073,
+        "diagnostic_rank": 36,
+        "score_gap_to_scenario_rank1_dex": 0.0780002105011642,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 39,
+        "model_label": "m2p75_c24p0_a0p40_q3p00_i0p05",
+        "mass_factor": 2.75,
+        "envelope_size_exponent": 3,
+        "requested_half_opening_deg": 24,
+        "emptied_polar_center_rows": 6,
+        "scenario": "boundary_half",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.1884204455767151,
+        "diagnostic_rank": 37,
+        "score_gap_to_scenario_rank1_dex": 0.08594708964273857,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 15,
+        "model_label": "m2p50_c15p0_a0p40_q2p75_i0p05",
+        "mass_factor": 2.5,
+        "envelope_size_exponent": 2.75,
+        "requested_half_opening_deg": 15,
+        "emptied_polar_center_rows": 2,
+        "scenario": "boundary_half",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.18849255177645402,
+        "diagnostic_rank": 38,
+        "score_gap_to_scenario_rank1_dex": 0.08601919584247748,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 36,
+        "model_label": "m2p75_c17p5_a0p40_q3p00_i0p05",
+        "mass_factor": 2.75,
+        "envelope_size_exponent": 3,
+        "requested_half_opening_deg": 17.5,
+        "emptied_polar_center_rows": 3,
+        "scenario": "boundary_half",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.18958988211533656,
+        "diagnostic_rank": 39,
+        "score_gap_to_scenario_rank1_dex": 0.08711652618136002,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 35,
+        "model_label": "m2p75_c15p0_a0p40_q3p00_i0p05",
+        "mass_factor": 2.75,
+        "envelope_size_exponent": 3,
+        "requested_half_opening_deg": 15,
+        "emptied_polar_center_rows": 2,
+        "scenario": "boundary_half",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.21613289510985792,
+        "diagnostic_rank": 40,
+        "score_gap_to_scenario_rank1_dex": 0.11365953917588138,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 33,
+        "model_label": "m2p75_c22p0_a0p40_q2p75_i0p05",
+        "mass_factor": 2.75,
+        "envelope_size_exponent": 2.75,
+        "requested_half_opening_deg": 22,
+        "emptied_polar_center_rows": 5,
+        "scenario": "boundary_half",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.23847955387030415,
+        "diagnostic_rank": 41,
+        "score_gap_to_scenario_rank1_dex": 0.13600619793632762,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 34,
+        "model_label": "m2p75_c24p0_a0p40_q2p75_i0p05",
+        "mass_factor": 2.75,
+        "envelope_size_exponent": 2.75,
+        "requested_half_opening_deg": 24,
+        "emptied_polar_center_rows": 6,
+        "scenario": "boundary_half",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.2393067309360941,
+        "diagnostic_rank": 42,
+        "score_gap_to_scenario_rank1_dex": 0.13683337500211756,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 32,
+        "model_label": "m2p75_c20p0_a0p40_q2p75_i0p05",
+        "mass_factor": 2.75,
+        "envelope_size_exponent": 2.75,
+        "requested_half_opening_deg": 20,
+        "emptied_polar_center_rows": 4,
+        "scenario": "boundary_half",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.240252531324671,
+        "diagnostic_rank": 43,
+        "score_gap_to_scenario_rank1_dex": 0.13777917539069445,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 31,
+        "model_label": "m2p75_c17p5_a0p40_q2p75_i0p05",
+        "mass_factor": 2.75,
+        "envelope_size_exponent": 2.75,
+        "requested_half_opening_deg": 17.5,
+        "emptied_polar_center_rows": 3,
+        "scenario": "boundary_half",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.2509643349314949,
+        "diagnostic_rank": 44,
+        "score_gap_to_scenario_rank1_dex": 0.14849097899751834,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 30,
+        "model_label": "m2p75_c15p0_a0p40_q2p75_i0p05",
+        "mass_factor": 2.75,
+        "envelope_size_exponent": 2.75,
+        "requested_half_opening_deg": 15,
+        "emptied_polar_center_rows": 2,
+        "scenario": "boundary_half",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.28846281610992597,
+        "diagnostic_rank": 45,
+        "score_gap_to_scenario_rank1_dex": 0.18598946017594942,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 2,
+        "model_label": "m2p25_c20p0_a0p40_q2p75_i0p05",
+        "mass_factor": 2.25,
+        "envelope_size_exponent": 2.75,
+        "requested_half_opening_deg": 20,
+        "emptied_polar_center_rows": 4,
+        "scenario": "boundary_drop",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.09462633797741919,
+        "diagnostic_rank": 1,
+        "score_gap_to_scenario_rank1_dex": 0,
+        "unresolved_with_scenario_rank1": true
+      },
+      {
+        "model_index": 3,
+        "model_label": "m2p25_c22p0_a0p40_q2p75_i0p05",
+        "mass_factor": 2.25,
+        "envelope_size_exponent": 2.75,
+        "requested_half_opening_deg": 22,
+        "emptied_polar_center_rows": 5,
+        "scenario": "boundary_drop",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.09601584823123491,
+        "diagnostic_rank": 2,
+        "score_gap_to_scenario_rank1_dex": 0.001389510253815715,
+        "unresolved_with_scenario_rank1": true
+      },
+      {
+        "model_index": 1,
+        "model_label": "m2p25_c17p5_a0p40_q2p75_i0p05",
+        "mass_factor": 2.25,
+        "envelope_size_exponent": 2.75,
+        "requested_half_opening_deg": 17.5,
+        "emptied_polar_center_rows": 3,
+        "scenario": "boundary_drop",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.09717243255774967,
+        "diagnostic_rank": 3,
+        "score_gap_to_scenario_rank1_dex": 0.002546094580330477,
+        "unresolved_with_scenario_rank1": true
+      },
+      {
+        "model_index": 26,
+        "model_label": "m2p50_c17p5_a0p40_q3p25_i0p05",
+        "mass_factor": 2.5,
+        "envelope_size_exponent": 3.25,
+        "requested_half_opening_deg": 17.5,
+        "emptied_polar_center_rows": 3,
+        "scenario": "boundary_drop",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.1016118540081356,
+        "diagnostic_rank": 4,
+        "score_gap_to_scenario_rank1_dex": 0.006985516030716413,
+        "unresolved_with_scenario_rank1": true
+      },
+      {
+        "model_index": 22,
+        "model_label": "m2p50_c20p0_a0p40_q3p00_i0p05",
+        "mass_factor": 2.5,
+        "envelope_size_exponent": 3,
+        "requested_half_opening_deg": 20,
+        "emptied_polar_center_rows": 4,
+        "scenario": "boundary_drop",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.10214691373928211,
+        "diagnostic_rank": 5,
+        "score_gap_to_scenario_rank1_dex": 0.0075205757618629215,
+        "unresolved_with_scenario_rank1": true
+      },
+      {
+        "model_index": 27,
+        "model_label": "m2p50_c20p0_a0p40_q3p25_i0p05",
+        "mass_factor": 2.5,
+        "envelope_size_exponent": 3.25,
+        "requested_half_opening_deg": 20,
+        "emptied_polar_center_rows": 4,
+        "scenario": "boundary_drop",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.10237064308343242,
+        "diagnostic_rank": 6,
+        "score_gap_to_scenario_rank1_dex": 0.007744305106013233,
+        "unresolved_with_scenario_rank1": true
+      },
+      {
+        "model_index": 4,
+        "model_label": "m2p25_c24p0_a0p40_q2p75_i0p05",
+        "mass_factor": 2.25,
+        "envelope_size_exponent": 2.75,
+        "requested_half_opening_deg": 24,
+        "emptied_polar_center_rows": 6,
+        "scenario": "boundary_drop",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.10389797106806493,
+        "diagnostic_rank": 7,
+        "score_gap_to_scenario_rank1_dex": 0.009271633090645742,
+        "unresolved_with_scenario_rank1": true
+      },
+      {
+        "model_index": 23,
+        "model_label": "m2p50_c22p0_a0p40_q3p00_i0p05",
+        "mass_factor": 2.5,
+        "envelope_size_exponent": 3,
+        "requested_half_opening_deg": 22,
+        "emptied_polar_center_rows": 5,
+        "scenario": "boundary_drop",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.10483934405202404,
+        "diagnostic_rank": 8,
+        "score_gap_to_scenario_rank1_dex": 0.010213006074604847,
+        "unresolved_with_scenario_rank1": true
+      },
+      {
+        "model_index": 28,
+        "model_label": "m2p50_c22p0_a0p40_q3p25_i0p05",
+        "mass_factor": 2.5,
+        "envelope_size_exponent": 3.25,
+        "requested_half_opening_deg": 22,
+        "emptied_polar_center_rows": 5,
+        "scenario": "boundary_drop",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.1054303651639131,
+        "diagnostic_rank": 9,
+        "score_gap_to_scenario_rank1_dex": 0.010804027186493911,
+        "unresolved_with_scenario_rank1": true
+      },
+      {
+        "model_index": 21,
+        "model_label": "m2p50_c17p5_a0p40_q3p00_i0p05",
+        "mass_factor": 2.5,
+        "envelope_size_exponent": 3,
+        "requested_half_opening_deg": 17.5,
+        "emptied_polar_center_rows": 3,
+        "scenario": "boundary_drop",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.1062049375200434,
+        "diagnostic_rank": 10,
+        "score_gap_to_scenario_rank1_dex": 0.011578599542624204,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 25,
+        "model_label": "m2p50_c15p0_a0p40_q3p25_i0p05",
+        "mass_factor": 2.5,
+        "envelope_size_exponent": 3.25,
+        "requested_half_opening_deg": 15,
+        "emptied_polar_center_rows": 2,
+        "scenario": "boundary_drop",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.10790217783647023,
+        "diagnostic_rank": 11,
+        "score_gap_to_scenario_rank1_dex": 0.013275839859051036,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 42,
+        "model_label": "m2p75_c20p0_a0p40_q3p25_i0p05",
+        "mass_factor": 2.75,
+        "envelope_size_exponent": 3.25,
+        "requested_half_opening_deg": 20,
+        "emptied_polar_center_rows": 4,
+        "scenario": "boundary_drop",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.10977301354781653,
+        "diagnostic_rank": 12,
+        "score_gap_to_scenario_rank1_dex": 0.015146675570397339,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 29,
+        "model_label": "m2p50_c24p0_a0p40_q3p25_i0p05",
+        "mass_factor": 2.5,
+        "envelope_size_exponent": 3.25,
+        "requested_half_opening_deg": 24,
+        "emptied_polar_center_rows": 6,
+        "scenario": "boundary_drop",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.11006787626590885,
+        "diagnostic_rank": 13,
+        "score_gap_to_scenario_rank1_dex": 0.015441538288489653,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 0,
+        "model_label": "m2p25_c15p0_a0p40_q2p75_i0p05",
+        "mass_factor": 2.25,
+        "envelope_size_exponent": 2.75,
+        "requested_half_opening_deg": 15,
+        "emptied_polar_center_rows": 2,
+        "scenario": "boundary_drop",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.11143398164194239,
+        "diagnostic_rank": 14,
+        "score_gap_to_scenario_rank1_dex": 0.016807643664523197,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 24,
+        "model_label": "m2p50_c24p0_a0p40_q3p00_i0p05",
+        "mass_factor": 2.5,
+        "envelope_size_exponent": 3,
+        "requested_half_opening_deg": 24,
+        "emptied_polar_center_rows": 6,
+        "scenario": "boundary_drop",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.11416028144440016,
+        "diagnostic_rank": 15,
+        "score_gap_to_scenario_rank1_dex": 0.019533943466980966,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 5,
+        "model_label": "m2p25_c15p0_a0p40_q3p00_i0p05",
+        "mass_factor": 2.25,
+        "envelope_size_exponent": 3,
+        "requested_half_opening_deg": 15,
+        "emptied_polar_center_rows": 2,
+        "scenario": "boundary_drop",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.11428253061393163,
+        "diagnostic_rank": 16,
+        "score_gap_to_scenario_rank1_dex": 0.019656192636512443,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 6,
+        "model_label": "m2p25_c17p5_a0p40_q3p00_i0p05",
+        "mass_factor": 2.25,
+        "envelope_size_exponent": 3,
+        "requested_half_opening_deg": 17.5,
+        "emptied_polar_center_rows": 3,
+        "scenario": "boundary_drop",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.11459012840775527,
+        "diagnostic_rank": 17,
+        "score_gap_to_scenario_rank1_dex": 0.01996379043033608,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 43,
+        "model_label": "m2p75_c22p0_a0p40_q3p25_i0p05",
+        "mass_factor": 2.75,
+        "envelope_size_exponent": 3.25,
+        "requested_half_opening_deg": 22,
+        "emptied_polar_center_rows": 5,
+        "scenario": "boundary_drop",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.11522952597041934,
+        "diagnostic_rank": 18,
+        "score_gap_to_scenario_rank1_dex": 0.02060318799300015,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 8,
+        "model_label": "m2p25_c22p0_a0p40_q3p00_i0p05",
+        "mass_factor": 2.25,
+        "envelope_size_exponent": 3,
+        "requested_half_opening_deg": 22,
+        "emptied_polar_center_rows": 5,
+        "scenario": "boundary_drop",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.11572098338537751,
+        "diagnostic_rank": 19,
+        "score_gap_to_scenario_rank1_dex": 0.021094645407958315,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 7,
+        "model_label": "m2p25_c20p0_a0p40_q3p00_i0p05",
+        "mass_factor": 2.25,
+        "envelope_size_exponent": 3,
+        "requested_half_opening_deg": 20,
+        "emptied_polar_center_rows": 4,
+        "scenario": "boundary_drop",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.1157495497336061,
+        "diagnostic_rank": 20,
+        "score_gap_to_scenario_rank1_dex": 0.021123211756186908,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 9,
+        "model_label": "m2p25_c24p0_a0p40_q3p00_i0p05",
+        "mass_factor": 2.25,
+        "envelope_size_exponent": 3,
+        "requested_half_opening_deg": 24,
+        "emptied_polar_center_rows": 6,
+        "scenario": "boundary_drop",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.118346527834315,
+        "diagnostic_rank": 21,
+        "score_gap_to_scenario_rank1_dex": 0.023720189856895807,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 41,
+        "model_label": "m2p75_c17p5_a0p40_q3p25_i0p05",
+        "mass_factor": 2.75,
+        "envelope_size_exponent": 3.25,
+        "requested_half_opening_deg": 17.5,
+        "emptied_polar_center_rows": 3,
+        "scenario": "boundary_drop",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.11953892664593165,
+        "diagnostic_rank": 22,
+        "score_gap_to_scenario_rank1_dex": 0.024912588668512453,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 44,
+        "model_label": "m2p75_c24p0_a0p40_q3p25_i0p05",
+        "mass_factor": 2.75,
+        "envelope_size_exponent": 3.25,
+        "requested_half_opening_deg": 24,
+        "emptied_polar_center_rows": 6,
+        "scenario": "boundary_drop",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.12288763097932248,
+        "diagnostic_rank": 23,
+        "score_gap_to_scenario_rank1_dex": 0.02826129300190329,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 20,
+        "model_label": "m2p50_c15p0_a0p40_q3p00_i0p05",
+        "mass_factor": 2.5,
+        "envelope_size_exponent": 3,
+        "requested_half_opening_deg": 15,
+        "emptied_polar_center_rows": 2,
+        "scenario": "boundary_drop",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.12607229362719768,
+        "diagnostic_rank": 24,
+        "score_gap_to_scenario_rank1_dex": 0.03144595564977849,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 40,
+        "model_label": "m2p75_c15p0_a0p40_q3p25_i0p05",
+        "mass_factor": 2.75,
+        "envelope_size_exponent": 3.25,
+        "requested_half_opening_deg": 15,
+        "emptied_polar_center_rows": 2,
+        "scenario": "boundary_drop",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.13548606855288647,
+        "diagnostic_rank": 25,
+        "score_gap_to_scenario_rank1_dex": 0.04085973057546728,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 18,
+        "model_label": "m2p50_c22p0_a0p40_q2p75_i0p05",
+        "mass_factor": 2.5,
+        "envelope_size_exponent": 2.75,
+        "requested_half_opening_deg": 22,
+        "emptied_polar_center_rows": 5,
+        "scenario": "boundary_drop",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.1426533730800503,
+        "diagnostic_rank": 26,
+        "score_gap_to_scenario_rank1_dex": 0.04802703510263111,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 17,
+        "model_label": "m2p50_c20p0_a0p40_q2p75_i0p05",
+        "mass_factor": 2.5,
+        "envelope_size_exponent": 2.75,
+        "requested_half_opening_deg": 20,
+        "emptied_polar_center_rows": 4,
+        "scenario": "boundary_drop",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.14461607011301206,
+        "diagnostic_rank": 27,
+        "score_gap_to_scenario_rank1_dex": 0.049989732135592865,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 19,
+        "model_label": "m2p50_c24p0_a0p40_q2p75_i0p05",
+        "mass_factor": 2.5,
+        "envelope_size_exponent": 2.75,
+        "requested_half_opening_deg": 24,
+        "emptied_polar_center_rows": 6,
+        "scenario": "boundary_drop",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.14775617092127552,
+        "diagnostic_rank": 28,
+        "score_gap_to_scenario_rank1_dex": 0.05312983294385633,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 16,
+        "model_label": "m2p50_c17p5_a0p40_q2p75_i0p05",
+        "mass_factor": 2.5,
+        "envelope_size_exponent": 2.75,
+        "requested_half_opening_deg": 17.5,
+        "emptied_polar_center_rows": 3,
+        "scenario": "boundary_drop",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.15348450071521633,
+        "diagnostic_rank": 29,
+        "score_gap_to_scenario_rank1_dex": 0.058858162737797134,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 38,
+        "model_label": "m2p75_c22p0_a0p40_q3p00_i0p05",
+        "mass_factor": 2.75,
+        "envelope_size_exponent": 3,
+        "requested_half_opening_deg": 22,
+        "emptied_polar_center_rows": 5,
+        "scenario": "boundary_drop",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.16452577825343043,
+        "diagnostic_rank": 30,
+        "score_gap_to_scenario_rank1_dex": 0.06989944027601123,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 37,
+        "model_label": "m2p75_c20p0_a0p40_q3p00_i0p05",
+        "mass_factor": 2.75,
+        "envelope_size_exponent": 3,
+        "requested_half_opening_deg": 20,
+        "emptied_polar_center_rows": 4,
+        "scenario": "boundary_drop",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.16591755614995168,
+        "diagnostic_rank": 31,
+        "score_gap_to_scenario_rank1_dex": 0.07129121817253249,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 14,
+        "model_label": "m2p25_c24p0_a0p40_q3p25_i0p05",
+        "mass_factor": 2.25,
+        "envelope_size_exponent": 3.25,
+        "requested_half_opening_deg": 24,
+        "emptied_polar_center_rows": 6,
+        "scenario": "boundary_drop",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.16636435847094286,
+        "diagnostic_rank": 32,
+        "score_gap_to_scenario_rank1_dex": 0.07173802049352367,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 13,
+        "model_label": "m2p25_c22p0_a0p40_q3p25_i0p05",
+        "mass_factor": 2.25,
+        "envelope_size_exponent": 3.25,
+        "requested_half_opening_deg": 22,
+        "emptied_polar_center_rows": 5,
+        "scenario": "boundary_drop",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.16947094041295085,
+        "diagnostic_rank": 33,
+        "score_gap_to_scenario_rank1_dex": 0.07484460243553166,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 39,
+        "model_label": "m2p75_c24p0_a0p40_q3p00_i0p05",
+        "mass_factor": 2.75,
+        "envelope_size_exponent": 3,
+        "requested_half_opening_deg": 24,
+        "emptied_polar_center_rows": 6,
+        "scenario": "boundary_drop",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.17101121621039458,
+        "diagnostic_rank": 34,
+        "score_gap_to_scenario_rank1_dex": 0.07638487823297539,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 12,
+        "model_label": "m2p25_c20p0_a0p40_q3p25_i0p05",
+        "mass_factor": 2.25,
+        "envelope_size_exponent": 3.25,
+        "requested_half_opening_deg": 20,
+        "emptied_polar_center_rows": 4,
+        "scenario": "boundary_drop",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.17133674312439234,
+        "diagnostic_rank": 35,
+        "score_gap_to_scenario_rank1_dex": 0.07671040514697315,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 10,
+        "model_label": "m2p25_c15p0_a0p40_q3p25_i0p05",
+        "mass_factor": 2.25,
+        "envelope_size_exponent": 3.25,
+        "requested_half_opening_deg": 15,
+        "emptied_polar_center_rows": 2,
+        "scenario": "boundary_drop",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.17360151606312632,
+        "diagnostic_rank": 36,
+        "score_gap_to_scenario_rank1_dex": 0.07897517808570713,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 11,
+        "model_label": "m2p25_c17p5_a0p40_q3p25_i0p05",
+        "mass_factor": 2.25,
+        "envelope_size_exponent": 3.25,
+        "requested_half_opening_deg": 17.5,
+        "emptied_polar_center_rows": 3,
+        "scenario": "boundary_drop",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.1744123668528559,
+        "diagnostic_rank": 37,
+        "score_gap_to_scenario_rank1_dex": 0.07978602887543672,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 36,
+        "model_label": "m2p75_c17p5_a0p40_q3p00_i0p05",
+        "mass_factor": 2.75,
+        "envelope_size_exponent": 3,
+        "requested_half_opening_deg": 17.5,
+        "emptied_polar_center_rows": 3,
+        "scenario": "boundary_drop",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.17849541813677297,
+        "diagnostic_rank": 38,
+        "score_gap_to_scenario_rank1_dex": 0.08386908015935378,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 15,
+        "model_label": "m2p50_c15p0_a0p40_q2p75_i0p05",
+        "mass_factor": 2.5,
+        "envelope_size_exponent": 2.75,
+        "requested_half_opening_deg": 15,
+        "emptied_polar_center_rows": 2,
+        "scenario": "boundary_drop",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.18156868563193887,
+        "diagnostic_rank": 39,
+        "score_gap_to_scenario_rank1_dex": 0.08694234765451968,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 35,
+        "model_label": "m2p75_c15p0_a0p40_q3p00_i0p05",
+        "mass_factor": 2.75,
+        "envelope_size_exponent": 3,
+        "requested_half_opening_deg": 15,
+        "emptied_polar_center_rows": 2,
+        "scenario": "boundary_drop",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.20782842997032558,
+        "diagnostic_rank": 40,
+        "score_gap_to_scenario_rank1_dex": 0.11320209199290639,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 34,
+        "model_label": "m2p75_c24p0_a0p40_q2p75_i0p05",
+        "mass_factor": 2.75,
+        "envelope_size_exponent": 2.75,
+        "requested_half_opening_deg": 24,
+        "emptied_polar_center_rows": 6,
+        "scenario": "boundary_drop",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.22186746572339022,
+        "diagnostic_rank": 41,
+        "score_gap_to_scenario_rank1_dex": 0.12724112774597102,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 33,
+        "model_label": "m2p75_c22p0_a0p40_q2p75_i0p05",
+        "mass_factor": 2.75,
+        "envelope_size_exponent": 2.75,
+        "requested_half_opening_deg": 22,
+        "emptied_polar_center_rows": 5,
+        "scenario": "boundary_drop",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.22246506965955415,
+        "diagnostic_rank": 42,
+        "score_gap_to_scenario_rank1_dex": 0.12783873168213494,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 32,
+        "model_label": "m2p75_c20p0_a0p40_q2p75_i0p05",
+        "mass_factor": 2.75,
+        "envelope_size_exponent": 2.75,
+        "requested_half_opening_deg": 20,
+        "emptied_polar_center_rows": 4,
+        "scenario": "boundary_drop",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.22650027468355907,
+        "diagnostic_rank": 43,
+        "score_gap_to_scenario_rank1_dex": 0.1318739367061399,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 31,
+        "model_label": "m2p75_c17p5_a0p40_q2p75_i0p05",
+        "mass_factor": 2.75,
+        "envelope_size_exponent": 2.75,
+        "requested_half_opening_deg": 17.5,
+        "emptied_polar_center_rows": 3,
+        "scenario": "boundary_drop",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.23903964646472778,
+        "diagnostic_rank": 44,
+        "score_gap_to_scenario_rank1_dex": 0.1444133084873086,
+        "unresolved_with_scenario_rank1": false
+      },
+      {
+        "model_index": 30,
+        "model_label": "m2p75_c15p0_a0p40_q2p75_i0p05",
+        "mass_factor": 2.75,
+        "envelope_size_exponent": 2.75,
+        "requested_half_opening_deg": 15,
+        "emptied_polar_center_rows": 2,
+        "scenario": "boundary_drop",
+        "fixed_normalization_region_balanced_log_rms_dex": 0.27958561529114584,
+        "diagnostic_rank": 45,
+        "score_gap_to_scenario_rank1_dex": 0.18495927731372663,
+        "unresolved_with_scenario_rank1": false
+      }
+    ],
+    "diagnostic_chi2_log_all9": 39.2084104199103,
+    "diagnostic_reduced_chi2_if_9minus3_dof": 6.53473506998505,
+    "chi2_caveat": "Not the fitting metric or a formal goodness-of-fit statistic; no calibrated covariance or likelihood. Included for descriptive use only.",
+    "physical_model": {
+      "source_parameter": {
+        "path": "runs/strict_continuum_cavity_mass_q_v1/models/m2p25_c17p5_a0p40_q2p75_i0p05/disk_envelope_m2p25_c17p5_a0p40_q2p75_i0p05_rt.para",
+        "sha256": "cee9777a7faf269300008ff9d29e985962fdf5d36fcdff61124cfa92a71d3da5"
+      },
+      "source_grid_design": {
+        "path": "runs/strict_continuum_cavity_mass_q_v1/design_config.json",
+        "sha256": "f49c95212f0039dda207797d046211f9406c8e925620e911ed3e0e4736411a8d"
+      },
+      "stellar_temperature_K": 4000,
+      "stellar_radius_Rsun": 2.5,
+      "stellar_mass_Msun": 0.5,
+      "photospheric_luminosity_Lsun": 1.4414967279,
+      "total_source_luminosity_target_Lsun": 1.9,
+      "accretion_surrogate_mdot_Msun_per_year": 7.3011756855e-8,
+      "inclination_deg": 70,
+      "position_angle_deg": 0,
+      "envelope_mass_factor": 2.25,
+      "envelope_nominal_dust_mass_Msun": 0.000225,
+      "envelope_nominal_gas_plus_dust_mass_Msun": 0.022725,
+      "disk_nominal_dust_mass_Msun": 0.0001,
+      "disk_nominal_gas_plus_dust_mass_Msun": 0.0101,
+      "gas_to_dust_mass_ratio": 100,
+      "mass_caveat": "Nominal input dust masses; cavity carving removes envelope cells, so report separately from the final integrated material remaining. Actual post-carving mass not established by this audit.",
+      "envelope_Rin_au": 1,
+      "envelope_Rout_au": 3000,
+      "envelope_volume_density_power": -1.5,
+      "envelope_grain_size_exponent_q": 2.75,
+      "q_definition": "dn/da proportional to a^(-q); not the spatial density exponent",
+      "envelope_amin_um": 0.03,
+      "envelope_amax_um": 0.4,
+      "envelope_grain_type": "Mie, silicate core + ice mantle, mixing rule2 coating",
+      "envelope_core_optical_constants": "Draine_Si_sUV.dat",
+      "envelope_ice_optical_constants": "ice_opct.dat",
+      "envelope_core_volume_fraction": 0.95,
+      "envelope_ice_volume_fraction": 0.05,
+      "disk_species_mass_fractions": {
+        "silicate": 0.7,
+        "amorphous_carbon": 0.3
+      },
+      "disk_optical_constants": [
+        "Draine_Si_sUV.dat",
+        "ac_opct.dat"
+      ],
+      "disk_amin_um": 0.03,
+      "disk_amax_um": 1000,
+      "disk_grain_size_q": 3.5,
+      "disk_Rin_au": 0.3,
+      "disk_Rout_au": 100,
+      "disk_H_at_100au_au": 10,
+      "disk_flaring_power": 1.125,
+      "disk_surface_density_power": -1,
+      "cavity_half_opening_requested_deg": 17.5,
+      "cavity_tokens": [
+        317.159480236321,
+        100,
+        1
+      ],
+      "cavity_mapping": "For exponent1, half opening=atan(r0/h0); finite spherical polar grid empties discrete cell rows. Current17.5 degree state empties3 polar-centre rows.",
+      "spherical_density_grid": [
+        100,
+        70,
+        1,
+        20
+      ],
+      "model_distance_pc": 140,
+      "target_distance_pc": 147,
+      "background_foreground_extinction_fitted": false,
+      "free_flux_amplitude_fitted": false
+    }
+  },
+  "methodology": {
+    "measurement": "Signed full-Mueller spatial Method2 total-I plane0, post-PSF, fractional1arcsec-radius aperture centered at CRPIX; coeval Method2 SED closure is a numerical check.",
+    "not_the_scored_estimator": "Legacy SEDtotal times image aperture fraction; separated component reconstructions are quality diagnostics, not canonical scored flux.",
+    "score": "S = sqrt[(1/6) sum_over_regions (sum_over_anchors w_j log10(Fobs/Fmodel)^2 / n_region_primary)]. No fitted amplitude; equal outer region weighting, geometric observed flux at overlapping detector bins.",
+    "regions": [
+      "near_ir_short",
+      "near_ir_rise",
+      "window_3p9",
+      "window_5p4",
+      "window_13p8",
+      "window_27p5"
+    ],
+    "boundary_sensitivity": {
+      "tags": [
+        "w005",
+        "w006"
+      ],
+      "wavelengths_um": [
+        2.546352514425122,
+        3.9143995604061015
+      ],
+      "weights": [
+        1,
+        0.5,
+        0
+      ],
+      "renormalized_denominators": false
+    },
+    "w000": {
+      "wavelength_um": 0.994676,
+      "role": "User-excluded first point; diagnostic-only in reanalysis of36-model grid and completely absent from final45-model generation/scoring."
+    },
+    "canonical_packet_count_per_rt_anchor": 128000,
+    "canonical_seed": 41001,
+    "canonical_final_cells": 405,
+    "highN_replacements": 0,
+    "uncertainty": "0.0108579276dex is operational numerical score-resolution tolerance, not Gaussian error, parameter error bar, confidence interval, or posterior.",
+    "source_observation": {
+      "path": "output/continuum_sed_R100.ecsv",
+      "sha256": "d2d51c6b0c0c229145b147d8793b03fa721e6a4cca191d790fb2082625d3e0d6"
+    },
+    "mask_manifest": {
+      "path": "output/continuum_fit_mask_v1_manifest.json",
+      "sha256": "f93ee4cfeec9a80b612c3c3ef1777ca990cb1eadf2ac37a7db4e6b71d85ce414"
+    },
+    "calibration_floors_fraction": {
+      "NIRSpec": 0.1,
+      "MIRI": 0.15
+    }
+  },
+  "limitations": [
+    "Historic totals use different apertures/normalizations/masks/distances; do not plot all scores as an improvement curve or combine in a likelihood.",
+    "Latest mass2.25 and q2.75 hit lower grid boundaries; continuum minimum not bracketed.",
+    "Cavity17.5vs20 degree preference unresolved and changes with boundary weighting; polar grid also makes opening discrete.",
+    "Strong model mismatch remains outside nine strict anchors; ice and silicate bands were excluded from this continuum fit.",
+    "The H2O dust changes reuse continuum temperature; their later best dust is not a thermally self-consistent global continuum refit.",
+    "Spatial exponent remained−1.5; notes calling q a density exponent are wrong.",
+    "No formal likelihood, posterior samples, or parameter confidence intervals were generated.",
+    "Current stellar mass, disk structure, source luminosity, inclination and extinction are largely fixed assumptions; their literature consistency must be reconsidered jointly."
+  ]
+}

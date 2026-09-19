@@ -1,0 +1,152 @@
+[
+  {
+    "file": "cubes/TMC1A_ch1-long_s3d.fits",
+    "CAL_VER": "1.16.1",
+    "CRDS_VER": "11.17.16",
+    "CRDS_CTX": "jwst_1303.pmap",
+    "DATE": "2025-01-21T15:34:21.510",
+    "PROGRAM": "01290",
+    "OBS_ID": "V01290014001P0000000002101",
+    "INSTRUME": "MIRI"
+  },
+  {
+    "file": "cubes/TMC1A_ch1-medium_s3d.fits",
+    "CAL_VER": "1.16.1",
+    "CRDS_VER": "11.17.16",
+    "CRDS_CTX": "jwst_1303.pmap",
+    "DATE": "2025-01-21T15:34:21.102",
+    "PROGRAM": "01290",
+    "OBS_ID": "V01290014001P0000000002103",
+    "INSTRUME": "MIRI"
+  },
+  {
+    "file": "cubes/TMC1A_ch1-short_s3d.fits",
+    "CAL_VER": "1.16.1",
+    "CRDS_VER": "11.17.16",
+    "CRDS_CTX": "jwst_1303.pmap",
+    "DATE": "2025-01-21T15:34:20.684",
+    "PROGRAM": "01290",
+    "OBS_ID": "V01290014001P0000000002105",
+    "INSTRUME": "MIRI"
+  },
+  {
+    "file": "cubes/TMC1A_ch2-long_s3d.fits",
+    "CAL_VER": "1.16.1",
+    "CRDS_VER": "11.17.16",
+    "CRDS_CTX": "jwst_1303.pmap",
+    "DATE": "2025-01-21T15:34:22.732",
+    "PROGRAM": "01290",
+    "OBS_ID": "V01290014001P0000000002101",
+    "INSTRUME": "MIRI"
+  },
+  {
+    "file": "cubes/TMC1A_ch2-medium_s3d.fits",
+    "CAL_VER": "1.16.1",
+    "CRDS_VER": "11.17.16",
+    "CRDS_CTX": "jwst_1303.pmap",
+    "DATE": "2025-01-21T15:34:22.327",
+    "PROGRAM": "01290",
+    "OBS_ID": "V01290014001P0000000002103",
+    "INSTRUME": "MIRI"
+  },
+  {
+    "file": "cubes/TMC1A_ch2-short_s3d.fits",
+    "CAL_VER": "1.16.1",
+    "CRDS_VER": "11.17.16",
+    "CRDS_CTX": "jwst_1303.pmap",
+    "DATE": "2025-01-21T15:34:21.924",
+    "PROGRAM": "01290",
+    "OBS_ID": "V01290014001P0000000002105",
+    "INSTRUME": "MIRI"
+  },
+  {
+    "file": "cubes/TMC1A_ch3-long_s3d.fits",
+    "CAL_VER": "1.16.1",
+    "CRDS_VER": "11.17.16",
+    "CRDS_CTX": "jwst_1303.pmap",
+    "DATE": "2025-01-21T15:34:23.965",
+    "PROGRAM": "01290",
+    "OBS_ID": "V01290014001P0000000002101",
+    "INSTRUME": "MIRI"
+  },
+  {
+    "file": "cubes/TMC1A_ch3-medium_s3d.fits",
+    "CAL_VER": "1.16.1",
+    "CRDS_VER": "11.17.16",
+    "CRDS_CTX": "jwst_1303.pmap",
+    "DATE": "2025-01-21T15:34:23.562",
+    "PROGRAM": "01290",
+    "OBS_ID": "V01290014001P0000000002103",
+    "INSTRUME": "MIRI"
+  },
+  {
+    "file": "cubes/TMC1A_ch3-short_s3d.fits",
+    "CAL_VER": "1.16.1",
+    "CRDS_VER": "11.17.16",
+    "CRDS_CTX": "jwst_1303.pmap",
+    "DATE": "2025-01-21T15:34:23.158",
+    "PROGRAM": "01290",
+    "OBS_ID": "V01290014001P0000000002105",
+    "INSTRUME": "MIRI"
+  },
+  {
+    "file": "cubes/TMC1A_ch4-long_s3d.fits",
+    "CAL_VER": "1.16.1",
+    "CRDS_VER": "11.17.16",
+    "CRDS_CTX": "jwst_1303.pmap",
+    "DATE": "2025-01-21T15:34:25.152",
+    "PROGRAM": "01290",
+    "OBS_ID": "V01290014001P0000000002101",
+    "INSTRUME": "MIRI"
+  },
+  {
+    "file": "cubes/TMC1A_ch4-medium_s3d.fits",
+    "CAL_VER": "1.16.1",
+    "CRDS_VER": "11.17.16",
+    "CRDS_CTX": "jwst_1303.pmap",
+    "DATE": "2025-01-21T15:34:24.760",
+    "PROGRAM": "01290",
+    "OBS_ID": "V01290014001P0000000002103",
+    "INSTRUME": "MIRI"
+  },
+  {
+    "file": "cubes/TMC1A_ch4-short_s3d.fits",
+    "CAL_VER": "1.16.1",
+    "CRDS_VER": "11.17.16",
+    "CRDS_CTX": "jwst_1303.pmap",
+    "DATE": "2025-01-21T15:34:24.373",
+    "PROGRAM": "01290",
+    "OBS_ID": "V01290014001P0000000002105",
+    "INSTRUME": "MIRI"
+  },
+  {
+    "file": "cubes/jw04537-o001_t001_nirspec_clean_jun26_ns_clean_g140h-f100lp_s3d.fits",
+    "CAL_VER": "1.20.2",
+    "CRDS_VER": "13.1.0",
+    "CRDS_CTX": "jwst_1464.pmap",
+    "DATE": "2026-05-29T15:21:27.339",
+    "PROGRAM": "02104",
+    "OBS_ID": "V02104001001P0000000003106",
+    "INSTRUME": "NIRSPEC"
+  },
+  {
+    "file": "cubes/jw04537-o001_t001_nirspec_clean_jun26_ns_clean_g235h-f170lp_s3d.fits",
+    "CAL_VER": "1.20.2",
+    "CRDS_VER": "13.1.0",
+    "CRDS_CTX": "jwst_1464.pmap",
+    "DATE": "2026-05-29T14:59:02.257",
+    "PROGRAM": "02104",
+    "OBS_ID": "V02104001001P0000000003104",
+    "INSTRUME": "NIRSPEC"
+  },
+  {
+    "file": "cubes/jw04537-o001_t001_nirspec_clean_jun26_ns_clean_g395h-f290lp_s3d.fits",
+    "CAL_VER": "1.20.2",
+    "CRDS_VER": "13.1.0",
+    "CRDS_CTX": "jwst_1464.pmap",
+    "DATE": "2026-05-29T14:19:41.287",
+    "PROGRAM": "02104",
+    "OBS_ID": "V02104001001P0000000003102",
+    "INSTRUME": "NIRSPEC"
+  }
+]
