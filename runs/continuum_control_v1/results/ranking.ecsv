@@ -1,0 +1,32 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - {name: rank, datatype: int64}
+# - {name: model_id, datatype: string}
+# - {name: model_index, datatype: int64}
+# - {name: status, datatype: string}
+# - {name: reason, datatype: string}
+# - {name: score_dex, datatype: float64}
+# - {name: chi2_diagnostic, datatype: float64}
+# - {name: n_scored, datatype: int64}
+# - {name: parameters_json, datatype: string}
+# - {name: region_rms_dex_json, datatype: string}
+# - {name: param_accretion_rate_msun_per_year, datatype: float64}
+# - {name: param_cavity_half_opening_deg, datatype: float64}
+# - {name: param_distance_pc, datatype: float64}
+# - {name: param_envelope_amax_um, datatype: float64}
+# - {name: param_envelope_dust_mass_msun, datatype: float64}
+# - {name: param_envelope_ice_volume_fraction, datatype: float64}
+# - {name: param_envelope_size_exponent, datatype: float64}
+# - {name: param_inclination_deg, datatype: float64}
+# - {name: param_stellar_mass_msun, datatype: float64}
+# - {name: param_stellar_radius_rsun, datatype: float64}
+# - {name: param_stellar_temperature_k, datatype: float64}
+# meta: !!omap
+# - {metric: region-balanced log10 RMS}
+# - {rank_zero: excluded}
+# - {posterior: false}
+# - {chi2: Unreduced diagonal-error diagnostic; not the ranking objective}
+# schema: astropy-2.0
+rank model_id model_index status reason score_dex chi2_diagnostic n_scored parameters_json region_rms_dex_json param_accretion_rate_msun_per_year param_cavity_half_opening_deg param_distance_pc param_envelope_amax_um param_envelope_dust_mass_msun param_envelope_ice_volume_fraction param_envelope_size_exponent param_inclination_deg param_stellar_mass_msun param_stellar_radius_rsun param_stellar_temperature_k
+1 m0000_28e89562 0 ranked "" 0.08687053964578331 17.896087883284856 9 "{""accretion_rate_msun_per_year"": 7.3011756855e-08, ""cavity_half_opening_deg"": 17.5, ""distance_pc"": 140.0, ""envelope_amax_um"": 0.4, ""envelope_dust_mass_msun"": 0.000225, ""envelope_ice_volume_fraction"": 0.05, ""envelope_size_exponent"": 2.75, ""inclination_deg"": 70.0, ""stellar_mass_msun"": 0.5, ""stellar_radius_rsun"": 2.5, ""stellar_temperature_k"": 4000.0}" "{""near_ir_rise"": 0.0701300454536288, ""near_ir_short"": 0.05554293331521364, ""window_13p8"": 0.1152236197262324, ""window_27p5"": 0.033061912213654066, ""window_3p9"": 0.0501956420026608, ""window_5p4"": 0.14278139996306688}" 7.3011756855e-08 17.5 140.0 0.4 0.000225 0.05 2.75 70.0 0.5 2.5 4000.0

@@ -2,7 +2,7 @@
 #SBATCH --job-name=continuum_control_v1
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=16
+#SBATCH --cpus-per-task=64
 #SBATCH --array=0-0%1
 #SBATCH --time=12:00:00
 #SBATCH --mem=16G

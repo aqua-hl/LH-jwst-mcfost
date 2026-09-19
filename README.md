@@ -8,7 +8,7 @@ This is the consolidated local workspace. The former loose `jwst_mcfost` tree is
 
 [Local test plot](runs/laptop_smoke_v4/results/spectrum_comparison.png) · [Validation and timings](validation/WORKFLOW_VALIDATION.md)
 
-`workflow.py` prepares a frozen model catalogue, runs independent physical models locally or as a Slurm array, measures Method-2 image aperture fluxes once, and generates compact rankings and plots. No jobs have been submitted. The small laptop demonstration is not a scientific fit; the production example has not been run. The current physical template is the original coated-Mie disk/envelope model; the later DHS H₂O model needs a separate extension.
+`workflow.py` prepares a frozen model catalogue, runs independent physical models locally or as a Slurm array, measures Method-2 image aperture fluxes once, and generates compact rankings and plots. The cluster smoke test and one full-resolution continuum control have completed. The small laptop demonstration is not a scientific fit; the production example has not been run. The current physical template is the original coated-Mie disk/envelope model; the later DHS H₂O model needs a separate extension.
 
 ```bash
 python -B workflow.py --help
@@ -33,6 +33,99 @@ It runs four tasks, at most two concurrently, each requesting one CPU, 128 MB an
 a two-minute time limit. Each `slurm-smoke-JOBID_TASKID.out` log in the submission
 directory should end with `SUCCESS: task N completed`. This checks basic Slurm
 execution; MCFOST and Python are not required.
+
+To test real MCFOST calculations, activate a Python environment with
+`requirements-workflow.txt` installed, put `mcfost` on `PATH`, and export
+`MCFOST_UTILS` pointing to the utilities directory containing `Dust`, `Lambda`
+and `Stellar_Spectra`. Then run:
+
+```bash
+python -B workflow.py prepare config/grid.smoke.json
+python -B workflow.py slurm runs/laptop_smoke_v4 --machine config/machine.slurm-smoke.json
+bash runs/laptop_smoke_v4/submit.sh "$PWD/config/machine.slurm-smoke.json"
+```
+
+Run preparation only once for a given run name. This submits two coarse models
+with two CPUs and 4 GB each, followed by an analysis job. The smoke machine
+configuration uses your default partition/account; add these under `slurm` if
+your cluster requires them. Check progress with
+`python -B workflow.py status runs/laptop_smoke_v4` and inspect the run's `logs/`
+and `results/` directories.
+
+If the smoke array fails with `MCFOST startup failed` or `SIGILL`, compare startup
+on the login and compute nodes using the same environment and partition/account:
+
+```bash
+bash scripts/mcfost_startup_check.sh > mcfost-login.out 2>&1
+sbatch scripts/mcfost_startup_check.sh
+```
+
+Compare `mcfost-login.out` with `mcfost-startup-JOBID.out`. The diagnostic records
+CPU capabilities, executable checksum, linked libraries, utilities visibility
+and the result of a bounded `mcfost -help` call with automatic updates disabled.
+It performs no model calculation. An executable built for unsupported CPU
+instructions is one possible cause of `SIGILL`; the crash alone does not
+identify the instruction or prove that cause. Select a compatible build or
+rebuild for the compute-node CPUs after checking the diagnostics. The
+[MCFOST build instructions](https://mcfost.readthedocs.io/en/latest/installation.html)
+describe source installation; [GCC's CPU-target documentation](https://gcc.gnu.org/onlinedocs/gcc/x86-Options.html)
+explains why builds using `-march=native` may not run on other CPUs.
+The [upstream MCFOST Makefile](https://github.com/cpinte/mcfost/blob/master/src/Makefile)
+uses `-march=native` for GNU and `-xHOST` for Intel in ordinary non-release
+builds. Check your own Makefile and compiler before selecting portable rebuild
+flags; a source build on a different CPU can therefore require rebuilding.
+
+### One full-resolution continuum control
+
+After the smoke test passes, [grid.control.json](config/grid.control.json)
+defines one nominal coated-Mie model: inclination 70 degrees, envelope dust mass
+2.25e-4 solar masses, maximum envelope grain radius 0.4 micrometres, grain-size
+exponent 2.75 and cavity half-opening 17.5 degrees. It computes a fresh
+temperature and all nine continuum images with 128,000 photon packets, the
+original density/grain grid and the wavelength-dependent 2401/1201-pixel image
+presets. The configuration limits the catalogue to one model.
+
+Use the same environment as the successful smoke test. Copy any required
+partition, account, reservation or module settings from your working smoke
+machine configuration into
+[machine.slurm-control.json](config/machine.slurm-control.json), then run on the
+cluster:
+
+```bash
+python -B workflow.py prepare config/grid.control.json
+python -B workflow.py slurm runs/continuum_control_v1 --machine config/machine.slurm-control.json
+bash runs/continuum_control_v1/submit.sh "$PWD/config/machine.slurm-control.json"
+```
+
+Preparation is needed only once. The array contains one model task requesting
+64 CPUs, 16 GB and a 12-hour time limit; each simulator command has a one-hour
+limit. These are initial resource bounds, not a measured runtime estimate. A
+dependent analysis job generates the spectrum plot and compact predictions.
+
+Check `python -B workflow.py status runs/continuum_control_v1` for one complete
+model with nine completed anchors. After analysis,
+`runs/continuum_control_v1/results/summary.json` should report
+`ranked_model_count: 1` and `excluded_model_count: 0`. The run retains simulator
+timings and logs for sizing subsequent work. Compare its predictions with the
+archived nominal control before treating the new environment as scientifically
+validated; a single run does not establish convergence.
+
+### Next batch: twelve-model continuum search
+
+The [downloaded control review](validation/continuum_control_v1/REVIEW.md)
+confirms nine passing anchors and a score of 0.08687054 dex. Nominal fluxes differ
+from the archive by up to 14.46%, so reproduction and convergence remain open.
+
+The [next-run plan and cluster commands](docs/CONTINUUM_PRODUCTION_V1.md) describe
+the prepared `continuum_production_v1` search: 12 models, nine anchors each,
+**64 CPUs per task and up to 12 concurrent tasks** (768 CPUs at peak). It starts
+from archived continuum controls, adds 50°/60° inclinations and lower mass/q
+directions, and retains the original dust with 5% ice mantle volume. Detailed
+ice/silicate features and heating changes are deferred.
+
+Use [grid.continuum-production.json](config/grid.continuum-production.json) and
+[machine.slurm-production.json](config/machine.slurm-production.json). The run
+is prepared locally; it has not been submitted by this workspace.
 
 ## Scientific report
 

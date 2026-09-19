@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "run_name": "continuum_production_v1",
+  "output_dir": "../runs",
+  "smoke_test": false,
+  "max_models": 12,
+  "notes": "User-selected bounded 12-model continuum screen. Six parameter families, each at cavity half-opening 17.5 and 20 degrees: nominal 70-degree control; 50- and 60-degree geometry responses; archived mass2.5/q3.25 alternative; mass2.0 boundary; q2.5 boundary. Nine strict continuum anchors, coated-Mie dust, unchanged heating, fresh temperature for every model. Only this common new-run contract enters its ranking. Archive reproduction and Monte Carlo convergence remain unresolved; no abundance posterior or joint ice/silicate inference.",
+  "fixed": {
+    "envelope_dust_mass_msun": 0.000225,
+    "envelope_amax_um": 0.4,
+    "envelope_size_exponent": 2.75,
+    "cavity_half_opening_deg": 17.5,
+    "envelope_ice_volume_fraction": 0.05,
+    "distance_pc": 140,
+    "stellar_temperature_k": 4000,
+    "stellar_radius_rsun": 2.5,
+    "stellar_mass_msun": 0.5,
+    "accretion_rate_msun_per_year": 7.3011756855e-8
+  },
+  "models": [
+    {
+      "inclination_deg": 70,
+      "cavity_half_opening_deg": 17.5
+    },
+    {
+      "inclination_deg": 70,
+      "cavity_half_opening_deg": 20
+    },
+    {
+      "inclination_deg": 50,
+      "cavity_half_opening_deg": 17.5
+    },
+    {
+      "inclination_deg": 50,
+      "cavity_half_opening_deg": 20
+    },
+    {
+      "inclination_deg": 60,
+      "cavity_half_opening_deg": 17.5
+    },
+    {
+      "inclination_deg": 60,
+      "cavity_half_opening_deg": 20
+    },
+    {
+      "inclination_deg": 70,
+      "envelope_dust_mass_msun": 0.00025,
+      "envelope_size_exponent": 3.25,
+      "cavity_half_opening_deg": 17.5
+    },
+    {
+      "inclination_deg": 70,
+      "envelope_dust_mass_msun": 0.00025,
+      "envelope_size_exponent": 3.25,
+      "cavity_half_opening_deg": 20
+    },
+    {
+      "inclination_deg": 70,
+      "envelope_dust_mass_msun": 0.0002,
+      "cavity_half_opening_deg": 17.5
+    },
+    {
+      "inclination_deg": 70,
+      "envelope_dust_mass_msun": 0.0002,
+      "cavity_half_opening_deg": 20
+    },
+    {
+      "inclination_deg": 70,
+      "envelope_size_exponent": 2.5,
+      "cavity_half_opening_deg": 17.5
+    },
+    {
+      "inclination_deg": 70,
+      "envelope_size_exponent": 2.5,
+      "cavity_half_opening_deg": 20
+    }
+  ],
+  "numerics": {
+    "photons_temperature": 128000,
+    "photons_image": 128000,
+    "photons_sed": 128000,
+    "grid_nr": 100,
+    "grid_ntheta": 70,
+    "grid_n_inner": 20,
+    "grains": 50
+  },
+  "observations": {
+    "preset": "strict9",
+    "aperture_radius_arcsec": 1,
+    "target_distance_pc": 147,
+    "aperture_subpixels": 64
+  }
+}

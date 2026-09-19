@@ -1,0 +1,29 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - {name: model_id, datatype: string}
+# - {name: anchor_id, datatype: string}
+# - {name: wavelength_um, datatype: float64}
+# - {name: instrument, datatype: string}
+# - {name: region, datatype: string}
+# - {name: scored, datatype: bool}
+# - {name: quality_pass, datatype: bool}
+# - {name: model_flux_jy, datatype: float64}
+# - {name: observed_flux_jy, datatype: float64}
+# - {name: uncertainty_jy, datatype: float64}
+# - {name: log_residual_dex, datatype: float64}
+# - {name: model_status, datatype: string}
+# - {name: model_exclusion_reason, datatype: string}
+# meta: !!omap
+# - {note: Actual sampled wavelengths only; unscored diagnostics do not affect ranking}
+# schema: astropy-2.0
+model_id anchor_id wavelength_um instrument region scored quality_pass model_flux_jy observed_flux_jy uncertainty_jy log_residual_dex model_status model_exclusion_reason
+m0000_28e89562 w001 1.2028117593024095 NIRSpec near_ir_short True True 0.00016332187884295852 0.0001944625168664905 1.945982233879429e-05 -0.07579153501586555 ranked ""
+m0000_28e89562 w002 1.4987957445436022 NIRSpec near_ir_short True True 0.0017484538584541256 0.001667332470111946 0.00016703393760747346 0.020631967973399057 ranked ""
+m0000_28e89562 w003 1.7588530996181813 NIRSpec near_ir_rise True True 0.007348858756682528 0.007450207545022411 0.0007453175682219251 -0.005948470902598313 ranked ""
+m0000_28e89562 w004 2.1916659199557045 NIRSpec near_ir_rise True True 0.04098673188119988 0.0433236674806872 0.004333786790703265 -0.024081923078657752 ranked ""
+m0000_28e89562 w005 2.546352514425122 NIRSpec near_ir_rise True True 0.09445338715062401 0.1242014084192464 0.01242491245973221 -0.11890898410439255 ranked ""
+m0000_28e89562 w006 3.9143995604061015 NIRSpec window_3p9 True True 0.4197164096218493 0.471141750417931 0.047146154012933664 -0.0501956420026608 ranked ""
+m0000_28e89562 w007 5.3906283153397085 MIRI window_5p4 True True 1.0018422320246005 1.3918125079951504 0.20880465124068487 -0.14278139996306688 ranked ""
+m0000_28e89562 w008 13.799908320389276 MIRI window_13p8 True True 2.9540277902410734 2.2656402783529344 0.3398745344272618 0.1152236197262324 ranked ""
+m0000_28e89562 w009 27.513091575690556 MIRI window_27p5 True True 8.472078659213055 7.851055855671131 1.1784484757219593 0.033061912213654066 ranked ""

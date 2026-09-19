@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "mcfost_executable": "mcfost",
+  "mcfost_utils": "$MCFOST_UTILS",
+  "backend": "image_method2",
+  "threads": 64,
+  "timeout_seconds": 3600,
+  "max_memory_gb": 12,
+  "slurm": {
+    "time": "12:00:00",
+    "memory": "16G",
+    "max_parallel": 12,
+    "python": "python",
+    "setup_lines": [
+      ": \"${MCFOST_UTILS:?Export MCFOST_UTILS before submitting}\""
+    ],
+    "analysis_cpus": 1,
+    "analysis_memory": "2G",
+    "analysis_time": "00:10:00"
+  },
+  "notes": "12 physical models, up to 12 array elements concurrently: 64 CPUs and 16 GB per task, at most 768 allocated CPUs and 192 GB for the model array. Keep the successful portable MCFOST build, utilities and Python environment. Reuse any partition/account/reservation/module settings from the working control configuration. One-hour simulator-command and twelve-hour task limits are inherited bounds; downloaded result tables contain no timings. The dependent analysis uses one CPU."
+}

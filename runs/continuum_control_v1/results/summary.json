@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "run_id": "continuum_control_v1",
+  "manifest_sha256": "942c7aa0db63ff24e5afc7004efefe21c3cea3a6b768f1463f6c8a1c6f19eb67",
+  "smoke_test": false,
+  "interpretation": "Grid screen, not a posterior",
+  "metric": "sqrt(mean_regions(mean_anchors(log10(model/observed)^2)))",
+  "normalization_fitted": false,
+  "expected_scored_anchor_ids": [
+    "w001",
+    "w002",
+    "w003",
+    "w004",
+    "w005",
+    "w006",
+    "w007",
+    "w008",
+    "w009"
+  ],
+  "n_scored_anchors": 9,
+  "n_regions": 6,
+  "model_count": 1,
+  "ranked_model_count": 1,
+  "excluded_model_count": 0,
+  "status_counts": {
+    "ranked": 1
+  },
+  "best_model": {
+    "model_id": "m0000_28e89562",
+    "model_index": 0,
+    "parameters": {
+      "accretion_rate_msun_per_year": 7.3011756855e-08,
+      "cavity_half_opening_deg": 17.5,
+      "distance_pc": 140.0,
+      "envelope_amax_um": 0.4,
+      "envelope_dust_mass_msun": 0.000225,
+      "envelope_ice_volume_fraction": 0.05,
+      "envelope_size_exponent": 2.75,
+      "inclination_deg": 70.0,
+      "stellar_mass_msun": 0.5,
+      "stellar_radius_rsun": 2.5,
+      "stellar_temperature_k": 4000.0
+    },
+    "status": "ranked",
+    "reason": "",
+    "score_dex": 0.08687053964578331,
+    "chi2_diagnostic": 17.896087883284856,
+    "n_scored": 9,
+    "region_rms_dex": {
+      "near_ir_short": 0.05554293331521364,
+      "near_ir_rise": 0.0701300454536288,
+      "window_3p9": 0.0501956420026608,
+      "window_5p4": 0.14278139996306688,
+      "window_13p8": 0.1152236197262324,
+      "window_27p5": 0.033061912213654066
+    },
+    "smoke_test": false
+  },
+  "chi2_note": "Unreduced diagonal-error diagnostic only; null if any scored uncertainty is invalid. No reduced chi-square or posterior inferred.",
+  "excluded_models": [],
+  "warnings": []
+}
