@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Pin a shared cluster environment and prepare the V2 numerical-test array.
+"""Pin a shared cluster environment and prepare a V2 diagnostic array.
 
 Run with the successful shared Python environment after uploading the complete
 bundle. This helper checks dependencies and immutable inputs, writes a sibling
@@ -22,6 +22,12 @@ import sys
 
 BLAS_VARIABLES = ("OPENBLAS_NUM_THREADS", "MKL_NUM_THREADS", "NUMEXPR_NUM_THREADS",
                   "VECLIB_MAXIMUM_THREADS")
+CROSSOVER_EXPERIMENT = "extinction_ice_crossover_v2"
+PIXEL_SCALE_DIAGNOSTIC = "fixed_temperature_pixel_scale_v2"
+
+
+def is_crossover(experiment):
+    return experiment.get("experiment_id") == CROSSOVER_EXPERIMENT
 
 
 def simulator_paths(machine, machine_path):
@@ -52,6 +58,20 @@ def simulator_paths(machine, machine_path):
 def bundle_layout(bundle):
     experiment = json.loads((bundle / "experiment.json").read_text())
     tasks = experiment.get("tasks", [])
+    if is_crossover(experiment):
+        if experiment.get("schema_version") != 2 \
+                or experiment.get("diagnostic_id") != PIXEL_SCALE_DIAGNOSTIC:
+            raise ValueError("Expected schema 2 fixed-temperature pixel-scale diagnostic; "
+                             "prepare a fresh bundle instead of launching the old temperature crossover")
+        if len(tasks) != 5 or [task.get("index") for task in tasks] != list(range(5)):
+            raise ValueError("Expected exactly five consecutively indexed pixel-scale tasks")
+        for relative in ("code/crossover_task.py", "code/analyze_extinction_ice_crossover_v2.py",
+                         "code/src/mcfost_grid/runner.py", "code/src/mcfost_grid/photometry.py"):
+            if not (bundle / relative).is_file():
+                raise ValueError(f"Incomplete crossover bundle: {relative} is absent")
+        # The crossover dispatcher checks every frozen temperature, image input,
+        # task design and package hash during the dependency probe below.
+        return experiment
     if len(tasks) != 20 or [task.get("index") for task in tasks] != list(range(20)):
         raise ValueError("Expected exactly 20 consecutively indexed numerical tasks")
     if not re.fullmatch(r"[A-Za-z0-9_.-]+", experiment.get("experiment_id", "")):
@@ -75,7 +95,7 @@ def bundle_layout(bundle):
     return experiment
 
 
-def validate_settings(machine):
+def validate_settings(machine, experiment=None):
     allowed = {"schema_version", "mcfost_executable", "mcfost_utils", "backend", "threads",
                "timeout_seconds", "max_memory_gb", "slurm", "notes"}
     if set(machine) - allowed or machine.get("schema_version") != 1:
@@ -90,13 +110,14 @@ def validate_settings(machine):
         raise ValueError("Unsupported Slurm setting")
     machine.setdefault("threads", 64)
     machine.setdefault("timeout_seconds", 14400)
-    machine.setdefault("max_memory_gb", 12)
+    pixel_scale = is_crossover(experiment or {})
+    machine.setdefault("max_memory_gb", 64 if pixel_scale else 12)
     settings.setdefault("max_parallel", 16)
     settings.setdefault("analysis_cpus", 2)
     settings.setdefault("time", "24:00:00")
-    settings.setdefault("memory", "16G")
+    settings.setdefault("memory", "96G" if pixel_scale else "16G")
     settings.setdefault("analysis_time", "01:00:00")
-    settings.setdefault("analysis_memory", "4G")
+    settings.setdefault("analysis_memory", "8G" if pixel_scale else "4G")
     for name, value in (("threads", machine["threads"]), ("max_parallel", settings["max_parallel"]),
                         ("analysis_cpus", settings["analysis_cpus"])):
         if isinstance(value, bool) or not isinstance(value, int) or value < 1:
@@ -128,16 +149,19 @@ def validate_settings(machine):
         raise ValueError("setup_lines must be a list of single-line shell commands")
 
 
-def dependency_probe(executable, utilities):
+def dependency_probe(executable, utilities, experiment=None):
     """Read-only login/compute probe: package hashes, all subruns and imports."""
-    code = f"""import sys, os, socket, json
-from pathlib import Path
-import numpy, scipy, astropy, matplotlib
-from astropy.io import fits
-from scipy.ndimage import gaussian_filter
-bundle = Path('.').resolve()
-sys.path.insert(0, str(bundle / 'code'))
-from numerical_task import validate_package
+    if is_crossover(experiment or {}):
+        frozen_check = """from crossover_task import validate_package, load_modules
+validate_package(bundle)
+runner, photometry = load_modules(bundle)
+if not callable(photometry.measure_image):
+    raise RuntimeError('Frozen crossover photometry is unavailable')
+experiment = json.loads((bundle / 'experiment.json').read_text())
+frozen_receipt = {'frozen_crossover_tasks_checked': len(experiment['tasks'])}
+"""
+    else:
+        frozen_check = """from numerical_task import validate_package
 validate_package(bundle)
 experiment = json.loads((bundle / 'experiment.json').read_text())
 runs = list(dict.fromkeys(task['run_path'] for task in experiment['tasks']))
@@ -149,6 +173,16 @@ for relative in runs:
     if not run.is_relative_to(bundle):
         raise RuntimeError('Subrun escapes bundle')
     validate_inputs(run, json.loads((run / 'manifest.json').read_text()))
+frozen_receipt = {'frozen_subruns_checked': len(runs)}
+"""
+    code = f"""import sys, os, socket, json
+from pathlib import Path
+import numpy, scipy, astropy, matplotlib
+from astropy.io import fits
+from scipy.ndimage import gaussian_filter
+bundle = Path('.').resolve()
+sys.path.insert(0, str(bundle / 'code'))
+{frozen_check}
 exe = Path({executable!r})
 utilities = Path({utilities!r})
 if not exe.is_file() or not os.access(exe, os.X_OK):
@@ -157,7 +191,7 @@ if not all((utilities / name).is_dir() for name in ('Dust', 'Lambda', 'Stellar_S
     raise RuntimeError(f'Incomplete MCFOST utilities on this node: {{utilities}}')
 print(json.dumps({{'environment_check': 'passed', 'host': socket.gethostname(),
                   'python': sys.executable, 'mcfost_executable': str(exe), 'mcfost_utils': str(utilities),
-                  'frozen_subruns_checked': len(runs),
+                  **frozen_receipt,
                   'packages': {{p.__name__: {{'version': p.__version__, 'file': p.__file__}}
                                for p in (numpy, scipy, astropy, matplotlib)}}}}), flush=True)
 """
@@ -168,7 +202,13 @@ def launch_scripts(bundle, experiment, machine, configured):
     settings = machine["slurm"]
     python = shlex.quote(settings["python"])
     utilities = shlex.quote(machine["mcfost_utils"])
-    probe = shlex.quote(dependency_probe(machine["mcfost_executable"], machine["mcfost_utils"]))
+    probe = shlex.quote(dependency_probe(machine["mcfost_executable"], machine["mcfost_utils"], experiment))
+    crossover = is_crossover(experiment)
+    dispatcher = "crossover_task.py" if crossover else "numerical_task.py"
+    analyzer = ("analyze_extinction_ice_crossover_v2.py" if crossover
+                else "analyze_extinction_ice_numerics_v2.py")
+    last_index = len(experiment["tasks"]) - 1
+    concurrency = min(settings["max_parallel"], len(experiment["tasks"]))
     machine_hash = hashlib.sha256((json.dumps(machine, indent=2, allow_nan=False) + "\n").encode()).hexdigest()
     machine_check = ("import hashlib, pathlib, sys; expected = " + repr(machine_hash)
                      + "; actual = hashlib.sha256(pathlib.Path(sys.argv[1]).read_bytes()).hexdigest(); "
@@ -193,15 +233,15 @@ def launch_scripts(bundle, experiment, machine, configured):
             'export MPLCONFIGDIR="$MCFOST_BUNDLE_DIR/.mplconfig"', 'mkdir -p "$MPLCONFIGDIR"',
             check_machine, f"{python} -B -c {probe}"]
     array = common + [f"#SBATCH --cpus-per-task={machine['threads']}",
-                      f"#SBATCH --array=0-19%{settings['max_parallel']}",
+                      f"#SBATCH --array=0-{last_index}%{concurrency}",
                       f"#SBATCH --time={settings['time']}", f"#SBATCH --mem={settings['memory']}",
                       "#SBATCH --output=logs/array-%A_%a.out", "#SBATCH --error=logs/array-%A_%a.err"] + body + [
-        f'exec {python} -B code/numerical_task.py "$MCFOST_BUNDLE_DIR" --index "$SLURM_ARRAY_TASK_ID" --machine "$MCFOST_MACHINE"']
+        f'exec {python} -B code/{dispatcher} "$MCFOST_BUNDLE_DIR" --index "$SLURM_ARRAY_TASK_ID" --machine "$MCFOST_MACHINE"']
     analysis = common + [f"#SBATCH --cpus-per-task={settings['analysis_cpus']}",
                          f"#SBATCH --time={settings['analysis_time']}",
                          f"#SBATCH --mem={settings['analysis_memory']}",
                          "#SBATCH --output=logs/analysis-%j.out", "#SBATCH --error=logs/analysis-%j.err"] + body + [
-        f'exec {python} -B code/analyze_extinction_ice_numerics_v2.py "$MCFOST_BUNDLE_DIR"']
+        f'exec {python} -B code/{analyzer} "$MCFOST_BUNDLE_DIR"']
     submit = ["#!/bin/bash", "set -euo pipefail",
               'if [[ $# -ne 1 ]]; then echo "Usage: bash submit.sh /absolute/path/to/machine.cluster.json" >&2; exit 2; fi',
               'export MCFOST_BUNDLE_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"',
@@ -231,7 +271,7 @@ def configure(bundle, machine_path):
     bundle, machine_path = Path(bundle).resolve(), Path(machine_path).resolve()
     experiment = bundle_layout(bundle)
     machine = json.loads(machine_path.read_text())
-    validate_settings(machine)
+    validate_settings(machine, experiment)
     executable, utilities = simulator_paths(machine, machine_path)
     # Preserve the venv executable path; resolving its symlink loses that venv.
     python = os.path.abspath(sys.executable)
@@ -241,7 +281,7 @@ def configure(bundle, machine_path):
     environment.update({name: "1" for name in BLAS_VARIABLES})
     environment.update(MCFOST_AUTO_UPDATE="0", MCFOST_UTILS=utilities,
                        MPLCONFIGDIR=str(bundle / ".mplconfig"))
-    subprocess.run([python, "-B", "-c", dependency_probe(executable, utilities)],
+    subprocess.run([python, "-B", "-c", dependency_probe(executable, utilities, experiment)],
                    cwd=bundle, env=environment, check=True, timeout=180)
     configured = machine_path.with_name(machine_path.stem + ".cluster.json")
     serialized = json.dumps(machine, indent=2, allow_nan=False) + "\n"
