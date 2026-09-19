@@ -129,6 +129,9 @@ def expand_models(config):
 
 def read_anchors(config, base):
     from astropy.table import Table
+    numerical_only = config.get("numerical_only", False)
+    if not isinstance(numerical_only, bool):
+        raise ValueError("numerical_only must be boolean")
     selection = config.get("observations", {})
     _strict_keys(selection, {"preset", "anchor_ids", "anchors_file", "spectrum_file",
                             "aperture_radius_arcsec", "target_distance_pc", "aperture_subpixels", "quality_policy"}, "observations")
@@ -140,7 +143,9 @@ def read_anchors(config, base):
             raise ValueError("Custom anchors require an explicit matching spectrum_file; do not silently reuse the 1-arcsec grey spectrum")
         path = resolve(base, selection["anchors_file"])
         table = Table.read(path, format="ascii.ecsv" if path.suffix == ".ecsv" else "ascii.csv")
-        required = {"id", "wavelength_um", "instrument", "region", "flux_jy", "uncertainty_jy"}
+        required = {"id", "wavelength_um", "instrument", "region"}
+        if not numerical_only:
+            required |= {"flux_jy", "uncertainty_jy"}
         if not required <= set(table.colnames):
             raise ValueError(f"Anchor table requires {sorted(required)}")
         anchors = []
@@ -150,7 +155,7 @@ def read_anchors(config, base):
                 if item["score"].lower() not in {"true", "false"}:
                     raise ValueError("CSV score must be true or false")
                 item["score"] = item["score"].lower() == "true"
-            item.setdefault("score", True)
+            item.setdefault("score", not numerical_only)
             anchors.append(item)
     else:
         table = Table.read(spectrum)
@@ -200,11 +205,13 @@ def read_anchors(config, base):
         if not re.fullmatch(r"[A-Za-z0-9_-]+", str(item["id"])) or item["id"] in seen:
             raise ValueError("Anchor IDs must be unique safe filename tokens")
         seen.add(item["id"])
-        for key in ("wavelength_um", "flux_jy", "uncertainty_jy"):
+        for key in (("wavelength_um",) if numerical_only else ("wavelength_um", "flux_jy", "uncertainty_jy")):
             _positive(item[key], key)
         if item["instrument"] not in ("NIRSpec", "MIRI") or not isinstance(item["score"], bool):
             raise ValueError("Anchor instrument/score invalid")
-    if not anchors or not any(a["score"] for a in anchors):
+        if numerical_only and item["score"]:
+            raise ValueError("Numerical-only probes must not be scored against observations")
+    if not anchors or (not numerical_only and not any(a["score"] for a in anchors)):
         raise ValueError("Need at least one scored anchor")
     measurement = {"aperture_radius_arcsec": selection.get("aperture_radius_arcsec", 1.0),
                    "target_distance_pc": selection.get("target_distance_pc", 147.0),
@@ -232,7 +239,7 @@ def prepare_run(config_path):
     config_path = Path(config_path).resolve()
     config = load_json(config_path)
     _strict_keys(config, {"schema_version", "run_name", "output_dir", "template", "fixed", "grid", "models",
-                         "numerics", "observations", "smoke_test", "max_models", "notes"}, "configuration")
+                         "numerics", "observations", "smoke_test", "max_models", "notes", "numerical_only"}, "configuration")
     if config.get("schema_version") != 1:
         raise ValueError("schema_version must be 1")
     name = config.get("run_name", "")

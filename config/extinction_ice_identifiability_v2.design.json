@@ -1,0 +1,2040 @@
+{
+  "amax_cavity_quartets": [
+    {
+      "amax_um": [
+        0.4,
+        0.8
+      ],
+      "cavity_half_opening_deg": [
+        17.5,
+        30.0
+      ],
+      "design_indices": [
+        0,
+        5,
+        6,
+        7
+      ],
+      "inclination_deg": 50.0
+    },
+    {
+      "amax_um": [
+        0.4,
+        0.8
+      ],
+      "cavity_half_opening_deg": [
+        17.5,
+        30.0
+      ],
+      "design_indices": [
+        8,
+        13,
+        14,
+        15
+      ],
+      "inclination_deg": 60.0
+    },
+    {
+      "amax_um": [
+        0.4,
+        0.8
+      ],
+      "cavity_half_opening_deg": [
+        17.5,
+        30.0
+      ],
+      "design_indices": [
+        16,
+        21,
+        22,
+        23
+      ],
+      "inclination_deg": 65.0
+    },
+    {
+      "amax_um": [
+        0.4,
+        0.8
+      ],
+      "cavity_half_opening_deg": [
+        17.5,
+        30.0
+      ],
+      "design_indices": [
+        24,
+        29,
+        30,
+        31
+      ],
+      "inclination_deg": 70.0
+    }
+  ],
+  "bare_silicate_limit_gate": {
+    "anchor_count": 9,
+    "bare_control_policy": "Zero mantle uses a true bare template; epsilon is solely a limiting test.",
+    "comparison": "actual Mie 1 1 bare silicate versus Mie 2 2 coated with f_ice=1e-6 at matched total mass and outer size convention",
+    "flux_gate": "For every anchor, abs(mean paired fractional difference)+two-sided 95% uncertainty half-width <= 0.01; use five independent paired-seed differences and state interval assumptions.",
+    "g_absolute_tolerance": 0.001,
+    "image_requests": 90,
+    "opacity_absolute_tolerance_fraction_of_peak_reference": 1e-06,
+    "opacity_relative_tolerance": 0.001,
+    "opacity_rule": "For each of kappa_abs, kappa_sca and kappa_ext on the declared shared wavelength grid, require abs(coated-bare) <= max(0.001*abs(bare), 1e-6*max(abs(bare))). Record which wavelengths use the absolute floor. An identically zero reference requires exact zero or a separately declared physical absolute tolerance; nonfinite values fail. Compare g only where scattering is nonzero, recording undefined cases.",
+    "passed": false,
+    "photon_packets": 2048000,
+    "seed_values": [
+      42001,
+      42002,
+      42003,
+      42004,
+      42005
+    ],
+    "temperature_solves": 10
+  },
+  "baseline_ice_definition": {
+    "density_g_cm3": 1.2,
+    "mass_parameter": "total envelope dust mass including ice",
+    "quantity": "fraction of total solid grain volume",
+    "value": 0.05
+  },
+  "conditional_inference": {
+    "external_prior_scenarios": [
+      "none",
+      "inclination fixed",
+      "inclination and luminosity fixed",
+      "inclination, luminosity and envelope mass fixed"
+    ],
+    "gate": "Local covariance-aware matched responses, nuisance profiling, injection/recovery with held-out direct simulations and expanded boundaries before intervals.",
+    "identified_direction_counts": null,
+    "scope": "Thirty-two baseline models and twenty-four material cases are response experiments, not comprehensive nuisance marginalization."
+  },
+  "controls": [
+    {
+      "design_index": 0,
+      "family": "nominal",
+      "parent_index": 2
+    },
+    {
+      "design_index": 1,
+      "family": "cavity20_control",
+      "parent_index": 8
+    },
+    {
+      "design_index": 2,
+      "family": "archived_mass_q_control",
+      "parent_index": 14
+    },
+    {
+      "design_index": 8,
+      "family": "nominal",
+      "parent_index": 4
+    },
+    {
+      "design_index": 9,
+      "family": "cavity20_control",
+      "parent_index": 10
+    },
+    {
+      "design_index": 10,
+      "family": "archived_mass_q_control",
+      "parent_index": 16
+    },
+    {
+      "design_index": 16,
+      "family": "nominal",
+      "parent_index": 5
+    },
+    {
+      "design_index": 17,
+      "family": "cavity20_control",
+      "parent_index": 11
+    },
+    {
+      "design_index": 18,
+      "family": "archived_mass_q_control",
+      "parent_index": 17
+    },
+    {
+      "design_index": 24,
+      "family": "nominal",
+      "parent_index": 0
+    },
+    {
+      "design_index": 25,
+      "family": "cavity20_control",
+      "parent_index": 6
+    },
+    {
+      "design_index": 26,
+      "family": "archived_mass_q_control",
+      "parent_index": 12
+    }
+  ],
+  "data_contract": {
+    "centre_policy": "Model each existing extraction at its actual centre, or freeze a common-centre re-extraction before joint use. Offset matters for the 1-arcsec continuum alone as well.",
+    "check_only_anchor_ids": [
+      "w007",
+      "w008",
+      "w009"
+    ],
+    "check_primary_weight": 0.0,
+    "continuum_aperture_radius_arcsec": 1.0,
+    "continuum_mask_applied": false,
+    "h2o_aperture_radius_arcsec": 0.35,
+    "h2o_contract": "reference/observations/h2o_v3/h2o_3um_observation_contract_v3.json",
+    "h2o_deduplication_accepted": false,
+    "h2o_role_nodes": 85,
+    "h2o_rule": "Convert node lambda_F_lambda to Fnu before frozen LSF and six-support continuum; apply to observations and models identically; no flux/tau double counting.",
+    "h2o_unique_nodes": 75,
+    "legacy_continuum_offset_east_north_arcsec": [
+      -0.0142674672164,
+      0.12098503874
+    ],
+    "miri_bounds_um": [
+      [
+        8.2,
+        8.6
+      ],
+      [
+        9.3,
+        10.1
+      ],
+      [
+        10.7,
+        11.3
+      ],
+      [
+        12.4,
+        13.0
+      ],
+      [
+        18.1,
+        18.8
+      ],
+      [
+        19.3,
+        20.3
+      ]
+    ],
+    "miri_primary_band_ids": [
+      "s01",
+      "s02",
+      "s03",
+      "s04",
+      "s05",
+      "s06"
+    ],
+    "nir_primary_anchor_ids": [
+      "w001",
+      "w002",
+      "w003",
+      "w004",
+      "w005",
+      "w006"
+    ],
+    "primary_miri_contract": "validation/extinction_ice_identifiability_v2/broadband_contract/contract.json",
+    "primary_miri_contract_sha256": "e5bf9e0b1517f9678095e40ba9213958fc2ebc5e9247b4242c9494a3a95b133e",
+    "silicate_9p7_um_retained": true
+  },
+  "design_id": "extinction_ice_identifiability_v2",
+  "distance_flux_factor": 0.9070294784580498,
+  "distance_pc": 140.0,
+  "distance_policy": "Scale model flux and angular aperture mapping together; observed fluxes are not distance-rescaled.",
+  "document_type": "experimental_design_not_workflow_config",
+  "family_definitions": [
+    {
+      "id": "nominal",
+      "overrides": {},
+      "source_heating_target_lsun": 1.9
+    },
+    {
+      "id": "cavity20_control",
+      "overrides": {
+        "cavity_half_opening_deg": 20.0
+      },
+      "source_heating_target_lsun": 1.9
+    },
+    {
+      "id": "archived_mass_q_control",
+      "overrides": {
+        "envelope_dust_mass_msun": 0.00025,
+        "envelope_size_exponent": 3.25
+      },
+      "source_heating_target_lsun": 1.9
+    },
+    {
+      "id": "lower_mass",
+      "overrides": {
+        "envelope_dust_mass_msun": 0.00015
+      },
+      "source_heating_target_lsun": 1.9
+    },
+    {
+      "id": "higher_heating",
+      "overrides": {
+        "accretion_rate_msun_per_year": 2.0040322609364722e-07
+      },
+      "source_heating_target_lsun": 2.7
+    },
+    {
+      "id": "larger_grains",
+      "overrides": {
+        "envelope_amax_um": 0.8
+      },
+      "source_heating_target_lsun": 1.9
+    },
+    {
+      "id": "larger_cavity",
+      "overrides": {
+        "cavity_half_opening_deg": 30.0
+      },
+      "source_heating_target_lsun": 1.9
+    },
+    {
+      "id": "larger_grains_and_cavity",
+      "overrides": {
+        "cavity_half_opening_deg": 30.0,
+        "envelope_amax_um": 0.8
+      },
+      "source_heating_target_lsun": 1.9
+    }
+  ],
+  "full_spectrum_operator_gate": {
+    "additional_temperature_sed_image_cost": null,
+    "closure": "Aperture and total flux require compatible estimators; validate Method-2 closure and total-flux field of view. Finite-image totals cannot silently replace infinite-aperture totals.",
+    "combined_interpolation_quadrature_max_relative_error": 0.01,
+    "current_temperature_flags": [
+      true,
+      false,
+      true
+    ],
+    "current_thermal_inclination_bins": 10,
+    "current_thermal_wavelength_bins": 50,
+    "dense_science_sed_currently_computed": false,
+    "interpolation": "Measure aperture correction at training wavelengths and held-out direct images within every accepted window/background class, including silicate wings/core and NIR slopes. No interpolation over untested features or outside support.",
+    "interpolation_max_relative_error": 0.005,
+    "opacity": "Generate kappa_abs, kappa_sca, kappa_ext and g for every exact material/size/mixing hypothesis; bulk k-ratio is insufficient.",
+    "operator_error_rule": "These are provisional upper bounds, to be tightened if needed to remain below the window uncertainty and one third of a claimed physical contrast. Validate the frozen R100-bin/window measurement as well as dense model quadrature; method closure requires its own measured allocation.",
+    "passed": false,
+    "quadrature": "Three-node versus five-node and dense/direct integrals per window; accept only below stated operator-error budget, otherwise increase nodes/direct images.",
+    "quadrature_max_relative_error": 0.005,
+    "requirement": "Explicit dense SED stage, wavelength grid, transfer-method identity and benchmarked cost; preserve fresh temperature and executable provenance.",
+    "thermal_diagnostic_sed_available": true
+  },
+  "generator_sha256": "f0a731dccdcb7903f76483f84b99da11b19e58c97868695dc61afc3fc2321f00",
+  "inclinations_deg": [
+    50.0,
+    60.0,
+    65.0,
+    70.0
+  ],
+  "input_sha256": {
+    "config/extinction_ice_identifiability_v1.design.json": "6ff7729668687e5638b0aab7949ab36bd3047474db41732a87f9984e6ac5cdb8",
+    "reference/dust/Draine_Si_sUV.dat": "3a6af751429f6f8dc948e60675b13be01ffcbed0662eec62934ec6d9c61dea80",
+    "reference/dust/H2O_30K_Leiden_mcfost.dat": "29b572f8907993870d0b15823e1182a9c4813b8cdb8f4fbdd40ef39cf28fb00c",
+    "reference/observations/continuum_sed_R100.ecsv": "d2d51c6b0c0c229145b147d8793b03fa721e6a4cca191d790fb2082625d3e0d6",
+    "reference/observations/h2o_v3/h2o_3um_observation_contract_v3.json": "519203acdb1271c02f10c927af7225e404d43856ae4bda1dd4a7dab9fba4a9e7",
+    "reference/observations/h2o_v3/stellar_center_h2o_continuum_lsf_nodes_R2400_v3.tsv": "07f25fef793bf100873ab1f963bc44c55e49b0f171865ef57da62eb4db1d56d2",
+    "reference/observations/h2o_v3/stellar_center_h2o_target_lsf_nodes_R2400_v3.tsv": "bc54da8f9e376921527db29400677e165b6e2f4aed158fd3aaa5162a66b325a7",
+    "reference/observations/tmc1a_sed_unstitched.ecsv": "2a253bfdb23bc5fa30dd7064fa61229c1dc5cc62b5b8d1fcb1216a7dcc3d0569",
+    "reference/parameters/continuum_original_dust.para": "032695c231782ff7cb11dd114b6f265703427e345297e0fb424f731ae461e26f",
+    "reference/runtime_assets/Dust/ice_opct.dat": "44625b4918b7015e97d3c92b3f19e9e06eb57d209f3b1a946ee8f141215c8697",
+    "runs/continuum_production_v1.1/manifest.json": "4ec2c6eefa9c38986286f960c2186fc2c308eeea931f2222143d69280f3fdc07",
+    "scripts/build_continuum_grid_v11.py": "cc8690570e38e33d49aaaf7fa07bfbfdbf22842a44612a9858f495ed5f680959",
+    "src/mcfost_grid/physics.py": "07c6569fe38d8c6ecae569c60626f5c1cdb576cbfa531605817cb15bd6b0cb4d",
+    "validation/extinction_ice_identifiability_v2/broadband_contract/contract.json": "e5bf9e0b1517f9678095e40ba9213958fc2ebc5e9247b4242c9494a3a95b133e",
+    "validation/extinction_ice_identifiability_v2/spectrum_information_v2.json": "1ee30370db479911660eb9791783b01bc1f277bac3c1a6eed78a2ad91c176aa3"
+  },
+  "jobs_submitted": false,
+  "material_pilot": {
+    "H2O_30K_density_g_cm3": 0.94,
+    "additional_disjoint_Mie_controls": [
+      {
+        "background_id": "b00",
+        "control_id": "disjoint_mie_00",
+        "design_index": 4,
+        "dhs_vmax": null,
+        "dust_family": "H2O30K_disjoint_Mie",
+        "ice_density_g_cm3": 0.94,
+        "ice_species_mass_fraction": 0.02,
+        "ice_total_solid_volume_fraction": 0.0706214689265537,
+        "interpretation": "For disjoint populations, volume fraction describes the total solid inventory, not a mantle on each grain.",
+        "parameters": {
+          "accretion_rate_msun_per_year": 7.3011756855e-08,
+          "cavity_half_opening_deg": 17.5,
+          "distance_pc": 140.0,
+          "envelope_amax_um": 0.4,
+          "envelope_dust_mass_msun": 0.00015,
+          "envelope_ice_volume_fraction": 0.0706214689265537,
+          "envelope_size_exponent": 2.75,
+          "inclination_deg": 50.0,
+          "stellar_mass_msun": 0.5,
+          "stellar_radius_rsun": 2.5,
+          "stellar_temperature_k": 4000.0
+        },
+        "role": "attribution control versus identical-composition disjoint DHS",
+        "runnable_template_validated": false,
+        "solver": "Mie",
+        "source_heating_target_lsun": 1.9,
+        "target_distance_pc": 147.0
+      },
+      {
+        "background_id": "b00",
+        "control_id": "disjoint_mie_01",
+        "design_index": 5,
+        "dhs_vmax": null,
+        "dust_family": "H2O30K_disjoint_Mie",
+        "ice_density_g_cm3": 0.94,
+        "ice_species_mass_fraction": 0.04,
+        "ice_total_solid_volume_fraction": 0.1343054489639294,
+        "interpretation": "For disjoint populations, volume fraction describes the total solid inventory, not a mantle on each grain.",
+        "parameters": {
+          "accretion_rate_msun_per_year": 7.3011756855e-08,
+          "cavity_half_opening_deg": 17.5,
+          "distance_pc": 140.0,
+          "envelope_amax_um": 0.4,
+          "envelope_dust_mass_msun": 0.00015,
+          "envelope_ice_volume_fraction": 0.1343054489639294,
+          "envelope_size_exponent": 2.75,
+          "inclination_deg": 50.0,
+          "stellar_mass_msun": 0.5,
+          "stellar_radius_rsun": 2.5,
+          "stellar_temperature_k": 4000.0
+        },
+        "role": "attribution control versus identical-composition disjoint DHS",
+        "runnable_template_validated": false,
+        "solver": "Mie",
+        "source_heating_target_lsun": 1.9,
+        "target_distance_pc": 147.0
+      }
+    ],
+    "backgrounds": [
+      {
+        "background_id": "b00",
+        "parameters": {
+          "accretion_rate_msun_per_year": 7.3011756855e-08,
+          "cavity_half_opening_deg": 17.5,
+          "distance_pc": 140.0,
+          "envelope_amax_um": 0.4,
+          "envelope_dust_mass_msun": 0.00015,
+          "envelope_ice_volume_fraction": 0.05,
+          "envelope_size_exponent": 2.75,
+          "inclination_deg": 50.0,
+          "stellar_mass_msun": 0.5,
+          "stellar_radius_rsun": 2.5,
+          "stellar_temperature_k": 4000.0
+        },
+        "source_heating_target_lsun": 1.9,
+        "target_distance_pc": 147.0
+      },
+      {
+        "background_id": "b01",
+        "parameters": {
+          "accretion_rate_msun_per_year": 7.3011756855e-08,
+          "cavity_half_opening_deg": 17.5,
+          "distance_pc": 140.0,
+          "envelope_amax_um": 0.4,
+          "envelope_dust_mass_msun": 0.000225,
+          "envelope_ice_volume_fraction": 0.05,
+          "envelope_size_exponent": 2.75,
+          "inclination_deg": 50.0,
+          "stellar_mass_msun": 0.5,
+          "stellar_radius_rsun": 2.5,
+          "stellar_temperature_k": 4000.0
+        },
+        "source_heating_target_lsun": 1.9,
+        "target_distance_pc": 147.0
+      },
+      {
+        "background_id": "b02",
+        "parameters": {
+          "accretion_rate_msun_per_year": 7.3011756855e-08,
+          "cavity_half_opening_deg": 17.5,
+          "distance_pc": 140.0,
+          "envelope_amax_um": 0.4,
+          "envelope_dust_mass_msun": 0.00015,
+          "envelope_ice_volume_fraction": 0.05,
+          "envelope_size_exponent": 2.75,
+          "inclination_deg": 65.0,
+          "stellar_mass_msun": 0.5,
+          "stellar_radius_rsun": 2.5,
+          "stellar_temperature_k": 4000.0
+        },
+        "source_heating_target_lsun": 1.9,
+        "target_distance_pc": 147.0
+      },
+      {
+        "background_id": "b03",
+        "parameters": {
+          "accretion_rate_msun_per_year": 7.3011756855e-08,
+          "cavity_half_opening_deg": 17.5,
+          "distance_pc": 140.0,
+          "envelope_amax_um": 0.4,
+          "envelope_dust_mass_msun": 0.000225,
+          "envelope_ice_volume_fraction": 0.05,
+          "envelope_size_exponent": 2.75,
+          "inclination_deg": 65.0,
+          "stellar_mass_msun": 0.5,
+          "stellar_radius_rsun": 2.5,
+          "stellar_temperature_k": 4000.0
+        },
+        "source_heating_target_lsun": 1.9,
+        "target_distance_pc": 147.0
+      }
+    ],
+    "controls_scope": "Two controls at b00 only; extend controls across backgrounds before general shape attribution.",
+    "conversion": "f_volume=(x_mass/rho_ice)/(x_mass/rho_ice+(1-x_mass)/rho_silicate)",
+    "core_density_g_cm3": 3.5,
+    "fixed_mass_policy": "Total envelope dust mass includes silicate and ice; match ice species mass fraction across hypotheses.",
+    "generic_ice_density_g_cm3": 1.2,
+    "ice_species_mass_fraction_levels": [
+      0.02,
+      0.04
+    ],
+    "model_count": 24,
+    "models": [
+      {
+        "background_id": "b00",
+        "design_index": 0,
+        "dhs_vmax": null,
+        "dust_family": "generic_ice_coated_Mie",
+        "ice_density_g_cm3": 1.2,
+        "ice_species_mass_fraction": 0.02,
+        "ice_total_solid_volume_fraction": 0.05617977528089888,
+        "interpretation": "For disjoint populations, volume fraction describes the total solid inventory, not a mantle on each grain.",
+        "parameters": {
+          "accretion_rate_msun_per_year": 7.3011756855e-08,
+          "cavity_half_opening_deg": 17.5,
+          "distance_pc": 140.0,
+          "envelope_amax_um": 0.4,
+          "envelope_dust_mass_msun": 0.00015,
+          "envelope_ice_volume_fraction": 0.05617977528089888,
+          "envelope_size_exponent": 2.75,
+          "inclination_deg": 50.0,
+          "stellar_mass_msun": 0.5,
+          "stellar_radius_rsun": 2.5,
+          "stellar_temperature_k": 4000.0
+        },
+        "runnable_template_validated": false,
+        "solver": "Mie",
+        "source_heating_target_lsun": 1.9,
+        "target_distance_pc": 147.0
+      },
+      {
+        "background_id": "b00",
+        "design_index": 1,
+        "dhs_vmax": null,
+        "dust_family": "generic_ice_coated_Mie",
+        "ice_density_g_cm3": 1.2,
+        "ice_species_mass_fraction": 0.04,
+        "ice_total_solid_volume_fraction": 0.10835913312693499,
+        "interpretation": "For disjoint populations, volume fraction describes the total solid inventory, not a mantle on each grain.",
+        "parameters": {
+          "accretion_rate_msun_per_year": 7.3011756855e-08,
+          "cavity_half_opening_deg": 17.5,
+          "distance_pc": 140.0,
+          "envelope_amax_um": 0.4,
+          "envelope_dust_mass_msun": 0.00015,
+          "envelope_ice_volume_fraction": 0.10835913312693499,
+          "envelope_size_exponent": 2.75,
+          "inclination_deg": 50.0,
+          "stellar_mass_msun": 0.5,
+          "stellar_radius_rsun": 2.5,
+          "stellar_temperature_k": 4000.0
+        },
+        "runnable_template_validated": false,
+        "solver": "Mie",
+        "source_heating_target_lsun": 1.9,
+        "target_distance_pc": 147.0
+      },
+      {
+        "background_id": "b00",
+        "design_index": 2,
+        "dhs_vmax": null,
+        "dust_family": "H2O30K_coated_Mie",
+        "ice_density_g_cm3": 0.94,
+        "ice_species_mass_fraction": 0.02,
+        "ice_total_solid_volume_fraction": 0.0706214689265537,
+        "interpretation": "For disjoint populations, volume fraction describes the total solid inventory, not a mantle on each grain.",
+        "parameters": {
+          "accretion_rate_msun_per_year": 7.3011756855e-08,
+          "cavity_half_opening_deg": 17.5,
+          "distance_pc": 140.0,
+          "envelope_amax_um": 0.4,
+          "envelope_dust_mass_msun": 0.00015,
+          "envelope_ice_volume_fraction": 0.0706214689265537,
+          "envelope_size_exponent": 2.75,
+          "inclination_deg": 50.0,
+          "stellar_mass_msun": 0.5,
+          "stellar_radius_rsun": 2.5,
+          "stellar_temperature_k": 4000.0
+        },
+        "runnable_template_validated": false,
+        "solver": "Mie",
+        "source_heating_target_lsun": 1.9,
+        "target_distance_pc": 147.0
+      },
+      {
+        "background_id": "b00",
+        "design_index": 3,
+        "dhs_vmax": null,
+        "dust_family": "H2O30K_coated_Mie",
+        "ice_density_g_cm3": 0.94,
+        "ice_species_mass_fraction": 0.04,
+        "ice_total_solid_volume_fraction": 0.1343054489639294,
+        "interpretation": "For disjoint populations, volume fraction describes the total solid inventory, not a mantle on each grain.",
+        "parameters": {
+          "accretion_rate_msun_per_year": 7.3011756855e-08,
+          "cavity_half_opening_deg": 17.5,
+          "distance_pc": 140.0,
+          "envelope_amax_um": 0.4,
+          "envelope_dust_mass_msun": 0.00015,
+          "envelope_ice_volume_fraction": 0.1343054489639294,
+          "envelope_size_exponent": 2.75,
+          "inclination_deg": 50.0,
+          "stellar_mass_msun": 0.5,
+          "stellar_radius_rsun": 2.5,
+          "stellar_temperature_k": 4000.0
+        },
+        "runnable_template_validated": false,
+        "solver": "Mie",
+        "source_heating_target_lsun": 1.9,
+        "target_distance_pc": 147.0
+      },
+      {
+        "background_id": "b00",
+        "design_index": 4,
+        "dhs_vmax": 0.1,
+        "dust_family": "H2O30K_disjoint_DHS",
+        "ice_density_g_cm3": 0.94,
+        "ice_species_mass_fraction": 0.02,
+        "ice_total_solid_volume_fraction": 0.0706214689265537,
+        "interpretation": "For disjoint populations, volume fraction describes the total solid inventory, not a mantle on each grain.",
+        "parameters": {
+          "accretion_rate_msun_per_year": 7.3011756855e-08,
+          "cavity_half_opening_deg": 17.5,
+          "distance_pc": 140.0,
+          "envelope_amax_um": 0.4,
+          "envelope_dust_mass_msun": 0.00015,
+          "envelope_ice_volume_fraction": 0.0706214689265537,
+          "envelope_size_exponent": 2.75,
+          "inclination_deg": 50.0,
+          "stellar_mass_msun": 0.5,
+          "stellar_radius_rsun": 2.5,
+          "stellar_temperature_k": 4000.0
+        },
+        "runnable_template_validated": false,
+        "solver": "DHS",
+        "source_heating_target_lsun": 1.9,
+        "target_distance_pc": 147.0
+      },
+      {
+        "background_id": "b00",
+        "design_index": 5,
+        "dhs_vmax": 0.1,
+        "dust_family": "H2O30K_disjoint_DHS",
+        "ice_density_g_cm3": 0.94,
+        "ice_species_mass_fraction": 0.04,
+        "ice_total_solid_volume_fraction": 0.1343054489639294,
+        "interpretation": "For disjoint populations, volume fraction describes the total solid inventory, not a mantle on each grain.",
+        "parameters": {
+          "accretion_rate_msun_per_year": 7.3011756855e-08,
+          "cavity_half_opening_deg": 17.5,
+          "distance_pc": 140.0,
+          "envelope_amax_um": 0.4,
+          "envelope_dust_mass_msun": 0.00015,
+          "envelope_ice_volume_fraction": 0.1343054489639294,
+          "envelope_size_exponent": 2.75,
+          "inclination_deg": 50.0,
+          "stellar_mass_msun": 0.5,
+          "stellar_radius_rsun": 2.5,
+          "stellar_temperature_k": 4000.0
+        },
+        "runnable_template_validated": false,
+        "solver": "DHS",
+        "source_heating_target_lsun": 1.9,
+        "target_distance_pc": 147.0
+      },
+      {
+        "background_id": "b01",
+        "design_index": 6,
+        "dhs_vmax": null,
+        "dust_family": "generic_ice_coated_Mie",
+        "ice_density_g_cm3": 1.2,
+        "ice_species_mass_fraction": 0.02,
+        "ice_total_solid_volume_fraction": 0.05617977528089888,
+        "interpretation": "For disjoint populations, volume fraction describes the total solid inventory, not a mantle on each grain.",
+        "parameters": {
+          "accretion_rate_msun_per_year": 7.3011756855e-08,
+          "cavity_half_opening_deg": 17.5,
+          "distance_pc": 140.0,
+          "envelope_amax_um": 0.4,
+          "envelope_dust_mass_msun": 0.000225,
+          "envelope_ice_volume_fraction": 0.05617977528089888,
+          "envelope_size_exponent": 2.75,
+          "inclination_deg": 50.0,
+          "stellar_mass_msun": 0.5,
+          "stellar_radius_rsun": 2.5,
+          "stellar_temperature_k": 4000.0
+        },
+        "runnable_template_validated": false,
+        "solver": "Mie",
+        "source_heating_target_lsun": 1.9,
+        "target_distance_pc": 147.0
+      },
+      {
+        "background_id": "b01",
+        "design_index": 7,
+        "dhs_vmax": null,
+        "dust_family": "generic_ice_coated_Mie",
+        "ice_density_g_cm3": 1.2,
+        "ice_species_mass_fraction": 0.04,
+        "ice_total_solid_volume_fraction": 0.10835913312693499,
+        "interpretation": "For disjoint populations, volume fraction describes the total solid inventory, not a mantle on each grain.",
+        "parameters": {
+          "accretion_rate_msun_per_year": 7.3011756855e-08,
+          "cavity_half_opening_deg": 17.5,
+          "distance_pc": 140.0,
+          "envelope_amax_um": 0.4,
+          "envelope_dust_mass_msun": 0.000225,
+          "envelope_ice_volume_fraction": 0.10835913312693499,
+          "envelope_size_exponent": 2.75,
+          "inclination_deg": 50.0,
+          "stellar_mass_msun": 0.5,
+          "stellar_radius_rsun": 2.5,
+          "stellar_temperature_k": 4000.0
+        },
+        "runnable_template_validated": false,
+        "solver": "Mie",
+        "source_heating_target_lsun": 1.9,
+        "target_distance_pc": 147.0
+      },
+      {
+        "background_id": "b01",
+        "design_index": 8,
+        "dhs_vmax": null,
+        "dust_family": "H2O30K_coated_Mie",
+        "ice_density_g_cm3": 0.94,
+        "ice_species_mass_fraction": 0.02,
+        "ice_total_solid_volume_fraction": 0.0706214689265537,
+        "interpretation": "For disjoint populations, volume fraction describes the total solid inventory, not a mantle on each grain.",
+        "parameters": {
+          "accretion_rate_msun_per_year": 7.3011756855e-08,
+          "cavity_half_opening_deg": 17.5,
+          "distance_pc": 140.0,
+          "envelope_amax_um": 0.4,
+          "envelope_dust_mass_msun": 0.000225,
+          "envelope_ice_volume_fraction": 0.0706214689265537,
+          "envelope_size_exponent": 2.75,
+          "inclination_deg": 50.0,
+          "stellar_mass_msun": 0.5,
+          "stellar_radius_rsun": 2.5,
+          "stellar_temperature_k": 4000.0
+        },
+        "runnable_template_validated": false,
+        "solver": "Mie",
+        "source_heating_target_lsun": 1.9,
+        "target_distance_pc": 147.0
+      },
+      {
+        "background_id": "b01",
+        "design_index": 9,
+        "dhs_vmax": null,
+        "dust_family": "H2O30K_coated_Mie",
+        "ice_density_g_cm3": 0.94,
+        "ice_species_mass_fraction": 0.04,
+        "ice_total_solid_volume_fraction": 0.1343054489639294,
+        "interpretation": "For disjoint populations, volume fraction describes the total solid inventory, not a mantle on each grain.",
+        "parameters": {
+          "accretion_rate_msun_per_year": 7.3011756855e-08,
+          "cavity_half_opening_deg": 17.5,
+          "distance_pc": 140.0,
+          "envelope_amax_um": 0.4,
+          "envelope_dust_mass_msun": 0.000225,
+          "envelope_ice_volume_fraction": 0.1343054489639294,
+          "envelope_size_exponent": 2.75,
+          "inclination_deg": 50.0,
+          "stellar_mass_msun": 0.5,
+          "stellar_radius_rsun": 2.5,
+          "stellar_temperature_k": 4000.0
+        },
+        "runnable_template_validated": false,
+        "solver": "Mie",
+        "source_heating_target_lsun": 1.9,
+        "target_distance_pc": 147.0
+      },
+      {
+        "background_id": "b01",
+        "design_index": 10,
+        "dhs_vmax": 0.1,
+        "dust_family": "H2O30K_disjoint_DHS",
+        "ice_density_g_cm3": 0.94,
+        "ice_species_mass_fraction": 0.02,
+        "ice_total_solid_volume_fraction": 0.0706214689265537,
+        "interpretation": "For disjoint populations, volume fraction describes the total solid inventory, not a mantle on each grain.",
+        "parameters": {
+          "accretion_rate_msun_per_year": 7.3011756855e-08,
+          "cavity_half_opening_deg": 17.5,
+          "distance_pc": 140.0,
+          "envelope_amax_um": 0.4,
+          "envelope_dust_mass_msun": 0.000225,
+          "envelope_ice_volume_fraction": 0.0706214689265537,
+          "envelope_size_exponent": 2.75,
+          "inclination_deg": 50.0,
+          "stellar_mass_msun": 0.5,
+          "stellar_radius_rsun": 2.5,
+          "stellar_temperature_k": 4000.0
+        },
+        "runnable_template_validated": false,
+        "solver": "DHS",
+        "source_heating_target_lsun": 1.9,
+        "target_distance_pc": 147.0
+      },
+      {
+        "background_id": "b01",
+        "design_index": 11,
+        "dhs_vmax": 0.1,
+        "dust_family": "H2O30K_disjoint_DHS",
+        "ice_density_g_cm3": 0.94,
+        "ice_species_mass_fraction": 0.04,
+        "ice_total_solid_volume_fraction": 0.1343054489639294,
+        "interpretation": "For disjoint populations, volume fraction describes the total solid inventory, not a mantle on each grain.",
+        "parameters": {
+          "accretion_rate_msun_per_year": 7.3011756855e-08,
+          "cavity_half_opening_deg": 17.5,
+          "distance_pc": 140.0,
+          "envelope_amax_um": 0.4,
+          "envelope_dust_mass_msun": 0.000225,
+          "envelope_ice_volume_fraction": 0.1343054489639294,
+          "envelope_size_exponent": 2.75,
+          "inclination_deg": 50.0,
+          "stellar_mass_msun": 0.5,
+          "stellar_radius_rsun": 2.5,
+          "stellar_temperature_k": 4000.0
+        },
+        "runnable_template_validated": false,
+        "solver": "DHS",
+        "source_heating_target_lsun": 1.9,
+        "target_distance_pc": 147.0
+      },
+      {
+        "background_id": "b02",
+        "design_index": 12,
+        "dhs_vmax": null,
+        "dust_family": "generic_ice_coated_Mie",
+        "ice_density_g_cm3": 1.2,
+        "ice_species_mass_fraction": 0.02,
+        "ice_total_solid_volume_fraction": 0.05617977528089888,
+        "interpretation": "For disjoint populations, volume fraction describes the total solid inventory, not a mantle on each grain.",
+        "parameters": {
+          "accretion_rate_msun_per_year": 7.3011756855e-08,
+          "cavity_half_opening_deg": 17.5,
+          "distance_pc": 140.0,
+          "envelope_amax_um": 0.4,
+          "envelope_dust_mass_msun": 0.00015,
+          "envelope_ice_volume_fraction": 0.05617977528089888,
+          "envelope_size_exponent": 2.75,
+          "inclination_deg": 65.0,
+          "stellar_mass_msun": 0.5,
+          "stellar_radius_rsun": 2.5,
+          "stellar_temperature_k": 4000.0
+        },
+        "runnable_template_validated": false,
+        "solver": "Mie",
+        "source_heating_target_lsun": 1.9,
+        "target_distance_pc": 147.0
+      },
+      {
+        "background_id": "b02",
+        "design_index": 13,
+        "dhs_vmax": null,
+        "dust_family": "generic_ice_coated_Mie",
+        "ice_density_g_cm3": 1.2,
+        "ice_species_mass_fraction": 0.04,
+        "ice_total_solid_volume_fraction": 0.10835913312693499,
+        "interpretation": "For disjoint populations, volume fraction describes the total solid inventory, not a mantle on each grain.",
+        "parameters": {
+          "accretion_rate_msun_per_year": 7.3011756855e-08,
+          "cavity_half_opening_deg": 17.5,
+          "distance_pc": 140.0,
+          "envelope_amax_um": 0.4,
+          "envelope_dust_mass_msun": 0.00015,
+          "envelope_ice_volume_fraction": 0.10835913312693499,
+          "envelope_size_exponent": 2.75,
+          "inclination_deg": 65.0,
+          "stellar_mass_msun": 0.5,
+          "stellar_radius_rsun": 2.5,
+          "stellar_temperature_k": 4000.0
+        },
+        "runnable_template_validated": false,
+        "solver": "Mie",
+        "source_heating_target_lsun": 1.9,
+        "target_distance_pc": 147.0
+      },
+      {
+        "background_id": "b02",
+        "design_index": 14,
+        "dhs_vmax": null,
+        "dust_family": "H2O30K_coated_Mie",
+        "ice_density_g_cm3": 0.94,
+        "ice_species_mass_fraction": 0.02,
+        "ice_total_solid_volume_fraction": 0.0706214689265537,
+        "interpretation": "For disjoint populations, volume fraction describes the total solid inventory, not a mantle on each grain.",
+        "parameters": {
+          "accretion_rate_msun_per_year": 7.3011756855e-08,
+          "cavity_half_opening_deg": 17.5,
+          "distance_pc": 140.0,
+          "envelope_amax_um": 0.4,
+          "envelope_dust_mass_msun": 0.00015,
+          "envelope_ice_volume_fraction": 0.0706214689265537,
+          "envelope_size_exponent": 2.75,
+          "inclination_deg": 65.0,
+          "stellar_mass_msun": 0.5,
+          "stellar_radius_rsun": 2.5,
+          "stellar_temperature_k": 4000.0
+        },
+        "runnable_template_validated": false,
+        "solver": "Mie",
+        "source_heating_target_lsun": 1.9,
+        "target_distance_pc": 147.0
+      },
+      {
+        "background_id": "b02",
+        "design_index": 15,
+        "dhs_vmax": null,
+        "dust_family": "H2O30K_coated_Mie",
+        "ice_density_g_cm3": 0.94,
+        "ice_species_mass_fraction": 0.04,
+        "ice_total_solid_volume_fraction": 0.1343054489639294,
+        "interpretation": "For disjoint populations, volume fraction describes the total solid inventory, not a mantle on each grain.",
+        "parameters": {
+          "accretion_rate_msun_per_year": 7.3011756855e-08,
+          "cavity_half_opening_deg": 17.5,
+          "distance_pc": 140.0,
+          "envelope_amax_um": 0.4,
+          "envelope_dust_mass_msun": 0.00015,
+          "envelope_ice_volume_fraction": 0.1343054489639294,
+          "envelope_size_exponent": 2.75,
+          "inclination_deg": 65.0,
+          "stellar_mass_msun": 0.5,
+          "stellar_radius_rsun": 2.5,
+          "stellar_temperature_k": 4000.0
+        },
+        "runnable_template_validated": false,
+        "solver": "Mie",
+        "source_heating_target_lsun": 1.9,
+        "target_distance_pc": 147.0
+      },
+      {
+        "background_id": "b02",
+        "design_index": 16,
+        "dhs_vmax": 0.1,
+        "dust_family": "H2O30K_disjoint_DHS",
+        "ice_density_g_cm3": 0.94,
+        "ice_species_mass_fraction": 0.02,
+        "ice_total_solid_volume_fraction": 0.0706214689265537,
+        "interpretation": "For disjoint populations, volume fraction describes the total solid inventory, not a mantle on each grain.",
+        "parameters": {
+          "accretion_rate_msun_per_year": 7.3011756855e-08,
+          "cavity_half_opening_deg": 17.5,
+          "distance_pc": 140.0,
+          "envelope_amax_um": 0.4,
+          "envelope_dust_mass_msun": 0.00015,
+          "envelope_ice_volume_fraction": 0.0706214689265537,
+          "envelope_size_exponent": 2.75,
+          "inclination_deg": 65.0,
+          "stellar_mass_msun": 0.5,
+          "stellar_radius_rsun": 2.5,
+          "stellar_temperature_k": 4000.0
+        },
+        "runnable_template_validated": false,
+        "solver": "DHS",
+        "source_heating_target_lsun": 1.9,
+        "target_distance_pc": 147.0
+      },
+      {
+        "background_id": "b02",
+        "design_index": 17,
+        "dhs_vmax": 0.1,
+        "dust_family": "H2O30K_disjoint_DHS",
+        "ice_density_g_cm3": 0.94,
+        "ice_species_mass_fraction": 0.04,
+        "ice_total_solid_volume_fraction": 0.1343054489639294,
+        "interpretation": "For disjoint populations, volume fraction describes the total solid inventory, not a mantle on each grain.",
+        "parameters": {
+          "accretion_rate_msun_per_year": 7.3011756855e-08,
+          "cavity_half_opening_deg": 17.5,
+          "distance_pc": 140.0,
+          "envelope_amax_um": 0.4,
+          "envelope_dust_mass_msun": 0.00015,
+          "envelope_ice_volume_fraction": 0.1343054489639294,
+          "envelope_size_exponent": 2.75,
+          "inclination_deg": 65.0,
+          "stellar_mass_msun": 0.5,
+          "stellar_radius_rsun": 2.5,
+          "stellar_temperature_k": 4000.0
+        },
+        "runnable_template_validated": false,
+        "solver": "DHS",
+        "source_heating_target_lsun": 1.9,
+        "target_distance_pc": 147.0
+      },
+      {
+        "background_id": "b03",
+        "design_index": 18,
+        "dhs_vmax": null,
+        "dust_family": "generic_ice_coated_Mie",
+        "ice_density_g_cm3": 1.2,
+        "ice_species_mass_fraction": 0.02,
+        "ice_total_solid_volume_fraction": 0.05617977528089888,
+        "interpretation": "For disjoint populations, volume fraction describes the total solid inventory, not a mantle on each grain.",
+        "parameters": {
+          "accretion_rate_msun_per_year": 7.3011756855e-08,
+          "cavity_half_opening_deg": 17.5,
+          "distance_pc": 140.0,
+          "envelope_amax_um": 0.4,
+          "envelope_dust_mass_msun": 0.000225,
+          "envelope_ice_volume_fraction": 0.05617977528089888,
+          "envelope_size_exponent": 2.75,
+          "inclination_deg": 65.0,
+          "stellar_mass_msun": 0.5,
+          "stellar_radius_rsun": 2.5,
+          "stellar_temperature_k": 4000.0
+        },
+        "runnable_template_validated": false,
+        "solver": "Mie",
+        "source_heating_target_lsun": 1.9,
+        "target_distance_pc": 147.0
+      },
+      {
+        "background_id": "b03",
+        "design_index": 19,
+        "dhs_vmax": null,
+        "dust_family": "generic_ice_coated_Mie",
+        "ice_density_g_cm3": 1.2,
+        "ice_species_mass_fraction": 0.04,
+        "ice_total_solid_volume_fraction": 0.10835913312693499,
+        "interpretation": "For disjoint populations, volume fraction describes the total solid inventory, not a mantle on each grain.",
+        "parameters": {
+          "accretion_rate_msun_per_year": 7.3011756855e-08,
+          "cavity_half_opening_deg": 17.5,
+          "distance_pc": 140.0,
+          "envelope_amax_um": 0.4,
+          "envelope_dust_mass_msun": 0.000225,
+          "envelope_ice_volume_fraction": 0.10835913312693499,
+          "envelope_size_exponent": 2.75,
+          "inclination_deg": 65.0,
+          "stellar_mass_msun": 0.5,
+          "stellar_radius_rsun": 2.5,
+          "stellar_temperature_k": 4000.0
+        },
+        "runnable_template_validated": false,
+        "solver": "Mie",
+        "source_heating_target_lsun": 1.9,
+        "target_distance_pc": 147.0
+      },
+      {
+        "background_id": "b03",
+        "design_index": 20,
+        "dhs_vmax": null,
+        "dust_family": "H2O30K_coated_Mie",
+        "ice_density_g_cm3": 0.94,
+        "ice_species_mass_fraction": 0.02,
+        "ice_total_solid_volume_fraction": 0.0706214689265537,
+        "interpretation": "For disjoint populations, volume fraction describes the total solid inventory, not a mantle on each grain.",
+        "parameters": {
+          "accretion_rate_msun_per_year": 7.3011756855e-08,
+          "cavity_half_opening_deg": 17.5,
+          "distance_pc": 140.0,
+          "envelope_amax_um": 0.4,
+          "envelope_dust_mass_msun": 0.000225,
+          "envelope_ice_volume_fraction": 0.0706214689265537,
+          "envelope_size_exponent": 2.75,
+          "inclination_deg": 65.0,
+          "stellar_mass_msun": 0.5,
+          "stellar_radius_rsun": 2.5,
+          "stellar_temperature_k": 4000.0
+        },
+        "runnable_template_validated": false,
+        "solver": "Mie",
+        "source_heating_target_lsun": 1.9,
+        "target_distance_pc": 147.0
+      },
+      {
+        "background_id": "b03",
+        "design_index": 21,
+        "dhs_vmax": null,
+        "dust_family": "H2O30K_coated_Mie",
+        "ice_density_g_cm3": 0.94,
+        "ice_species_mass_fraction": 0.04,
+        "ice_total_solid_volume_fraction": 0.1343054489639294,
+        "interpretation": "For disjoint populations, volume fraction describes the total solid inventory, not a mantle on each grain.",
+        "parameters": {
+          "accretion_rate_msun_per_year": 7.3011756855e-08,
+          "cavity_half_opening_deg": 17.5,
+          "distance_pc": 140.0,
+          "envelope_amax_um": 0.4,
+          "envelope_dust_mass_msun": 0.000225,
+          "envelope_ice_volume_fraction": 0.1343054489639294,
+          "envelope_size_exponent": 2.75,
+          "inclination_deg": 65.0,
+          "stellar_mass_msun": 0.5,
+          "stellar_radius_rsun": 2.5,
+          "stellar_temperature_k": 4000.0
+        },
+        "runnable_template_validated": false,
+        "solver": "Mie",
+        "source_heating_target_lsun": 1.9,
+        "target_distance_pc": 147.0
+      },
+      {
+        "background_id": "b03",
+        "design_index": 22,
+        "dhs_vmax": 0.1,
+        "dust_family": "H2O30K_disjoint_DHS",
+        "ice_density_g_cm3": 0.94,
+        "ice_species_mass_fraction": 0.02,
+        "ice_total_solid_volume_fraction": 0.0706214689265537,
+        "interpretation": "For disjoint populations, volume fraction describes the total solid inventory, not a mantle on each grain.",
+        "parameters": {
+          "accretion_rate_msun_per_year": 7.3011756855e-08,
+          "cavity_half_opening_deg": 17.5,
+          "distance_pc": 140.0,
+          "envelope_amax_um": 0.4,
+          "envelope_dust_mass_msun": 0.000225,
+          "envelope_ice_volume_fraction": 0.0706214689265537,
+          "envelope_size_exponent": 2.75,
+          "inclination_deg": 65.0,
+          "stellar_mass_msun": 0.5,
+          "stellar_radius_rsun": 2.5,
+          "stellar_temperature_k": 4000.0
+        },
+        "runnable_template_validated": false,
+        "solver": "DHS",
+        "source_heating_target_lsun": 1.9,
+        "target_distance_pc": 147.0
+      },
+      {
+        "background_id": "b03",
+        "design_index": 23,
+        "dhs_vmax": 0.1,
+        "dust_family": "H2O30K_disjoint_DHS",
+        "ice_density_g_cm3": 0.94,
+        "ice_species_mass_fraction": 0.04,
+        "ice_total_solid_volume_fraction": 0.1343054489639294,
+        "interpretation": "For disjoint populations, volume fraction describes the total solid inventory, not a mantle on each grain.",
+        "parameters": {
+          "accretion_rate_msun_per_year": 7.3011756855e-08,
+          "cavity_half_opening_deg": 17.5,
+          "distance_pc": 140.0,
+          "envelope_amax_um": 0.4,
+          "envelope_dust_mass_msun": 0.000225,
+          "envelope_ice_volume_fraction": 0.1343054489639294,
+          "envelope_size_exponent": 2.75,
+          "inclination_deg": 65.0,
+          "stellar_mass_msun": 0.5,
+          "stellar_radius_rsun": 2.5,
+          "stellar_temperature_k": 4000.0
+        },
+        "runnable_template_validated": false,
+        "solver": "DHS",
+        "source_heating_target_lsun": 1.9,
+        "target_distance_pc": 147.0
+      }
+    ],
+    "shape_attribution_limit": "Coated versus disjoint DHS changes mixing topology and shape simultaneously; cannot attribute the difference solely to material or shape.",
+    "size_policy": "Document outer radius for coated grains and radius convention for each disjoint species before template acceptance.",
+    "survival_policy": "Uniform ice surrogate only; temperature-dependent survival not implemented. No physical abundance inference without survival audit.",
+    "temperature_policy": "Fresh equilibrium for every changed dust hypothesis; no reuse across material, mixing, fraction or seed changes."
+  },
+  "mcfost_invoked": false,
+  "models": [
+    {
+      "design_index": 0,
+      "dust_family": "coated_Mie_generic_ice",
+      "family": "nominal",
+      "matching_parent_index": 2,
+      "parameters": {
+        "accretion_rate_msun_per_year": 7.3011756855e-08,
+        "cavity_half_opening_deg": 17.5,
+        "distance_pc": 140.0,
+        "envelope_amax_um": 0.4,
+        "envelope_dust_mass_msun": 0.000225,
+        "envelope_ice_volume_fraction": 0.05,
+        "envelope_size_exponent": 2.75,
+        "inclination_deg": 50.0,
+        "stellar_mass_msun": 0.5,
+        "stellar_radius_rsun": 2.5,
+        "stellar_temperature_k": 4000.0
+      },
+      "source_heating_target_lsun": 1.9,
+      "target_distance_pc": 147.0,
+      "template_render_validated": true
+    },
+    {
+      "design_index": 1,
+      "dust_family": "coated_Mie_generic_ice",
+      "family": "cavity20_control",
+      "matching_parent_index": 8,
+      "parameters": {
+        "accretion_rate_msun_per_year": 7.3011756855e-08,
+        "cavity_half_opening_deg": 20.0,
+        "distance_pc": 140.0,
+        "envelope_amax_um": 0.4,
+        "envelope_dust_mass_msun": 0.000225,
+        "envelope_ice_volume_fraction": 0.05,
+        "envelope_size_exponent": 2.75,
+        "inclination_deg": 50.0,
+        "stellar_mass_msun": 0.5,
+        "stellar_radius_rsun": 2.5,
+        "stellar_temperature_k": 4000.0
+      },
+      "source_heating_target_lsun": 1.9,
+      "target_distance_pc": 147.0,
+      "template_render_validated": true
+    },
+    {
+      "design_index": 2,
+      "dust_family": "coated_Mie_generic_ice",
+      "family": "archived_mass_q_control",
+      "matching_parent_index": 14,
+      "parameters": {
+        "accretion_rate_msun_per_year": 7.3011756855e-08,
+        "cavity_half_opening_deg": 17.5,
+        "distance_pc": 140.0,
+        "envelope_amax_um": 0.4,
+        "envelope_dust_mass_msun": 0.00025,
+        "envelope_ice_volume_fraction": 0.05,
+        "envelope_size_exponent": 3.25,
+        "inclination_deg": 50.0,
+        "stellar_mass_msun": 0.5,
+        "stellar_radius_rsun": 2.5,
+        "stellar_temperature_k": 4000.0
+      },
+      "source_heating_target_lsun": 1.9,
+      "target_distance_pc": 147.0,
+      "template_render_validated": true
+    },
+    {
+      "design_index": 3,
+      "dust_family": "coated_Mie_generic_ice",
+      "family": "lower_mass",
+      "matching_parent_index": null,
+      "parameters": {
+        "accretion_rate_msun_per_year": 7.3011756855e-08,
+        "cavity_half_opening_deg": 17.5,
+        "distance_pc": 140.0,
+        "envelope_amax_um": 0.4,
+        "envelope_dust_mass_msun": 0.00015,
+        "envelope_ice_volume_fraction": 0.05,
+        "envelope_size_exponent": 2.75,
+        "inclination_deg": 50.0,
+        "stellar_mass_msun": 0.5,
+        "stellar_radius_rsun": 2.5,
+        "stellar_temperature_k": 4000.0
+      },
+      "source_heating_target_lsun": 1.9,
+      "target_distance_pc": 147.0,
+      "template_render_validated": true
+    },
+    {
+      "design_index": 4,
+      "dust_family": "coated_Mie_generic_ice",
+      "family": "higher_heating",
+      "matching_parent_index": null,
+      "parameters": {
+        "accretion_rate_msun_per_year": 2.0040322609364722e-07,
+        "cavity_half_opening_deg": 17.5,
+        "distance_pc": 140.0,
+        "envelope_amax_um": 0.4,
+        "envelope_dust_mass_msun": 0.000225,
+        "envelope_ice_volume_fraction": 0.05,
+        "envelope_size_exponent": 2.75,
+        "inclination_deg": 50.0,
+        "stellar_mass_msun": 0.5,
+        "stellar_radius_rsun": 2.5,
+        "stellar_temperature_k": 4000.0
+      },
+      "source_heating_target_lsun": 2.7,
+      "target_distance_pc": 147.0,
+      "template_render_validated": true
+    },
+    {
+      "design_index": 5,
+      "dust_family": "coated_Mie_generic_ice",
+      "family": "larger_grains",
+      "matching_parent_index": null,
+      "parameters": {
+        "accretion_rate_msun_per_year": 7.3011756855e-08,
+        "cavity_half_opening_deg": 17.5,
+        "distance_pc": 140.0,
+        "envelope_amax_um": 0.8,
+        "envelope_dust_mass_msun": 0.000225,
+        "envelope_ice_volume_fraction": 0.05,
+        "envelope_size_exponent": 2.75,
+        "inclination_deg": 50.0,
+        "stellar_mass_msun": 0.5,
+        "stellar_radius_rsun": 2.5,
+        "stellar_temperature_k": 4000.0
+      },
+      "source_heating_target_lsun": 1.9,
+      "target_distance_pc": 147.0,
+      "template_render_validated": true
+    },
+    {
+      "design_index": 6,
+      "dust_family": "coated_Mie_generic_ice",
+      "family": "larger_cavity",
+      "matching_parent_index": null,
+      "parameters": {
+        "accretion_rate_msun_per_year": 7.3011756855e-08,
+        "cavity_half_opening_deg": 30.0,
+        "distance_pc": 140.0,
+        "envelope_amax_um": 0.4,
+        "envelope_dust_mass_msun": 0.000225,
+        "envelope_ice_volume_fraction": 0.05,
+        "envelope_size_exponent": 2.75,
+        "inclination_deg": 50.0,
+        "stellar_mass_msun": 0.5,
+        "stellar_radius_rsun": 2.5,
+        "stellar_temperature_k": 4000.0
+      },
+      "source_heating_target_lsun": 1.9,
+      "target_distance_pc": 147.0,
+      "template_render_validated": true
+    },
+    {
+      "design_index": 7,
+      "dust_family": "coated_Mie_generic_ice",
+      "family": "larger_grains_and_cavity",
+      "matching_parent_index": null,
+      "parameters": {
+        "accretion_rate_msun_per_year": 7.3011756855e-08,
+        "cavity_half_opening_deg": 30.0,
+        "distance_pc": 140.0,
+        "envelope_amax_um": 0.8,
+        "envelope_dust_mass_msun": 0.000225,
+        "envelope_ice_volume_fraction": 0.05,
+        "envelope_size_exponent": 2.75,
+        "inclination_deg": 50.0,
+        "stellar_mass_msun": 0.5,
+        "stellar_radius_rsun": 2.5,
+        "stellar_temperature_k": 4000.0
+      },
+      "source_heating_target_lsun": 1.9,
+      "target_distance_pc": 147.0,
+      "template_render_validated": true
+    },
+    {
+      "design_index": 8,
+      "dust_family": "coated_Mie_generic_ice",
+      "family": "nominal",
+      "matching_parent_index": 4,
+      "parameters": {
+        "accretion_rate_msun_per_year": 7.3011756855e-08,
+        "cavity_half_opening_deg": 17.5,
+        "distance_pc": 140.0,
+        "envelope_amax_um": 0.4,
+        "envelope_dust_mass_msun": 0.000225,
+        "envelope_ice_volume_fraction": 0.05,
+        "envelope_size_exponent": 2.75,
+        "inclination_deg": 60.0,
+        "stellar_mass_msun": 0.5,
+        "stellar_radius_rsun": 2.5,
+        "stellar_temperature_k": 4000.0
+      },
+      "source_heating_target_lsun": 1.9,
+      "target_distance_pc": 147.0,
+      "template_render_validated": true
+    },
+    {
+      "design_index": 9,
+      "dust_family": "coated_Mie_generic_ice",
+      "family": "cavity20_control",
+      "matching_parent_index": 10,
+      "parameters": {
+        "accretion_rate_msun_per_year": 7.3011756855e-08,
+        "cavity_half_opening_deg": 20.0,
+        "distance_pc": 140.0,
+        "envelope_amax_um": 0.4,
+        "envelope_dust_mass_msun": 0.000225,
+        "envelope_ice_volume_fraction": 0.05,
+        "envelope_size_exponent": 2.75,
+        "inclination_deg": 60.0,
+        "stellar_mass_msun": 0.5,
+        "stellar_radius_rsun": 2.5,
+        "stellar_temperature_k": 4000.0
+      },
+      "source_heating_target_lsun": 1.9,
+      "target_distance_pc": 147.0,
+      "template_render_validated": true
+    },
+    {
+      "design_index": 10,
+      "dust_family": "coated_Mie_generic_ice",
+      "family": "archived_mass_q_control",
+      "matching_parent_index": 16,
+      "parameters": {
+        "accretion_rate_msun_per_year": 7.3011756855e-08,
+        "cavity_half_opening_deg": 17.5,
+        "distance_pc": 140.0,
+        "envelope_amax_um": 0.4,
+        "envelope_dust_mass_msun": 0.00025,
+        "envelope_ice_volume_fraction": 0.05,
+        "envelope_size_exponent": 3.25,
+        "inclination_deg": 60.0,
+        "stellar_mass_msun": 0.5,
+        "stellar_radius_rsun": 2.5,
+        "stellar_temperature_k": 4000.0
+      },
+      "source_heating_target_lsun": 1.9,
+      "target_distance_pc": 147.0,
+      "template_render_validated": true
+    },
+    {
+      "design_index": 11,
+      "dust_family": "coated_Mie_generic_ice",
+      "family": "lower_mass",
+      "matching_parent_index": null,
+      "parameters": {
+        "accretion_rate_msun_per_year": 7.3011756855e-08,
+        "cavity_half_opening_deg": 17.5,
+        "distance_pc": 140.0,
+        "envelope_amax_um": 0.4,
+        "envelope_dust_mass_msun": 0.00015,
+        "envelope_ice_volume_fraction": 0.05,
+        "envelope_size_exponent": 2.75,
+        "inclination_deg": 60.0,
+        "stellar_mass_msun": 0.5,
+        "stellar_radius_rsun": 2.5,
+        "stellar_temperature_k": 4000.0
+      },
+      "source_heating_target_lsun": 1.9,
+      "target_distance_pc": 147.0,
+      "template_render_validated": true
+    },
+    {
+      "design_index": 12,
+      "dust_family": "coated_Mie_generic_ice",
+      "family": "higher_heating",
+      "matching_parent_index": null,
+      "parameters": {
+        "accretion_rate_msun_per_year": 2.0040322609364722e-07,
+        "cavity_half_opening_deg": 17.5,
+        "distance_pc": 140.0,
+        "envelope_amax_um": 0.4,
+        "envelope_dust_mass_msun": 0.000225,
+        "envelope_ice_volume_fraction": 0.05,
+        "envelope_size_exponent": 2.75,
+        "inclination_deg": 60.0,
+        "stellar_mass_msun": 0.5,
+        "stellar_radius_rsun": 2.5,
+        "stellar_temperature_k": 4000.0
+      },
+      "source_heating_target_lsun": 2.7,
+      "target_distance_pc": 147.0,
+      "template_render_validated": true
+    },
+    {
+      "design_index": 13,
+      "dust_family": "coated_Mie_generic_ice",
+      "family": "larger_grains",
+      "matching_parent_index": null,
+      "parameters": {
+        "accretion_rate_msun_per_year": 7.3011756855e-08,
+        "cavity_half_opening_deg": 17.5,
+        "distance_pc": 140.0,
+        "envelope_amax_um": 0.8,
+        "envelope_dust_mass_msun": 0.000225,
+        "envelope_ice_volume_fraction": 0.05,
+        "envelope_size_exponent": 2.75,
+        "inclination_deg": 60.0,
+        "stellar_mass_msun": 0.5,
+        "stellar_radius_rsun": 2.5,
+        "stellar_temperature_k": 4000.0
+      },
+      "source_heating_target_lsun": 1.9,
+      "target_distance_pc": 147.0,
+      "template_render_validated": true
+    },
+    {
+      "design_index": 14,
+      "dust_family": "coated_Mie_generic_ice",
+      "family": "larger_cavity",
+      "matching_parent_index": null,
+      "parameters": {
+        "accretion_rate_msun_per_year": 7.3011756855e-08,
+        "cavity_half_opening_deg": 30.0,
+        "distance_pc": 140.0,
+        "envelope_amax_um": 0.4,
+        "envelope_dust_mass_msun": 0.000225,
+        "envelope_ice_volume_fraction": 0.05,
+        "envelope_size_exponent": 2.75,
+        "inclination_deg": 60.0,
+        "stellar_mass_msun": 0.5,
+        "stellar_radius_rsun": 2.5,
+        "stellar_temperature_k": 4000.0
+      },
+      "source_heating_target_lsun": 1.9,
+      "target_distance_pc": 147.0,
+      "template_render_validated": true
+    },
+    {
+      "design_index": 15,
+      "dust_family": "coated_Mie_generic_ice",
+      "family": "larger_grains_and_cavity",
+      "matching_parent_index": null,
+      "parameters": {
+        "accretion_rate_msun_per_year": 7.3011756855e-08,
+        "cavity_half_opening_deg": 30.0,
+        "distance_pc": 140.0,
+        "envelope_amax_um": 0.8,
+        "envelope_dust_mass_msun": 0.000225,
+        "envelope_ice_volume_fraction": 0.05,
+        "envelope_size_exponent": 2.75,
+        "inclination_deg": 60.0,
+        "stellar_mass_msun": 0.5,
+        "stellar_radius_rsun": 2.5,
+        "stellar_temperature_k": 4000.0
+      },
+      "source_heating_target_lsun": 1.9,
+      "target_distance_pc": 147.0,
+      "template_render_validated": true
+    },
+    {
+      "design_index": 16,
+      "dust_family": "coated_Mie_generic_ice",
+      "family": "nominal",
+      "matching_parent_index": 5,
+      "parameters": {
+        "accretion_rate_msun_per_year": 7.3011756855e-08,
+        "cavity_half_opening_deg": 17.5,
+        "distance_pc": 140.0,
+        "envelope_amax_um": 0.4,
+        "envelope_dust_mass_msun": 0.000225,
+        "envelope_ice_volume_fraction": 0.05,
+        "envelope_size_exponent": 2.75,
+        "inclination_deg": 65.0,
+        "stellar_mass_msun": 0.5,
+        "stellar_radius_rsun": 2.5,
+        "stellar_temperature_k": 4000.0
+      },
+      "source_heating_target_lsun": 1.9,
+      "target_distance_pc": 147.0,
+      "template_render_validated": true
+    },
+    {
+      "design_index": 17,
+      "dust_family": "coated_Mie_generic_ice",
+      "family": "cavity20_control",
+      "matching_parent_index": 11,
+      "parameters": {
+        "accretion_rate_msun_per_year": 7.3011756855e-08,
+        "cavity_half_opening_deg": 20.0,
+        "distance_pc": 140.0,
+        "envelope_amax_um": 0.4,
+        "envelope_dust_mass_msun": 0.000225,
+        "envelope_ice_volume_fraction": 0.05,
+        "envelope_size_exponent": 2.75,
+        "inclination_deg": 65.0,
+        "stellar_mass_msun": 0.5,
+        "stellar_radius_rsun": 2.5,
+        "stellar_temperature_k": 4000.0
+      },
+      "source_heating_target_lsun": 1.9,
+      "target_distance_pc": 147.0,
+      "template_render_validated": true
+    },
+    {
+      "design_index": 18,
+      "dust_family": "coated_Mie_generic_ice",
+      "family": "archived_mass_q_control",
+      "matching_parent_index": 17,
+      "parameters": {
+        "accretion_rate_msun_per_year": 7.3011756855e-08,
+        "cavity_half_opening_deg": 17.5,
+        "distance_pc": 140.0,
+        "envelope_amax_um": 0.4,
+        "envelope_dust_mass_msun": 0.00025,
+        "envelope_ice_volume_fraction": 0.05,
+        "envelope_size_exponent": 3.25,
+        "inclination_deg": 65.0,
+        "stellar_mass_msun": 0.5,
+        "stellar_radius_rsun": 2.5,
+        "stellar_temperature_k": 4000.0
+      },
+      "source_heating_target_lsun": 1.9,
+      "target_distance_pc": 147.0,
+      "template_render_validated": true
+    },
+    {
+      "design_index": 19,
+      "dust_family": "coated_Mie_generic_ice",
+      "family": "lower_mass",
+      "matching_parent_index": null,
+      "parameters": {
+        "accretion_rate_msun_per_year": 7.3011756855e-08,
+        "cavity_half_opening_deg": 17.5,
+        "distance_pc": 140.0,
+        "envelope_amax_um": 0.4,
+        "envelope_dust_mass_msun": 0.00015,
+        "envelope_ice_volume_fraction": 0.05,
+        "envelope_size_exponent": 2.75,
+        "inclination_deg": 65.0,
+        "stellar_mass_msun": 0.5,
+        "stellar_radius_rsun": 2.5,
+        "stellar_temperature_k": 4000.0
+      },
+      "source_heating_target_lsun": 1.9,
+      "target_distance_pc": 147.0,
+      "template_render_validated": true
+    },
+    {
+      "design_index": 20,
+      "dust_family": "coated_Mie_generic_ice",
+      "family": "higher_heating",
+      "matching_parent_index": null,
+      "parameters": {
+        "accretion_rate_msun_per_year": 2.0040322609364722e-07,
+        "cavity_half_opening_deg": 17.5,
+        "distance_pc": 140.0,
+        "envelope_amax_um": 0.4,
+        "envelope_dust_mass_msun": 0.000225,
+        "envelope_ice_volume_fraction": 0.05,
+        "envelope_size_exponent": 2.75,
+        "inclination_deg": 65.0,
+        "stellar_mass_msun": 0.5,
+        "stellar_radius_rsun": 2.5,
+        "stellar_temperature_k": 4000.0
+      },
+      "source_heating_target_lsun": 2.7,
+      "target_distance_pc": 147.0,
+      "template_render_validated": true
+    },
+    {
+      "design_index": 21,
+      "dust_family": "coated_Mie_generic_ice",
+      "family": "larger_grains",
+      "matching_parent_index": null,
+      "parameters": {
+        "accretion_rate_msun_per_year": 7.3011756855e-08,
+        "cavity_half_opening_deg": 17.5,
+        "distance_pc": 140.0,
+        "envelope_amax_um": 0.8,
+        "envelope_dust_mass_msun": 0.000225,
+        "envelope_ice_volume_fraction": 0.05,
+        "envelope_size_exponent": 2.75,
+        "inclination_deg": 65.0,
+        "stellar_mass_msun": 0.5,
+        "stellar_radius_rsun": 2.5,
+        "stellar_temperature_k": 4000.0
+      },
+      "source_heating_target_lsun": 1.9,
+      "target_distance_pc": 147.0,
+      "template_render_validated": true
+    },
+    {
+      "design_index": 22,
+      "dust_family": "coated_Mie_generic_ice",
+      "family": "larger_cavity",
+      "matching_parent_index": null,
+      "parameters": {
+        "accretion_rate_msun_per_year": 7.3011756855e-08,
+        "cavity_half_opening_deg": 30.0,
+        "distance_pc": 140.0,
+        "envelope_amax_um": 0.4,
+        "envelope_dust_mass_msun": 0.000225,
+        "envelope_ice_volume_fraction": 0.05,
+        "envelope_size_exponent": 2.75,
+        "inclination_deg": 65.0,
+        "stellar_mass_msun": 0.5,
+        "stellar_radius_rsun": 2.5,
+        "stellar_temperature_k": 4000.0
+      },
+      "source_heating_target_lsun": 1.9,
+      "target_distance_pc": 147.0,
+      "template_render_validated": true
+    },
+    {
+      "design_index": 23,
+      "dust_family": "coated_Mie_generic_ice",
+      "family": "larger_grains_and_cavity",
+      "matching_parent_index": null,
+      "parameters": {
+        "accretion_rate_msun_per_year": 7.3011756855e-08,
+        "cavity_half_opening_deg": 30.0,
+        "distance_pc": 140.0,
+        "envelope_amax_um": 0.8,
+        "envelope_dust_mass_msun": 0.000225,
+        "envelope_ice_volume_fraction": 0.05,
+        "envelope_size_exponent": 2.75,
+        "inclination_deg": 65.0,
+        "stellar_mass_msun": 0.5,
+        "stellar_radius_rsun": 2.5,
+        "stellar_temperature_k": 4000.0
+      },
+      "source_heating_target_lsun": 1.9,
+      "target_distance_pc": 147.0,
+      "template_render_validated": true
+    },
+    {
+      "design_index": 24,
+      "dust_family": "coated_Mie_generic_ice",
+      "family": "nominal",
+      "matching_parent_index": 0,
+      "parameters": {
+        "accretion_rate_msun_per_year": 7.3011756855e-08,
+        "cavity_half_opening_deg": 17.5,
+        "distance_pc": 140.0,
+        "envelope_amax_um": 0.4,
+        "envelope_dust_mass_msun": 0.000225,
+        "envelope_ice_volume_fraction": 0.05,
+        "envelope_size_exponent": 2.75,
+        "inclination_deg": 70.0,
+        "stellar_mass_msun": 0.5,
+        "stellar_radius_rsun": 2.5,
+        "stellar_temperature_k": 4000.0
+      },
+      "source_heating_target_lsun": 1.9,
+      "target_distance_pc": 147.0,
+      "template_render_validated": true
+    },
+    {
+      "design_index": 25,
+      "dust_family": "coated_Mie_generic_ice",
+      "family": "cavity20_control",
+      "matching_parent_index": 6,
+      "parameters": {
+        "accretion_rate_msun_per_year": 7.3011756855e-08,
+        "cavity_half_opening_deg": 20.0,
+        "distance_pc": 140.0,
+        "envelope_amax_um": 0.4,
+        "envelope_dust_mass_msun": 0.000225,
+        "envelope_ice_volume_fraction": 0.05,
+        "envelope_size_exponent": 2.75,
+        "inclination_deg": 70.0,
+        "stellar_mass_msun": 0.5,
+        "stellar_radius_rsun": 2.5,
+        "stellar_temperature_k": 4000.0
+      },
+      "source_heating_target_lsun": 1.9,
+      "target_distance_pc": 147.0,
+      "template_render_validated": true
+    },
+    {
+      "design_index": 26,
+      "dust_family": "coated_Mie_generic_ice",
+      "family": "archived_mass_q_control",
+      "matching_parent_index": 12,
+      "parameters": {
+        "accretion_rate_msun_per_year": 7.3011756855e-08,
+        "cavity_half_opening_deg": 17.5,
+        "distance_pc": 140.0,
+        "envelope_amax_um": 0.4,
+        "envelope_dust_mass_msun": 0.00025,
+        "envelope_ice_volume_fraction": 0.05,
+        "envelope_size_exponent": 3.25,
+        "inclination_deg": 70.0,
+        "stellar_mass_msun": 0.5,
+        "stellar_radius_rsun": 2.5,
+        "stellar_temperature_k": 4000.0
+      },
+      "source_heating_target_lsun": 1.9,
+      "target_distance_pc": 147.0,
+      "template_render_validated": true
+    },
+    {
+      "design_index": 27,
+      "dust_family": "coated_Mie_generic_ice",
+      "family": "lower_mass",
+      "matching_parent_index": null,
+      "parameters": {
+        "accretion_rate_msun_per_year": 7.3011756855e-08,
+        "cavity_half_opening_deg": 17.5,
+        "distance_pc": 140.0,
+        "envelope_amax_um": 0.4,
+        "envelope_dust_mass_msun": 0.00015,
+        "envelope_ice_volume_fraction": 0.05,
+        "envelope_size_exponent": 2.75,
+        "inclination_deg": 70.0,
+        "stellar_mass_msun": 0.5,
+        "stellar_radius_rsun": 2.5,
+        "stellar_temperature_k": 4000.0
+      },
+      "source_heating_target_lsun": 1.9,
+      "target_distance_pc": 147.0,
+      "template_render_validated": true
+    },
+    {
+      "design_index": 28,
+      "dust_family": "coated_Mie_generic_ice",
+      "family": "higher_heating",
+      "matching_parent_index": null,
+      "parameters": {
+        "accretion_rate_msun_per_year": 2.0040322609364722e-07,
+        "cavity_half_opening_deg": 17.5,
+        "distance_pc": 140.0,
+        "envelope_amax_um": 0.4,
+        "envelope_dust_mass_msun": 0.000225,
+        "envelope_ice_volume_fraction": 0.05,
+        "envelope_size_exponent": 2.75,
+        "inclination_deg": 70.0,
+        "stellar_mass_msun": 0.5,
+        "stellar_radius_rsun": 2.5,
+        "stellar_temperature_k": 4000.0
+      },
+      "source_heating_target_lsun": 2.7,
+      "target_distance_pc": 147.0,
+      "template_render_validated": true
+    },
+    {
+      "design_index": 29,
+      "dust_family": "coated_Mie_generic_ice",
+      "family": "larger_grains",
+      "matching_parent_index": null,
+      "parameters": {
+        "accretion_rate_msun_per_year": 7.3011756855e-08,
+        "cavity_half_opening_deg": 17.5,
+        "distance_pc": 140.0,
+        "envelope_amax_um": 0.8,
+        "envelope_dust_mass_msun": 0.000225,
+        "envelope_ice_volume_fraction": 0.05,
+        "envelope_size_exponent": 2.75,
+        "inclination_deg": 70.0,
+        "stellar_mass_msun": 0.5,
+        "stellar_radius_rsun": 2.5,
+        "stellar_temperature_k": 4000.0
+      },
+      "source_heating_target_lsun": 1.9,
+      "target_distance_pc": 147.0,
+      "template_render_validated": true
+    },
+    {
+      "design_index": 30,
+      "dust_family": "coated_Mie_generic_ice",
+      "family": "larger_cavity",
+      "matching_parent_index": null,
+      "parameters": {
+        "accretion_rate_msun_per_year": 7.3011756855e-08,
+        "cavity_half_opening_deg": 30.0,
+        "distance_pc": 140.0,
+        "envelope_amax_um": 0.4,
+        "envelope_dust_mass_msun": 0.000225,
+        "envelope_ice_volume_fraction": 0.05,
+        "envelope_size_exponent": 2.75,
+        "inclination_deg": 70.0,
+        "stellar_mass_msun": 0.5,
+        "stellar_radius_rsun": 2.5,
+        "stellar_temperature_k": 4000.0
+      },
+      "source_heating_target_lsun": 1.9,
+      "target_distance_pc": 147.0,
+      "template_render_validated": true
+    },
+    {
+      "design_index": 31,
+      "dust_family": "coated_Mie_generic_ice",
+      "family": "larger_grains_and_cavity",
+      "matching_parent_index": null,
+      "parameters": {
+        "accretion_rate_msun_per_year": 7.3011756855e-08,
+        "cavity_half_opening_deg": 30.0,
+        "distance_pc": 140.0,
+        "envelope_amax_um": 0.8,
+        "envelope_dust_mass_msun": 0.000225,
+        "envelope_ice_volume_fraction": 0.05,
+        "envelope_size_exponent": 2.75,
+        "inclination_deg": 70.0,
+        "stellar_mass_msun": 0.5,
+        "stellar_radius_rsun": 2.5,
+        "stellar_temperature_k": 4000.0
+      },
+      "source_heating_target_lsun": 1.9,
+      "target_distance_pc": 147.0,
+      "template_render_validated": true
+    }
+  ],
+  "numerical_gate": {
+    "budget_change_acceptance": "For paired fractional 512k-to-2.048M changes, require abs(mean)+two-sided 95% uncertainty half-width <= 0.01 at every probe; an unresolved bound is not a pass.",
+    "case_design_indices": [
+      0,
+      24
+    ],
+    "case_selection": "Nominal 50 and 70 degree controls; fixed before fitting and repeated at both photon budgets.",
+    "image_requests": 120,
+    "n5_sigma_95pct_interval_factors_under_Gaussian_assumption": [
+      0.5991331391341409,
+      2.873555634078219
+    ],
+    "passed": false,
+    "photon_budgets": [
+      512000,
+      2048000
+    ],
+    "provisional_flux_target_fraction": 0.01,
+    "report": "Individual seed fluxes, sample SD and its uncertainty, two-budget mean differences, and uncertainties of physical contrasts; matched seed labels are not assumed to guarantee variance cancellation.",
+    "response_relative_target": "Numerical uncertainty below one third of each claimed physical contrast; escalate packets/cases if unmet.",
+    "scatter_acceptance": "At the proposed production packet count, require the upper end of the two-sided 95% Gaussian SD interval divided by the seed mean to be <= 0.01 at every probed case/wavelength; otherwise increase fidelity or report inconclusive. State distribution assumptions.",
+    "scope": "Does not establish resolution convergence or guarantee all other models/wavelengths.",
+    "seed_values": [
+      42001,
+      42002,
+      42003,
+      42004,
+      42005
+    ],
+    "temperature_reuse_across_seeds": false,
+    "temperature_solves": 20,
+    "wavelengths_um": [
+      1.2028117593024095,
+      2.546352514425122,
+      3.0764795490679795,
+      3.2961688801068254,
+      9.7,
+      18.5
+    ]
+  },
+  "optical_constants": [
+    {
+      "density_g_cm3": 3.5,
+      "path": "reference/dust/Draine_Si_sUV.dat",
+      "sha256": "3a6af751429f6f8dc948e60675b13be01ffcbed0662eec62934ec6d9c61dea80",
+      "wavelength_support_um": [
+        0.001,
+        1000.0
+      ]
+    },
+    {
+      "density_g_cm3": 1.2,
+      "path": "reference/runtime_assets/Dust/ice_opct.dat",
+      "sha256": "44625b4918b7015e97d3c92b3f19e9e06eb57d209f3b1a946ee8f141215c8697",
+      "wavelength_support_um": [
+        0.0912,
+        10000.0
+      ]
+    },
+    {
+      "density_g_cm3": 0.94,
+      "path": "reference/dust/H2O_30K_Leiden_mcfost.dat",
+      "sha256": "29b572f8907993870d0b15823e1182a9c4813b8cdb8f4fbdd40ef39cf28fb00c",
+      "wavelength_support_um": [
+        0.25004000002,
+        19.940540101
+      ]
+    }
+  ],
+  "optical_coverage_gate": {
+    "currently_tabulated_h2o_um": [
+      0.25004000002,
+      19.940540101
+    ],
+    "implicit_production_extrapolation_allowed": false,
+    "must_cover_observed_longwave_um": 28.7,
+    "passed": false,
+    "requirement": "Source and hash a physically justified H2O30K extension across the full heating/cooling wavelength grid, including both short and long unsupported tails; document joins and any extrapolation sensitivity before production.",
+    "temperature_grid_current_um": [
+      0.1,
+      3000.0
+    ]
+  },
+  "physical_model_count_stage2": 32,
+  "ready_to_submit": false,
+  "resources_proposed": {
+    "cpus_per_task": 64,
+    "main_seed": 42001,
+    "max_concurrent_tasks": 16,
+    "peak_cpus": 1024,
+    "photon_budget_status": "conditional on numerical gate; increase if target fails",
+    "photons_image": 2048000,
+    "photons_sed": 2048000,
+    "photons_temperature": 2048000,
+    "walltime_storage": "benchmark before freezing resources"
+  },
+  "response_coverage": {
+    "global_regression_singular_values": [
+      10.799671344019508,
+      5.573330235061087,
+      1.3450163194407645,
+      0.4348096276352746,
+      0.22277164022431908,
+      0.04566265020390899
+    ],
+    "inference": "Coverage diagnostic only. Global linear regression has large residuals, is scale-dependent and lacks an ice axis; no number of identifiable directions is asserted.",
+    "parameter_order": [
+      "inclination_deg",
+      "envelope_dust_mass_msun",
+      "envelope_amax_um",
+      "envelope_size_exponent",
+      "cavity_half_opening_deg",
+      "accretion_rate_msun_per_year"
+    ],
+    "projected_global_response_rank": 6,
+    "projection_range_in_each_global_direction": [
+      0.27377794624352303,
+      0.27111278724223536,
+      0.3326929525281147,
+      0.47370963858080295,
+      0.3814528160203864,
+      0.3855674127642257
+    ],
+    "regression_residual_rms_dex": 0.25871760320441306,
+    "selected_log_parameter_design_rank": 6,
+    "selection_uses_fit_rank": false
+  },
+  "selection_rule": "Eight fixed physical contrast families at four inclinations, selected by coverage before any new fit; material pilot backgrounds fixed in advance.",
+  "stage_budgets": {
+    "additional_disjoint_Mie_attribution": {
+      "five_node_images": 242,
+      "physical_models": 2,
+      "temperature_solves": 2,
+      "three_node_images_conditional": 218
+    },
+    "bare_limit_gate": {
+      "image_requests": 90,
+      "temperature_solves": 10
+    },
+    "fixed_total_claimed": false,
+    "not_in_fixed_counts": [
+      "dense SED production and closure",
+      "operator held-out and quadrature validation",
+      "opacity diagnostics",
+      "extra numerical resolution/photon convergence",
+      "extensions over untested nuisance backgrounds"
+    ],
+    "numerical_gate": {
+      "image_requests": 120,
+      "temperature_solves": 20
+    },
+    "stage2_extinction": {
+      "consistency_check_images_if_all_three_requested": 96,
+      "five_node_images": 1152,
+      "formula": "32*(6 NIRSpec + 6 MIRI bands*nodes)",
+      "physical_models": 32,
+      "temperature_solves": 32,
+      "three_node_images_conditional": 768
+    },
+    "stage3_material": {
+      "five_node_images": 2904,
+      "formula": "24*(85 H2O role nodes + 6 NIRSpec + 6 MIRI bands*nodes)",
+      "physical_models": 24,
+      "temperature_solves": 24,
+      "three_node_images_conditional": 2616
+    }
+  },
+  "status": "design and local template checks complete; numerical, operator and material gates pending",
+  "target_distance_pc": 147.0,
+  "uncertainty_policy": {
+    "absolute_scale_policy": "Separate unresolved nuisance; profile or constrain explicitly before claiming an absolute likelihood.",
+    "block_rule": "Report NIRSpec continuum, primary MIRI broad bands and H2O separately. No implicit joint scalar. A joint likelihood requires declared cross-calibration/covariance and no double counting.",
+    "common_absolute_scale_sigma": null,
+    "gain_interpretation": "Assumed sensitivity scales informed by adjacent overlaps, not measured independent subband uncertainties.",
+    "legacy_15_percent": "Affected diagonal diagnostic chi-square only; old regional log-RMS rankings did not use errors.",
+    "legacy_region_rule": "Old score sqrt(mean_regions(mean_anchors(log10(model/observed)^2))); MIRI occupied three of six regions. New bins do not become new equally weighted regions automatically.",
+    "relative_gain_sensitivity_fractions": [
+      0.01,
+      0.02,
+      0.05
+    ],
+    "relative_subband_gain_candidate": 0.02,
+    "structure": "Measured within-bin structure is a provisional window term including real signal, not a calibrated artifact variance; no sqrt(N) reduction."
+  }
+}

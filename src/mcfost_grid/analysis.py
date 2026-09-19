@@ -375,6 +375,8 @@ def analyze_run(run_dir: Path, workers: int = 1) -> dict:
     manifest_bytes = (run_dir / "manifest.json").read_bytes()
     manifest_hash = hashlib.sha256(manifest_bytes).hexdigest()
     manifest = json.loads(manifest_bytes)
+    if manifest.get("configuration", {}).get("numerical_only"):
+        raise AnalysisError("Numerical-only experiment: use its seed-scatter analyzer; observational ranking is disabled")
     policy = validate_policy(manifest.get("measurement", {}).get("quality_policy", STRICT_POLICY))
     scored = validate_anchors(manifest["anchors"])
     observed = _verified_observation(manifest, run_dir)
