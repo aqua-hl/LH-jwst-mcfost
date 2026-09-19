@@ -1,0 +1,390 @@
+{
+  "audit": "read_only_aperture_crop_invariance_v1",
+  "run_id": "continuum_production_v1.1",
+  "manifest_sha256": "4ec2c6eefa9c38986286f960c2186fc2c308eeea931f2222143d69280f3fdc07",
+  "audit_script_sha256": "e3dba2d6d9a8a2f5189ecd8ad8033b1f47e77349ace79d4254d908c3f92136a0",
+  "packages": {
+    "numpy": "1.26.4",
+    "scipy": "1.11.4",
+    "astropy": "6.0.0"
+  },
+  "models": [
+    {
+      "index": 48,
+      "model_id": "m0048_e8a89d9c",
+      "anchor_id": "w006",
+      "wavelength_um": 3.9143995604061015,
+      "image": "models/m0048_e8a89d9c/anchors/w006/attempts/attempt_001/output/seed=41001/data_3.9143995604061015/RT.fits.gz",
+      "image_sha256": "8eb8e67f0b12a2ca5ef52d80b5825da99cca39c518b3e6b8138da78d50f42bed",
+      "original_failed_checks": [
+        "convolution_flux_loss_lt_1e-4",
+        "edge_positive_fraction_lt_1e-3"
+      ],
+      "original_diagnostics_reproduced": true,
+      "original_diagnostics": {
+        "quality_checks": {
+          "finite_positive_plane0_flux": true,
+          "finite_positive_signed_aperture": true,
+          "edge_positive_fraction_lt_1e-3": false,
+          "convolution_flux_loss_lt_1e-4": false,
+          "aperture_plus_6sigma_support": true
+        },
+        "plane0_edge_positive_flux_fraction": 0.0011615481125709503,
+        "plane0_convolution_flux_loss_fraction": 0.00012169030655875922,
+        "full_plane_negative_fraction_diagnostic": -0.0,
+        "aperture_clip_symmetric_fraction_diagnostic": 0.0,
+        "zero_clipped_aperture_flux_at_model_distance_w_m2_diagnostic": 1.3137060586353562e-14,
+        "zero_clipping_used_for_scoring": false,
+        "coeval_plane0_relative_difference": null,
+        "coeval_closure_checked": false,
+        "image_total_at_model_distance_w_m2": 1.9756215134782372e-14,
+        "aperture_flux_at_model_distance_w_m2": 1.3137060586353562e-14,
+        "distance_flux_factor": 0.9070294784580498,
+        "model_pixel_arcsec": 0.0089359992,
+        "target_pixel_arcsec": 0.008510475428571427,
+        "aperture_radius_pixels": 117.50224865731862,
+        "centre_x_zero_based": 1200.0,
+        "centre_y_zero_based": 1200.0,
+        "available_half_field_arcsec": 10.216825751999998,
+        "required_half_field_arcsec": 1.329133903291709,
+        "nx": 2401,
+        "ny": 2401,
+        "psf_fwhm_arcsec": 0.12917518549340135,
+        "psf_sigma_pixels": 6.44566229102271,
+        "psf_truncation_sigma": 6.0,
+        "aperture_subpixels": 64,
+        "component_integrity_audit_performed": false,
+        "temperature_consistency_verified": false,
+        "convergence_verified": false
+      },
+      "crop_comparison": {
+        "full_image_adjoint_aperture_w_m2": 1.3137060586353562e-14,
+        "central_crop_direct_aperture_w_m2": 1.3137060586353559e-14,
+        "relative_difference": 2.4019403732992147e-16,
+        "relative_tolerance": 1e-10,
+        "crop_bounds_xy_exclusive": [
+          1041,
+          1360,
+          1041,
+          1360
+        ],
+        "maximum_absolute_aperture_weight_outside_crop": 0.0,
+        "aperture_crop_invariance_verified": true
+      }
+    },
+    {
+      "index": 49,
+      "model_id": "m0049_5634c758",
+      "anchor_id": "w007",
+      "wavelength_um": 5.3906283153397085,
+      "image": "models/m0049_5634c758/anchors/w007/attempts/attempt_001/output/seed=41001/data_5.3906283153397085/RT.fits.gz",
+      "image_sha256": "c2efbc5c858dd988cbeb6e39929c602c2a3babf50c05d0173fa0cc6ead9e593d",
+      "original_failed_checks": [
+        "convolution_flux_loss_lt_1e-4"
+      ],
+      "original_diagnostics_reproduced": true,
+      "original_diagnostics": {
+        "quality_checks": {
+          "finite_positive_plane0_flux": true,
+          "finite_positive_signed_aperture": true,
+          "edge_positive_fraction_lt_1e-3": true,
+          "convolution_flux_loss_lt_1e-4": false,
+          "aperture_plus_6sigma_support": true
+        },
+        "plane0_edge_positive_flux_fraction": 0.0005775027162198442,
+        "plane0_convolution_flux_loss_fraction": 0.00013518670948364724,
+        "full_plane_negative_fraction_diagnostic": -0.0,
+        "aperture_clip_symmetric_fraction_diagnostic": 0.0,
+        "zero_clipped_aperture_flux_at_model_distance_w_m2_diagnostic": 1.0243865521023342e-13,
+        "zero_clipping_used_for_scoring": false,
+        "coeval_plane0_relative_difference": null,
+        "coeval_closure_checked": false,
+        "image_total_at_model_distance_w_m2": 1.2732981077594474e-13,
+        "aperture_flux_at_model_distance_w_m2": 1.0243865521023342e-13,
+        "distance_flux_factor": 0.9070294784580498,
+        "model_pixel_arcsec": 0.0089359992,
+        "target_pixel_arcsec": 0.008510475428571427,
+        "aperture_radius_pixels": 117.50224865731862,
+        "centre_x_zero_based": 1200.0,
+        "centre_y_zero_based": 1200.0,
+        "available_half_field_arcsec": 10.216825751999998,
+        "required_half_field_arcsec": 1.7233437689024185,
+        "nx": 2401,
+        "ny": 2401,
+        "psf_fwhm_arcsec": 0.2838907344062104,
+        "psf_sigma_pixels": 14.165753233048996,
+        "psf_truncation_sigma": 6.0,
+        "aperture_subpixels": 64,
+        "component_integrity_audit_performed": false,
+        "temperature_consistency_verified": false,
+        "convergence_verified": false
+      },
+      "crop_comparison": {
+        "full_image_adjoint_aperture_w_m2": 1.0243865521023342e-13,
+        "central_crop_direct_aperture_w_m2": 1.0243865521023345e-13,
+        "relative_difference": 2.464260089637588e-16,
+        "relative_tolerance": 1e-10,
+        "crop_bounds_xy_exclusive": [
+          995,
+          1406,
+          995,
+          1406
+        ],
+        "maximum_absolute_aperture_weight_outside_crop": 0.0,
+        "aperture_crop_invariance_verified": true
+      }
+    },
+    {
+      "index": 50,
+      "model_id": "m0050_50b7d65d",
+      "anchor_id": "w007",
+      "wavelength_um": 5.3906283153397085,
+      "image": "models/m0050_50b7d65d/anchors/w007/attempts/attempt_001/output/seed=41001/data_5.3906283153397085/RT.fits.gz",
+      "image_sha256": "b7b69e5504cf4ac1c58ad73ba3ce490a6729ee906ccb57d056adaddbba7a4890",
+      "original_failed_checks": [
+        "convolution_flux_loss_lt_1e-4"
+      ],
+      "original_diagnostics_reproduced": true,
+      "original_diagnostics": {
+        "quality_checks": {
+          "finite_positive_plane0_flux": true,
+          "finite_positive_signed_aperture": true,
+          "edge_positive_fraction_lt_1e-3": true,
+          "convolution_flux_loss_lt_1e-4": false,
+          "aperture_plus_6sigma_support": true
+        },
+        "plane0_edge_positive_flux_fraction": 0.0006278775487118397,
+        "plane0_convolution_flux_loss_fraction": 0.0001469909651200657,
+        "full_plane_negative_fraction_diagnostic": -0.0,
+        "aperture_clip_symmetric_fraction_diagnostic": 0.0,
+        "zero_clipped_aperture_flux_at_model_distance_w_m2_diagnostic": 9.455460364175372e-14,
+        "zero_clipping_used_for_scoring": false,
+        "coeval_plane0_relative_difference": null,
+        "coeval_closure_checked": false,
+        "image_total_at_model_distance_w_m2": 1.1847955254064823e-13,
+        "aperture_flux_at_model_distance_w_m2": 9.455460364175372e-14,
+        "distance_flux_factor": 0.9070294784580498,
+        "model_pixel_arcsec": 0.0089359992,
+        "target_pixel_arcsec": 0.008510475428571427,
+        "aperture_radius_pixels": 117.50224865731862,
+        "centre_x_zero_based": 1200.0,
+        "centre_y_zero_based": 1200.0,
+        "available_half_field_arcsec": 10.216825751999998,
+        "required_half_field_arcsec": 1.7233437689024185,
+        "nx": 2401,
+        "ny": 2401,
+        "psf_fwhm_arcsec": 0.2838907344062104,
+        "psf_sigma_pixels": 14.165753233048996,
+        "psf_truncation_sigma": 6.0,
+        "aperture_subpixels": 64,
+        "component_integrity_audit_performed": false,
+        "temperature_consistency_verified": false,
+        "convergence_verified": false
+      },
+      "crop_comparison": {
+        "full_image_adjoint_aperture_w_m2": 9.455460364175372e-14,
+        "central_crop_direct_aperture_w_m2": 9.455460364175367e-14,
+        "relative_difference": 5.339464816057936e-16,
+        "relative_tolerance": 1e-10,
+        "crop_bounds_xy_exclusive": [
+          995,
+          1406,
+          995,
+          1406
+        ],
+        "maximum_absolute_aperture_weight_outside_crop": 0.0,
+        "aperture_crop_invariance_verified": true
+      }
+    },
+    {
+      "index": 51,
+      "model_id": "m0051_dd822c1b",
+      "anchor_id": "w006",
+      "wavelength_um": 3.9143995604061015,
+      "image": "models/m0051_dd822c1b/anchors/w006/attempts/attempt_001/output/seed=41001/data_3.9143995604061015/RT.fits.gz",
+      "image_sha256": "16f191f96a9f77be319171e0db7591643d30fd148a9456f559c975b171091073",
+      "original_failed_checks": [
+        "convolution_flux_loss_lt_1e-4"
+      ],
+      "original_diagnostics_reproduced": true,
+      "original_diagnostics": {
+        "quality_checks": {
+          "finite_positive_plane0_flux": true,
+          "finite_positive_signed_aperture": true,
+          "edge_positive_fraction_lt_1e-3": true,
+          "convolution_flux_loss_lt_1e-4": false,
+          "aperture_plus_6sigma_support": true
+        },
+        "plane0_edge_positive_flux_fraction": 0.0009608620792554112,
+        "plane0_convolution_flux_loss_fraction": 0.00010110985866321435,
+        "full_plane_negative_fraction_diagnostic": -0.0,
+        "aperture_clip_symmetric_fraction_diagnostic": 0.0,
+        "zero_clipped_aperture_flux_at_model_distance_w_m2_diagnostic": 1.476875759536674e-14,
+        "zero_clipping_used_for_scoring": false,
+        "coeval_plane0_relative_difference": null,
+        "coeval_closure_checked": false,
+        "image_total_at_model_distance_w_m2": 2.090948291978311e-14,
+        "aperture_flux_at_model_distance_w_m2": 1.476875759536674e-14,
+        "distance_flux_factor": 0.9070294784580498,
+        "model_pixel_arcsec": 0.0089359992,
+        "target_pixel_arcsec": 0.008510475428571427,
+        "aperture_radius_pixels": 117.50224865731862,
+        "centre_x_zero_based": 1200.0,
+        "centre_y_zero_based": 1200.0,
+        "available_half_field_arcsec": 10.216825751999998,
+        "required_half_field_arcsec": 1.329133903291709,
+        "nx": 2401,
+        "ny": 2401,
+        "psf_fwhm_arcsec": 0.12917518549340135,
+        "psf_sigma_pixels": 6.44566229102271,
+        "psf_truncation_sigma": 6.0,
+        "aperture_subpixels": 64,
+        "component_integrity_audit_performed": false,
+        "temperature_consistency_verified": false,
+        "convergence_verified": false
+      },
+      "crop_comparison": {
+        "full_image_adjoint_aperture_w_m2": 1.476875759536674e-14,
+        "central_crop_direct_aperture_w_m2": 1.4768757595366732e-14,
+        "relative_difference": 4.2731334718012768e-16,
+        "relative_tolerance": 1e-10,
+        "crop_bounds_xy_exclusive": [
+          1041,
+          1360,
+          1041,
+          1360
+        ],
+        "maximum_absolute_aperture_weight_outside_crop": 0.0,
+        "aperture_crop_invariance_verified": true
+      }
+    },
+    {
+      "index": 52,
+      "model_id": "m0052_1008c03f",
+      "anchor_id": "w006",
+      "wavelength_um": 3.9143995604061015,
+      "image": "models/m0052_1008c03f/anchors/w006/attempts/attempt_001/output/seed=41001/data_3.9143995604061015/RT.fits.gz",
+      "image_sha256": "c5e8efeb88ccbd4d9dabeb03d40eecee0d3f5d5fa08864ad2b007ef6544d79b0",
+      "original_failed_checks": [
+        "convolution_flux_loss_lt_1e-4",
+        "edge_positive_fraction_lt_1e-3"
+      ],
+      "original_diagnostics_reproduced": true,
+      "original_diagnostics": {
+        "quality_checks": {
+          "finite_positive_plane0_flux": true,
+          "finite_positive_signed_aperture": true,
+          "edge_positive_fraction_lt_1e-3": false,
+          "convolution_flux_loss_lt_1e-4": false,
+          "aperture_plus_6sigma_support": true
+        },
+        "plane0_edge_positive_flux_fraction": 0.0010591295383531438,
+        "plane0_convolution_flux_loss_fraction": 0.00011114892357724107,
+        "full_plane_negative_fraction_diagnostic": -0.0,
+        "aperture_clip_symmetric_fraction_diagnostic": 0.0,
+        "zero_clipped_aperture_flux_at_model_distance_w_m2_diagnostic": 1.416692158179831e-14,
+        "zero_clipping_used_for_scoring": false,
+        "coeval_plane0_relative_difference": null,
+        "coeval_closure_checked": false,
+        "image_total_at_model_distance_w_m2": 2.062613172144031e-14,
+        "aperture_flux_at_model_distance_w_m2": 1.416692158179831e-14,
+        "distance_flux_factor": 0.9070294784580498,
+        "model_pixel_arcsec": 0.0089359992,
+        "target_pixel_arcsec": 0.008510475428571427,
+        "aperture_radius_pixels": 117.50224865731862,
+        "centre_x_zero_based": 1200.0,
+        "centre_y_zero_based": 1200.0,
+        "available_half_field_arcsec": 10.216825751999998,
+        "required_half_field_arcsec": 1.329133903291709,
+        "nx": 2401,
+        "ny": 2401,
+        "psf_fwhm_arcsec": 0.12917518549340135,
+        "psf_sigma_pixels": 6.44566229102271,
+        "psf_truncation_sigma": 6.0,
+        "aperture_subpixels": 64,
+        "component_integrity_audit_performed": false,
+        "temperature_consistency_verified": false,
+        "convergence_verified": false
+      },
+      "crop_comparison": {
+        "full_image_adjoint_aperture_w_m2": 1.416692158179831e-14,
+        "central_crop_direct_aperture_w_m2": 1.41669215817983e-14,
+        "relative_difference": 6.681995667156443e-16,
+        "relative_tolerance": 1e-10,
+        "crop_bounds_xy_exclusive": [
+          1041,
+          1360,
+          1041,
+          1360
+        ],
+        "maximum_absolute_aperture_weight_outside_crop": 0.0,
+        "aperture_crop_invariance_verified": true
+      }
+    },
+    {
+      "index": 53,
+      "model_id": "m0053_946ff236",
+      "anchor_id": "w006",
+      "wavelength_um": 3.9143995604061015,
+      "image": "models/m0053_946ff236/anchors/w006/attempts/attempt_001/output/seed=41001/data_3.9143995604061015/RT.fits.gz",
+      "image_sha256": "3c74e518d7eaad93204b7a6f86927c55b68bfc9c6a9da911ad3108966a5146e1",
+      "original_failed_checks": [
+        "convolution_flux_loss_lt_1e-4",
+        "edge_positive_fraction_lt_1e-3"
+      ],
+      "original_diagnostics_reproduced": true,
+      "original_diagnostics": {
+        "quality_checks": {
+          "finite_positive_plane0_flux": true,
+          "finite_positive_signed_aperture": true,
+          "edge_positive_fraction_lt_1e-3": false,
+          "convolution_flux_loss_lt_1e-4": false,
+          "aperture_plus_6sigma_support": true
+        },
+        "plane0_edge_positive_flux_fraction": 0.001132358342764122,
+        "plane0_convolution_flux_loss_fraction": 0.00011959420272634646,
+        "full_plane_negative_fraction_diagnostic": -0.0,
+        "aperture_clip_symmetric_fraction_diagnostic": 0.0,
+        "zero_clipped_aperture_flux_at_model_distance_w_m2_diagnostic": 1.2124348977703057e-14,
+        "zero_clipping_used_for_scoring": false,
+        "coeval_plane0_relative_difference": null,
+        "coeval_closure_checked": false,
+        "image_total_at_model_distance_w_m2": 1.7857228595326008e-14,
+        "aperture_flux_at_model_distance_w_m2": 1.2124348977703057e-14,
+        "distance_flux_factor": 0.9070294784580498,
+        "model_pixel_arcsec": 0.0089359992,
+        "target_pixel_arcsec": 0.008510475428571427,
+        "aperture_radius_pixels": 117.50224865731862,
+        "centre_x_zero_based": 1200.0,
+        "centre_y_zero_based": 1200.0,
+        "available_half_field_arcsec": 10.216825751999998,
+        "required_half_field_arcsec": 1.329133903291709,
+        "nx": 2401,
+        "ny": 2401,
+        "psf_fwhm_arcsec": 0.12917518549340135,
+        "psf_sigma_pixels": 6.44566229102271,
+        "psf_truncation_sigma": 6.0,
+        "aperture_subpixels": 64,
+        "component_integrity_audit_performed": false,
+        "temperature_consistency_verified": false,
+        "convergence_verified": false
+      },
+      "crop_comparison": {
+        "full_image_adjoint_aperture_w_m2": 1.2124348977703057e-14,
+        "central_crop_direct_aperture_w_m2": 1.2124348977703056e-14,
+        "relative_difference": 1.3012837335377664e-16,
+        "relative_tolerance": 1e-10,
+        "crop_bounds_xy_exclusive": [
+          1041,
+          1360,
+          1041,
+          1360
+        ],
+        "maximum_absolute_aperture_weight_outside_crop": 0.0,
+        "aperture_crop_invariance_verified": true
+      }
+    }
+  ],
+  "original_acceptance_and_results_unchanged": true,
+  "scope": "Same-FITS aperture operator check; no new MCFOST simulation, field expansion, photon convergence or physical-model validation"
+}

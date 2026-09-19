@@ -1,0 +1,81 @@
+{
+  "review": "aperture_v2_recovery_audit",
+  "audit_sha256": "987c88c8149913e0ebfd4a413f7f5cffd2c0283eb2a54783055cc19d8a5c326f",
+  "parent_manifest_sha256": "4ec2c6eefa9c38986286f960c2186fc2c308eeea931f2222143d69280f3fdc07",
+  "audit_script_identity_verified": true,
+  "all_2703_original_frozen_inputs_verified": true,
+  "models": [
+    {
+      "index": 48,
+      "model_id": "m0048_e8a89d9c",
+      "anchor_id": "w006",
+      "relative_difference": 2.4019403732992147e-16,
+      "strict_discrete_support_margin": true,
+      "remaining_images_after_reusing_audited_image": 3
+    },
+    {
+      "index": 49,
+      "model_id": "m0049_5634c758",
+      "anchor_id": "w007",
+      "relative_difference": 2.464260089637588e-16,
+      "strict_discrete_support_margin": true,
+      "remaining_images_after_reusing_audited_image": 2
+    },
+    {
+      "index": 50,
+      "model_id": "m0050_50b7d65d",
+      "anchor_id": "w007",
+      "relative_difference": 5.339464816057936e-16,
+      "strict_discrete_support_margin": true,
+      "remaining_images_after_reusing_audited_image": 2
+    },
+    {
+      "index": 51,
+      "model_id": "m0051_dd822c1b",
+      "anchor_id": "w006",
+      "relative_difference": 4.2731334718012768e-16,
+      "strict_discrete_support_margin": true,
+      "remaining_images_after_reusing_audited_image": 3
+    },
+    {
+      "index": 52,
+      "model_id": "m0052_1008c03f",
+      "anchor_id": "w006",
+      "relative_difference": 6.681995667156443e-16,
+      "strict_discrete_support_margin": true,
+      "remaining_images_after_reusing_audited_image": 3
+    },
+    {
+      "index": 53,
+      "model_id": "m0053_946ff236",
+      "anchor_id": "w006",
+      "relative_difference": 1.3012837335377664e-16,
+      "strict_discrete_support_margin": true,
+      "remaining_images_after_reusing_audited_image": 3
+    }
+  ],
+  "largest_reported_relative_difference": 6.681995667156443e-16,
+  "remaining_image_calculations_if_other_90_complete": 16,
+  "new_temperature_calculations": 0,
+  "policy": "aperture_v2",
+  "raw_remote_fits_reverified_locally": false,
+  "recovery_preparation_location": "Cluster, where source statuses, bindings and FITS exist; helper revalidates source hashes and remeasures audited FITS",
+  "submitted": false,
+  "validation": {
+    "full_suite": {
+      "command": "python -B -m unittest discover -s tests -v",
+      "tests_passed": 84
+    },
+    "targeted_recovery_tests_after_final_guards": 3,
+    "shell_syntax_and_document_links": "passed",
+    "simulator_execution": "mocked in tests; no real MCFOST invocation locally"
+  },
+  "implementation_sha256": {
+    "scripts/prepare_aperture_recovery.py": "0ef4ac5d8dbf41b425dbe56c4b52af08cab84ec8149898c607481a444c17e308",
+    "src/mcfost_grid/quality.py": "de0766c55fff0d2898440a764ec0c4cd4321562f1bdb9ec6614a1a4fc0b8052b",
+    "src/mcfost_grid/photometry.py": "5ef6bbebaece535a22c85ab2913cca08089bad00f82e2cff36323415b8142bbf",
+    "src/mcfost_grid/runner.py": "3df3e001c6c588fbd0f03bc18ec6127fb0cd78295b5c60e6323b70a8ec03e2e7",
+    "src/mcfost_grid/configuration.py": "2e833ecf86389852898c5eaa71d1ade6defc0f59cc39626eba9bd58c5fe3c611",
+    "src/mcfost_grid/analysis.py": "acd2c73f3094f53e7773f2b408a42fc16923ffe95f6a940f5cded50f71d455f0"
+  }
+}
