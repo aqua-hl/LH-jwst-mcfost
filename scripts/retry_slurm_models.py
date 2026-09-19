@@ -13,21 +13,45 @@ import sys
 import tempfile
 
 
-def main():
+def positive_job_id(value):
+    if not re.fullmatch(r"[1-9][0-9]*", value):
+        raise argparse.ArgumentTypeError("job ID must be a positive integer (the parent array ID)")
+    return value
+
+
+def selected_indices(value, model_count):
+    """Expand bounded, comma-separated model indices and inclusive ranges."""
+    if not re.fullmatch(r"[0-9]+(?:-[0-9]+)?(?:,[0-9]+(?:-[0-9]+)?)*", value):
+        raise ValueError("--indices must contain non-negative indices or inclusive ranges, e.g. 8-10,16-95")
+    indices = set()
+    for item in value.split(","):
+        ends = item.split("-")
+        start, end = int(ends[0]), int(ends[-1])
+        if start > end:
+            raise ValueError(f"Reversed model index range: {item}")
+        if end >= model_count:
+            raise ValueError(f"An index is outside this model catalogue: {item}")
+        indices.update(range(start, end + 1))
+    return sorted(indices)
+
+
+def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("run", type=Path)
     parser.add_argument("--machine", type=Path, required=True)
-    parser.add_argument("--indices", required=True, help="Comma-separated model indices, e.g. 8,9,10")
+    parser.add_argument("--indices", required=True, help="Comma-separated model indices or ranges, e.g. 8-10,16-95")
+    parser.add_argument("--after-job", action="append", default=[], type=positive_job_id,
+                        help="Wait for this job/parent array to end before retries start; repeat for multiple jobs")
     parser.add_argument("--submit", action="store_true")
-    args = parser.parse_args()
+    args = parser.parse_args(argv)
     run, machine_path = args.run.resolve(), args.machine.resolve()
     manifest = json.loads((run / "manifest.json").read_text())
     machine = json.loads(machine_path.read_text())
-    if not re.fullmatch(r"\d+(,\d+)*", args.indices):
-        parser.error("--indices must be comma-separated non-negative integers")
-    indices = sorted({int(x) for x in args.indices.split(",")})
-    if max(indices) >= len(manifest["models"]):
-        parser.error("An index is outside this model catalogue")
+    try:
+        indices = selected_indices(args.indices, len(manifest["models"]))
+    except ValueError as exc:
+        parser.error(str(exc))
+    after_jobs = list(dict.fromkeys(args.after_job))
     # Keep a virtual environment's bin/python symlink path: resolve() can select
     # its base interpreter and thereby lose the environment's site-packages.
     python = os.path.abspath(sys.executable)
@@ -92,7 +116,7 @@ def main():
         paths[kind] = path
     receipt_path = recovery / "recovery.json"
     receipt = dict(run=str(run), machine=str(machine_path), python=python,
-                   indices=indices, prior_jobs=prior_jobs, submitted=False)
+                   indices=indices, prior_jobs=prior_jobs, after_jobs=after_jobs, submitted=False)
     receipt_path.write_text(json.dumps(receipt, indent=2) + "\n")
     print(f"Prepared {recovery}", flush=True)
     if not args.submit:
@@ -111,14 +135,17 @@ def main():
             raise RuntimeError(f"Unexpected sbatch response (check the queue before retrying): {result.stdout!r}")
         return job
 
-    retry = submit("array")
-    receipt.update(submitted=True, retry_array_job_id=retry)
+    retry = submit("array", after_jobs)
+    analysis_dependencies = list(dict.fromkeys([*prior_jobs, *after_jobs, retry]))
+    receipt.update(submitted=True, retry_array_job_id=retry, analysis_dependencies=analysis_dependencies)
     receipt_path.write_text(json.dumps(receipt, indent=2) + "\n")
     print(f"Submitted retry array {retry}, indices {args.indices}", flush=True)
     try:
-        analysis = submit("analysis", [*prior_jobs, retry])
+        analysis = submit("analysis", analysis_dependencies)
     except (subprocess.CalledProcessError, RuntimeError, OSError) as exc:
         detail = getattr(exc, "stderr", None) or str(exc)
+        receipt["analysis_submission_error"] = detail
+        receipt_path.write_text(json.dumps(receipt, indent=2) + "\n")
         print(f"Retry {retry} IS submitted, but final analysis submission failed: {detail}", file=sys.stderr)
         print("Do not resubmit the retry array. After all run jobs end, run analysis using the pinned Python above.", file=sys.stderr)
         raise

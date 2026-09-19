@@ -1,0 +1,10 @@
+# Recovery of continuum_production_v1.1 array 10514475.
+# Match the three photometry library versions reported by worker095.
+# Install in a new shared venv, without --system-site-packages.
+# Use --only-binary=:all:; these pins target CPython 3.10-3.12.
+# Distro and PyPI builds with the same version are not necessarily identical.
+numpy==1.26.4
+scipy==1.11.4
+astropy==6.0.0
+# Plotting only; use the tested workflow release with modern Python wheels.
+matplotlib==3.10.1
