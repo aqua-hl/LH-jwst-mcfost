@@ -11,7 +11,8 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 from extinction_ice_crossover_task import (
-    DEFAULT_RUN_NAME, DIAGNOSTIC_ID, GEOMETRIES, IDENTITY_KEYS, NAME, SEEDS, TEMPERATURE_SEEDS, WAVELENGTH,
+    DEFAULT_RUN_NAME, DIAGNOSTIC_ID, FINAL_DIAGNOSTIC_ID, FINAL_RUN_NAME,
+    IDENTITY_KEYS, NAME, SEEDS, TEMPERATURE_SEEDS, WAVELENGTH, diagnostic_geometries,
     contained, digest, read_json, require,
 )
 sys.path.insert(0, str(ROOT / "src"))
@@ -103,8 +104,10 @@ def source_models(source):
     return records
 
 
-def build_package(source, destination):
+def build_package(source, destination, final_resolution=False):
     source, destination = Path(source).resolve(), Path(destination).resolve()
+    diagnostic_id = FINAL_DIAGNOSTIC_ID if final_resolution else DIAGNOSTIC_ID
+    geometries = diagnostic_geometries(diagnostic_id)
     require(not destination.is_relative_to(source) and not source.is_relative_to(destination),
             "Destination must be separate from the source experiment")
     if destination.exists():
@@ -113,7 +116,7 @@ def build_package(source, destination):
     files = {"scripts/extinction_ice_crossover_task.py": "code/crossover_task.py",
              "scripts/analyze_extinction_ice_crossover_v2.py": "code/analyze_extinction_ice_crossover_v2.py",
              "scripts/configure_extinction_ice_numerics_v2.py": "code/configure_cluster.py",
-             "docs/EXTINCTION_ICE_CROSSOVER_V2.md": "README.md",
+             ("docs/FINAL_RESOLUTION_1AU_V1.md" if final_resolution else "docs/EXTINCTION_ICE_CROSSOVER_V2.md"): "README.md",
              "requirements-cluster-recovery.txt": "requirements-cluster.txt"}
     for path in sorted((ROOT / "src/mcfost_grid").glob("*.py")):
         files[str(path.relative_to(ROOT))] = f"code/src/mcfost_grid/{path.name}"
@@ -156,7 +159,7 @@ def build_package(source, destination):
             task = dict(index=index, temperature_seed=t_seed, image_seed=seed, task_path=task_path,
                         temperature_path=temp_path, temperature_sha256=record["temperature_sha256"])
             tasks.append(task)
-            for geometry in GEOMETRIES:
+            for geometry in geometries:
                 work = destination / task_path / geometry["id"]
                 work.mkdir(parents=True)
                 text = render_parameter(record["image_parameter"].read_text(), {}, {
@@ -169,17 +172,19 @@ def build_package(source, destination):
     # A 4801², eight-plane, 64-thread MCFOST image array alone is about
     # 47 GB in the audited default-real build. Increase both limits for the
     # entire pair so resolution is the only changed simulation setting.
-    machine["max_memory_gb"] = 64
+    # The final 6001² grid raises that image-array estimate to 74 GB. Both
+    # geometries are rerun at the same 112-GB limit to isolate pixel count.
+    machine["max_memory_gb"] = 112 if final_resolution else 64
     machine["slurm"] = {**machine.get("slurm", {}), "max_parallel": 16, "python": "/SET/BY/CONFIGURE_CLUSTER"}
     machine["slurm"].setdefault("time", "24:00:00")
-    machine["slurm"]["memory"] = "96G"
+    machine["slurm"]["memory"] = "160G" if final_resolution else "96G"
     machine["slurm"].setdefault("analysis_cpus", 2)
-    machine["slurm"]["analysis_memory"] = "8G"
+    machine["slurm"]["analysis_memory"] = "16G" if final_resolution else "8G"
     machine["slurm"].setdefault("analysis_time", "01:00:00")
     atomic_json(destination / "machine.template.json", machine)
-    experiment = dict(schema_version=2, experiment_id=NAME, diagnostic_id=DIAGNOSTIC_ID, created_utc=now(),
+    experiment = dict(schema_version=2, experiment_id=NAME, diagnostic_id=diagnostic_id, created_utc=now(),
         purpose="Pixel-scale diagnostic at one fixed temperature and field; image seeds are matched replicates, no observational fit",
-        tasks=tasks, geometries=GEOMETRIES, temperature_seeds=list(TEMPERATURE_SEEDS), image_seeds=list(SEEDS),
+        tasks=tasks, geometries=geometries, temperature_seeds=list(TEMPERATURE_SEEDS), image_seeds=list(SEEDS),
         photon_packets=2048000, temperature_solves=0, image_requests=10, wavelength_um=WAVELENGTH,
         parameters=first["model"]["parameters"], psf_fwhm_arcsec=first["anchor"]["psf_fwhm_arcsec"],
         measurement={"aperture_radius_arcsec": 1., "target_distance_pc": 147., "aperture_subpixels": 64, "quality_policy": "aperture_v2"},
@@ -195,22 +200,35 @@ def build_package(source, destination):
                      "No observational likelihood, broad-band, material or H2O inference is performed."],
         input_hashes={str(p.relative_to(destination)): digest(p) for p in sorted(destination.rglob("*"))
                       if p.is_file() and p.name != "machine.template.json"})
+    if final_resolution:
+        experiment["purpose"] = "Final fixed-temperature pixel comparison at approximately 1 AU/pixel; record the outcome and close this numerical investigation"
+        experiment["investigation_policy"] = {
+            "close_after_completed_comparison": True, "automatic_followups": False,
+            "production_dependency": False, "reference_fraction": .01,
+            "criterion": "Both total-I SD upper bounds and the absolute paired-change CI bound are below 1%; nondegenerate intervals and all five same-host pairs required"}
+        experiment["limitations"].extend([
+            "6001 pixels across a 6000-AU field gives 0.999833 AU/pixel; the odd image size preserves source-centred sampling.",
+            "The prior 4801-pixel images are rerun with the final pair's common memory setting; old images are not silently reused.",
+            "The 1% reference comparison is conditional on this model, wavelength and saved temperature. Failure or inconclusiveness is recorded without further automatic investigation or a production veto."])
     atomic_json(destination / "experiment.json", experiment)
     (destination / "experiment.sha256").write_text(digest(destination / "experiment.json") + "  experiment.json\n")
     require(source_hashes == {relative: digest(ROOT / relative) for relative in source_hashes}, "Code changed during preparation")
     for record in records:
         require(digest(record["temperature"]) == record["temperature_sha256"], "Source temperature changed during preparation")
         require(digest(destination / f"inputs/temperatures/T{record['seed']}.fits.gz") == record["temperature_sha256"], "Temperature copy mismatch")
-    return dict(bundle=str(destination), tasks=5, images=10, temperature_solves=0, peak_cpus=320,
+    return dict(bundle=str(destination), diagnostic_id=diagnostic_id, tasks=5, images=10, temperature_solves=0, peak_cpus=320,
                 mcfost_invoked=False, jobs_submitted=False)
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--source", type=Path, required=True, help="Existing V2 numerical run with the 2.048M, 50-degree seed-42004 source model")
-    parser.add_argument("--output", type=Path, default=ROOT / "runs" / DEFAULT_RUN_NAME)
+    parser.add_argument("--output", type=Path, help="New bundle directory (default chosen by diagnostic mode)")
+    parser.add_argument("--final-resolution", action="store_true",
+                        help="Final comparison: 4801 versus 6001 pixels over 6000 AU, close investigation after recording the result")
     args = parser.parse_args()
-    print(json.dumps(build_package(args.source, args.output), indent=2))
+    output = args.output or ROOT / "runs" / (FINAL_RUN_NAME if args.final_resolution else DEFAULT_RUN_NAME)
+    print(json.dumps(build_package(args.source, output, args.final_resolution), indent=2))
     return 0
 
 

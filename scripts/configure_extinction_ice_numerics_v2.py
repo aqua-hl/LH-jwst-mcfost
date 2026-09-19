@@ -24,10 +24,16 @@ BLAS_VARIABLES = ("OPENBLAS_NUM_THREADS", "MKL_NUM_THREADS", "NUMEXPR_NUM_THREAD
                   "VECLIB_MAXIMUM_THREADS")
 CROSSOVER_EXPERIMENT = "extinction_ice_crossover_v2"
 PIXEL_SCALE_DIAGNOSTIC = "fixed_temperature_pixel_scale_v2"
+FINAL_RESOLUTION_DIAGNOSTIC = "fixed_temperature_final_resolution_1au_v1"
+PRODUCTION_EXPERIMENT = "extinction_ice_production_1au_v1"
 
 
 def is_crossover(experiment):
     return experiment.get("experiment_id") == CROSSOVER_EXPERIMENT
+
+
+def is_production(experiment):
+    return experiment.get("experiment_id") == PRODUCTION_EXPERIMENT
 
 
 def simulator_paths(machine, machine_path):
@@ -58,9 +64,18 @@ def simulator_paths(machine, machine_path):
 def bundle_layout(bundle):
     experiment = json.loads((bundle / "experiment.json").read_text())
     tasks = experiment.get("tasks", [])
+    if is_production(experiment):
+        if experiment.get("schema_version") != 1 or not tasks \
+                or [t.get("index") for t in tasks] != list(range(len(tasks))):
+            raise ValueError("Expected consecutively indexed production tasks")
+        for relative in ("manifest.json", "manifest.sha256", "production_experiment.json",
+                         "code/production_task.py", "code/analyze_extinction_ice_production.py"):
+            if not (bundle / relative).is_file():
+                raise ValueError(f"Incomplete production bundle: {relative} is absent")
+        return experiment
     if is_crossover(experiment):
         if experiment.get("schema_version") != 2 \
-                or experiment.get("diagnostic_id") != PIXEL_SCALE_DIAGNOSTIC:
+                or experiment.get("diagnostic_id") not in {PIXEL_SCALE_DIAGNOSTIC, FINAL_RESOLUTION_DIAGNOSTIC}:
             raise ValueError("Expected schema 2 fixed-temperature pixel-scale diagnostic; "
                              "prepare a fresh bundle instead of launching the old temperature crossover")
         if len(tasks) != 5 or [task.get("index") for task in tasks] != list(range(5)):
@@ -111,13 +126,15 @@ def validate_settings(machine, experiment=None):
     machine.setdefault("threads", 64)
     machine.setdefault("timeout_seconds", 14400)
     pixel_scale = is_crossover(experiment or {})
-    machine.setdefault("max_memory_gb", 64 if pixel_scale else 12)
+    final_scale = pixel_scale and (experiment or {}).get("diagnostic_id") == FINAL_RESOLUTION_DIAGNOSTIC
+    large_scale = final_scale or is_production(experiment or {})
+    machine.setdefault("max_memory_gb", 112 if large_scale else 64 if pixel_scale else 12)
     settings.setdefault("max_parallel", 16)
     settings.setdefault("analysis_cpus", 2)
     settings.setdefault("time", "24:00:00")
-    settings.setdefault("memory", "96G" if pixel_scale else "16G")
+    settings.setdefault("memory", "160G" if large_scale else "96G" if pixel_scale else "16G")
     settings.setdefault("analysis_time", "01:00:00")
-    settings.setdefault("analysis_memory", "8G" if pixel_scale else "4G")
+    settings.setdefault("analysis_memory", "16G" if final_scale else "8G" if pixel_scale or large_scale else "4G")
     for name, value in (("threads", machine["threads"]), ("max_parallel", settings["max_parallel"]),
                         ("analysis_cpus", settings["analysis_cpus"])):
         if isinstance(value, bool) or not isinstance(value, int) or value < 1:
@@ -129,6 +146,8 @@ def validate_settings(machine, experiment=None):
         if isinstance(value, bool) or not isinstance(value, (float, int)) \
                 or not math.isfinite(value) or value <= 0:
             raise ValueError(f"{name} must be positive")
+    if large_scale and machine["max_memory_gb"] != 112:
+        raise ValueError("The final-resolution and production runs require max_memory_gb=112")
     for name in ("partition", "account", "reservation"):
         if name in settings and settings[name] and (not isinstance(settings[name], str)
                 or not re.fullmatch(r"[A-Za-z0-9_.:,/-]+", settings[name])):
@@ -151,7 +170,15 @@ def validate_settings(machine, experiment=None):
 
 def dependency_probe(executable, utilities, experiment=None):
     """Read-only login/compute probe: package hashes, all subruns and imports."""
-    if is_crossover(experiment or {}):
+    if is_production(experiment or {}):
+        frozen_check = """from production_task import validate_package
+task_index = os.environ.get('SLURM_ARRAY_TASK_ID')
+experiment = validate_package(bundle, int(task_index) if task_index is not None else None)
+sys.path.insert(0, str(bundle / 'code/src'))
+from mcfost_grid.photometry import measure_image
+frozen_receipt = {'frozen_production_models_checked': len(experiment['tasks'])}
+"""
+    elif is_crossover(experiment or {}):
         frozen_check = """from crossover_task import validate_package, load_modules
 validate_package(bundle)
 runner, photometry = load_modules(bundle)
@@ -204,8 +231,9 @@ def launch_scripts(bundle, experiment, machine, configured):
     utilities = shlex.quote(machine["mcfost_utils"])
     probe = shlex.quote(dependency_probe(machine["mcfost_executable"], machine["mcfost_utils"], experiment))
     crossover = is_crossover(experiment)
-    dispatcher = "crossover_task.py" if crossover else "numerical_task.py"
-    analyzer = ("analyze_extinction_ice_crossover_v2.py" if crossover
+    production = is_production(experiment)
+    dispatcher = "production_task.py" if production else "crossover_task.py" if crossover else "numerical_task.py"
+    analyzer = ("analyze_extinction_ice_production.py" if production else "analyze_extinction_ice_crossover_v2.py" if crossover
                 else "analyze_extinction_ice_numerics_v2.py")
     last_index = len(experiment["tasks"]) - 1
     concurrency = min(settings["max_parallel"], len(experiment["tasks"]))
@@ -278,6 +306,7 @@ def configure(bundle, machine_path):
     machine.update(mcfost_executable=executable, mcfost_utils=utilities)
     machine["slurm"]["python"] = python
     environment = os.environ.copy()
+    environment.pop("SLURM_ARRAY_TASK_ID", None)  # Configure validates the complete bundle, even from an interactive allocation.
     environment.update({name: "1" for name in BLAS_VARIABLES})
     environment.update(MCFOST_AUTO_UPDATE="0", MCFOST_UTILS=utilities,
                        MPLCONFIGDIR=str(bundle / ".mplconfig"))

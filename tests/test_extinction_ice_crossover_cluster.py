@@ -93,6 +93,41 @@ class CrossoverClusterTests(unittest.TestCase):
         self.assertFalse(self.machine.with_name("machine.cluster.json").exists())
         self.assertFalse((self.bundle / "submit.sh").exists())
 
+    def test_final_resolution_mode_pins_larger_pair_and_analysis_resources(self):
+        self.experiment["diagnostic_id"] = "fixed_temperature_final_resolution_1au_v1"
+        (self.bundle / "experiment.json").write_text(json.dumps(self.experiment))
+        configured = self.configure_with_real_probe()
+        machine = json.loads(configured.read_text())
+        self.assertEqual(machine["max_memory_gb"], 112)
+        array = (self.bundle / "job_array.sh").read_text()
+        self.assertIn("#SBATCH --array=0-4%5", array)
+        self.assertIn("#SBATCH --cpus-per-task=64", array)
+        self.assertIn("#SBATCH --mem=160G", array)
+        analysis = (self.bundle / "job_analysis.sh").read_text()
+        self.assertIn("#SBATCH --mem=16G", analysis)
+        self.assertIn("code/analyze_extinction_ice_crossover_v2.py", analysis)
+        self.assertIn('--dependency="afterany:$job"', (self.bundle / "submit.sh").read_text())
+        self.assertEqual(json.loads(self.machine.read_text()), self.settings)
+
+    def test_final_resolution_rejects_changed_mcfost_memory_before_probe(self):
+        self.experiment["diagnostic_id"] = "fixed_temperature_final_resolution_1au_v1"
+        (self.bundle / "experiment.json").write_text(json.dumps(self.experiment))
+        self.settings["max_memory_gb"] = 64
+        self.machine.write_text(json.dumps(self.settings))
+        with mock.patch.object(helper.subprocess, "run") as process:
+            with self.assertRaisesRegex(ValueError, "112"):
+                helper.configure(self.bundle, self.machine)
+            process.assert_not_called()
+        self.assertFalse((self.bundle / "submit.sh").exists())
+
+    def test_final_diagnostic_metadata_does_not_change_another_experiment(self):
+        machine = json.loads(json.dumps(self.settings))
+        helper.validate_settings(machine, {"experiment_id": "extinction_ice_numerics_v2",
+                                           "diagnostic_id": "fixed_temperature_final_resolution_1au_v1"})
+        self.assertEqual(machine["max_memory_gb"], 12)
+        self.assertEqual(machine["slurm"]["memory"], "16G")
+        self.assertEqual(machine["slurm"]["analysis_memory"], "4G")
+
     def test_incomplete_or_misindexed_pair_grid_rejected_before_probe(self):
         for tasks in (self.experiment["tasks"][:-1], [{"index": 1}] * 5):
             experiment = {**self.experiment, "tasks": tasks}

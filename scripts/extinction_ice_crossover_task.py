@@ -18,12 +18,24 @@ import sys
 NAME = "extinction_ice_crossover_v2"  # Retained tool family; schema 2 rejects the old temperature arm.
 DIAGNOSTIC_ID = "fixed_temperature_pixel_scale_v2"
 DEFAULT_RUN_NAME = "extinction_ice_pixel_scale_v2"
+FINAL_DIAGNOSTIC_ID = "fixed_temperature_final_resolution_1au_v1"
+FINAL_RUN_NAME = "final_resolution_1au_v1"
 SEEDS = tuple(range(42001, 42006))
 TEMPERATURE_SEEDS = (42004,)
 WAVELENGTH = 2.546352514425122
 GEOMETRIES = [{"id": "coarse", "image_npix": 2401, "image_size_au": 6000.0},
               {"id": "fine", "image_npix": 4801, "image_size_au": 6000.0}]
+FINAL_GEOMETRIES = [{"id": "coarse", "image_npix": 4801, "image_size_au": 6000.0},
+                    {"id": "fine", "image_npix": 6001, "image_size_au": 6000.0}]
 IDENTITY_KEYS = ("executable_sha256", "utilities_content_sha256", "backend", "threads")
+
+
+def diagnostic_geometries(diagnostic_id):
+    if diagnostic_id == DIAGNOSTIC_ID:
+        return GEOMETRIES
+    if diagnostic_id == FINAL_DIAGNOSTIC_ID:
+        return FINAL_GEOMETRIES
+    raise ValueError("Unknown fixed-temperature pixel-scale diagnostic")
 
 
 def digest(path):
@@ -78,7 +90,9 @@ def validate_package(bundle):
             "Experiment checksum differs")
     exp = read_json(bundle / "experiment.json")
     require(exp.get("schema_version") == 2 and exp.get("experiment_id") == NAME
-            and exp.get("diagnostic_id") == DIAGNOSTIC_ID, "Expected schema-2 fixed-temperature pixel-scale experiment")
+            and exp.get("diagnostic_id") in (DIAGNOSTIC_ID, FINAL_DIAGNOSTIC_ID),
+            "Expected schema-2 fixed-temperature pixel-scale experiment")
+    geometries = diagnostic_geometries(exp["diagnostic_id"])
     hashes = exp.get("input_hashes", {})
     require(bool(hashes), "Missing frozen input hashes")
     for relative, expected in hashes.items():
@@ -92,11 +106,17 @@ def validate_package(bundle):
     require(len({t["temperature_sha256"] for t in tasks}) == 1, "All images must reuse the same temperature bytes")
     require(exp["temperature_seeds"] == [42004] and exp["image_seeds"] == list(SEEDS), "Temperature variation is excluded from this design")
     require(len({t["task_path"] for t in tasks}) == 5, "Duplicate task destinations")
-    require(exp["geometries"] == GEOMETRIES and exp["wavelength_um"] == WAVELENGTH,
+    require(exp["geometries"] == geometries and exp["wavelength_um"] == WAVELENGTH,
             "Wrong geometries or wavelength")
     require(exp["photon_packets"] == 2048000 and exp["temperature_solves"] == 0
             and exp["image_requests"] == 10 and exp["resources"]["cpus_per_task"] == 64,
             "Wrong photon budget, task resources or calculation counts")
+    if exp["diagnostic_id"] == FINAL_DIAGNOSTIC_ID:
+        require(exp.get("investigation_policy") == {
+            "close_after_completed_comparison": True, "automatic_followups": False,
+            "production_dependency": False, "reference_fraction": .01,
+            "criterion": "Both total-I SD upper bounds and the absolute paired-change CI bound are below 1%; nondegenerate intervals and all five same-host pairs required"},
+            "Changed final-resolution stopping or reference rule")
     require(exp["parameters"]["inclination_deg"] == 50 and exp["parameters"]["distance_pc"] == 140,
             "Wrong physical case/distance")
     require(exp["measurement"] == {"aperture_radius_arcsec": 1., "target_distance_pc": 147.,
@@ -112,7 +132,7 @@ def validate_package(bundle):
                 "Wrong fixed temperature path")
         require(hashes.get(task["temperature_path"]) == task["temperature_sha256"], "Unpinned temperature")
         required.add(task["temperature_path"])
-        for geometry in GEOMETRIES:
+        for geometry in geometries:
             required.add(f"{task['task_path']}/{geometry['id']}/image.para")
     require(required <= set(hashes), "Required executable/temperature/parameter input is not pinned")
     require(any(p.startswith("inputs/utils/Dust/") for p in hashes)
@@ -122,7 +142,7 @@ def validate_package(bundle):
     template = (bundle / "inputs/template_image.para").read_text()
     for task in tasks:
         runner._valid_temperature(contained(bundle, task["temperature_path"]))
-        for geometry in GEOMETRIES:
+        for geometry in geometries:
             expected = physics.render_parameter(template, {}, {
                 "image_npix": geometry["image_npix"], "image_size_au": geometry["image_size_au"]}, "image", WAVELENGTH)
             require((contained(bundle, task["task_path"]) / geometry["id"] / "image.para").read_text() == expected,
@@ -186,10 +206,13 @@ def _checked_rows(bundle, exp, task, result, remeasure=False):
     binding = read_json(bundle / "runtime_binding.json")
     require(binding["fingerprint"] == fingerprint, "Cached runtime differs")
     require(all(fingerprint["runtime"][k] == exp["source_runtime"][k] for k in IDENTITY_KEYS), "Wrong source runtime")
+    if exp["diagnostic_id"] == FINAL_DIAGNOSTIC_ID:
+        require(fingerprint["runtime"].get("max_memory_gb") == 112,
+                "Final-resolution cached runtime must use the common 112-GB limit")
     require(result["task_index"] == task["index"], "Wrong task result")
     seen, rows = set(), result["measurements"]
     for row in rows:
-        geometry = next((g for g in GEOMETRIES if g["id"] == row["geometry"]), None)
+        geometry = next((g for g in exp["geometries"] if g["id"] == row["geometry"]), None)
         require(geometry is not None and geometry["id"] not in seen, "Duplicate or unknown geometry")
         seen.add(geometry["id"])
         require(all(row[k] == task[k] for k in ("temperature_seed", "image_seed", "temperature_sha256"))
@@ -219,6 +242,9 @@ def _checked_rows(bundle, exp, task, result, remeasure=False):
         for flag, value in (("-seed", str(task["image_seed"])), ("-img", str(WAVELENGTH)),
                             ("-Tfile", "Temperature.fits.gz")):
             require(args.count(flag) == 1 and args[args.index(flag) + 1] == value, f"Wrong {flag} in command")
+        if exp["diagnostic_id"] == FINAL_DIAGNOSTIC_ID:
+            require(args.count("-max_mem") == 1 and float(args[args.index("-max_mem") + 1]) == 112,
+                    "Final-resolution image command changed the common memory setting")
         require("-no_T" in args and "-rt2" in args and "Processing complete" in (attempt / "mcfost.log").read_text(),
                 "Missing fixed-temperature Method-2 completion")
         require(digest(attempt / "output/Temperature.fits.gz") == task["temperature_sha256"], "Attempt temperature differs")
@@ -265,6 +291,8 @@ def run_task(bundle, index, machine):
     runtime = runner.runtime_config(machine)
     require(runtime["threads"] == 64 and runtime["backend"] == "image_method2"
             and runner.cpu_capacity() >= 64, "Require 64 allocated CPUs and image_method2")
+    if exp["diagnostic_id"] == FINAL_DIAGNOSTIC_ID:
+        require(runtime["max_memory_gb"] == 112, "Final-resolution pairs require the same 112-GB MCFOST memory setting")
     directory = contained(bundle, task["task_path"])
     directory.mkdir(exist_ok=True)
     with (directory / ".task.lock").open("a+") as lock:
@@ -288,7 +316,7 @@ def run_task(bundle, index, machine):
             physics = importlib.import_module(runner.__package__ + ".physics")
             arguments = [*physics.physical_args(exp["parameters"]), *physics.numerical_args({"random_seed": task["image_seed"]})]
             temperature = contained(bundle, task["temperature_path"])
-            for geometry in GEOMETRIES:
+            for geometry in exp["geometries"]:
                 if any(r["geometry"] == geometry["id"] for r in rows):
                     continue
                 runner.atomic_json(status_path, {"state": "running", "geometry": geometry["id"],
@@ -340,7 +368,7 @@ def main():
     args = parser.parse_args()
     if args.validate or args.status:
         exp = validate_package(args.bundle)
-        result = {"experiment_id": NAME, "diagnostic_id": DIAGNOSTIC_ID,
+        result = {"experiment_id": NAME, "diagnostic_id": exp["diagnostic_id"],
                   "package_valid": True, "tasks": 5, "images": 10, "temperature_solves": 0}
         if args.status:
             rows = [inspect_task(args.bundle, exp, task, remeasure=False)[0] for task in exp["tasks"]]

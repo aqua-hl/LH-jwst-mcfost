@@ -24,6 +24,9 @@ from scipy.stats import chi2, t
 
 TEMPERATURE_SEED = 42004
 DIAGNOSTIC_ID = "fixed_temperature_pixel_scale_v2"
+FINAL_DIAGNOSTIC_ID = "fixed_temperature_final_resolution_1au_v1"
+PIXEL_COUNTS = {DIAGNOSTIC_ID: {"coarse": 2401, "fine": 4801},
+                FINAL_DIAGNOSTIC_ID: {"coarse": 4801, "fine": 6001}}
 IMAGE_SEEDS = tuple(range(42001, 42006))
 GEOMETRIES = ("coarse", "fine")
 COMPONENTS = ("total_i", "direct_star", "scattered_star", "direct_thermal", "scattered_thermal")
@@ -62,7 +65,7 @@ def _frozen_dispatcher(bundle):
     if sidecar != [digest(bundle / "experiment.json"), "experiment.json"]:
         raise ValueError("Experiment hash differs from experiment.sha256")
     if (experiment.get("schema_version") != 2
-            or experiment.get("diagnostic_id") != DIAGNOSTIC_ID):
+            or experiment.get("diagnostic_id") not in PIXEL_COUNTS):
         raise ValueError("Expected schema 2 fixed-temperature pixel-scale diagnostic; old temperature-arm bundles are incompatible")
     hashes = experiment.get("input_hashes", {})
     if not isinstance(hashes, dict) or "code/crossover_task.py" not in hashes:
@@ -256,6 +259,39 @@ ASSUMPTIONS = {
 }
 
 
+def final_reference_result(summary):
+    """Record the declared local reference rule without gating production.
+
+    This is an upper-bound check against a 1% reference, not certification of a
+    production grid. Incomplete or invalid data cannot close the investigation.
+    A complete diagnostic closes it even when this reference is not met.
+    """
+    complete = summary["status"] == "complete_diagnostic" and summary["design_complete"]
+    threshold = .01
+    scatter_checks = {}
+    for row in summary["scatter"]:
+        upper = row.get("sd_upper_fraction")
+        scatter_checks[row["geometry"]] = bool(row["complete_five_seed_group"]
+            and upper is not None and upper < threshold
+            and not row.get("scatter_interval_degenerate", True))
+    pair = summary["spatial_changes"][0]
+    bounds = [pair.get("ci_lower"), pair.get("ci_upper")]
+    bound = max(abs(value) for value in bounds) if all(value is not None for value in bounds) else None
+    paired_ok = bool(pair["complete_five_seed_comparison"] and bound is not None
+                     and bound < threshold and not pair.get("paired_interval_degenerate", True))
+    same_host = pair.get("same_host_pairs") == 5
+    checks = {"both_total_i_scatter_upper_bounds_below_reference": all(scatter_checks.values()),
+              "paired_total_i_change_interval_inside_reference": paired_ok,
+              "all_pairs_same_host": same_host}
+    return {"reference_fraction": threshold, "confidence": summary["confidence"],
+            "outcome": ("met" if all(checks.values()) else "not_met") if complete else "not_evaluated",
+            "criteria": checks, "scatter_checks": scatter_checks,
+            "absolute_paired_ci_bound_fraction": bound,
+            "investigation_closed": complete, "automatic_followups": False,
+            "production_dependency": False,
+            "scope": "Total-I 1-arcsecond aperture, one 50-degree model at 2.546 microns, one saved temperature; no grid-wide convergence certification"}
+
+
 def _csv_value(value):
     if isinstance(value, (list, dict)):
         return json.dumps(value, sort_keys=True, allow_nan=False)
@@ -277,14 +313,25 @@ def _percent(value):
 
 
 def _review(summary):
-    lines = ["# Fixed-temperature pixel-scale diagnostic — V2", "",
+    final = summary["diagnostic_id"] == FINAL_DIAGNOSTIC_ID
+    counts = PIXEL_COUNTS[summary["diagnostic_id"]]
+    lines = ["# Final 1-AU pixel comparison" if final else "# Fixed-temperature pixel-scale diagnostic — V2", "",
              f"**{summary['status']}**: {summary['complete_tasks']}/5 tasks and "
              f"{summary['validated_images']}/10 image cells validated and remeasured.", "",
              "All ten images use one frozen temperature (seed 42004), 2.048M image photons, "
-             "and a 6000-AU field. Pixel count changes from 2401 to 4801; five paired image seeds "
+             f"and a 6000-AU field. Pixel count changes from {counts['coarse']} to {counts['fine']}; five paired image seeds "
              "measure repeatability at each scale. There is no temperature arm or new temperature solve.", "",
              "This is a diagnostic comparison. Production convergence remains uncertified; "
              "no observational fit, model ranking or flux-based outlier rejection is performed.", ""]
+    if final:
+        reference = summary["final_reference_result"]
+        lines.extend([f"**1% reference outcome: {reference['outcome']}. Investigation closed: {reference['investigation_closed']}.**", "",
+                      "The declared check requires both total-I seed-scatter upper bounds and the complete paired-change "
+                      "95% interval to lie below 1%, nondegenerate intervals, and all five pairs to share a worker. "
+                      "A completed comparison closes this investigation regardless of that outcome. "
+                      "No follow-up is scheduled and production does not depend on this outcome.", "",
+                      "6001 pixels across 6000 AU gives 0.999833 AU/pixel. Both scales are newly run with the same "
+                      "112-GB MCFOST memory setting; this comparison does not mix prior and new runtime settings.", ""])
     if summary["errors"]:
         lines.extend(["## Integrity issues", "", *[f"- {error}" for error in summary["errors"]], ""])
     if summary.get("warnings"):
@@ -316,7 +363,7 @@ def _review(summary):
                   "All component fluxes remain signed and are recorded without renormalization.", "",
                   "Component scatter and paired differences are included in the JSON and CSV reports. "
                   "The total-I plane is the canonical measurement; component sums are diagnostic.", "",
-                  "## Interpretation limits", "", *[f"- {text}" for text in ASSUMPTIONS.values()], "",
+                  "## Interpretation limits", "", *[f"- {text}" for text in summary["assumptions"].values()], "",
                   "## Files", "", "- `summary.json`: provenance, every task and image record, statistics and assumptions.",
                   "- `seed_fluxes.csv`: all validated image measurements, component fluxes, hashes and worker metadata.",
                   "- `scatter.csv`, `spatial_changes.csv`: two pixel-scale groups and one paired comparison.",
@@ -369,6 +416,8 @@ def analyze_bundle(bundle, output=None, make_plot=True):
     if output.is_relative_to(bundle) and not output.is_relative_to(bundle / "results"):
         raise ValueError("Reports inside the bundle must be under BUNDLE/results to protect frozen inputs")
     dispatcher, experiment = _frozen_dispatcher(bundle)
+    diagnostic_id = experiment["diagnostic_id"]
+    counts = PIXEL_COUNTS[diagnostic_id]
     tasks = experiment["tasks"]
     expected_tasks = {(TEMPERATURE_SEED, seed) for seed in IMAGE_SEEDS}
     if (len(tasks) != 5 or {task["index"] for task in tasks} != set(range(5))
@@ -380,7 +429,7 @@ def analyze_bundle(bundle, output=None, make_plot=True):
         raise ValueError("All five tasks must pin the same valid temperature SHA-256")
     if ((output / "temperature_changes.csv").exists()
             or (output / "summary.json").exists()
-            and read_json(output / "summary.json").get("diagnostic_id") != DIAGNOSTIC_ID):
+            and read_json(output / "summary.json").get("diagnostic_id") != diagnostic_id):
         raise ValueError("Report destination contains another diagnostic; choose a new output directory")
     statuses, rows, errors, warnings = [], [], [], []
     for task in sorted(tasks, key=lambda value: value["index"]):
@@ -401,7 +450,7 @@ def analyze_bundle(bundle, output=None, make_plot=True):
                     raise ValueError("Inspected measurement lacks an image hash")
                 if set(row.get("components_aperture_jy", {})) != set(COMPONENTS):
                     raise ValueError("Inspected measurement lacks the expected intensity components")
-                if (row.get("image_npix") != {"coarse": 2401, "fine": 4801}.get(row.get("geometry"))
+                if (row.get("image_npix") != counts.get(row.get("geometry"))
                         or row.get("image_size_au") != 6000):
                     raise ValueError("Inspected image geometry differs from the two-scale design")
             if status["state"] == "complete" and (len(task_rows) != 2 or {r["geometry"] for r in task_rows} != set(GEOMETRIES)):
@@ -422,18 +471,27 @@ def analyze_bundle(bundle, output=None, make_plot=True):
     summary["errors"].extend(errors)
     completed = sum(status["state"] == "complete" for status in statuses)
     summary.update(schema_version=2, experiment_id=experiment.get("experiment_id"),
-                   diagnostic_id=DIAGNOSTIC_ID, analysis="fixed_temperature_pixel_scale_diagnostic",
+                   diagnostic_id=diagnostic_id, analysis="fixed_temperature_pixel_scale_diagnostic",
                    experiment_sha256=digest(bundle / "experiment.json"), analyzer_sha256=digest(__file__),
                    total_tasks=5, complete_tasks=completed, tasks=statuses,
                    fixed_temperature_seed=TEMPERATURE_SEED,
                    fixed_temperature_sha256=next(iter(temperature_hashes)), new_temperature_solves=0,
                    task_state_counts=dict(Counter(status["state"] for status in statuses)),
-                   assumptions=ASSUMPTIONS, warnings=warnings, remeasurement_performed=True,
+                   assumptions=dict(ASSUMPTIONS), warnings=warnings, remeasurement_performed=True,
                    resources=experiment.get("resources"), production_authorized=False)
     if summary["errors"]:
         summary["status"] = "integrity_error"
     elif completed != 5 or not summary["design_complete"]:
         summary["status"] = "incomplete"
+    if diagnostic_id == FINAL_DIAGNOSTIC_ID:
+        summary["final_reference_result"] = final_reference_result(summary)
+        summary["geometries"] = [{"id": name, "image_npix": count, "image_size_au": 6000.,
+                                  "pixel_size_au": 6000. / count} for name, count in counts.items()]
+        summary["investigation_closed"] = summary["final_reference_result"]["investigation_closed"]
+        summary["automatic_followups"] = False
+        summary["production_dependency"] = False
+        summary["assumptions"]["scope"] = ASSUMPTIONS["scope"].replace("2401 and 4801", "4801 and 6001")
+        summary["assumptions"]["degenerate"] = "Identical values produce a degenerate interval and cannot meet the final 1% reference rule. The reference outcome is recorded without production-grid certification."
     output.mkdir(parents=True, exist_ok=True)
     (output / "summary.json").write_text(json.dumps(summary, indent=2, sort_keys=True, allow_nan=False) + "\n")
     _write_csv(output / "seed_fluxes.csv", summary["rows"],
@@ -459,8 +517,13 @@ def main(argv=None):
         summary = analyze_bundle(args.bundle or args.bundle_option, args.output, not args.no_plot)
     except (OSError, ValueError, TypeError, KeyError, RuntimeError, ImportError) as exc:
         parser.exit(2, f"Error: {exc}\n")
-    print(json.dumps({key: summary[key] for key in
-                      ("status", "complete_tasks", "total_tasks", "validated_images", "production_convergence_certified")}, indent=2))
+    fields = ("status", "complete_tasks", "total_tasks", "validated_images", "production_convergence_certified")
+    receipt = {key: summary[key] for key in fields}
+    if "final_reference_result" in summary:
+        receipt.update(investigation_closed=summary["investigation_closed"],
+                       reference_outcome=summary["final_reference_result"]["outcome"],
+                       production_dependency=False)
+    print(json.dumps(receipt, indent=2))
     return 0 if summary["status"] == "complete_diagnostic" else 2
 
 

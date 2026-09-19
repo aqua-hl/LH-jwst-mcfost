@@ -254,6 +254,45 @@ class CrossoverRunnerTests(unittest.TestCase):
         self.assertNotIn("temperature_changes", summary)
         self.assertFalse((self.bundle / "results/temperature_changes.csv").exists())
 
+    def test_final_resolution_package_keeps_one_variable_and_declares_stop(self):
+        bundle = self.root / "final resolution"
+        result = self.builder.build_package(self.source, bundle, final_resolution=True)
+        experiment = self.dispatcher.validate_package(bundle)
+        self.assertEqual(result["diagnostic_id"], "fixed_temperature_final_resolution_1au_v1")
+        self.assertEqual([(g["image_npix"], g["image_size_au"]) for g in experiment["geometries"]],
+                         [(4801, 6000), (6001, 6000)])
+        self.assertEqual(len({t["temperature_sha256"] for t in experiment["tasks"]}), 1)
+        self.assertEqual(experiment["image_requests"], 10)
+        policy = experiment["investigation_policy"]
+        self.assertTrue(policy["close_after_completed_comparison"])
+        self.assertFalse(policy["automatic_followups"])
+        self.assertFalse(policy["production_dependency"])
+        machine = json.loads((bundle / "machine.template.json").read_text())
+        self.assertEqual(machine["max_memory_gb"], 112)
+        self.assertEqual(machine["slurm"]["memory"], "160G")
+        self.assertEqual(machine["slurm"]["analysis_memory"], "16G")
+        for task in experiment["tasks"]:
+            work = bundle / task["task_path"]
+            first = (work / "coarse/image.para").read_text().splitlines()
+            second = (work / "fine/image.para").read_text().splitlines()
+            changes = [(a, b) for a, b in zip(first, second) if a != b]
+            self.assertEqual(len(changes), 1)
+            self.assertTrue(all("grid (nx,ny), size [AU]" in line for line in changes[0]))
+        self.assertEqual(self.calls, [])
+        # Frozen stopping policy is scientific metadata, not an editable gate.
+        experiment["investigation_policy"]["production_dependency"] = True
+        write_json(bundle / "experiment.json", experiment)
+        (bundle / "experiment.sha256").write_text(runner.sha256(bundle / "experiment.json") + "  experiment.json\n")
+        with self.assertRaisesRegex(ValueError, "stopping or reference rule"):
+            self.dispatcher.validate_package(bundle)
+
+    def test_final_resolution_rejects_wrong_common_memory_before_execution(self):
+        bundle = self.root / "final resolution"
+        self.builder.build_package(self.source, bundle, final_resolution=True)
+        with self.assertRaisesRegex(ValueError, "112-GB"):
+            self.dispatcher.run_task(bundle, 0, bundle / "machine.template.json")
+        self.assertEqual(self.calls, [])
+
     def test_failed_second_image_resumes_without_repeating_first(self):
         self.fail_call = 2
         with self.assertRaisesRegex(RuntimeError, "fixture failure"):

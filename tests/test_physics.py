@@ -104,7 +104,7 @@ class PhysicsTests(unittest.TestCase):
     def test_nonfinite_invalid_and_unknown_values(self):
         cases = [dict(distance_pc=0), dict(envelope_amax_um=-1), dict(inclination_deg=91),
                  dict(envelope_size_exponent=-1), dict(cavity_half_opening_deg=0),
-                 dict(cavity_half_opening_deg=90), dict(envelope_ice_volume_fraction=0),
+                 dict(cavity_half_opening_deg=90), dict(envelope_ice_volume_fraction=-.01),
                  dict(envelope_ice_volume_fraction=1), dict(stellar_mass_msun=float("nan")),
                  dict(distance_pc=float("inf")), dict(distance_pc=True), dict(distance_pc="147"),
                  dict(accretion_rate_msun_per_year=-1), dict(dust_family="DHS")]
@@ -151,6 +151,25 @@ class PhysicsTests(unittest.TestCase):
         rendered = render_parameter(TEMPLATE, dict(envelope_ice_volume_fraction=.1), {}, "temperature")
         self.assertIn("Draine_Si_sUV.dat  1.0  Optical", rendered)
         self.assertIn("Draine_Si_sUV.dat  0.9", rendered)
+
+    def test_zero_ice_is_a_true_bare_species_and_preserves_disk(self):
+        for stage in ("temperature", "image", "coeval"):
+            wave = None if stage == "temperature" else 3.0
+            rendered = render_parameter(TEMPLATE, dict(envelope_ice_volume_fraction=0), {}, stage, wave)
+            self.assertNotIn("ice_opct.dat", rendered)
+            types = [line.split("Grain type")[0].split() for line in rendered.splitlines() if "Grain type" in line]
+            self.assertEqual(types[-1][:5], ["Mie", "1", "1", "0.0", "1.0"])
+            self.assertIn("ac_opct.dat", rendered)
+            self.assertIn("Draine_Si_sUV.dat  1", rendered)
+            rerendered = render_parameter(rendered, dict(envelope_ice_volume_fraction=0), {}, stage, wave)
+            self.assertEqual(rendered, rerendered)
+
+    def test_tiny_mantle_remains_coated_and_bare_cannot_gain_implicit_mantle(self):
+        tiny = render_parameter(TEMPLATE, dict(envelope_ice_volume_fraction=1e-6), {}, "temperature")
+        self.assertIn("ice_opct.dat  1e-06", tiny)
+        bare = render_parameter(TEMPLATE, dict(envelope_ice_volume_fraction=0), {}, "temperature")
+        with self.assertRaisesRegex(ValueError, "Bare template"):
+            render_parameter(bare, dict(envelope_ice_volume_fraction=.1), {}, "temperature")
 
 
 if __name__ == "__main__":

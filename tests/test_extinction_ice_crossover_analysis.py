@@ -38,14 +38,14 @@ def write_json(path, value):
     path.write_text(json.dumps(value, sort_keys=True, allow_nan=False) + "\n")
 
 
-def stub_bundle(bundle):
+def stub_bundle(bundle, final_resolution=False):
     """The real dispatcher is tested separately; this verifies its analyzer API.
 
     Pin a private dispatcher which refuses calls without remeasurement enabled,
     and delivers synthetic validated products through the real import path.
     """
     code = bundle / "code/crossover_task.py"
-    code.parent.mkdir(parents=True)
+    code.parent.mkdir(parents=True, exist_ok=True)
     code.write_text('''import json
 from pathlib import Path
 
@@ -61,11 +61,15 @@ def inspect_task(bundle, experiment, task, remeasure=True):
     return dict(index=task["index"], state=entry["state"]), entry["rows"]
 ''')
     rows = pixel_scale_rows()
+    if final_resolution:
+        for row in rows:
+            row["image_npix"] = 4801 if row["geometry"] == "coarse" else 6001
     tasks = [{"index": image_index, "temperature_seed": ANALYSIS.TEMPERATURE_SEED,
               "image_seed": image_seed, "temperature_sha256": "0" * 64,
               "task_path": f"tasks/t{image_index:03d}"}
              for image_index, image_seed in enumerate(ANALYSIS.IMAGE_SEEDS)]
-    experiment = {"schema_version": 2, "diagnostic_id": ANALYSIS.DIAGNOSTIC_ID,
+    experiment = {"schema_version": 2,
+                  "diagnostic_id": ANALYSIS.FINAL_DIAGNOSTIC_ID if final_resolution else ANALYSIS.DIAGNOSTIC_ID,
                   "experiment_id": "extinction_ice_crossover_v2", "tasks": tasks,
                   "input_hashes": {"code/crossover_task.py": ANALYSIS.digest(code)},
                   "resources": {"cpus_per_task": 64}}
@@ -78,6 +82,38 @@ def inspect_task(bundle, experiment, task, remeasure=True):
 
 
 class CrossoverStatisticsTests(unittest.TestCase):
+    def test_final_reference_rule_records_outcome_without_certifying_production(self):
+        rows = pixel_scale_rows()
+        for index, row in enumerate(rows):
+            if row["geometry"] == "fine":
+                row["flux_jy"] = rows[index - 1]["flux_jy"] * (1 + .002 + index * .00003)
+        summary = ANALYSIS.summarize(rows)
+        result = ANALYSIS.final_reference_result(summary)
+        self.assertEqual(result["outcome"], "met")
+        self.assertTrue(result["investigation_closed"])
+        self.assertFalse(result["production_dependency"])
+        self.assertFalse(result["automatic_followups"])
+        self.assertFalse(summary["production_convergence_certified"])
+        # A confidently measured 2% shift fails the reference but ends inquiry.
+        result = ANALYSIS.final_reference_result(ANALYSIS.summarize(pixel_scale_rows()))
+        self.assertEqual(result["outcome"], "not_met")
+        self.assertTrue(result["investigation_closed"])
+        incomplete = ANALYSIS.final_reference_result(ANALYSIS.summarize(rows[:-1]))
+        self.assertEqual(incomplete["outcome"], "not_evaluated")
+        self.assertFalse(incomplete["investigation_closed"])
+
+    def test_degenerate_or_unmatched_pairs_do_not_establish_final_reference(self):
+        rows = pixel_scale_rows()
+        for row in rows:
+            row["flux_jy"] = 1.
+        result = ANALYSIS.final_reference_result(ANALYSIS.summarize(rows))
+        self.assertEqual(result["outcome"], "not_met")
+        self.assertFalse(result["criteria"]["both_total_i_scatter_upper_bounds_below_reference"])
+        self.assertFalse(result["criteria"]["paired_total_i_change_interval_inside_reference"])
+        rows[0]["host"] = "changed-host"
+        result = ANALYSIS.final_reference_result(ANALYSIS.summarize(rows))
+        self.assertFalse(result["criteria"]["all_pairs_same_host"])
+
     def test_sd_interval_uses_five_draws_and_zero_is_degenerate(self):
         values = [.98, .99, 1., 1.01, 1.02]
         result = ANALYSIS.scatter_statistics(values)
@@ -159,6 +195,27 @@ class CrossoverStatisticsTests(unittest.TestCase):
 
 
 class CrossoverAnalyzerIntegrationTests(unittest.TestCase):
+    def test_final_resolution_report_ends_investigation_even_when_reference_fails(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            bundle = Path(temporary)
+            stub_bundle(bundle, final_resolution=True)
+            result = ANALYSIS.analyze_bundle(bundle, make_plot=False)
+            self.assertEqual(result["status"], "complete_diagnostic")
+            self.assertEqual(result["diagnostic_id"], ANALYSIS.FINAL_DIAGNOSTIC_ID)
+            self.assertEqual(result["final_reference_result"]["outcome"], "not_met")
+            self.assertTrue(result["investigation_closed"])
+            self.assertFalse(result["production_dependency"])
+            self.assertFalse(result["automatic_followups"])
+            self.assertFalse(result["production_convergence_certified"])
+            review = (bundle / "results/REVIEW.md").read_text()
+            self.assertIn("4801 to 6001", review)
+            self.assertIn("0.999833 AU/pixel", review)
+            self.assertNotIn("2401 and 4801", review)
+            # Separate modes cannot overwrite each other's previous reports.
+            stub_bundle(bundle)
+            with self.assertRaisesRegex(ValueError, "another diagnostic"):
+                ANALYSIS.analyze_bundle(bundle, make_plot=False)
+
     def test_frozen_inspector_is_used_with_remeasurement_and_reports_written(self):
         with tempfile.TemporaryDirectory() as temporary:
             bundle = Path(temporary)

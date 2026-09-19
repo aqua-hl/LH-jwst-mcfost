@@ -5,6 +5,7 @@ import fcntl
 import json
 import math
 import os
+import re
 import shlex
 import shutil
 import signal
@@ -81,11 +82,35 @@ def check_backend(run, runtime):
     return output.splitlines()[:3]
 
 
-def validate_inputs(run, manifest):
+def validate_inputs(run, manifest, model_id=None):
+    """Check frozen shared inputs and, optionally, one model's parameter files.
+
+    Preparation/configuration and independent full audits keep the default
+    all-model check. Array workers can avoid repeatedly opening every other
+    model's parameter files while still checking all shared executable inputs.
+    Unsafe manifest paths are rejected even when their model is not selected.
+    """
+    run = Path(run).resolve()
+    known_models = None
+    if model_id is not None:
+        if not isinstance(model_id, str) or not re.fullmatch(r"[A-Za-z0-9_-]+", model_id):
+            raise ValueError("Selected model ID must be a safe filename token")
+        known_models = {model["id"] for model in manifest.get("models", [])}
+        if model_id not in known_models:
+            raise ValueError(f"Unknown selected model ID: {model_id}")
     for relative, digest in manifest["input_hashes"].items():
+        relative_path = Path(relative)
+        parts = relative_path.parts
+        if relative_path.is_absolute() or ".." in parts or not parts:
+            raise RuntimeError(f"Unsafe frozen run input path: {relative}")
+        if model_id is not None and len(parts) >= 3 and parts[0] == "models":
+            if parts[1] not in known_models:
+                raise RuntimeError(f"Frozen input refers to an unknown model: {relative}")
+            if parts[1] != model_id:
+                continue
         path = run / relative
-        if (Path(relative).is_absolute() or ".." in Path(relative).parts
-                or path.is_symlink() or not path.is_file() or sha256(path) != digest):
+        if (not path.resolve().is_relative_to(run) or path.is_symlink()
+                or not path.is_file() or sha256(path) != digest):
             raise RuntimeError(f"Frozen run input changed or missing: {relative}. Prepare a new run instead of mixing configurations.")
 
 
@@ -213,8 +238,8 @@ def run_model(run_dir, index, machine_path):
     runtime = runtime_config(machine_path)
     if runtime["threads"] > cpu_capacity():
         raise ValueError(f"Requested {runtime['threads']} threads exceeds allocated/local CPU count {cpu_capacity()}")
-    validate_inputs(run, manifest)
     model = manifest["models"][index]
+    validate_inputs(run, manifest, model_id=model["id"])
     directory = run / "models" / model["id"]
     with (directory / ".task.lock").open("a+") as lock:
         try:

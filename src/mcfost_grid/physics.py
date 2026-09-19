@@ -69,9 +69,9 @@ def validate_parameters(parameters: Mapping[str, object]) -> None:
             if not 0 < number < 90:
                 raise ValueError("cavity_half_opening_deg must lie strictly between 0 and 90")
         elif name == "envelope_ice_volume_fraction":
-            if not 0 < number < 1:
-                raise ValueError("envelope_ice_volume_fraction must lie strictly between 0 and 1; "
-                                 "zero-ice and pure-ice populations require different dust templates")
+            if not 0 <= number < 1:
+                raise ValueError("envelope_ice_volume_fraction must be >=0 and <1; "
+                                 "zero renders a genuine single-component bare-silicate species")
         elif number <= 0:
             raise ValueError(f"{name} must be greater than zero")
 
@@ -207,17 +207,26 @@ def render_parameter(template_text: str, parameters: Mapping[str, object],
     if t.values("Number of species", 1, disk_grains) != ["2"] or t.values("Number of species", 1, envelope_grains) != ["1"]:
         raise ValueError("Only two disk species and one coated envelope species are supported; DHS/disjoint populations are unsupported")
     envelope_type = t.values("Grain type", 6, envelope_grains)
-    if envelope_type[:3] != ["Mie", "2", "2"] or float(envelope_type[3]) != 0.0 or float(envelope_type[4]) != 1.0:
-        raise ValueError("Envelope must be a non-porous Mie species with two coating components and unit species mass fraction")
-    core = t.values("Optical indices file", 2, range(species_headers[1], t.one("ice_opct.dat", envelope_grains)))
+    bare_template = envelope_type[:3] == ["Mie", "1", "1"]
+    if (not bare_template and envelope_type[:3] != ["Mie", "2", "2"]) or float(envelope_type[3]) != 0.0 or float(envelope_type[4]) != 1.0:
+        raise ValueError("Envelope must be non-porous coated or bare Mie with unit species mass fraction")
+    optical_envelope = [i for i in envelope_grains if "optical indices file" in t.lines[i].casefold()]
+    if len(optical_envelope) != (1 if bare_template else 2):
+        raise ValueError("Envelope optical-component count disagrees with grain type")
+    core_row = optical_envelope[0]
+    core = t.values("Optical indices file", 2, range(core_row, core_row+1))
     if core[0] != "Draine_Si_sUV.dat":
         raise ValueError("Only a Draine_Si_sUV.dat core with ice_opct.dat mantle is supported")
-    ice_row = t.one("ice_opct.dat", envelope_grains)
-    ice = t.values("Optical indices file", 2, range(ice_row, ice_row + 1))
-    if ice[0] != "ice_opct.dat" or not math.isclose(float(core[1]) + float(ice[1]), 1.0, abs_tol=1e-10):
-        raise ValueError("Envelope core and mantle volume fractions must sum to one")
-    if not (0 < float(core[1]) < 1 and 0 < float(ice[1]) < 1):
-        raise ValueError("The supported coated template requires nonzero core and mantle fractions")
+    ice_row = None if bare_template else optical_envelope[1]
+    if bare_template:
+        if float(core[1]) != 1 or parameters.get("envelope_ice_volume_fraction", 0) != 0:
+            raise ValueError("Bare template requires unit core fraction and zero ice; use the coated template to add ice")
+    else:
+        ice = t.values("Optical indices file", 2, range(ice_row, ice_row + 1))
+        if ice[0] != "ice_opct.dat" or not math.isclose(float(core[1]) + float(ice[1]), 1.0, abs_tol=1e-10):
+            raise ValueError("Envelope core and mantle volume fractions must sum to one")
+        if not (0 < float(core[1]) < 1 and 0 < float(ice[1]) < 1):
+            raise ValueError("The supported coated template requires nonzero core and mantle fractions")
     optical_rows = [i for i in disk_grains if "optical indices file" in t.lines[i].casefold()]
     type_rows = [i for i in disk_grains if "grain type" in t.lines[i].casefold()]
     if len(optical_rows) != 2 or len(type_rows) != 2:
@@ -302,7 +311,8 @@ def render_parameter(template_text: str, parameters: Mapping[str, object],
         fraction = float(parameters["envelope_ice_volume_fraction"])
         core_row = t.one("Draine_Si_sUV.dat", envelope_grains)
         t.set("Optical indices file", ["Draine_Si_sUV.dat", 1-fraction], range(core_row, core_row+1))
-        t.set("Optical indices file", ["ice_opct.dat", fraction], range(ice_row, ice_row+1))
+        if ice_row is not None:
+            t.set("Optical indices file", ["ice_opct.dat", fraction], range(ice_row, ice_row+1))
     if "grains" in numerics:
         for i in grains:
             if size_tag in t.lines[i]:
@@ -313,4 +323,11 @@ def render_parameter(template_text: str, parameters: Mapping[str, object],
         if key in parameters:
             star[index] = float(parameters[key])
     t.set(stellar_tag, star, star_scope)
+    # Remove the mantle completely at the null hypothesis, rather than asking
+    # a coated-sphere solver to evaluate a zero-thickness mantle. Do this last
+    # so deleting its optical-constant row cannot shift the validated scopes.
+    if parameters.get("envelope_ice_volume_fraction") == 0 and not bare_template:
+        envelope_type[:3] = ["Mie", "1", "1"]
+        t.set("Grain type", envelope_type, envelope_grains)
+        del t.lines[ice_row]
     return "\n".join(t.lines) + "\n"
