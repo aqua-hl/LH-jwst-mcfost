@@ -1,0 +1,40 @@
+{
+  "fixed": {
+    "accretion_rate_msun_per_year": 7.3011756855e-08,
+    "cavity_half_opening_deg": 17.5,
+    "distance_pc": 140,
+    "envelope_amax_um": 0.4,
+    "envelope_dust_mass_msun": 0.000225,
+    "envelope_ice_volume_fraction": 0.05,
+    "envelope_size_exponent": 2.75,
+    "stellar_mass_msun": 0.5,
+    "stellar_radius_rsun": 2.5,
+    "stellar_temperature_k": 4000
+  },
+  "max_models": 1,
+  "models": [
+    {
+      "inclination_deg": 70
+    }
+  ],
+  "notes": "One nominal coated-Mie continuum control: fresh equilibrium temperature and all nine strict continuum anchors at the preserved full numerical resolution. This first cluster control measures execution cost and provides predictions for comparison with archived controls; convergence is not assumed.",
+  "numerics": {
+    "grains": 50,
+    "grid_n_inner": 20,
+    "grid_nr": 100,
+    "grid_ntheta": 70,
+    "photons_image": 128000,
+    "photons_sed": 128000,
+    "photons_temperature": 128000
+  },
+  "observations": {
+    "aperture_radius_arcsec": 1,
+    "aperture_subpixels": 64,
+    "preset": "strict9",
+    "target_distance_pc": 147
+  },
+  "output_dir": "../runs",
+  "run_name": "continuum_control_v1",
+  "schema_version": 1,
+  "smoke_test": false
+}

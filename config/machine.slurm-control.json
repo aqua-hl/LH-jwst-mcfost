@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "mcfost_executable": "mcfost",
+  "mcfost_utils": "$MCFOST_UTILS",
+  "backend": "image_method2",
+  "threads": 16,
+  "timeout_seconds": 3600,
+  "max_memory_gb": 12,
+  "slurm": {
+    "time": "12:00:00",
+    "memory": "16G",
+    "max_parallel": 1,
+    "python": "python",
+    "setup_lines": [
+      ": \"${MCFOST_UTILS:?Export MCFOST_UTILS before submitting}\""
+    ],
+    "analysis_cpus": 1,
+    "analysis_memory": "2G",
+    "analysis_time": "00:10:00"
+  },
+  "notes": "One full-resolution control model, one OpenMP process with 16 CPUs and 16 GB. One-hour limit per MCFOST command and twelve-hour job limit are bounds, not runtime predictions. Use the same Python/PATH/MCFOST_UTILS environment as the successful smoke test. Copy any required partition/account/reservation/module settings from the working smoke configuration."
+}
