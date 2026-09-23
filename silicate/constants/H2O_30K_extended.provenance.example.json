@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "table_sha256": "REQUIRED: SHA256 of the extended input table",
+  "laboratory_sha256": "29b572f8907993870d0b15823e1182a9c4813b8cdb8f4fbdd40ef39cf28fb00c",
+  "laboratory_temperature_k": 30.0,
+  "measured_region_treatment": "preserved_original_samples",
+  "sources": ["REQUIRED: publication/dataset and archived source filenames or hashes for each extension"],
+  "extension_method": "REQUIRED: exact processing/conversion script or algorithm and version",
+  "join_description": "REQUIRED: joining wavelengths, blending/interpolation and any discontinuities",
+  "tail_temperature_assumptions": "REQUIRED: temperatures/material phases represented by the added tails"
+}

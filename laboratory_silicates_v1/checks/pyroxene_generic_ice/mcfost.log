@@ -1,0 +1,31 @@
+ You are running MCFOST 4.1.13
+ Git SHA = fc14f46491616224d993503b2a3293c1dab7b47a
+ Input file read successfully
+ Computation of dust properties as a function of wavelength
+ Creating directory ././data_dust
+ Reading ./check.lambda
+ Parallelized code on   2 processors
+  
+Wed Sep 23 16:44:28 BST 2026
+ Using ray-tracing method 1
+ Reading /Users/harrisonlo/Downloads/Project_5_Les_Houches/tmc1a_restart/validation/laboratory_silicate_checks_v1/inputs/utils/Dust/Pyroxene_Mg05Fe05SiO3_Dorschner1995_mcfost.dat
+ Reading /Users/harrisonlo/Downloads/Project_5_Les_Houches/tmc1a_restart/validation/laboratory_silicate_checks_v1/inputs/utils/Dust/ice_opct.dat
+ WARNING : T_sub is set to the minimum T_sub of the individual components
+ Number of regions detected: 1
+ zone 1 --> region= 1 : R=1.00 to 3000.00 AU
+ Using          64 cells
+ Total  gas mass in model:   2.25000009E-02  Msun
+ Total dust mass in model:   2.24999996E-04  Msun
+ Reference cell is #           1
+ Using scattering method 2
+ Using scattering method 2
+ Using scattering method 2
+ Reading /Users/harrisonlo/Downloads/Project_5_Les_Houches/tmc1a_restart/validation/laboratory_silicate_checks_v1/inputs/utils/Dust/Pyroxene_Mg05Fe05SiO3_Dorschner1995_mcfost.dat
+ Reading /Users/harrisonlo/Downloads/Project_5_Les_Houches/tmc1a_restart/validation/laboratory_silicate_checks_v1/inputs/utils/Dust/ice_opct.dat
+ WARNING : T_sub is set to the minimum T_sub of the individual components
+ Trying to find appropriate stellar spectra ...
+ Star #           1  --> lte4000-3.5.NextGen.fits.gz
+ Done
+ Reading /Users/harrisonlo/mcfost/utils/Stellar_Spectra/lte4000-3.5.NextGen.fits.gz
+ Computing dust properties ... Writing dust properties
+ Exiting

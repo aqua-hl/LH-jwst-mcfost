@@ -1,0 +1,105 @@
+{
+  "workspace": "silicate",
+  "purpose": "screen candidate silicate optical constants in opacity space before any production run",
+  "rule": "Optical constants are never generated here. Every table must be supplied by a named source and recorded below with its hash, exactly as the H2O 30 K table was.",
+  "present": [
+    {
+      "role": "baseline silicate used by every run to date",
+      "path": "reference/dust/Draine_Si_sUV.dat",
+      "sha256": "3a6af751429f6f8dc948e60675b13be01ffcbed0662eec62934ec6d9c61dea80",
+      "bulk_density_g_cm3": 3.5,
+      "rows": 1201,
+      "supplied_by": "MCFOST distribution (Draine astronomical silicate, smoothed UV)"
+    },
+    {
+      "role": "historical H2O table accepted for this four-model pilot with documented native extrapolation",
+      "path": "reference/dust/H2O_30K_Leiden_mcfost.dat",
+      "sha256": "29b572f8907993870d0b15823e1182a9c4813b8cdb8f4fbdd40ef39cf28fb00c",
+      "coverage_um": [
+        0.25004000002,
+        19.940540101
+      ],
+      "bulk_density_g_cm3": 0.94,
+      "laboratory_temperature_k": 30,
+      "rows": 3000,
+      "pilot_provenance": "silicate/constants/H2O_30K_historical.provenance.json"
+    },
+    {
+      "role": "candidate laboratory silicate; not selected for the four-model Draine pilot",
+      "material_id": "olivine_mg50",
+      "path": "laboratory_silicates_v1/Dust/Olivine_MgFeSiO4_Dorschner1995_mcfost.dat",
+      "sha256": "41e34acb22986f83aeb1113d31e73acee19707add259198036ca51baa25f3965",
+      "bulk_density_g_cm3": 3.71,
+      "rows": 109,
+      "coverage_um": [
+        0.2,
+        500.0
+      ],
+      "measurement_temperature_k": null,
+      "citation": "Dorschner, Begemann, Henning, Jaeger & Mutschke (1995), Astronomy & Astrophysics 300, 503",
+      "source_url": "https://www2.astro.uni-jena.de/Laboratory/OCDB/data/silicate/amorph/olmg50.txt",
+      "raw_path": "laboratory_silicates_v1/raw/olmg50.txt",
+      "raw_sha256": "4241a2d0e50f81d7c53bd486741bf1eb33878ea5b1b6337924f94682440c6f6a",
+      "n_k_modified": false,
+      "validation_scope": "Supplied isolated coated-Mie dust initialization with generic ice passed; no source temperature/image calculation or DHS validation supplied"
+    },
+    {
+      "role": "candidate laboratory silicate; not selected for the four-model Draine pilot",
+      "material_id": "pyroxene_mg50",
+      "path": "laboratory_silicates_v1/Dust/Pyroxene_Mg05Fe05SiO3_Dorschner1995_mcfost.dat",
+      "sha256": "05c1ebf12963ff3c9de9dd32e168135e62986e527e60343da5e432ff018b44a2",
+      "bulk_density_g_cm3": 3.2,
+      "rows": 109,
+      "coverage_um": [
+        0.2,
+        500.0
+      ],
+      "measurement_temperature_k": null,
+      "citation": "Dorschner, Begemann, Henning, Jaeger & Mutschke (1995), Astronomy & Astrophysics 300, 503",
+      "source_url": "https://www2.astro.uni-jena.de/Laboratory/OCDB/data/silicate/amorph/pyrmg50.txt",
+      "raw_path": "laboratory_silicates_v1/raw/pyrmg50.txt",
+      "raw_sha256": "a753e2a2a09dcc05e7975f694bafd52c1e86d27bed765d1ae9a583f2d100e53b",
+      "n_k_modified": false,
+      "validation_scope": "Supplied isolated coated-Mie dust initialization with generic ice passed; no source temperature/image calculation or DHS validation supplied"
+    }
+  ],
+  "target_specification": {
+    "quantity": "S = kappa_abs(9.7 um) / kappa_ext(2.2 um)",
+    "baseline_value": 1.9671,
+    "why": "S compares silicate optical depth at fixed NIR extinction, requiring mass renormalization if the NIR opacity changes",
+    "caution": "S is neither a fixed-mass nor an emergent-flux prediction; the screen is bare Mie while the pilot is disjoint DHS. See FOUR_MODEL_PILOT.md"
+  },
+  "incoming_package_review": {
+    "package": "laboratory_silicates_v1",
+    "manifest_sha256": "5d18ab8f7013f9eb30dbbc179c6aae286ef74ce47c9269901d1d04b2a4fd49f6",
+    "checks_summary_sha256": "0f3820e0886997a48d789ea264f793ddc6443b687bc799ee8eee29ea6bc86fd4",
+    "h2o_identical_to_existing_reference": true,
+    "h2o_coverage_um": [
+      0.25004000002,
+      19.940540101
+    ],
+    "h2o_zero_k_rows": 206,
+    "h2o_extension_provided": false,
+    "supplied_failed_check": "olivine plus unchanged H2O30K, coated Mie, 5% ice by volume; SIGSEGV returncode -11; cause not established",
+    "selected_pilot_prescription": "Draine plus separate DHS H2O grains, 4% ice by mass; no change to design",
+    "advertised_source_files_missing": [
+      "src/mcfost_grid/laboratory_silicates.py",
+      "config/grid.lab_olivine.example.json",
+      "config/grid.lab_pyroxene.example.json"
+    ]
+  },
+  "optional_future_inputs": [
+    {
+      "slot": "optional_H2O30K_full_range_extension",
+      "required": "Full-range wavelength_um,n,k table preserving the archived H2O30K measured region, plus sources/processing/joins/temperature-assumption provenance",
+      "intended_path": "silicate/constants/H2O_30K_extended_mcfost.dat",
+      "coverage_required_um": [
+        0.1,
+        3000.0
+      ],
+      "status": "optional future material replacement; not a prerequisite for the current pilot"
+    }
+  ],
+  "awaiting_supply": [],
+  "pilot_ice_policy": "historical_native_extrapolation; exact archived table, no zero-k floor, fresh temperatures, mandatory numerical checks retained"
+}

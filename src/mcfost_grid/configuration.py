@@ -93,7 +93,15 @@ def expand_models(config):
     limit = config.get("max_models", 10000)
     if isinstance(limit, bool) or not isinstance(limit, int) or limit < 1:
         raise ValueError("max_models must be a positive integer")
-    fixed = {**DEFAULT_PARAMETERS, **config.get("fixed", {})}
+    defaults = dict(DEFAULT_PARAMETERS)
+    # Disjoint populations use species mass fractions, not mantle volumes.
+    # Drop only the implicit coated-template default; explicit conflicting
+    # composition parameters are still rejected by physical_args.
+    if ("envelope_ice_mass_fraction" in config.get("fixed", {})
+            or "envelope_ice_mass_fraction" in config.get("grid", {})
+            or any("envelope_ice_mass_fraction" in row for row in config.get("models", []))):
+        defaults.pop("envelope_ice_volume_fraction")
+    fixed = {**defaults, **config.get("fixed", {})}
     _strict_keys(fixed, PHYSICAL_KEYS, "physical parameter")
     if "grid" in config and "models" in config:
         raise ValueError("Use either grid (Cartesian product) or models (explicit overrides), not both")
@@ -239,7 +247,8 @@ def prepare_run(config_path):
     config_path = Path(config_path).resolve()
     config = load_json(config_path)
     _strict_keys(config, {"schema_version", "run_name", "output_dir", "template", "fixed", "grid", "models",
-                         "numerics", "observations", "smoke_test", "max_models", "notes", "numerical_only"}, "configuration")
+                         "numerics", "observations", "smoke_test", "max_models", "notes", "numerical_only",
+                         "dust_files"}, "configuration")
     if config.get("schema_version") != 1:
         raise ValueError("schema_version must be 1")
     name = config.get("run_name", "")
@@ -253,6 +262,24 @@ def prepare_run(config_path):
         raise FileExistsError(f"Run already exists: {run}. Resume it, or choose a new run_name.")
     template = resolve(base, config["template"]) if "template" in config else WORKSPACE / "reference/parameters/continuum_nominal.para"
     template_text = template.read_text()
+    dust_sources = {p.name: p for p in (
+        WORKSPACE / "reference/dust/Draine_Si_sUV.dat",
+        WORKSPACE / "reference/runtime_assets/Dust/ac_opct.dat",
+        WORKSPACE / "reference/runtime_assets/Dust/ice_opct.dat")}
+    supplied = config.get("dust_files", {})
+    if not isinstance(supplied, dict):
+        raise ValueError("dust_files must map optical table basenames to source paths")
+    for filename, value in supplied.items():
+        if not re.fullmatch(r"[A-Za-z0-9_-]+\.dat", filename) or not isinstance(value, str):
+            raise ValueError("dust_files requires safe .dat basenames and string source paths")
+        source = resolve(base, value)
+        if not source.is_file():
+            raise ValueError(f"Missing supplied optical constants: {source}")
+        dust_sources[filename] = source
+    optical_names = {line.split()[0] for line in template_text.splitlines()
+                     if "optical indices file" in line.casefold()}
+    if optical_names - dust_sources.keys():
+        raise ValueError(f"Template requires supplied dust_files: {sorted(optical_names - dust_sources.keys())}")
     models = expand_models(config)
     anchors, spectrum, measurement = read_anchors(config, base)
     rendered = {}
@@ -279,10 +306,8 @@ def prepare_run(config_path):
     shutil.copy2(WORKSPACE / "workflow.py", run / "code/workflow.py")
     dust_dir = inputs / "utils/Dust"
     dust_dir.mkdir(parents=True)
-    for src in (WORKSPACE / "reference/dust/Draine_Si_sUV.dat",
-                WORKSPACE / "reference/runtime_assets/Dust/ac_opct.dat",
-                WORKSPACE / "reference/runtime_assets/Dust/ice_opct.dat"):
-        shutil.copy2(src, dust_dir / src.name)
+    for filename, src in dust_sources.items():
+        shutil.copy2(src, dust_dir / filename)
     stars = inputs / "utils/Stellar_Spectra"
     stars.mkdir()
     shutil.copy2(WORKSPACE / "reference/runtime_assets/Stellar_Spectra/lte4000-3.5.NextGen.fits.gz", stars)

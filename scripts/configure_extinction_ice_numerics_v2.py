@@ -26,6 +26,7 @@ CROSSOVER_EXPERIMENT = "extinction_ice_crossover_v2"
 PIXEL_SCALE_DIAGNOSTIC = "fixed_temperature_pixel_scale_v2"
 FINAL_RESOLUTION_DIAGNOSTIC = "fixed_temperature_final_resolution_1au_v1"
 PRODUCTION_EXPERIMENT = "extinction_ice_production_1au_v1"
+SILICATE_PILOT = "silicate_size_pilot_v1"
 
 
 def is_crossover(experiment):
@@ -33,7 +34,7 @@ def is_crossover(experiment):
 
 
 def is_production(experiment):
-    return experiment.get("experiment_id") == PRODUCTION_EXPERIMENT
+    return experiment.get("experiment_id") in {PRODUCTION_EXPERIMENT, SILICATE_PILOT}
 
 
 def simulator_paths(machine, machine_path):
@@ -72,6 +73,9 @@ def bundle_layout(bundle):
                          "code/production_task.py", "code/analyze_extinction_ice_production.py"):
             if not (bundle / relative).is_file():
                 raise ValueError(f"Incomplete production bundle: {relative} is absent")
+        if experiment["experiment_id"] == SILICATE_PILOT:
+            if len(tasks) != 4 or not (bundle / "code/analyze_silicate_size_pilot.py").is_file():
+                raise ValueError("Silicate pilot requires four tasks and its paired analyzer")
         return experiment
     if is_crossover(experiment):
         if experiment.get("schema_version") != 2 \
@@ -129,7 +133,7 @@ def validate_settings(machine, experiment=None):
     final_scale = pixel_scale and (experiment or {}).get("diagnostic_id") == FINAL_RESOLUTION_DIAGNOSTIC
     large_scale = final_scale or is_production(experiment or {})
     machine.setdefault("max_memory_gb", 112 if large_scale else 64 if pixel_scale else 12)
-    settings.setdefault("max_parallel", 16)
+    settings.setdefault("max_parallel", 4 if (experiment or {}).get("experiment_id") == SILICATE_PILOT else 16)
     settings.setdefault("analysis_cpus", 2)
     settings.setdefault("time", "24:00:00")
     settings.setdefault("memory", "160G" if large_scale else "96G" if pixel_scale else "16G")
@@ -141,6 +145,8 @@ def validate_settings(machine, experiment=None):
             raise ValueError(f"{name} must be a positive integer")
     if machine["threads"] != 64 or settings["max_parallel"] > 16:
         raise ValueError("The experiment uses 64 CPUs per task and at most 16 concurrent tasks")
+    if (experiment or {}).get("experiment_id") == SILICATE_PILOT and settings["max_parallel"] > 4:
+        raise ValueError("The silicate pilot has at most four concurrent tasks")
     for name in ("timeout_seconds", "max_memory_gb"):
         value = machine[name]
         if isinstance(value, bool) or not isinstance(value, (float, int)) \
@@ -233,7 +239,8 @@ def launch_scripts(bundle, experiment, machine, configured):
     crossover = is_crossover(experiment)
     production = is_production(experiment)
     dispatcher = "production_task.py" if production else "crossover_task.py" if crossover else "numerical_task.py"
-    analyzer = ("analyze_extinction_ice_production.py" if production else "analyze_extinction_ice_crossover_v2.py" if crossover
+    analyzer = ("analyze_silicate_size_pilot.py" if experiment.get("experiment_id") == SILICATE_PILOT
+                else "analyze_extinction_ice_production.py" if production else "analyze_extinction_ice_crossover_v2.py" if crossover
                 else "analyze_extinction_ice_numerics_v2.py")
     last_index = len(experiment["tasks"]) - 1
     concurrency = min(settings["max_parallel"], len(experiment["tasks"]))

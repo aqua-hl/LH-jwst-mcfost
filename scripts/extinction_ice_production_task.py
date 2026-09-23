@@ -12,6 +12,7 @@ from pathlib import Path
 import sys
 
 NAME = "extinction_ice_production_1au_v1"
+SILICATE_PILOT = "silicate_size_pilot_v1"
 
 
 def digest(path):
@@ -35,7 +36,7 @@ def validate_package(bundle, index=None):
     experiment = json.loads((bundle / "experiment.json").read_text())
     require((bundle / "production_experiment.json").read_bytes() == (bundle / "experiment.json").read_bytes(),
             "Production experiment copies differ")
-    require(experiment.get("schema_version") == 1 and experiment.get("experiment_id") == NAME, "Wrong experiment")
+    require(experiment.get("schema_version") == 1 and experiment.get("experiment_id") in {NAME, SILICATE_PILOT}, "Wrong experiment")
     manifest = json.loads((bundle / "manifest.json").read_text())
     if index is not None:
         require(type(index) is int and 0 <= index < len(manifest["models"]), "Model index out of range")
@@ -57,7 +58,8 @@ def validate_package(bundle, index=None):
     config = manifest["configuration"]
     require(config.get("numerical_only") is True and all(a["score"] is False for a in manifest["anchors"]),
             "Production probes must use their separate integrated-band analysis")
-    require(all(config["numerics"][k] == 2048000 for k in ("photons_temperature", "photons_sed", "photons_image")),
+    photon_count = 512000 if experiment["experiment_id"] == SILICATE_PILOT else 2048000
+    require(all(config["numerics"][k] == photon_count for k in ("photons_temperature", "photons_sed", "photons_image")),
             "Photon count differs")
     require(config["numerics"]["image_npix"] == 6001 and config["numerics"]["image_size_au"] == 6000.,
             "Expected approximately 1 AU/pixel at fixed 6000-AU field")
@@ -66,6 +68,9 @@ def validate_package(bundle, index=None):
     contract = json.loads((bundle / "inputs/production_observation_contract.json").read_text())
     require([(a["id"], a["wavelength_um"]) for a in manifest["anchors"]]
             == [(a["id"], a["wavelength_um"]) for a in contract["probes"]], "Probe contract differs")
+    if experiment["experiment_id"] == SILICATE_PILOT:
+        from silicate_pilot_design import validate_frozen_pilot
+        validate_frozen_pilot(bundle, experiment, manifest, index)
     return experiment
 
 

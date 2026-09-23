@@ -16,6 +16,7 @@ PHYSICAL_KEYS = frozenset({
     "cavity_half_opening_deg", "inclination_deg", "distance_pc",
     "stellar_radius_rsun", "stellar_temperature_k", "stellar_mass_msun",
     "accretion_rate_msun_per_year", "envelope_ice_volume_fraction",
+    "envelope_ice_mass_fraction",
 })
 NUMERIC_KEYS = frozenset({
     "photons_temperature", "photons_image", "photons_sed", "grid_nr",
@@ -57,7 +58,9 @@ def validate_parameters(parameters: Mapping[str, object]) -> None:
     unknown = set(parameters) - PHYSICAL_KEYS
     if unknown:
         raise ValueError(f"Unsupported physical parameters: {sorted(unknown)}; "
-                         "dust families/compositions other than the coated template need a separate implementation")
+                         "dust families/compositions outside the supported templates need a separate implementation")
+    if {"envelope_ice_volume_fraction", "envelope_ice_mass_fraction"} <= set(parameters):
+        raise ValueError("Specify an envelope ice volume fraction or mass fraction, not both")
     for name, value in parameters.items():
         number = _number(value, name)
         if name in {"inclination_deg", "accretion_rate_msun_per_year", "envelope_size_exponent"}:
@@ -72,6 +75,9 @@ def validate_parameters(parameters: Mapping[str, object]) -> None:
             if not 0 <= number < 1:
                 raise ValueError("envelope_ice_volume_fraction must be >=0 and <1; "
                                  "zero renders a genuine single-component bare-silicate species")
+        elif name == "envelope_ice_mass_fraction":
+            if not 0 <= number < 1:
+                raise ValueError("envelope_ice_mass_fraction must be >=0 and <1")
         elif number <= 0:
             raise ValueError(f"{name} must be greater than zero")
 
@@ -155,6 +161,43 @@ class _Template:
         self.lines[index] = "  " + "  ".join(tokens) + "    " + comment
 
 
+def _disjoint_dhs_scopes(t: _Template, envelope: range) -> tuple[range, range]:
+    """Validate the archived v02 pure-silicate + pure-H2O population layout.
+
+    The ice population is fixed, including its size distribution and DHS
+    shape. Only the silicate size distribution and the two species' mass
+    weights can be edited by this deliberately bounded renderer.
+    """
+    headers = [i for i in envelope if "grain type" in t.lines[i].casefold()]
+    if len(headers) != 2:
+        raise ValueError("DHS/disjoint envelope requires exactly two labelled grain species")
+    scopes = (range(headers[0], headers[1]), range(headers[1], envelope.stop))
+    fractions = []
+    for scope, filename in zip(scopes, ("Draine_Si_sUV.dat", "H2O_30K_Leiden_mcfost.dat")):
+        kind = t.values("Grain type", 6, scope)
+        if kind[:3] != ["DHS", "1", "1"] or float(kind[3]) != 0 or float(kind[5]) != .1:
+            raise ValueError("DHS/disjoint species must be pure, non-porous DHS with Vmax=0.1")
+        fraction = float(kind[4])
+        if not math.isfinite(fraction) or not 0 < fraction < 1:
+            raise ValueError("DHS/disjoint template requires positive species mass fractions below one")
+        fractions.append(fraction)
+        optical = t.values("Optical indices file", 2, scope)
+        if optical[0] != filename or float(optical[1]) != 1:
+            raise ValueError(f"DHS/disjoint species requires pure {filename} with unit within-species volume fraction")
+        if t.values("Heating method", 1, scope) != ["1"]:
+            raise ValueError("DHS/disjoint species must retain equilibrium LTE heating")
+        size = [float(value) for value in t.values("amin, amax [mum], aexp, n_grains", 4, scope)]
+        if any(not math.isfinite(value) for value in size) or size[0] != .03 or size[3] != 50:
+            raise ValueError("DHS/disjoint species must retain amin=0.03 micron and 50 grain bins")
+        if size[1] <= size[0] or size[2] < 0:
+            raise ValueError("DHS/disjoint species has an invalid grain size distribution")
+        if filename == "H2O_30K_Leiden_mcfost.dat" and size[1:3] != [.4, 2.75]:
+            raise ValueError("DHS/disjoint H2O population must retain amax=0.4 micron and exponent=2.75")
+    if not math.isclose(sum(fractions), 1.0, rel_tol=0, abs_tol=1e-10):
+        raise ValueError("DHS/disjoint species mass fractions must sum to one")
+    return scopes
+
+
 def render_parameter(template_text: str, parameters: Mapping[str, object],
                      numerics: Mapping[str, object], stage: str,
                      wavelength_um: float | None = None) -> str:
@@ -165,6 +208,10 @@ def render_parameter(template_text: str, parameters: Mapping[str, object],
     temperature file.  ``coeval`` additionally needs a capability-checked
     custom executable, ``-rt_sed_method 2``, and a one-node ``wavelength.lambda``
     file.  Here ``-rt2`` is the source-function method, not that spatial option.
+
+    ``envelope_amax_um`` and ``envelope_size_exponent`` refer to the coated
+    population for Mie templates, and only to the silicate population for the
+    v02 disjoint DHS template. Its separate H2O grain distribution stays fixed.
     """
     validate_parameters(parameters)
     if not isinstance(numerics, Mapping):
@@ -204,29 +251,47 @@ def render_parameter(template_text: str, parameters: Mapping[str, object],
         raise ValueError("Expected two explicitly zone-labelled dust species blocks")
     disk_grains = range(species_headers[0], species_headers[1])
     envelope_grains = range(species_headers[1], grains.stop)
-    if t.values("Number of species", 1, disk_grains) != ["2"] or t.values("Number of species", 1, envelope_grains) != ["1"]:
-        raise ValueError("Only two disk species and one coated envelope species are supported; DHS/disjoint populations are unsupported")
-    envelope_type = t.values("Grain type", 6, envelope_grains)
-    bare_template = envelope_type[:3] == ["Mie", "1", "1"]
-    if (not bare_template and envelope_type[:3] != ["Mie", "2", "2"]) or float(envelope_type[3]) != 0.0 or float(envelope_type[4]) != 1.0:
-        raise ValueError("Envelope must be non-porous coated or bare Mie with unit species mass fraction")
-    optical_envelope = [i for i in envelope_grains if "optical indices file" in t.lines[i].casefold()]
-    if len(optical_envelope) != (1 if bare_template else 2):
-        raise ValueError("Envelope optical-component count disagrees with grain type")
-    core_row = optical_envelope[0]
-    core = t.values("Optical indices file", 2, range(core_row, core_row+1))
-    if core[0] != "Draine_Si_sUV.dat":
-        raise ValueError("Only a Draine_Si_sUV.dat core with ice_opct.dat mantle is supported")
-    ice_row = None if bare_template else optical_envelope[1]
-    if bare_template:
-        if float(core[1]) != 1 or parameters.get("envelope_ice_volume_fraction", 0) != 0:
-            raise ValueError("Bare template requires unit core fraction and zero ice; use the coated template to add ice")
+    if t.values("Number of species", 1, disk_grains) != ["2"]:
+        raise ValueError("Only two disk species are supported")
+    envelope_count = t.values("Number of species", 1, envelope_grains)
+    disjoint_dhs = envelope_count == ["2"]
+    bare_template = False
+    ice_row = None
+    if disjoint_dhs:
+        if "envelope_ice_mass_fraction" not in parameters:
+            raise ValueError("DHS/disjoint template requires explicit envelope_ice_mass_fraction")
+        if float(parameters["envelope_ice_mass_fraction"]) == 0:
+            raise ValueError("DHS/disjoint template requires a positive ice mass fraction; a bare DHS null needs a separate template")
+        if "grains" in numerics and numerics["grains"] != 50:
+            raise ValueError("DHS/disjoint template must retain 50 grain bins for the fixed ice prescription")
+        silicate_grains, ice_grains = _disjoint_dhs_scopes(t, envelope_grains)
     else:
-        ice = t.values("Optical indices file", 2, range(ice_row, ice_row + 1))
-        if ice[0] != "ice_opct.dat" or not math.isclose(float(core[1]) + float(ice[1]), 1.0, abs_tol=1e-10):
-            raise ValueError("Envelope core and mantle volume fractions must sum to one")
-        if not (0 < float(core[1]) < 1 and 0 < float(ice[1]) < 1):
-            raise ValueError("The supported coated template requires nonzero core and mantle fractions")
+        if envelope_count != ["1"]:
+            raise ValueError("Only one Mie envelope species or the two-species DHS/disjoint template is supported")
+        if "envelope_ice_mass_fraction" in parameters:
+            raise ValueError("Mie envelope templates require an ice volume fraction, not an ice mass fraction")
+        silicate_grains = envelope_grains
+        envelope_type = t.values("Grain type", 6, envelope_grains)
+        bare_template = envelope_type[:3] == ["Mie", "1", "1"]
+        if (not bare_template and envelope_type[:3] != ["Mie", "2", "2"]) or float(envelope_type[3]) != 0.0 or float(envelope_type[4]) != 1.0:
+            raise ValueError("Envelope must be non-porous coated or bare Mie with unit species mass fraction")
+        optical_envelope = [i for i in envelope_grains if "optical indices file" in t.lines[i].casefold()]
+        if len(optical_envelope) != (1 if bare_template else 2):
+            raise ValueError("Envelope optical-component count disagrees with grain type")
+        core_row = optical_envelope[0]
+        core = t.values("Optical indices file", 2, range(core_row, core_row+1))
+        if core[0] != "Draine_Si_sUV.dat":
+            raise ValueError("Only a Draine_Si_sUV.dat core with ice_opct.dat mantle is supported")
+        ice_row = None if bare_template else optical_envelope[1]
+        if bare_template:
+            if float(core[1]) != 1 or parameters.get("envelope_ice_volume_fraction", 0) != 0:
+                raise ValueError("Bare template requires unit core fraction and zero ice; use the coated template to add ice")
+        else:
+            ice = t.values("Optical indices file", 2, range(ice_row, ice_row + 1))
+            if ice[0] != "ice_opct.dat" or not math.isclose(float(core[1]) + float(ice[1]), 1.0, abs_tol=1e-10):
+                raise ValueError("Envelope core and mantle volume fractions must sum to one")
+            if not (0 < float(core[1]) < 1 and 0 < float(ice[1]) < 1):
+                raise ValueError("The supported coated template requires nonzero core and mantle fractions")
     optical_rows = [i for i in disk_grains if "optical indices file" in t.lines[i].casefold()]
     type_rows = [i for i in disk_grains if "grain type" in t.lines[i].casefold()]
     if len(optical_rows) != 2 or len(type_rows) != 2:
@@ -297,7 +362,7 @@ def render_parameter(template_text: str, parameters: Mapping[str, object],
         mass[0] = float(parameters["envelope_dust_mass_msun"])
         t.set("dust mass,", mass, envelope_density)
     size_tag = "amin, amax [mum], aexp, n_grains"
-    envelope_size = t.values(size_tag, 4, envelope_grains)
+    envelope_size = t.values(size_tag, 4, silicate_grains)
     amin = float(envelope_size[0])
     amax = float(parameters.get("envelope_amax_um", envelope_size[1]))
     if amax <= amin:
@@ -306,7 +371,13 @@ def render_parameter(template_text: str, parameters: Mapping[str, object],
         envelope_size[1] = amax
     if "envelope_size_exponent" in parameters:
         envelope_size[2] = float(parameters["envelope_size_exponent"])
-    t.set(size_tag, envelope_size, envelope_grains)
+    t.set(size_tag, envelope_size, silicate_grains)
+    if disjoint_dhs:
+        fraction = float(parameters["envelope_ice_mass_fraction"])
+        for scope, weight in ((silicate_grains, 1-fraction), (ice_grains, fraction)):
+            species = t.values("Grain type", 6, scope)
+            species[4] = weight
+            t.set("Grain type", species, scope)
     if "envelope_ice_volume_fraction" in parameters:
         fraction = float(parameters["envelope_ice_volume_fraction"])
         core_row = t.one("Draine_Si_sUV.dat", envelope_grains)
@@ -326,7 +397,7 @@ def render_parameter(template_text: str, parameters: Mapping[str, object],
     # Remove the mantle completely at the null hypothesis, rather than asking
     # a coated-sphere solver to evaluate a zero-thickness mantle. Do this last
     # so deleting its optical-constant row cannot shift the validated scopes.
-    if parameters.get("envelope_ice_volume_fraction") == 0 and not bare_template:
+    if parameters.get("envelope_ice_volume_fraction") == 0 and not bare_template and not disjoint_dhs:
         envelope_type[:3] = ["Mie", "1", "1"]
         t.set("Grain type", envelope_type, envelope_grains)
         del t.lines[ice_row]

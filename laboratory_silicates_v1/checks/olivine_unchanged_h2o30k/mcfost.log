@@ -1,0 +1,56 @@
+ You are running MCFOST 4.1.13
+ Git SHA = fc14f46491616224d993503b2a3293c1dab7b47a
+ Input file read successfully
+ Computation of dust properties as a function of wavelength
+ Creating directory ././data_dust
+ Reading ./check.lambda
+ Parallelized code on   2 processors
+  
+Wed Sep 23 16:44:28 BST 2026
+ Using ray-tracing method 1
+ Reading /Users/harrisonlo/Downloads/Project_5_Les_Houches/tmc1a_restart/validation/laboratory_silicate_checks_v1/inputs/utils/Dust/Olivine_MgFeSiO4_Dorschner1995_mcfost.dat
+ Reading /Users/harrisonlo/Downloads/Project_5_Les_Houches/tmc1a_restart/validation/laboratory_silicate_checks_v1/inputs/utils/Dust/H2O_30K_Leiden_mcfost.dat
+ WARNING : T_sub is set to the minimum T_sub of the individual components
+ Number of regions detected: 1
+ zone 1 --> region= 1 : R=1.00 to 3000.00 AU
+ Using          64 cells
+ Total  gas mass in model:   2.25000009E-02  Msun
+ Total dust mass in model:   2.24999996E-04  Msun
+ Reference cell is #           1
+ Using scattering method 2
+ Using scattering method 2
+ Using scattering method 2
+ Reading /Users/harrisonlo/Downloads/Project_5_Les_Houches/tmc1a_restart/validation/laboratory_silicate_checks_v1/inputs/utils/Dust/Olivine_MgFeSiO4_Dorschner1995_mcfost.dat
+ Reading /Users/harrisonlo/Downloads/Project_5_Les_Houches/tmc1a_restart/validation/laboratory_silicate_checks_v1/inputs/utils/Dust/H2O_30K_Leiden_mcfost.dat
+ WARNING : T_sub is set to the minimum T_sub of the individual components
+ Trying to find appropriate stellar spectra ...
+ Star #           1  --> lte4000-3.5.NextGen.fits.gz
+ Done
+ Reading /Users/harrisonlo/mcfost/utils/Stellar_Spectra/lte4000-3.5.NextGen.fits.gz
+ Computing dust properties ...
+Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+
+Backtrace for this error:
+
+Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+
+Backtrace for this error:
+#0  0x101392f9e
+#1  0x10139217d
+#2  0x7ff80baeb37c
+#3  0x100b39edc
+#4  0x100b433f0
+#5  0x100b49351
+#6  0x1013f0daa
+#7  0x7ff80bae0e4c
+#0  0x101392f9e
+#1  0x10139217d
+#2  0x7ff80baeb37c
+#3  0x100b39edc
+#4  0x100b433f0
+#5  0x100b49351
+#6  0x1013e8341
+#7  0x100b53749
+#8  0x100db6a97
+#9  0x100e3d56f
+#10  0x10141711e

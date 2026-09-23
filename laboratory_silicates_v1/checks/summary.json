@@ -1,0 +1,193 @@
+{
+  "baseline_table": {
+    "path": "checks/Draine_generic_ice_opacity.ecsv",
+    "scope": "previous isolated-envelope control, same .4 micron amax, q2.75 and5% ice volume",
+    "sha256": "406dbed007a8dd1d868276e2e1c0dcb0fa1d9cb20df583c0c98b7dc58bbcb52d"
+  },
+  "classification": "isolated_dust_numerical_check_not_a_TMC1A_fit",
+  "cluster_submissions": 0,
+  "conclusion": "Two generic-ice controls pass; unchanged laboratory-H2O stress test fails; no diagnosis or k floor imposed",
+  "controls": [
+    {
+      "core": "Olivine_MgFeSiO4_Dorschner1995_mcfost.dat",
+      "error": null,
+      "files": {
+        "check.lambda": {
+          "path": "checks/olivine_generic_ice/check.lambda",
+          "sha256": "7bada56a53cd0ffbf10afbb58d57e54dd062302b90b301ce942b4d4c89234703"
+        },
+        "execution.json": {
+          "path": "checks/olivine_generic_ice/execution.json",
+          "sha256": "c22cae5d2772fdcb42348fbb050034246dd7e87b6100961b8397266825256544"
+        },
+        "mcfost.log": {
+          "path": "checks/olivine_generic_ice/mcfost.log",
+          "sha256": "96ab15309160ff6cbd63e56c8141fe38a866a0ac25c38cf8800bd8ae49c811c8"
+        },
+        "model.para": {
+          "path": "checks/olivine_generic_ice/model.para",
+          "sha256": "f4250bc7cb47df446cedb4fcc58c2b8e8e6a74f3ca48d066a62805b7c3b41024"
+        },
+        "opacity.ecsv": {
+          "path": "checks/olivine_generic_ice/opacity.ecsv",
+          "sha256": "81db7c61f70814035e142996349a3e9054c2f356d234569e3711edb755fc1f02"
+        }
+      },
+      "label": "olivine_generic_ice",
+      "mantle": "ice_opct.dat",
+      "status": "complete"
+    },
+    {
+      "core": "Pyroxene_Mg05Fe05SiO3_Dorschner1995_mcfost.dat",
+      "error": null,
+      "files": {
+        "check.lambda": {
+          "path": "checks/pyroxene_generic_ice/check.lambda",
+          "sha256": "7bada56a53cd0ffbf10afbb58d57e54dd062302b90b301ce942b4d4c89234703"
+        },
+        "execution.json": {
+          "path": "checks/pyroxene_generic_ice/execution.json",
+          "sha256": "913007887788949d9fa1e8748c29ef2df7c836457703555a4597b8e0ce40a478"
+        },
+        "mcfost.log": {
+          "path": "checks/pyroxene_generic_ice/mcfost.log",
+          "sha256": "871ff3faed4a8c0c0774d6f6eef87472b9ab825b1d4e3fa3648782ec7ea3debe"
+        },
+        "model.para": {
+          "path": "checks/pyroxene_generic_ice/model.para",
+          "sha256": "d4d95e7eefe1bfcd22569f530a51fad9e1a459d6edf4a790cfcfdf69d6a0875b"
+        },
+        "opacity.ecsv": {
+          "path": "checks/pyroxene_generic_ice/opacity.ecsv",
+          "sha256": "a3fd93c9d20fd054c58ca99f3d6de3086618ff493c390855013ad680a75aa8cc"
+        }
+      },
+      "label": "pyroxene_generic_ice",
+      "mantle": "ice_opct.dat",
+      "status": "complete"
+    },
+    {
+      "core": "Olivine_MgFeSiO4_Dorschner1995_mcfost.dat",
+      "error": "RuntimeError: MCFOST dust-only initialization failed; inspect /Users/harrisonlo/Downloads/Project_5_Les_Houches/tmc1a_restart/validation/laboratory_silicate_checks_v1/olivine_unchanged_h2o30k/mcfost.log",
+      "files": {
+        "check.lambda": {
+          "path": "checks/olivine_unchanged_h2o30k/check.lambda",
+          "sha256": "7bada56a53cd0ffbf10afbb58d57e54dd062302b90b301ce942b4d4c89234703"
+        },
+        "execution.json": {
+          "path": "checks/olivine_unchanged_h2o30k/execution.json",
+          "sha256": "f81a0c7cbf40da4c11c83a87a00fc3e4bb5f5180a0a01d0369d43b3914a2cdb5"
+        },
+        "mcfost.log": {
+          "path": "checks/olivine_unchanged_h2o30k/mcfost.log",
+          "sha256": "3f92e7ed35b4c8d9554cbd5a1f1d424fb1fa44f640117c80167f5a0dd3fa3e33"
+        },
+        "model.para": {
+          "path": "checks/olivine_unchanged_h2o30k/model.para",
+          "sha256": "ff6e4ade015a3fcc2597578f10c95931907de7fa71a016e3c5e1b95dd535b0b6"
+        }
+      },
+      "label": "olivine_unchanged_h2o30k",
+      "mantle": "H2O_30K_Leiden_mcfost.dat",
+      "status": "failed"
+    }
+  ],
+  "materials": {
+    "H2O_30K_Leiden_mcfost.dat": {
+      "density_g_cm3": 0.94,
+      "filename": "H2O_30K_Leiden_mcfost.dat",
+      "rows": 3000,
+      "sha256": "29b572f8907993870d0b15823e1182a9c4813b8cdb8f4fbdd40ef39cf28fb00c",
+      "sublimation_temperature_k": 150.0,
+      "wavelength_max_um": 19.940540101,
+      "wavelength_min_um": 0.25004000002,
+      "zero_k_modified": false,
+      "zero_k_rows": 206
+    },
+    "Olivine_MgFeSiO4_Dorschner1995_mcfost.dat": {
+      "density_g_cm3": 3.71,
+      "filename": "Olivine_MgFeSiO4_Dorschner1995_mcfost.dat",
+      "rows": 109,
+      "sha256": "41e34acb22986f83aeb1113d31e73acee19707add259198036ca51baa25f3965",
+      "sublimation_temperature_k": 1500.0,
+      "wavelength_max_um": 500.0,
+      "wavelength_min_um": 0.2,
+      "zero_k_modified": false,
+      "zero_k_rows": 0
+    },
+    "Pyroxene_Mg05Fe05SiO3_Dorschner1995_mcfost.dat": {
+      "density_g_cm3": 3.2,
+      "filename": "Pyroxene_Mg05Fe05SiO3_Dorschner1995_mcfost.dat",
+      "rows": 109,
+      "sha256": "05c1ebf12963ff3c9de9dd32e168135e62986e527e60343da5e432ff018b44a2",
+      "sublimation_temperature_k": 1500.0,
+      "wavelength_max_um": 500.0,
+      "wavelength_min_um": 0.2,
+      "zero_k_modified": false,
+      "zero_k_rows": 0
+    },
+    "ice_opct.dat": {
+      "density_g_cm3": 1.2,
+      "filename": "ice_opct.dat",
+      "rows": 1000,
+      "sha256": "44625b4918b7015e97d3c92b3f19e9e06eb57d209f3b1a946ee8f141215c8697",
+      "sublimation_temperature_k": 100.0,
+      "wavelength_max_um": 10000.0,
+      "wavelength_min_um": 0.0912,
+      "zero_k_modified": false,
+      "zero_k_rows": 0
+    }
+  },
+  "original_input_hashes": {
+    "inputs/template.para": "cee9777a7faf269300008ff9d29e985962fdf5d36fcdff61124cfa92a71d3da5",
+    "inputs/utils/Dust/H2O_30K_Leiden_mcfost.dat": "29b572f8907993870d0b15823e1182a9c4813b8cdb8f4fbdd40ef39cf28fb00c",
+    "inputs/utils/Dust/Olivine_MgFeSiO4_Dorschner1995_mcfost.dat": "41e34acb22986f83aeb1113d31e73acee19707add259198036ca51baa25f3965",
+    "inputs/utils/Dust/Pyroxene_Mg05Fe05SiO3_Dorschner1995_mcfost.dat": "05c1ebf12963ff3c9de9dd32e168135e62986e527e60343da5e432ff018b44a2",
+    "inputs/utils/Dust/ice_opct.dat": "44625b4918b7015e97d3c92b3f19e9e06eb57d209f3b1a946ee8f141215c8697",
+    "olivine_generic_ice/check.lambda": "7bada56a53cd0ffbf10afbb58d57e54dd062302b90b301ce942b4d4c89234703",
+    "olivine_generic_ice/model.para": "f4250bc7cb47df446cedb4fcc58c2b8e8e6a74f3ca48d066a62805b7c3b41024",
+    "olivine_unchanged_h2o30k/check.lambda": "7bada56a53cd0ffbf10afbb58d57e54dd062302b90b301ce942b4d4c89234703",
+    "olivine_unchanged_h2o30k/model.para": "ff6e4ade015a3fcc2597578f10c95931907de7fa71a016e3c5e1b95dd535b0b6",
+    "pyroxene_generic_ice/check.lambda": "7bada56a53cd0ffbf10afbb58d57e54dd062302b90b301ce942b4d4c89234703",
+    "pyroxene_generic_ice/model.para": "d4d95e7eefe1bfcd22569f530a51fad9e1a459d6edf4a790cfcfdf69d6a0875b"
+  },
+  "original_manifest_sha256": "fd8845ec03926feae5b02533fe8322a52bdf51276c769d262865aa72f94c2c92",
+  "runtime": {
+    "auto_update": false,
+    "executable": "/Users/harrisonlo/mcfost/bin/mcfost",
+    "executable_sha256": "22191d405a96fe52f8a3c8c43046b4d14111ff1262c5a0f99319358ad3b57f74",
+    "threads": 2,
+    "timeout_seconds_per_control": 120,
+    "utilities_content_sha256": "17812f1c77ceff8709fbda4fb43aac3153dae19bb8a713a75ff5955fbe38d485"
+  },
+  "source_simulations": 0,
+  "specification": {
+    "amax_um": 0.4,
+    "amin_um": 0.03,
+    "controls": [
+      [
+        "olivine_generic_ice",
+        "Olivine_MgFeSiO4_Dorschner1995_mcfost.dat",
+        "ice_opct.dat"
+      ],
+      [
+        "pyroxene_generic_ice",
+        "Pyroxene_Mg05Fe05SiO3_Dorschner1995_mcfost.dat",
+        "ice_opct.dat"
+      ],
+      [
+        "olivine_unchanged_h2o30k",
+        "Olivine_MgFeSiO4_Dorschner1995_mcfost.dat",
+        "H2O_30K_Leiden_mcfost.dat"
+      ]
+    ],
+    "grains": 50,
+    "ice_volume_fraction": 0.05,
+    "n_wavelengths": 517,
+    "q": 2.75,
+    "shape": "coated Mie",
+    "sublimation_enabled": false,
+    "wavelengths": "50 thermal bin centres, 241 MIR bin centres, all water zero-k knots and neighbours, boundaries",
+    "zero_k_modified": false
+  }
+}

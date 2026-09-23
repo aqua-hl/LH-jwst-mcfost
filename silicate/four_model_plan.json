@@ -1,0 +1,139 @@
+{
+  "schema_version": 1,
+  "experiment_id": "silicate_size_pilot_v1",
+  "default_run_name": "silicate_size_pilot_v1_512k",
+  "model_count": 4,
+  "catalogue": [
+    {
+      "index": 0,
+      "role": "silicate_size_pair",
+      "parent_index": null,
+      "contrast_group_id": "i50",
+      "ice_mass_fraction": 0.04,
+      "dust_family": "disjoint_DHS_Draine_H2O30K",
+      "parameters": {
+        "envelope_dust_mass_msun": 0.000225,
+        "envelope_size_exponent": 2.75,
+        "envelope_ice_mass_fraction": 0.04,
+        "cavity_half_opening_deg": 17.5,
+        "distance_pc": 140.0,
+        "stellar_temperature_k": 4000.0,
+        "stellar_radius_rsun": 2.5,
+        "stellar_mass_msun": 0.5,
+        "accretion_rate_msun_per_year": 7.3011756855e-08,
+        "inclination_deg": 50.0,
+        "envelope_amax_um": 0.4
+      }
+    },
+    {
+      "index": 1,
+      "role": "silicate_size_pair",
+      "parent_index": null,
+      "contrast_group_id": "i50",
+      "ice_mass_fraction": 0.04,
+      "dust_family": "disjoint_DHS_Draine_H2O30K",
+      "parameters": {
+        "envelope_dust_mass_msun": 0.000225,
+        "envelope_size_exponent": 2.75,
+        "envelope_ice_mass_fraction": 0.04,
+        "cavity_half_opening_deg": 17.5,
+        "distance_pc": 140.0,
+        "stellar_temperature_k": 4000.0,
+        "stellar_radius_rsun": 2.5,
+        "stellar_mass_msun": 0.5,
+        "accretion_rate_msun_per_year": 7.3011756855e-08,
+        "inclination_deg": 50.0,
+        "envelope_amax_um": 1.0
+      }
+    },
+    {
+      "index": 2,
+      "role": "silicate_size_pair",
+      "parent_index": null,
+      "contrast_group_id": "i70",
+      "ice_mass_fraction": 0.04,
+      "dust_family": "disjoint_DHS_Draine_H2O30K",
+      "parameters": {
+        "envelope_dust_mass_msun": 0.000225,
+        "envelope_size_exponent": 2.75,
+        "envelope_ice_mass_fraction": 0.04,
+        "cavity_half_opening_deg": 17.5,
+        "distance_pc": 140.0,
+        "stellar_temperature_k": 4000.0,
+        "stellar_radius_rsun": 2.5,
+        "stellar_mass_msun": 0.5,
+        "accretion_rate_msun_per_year": 7.3011756855e-08,
+        "inclination_deg": 70.0,
+        "envelope_amax_um": 0.4
+      }
+    },
+    {
+      "index": 3,
+      "role": "silicate_size_pair",
+      "parent_index": null,
+      "contrast_group_id": "i70",
+      "ice_mass_fraction": 0.04,
+      "dust_family": "disjoint_DHS_Draine_H2O30K",
+      "parameters": {
+        "envelope_dust_mass_msun": 0.000225,
+        "envelope_size_exponent": 2.75,
+        "envelope_ice_mass_fraction": 0.04,
+        "cavity_half_opening_deg": 17.5,
+        "distance_pc": 140.0,
+        "stellar_temperature_k": 4000.0,
+        "stellar_radius_rsun": 2.5,
+        "stellar_mass_msun": 0.5,
+        "accretion_rate_msun_per_year": 7.3011756855e-08,
+        "inclination_deg": 70.0,
+        "envelope_amax_um": 1.0
+      }
+    }
+  ],
+  "dust_prescription": {
+    "family": "disjoint_DHS",
+    "silicate": "Draine_Si_sUV.dat",
+    "ice": "H2O_30K_Leiden_mcfost.dat",
+    "silicate_mass_fraction": 0.96,
+    "ice_mass_fraction": 0.04,
+    "vmax": 0.1,
+    "porosity": 0.0,
+    "amin_um": 0.03,
+    "size_exponent": 2.75,
+    "grain_bins": 50,
+    "ice_amax_um": 0.4,
+    "silicate_amax_um": [
+      0.4,
+      1.0
+    ],
+    "ice_density_g_cm3": 0.94,
+    "ice_laboratory_temperature_k": 30.0,
+    "H2O30K_used": true,
+    "mass_convention": "Total envelope dust mass includes both disjoint species",
+    "size_change_scope": "Silicate only; H2O grain sizes stay fixed",
+    "temperature_dependent_ice_survival": false,
+    "draine_long_wavelength_policy": "Retain the existing Draine table (ends at 1000 um) and simulator treatment outside it through the 3000-um thermal grid; no new silicate tail or tail-convergence claim."
+  },
+  "numerics": {
+    "photons_temperature": 512000,
+    "photons_image": 512000,
+    "photons_sed": 512000,
+    "random_seed": 43001,
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "grains": 50,
+    "grid_nr": 100,
+    "grid_ntheta": 70,
+    "grid_n_inner": 20
+  },
+  "temperature_solves": 4,
+  "probes_per_model": 98,
+  "observable_count": 19,
+  "image_requests": 392,
+  "cpus_per_task": 64,
+  "max_concurrent_tasks": 4,
+  "launch_ready": false,
+  "input_policy_ready": true,
+  "ice_coverage_policy": "historical_native_extrapolation",
+  "pending": "Prepare frozen bundle and configure the shared cluster environment",
+  "temperature_policy": "Fresh equilibrium for each physical model, no old temperature reuse"
+}
