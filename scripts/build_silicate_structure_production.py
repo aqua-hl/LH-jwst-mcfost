@@ -103,7 +103,7 @@ def build_package(destination):
                       posterior_inference=False, source_sha256=before,
                       prior_products_imported=False,
                       column_normalization="Analytic radial envelope column at Rin=1/Rout=3000 AU and fixed conical cavity. Discrete numerical columns and total source optical depths are not certified equal.",
-                      preflight="Bounded envelope-only dust initialization on the cluster; array released after successful material checks")
+                      preflight="Bounded envelope-only dust initialization on the cluster; production/thermal/broad-coverage wavelengths must pass for every prescription; extra zero-k stress samples remain recorded diagnostics")
     for filename in ("experiment.json", "production_experiment.json"):
         atomic_json(run / filename, experiment)
     (run / "experiment.sha256").write_text(sha256(run / "experiment.json") + "  experiment.json\n")

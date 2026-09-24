@@ -101,6 +101,28 @@ function. The wavelength, opacity, albedo, grain-opacity, phase-function and
 polarizability files remain required. These details were verified in the
 [writer for the cluster's reported source revision](https://github.com/cpinte/mcfost/blob/af0dec17cc305df4cc77f033418fef00f508c395/src/dust_prop.f90#L1384).
 
+The revised wavelength gate requires valid products at every production image
+probe, all temperature bin centres read from the frozen parameter files, and
+100 broad-coverage samples from 0.1 to 3000 µm. Both ideal and source-rounded
+thermal centres are included; the custom dust-property wavelength table is
+single precision, so this tests thermal coverage at table precision, not a
+native temperature solve. Nonfinite/negative opacity and invalid albedo at any
+required sample still stop the array. A required wavelength always takes
+priority if it coincides with a diagnostic sample.
+
+Exact zero-k knots from the supplied H2O table and their immediate neighbours
+are additional stress diagnostics. Their failures outside the required grid
+are recorded in `material_preflight/receipt.json` rather than blocking this
+production grid. The reported Draine/0.4-µm preflight had 97 nonfinite integrated
+opacity samples and 4,850 nonfinite grain-opacity entries, with no affected
+production image probes. This is consistent with the unguarded `log(k)`
+[interpolation in the pinned source](https://github.com/cpinte/mcfost/blob/af0dec17cc305df4cc77f033418fef00f508c395/src/dust_prop.f90#L349);
+it does not certify the temperature grid or the other material prescriptions.
+All four prescriptions must pass the revised required-wavelength checks on
+the cluster. The optical constants are unchanged, no NaNs are replaced, and
+the stress-test FITS/logs remain available. Passing this gate cannot certify
+arbitrary new wavelengths or the physical accuracy of the native table tails.
+
 The analysis job runs automatically after the array, including partial/failed
 arrays. Submission prints the job IDs and saves them under `submissions/`.
 

@@ -5,6 +5,8 @@ MCFOST -dust_prop output contract:
 https://mcfost.readthedocs.io/en/latest/outputs.html#dust-property-files
 The test preserves both envelope species but removes the disk and uses an 8x8
 spatial grid. It tests numerical initialization, not extrapolated-tail physics.
+Production and broad-coverage wavelengths must pass; extra zero-k stress
+samples are retained as diagnostics and cannot certify arbitrary wavelengths.
 """
 from __future__ import annotations
 
@@ -12,6 +14,7 @@ import argparse
 import fcntl
 import hashlib
 import json
+import math
 import os
 from pathlib import Path
 import re
@@ -21,6 +24,7 @@ import time
 
 NAME = "silicate_structure_production_v1"
 RECEIPT = "material_preflight/receipt.json"
+WAVELENGTH_POLICY = "production_and_coverage_with_zero_k_diagnostics_v3"
 
 
 def digest(path):
@@ -42,17 +46,54 @@ def prescriptions(manifest):
     return list(selected.values())
 
 
+def required_wavelength_grid(bundle, manifest):
+    """Cover every frozen thermal grid/image probe plus the broad-range audit.
+
+    Read every temperature input rather than assuming a fixed bin count.
+    Include ideal bin centres and the pinned source's default-real rounding.
+    Custom -dust_prop wavelengths are themselves stored at single precision;
+    this is coverage at table precision, not a native temperature calculation.
+    """
+    import numpy as np
+    grids = [np.geomspace(.1, 3000., 100),
+             np.asarray([a["wavelength_um"] for a in manifest["anchors"]], dtype=float)]
+    require(bool(manifest.get("models")), "No frozen temperature models to check")
+    for model in manifest["models"]:
+        text = (Path(bundle)/"models"/model["id"]/"temperature.para").read_text()
+        section = text.split("#Wavelength", 1)[1].split("#Grid geometry", 1)[0]
+        rows = [row.split() for row in section.splitlines()
+                if row.strip() and not row.lstrip().startswith("#")]
+        require(rows[1][:3] == ["T", "F", "T"],
+                "Material gate requires the frozen default fresh-temperature grid")
+        count, low, high = int(rows[0][0]), float(rows[0][1]), float(rows[0][2])
+        require(count > 0 and 0 < low < high and np.isfinite([low, high]).all(),
+                "Invalid frozen temperature wavelength grid")
+        edges = np.geomspace(low, high, count+1)
+        grids.append(np.sqrt(edges[:-1]*edges[1:]))
+        # MCFOST af0dec17 src/wavelengths.f90: lambda bounds and their log
+        # ratio are default REAL; delta and the recurrence are DOUBLE.
+        low32, high32 = np.float32(low), np.float32(high)
+        delta = math.exp(float(np.log(high32/low32))/count)
+        source_grid = [float(low32)*math.sqrt(delta)]
+        for _ in range(1, count):
+            source_grid.append(source_grid[-1]*delta)
+        grids.append(np.asarray(source_grid))
+    result = np.unique(np.concatenate(grids))
+    require(bool(np.isfinite(result).all() and (result > 0).all()),
+            "Invalid required wavelength")
+    return result
+
+
 def wavelength_grid(bundle, manifest):
     import numpy as np
     table = (Path(bundle) / "inputs/utils/Dust/H2O_30K_Leiden_mcfost.dat").read_text().splitlines()
     data = [row.split("#", 1)[0].strip() for row in table if row.split("#", 1)[0].strip()]
     ice = np.loadtxt(data[1:])  # First non-comment row is density/Tsub.
     knots = ice[ice[:, 2] == 0, 0]
-    # Both boundaries, the actual thermal-bin centres, every production probe,
-    # and the exact zero-k samples with neighbours are deliberately included.
-    edges = np.geomspace(.1, 3000., 51)
-    return np.unique(np.concatenate((np.geomspace(.1, 3000., 100), np.sqrt(edges[:-1]*edges[1:]),
-        [a["wavelength_um"] for a in manifest["anchors"]], knots*(1.-1e-5), knots, knots*(1.+1e-5))))
+    # Keep the stress samples for diagnosis. Their failures cannot release or
+    # veto production unless they also coincide with a required wavelength.
+    return np.unique(np.concatenate((required_wavelength_grid(bundle, manifest),
+        knots*(1.-1e-5), knots, knots*(1.+1e-5))))
 
 
 def isolated_parameter(text):
@@ -92,11 +133,27 @@ def isolated_parameter(text):
     return "\n".join(lines) + "\n"
 
 
-def check_outputs(directory, expected, *, g_applicable=False):
+def check_outputs(directory, expected, *, required_wavelengths=None, g_applicable=False):
     import numpy as np
     from astropy.io import fits
     directory = Path(directory)
-    values, products = {}, {}
+    expected = np.asarray(expected, dtype=float)
+    require(expected.ndim == 1 and expected.size > 0
+            and bool(np.isfinite(expected).all() and (expected > 0).all()),
+            "Invalid expected wavelengths")
+    if required_wavelengths is None:
+        required = np.ones(expected.size, dtype=bool)
+    else:
+        requested = np.asarray(required_wavelengths, dtype=float)
+        require(requested.ndim == 1 and requested.size > 0
+                and bool(np.isfinite(requested).all() and (requested > 0).all()),
+                "Invalid required wavelengths")
+        matches = np.isclose(expected[:, None], requested[None, :], rtol=2e-6, atol=0)
+        require(bool(matches.any(axis=0).all()), "Required wavelengths missing from test grid")
+        # Give the strict gate priority if a stress sample coincides with a
+        # required wavelength (including FITS single-precision rounding).
+        required = matches.any(axis=1)
+    values, products, extra = {}, {}, {}
     for name in ("lambda", "kappa", "albedo", "g", "kappa_grain", "phase_function", "polarizability"):
         paths = list(directory.rglob(name + ".fits.gz")) + list(directory.rglob(name + ".fits"))
         # Pinned MCFOST 4.1.14 writes g.fits only for HG (aniso_method=2).
@@ -106,22 +163,54 @@ def check_outputs(directory, expected, *, g_applicable=False):
             continue
         require(len(paths) == 1, f"Expected one {name} FITS product; found {len(paths)}")
         data = np.asarray(fits.getdata(paths[0]), dtype=float).squeeze()
-        require(data.size > 0 and bool(np.isfinite(data).all()), f"Nonfinite or empty {name} output")
+        require(data.size > 0, f"Nonfinite or empty {name} output")
+        if name in {"lambda", "kappa", "albedo", "g"}:
+            require(data.shape == expected.shape, f"Unexpected {name} wavelength shape")
+        else:
+            require(data.ndim == 2 and data.shape[-1] == expected.size,
+                    f"Unexpected {name} wavelength axis/shape")
+        if name == "lambda":
+            # Wavelength metadata itself is mandatory at every sample.
+            require(bool(np.isfinite(data).all()), "Nonfinite lambda output")
+            require(bool(np.allclose(data, expected, rtol=2e-6, atol=0)),
+                    "Dust-property wavelengths do not match the requested full-range grid")
+        selected = data[..., required]
+        bad = ~np.isfinite(selected)
+        bad_columns = bad.any(axis=0) if bad.ndim == 2 else bad
+        bad_waves = expected[required][bad_columns]
+        require(bool(np.isfinite(selected).all()),
+                f"Nonfinite {name} output at required wavelengths: "
+                f"{len(bad_waves)} affected; first 20 (um): {bad_waves[:20].tolist()}")
         if name in {"kappa", "kappa_grain", "phase_function"}:
-            require(bool((data >= 0).all()), f"Negative {name} output")
+            require(bool((selected >= 0).all()), f"Negative {name} output at required wavelengths")
         if name == "albedo":
-            require(bool(((data >= 0) & (data <= 1)).all()), "Albedo outside [0, 1]")
+            require(bool(((selected >= 0) & (selected <= 1)).all()), "Albedo outside [0, 1]")
         if name == "g":
-            require(bool((np.abs(data) <= 1).all()), "Asymmetry outside [-1, 1]")
+            require(bool((np.abs(selected) <= 1).all()), "Asymmetry outside [-1, 1]")
+        diagnostic = data[..., ~required]
+        invalid = ~np.isfinite(diagnostic)
+        by_wave = invalid.any(axis=0) if invalid.ndim == 2 else invalid
+        extra[name] = dict(nonfinite_count=int(invalid.sum()),
+                          nonfinite_wavelengths_um=expected[~required][by_wave].tolist())
+        if name in {"kappa", "kappa_grain", "phase_function"}:
+            extra[name]["negative_count"] = int((diagnostic < 0).sum())
+        if name in {"albedo", "g"}:
+            outside = ((diagnostic < 0) | (diagnostic > 1)) if name == "albedo" else np.abs(diagnostic) > 1
+            extra[name]["out_of_range_count"] = int(outside.sum())
         values[name] = data
         products[str(paths[0].relative_to(directory))] = digest(paths[0])
     wave = values["lambda"]
     require(wave.shape == expected.shape and bool(np.allclose(wave, expected, rtol=2e-6, atol=0)),
             "Dust-property wavelengths do not match the requested full-range grid")
-    opacity, albedo = values["kappa"], values["albedo"]
-    require(opacity.shape == albedo.shape == wave.shape, "Unexpected integrated dust-property shape")
+    opacity, albedo = values["kappa"][required], values["albedo"][required]
     require(bool((opacity > 0).any()), "Dust extinction is identically zero")
-    return dict(wavelength_count=len(wave), wavelength_min_um=float(wave[0]),
+    return dict(wavelength_policy=WAVELENGTH_POLICY,
+                required_wavelength_count=int(required.sum()),
+                diagnostic_wavelength_count=int((~required).sum()),
+                required_wavelengths_um=expected[required].tolist(),
+                extra_wavelength_diagnostics=extra,
+                opacity_minima_scope="required wavelengths only",
+                wavelength_count=len(wave), wavelength_min_um=float(wave[0]),
                 wavelength_max_um=float(wave[-1]), extinction_min_cm2_g=float(opacity.min()),
                 absorption_min_cm2_g=float((opacity*(1-albedo)).min()),
                 scattering_min_cm2_g=float((opacity*albedo).min()),
@@ -201,9 +290,12 @@ def run_checks(bundle, machine):
                 validate_receipt(bundle, runtime)
                 return dict(status="cached", receipt=str(bundle/RECEIPT))
         wave = wavelength_grid(bundle, manifest)
-        state = dict(schema_version=1, status="running", identity=identity(bundle, runtime),
+        required_wave = required_wavelength_grid(bundle, manifest)
+        state = dict(schema_version=2, status="running", identity=identity(bundle, runtime),
+                     wavelength_policy=WAVELENGTH_POLICY,
                      started_utc=runner.now(), checks=[], threads=2, timeout_seconds_per_case=120,
                      scope="Isolated envelope dust initialization only; disk omitted, exact DHS species retained",
+                     gate_scope="Production images, temperature grid at custom-table precision, and broad coverage; extra zero-k stress results are diagnostics",
                      fresh_temperatures_computed=False, images_computed=False,
                      optical_constants_modified=False, tail_physical_accuracy_certified=False)
         runner.atomic_json(bundle/RECEIPT, state)
@@ -237,7 +329,7 @@ def run_checks(bundle, machine):
                 check.update(returncode=outcome.returncode, elapsed_seconds=time.monotonic()-started)
                 validate_completion(attempt/"mcfost.log", outcome.returncode)
                 try:
-                    check["diagnostics"] = check_outputs(attempt, wave)
+                    check["diagnostics"] = check_outputs(attempt, wave, required_wavelengths=required_wave)
                 except (ValueError, OSError) as exc:
                     raise ValueError(f"Material initialization products failed checks: {exc}.\n"
                                      f"{log_context(attempt/'mcfost.log')}") from exc
@@ -251,7 +343,11 @@ def run_checks(bundle, machine):
             runner.atomic_json(bundle/RECEIPT, state)
             raise
         runner.atomic_json(bundle/RECEIPT, state)
-    return dict(status="passed", prescriptions=4, receipt=str(bundle/RECEIPT))
+    return dict(status="passed", prescriptions=4, receipt=str(bundle/RECEIPT),
+                wavelength_policy=WAVELENGTH_POLICY,
+                diagnostic_nonfinite_values=sum(product["nonfinite_count"]
+                    for row in state["checks"]
+                    for product in row["diagnostics"]["extra_wavelength_diagnostics"].values()))
 
 
 def main():

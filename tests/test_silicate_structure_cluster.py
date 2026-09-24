@@ -86,6 +86,19 @@ def write_outputs(root, wave, *, opacity=None, albedo=None, include_g=False):
         fits.PrimaryHDU(np.asarray(values)).writeto(root/(name.rstrip("_")+".fits.gz"), overwrite=True)
 
 
+def write_temperature_inputs(root, models):
+    """Use real temperature-stage files, including their default-grid flags."""
+    from mcfost_grid.physics import render_parameter
+    from silicate_structure_design import NUMERICS, catalogue
+    template = (ROOT/"reference/parameters/ice_v02_dust.para").read_text()
+    defaults = catalogue()[0]["parameters"]
+    for model in models:
+        folder = Path(root)/"models"/model["id"]
+        folder.mkdir(parents=True)
+        text = render_parameter(template, model.get("parameters", defaults), NUMERICS, "temperature")
+        (folder/"temperature.para").write_text(text)
+
+
 class MaterialTests(unittest.TestCase):
     def test_all_materials_must_pass_before_receipt_can_release_workers(self):
         import shutil
@@ -101,10 +114,7 @@ class MaterialTests(unittest.TestCase):
             shutil.copy2(ROOT/"reference/dust/H2O_30K_Leiden_mcfost.dat", root/"inputs/utils/Dust")
             models = [dict(id=f"m{i}", parameters=row["parameters"]) for i, row in enumerate(unique.values())]
             (root/"manifest.json").write_text(json.dumps(dict(models=models, anchors=[dict(wavelength_um=9.7)])))
-            for model in models:
-                folder = root/"models"/model["id"]
-                folder.mkdir(parents=True)
-                shutil.copy2(ROOT/"reference/parameters/ice_v02_dust.para", folder/"temperature.para")
+            write_temperature_inputs(root, models)
             runner = SimpleNamespace(
                 runtime_config=lambda _: {"mcfost_executable": "/fake/mcfost"},
                 environment=lambda _, runtime: {"OMP_NUM_THREADS": str(runtime["threads"])},
@@ -112,6 +122,7 @@ class MaterialTests(unittest.TestCase):
                 atomic_json=lambda path, payload: Path(path).write_text(json.dumps(payload)))
             dispatch = SimpleNamespace(validate_package=lambda _: {"experiment_id": SILICATE_STRUCTURE},
                                        load_runner=lambda _: runner)
+            required_failure = {"enabled": False}
             def dust_command(command, **kwargs):
                 self.assertIn("-dust_prop", command)
                 self.assertNotIn("-img", command)
@@ -120,6 +131,17 @@ class MaterialTests(unittest.TestCase):
                 self.assertEqual(kwargs["env"]["OMP_NUM_THREADS"], "2")
                 wave = np.loadtxt(kwargs["cwd"]/"check.lambda", skiprows=1)
                 write_outputs(kwargs["cwd"], wave)
+                required = check.required_wavelength_grid(root, json.loads((root/"manifest.json").read_text()))
+                matched = np.any(np.isclose(wave[:, None], required, rtol=2e-6, atol=0), axis=1)
+                extra_index = np.flatnonzero(~matched)[0]
+                opacity = np.ones(len(wave))
+                opacity[extra_index] = np.nan
+                if required_failure["enabled"] and kwargs["cwd"].parent.name == "m3":
+                    opacity[np.flatnonzero(matched)[0]] = np.nan
+                fits.PrimaryHDU(opacity).writeto(kwargs["cwd"]/"data_dust/kappa.fits.gz", overwrite=True)
+                grain = np.ones((50, len(wave)))
+                grain[:, extra_index] = np.nan
+                fits.PrimaryHDU(grain).writeto(kwargs["cwd"]/"data_dust/kappa_grain.fits.gz", overwrite=True)
                 kwargs["stdout"].write("Computing dust properties ... Writing dust properties\n Exiting\n")
                 return SimpleNamespace(returncode=0)
             with patch.dict(sys.modules, {"production_task": dispatch}), \
@@ -131,8 +153,20 @@ class MaterialTests(unittest.TestCase):
                 self.assertEqual(check.run_checks(root, "unused")["status"], "cached")
                 self.assertEqual(invocation.call_count, 4)
                 receipt = json.loads((root/check.RECEIPT).read_text())
+                for item in receipt["checks"]:
+                    extra = item["diagnostics"]["extra_wavelength_diagnostics"]
+                    self.assertEqual(extra["kappa"]["nonfinite_count"], 1)
+                    self.assertEqual(extra["kappa_grain"]["nonfinite_count"], 50)
                 receipt["status"] = "failed"
                 (root/check.RECEIPT).write_text(json.dumps(receipt))
+                with self.assertRaisesRegex(ValueError, "not passed"):
+                    check.validate_receipt(root, {})
+                required_failure["enabled"] = True
+                with self.assertRaisesRegex(ValueError, "Nonfinite"):
+                    check.run_checks(root, "unused")
+                failed = json.loads((root/check.RECEIPT).read_text())
+                self.assertEqual(failed["status"], "failed")
+                self.assertEqual([item["status"] for item in failed["checks"][:3]], ["passed"]*3)
                 with self.assertRaisesRegex(ValueError, "not passed"):
                     check.validate_receipt(root, {})
             with patch.dict(sys.modules, {"production_task": dispatch}), \
@@ -143,7 +177,7 @@ class MaterialTests(unittest.TestCase):
                 receipt = json.loads((root/check.RECEIPT).read_text())
                 self.assertEqual(receipt["status"], "failed")
                 self.assertEqual(receipt["checks"][0]["returncode"], -11)
-                self.assertEqual(len(list((root/"material_preflight"/"m0").glob("attempt_*"))), 2)
+                self.assertEqual(len(list((root/"material_preflight"/"m0").glob("attempt_*"))), 3)
 
     def test_isolated_probe_preserves_exact_envelope_species(self):
         original = (ROOT/"reference/parameters/ice_v02_dust.para").read_text()
@@ -166,7 +200,10 @@ class MaterialTests(unittest.TestCase):
             ice = ROOT/"reference/dust/H2O_30K_Leiden_mcfost.dat"
             shutil.copy2(ice, root/"inputs/utils/Dust"/ice.name)
             probes = [dict(wavelength_um=v) for v in (1.74, 2.546, 9.7, 27.51)]
-            wave = check.wavelength_grid(root, {"anchors": probes})
+            models = [dict(id="m0")]
+            write_temperature_inputs(root, models)
+            manifest = {"anchors": probes, "models": models}
+            wave = check.wavelength_grid(root, manifest)
             self.assertEqual((wave[0], wave[-1]), (.1, 3000.))
             self.assertTrue(np.all(np.diff(wave) > 0))
             rows = [line.split("#", 1)[0].strip() for line in ice.read_text().splitlines()]
@@ -175,6 +212,33 @@ class MaterialTests(unittest.TestCase):
             self.assertEqual(len(knots), 206)
             self.assertTrue(np.isin(knots, wave).all())
             self.assertTrue(np.isin([r["wavelength_um"] for r in probes], wave).all())
+            required = check.required_wavelength_grid(root, manifest)
+            self.assertTrue(np.isin(required, wave).all())
+            self.assertTrue(np.isin(np.geomspace(.1, 3000., 100), required).all())
+            self.assertTrue(np.isin([r["wavelength_um"] for r in probes], required).all())
+            self.assertLess(len(required), len(wave))
+
+    def test_required_grid_reads_thermal_centres_from_every_model(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            models = [dict(id="m0"), dict(id="m1")]
+            write_temperature_inputs(root, models)
+            other = root/"models/m1/temperature.para"
+            rows = other.read_text().splitlines()
+            start = rows.index("#Wavelength")
+            rows[start+1] = "20 0.2 2000.0  n_lambda, lambda_min, lambda_max"
+            other.write_text("\n".join(rows)+"\n")
+            manifest = dict(models=models, anchors=[dict(wavelength_um=1.74), dict(wavelength_um=27.51)])
+            required = check.required_wavelength_grid(root, manifest)
+            self.assertTrue(np.all(np.isfinite(required)))
+            self.assertTrue(np.all(np.diff(required) > 0))
+            self.assertEqual((required[0], required[-1]), (.1, 3000.))
+            for count, lower, upper in ((50, .1, 3000.), (20, .2, 2000.)):
+                edges = np.geomspace(lower, upper, count+1)
+                centers = np.sqrt(edges[:-1]*edges[1:])
+                for value in centers:
+                    self.assertTrue(np.any(np.isclose(required, value, rtol=2e-12, atol=0)),
+                                    f"Missing {count}-bin model thermal wavelength {value}")
 
     def test_dust_outputs_reject_invalid_numbers_and_wavelengths(self):
         wave = np.array([.1, 1., 9.7, 3000.])
@@ -209,6 +273,98 @@ class MaterialTests(unittest.TestCase):
                 fits.PrimaryHDU(np.full(len(wave), value)).writeto(target, overwrite=True)
                 with self.subTest(value=value), self.assertRaisesRegex(ValueError, message):
                     check.check_outputs(tmp, wave)
+
+    def test_unused_stress_wavelength_failures_are_recorded_without_modifying_fits(self):
+        wave = np.array([.1, 1.74, 9.00867, 9.1, 10., 3000.])
+        required = wave[[0, 1, 4, 5]]
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            write_outputs(root, wave, opacity=np.array([1., 1., np.nan, -1., 1., 1.]),
+                          albedo=np.array([.5, .5, np.nan, 1.2, .5, .5]))
+            grain = np.ones((50, len(wave)))
+            grain[:, 2] = np.nan
+            grain[:3, 3] = -1.
+            fits.PrimaryHDU(grain).writeto(root/"data_dust/kappa_grain.fits.gz", overwrite=True)
+            before = {p.name: check.digest(p) for p in (root/"data_dust").iterdir()}
+            with self.assertRaises(ValueError):
+                check.check_outputs(root, wave)  # Omitting the subset retains strict behavior.
+            result = check.check_outputs(root, wave, required_wavelengths=required)
+            self.assertEqual(result["required_wavelength_count"], 4)
+            self.assertEqual(result["diagnostic_wavelength_count"], 2)
+            diagnostics = result["extra_wavelength_diagnostics"]
+            self.assertEqual(diagnostics["kappa"]["nonfinite_count"], 1)
+            self.assertEqual(diagnostics["kappa"]["negative_count"], 1)
+            self.assertEqual(diagnostics["kappa_grain"]["nonfinite_count"], 50)
+            self.assertEqual(diagnostics["kappa_grain"]["negative_count"], 3)
+            self.assertEqual(diagnostics["albedo"]["nonfinite_count"], 1)
+            self.assertEqual(diagnostics["albedo"]["out_of_range_count"], 1)
+            np.testing.assert_allclose(diagnostics["kappa"]["nonfinite_wavelengths_um"], [wave[2]])
+            np.testing.assert_allclose(diagnostics["kappa_grain"]["nonfinite_wavelengths_um"], [wave[2]])
+            self.assertTrue(np.isfinite(result["extinction_min_cm2_g"]))
+            self.assertTrue(np.isfinite(result["absorption_min_cm2_g"]))
+            self.assertEqual(before, {p.name: check.digest(p) for p in (root/"data_dust").iterdir()})
+            self.assertEqual(np.count_nonzero(~np.isfinite(fits.getdata(root/"data_dust/kappa_grain.fits.gz"))), 50)
+
+    def test_invalid_required_thermal_or_image_wavelength_always_rejects(self):
+        wave = np.array([.110859066, 1.74, 9.00867])
+        required = wave[:2]  # Representative default thermal centre and production image.
+        failures = (("kappa", np.nan), ("kappa", -1.), ("kappa_grain", np.nan),
+                    ("kappa_grain", -1.), ("albedo", 1.01), ("phase_function", np.nan),
+                    ("phase_function", -1.), ("polarizability", np.nan), ("g", 1.01))
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            for index in (0, 1):
+                for name, value in failures:
+                    write_outputs(root, wave, include_g=True)
+                    path = root/"data_dust"/(name+".fits.gz")
+                    values = fits.getdata(path)
+                    values[..., index] = value
+                    fits.PrimaryHDU(values).writeto(path, overwrite=True)
+                    with self.subTest(index=index, name=name, value=value), self.assertRaises(ValueError):
+                        check.check_outputs(root, wave, required_wavelengths=required)
+
+    def test_required_wavelength_match_takes_priority_over_stress_label(self):
+        knot = 9.00867
+        wave = np.array([.1, knot, knot*(1.+1e-6), 3000.])
+        with tempfile.TemporaryDirectory() as tmp:
+            write_outputs(tmp, wave, opacity=np.array([1., np.nan, 1., 1.]))
+            # The exact zero-k knot lies within the spectral matching tolerance
+            # of a required image, so it cannot be silently exempted as stress.
+            with self.assertRaises(ValueError):
+                check.check_outputs(tmp, wave, required_wavelengths=wave[[0, 2, 3]])
+
+    def test_required_set_must_be_nonempty_finite_and_present_in_output(self):
+        wave = np.array([.1, 1.74, 9.00867, 3000.])
+        with tempfile.TemporaryDirectory() as tmp:
+            write_outputs(tmp, wave)
+            for required in ([], [np.nan], [1.8], [[1.74]]):
+                with self.subTest(required=required), self.assertRaises(ValueError):
+                    check.check_outputs(tmp, wave, required_wavelengths=np.asarray(required))
+            result = check.check_outputs(tmp, wave, required_wavelengths=wave*(1.+1e-7))
+            self.assertEqual(result["required_wavelength_count"], len(wave))
+
+    def test_spectral_axis_and_nonfinite_wavelengths_never_become_diagnostics(self):
+        wave = np.array([.1, 1.74, 9.00867, 3000.])
+        malformed = (("lambda", np.ones((2, len(wave)))),
+                     ("kappa", np.ones((2, len(wave)))),
+                     ("albedo", np.ones((2, len(wave)))),
+                     ("kappa_grain", np.ones(len(wave))),
+                     ("kappa_grain", np.ones((len(wave), 50))),
+                     ("phase_function", np.ones((len(wave), 181))),
+                     ("polarizability", np.zeros((181, len(wave)+1))))
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            for name, data in malformed:
+                write_outputs(root, wave)
+                fits.PrimaryHDU(data).writeto(root/"data_dust"/(name+".fits.gz"), overwrite=True)
+                with self.subTest(name=name, shape=data.shape), self.assertRaises(ValueError):
+                    check.check_outputs(root, wave, required_wavelengths=wave[:2])
+            write_outputs(root, wave)
+            broken_wave = wave.copy()
+            broken_wave[2] = np.nan  # Nonfinite extra wavelength is still an invalid axis.
+            fits.PrimaryHDU(broken_wave).writeto(root/"data_dust/lambda.fits.gz", overwrite=True)
+            with self.assertRaises(ValueError):
+                check.check_outputs(root, wave, required_wavelengths=wave[:2])
 
     def test_real_subprocess_default_root_and_exit_zero_failures(self):
         """Exercise the filesystem behavior omitted by the original process mock."""
@@ -265,10 +421,7 @@ print(" Exiting", flush=True)
                 unique.setdefault((p["envelope_silicate_file"], p["envelope_amax_um"]), row)
             models = [dict(id=f"m{i}", parameters=row["parameters"]) for i, row in enumerate(unique.values())]
             (root/"manifest.json").write_text(json.dumps(dict(models=models, anchors=[dict(wavelength_um=9.7)])))
-            for model in models:
-                folder = root/"models"/model["id"]
-                folder.mkdir(parents=True)
-                shutil.copy2(ROOT/"reference/parameters/ice_v02_dust.para", folder/"temperature.para")
+            write_temperature_inputs(root, models)
             fake_mode = {"value": ""}
             runner = SimpleNamespace(
                 runtime_config=lambda _: {"mcfost_executable": str(executable)},
