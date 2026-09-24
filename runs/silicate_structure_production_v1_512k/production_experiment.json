@@ -4004,6 +4004,17 @@
     }
   ],
   "preflight": "Bounded envelope-only dust initialization on the cluster; array released after successful material checks",
+  "preflight_revision": {
+    "change": "Use default output root in each isolated attempt; reject exit-zero FITSIO and incomplete logs; g FITS is optional for exact-phase-function scattering.",
+    "id": "mcfost_4_1_14_dust_output_v2",
+    "numerics_changed": false,
+    "physical_catalogue_changed": false,
+    "required_opacity_checks_retained": true,
+    "supersedes_manifest_sha256": "0f8b2418959eb129bd648dbe38e2190f8ed211194c31049a8e0a35187dd9a176",
+    "upstream_dust_prop_source_sha256": "6c93771ded96f806eee42985fb3612b43e5531d224ec8a725646c3689ca4fd6b",
+    "upstream_source_revision": "af0dec17cc305df4cc77f033418fef00f508c395",
+    "upstream_source_url": "https://github.com/cpinte/mcfost/blob/af0dec17cc305df4cc77f033418fef00f508c395/src/dust_prop.f90#L1349"
+  },
   "prior_products_imported": false,
   "probes_per_model": 98,
   "production_convergence_certified": false,
@@ -4018,7 +4029,7 @@
   "schema_version": 1,
   "selection_rule": "All three arms and all matched comparisons fixed before outcomes; no selection on fit",
   "source_sha256": {
-    "docs/SILICATE_STRUCTURE_PRODUCTION_V1.md": "f95f9bf8a1096a1d6e0ccf9e810314aec765ae2585f451da3c4e5b33370f9d67",
+    "docs/SILICATE_STRUCTURE_PRODUCTION_V1.md": "01e03e06ab650d740eb3b02d826de00cefc417ac05a20ece9bc28dd22ee3b369",
     "laboratory_silicates_v1/Dust/Draine_Si_sUV.dat": "3a6af751429f6f8dc948e60675b13be01ffcbed0662eec62934ec6d9c61dea80",
     "laboratory_silicates_v1/Dust/Olivine_MgFeSiO4_Dorschner1995_mcfost.dat": "41e34acb22986f83aeb1113d31e73acee19707add259198036ca51baa25f3965",
     "laboratory_silicates_v1/Dust/Pyroxene_Mg05Fe05SiO3_Dorschner1995_mcfost.dat": "05c1ebf12963ff3c9de9dd32e168135e62986e527e60343da5e432ff018b44a2",
@@ -4032,7 +4043,7 @@
     "scripts/analyze_extinction_ice_production.py": "f4412b77885ec7e86dd9c727c1a3f0427072380d0a8e88ea7aa185143c13d8a5",
     "scripts/analyze_silicate_structure_production.py": "63edd248440ca0342fd2d3e369f86a070652c802352dc329c3b575666f91d5c8",
     "scripts/build_silicate_structure_production.py": "770a4f76d94d88cb294986bcaf4b8e22c6f747f6867430f962107f75695cbf10",
-    "scripts/check_silicate_structure_materials.py": "0cc3d8fe92bf004213a14a694be0c4f91d4bfa9610a69e7eb87d377a2e74af6c",
+    "scripts/check_silicate_structure_materials.py": "25da1f902084a34d672d9ec569bf9a41699b806734e0262c3ec80883c4dafdf8",
     "scripts/configure_extinction_ice_numerics_v2.py": "cf0932719790fa9ee00666c7805fe7ce992e0d67f29c7c617e2b2c457f117d4c",
     "scripts/extinction_ice_production_task.py": "e5e5602a2d30894ab0642167c217c9a798eae7ad1e53f473a08bef5f00b19173",
     "scripts/production_observables.py": "b643a7ebdf8da850128c6b356b592b5e6c62bccc10c3ea803ff75c6a5a7fae21",

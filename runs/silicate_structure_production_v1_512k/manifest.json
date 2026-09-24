@@ -1924,10 +1924,10 @@
   "formal_likelihood": false,
   "input_hashes": {
     ".gitignore": "eec6793eda1891900d56a8cce37157eb7783aa69b18997cd405553e75ee60adc",
-    "README.md": "f95f9bf8a1096a1d6e0ccf9e810314aec765ae2585f451da3c4e5b33370f9d67",
+    "README.md": "01e03e06ab650d740eb3b02d826de00cefc417ac05a20ece9bc28dd22ee3b369",
     "code/analyze_extinction_ice_production.py": "f4412b77885ec7e86dd9c727c1a3f0427072380d0a8e88ea7aa185143c13d8a5",
     "code/analyze_silicate_structure_production.py": "63edd248440ca0342fd2d3e369f86a070652c802352dc329c3b575666f91d5c8",
-    "code/check_materials.py": "0cc3d8fe92bf004213a14a694be0c4f91d4bfa9610a69e7eb87d377a2e74af6c",
+    "code/check_materials.py": "25da1f902084a34d672d9ec569bf9a41699b806734e0262c3ec80883c4dafdf8",
     "code/configure_cluster.py": "cf0932719790fa9ee00666c7805fe7ce992e0d67f29c7c617e2b2c457f117d4c",
     "code/production_observables.py": "b643a7ebdf8da850128c6b356b592b5e6c62bccc10c3ea803ff75c6a5a7fae21",
     "code/production_task.py": "e5e5602a2d30894ab0642167c217c9a798eae7ad1e53f473a08bef5f00b19173",
@@ -1942,8 +1942,8 @@
     "code/src/mcfost_grid/runner.py": "de3aa63fc7f6fd25847f480f8e7a67c0ce404e842f2e91ef027341dc750b4e8f",
     "code/src/mcfost_grid/slurm.py": "3176e60f7be1881b65b2500f33bb5f6b8d9aaa9bc9be6223c3cdc356ac55c7f6",
     "code/workflow.py": "c368a04f5e1d2ddeee0cbb5d77bfd59c5f055b6247a88b66f7d5110b4ec6e468",
-    "experiment.json": "7e893ea24471f82d6384090a8d83825ac69d1a171c6a477dc76412526493b567",
-    "experiment.sha256": "607483369ae4a69eb688400591d42dcbc871c10168177d5bb5c958ab03ae38d8",
+    "experiment.json": "92d7709c413870479f0b13e565acc621341f378c2b481e3700313a49e6468cd1",
+    "experiment.sha256": "5f4710f73529ae5d3356bc845f7ac30fc4bd91139fb3a98d75559028115d48d0",
     "inputs/H2O30K_laboratory_reference.dat": "29b572f8907993870d0b15823e1182a9c4813b8cdb8f4fbdd40ef39cf28fb00c",
     "inputs/configuration.json": "9eca98d17ce5d1c3cd306dbd7173ac815db81c33ed217fe02936810c47f785e6",
     "inputs/ice_input_provenance.json": "97d16ba1d3a4d78530592b62b5380ef23621514785e85483c543fdb41576cf34",
@@ -19660,7 +19660,7 @@
     "models/m0059_696750ab/anchors/w009/image.para": "7151c2b527cd16716719945606cd3c83eb38d0ad26f85b74d2bd7ed9cd449447",
     "models/m0059_696750ab/anchors/w009/wavelength.lambda": "5fa31505d282971c2ce81bd896dad11f206da5e3d0e28802b39b2de1f6139ec4",
     "models/m0059_696750ab/temperature.para": "a9e7c88ee2ce56bb1fc08b07a91aee77454949bceb09ed40e87afcd25255c8ec",
-    "production_experiment.json": "7e893ea24471f82d6384090a8d83825ac69d1a171c6a477dc76412526493b567",
+    "production_experiment.json": "92d7709c413870479f0b13e565acc621341f378c2b481e3700313a49e6468cd1",
     "requirements-cluster.txt": "335be12610625b9f8097df832a2d9e170aa7fbf523ac170a7155e03dc9e8c34b"
   },
   "measurement": {

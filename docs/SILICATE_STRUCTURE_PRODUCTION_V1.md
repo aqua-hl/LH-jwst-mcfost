@@ -90,6 +90,17 @@ This check is not a source temperature solution or proof of physical accuracy
 of extrapolated optical constants. If it fails, inspect its error/log files;
 the array's failed dependency is not evidence of 60 independent model failures.
 
+The material check runs in a fresh attempt directory with MCFOST's default
+output root. In MCFOST 4.1.14, the dust-property writer uses `data_dust/`
+relative to the working directory even when initialization was given a
+different `-root_dir`. The preflight therefore does not override that root.
+It also rejects FITSIO errors even if MCFOST exits with status zero. The
+optional `g.fits.gz` file is checked when present; this version writes it only
+for the HG scattering option, whereas this campaign uses the exact phase
+function. The wavelength, opacity, albedo, grain-opacity, phase-function and
+polarizability files remain required. These details were verified in the
+[writer for the cluster's reported source revision](https://github.com/cpinte/mcfost/blob/af0dec17cc305df4cc77f033418fef00f508c395/src/dust_prop.f90#L1384).
+
 The analysis job runs automatically after the array, including partial/failed
 arrays. Submission prints the job IDs and saves them under `submissions/`.
 

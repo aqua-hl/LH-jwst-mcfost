@@ -14,6 +14,7 @@ import hashlib
 import json
 import os
 from pathlib import Path
+import re
 import subprocess
 import sys
 import time
@@ -91,13 +92,18 @@ def isolated_parameter(text):
     return "\n".join(lines) + "\n"
 
 
-def check_outputs(directory, expected):
+def check_outputs(directory, expected, *, g_applicable=False):
     import numpy as np
     from astropy.io import fits
     directory = Path(directory)
     values, products = {}, {}
     for name in ("lambda", "kappa", "albedo", "g", "kappa_grain", "phase_function", "polarizability"):
         paths = list(directory.rglob(name + ".fits.gz")) + list(directory.rglob(name + ".fits"))
+        # Pinned MCFOST 4.1.14 writes g.fits only for HG (aniso_method=2).
+        # This frozen campaign uses the exact phase function (method 1).
+        # If an extra g file is present, still audit its values and identity.
+        if name == "g" and not paths and not g_applicable:
+            continue
         require(len(paths) == 1, f"Expected one {name} FITS product; found {len(paths)}")
         data = np.asarray(fits.getdata(paths[0]), dtype=float).squeeze()
         require(data.size > 0 and bool(np.isfinite(data).all()), f"Nonfinite or empty {name} output")
@@ -118,7 +124,33 @@ def check_outputs(directory, expected):
     return dict(wavelength_count=len(wave), wavelength_min_um=float(wave[0]),
                 wavelength_max_um=float(wave[-1]), extinction_min_cm2_g=float(opacity.min()),
                 absorption_min_cm2_g=float((opacity*(1-albedo)).min()),
-                scattering_min_cm2_g=float((opacity*albedo).min()), product_sha256=products)
+                scattering_min_cm2_g=float((opacity*albedo).min()),
+                g_available="g" in values, g_applicable=g_applicable, product_sha256=products)
+
+
+def log_context(path):
+    """Attach the simulator's explanation to failures of the outer wrapper."""
+    path = Path(path)
+    tail = "\n".join(path.read_text(errors="replace").splitlines()[-40:])
+    return f"Log: {path}\nLast simulator output:\n{tail}"
+
+
+def validate_completion(path, returncode):
+    """Fortran STOP and FITSIO failures may return zero; require real completion."""
+    text = Path(path).read_text(errors="replace")
+    folded = text.casefold()
+    reason = None
+    if returncode != 0:
+        reason = f"exit {returncode}"
+    elif re.search(r"fitsio\s*error\s*status", folded):
+        reason = "FITSIO error reported despite exit 0"
+    elif re.search(r"^\s*(?:error\b|fatal\b|fortran runtime error\b)", folded, re.MULTILINE) \
+            or "program received signal" in folded or "segmentation fault" in folded:
+        reason = "simulator error reported despite exit 0"
+    elif "writing dust properties" not in folded or not re.search(r"^\s*exiting\s*$", folded, re.MULTILINE):
+        reason = "dust-property completion markers absent despite exit 0"
+    if reason is not None:
+        raise ValueError(f"Material initialization failed ({reason}).\n{log_context(path)}")
 
 
 def identity(bundle, runtime):
@@ -187,7 +219,10 @@ def run_checks(bundle, machine):
                 parameter = isolated_parameter((bundle/"models"/model["id"]/"temperature.para").read_text())
                 (attempt/"check.para").write_text(parameter)
                 (attempt/"check.lambda").write_text(str(len(wave))+"\n"+"\n".join(f"{v:.17g}" for v in wave)+"\n")
-                command = [runtime["mcfost_executable"], "check.para", "-dust_prop", "-root_dir", "output",
+                # In MCFOST 4.1.14, -dust_prop creates root_dir/data_dust but
+                # writes FITS to cwd/data_dust. The unique attempt already
+                # isolates outputs, so retain the simulator's default root '.'.
+                command = [runtime["mcfost_executable"], "check.para", "-dust_prop",
                            "-max_mem", "2", "-no_backup",
                            *physical_args(model["parameters"])]
                 started = time.monotonic()
@@ -200,8 +235,12 @@ def run_checks(bundle, machine):
                         env=runner.environment(bundle, {**runtime, "threads": 2}),
                         stdout=log, stderr=subprocess.STDOUT, timeout=120, check=False)
                 check.update(returncode=outcome.returncode, elapsed_seconds=time.monotonic()-started)
-                require(outcome.returncode == 0, f"Material initialization failed: {model['id']}; inspect {attempt/'mcfost.log'}")
-                check["diagnostics"] = check_outputs(attempt, wave)
+                validate_completion(attempt/"mcfost.log", outcome.returncode)
+                try:
+                    check["diagnostics"] = check_outputs(attempt, wave)
+                except (ValueError, OSError) as exc:
+                    raise ValueError(f"Material initialization products failed checks: {exc}.\n"
+                                     f"{log_context(attempt/'mcfost.log')}") from exc
                 check.update(status="passed", artifact_sha256={str(p.relative_to(bundle)): digest(p)
                     for p in sorted(attempt.rglob("*")) if p.is_file()})
                 runner.atomic_json(bundle/RECEIPT, state)

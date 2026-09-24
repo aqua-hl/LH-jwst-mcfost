@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+import os
 from pathlib import Path
 import subprocess
 import sys
@@ -71,14 +72,16 @@ class LaunchTests(unittest.TestCase):
                 bundle_layout(root)
 
 
-def write_outputs(root, wave, *, opacity=None, albedo=None):
+def write_outputs(root, wave, *, opacity=None, albedo=None, include_g=False):
     root = Path(root)/"data_dust"
     root.mkdir(exist_ok=True)
     ones = np.ones(len(wave))
     arrays = dict(lambda_=wave, kappa=ones if opacity is None else opacity,
-                  albedo=.5*ones if albedo is None else albedo, g=.2*ones,
+                  albedo=.5*ones if albedo is None else albedo,
                   kappa_grain=np.ones((2, len(wave))), phase_function=np.ones((181, len(wave))),
                   polarizability=np.zeros((181, len(wave))))
+    if include_g:
+        arrays["g"] = .2*ones
     for name, values in arrays.items():
         fits.PrimaryHDU(np.asarray(values)).writeto(root/(name.rstrip("_")+".fits.gz"), overwrite=True)
 
@@ -112,10 +115,12 @@ class MaterialTests(unittest.TestCase):
             def dust_command(command, **kwargs):
                 self.assertIn("-dust_prop", command)
                 self.assertNotIn("-img", command)
+                self.assertNotIn("-root_dir", command)
                 self.assertEqual(kwargs["timeout"], 120)
                 self.assertEqual(kwargs["env"]["OMP_NUM_THREADS"], "2")
                 wave = np.loadtxt(kwargs["cwd"]/"check.lambda", skiprows=1)
                 write_outputs(kwargs["cwd"], wave)
+                kwargs["stdout"].write("Computing dust properties ... Writing dust properties\n Exiting\n")
                 return SimpleNamespace(returncode=0)
             with patch.dict(sys.modules, {"production_task": dispatch}), \
                     patch.object(check, "identity", return_value={"runtime": "same"}), \
@@ -178,6 +183,10 @@ class MaterialTests(unittest.TestCase):
             result = check.check_outputs(tmp, wave)
             self.assertEqual(result["wavelength_count"], 4)
             self.assertEqual(result["absorption_min_cm2_g"], .5)
+            self.assertFalse(result["g_available"])
+            self.assertFalse(result["g_applicable"])
+            with self.assertRaisesRegex(ValueError, "one g FITS"):
+                check.check_outputs(tmp, wave, g_applicable=True)
             for opacity, albedo, message in (
                 (np.array([1., np.nan, 1., 1.]), None, "Nonfinite"),
                 (np.array([1., -1., 1., 1.]), None, "Negative"),
@@ -189,6 +198,112 @@ class MaterialTests(unittest.TestCase):
             write_outputs(tmp, wave)
             with self.assertRaisesRegex(ValueError, "wavelengths"):
                 check.check_outputs(tmp, wave*2)
+
+    def test_optional_asymmetry_file_is_validated_when_present(self):
+        wave = np.array([.1, 1., 9.7, 3000.])
+        with tempfile.TemporaryDirectory() as tmp:
+            write_outputs(tmp, wave, include_g=True)
+            self.assertTrue(check.check_outputs(tmp, wave)["g_available"])
+            target = Path(tmp)/"data_dust/g.fits.gz"
+            for value, message in ((float("nan"), "Nonfinite"), (1.01, "Asymmetry outside")):
+                fits.PrimaryHDU(np.full(len(wave), value)).writeto(target, overwrite=True)
+                with self.subTest(value=value), self.assertRaisesRegex(ValueError, message):
+                    check.check_outputs(tmp, wave)
+
+    def test_real_subprocess_default_root_and_exit_zero_failures(self):
+        """Exercise the filesystem behavior omitted by the original process mock."""
+        import shutil
+        from silicate_structure_design import catalogue
+        with tempfile.TemporaryDirectory(prefix="material-root-regression-") as tmp:
+            root = Path(tmp)
+            executable = root/"fake-mcfost"
+            executable.write_text(f"#!{sys.executable}\n" + '''\
+import os
+from pathlib import Path
+import sys
+import numpy as np
+from astropy.io import fits
+print("Input file read successfully", flush=True)
+mode = os.environ.get("FAKE_PREFLIGHT_FAILURE", "")
+if mode == "incomplete":
+    raise SystemExit(0)
+root = Path(sys.argv[sys.argv.index("-root_dir")+1]) if "-root_dir" in sys.argv else Path(".")
+(root/"data_dust").mkdir(parents=True)
+print("Computing dust properties ... Writing dust properties", flush=True)
+if mode != "missing":
+    wave = np.loadtxt("check.lambda", skiprows=1)
+    ones = np.ones(len(wave))
+    data = {"lambda": wave, "kappa": ones, "albedo": .5*ones,
+            "kappa_grain": np.ones((2,len(wave))), "phase_function": np.ones((181,len(wave))),
+            "polarizability": np.zeros((181,len(wave)))}
+    try:
+        # Reproduce 4.1.14: creation respects root_dir; FITS writer does not.
+        for name, value in data.items():
+            fits.PrimaryHDU(value).writeto(Path("data_dust")/(name+".fits.gz"))
+    except OSError:
+        print("FITSIO ErrorStatus = 105: failed to create data_dust/lambda.fits.gz", flush=True)
+    if mode == "fitsio":
+        print("FiTsIo ErRoRsTaTuS = 105", flush=True)
+print(" Exiting", flush=True)
+''')
+            executable.chmod(0o755)
+            # The previous command reproduces the user's exit-zero FITSIO error.
+            legacy = root/"old_layout"
+            legacy.mkdir()
+            (legacy/"check.lambda").write_text("4\n.1\n1\n9.7\n3000\n")
+            outcome = subprocess.run([str(executable), "check.para", "-dust_prop", "-root_dir", "output"],
+                                     cwd=legacy, capture_output=True, text=True, timeout=30)
+            self.assertEqual(outcome.returncode, 0)
+            self.assertIn("FITSIO ErrorStatus = 105", outcome.stdout)
+            self.assertTrue((legacy/"output/data_dust").is_dir())
+            self.assertFalse(list(legacy.rglob("*.fits.gz")))
+            (root/"inputs/utils/Dust").mkdir(parents=True)
+            shutil.copy2(ROOT/"reference/dust/H2O_30K_Leiden_mcfost.dat", root/"inputs/utils/Dust")
+            unique = {}
+            for row in catalogue():
+                p = row["parameters"]
+                unique.setdefault((p["envelope_silicate_file"], p["envelope_amax_um"]), row)
+            models = [dict(id=f"m{i}", parameters=row["parameters"]) for i, row in enumerate(unique.values())]
+            (root/"manifest.json").write_text(json.dumps(dict(models=models, anchors=[dict(wavelength_um=9.7)])))
+            for model in models:
+                folder = root/"models"/model["id"]
+                folder.mkdir(parents=True)
+                shutil.copy2(ROOT/"reference/parameters/ice_v02_dust.para", folder/"temperature.para")
+            fake_mode = {"value": ""}
+            runner = SimpleNamespace(
+                runtime_config=lambda _: {"mcfost_executable": str(executable)},
+                environment=lambda _, runtime: {**os.environ, "OMP_NUM_THREADS": str(runtime["threads"]),
+                                                "FAKE_PREFLIGHT_FAILURE": fake_mode["value"]},
+                now=lambda: "2026-09-24T00:00:00+00:00",
+                atomic_json=lambda path, payload: Path(path).write_text(json.dumps(payload)))
+            dispatch = SimpleNamespace(validate_package=lambda _: {"experiment_id": SILICATE_STRUCTURE},
+                                       load_runner=lambda _: runner)
+            with patch.dict(sys.modules, {"production_task": dispatch}), \
+                    patch.object(check, "identity", return_value={"runtime": "same"}):
+                for mode, message in (("fitsio", "FITSIO error reported despite exit 0"),
+                                      ("incomplete", "completion markers absent"),
+                                      ("missing", "Expected one lambda FITS product")):
+                    fake_mode["value"] = mode
+                    with self.subTest(mode=mode), self.assertRaisesRegex(ValueError, message) as caught:
+                        check.run_checks(root, "unused")
+                    self.assertIn("mcfost.log", str(caught.exception))
+                    self.assertIn("Last simulator output", str(caught.exception))
+                    receipt = json.loads((root/check.RECEIPT).read_text())
+                    self.assertEqual(receipt["status"], "failed")
+                    self.assertEqual(receipt["checks"][0]["returncode"], 0)
+                    with self.assertRaisesRegex(ValueError, "not passed"):
+                        check.validate_receipt(root, {})
+                fake_mode["value"] = ""
+                self.assertEqual(check.run_checks(root, "unused")["status"], "passed")
+                receipt = check.validate_receipt(root, {})
+                for item in receipt["checks"]:
+                    self.assertNotIn("-root_dir", item["command"])
+                    self.assertFalse(item["diagnostics"]["g_available"])
+                    self.assertFalse(item["diagnostics"]["g_applicable"])
+                    self.assertEqual(len(item["diagnostics"]["product_sha256"]), 6)
+                # Failed outputs are retained; a new attempt fixes the root.
+                self.assertTrue((root/"material_preflight/m0/attempt_001/mcfost.log").exists())
+                self.assertTrue((root/"material_preflight/m0/attempt_004/data_dust/lambda.fits.gz").exists())
 
     def test_receipt_binds_runtime_prescriptions_and_output_bytes(self):
         models = [dict(id=f"m{i}", parameters=dict(envelope_silicate_file=material, envelope_amax_um=size))
