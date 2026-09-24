@@ -1,0 +1,138 @@
+# Silicate mass, material and envelope-structure production search
+
+Run: `runs/silicate_structure_production_v1_512k`.
+
+This freezes the approved 60-case search following the completed four-model
+size pilot. It tests mass–size compensation, alternative silicate constants,
+and redistribution of envelope dust. All cases are declared before their
+results. No pilot measurements or old temperature solutions are imported.
+
+| Arm | Settings | Cases |
+|---|---|---:|
+| Mass and size | Draine; total envelope dust mass [0.6, 1.0, 1.5, 2.25] × 10⁻⁴ M☉; silicate amax [0.4, 1.0] µm; inclination [50, 60, 70] degrees | 24 |
+| Material | Olivine and pyroxene; mass [1.0, 1.5, 2.25] × 10⁻⁴ M☉; amax 0.4 µm; the same inclinations | 18 |
+| Density profile | Draine, amax 0.4 µm; volume-density exponent −1.25 or −1.75; three reference columns and the same inclinations | 18 |
+
+The mass–size arm includes four physical counterparts of the pilot, recomputed
+within this campaign's manifest and runtime binding. The comparison baseline
+for each material or profile case is a declared mass–size model, not a fitted
+winner. Material and profile alternatives are not crossed with each other;
+this experiment does not exhaust their interactions.
+
+## Column matching
+
+The baseline envelope has rho(r) proportional to r⁻¹·⁵ between 1 and 3000 AU.
+For exponent p, let J0(p) be the integral of r^p dr over those radii and J2(p)
+the integral of r^(p+2) dr. The central radial envelope column is proportional
+to M J0/J2. A changed profile therefore has
+
+    M(p) = Mref × [J2(p)/J0(p)] / [J2(-1.5)/J0(-1.5)].
+
+The conical cavity and its angular factor are identical in every comparison;
+all three viewing angles lie outside the cavity. Reference masses are
+[1.0, 1.5, 2.25] × 10⁻⁴ M☉ in the baseline −1.5 profile. The actual input masses
+equal to reference mass multiplied by 3.60037382695 at p=−1.25 or by
+0.2393567089536 at p=−1.75.
+These are analytic smooth-envelope column matches, not a certification of
+identical columns on MCFOST's finite density grid, total source optical depths,
+scattered light paths or aperture-integrated extinction. The disk is unchanged.
+Both reference and actual masses are recorded in the catalogue.
+
+## Fixed inputs and numerical settings
+
+- 512,000 packets for temperature, SED and each image; seed 43001.
+- A fresh temperature calculation for every model.
+- 6001 × 6001 pixels over 6000 AU (0.999833 AU/pixel).
+- 98 image wavelengths integrated into 19 bands: nine near-IR continuum,
+  four near-IR ice and six MIRI bands. The three legacy MIRI points are checks.
+- A 1-arcsec aperture; model distance 140 pc, comparison distance 147 pc.
+- Envelope grains remain separate, nonporous DHS species with vmax=0.1:
+  96% silicate and 4% supplied H2O30K by mass. H2O amax remains 0.4 µm.
+- Grain exponent 2.75, amin 0.03 µm, 50 bins, cavity half-opening 17.5 degrees,
+  stellar/accretion heating and all disk parameters remain fixed.
+- The supplied optical constants are copied unchanged. Olivine density is
+  3.71 g/cm³ and pyroxene density 3.20 g/cm³; no density rescaling to Draine.
+- Native treatment outside the material tables is an explicit modelling
+  assumption. The short H2O table retains its original 206 zero-k rows.
+  Its 30 K laboratory label is not the computed dust temperature. Ice survival
+  is not temperature dependent in this template.
+- `aperture_v2` quality policy: full-field boundary diagnostics are recorded;
+  finite positive signed image/aperture flux and aperture support remain
+  mandatory. Fluxes are never clipped to make a model pass.
+
+There are 5,880 image requests plus 60 fresh-temperature solves. Production
+requests 64 CPUs and 160 GB per task, at most 16 tasks (1,024 CPUs), with the
+MCFOST memory setting 112 GB. A 24-hour task limit and 4-hour subprocess timeout
+are retained. These are limits, not runtime predictions.
+
+## Run on the cluster
+
+The complete frozen run directory is versioned with its source changes. After
+committing and pushing the staged files on the laptop, run on the cluster:
+
+```bash
+cd ~/LH-jwst-mcfost
+git pull --ff-only
+source ~/.venvs/mcfost-v11/bin/activate
+export MCFOST_UTILS="$HOME/leshouches/mcfost/utils"
+run="$PWD/runs/silicate_structure_production_v1_512k"
+
+python -B "$run/code/configure_cluster.py" "$run" \
+  --machine "$run/machine.template.json"
+bash "$run/submit.sh" "$run/machine.template.cluster.json"
+```
+
+Configuration pins the Python environment, executable and utilities paths. It
+does not simulate or submit. Submission first runs a bounded 2-CPU dust
+initialization check on a compute node for the four distinct envelope
+material/size prescriptions. Only successful checks release the 60-model array.
+This check is not a source temperature solution or proof of physical accuracy
+of extrapolated optical constants. If it fails, inspect its error/log files;
+the array's failed dependency is not evidence of 60 independent model failures.
+
+The analysis job runs automatically after the array, including partial/failed
+arrays. Submission prints the job IDs and saves them under `submissions/`.
+
+```bash
+squeue -u "$USER" -r -o "%.22i %.12T %.12M %.40R"
+python -B "$run/code/production_task.py" "$run" --status
+```
+
+To rerun analysis without submitting simulations:
+
+```bash
+python -B "$run/code/analyze_silicate_structure_production.py" "$run"
+```
+
+For recovery, rerunning the same `submit.sh` command keeps valid completed
+measurements and resumes missing work under the existing per-model lock and
+runtime checks. Do not rebuild or edit a prepared run containing results.
+
+The builder is available for a deliberately new destination:
+
+```bash
+python -B scripts/build_silicate_structure_production.py --plan
+python -B scripts/build_silicate_structure_production.py --output runs/ANOTHER_NAME
+```
+
+## Analysis and results to return
+
+Raw matched band responses and regional residuals are primary. The silicate
+core is also compared to its shoulders; the two halves of the 3-µm ice band and
+the 18–20-µm bands remain visible. The existing 45% near-IR continuum / 30% ice /
+25% MIRI score and all nine weighting/calibration scenarios are retained as
+descriptive screens. A better scalar score alone does not resolve the joint
+near-IR/ice/silicate tension.
+
+The analysis writes tables, figures and its review to `results/`. Return that
+folder together with `manifest.json`, `manifest.sha256`, `experiment.json`,
+`production_experiment.json`, the observation contract, runtime bindings,
+material-check receipts and per-model `measurements.json`/`status.json`. Raw
+FITS are only needed for a subsequent image-level audit, not routine analysis.
+
+All integration warnings and missing comparisons are retained. A single seed
+does not provide Monte Carlo covariance. Four-percent ice is fixed: varying
+total mass changes absolute ice mass, so this campaign cannot measure ice
+abundance. The proposed density and mass levels are exploratory, not literature
+confidence intervals. No likelihood, abundance posterior or unique
+opacity-versus-geometry verdict is claimed.

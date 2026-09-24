@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "coverage_policy": "historical_native_extrapolation",
+  "table_sha256": "29b572f8907993870d0b15823e1182a9c4813b8cdb8f4fbdd40ef39cf28fb00c",
+  "laboratory_sha256": "29b572f8907993870d0b15823e1182a9c4813b8cdb8f4fbdd40ef39cf28fb00c",
+  "laboratory_temperature_k": 30.0,
+  "measured_region_treatment": "preserved_original_samples",
+  "native_extrapolation_accepted_for_pilot": true,
+  "user_direction": "Retain the unchanged supplied H2O30K table, separate DHS grains and native out-of-range treatment in the approved 60-model mass-size/material/structure production search.",
+  "sources": [
+    "reference/dust/H2O_30K_Leiden_mcfost.dat: unchanged archived input",
+    "He et al., ApJ, DOI 10.3847/1538-4357/ac3fbb; https://icedb.strw.leidenuniv.nl/data_opt_const/2",
+    "MCFOST input documentation: https://mcfost.readthedocs.io/en/latest/input.html"
+  ],
+  "extension_method": "No extended input table is created. Use the running MCFOST executable's native optical-constant treatment outside the tabulated range; runtime binds the executable hash. No independently verified version-specific extrapolation law is asserted here.",
+  "join_description": "No splice or new join. Keep all 3000 samples over 0.25004000002-19.940540101 um byte-for-byte unchanged.",
+  "tail_temperature_assumptions": "The 30 K label applies to the supplied laboratory constants, not to unmeasured extrapolated tails or to the computed source temperature. Fresh radiative equilibrium is conditional on the native extrapolation assumption; tail sensitivity is not certified.",
+  "zero_k_policy": "preserve_original_samples_without_floor",
+  "zero_k_rows": 206,
+  "prior_temperature_caveat": "The four-model silicate_size_pilot_v1_512k returned four valid models with fresh temperatures. This does not establish physical accuracy of extrapolated ice tails or validate the new laboratory silicate combinations.",
+  "known_other_prescription_failure": "The supplied laboratory-silicate package records olivine plus H2O30K coated-Mie initialization failing with SIGSEGV. That uses a different grain architecture from this separate-DHS production campaign. The bounded cluster preflight tests the actual separate-DHS silicate/H2O combinations without altering zero-k samples; a successful check does not validate extrapolated-tail physics.",
+  "accepted_experiment_ids": [
+    "silicate_structure_production_v1"
+  ],
+  "policy_scope": "silicate_structure_production_v1; historical native extrapolation flag retained for compatibility with the shared input validator"
+}

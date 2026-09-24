@@ -1,0 +1,20 @@
+{
+  "backend": "image_method2",
+  "max_memory_gb": 112,
+  "mcfost_executable": "mcfost",
+  "mcfost_utils": "$MCFOST_UTILS",
+  "notes": "60 models at 512k, 64 CPUs each, up to 16 concurrent. Shared venv. Bounded material preflight then production array and automatic analysis.",
+  "schema_version": 1,
+  "slurm": {
+    "analysis_cpus": 2,
+    "analysis_memory": "8G",
+    "analysis_time": "02:00:00",
+    "max_parallel": 16,
+    "memory": "160G",
+    "python": "/SET/BY/CONFIGURE_CLUSTER",
+    "setup_lines": [],
+    "time": "24:00:00"
+  },
+  "threads": 64,
+  "timeout_seconds": 14400
+}
