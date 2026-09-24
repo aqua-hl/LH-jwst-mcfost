@@ -129,7 +129,11 @@ class MaterialTests(unittest.TestCase):
                 self.assertNotIn("-root_dir", command)
                 self.assertEqual(kwargs["timeout"], 120)
                 self.assertEqual(kwargs["env"]["OMP_NUM_THREADS"], "2")
-                wave = np.loadtxt(kwargs["cwd"]/"check.lambda", skiprows=1)
+                # MCFOST lect_lambda consumes every numeric row; there is no
+                # count header to skip. Compare the file itself with the plan.
+                wave = np.loadtxt(kwargs["cwd"]/"check.lambda")
+                expected = check.wavelength_grid(root, json.loads((root/"manifest.json").read_text()))
+                np.testing.assert_array_equal(wave, expected)
                 write_outputs(kwargs["cwd"], wave)
                 required = check.required_wavelength_grid(root, json.loads((root/"manifest.json").read_text()))
                 matched = np.any(np.isclose(wave[:, None], required, rtol=2e-6, atol=0), axis=1)
@@ -387,7 +391,15 @@ root = Path(sys.argv[sys.argv.index("-root_dir")+1]) if "-root_dir" in sys.argv 
 (root/"data_dust").mkdir(parents=True)
 print("Computing dust properties ... Writing dust properties", flush=True)
 if mode != "missing":
-    wave = np.loadtxt("check.lambda", skiprows=1)
+    # Independently mimic lect_lambda: each numeric line is one wavelength,
+    # including any integer that a caller incorrectly treats as a row count.
+    samples = []
+    for line in Path("check.lambda").read_text().splitlines():
+        numeric = line.split("#", 1)[0].strip()
+        if numeric:
+            samples.append(float(numeric.split()[0]))
+    # tab_lambda2 and the lambda FITS product are default REAL in 4.1.14.
+    wave = np.asarray(samples, dtype=np.float32)
     ones = np.ones(len(wave))
     data = {"lambda": wave, "kappa": ones, "albedo": .5*ones,
             "kappa_grain": np.ones((2,len(wave))), "phase_function": np.ones((181,len(wave))),
@@ -406,13 +418,27 @@ print(" Exiting", flush=True)
             # The previous command reproduces the user's exit-zero FITSIO error.
             legacy = root/"old_layout"
             legacy.mkdir()
-            (legacy/"check.lambda").write_text("4\n.1\n1\n9.7\n3000\n")
+            (legacy/"check.lambda").write_text(".1\n1\n9.7\n3000\n")
             outcome = subprocess.run([str(executable), "check.para", "-dust_prop", "-root_dir", "output"],
                                      cwd=legacy, capture_output=True, text=True, timeout=30)
             self.assertEqual(outcome.returncode, 0)
             self.assertIn("FITSIO ErrorStatus = 105", outcome.stdout)
             self.assertTrue((legacy/"output/data_dust").is_dir())
             self.assertFalse(list(legacy.rglob("*.fits.gz")))
+            # A count-prefixed file is a different bug: the documented parser
+            # emits five wavelengths, with an unintended 4-micron first row.
+            bad_header = root/"old_count_header"
+            bad_header.mkdir()
+            (bad_header/"check.lambda").write_text("# Custom wavelengths in microns\n4\n.1\n1\n9.7\n3000\n")
+            outcome = subprocess.run([str(executable), "check.para", "-dust_prop"],
+                                     cwd=bad_header, capture_output=True, text=True, timeout=30)
+            self.assertEqual(outcome.returncode, 0)
+            actual = fits.getdata(bad_header/"data_dust/lambda.fits.gz")
+            intended = np.array([.1, 1., 9.7, 3000.])
+            np.testing.assert_array_equal(actual, np.r_[len(intended), intended].astype(np.float32))
+            self.assertEqual(actual.shape, (len(intended)+1,))
+            with self.assertRaisesRegex(ValueError, r"lambda wavelength shape.*expected \(4,\).*got \(5,\)"):
+                check.check_outputs(bad_header, intended)
             (root/"inputs/utils/Dust").mkdir(parents=True)
             shutil.copy2(ROOT/"reference/dust/H2O_30K_Leiden_mcfost.dat", root/"inputs/utils/Dust")
             unique = {}
@@ -449,11 +475,19 @@ print(" Exiting", flush=True)
                 fake_mode["value"] = ""
                 self.assertEqual(check.run_checks(root, "unused")["status"], "passed")
                 receipt = check.validate_receipt(root, {})
+                manifest = json.loads((root/"manifest.json").read_text())
+                expected = check.wavelength_grid(root, manifest)
                 for item in receipt["checks"]:
                     self.assertNotIn("-root_dir", item["command"])
                     self.assertFalse(item["diagnostics"]["g_available"])
                     self.assertFalse(item["diagnostics"]["g_applicable"])
                     self.assertEqual(len(item["diagnostics"]["product_sha256"]), 6)
+                    self.assertEqual(item["diagnostics"]["wavelength_count"], len(expected))
+                    model_attempt = sorted((root/"material_preflight"/item["model_id"]).glob("attempt_*"))[-1]
+                    written = np.loadtxt(model_attempt/"check.lambda")
+                    emitted = fits.getdata(model_attempt/"data_dust/lambda.fits.gz")
+                    np.testing.assert_array_equal(written, expected)
+                    np.testing.assert_array_equal(emitted, expected.astype(np.float32))
                 # Failed outputs are retained; a new attempt fixes the root.
                 self.assertTrue((root/"material_preflight/m0/attempt_001/mcfost.log").exists())
                 self.assertTrue((root/"material_preflight/m0/attempt_004/data_dust/lambda.fits.gz").exists())

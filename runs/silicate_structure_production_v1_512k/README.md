@@ -101,6 +101,16 @@ function. The wavelength, opacity, albedo, grain-opacity, phase-function and
 polarizability files remain required. These details were verified in the
 [writer for the cluster's reported source revision](https://github.com/cpinte/mcfost/blob/af0dec17cc305df4cc77f033418fef00f508c395/src/dust_prop.f90#L1384).
 
+The custom `check.lambda` input contains one wavelength per numeric line and
+**no count header**. The pinned MCFOST
+[wavelength reader](https://github.com/cpinte/mcfost/blob/af0dec17cc305df4cc77f033418fef00f508c395/src/input.f90#L555)
+counts every numeric row as a sample. The previous preflight incorrectly
+prepended the sample count, making MCFOST return one extra wavelength (for
+example, a leading `866` became an unintended 866-µm sample). The writer and
+regression-test simulator now follow this format. Output dimensions and
+ordered wavelength values must still match the requested grid; mismatches
+report both expected and actual dimensions. Earlier attempts remain intact.
+
 The revised wavelength gate requires valid products at every production image
 probe, all temperature bin centres read from the frozen parameter files, and
 100 broad-coverage samples from 0.1 to 3000 µm. Both ideal and source-rounded

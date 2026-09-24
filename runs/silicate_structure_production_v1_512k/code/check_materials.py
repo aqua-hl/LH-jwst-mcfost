@@ -165,10 +165,12 @@ def check_outputs(directory, expected, *, required_wavelengths=None, g_applicabl
         data = np.asarray(fits.getdata(paths[0]), dtype=float).squeeze()
         require(data.size > 0, f"Nonfinite or empty {name} output")
         if name in {"lambda", "kappa", "albedo", "g"}:
-            require(data.shape == expected.shape, f"Unexpected {name} wavelength shape")
+            require(data.shape == expected.shape,
+                    f"Unexpected {name} wavelength shape: expected {expected.shape}, got {data.shape}")
         else:
             require(data.ndim == 2 and data.shape[-1] == expected.size,
-                    f"Unexpected {name} wavelength axis/shape")
+                    f"Unexpected {name} wavelength axis/shape: expected a 2-D array with "
+                    f"{expected.size} wavelengths on the last axis, got {data.shape}")
         if name == "lambda":
             # Wavelength metadata itself is mandatory at every sample.
             require(bool(np.isfinite(data).all()), "Nonfinite lambda output")
@@ -310,7 +312,10 @@ def run_checks(bundle, machine):
                 attempt.mkdir()
                 parameter = isolated_parameter((bundle/"models"/model["id"]/"temperature.para").read_text())
                 (attempt/"check.para").write_text(parameter)
-                (attempt/"check.lambda").write_text(str(len(wave))+"\n"+"\n".join(f"{v:.17g}" for v in wave)+"\n")
+                # MCFOST input.f90 lect_lambda counts and reads every numeric
+                # line as a wavelength. A numeric count header is NOT allowed:
+                # it would become an extra wavelength and change the FITS axis.
+                (attempt/"check.lambda").write_text("\n".join(f"{v:.17g}" for v in wave)+"\n")
                 # In MCFOST 4.1.14, -dust_prop creates root_dir/data_dust but
                 # writes FITS to cwd/data_dust. The unique attempt already
                 # isolates outputs, so retain the simulator's default root '.'.
