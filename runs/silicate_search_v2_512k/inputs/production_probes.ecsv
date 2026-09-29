@@ -1,0 +1,111 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - {name: id, datatype: string}
+# - {name: wavelength_um, datatype: float64}
+# - {name: instrument, datatype: string}
+# - {name: region, datatype: string}
+# - {name: score, datatype: bool}
+# - {name: image_npix, datatype: int64}
+# - {name: image_size_au, datatype: float64}
+# - {name: psf_fwhm_arcsec, datatype: float64}
+# schema: astropy-2.0
+id wavelength_um instrument region score image_npix image_size_au psf_fwhm_arcsec
+c01_q0 1.1 NIRSpec nir_continuum False 6001 6000.0 0.036300000000000006
+c01_q1 1.115 NIRSpec nir_continuum False 6001 6000.0 0.036795
+c01_q2 1.13 NIRSpec nir_continuum False 6001 6000.0 0.03729
+c01_q3 1.145 NIRSpec nir_continuum False 6001 6000.0 0.037785
+c01_q4 1.16 NIRSpec nir_continuum False 6001 6000.0 0.03828
+c02_q0 1.18 NIRSpec nir_continuum False 6001 6000.0 0.03894
+c02_q1 1.1949999999999998 NIRSpec nir_continuum False 6001 6000.0 0.039435
+c02_q2 1.21 NIRSpec nir_continuum False 6001 6000.0 0.03993
+c02_q3 1.225 NIRSpec nir_continuum False 6001 6000.0 0.040425
+c02_q4 1.24 NIRSpec nir_continuum False 6001 6000.0 0.040920000000000005
+c03_q0 1.492 NIRSpec nir_continuum False 6001 6000.0 0.049236
+c03_q1 1.5065 NIRSpec nir_continuum False 6001 6000.0 0.0497145
+c03_q2 1.521 NIRSpec nir_continuum False 6001 6000.0 0.050193
+c03_q3 1.5355 NIRSpec nir_continuum False 6001 6000.0 0.05067150000000001
+c03_q4 1.55 NIRSpec nir_continuum False 6001 6000.0 0.05115
+c04_q0 1.7 NIRSpec nir_continuum False 6001 6000.0 0.056100000000000004
+c04_q1 1.72 NIRSpec nir_continuum False 6001 6000.0 0.056760000000000005
+c04_q2 1.74 NIRSpec nir_continuum False 6001 6000.0 0.057420000000000006
+c04_q3 1.76 NIRSpec nir_continuum False 6001 6000.0 0.05808
+c04_q4 1.78 NIRSpec nir_continuum False 6001 6000.0 0.05874
+c05_q0 2.16 NIRSpec nir_continuum False 6001 6000.0 0.07128000000000001
+c05_q1 2.18 NIRSpec nir_continuum False 6001 6000.0 0.07194
+c05_q2 2.2 NIRSpec nir_continuum False 6001 6000.0 0.07260000000000001
+c05_q3 2.22 NIRSpec nir_continuum False 6001 6000.0 0.07326
+c05_q4 2.24 NIRSpec nir_continuum False 6001 6000.0 0.07392000000000001
+c06_q0 2.26 NIRSpec nir_continuum False 6001 6000.0 0.07458
+c06_q1 2.28 NIRSpec nir_continuum False 6001 6000.0 0.07524
+c06_q2 2.3 NIRSpec nir_continuum False 6001 6000.0 0.0759
+c06_q3 2.32 NIRSpec nir_continuum False 6001 6000.0 0.07656
+c06_q4 2.34 NIRSpec nir_continuum False 6001 6000.0 0.07722
+c07_q0 2.52 NIRSpec nir_continuum False 6001 6000.0 0.08316
+c07_q1 2.535 NIRSpec nir_continuum False 6001 6000.0 0.08365500000000001
+c07_q2 2.55 NIRSpec nir_continuum False 6001 6000.0 0.08415
+c07_q3 2.565 NIRSpec nir_continuum False 6001 6000.0 0.084645
+c07_q4 2.58 NIRSpec nir_continuum False 6001 6000.0 0.08514000000000001
+c08_q0 3.86 NIRSpec nir_continuum False 6001 6000.0 0.12738
+c08_q1 3.885 NIRSpec nir_continuum False 6001 6000.0 0.12820499999999999
+c08_q2 3.91 NIRSpec nir_continuum False 6001 6000.0 0.12903
+c08_q3 3.935 NIRSpec nir_continuum False 6001 6000.0 0.129855
+c08_q4 3.96 NIRSpec nir_continuum False 6001 6000.0 0.13068000000000002
+c09_q0 4.505 NIRSpec nir_continuum False 6001 6000.0 0.148665
+c09_q1 4.515 NIRSpec nir_continuum False 6001 6000.0 0.148995
+c09_q2 4.525 NIRSpec nir_continuum False 6001 6000.0 0.149325
+c09_q3 4.535 NIRSpec nir_continuum False 6001 6000.0 0.149655
+c09_q4 4.545 NIRSpec nir_continuum False 6001 6000.0 0.149985
+h01_q0 2.7 NIRSpec nir_ice False 6001 6000.0 0.08910000000000001
+h01_q1 2.7350000000000003 NIRSpec nir_ice False 6001 6000.0 0.09025500000000002
+h01_q2 2.77 NIRSpec nir_ice False 6001 6000.0 0.09141
+h01_q3 2.8049999999999997 NIRSpec nir_ice False 6001 6000.0 0.092565
+h01_q4 2.84 NIRSpec nir_ice False 6001 6000.0 0.09372
+h02_q0 2.88 NIRSpec nir_ice False 6001 6000.0 0.09504
+h02_q1 2.915 NIRSpec nir_ice False 6001 6000.0 0.096195
+h02_q2 2.95 NIRSpec nir_ice False 6001 6000.0 0.09735
+h02_q3 2.985 NIRSpec nir_ice False 6001 6000.0 0.098505
+h02_q4 3.02 NIRSpec nir_ice False 6001 6000.0 0.09966
+h03_q0 3.04 NIRSpec nir_ice False 6001 6000.0 0.10032
+h03_q1 3.075 NIRSpec nir_ice False 6001 6000.0 0.10147500000000001
+h03_q2 3.1100000000000003 NIRSpec nir_ice False 6001 6000.0 0.10263000000000001
+h03_q3 3.145 NIRSpec nir_ice False 6001 6000.0 0.103785
+h03_q4 3.18 NIRSpec nir_ice False 6001 6000.0 0.10494
+h04_q0 3.22 NIRSpec nir_ice False 6001 6000.0 0.10626000000000001
+h04_q1 3.29 NIRSpec nir_ice False 6001 6000.0 0.10857
+h04_q2 3.3600000000000003 NIRSpec nir_ice False 6001 6000.0 0.11088000000000002
+h04_q3 3.43 NIRSpec nir_ice False 6001 6000.0 0.11319000000000001
+h04_q4 3.5 NIRSpec nir_ice False 6001 6000.0 0.1155
+s01_q0 8.2 MIRI miri False 6001 6000.0 0.3766
+s01_q1 8.299999999999999 MIRI miri False 6001 6000.0 0.37989999999999996
+s01_q2 8.399999999999999 MIRI miri False 6001 6000.0 0.38319999999999993
+s01_q3 8.5 MIRI miri False 6001 6000.0 0.3865
+s01_q4 8.6 MIRI miri False 6001 6000.0 0.3898
+s02_q0 9.3 MIRI miri False 6001 6000.0 0.41290000000000004
+s02_q1 9.5 MIRI miri False 6001 6000.0 0.4195
+s02_q2 9.7 MIRI miri False 6001 6000.0 0.4261
+s02_q3 9.9 MIRI miri False 6001 6000.0 0.43270000000000003
+s02_q4 10.1 MIRI miri False 6001 6000.0 0.43929999999999997
+s03_q0 10.7 MIRI miri False 6001 6000.0 0.45909999999999995
+s03_q1 10.85 MIRI miri False 6001 6000.0 0.46404999999999996
+s03_q2 11.0 MIRI miri False 6001 6000.0 0.469
+s03_q3 11.15 MIRI miri False 6001 6000.0 0.47395000000000004
+s03_q4 11.3 MIRI miri False 6001 6000.0 0.47890000000000005
+s04_q0 12.4 MIRI miri False 6001 6000.0 0.5152
+s04_q1 12.55 MIRI miri False 6001 6000.0 0.52015
+s04_q2 12.7 MIRI miri False 6001 6000.0 0.5251
+s04_q3 12.85 MIRI miri False 6001 6000.0 0.53005
+s04_q4 13.0 MIRI miri False 6001 6000.0 0.535
+s05_q0 18.1 MIRI miri False 6001 6000.0 0.7033
+s05_q1 18.275000000000002 MIRI miri False 6001 6000.0 0.7090750000000001
+s05_q2 18.450000000000003 MIRI miri False 6001 6000.0 0.7148500000000001
+s05_q3 18.625 MIRI miri False 6001 6000.0 0.720625
+s05_q4 18.8 MIRI miri False 6001 6000.0 0.7264
+s06_q0 19.3 MIRI miri False 6001 6000.0 0.7429
+s06_q1 19.55 MIRI miri False 6001 6000.0 0.75115
+s06_q2 19.8 MIRI miri False 6001 6000.0 0.7594000000000001
+s06_q3 20.05 MIRI miri False 6001 6000.0 0.76765
+s06_q4 20.3 MIRI miri False 6001 6000.0 0.7759
+w007 5.3906283153397085 MIRI consistency_check False 6001 6000.0 0.2838907344062104
+w008 13.799908320389276 MIRI consistency_check False 6001 6000.0 0.5613969745728461
+w009 27.513091575690556 MIRI consistency_check False 6001 6000.0 1.0139320219977885

@@ -1,0 +1,19 @@
+{
+  "backend": "image_method2",
+  "max_memory_gb": 112,
+  "mcfost_executable": "mcfost",
+  "mcfost_utils": "$MCFOST_UTILS",
+  "schema_version": 1,
+  "slurm": {
+    "analysis_cpus": 2,
+    "analysis_memory": "8G",
+    "analysis_time": "02:00:00",
+    "max_parallel": 16,
+    "memory": "160G",
+    "python": "/SET/BY/CONFIGURE",
+    "setup_lines": [],
+    "time": "24:00:00"
+  },
+  "threads": 64,
+  "timeout_seconds": 14400
+}

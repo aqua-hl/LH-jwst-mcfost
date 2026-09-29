@@ -1,0 +1,982 @@
+[
+  {
+    "id": "c01_q0",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "NIRSpec",
+    "psf_fwhm_arcsec": 0.036300000000000006,
+    "region": "nir_continuum",
+    "score": false,
+    "wavelength_um": 1.1
+  },
+  {
+    "id": "c01_q1",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "NIRSpec",
+    "psf_fwhm_arcsec": 0.036795,
+    "region": "nir_continuum",
+    "score": false,
+    "wavelength_um": 1.115
+  },
+  {
+    "id": "c01_q2",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "NIRSpec",
+    "psf_fwhm_arcsec": 0.03729,
+    "region": "nir_continuum",
+    "score": false,
+    "wavelength_um": 1.13
+  },
+  {
+    "id": "c01_q3",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "NIRSpec",
+    "psf_fwhm_arcsec": 0.037785,
+    "region": "nir_continuum",
+    "score": false,
+    "wavelength_um": 1.145
+  },
+  {
+    "id": "c01_q4",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "NIRSpec",
+    "psf_fwhm_arcsec": 0.03828,
+    "region": "nir_continuum",
+    "score": false,
+    "wavelength_um": 1.16
+  },
+  {
+    "id": "c02_q0",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "NIRSpec",
+    "psf_fwhm_arcsec": 0.03894,
+    "region": "nir_continuum",
+    "score": false,
+    "wavelength_um": 1.18
+  },
+  {
+    "id": "c02_q1",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "NIRSpec",
+    "psf_fwhm_arcsec": 0.039435,
+    "region": "nir_continuum",
+    "score": false,
+    "wavelength_um": 1.1949999999999998
+  },
+  {
+    "id": "c02_q2",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "NIRSpec",
+    "psf_fwhm_arcsec": 0.03993,
+    "region": "nir_continuum",
+    "score": false,
+    "wavelength_um": 1.21
+  },
+  {
+    "id": "c02_q3",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "NIRSpec",
+    "psf_fwhm_arcsec": 0.040425,
+    "region": "nir_continuum",
+    "score": false,
+    "wavelength_um": 1.225
+  },
+  {
+    "id": "c02_q4",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "NIRSpec",
+    "psf_fwhm_arcsec": 0.040920000000000005,
+    "region": "nir_continuum",
+    "score": false,
+    "wavelength_um": 1.24
+  },
+  {
+    "id": "c03_q0",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "NIRSpec",
+    "psf_fwhm_arcsec": 0.049236,
+    "region": "nir_continuum",
+    "score": false,
+    "wavelength_um": 1.492
+  },
+  {
+    "id": "c03_q1",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "NIRSpec",
+    "psf_fwhm_arcsec": 0.0497145,
+    "region": "nir_continuum",
+    "score": false,
+    "wavelength_um": 1.5065
+  },
+  {
+    "id": "c03_q2",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "NIRSpec",
+    "psf_fwhm_arcsec": 0.050193,
+    "region": "nir_continuum",
+    "score": false,
+    "wavelength_um": 1.521
+  },
+  {
+    "id": "c03_q3",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "NIRSpec",
+    "psf_fwhm_arcsec": 0.05067150000000001,
+    "region": "nir_continuum",
+    "score": false,
+    "wavelength_um": 1.5355
+  },
+  {
+    "id": "c03_q4",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "NIRSpec",
+    "psf_fwhm_arcsec": 0.05115,
+    "region": "nir_continuum",
+    "score": false,
+    "wavelength_um": 1.55
+  },
+  {
+    "id": "c04_q0",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "NIRSpec",
+    "psf_fwhm_arcsec": 0.056100000000000004,
+    "region": "nir_continuum",
+    "score": false,
+    "wavelength_um": 1.7
+  },
+  {
+    "id": "c04_q1",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "NIRSpec",
+    "psf_fwhm_arcsec": 0.056760000000000005,
+    "region": "nir_continuum",
+    "score": false,
+    "wavelength_um": 1.72
+  },
+  {
+    "id": "c04_q2",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "NIRSpec",
+    "psf_fwhm_arcsec": 0.057420000000000006,
+    "region": "nir_continuum",
+    "score": false,
+    "wavelength_um": 1.74
+  },
+  {
+    "id": "c04_q3",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "NIRSpec",
+    "psf_fwhm_arcsec": 0.05808,
+    "region": "nir_continuum",
+    "score": false,
+    "wavelength_um": 1.76
+  },
+  {
+    "id": "c04_q4",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "NIRSpec",
+    "psf_fwhm_arcsec": 0.05874,
+    "region": "nir_continuum",
+    "score": false,
+    "wavelength_um": 1.78
+  },
+  {
+    "id": "c05_q0",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "NIRSpec",
+    "psf_fwhm_arcsec": 0.07128000000000001,
+    "region": "nir_continuum",
+    "score": false,
+    "wavelength_um": 2.16
+  },
+  {
+    "id": "c05_q1",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "NIRSpec",
+    "psf_fwhm_arcsec": 0.07194,
+    "region": "nir_continuum",
+    "score": false,
+    "wavelength_um": 2.18
+  },
+  {
+    "id": "c05_q2",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "NIRSpec",
+    "psf_fwhm_arcsec": 0.07260000000000001,
+    "region": "nir_continuum",
+    "score": false,
+    "wavelength_um": 2.2
+  },
+  {
+    "id": "c05_q3",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "NIRSpec",
+    "psf_fwhm_arcsec": 0.07326,
+    "region": "nir_continuum",
+    "score": false,
+    "wavelength_um": 2.22
+  },
+  {
+    "id": "c05_q4",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "NIRSpec",
+    "psf_fwhm_arcsec": 0.07392000000000001,
+    "region": "nir_continuum",
+    "score": false,
+    "wavelength_um": 2.24
+  },
+  {
+    "id": "c06_q0",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "NIRSpec",
+    "psf_fwhm_arcsec": 0.07458,
+    "region": "nir_continuum",
+    "score": false,
+    "wavelength_um": 2.26
+  },
+  {
+    "id": "c06_q1",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "NIRSpec",
+    "psf_fwhm_arcsec": 0.07524,
+    "region": "nir_continuum",
+    "score": false,
+    "wavelength_um": 2.28
+  },
+  {
+    "id": "c06_q2",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "NIRSpec",
+    "psf_fwhm_arcsec": 0.0759,
+    "region": "nir_continuum",
+    "score": false,
+    "wavelength_um": 2.3
+  },
+  {
+    "id": "c06_q3",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "NIRSpec",
+    "psf_fwhm_arcsec": 0.07656,
+    "region": "nir_continuum",
+    "score": false,
+    "wavelength_um": 2.32
+  },
+  {
+    "id": "c06_q4",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "NIRSpec",
+    "psf_fwhm_arcsec": 0.07722,
+    "region": "nir_continuum",
+    "score": false,
+    "wavelength_um": 2.34
+  },
+  {
+    "id": "c07_q0",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "NIRSpec",
+    "psf_fwhm_arcsec": 0.08316,
+    "region": "nir_continuum",
+    "score": false,
+    "wavelength_um": 2.52
+  },
+  {
+    "id": "c07_q1",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "NIRSpec",
+    "psf_fwhm_arcsec": 0.08365500000000001,
+    "region": "nir_continuum",
+    "score": false,
+    "wavelength_um": 2.535
+  },
+  {
+    "id": "c07_q2",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "NIRSpec",
+    "psf_fwhm_arcsec": 0.08415,
+    "region": "nir_continuum",
+    "score": false,
+    "wavelength_um": 2.55
+  },
+  {
+    "id": "c07_q3",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "NIRSpec",
+    "psf_fwhm_arcsec": 0.084645,
+    "region": "nir_continuum",
+    "score": false,
+    "wavelength_um": 2.565
+  },
+  {
+    "id": "c07_q4",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "NIRSpec",
+    "psf_fwhm_arcsec": 0.08514000000000001,
+    "region": "nir_continuum",
+    "score": false,
+    "wavelength_um": 2.58
+  },
+  {
+    "id": "c08_q0",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "NIRSpec",
+    "psf_fwhm_arcsec": 0.12738,
+    "region": "nir_continuum",
+    "score": false,
+    "wavelength_um": 3.86
+  },
+  {
+    "id": "c08_q1",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "NIRSpec",
+    "psf_fwhm_arcsec": 0.12820499999999999,
+    "region": "nir_continuum",
+    "score": false,
+    "wavelength_um": 3.885
+  },
+  {
+    "id": "c08_q2",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "NIRSpec",
+    "psf_fwhm_arcsec": 0.12903,
+    "region": "nir_continuum",
+    "score": false,
+    "wavelength_um": 3.91
+  },
+  {
+    "id": "c08_q3",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "NIRSpec",
+    "psf_fwhm_arcsec": 0.129855,
+    "region": "nir_continuum",
+    "score": false,
+    "wavelength_um": 3.935
+  },
+  {
+    "id": "c08_q4",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "NIRSpec",
+    "psf_fwhm_arcsec": 0.13068000000000002,
+    "region": "nir_continuum",
+    "score": false,
+    "wavelength_um": 3.96
+  },
+  {
+    "id": "c09_q0",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "NIRSpec",
+    "psf_fwhm_arcsec": 0.148665,
+    "region": "nir_continuum",
+    "score": false,
+    "wavelength_um": 4.505
+  },
+  {
+    "id": "c09_q1",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "NIRSpec",
+    "psf_fwhm_arcsec": 0.148995,
+    "region": "nir_continuum",
+    "score": false,
+    "wavelength_um": 4.515
+  },
+  {
+    "id": "c09_q2",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "NIRSpec",
+    "psf_fwhm_arcsec": 0.149325,
+    "region": "nir_continuum",
+    "score": false,
+    "wavelength_um": 4.525
+  },
+  {
+    "id": "c09_q3",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "NIRSpec",
+    "psf_fwhm_arcsec": 0.149655,
+    "region": "nir_continuum",
+    "score": false,
+    "wavelength_um": 4.535
+  },
+  {
+    "id": "c09_q4",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "NIRSpec",
+    "psf_fwhm_arcsec": 0.149985,
+    "region": "nir_continuum",
+    "score": false,
+    "wavelength_um": 4.545
+  },
+  {
+    "id": "h01_q0",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "NIRSpec",
+    "psf_fwhm_arcsec": 0.08910000000000001,
+    "region": "nir_ice",
+    "score": false,
+    "wavelength_um": 2.7
+  },
+  {
+    "id": "h01_q1",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "NIRSpec",
+    "psf_fwhm_arcsec": 0.09025500000000002,
+    "region": "nir_ice",
+    "score": false,
+    "wavelength_um": 2.7350000000000003
+  },
+  {
+    "id": "h01_q2",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "NIRSpec",
+    "psf_fwhm_arcsec": 0.09141,
+    "region": "nir_ice",
+    "score": false,
+    "wavelength_um": 2.77
+  },
+  {
+    "id": "h01_q3",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "NIRSpec",
+    "psf_fwhm_arcsec": 0.092565,
+    "region": "nir_ice",
+    "score": false,
+    "wavelength_um": 2.8049999999999997
+  },
+  {
+    "id": "h01_q4",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "NIRSpec",
+    "psf_fwhm_arcsec": 0.09372,
+    "region": "nir_ice",
+    "score": false,
+    "wavelength_um": 2.84
+  },
+  {
+    "id": "h02_q0",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "NIRSpec",
+    "psf_fwhm_arcsec": 0.09504,
+    "region": "nir_ice",
+    "score": false,
+    "wavelength_um": 2.88
+  },
+  {
+    "id": "h02_q1",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "NIRSpec",
+    "psf_fwhm_arcsec": 0.096195,
+    "region": "nir_ice",
+    "score": false,
+    "wavelength_um": 2.915
+  },
+  {
+    "id": "h02_q2",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "NIRSpec",
+    "psf_fwhm_arcsec": 0.09735,
+    "region": "nir_ice",
+    "score": false,
+    "wavelength_um": 2.95
+  },
+  {
+    "id": "h02_q3",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "NIRSpec",
+    "psf_fwhm_arcsec": 0.098505,
+    "region": "nir_ice",
+    "score": false,
+    "wavelength_um": 2.985
+  },
+  {
+    "id": "h02_q4",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "NIRSpec",
+    "psf_fwhm_arcsec": 0.09966,
+    "region": "nir_ice",
+    "score": false,
+    "wavelength_um": 3.02
+  },
+  {
+    "id": "h03_q0",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "NIRSpec",
+    "psf_fwhm_arcsec": 0.10032,
+    "region": "nir_ice",
+    "score": false,
+    "wavelength_um": 3.04
+  },
+  {
+    "id": "h03_q1",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "NIRSpec",
+    "psf_fwhm_arcsec": 0.10147500000000001,
+    "region": "nir_ice",
+    "score": false,
+    "wavelength_um": 3.075
+  },
+  {
+    "id": "h03_q2",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "NIRSpec",
+    "psf_fwhm_arcsec": 0.10263000000000001,
+    "region": "nir_ice",
+    "score": false,
+    "wavelength_um": 3.1100000000000003
+  },
+  {
+    "id": "h03_q3",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "NIRSpec",
+    "psf_fwhm_arcsec": 0.103785,
+    "region": "nir_ice",
+    "score": false,
+    "wavelength_um": 3.145
+  },
+  {
+    "id": "h03_q4",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "NIRSpec",
+    "psf_fwhm_arcsec": 0.10494,
+    "region": "nir_ice",
+    "score": false,
+    "wavelength_um": 3.18
+  },
+  {
+    "id": "h04_q0",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "NIRSpec",
+    "psf_fwhm_arcsec": 0.10626000000000001,
+    "region": "nir_ice",
+    "score": false,
+    "wavelength_um": 3.22
+  },
+  {
+    "id": "h04_q1",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "NIRSpec",
+    "psf_fwhm_arcsec": 0.10857,
+    "region": "nir_ice",
+    "score": false,
+    "wavelength_um": 3.29
+  },
+  {
+    "id": "h04_q2",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "NIRSpec",
+    "psf_fwhm_arcsec": 0.11088000000000002,
+    "region": "nir_ice",
+    "score": false,
+    "wavelength_um": 3.3600000000000003
+  },
+  {
+    "id": "h04_q3",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "NIRSpec",
+    "psf_fwhm_arcsec": 0.11319000000000001,
+    "region": "nir_ice",
+    "score": false,
+    "wavelength_um": 3.43
+  },
+  {
+    "id": "h04_q4",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "NIRSpec",
+    "psf_fwhm_arcsec": 0.1155,
+    "region": "nir_ice",
+    "score": false,
+    "wavelength_um": 3.5
+  },
+  {
+    "id": "s01_q0",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "MIRI",
+    "psf_fwhm_arcsec": 0.3766,
+    "region": "miri",
+    "score": false,
+    "wavelength_um": 8.2
+  },
+  {
+    "id": "s01_q1",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "MIRI",
+    "psf_fwhm_arcsec": 0.37989999999999996,
+    "region": "miri",
+    "score": false,
+    "wavelength_um": 8.299999999999999
+  },
+  {
+    "id": "s01_q2",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "MIRI",
+    "psf_fwhm_arcsec": 0.38319999999999993,
+    "region": "miri",
+    "score": false,
+    "wavelength_um": 8.399999999999999
+  },
+  {
+    "id": "s01_q3",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "MIRI",
+    "psf_fwhm_arcsec": 0.3865,
+    "region": "miri",
+    "score": false,
+    "wavelength_um": 8.5
+  },
+  {
+    "id": "s01_q4",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "MIRI",
+    "psf_fwhm_arcsec": 0.3898,
+    "region": "miri",
+    "score": false,
+    "wavelength_um": 8.6
+  },
+  {
+    "id": "s02_q0",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "MIRI",
+    "psf_fwhm_arcsec": 0.41290000000000004,
+    "region": "miri",
+    "score": false,
+    "wavelength_um": 9.3
+  },
+  {
+    "id": "s02_q1",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "MIRI",
+    "psf_fwhm_arcsec": 0.4195,
+    "region": "miri",
+    "score": false,
+    "wavelength_um": 9.5
+  },
+  {
+    "id": "s02_q2",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "MIRI",
+    "psf_fwhm_arcsec": 0.4261,
+    "region": "miri",
+    "score": false,
+    "wavelength_um": 9.7
+  },
+  {
+    "id": "s02_q3",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "MIRI",
+    "psf_fwhm_arcsec": 0.43270000000000003,
+    "region": "miri",
+    "score": false,
+    "wavelength_um": 9.9
+  },
+  {
+    "id": "s02_q4",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "MIRI",
+    "psf_fwhm_arcsec": 0.43929999999999997,
+    "region": "miri",
+    "score": false,
+    "wavelength_um": 10.1
+  },
+  {
+    "id": "s03_q0",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "MIRI",
+    "psf_fwhm_arcsec": 0.45909999999999995,
+    "region": "miri",
+    "score": false,
+    "wavelength_um": 10.7
+  },
+  {
+    "id": "s03_q1",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "MIRI",
+    "psf_fwhm_arcsec": 0.46404999999999996,
+    "region": "miri",
+    "score": false,
+    "wavelength_um": 10.85
+  },
+  {
+    "id": "s03_q2",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "MIRI",
+    "psf_fwhm_arcsec": 0.469,
+    "region": "miri",
+    "score": false,
+    "wavelength_um": 11.0
+  },
+  {
+    "id": "s03_q3",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "MIRI",
+    "psf_fwhm_arcsec": 0.47395000000000004,
+    "region": "miri",
+    "score": false,
+    "wavelength_um": 11.15
+  },
+  {
+    "id": "s03_q4",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "MIRI",
+    "psf_fwhm_arcsec": 0.47890000000000005,
+    "region": "miri",
+    "score": false,
+    "wavelength_um": 11.3
+  },
+  {
+    "id": "s04_q0",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "MIRI",
+    "psf_fwhm_arcsec": 0.5152,
+    "region": "miri",
+    "score": false,
+    "wavelength_um": 12.4
+  },
+  {
+    "id": "s04_q1",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "MIRI",
+    "psf_fwhm_arcsec": 0.52015,
+    "region": "miri",
+    "score": false,
+    "wavelength_um": 12.55
+  },
+  {
+    "id": "s04_q2",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "MIRI",
+    "psf_fwhm_arcsec": 0.5251,
+    "region": "miri",
+    "score": false,
+    "wavelength_um": 12.7
+  },
+  {
+    "id": "s04_q3",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "MIRI",
+    "psf_fwhm_arcsec": 0.53005,
+    "region": "miri",
+    "score": false,
+    "wavelength_um": 12.85
+  },
+  {
+    "id": "s04_q4",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "MIRI",
+    "psf_fwhm_arcsec": 0.535,
+    "region": "miri",
+    "score": false,
+    "wavelength_um": 13.0
+  },
+  {
+    "id": "s05_q0",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "MIRI",
+    "psf_fwhm_arcsec": 0.7033,
+    "region": "miri",
+    "score": false,
+    "wavelength_um": 18.1
+  },
+  {
+    "id": "s05_q1",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "MIRI",
+    "psf_fwhm_arcsec": 0.7090750000000001,
+    "region": "miri",
+    "score": false,
+    "wavelength_um": 18.275000000000002
+  },
+  {
+    "id": "s05_q2",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "MIRI",
+    "psf_fwhm_arcsec": 0.7148500000000001,
+    "region": "miri",
+    "score": false,
+    "wavelength_um": 18.450000000000003
+  },
+  {
+    "id": "s05_q3",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "MIRI",
+    "psf_fwhm_arcsec": 0.720625,
+    "region": "miri",
+    "score": false,
+    "wavelength_um": 18.625
+  },
+  {
+    "id": "s05_q4",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "MIRI",
+    "psf_fwhm_arcsec": 0.7264,
+    "region": "miri",
+    "score": false,
+    "wavelength_um": 18.8
+  },
+  {
+    "id": "s06_q0",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "MIRI",
+    "psf_fwhm_arcsec": 0.7429,
+    "region": "miri",
+    "score": false,
+    "wavelength_um": 19.3
+  },
+  {
+    "id": "s06_q1",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "MIRI",
+    "psf_fwhm_arcsec": 0.75115,
+    "region": "miri",
+    "score": false,
+    "wavelength_um": 19.55
+  },
+  {
+    "id": "s06_q2",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "MIRI",
+    "psf_fwhm_arcsec": 0.7594000000000001,
+    "region": "miri",
+    "score": false,
+    "wavelength_um": 19.8
+  },
+  {
+    "id": "s06_q3",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "MIRI",
+    "psf_fwhm_arcsec": 0.76765,
+    "region": "miri",
+    "score": false,
+    "wavelength_um": 20.05
+  },
+  {
+    "id": "s06_q4",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "MIRI",
+    "psf_fwhm_arcsec": 0.7759,
+    "region": "miri",
+    "score": false,
+    "wavelength_um": 20.3
+  },
+  {
+    "id": "w007",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "MIRI",
+    "psf_fwhm_arcsec": 0.2838907344062104,
+    "region": "consistency_check",
+    "score": false,
+    "wavelength_um": 5.3906283153397085
+  },
+  {
+    "id": "w008",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "MIRI",
+    "psf_fwhm_arcsec": 0.5613969745728461,
+    "region": "consistency_check",
+    "score": false,
+    "wavelength_um": 13.799908320389276
+  },
+  {
+    "id": "w009",
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "instrument": "MIRI",
+    "psf_fwhm_arcsec": 1.0139320219977885,
+    "region": "consistency_check",
+    "score": false,
+    "wavelength_um": 27.513091575690556
+  }
+]

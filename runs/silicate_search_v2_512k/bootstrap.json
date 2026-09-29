@@ -1,0 +1,584 @@
+{
+  "cases": [
+    {
+      "carbon_mass_fraction": 0.0,
+      "density_exponent": -1.5,
+      "ice_mass_fraction": 0.04,
+      "inclination_deg": 60.0,
+      "index": 0,
+      "material_id": "draine",
+      "role": "composition",
+      "silicate_mass_fraction": 0.96,
+      "stages": [
+        1
+      ]
+    },
+    {
+      "carbon_mass_fraction": 0.0,
+      "density_exponent": -1.5,
+      "ice_mass_fraction": 0.04,
+      "inclination_deg": 70.0,
+      "index": 1,
+      "material_id": "draine",
+      "role": "composition",
+      "silicate_mass_fraction": 0.96,
+      "stages": [
+        1
+      ]
+    },
+    {
+      "carbon_mass_fraction": 0.0,
+      "density_exponent": -1.5,
+      "ice_mass_fraction": 0.08,
+      "inclination_deg": 60.0,
+      "index": 2,
+      "material_id": "draine",
+      "role": "composition",
+      "silicate_mass_fraction": 0.92,
+      "stages": [
+        1
+      ]
+    },
+    {
+      "carbon_mass_fraction": 0.0,
+      "density_exponent": -1.5,
+      "ice_mass_fraction": 0.08,
+      "inclination_deg": 70.0,
+      "index": 3,
+      "material_id": "draine",
+      "role": "composition",
+      "silicate_mass_fraction": 0.92,
+      "stages": [
+        1
+      ]
+    },
+    {
+      "carbon_mass_fraction": 0.0,
+      "density_exponent": -1.5,
+      "ice_mass_fraction": 0.12,
+      "inclination_deg": 60.0,
+      "index": 4,
+      "material_id": "draine",
+      "role": "composition",
+      "silicate_mass_fraction": 0.88,
+      "stages": [
+        1
+      ]
+    },
+    {
+      "carbon_mass_fraction": 0.0,
+      "density_exponent": -1.5,
+      "ice_mass_fraction": 0.12,
+      "inclination_deg": 70.0,
+      "index": 5,
+      "material_id": "draine",
+      "role": "composition",
+      "silicate_mass_fraction": 0.88,
+      "stages": [
+        1
+      ]
+    },
+    {
+      "carbon_mass_fraction": 0.1,
+      "density_exponent": -1.5,
+      "ice_mass_fraction": 0.04,
+      "inclination_deg": 60.0,
+      "index": 6,
+      "material_id": "draine",
+      "role": "composition",
+      "silicate_mass_fraction": 0.86,
+      "stages": [
+        1
+      ]
+    },
+    {
+      "carbon_mass_fraction": 0.1,
+      "density_exponent": -1.5,
+      "ice_mass_fraction": 0.04,
+      "inclination_deg": 70.0,
+      "index": 7,
+      "material_id": "draine",
+      "role": "composition",
+      "silicate_mass_fraction": 0.86,
+      "stages": [
+        1
+      ]
+    },
+    {
+      "carbon_mass_fraction": 0.1,
+      "density_exponent": -1.5,
+      "ice_mass_fraction": 0.08,
+      "inclination_deg": 60.0,
+      "index": 8,
+      "material_id": "draine",
+      "role": "composition",
+      "silicate_mass_fraction": 0.82,
+      "stages": [
+        1
+      ]
+    },
+    {
+      "carbon_mass_fraction": 0.1,
+      "density_exponent": -1.5,
+      "ice_mass_fraction": 0.08,
+      "inclination_deg": 70.0,
+      "index": 9,
+      "material_id": "draine",
+      "role": "composition",
+      "silicate_mass_fraction": 0.82,
+      "stages": [
+        1
+      ]
+    },
+    {
+      "carbon_mass_fraction": 0.1,
+      "density_exponent": -1.5,
+      "ice_mass_fraction": 0.12,
+      "inclination_deg": 60.0,
+      "index": 10,
+      "material_id": "draine",
+      "role": "composition",
+      "silicate_mass_fraction": 0.78,
+      "stages": [
+        1
+      ]
+    },
+    {
+      "carbon_mass_fraction": 0.1,
+      "density_exponent": -1.5,
+      "ice_mass_fraction": 0.12,
+      "inclination_deg": 70.0,
+      "index": 11,
+      "material_id": "draine",
+      "role": "composition",
+      "silicate_mass_fraction": 0.78,
+      "stages": [
+        1
+      ]
+    },
+    {
+      "carbon_mass_fraction": 0.2,
+      "density_exponent": -1.5,
+      "ice_mass_fraction": 0.04,
+      "inclination_deg": 60.0,
+      "index": 12,
+      "material_id": "draine",
+      "role": "composition",
+      "silicate_mass_fraction": 0.76,
+      "stages": [
+        1
+      ]
+    },
+    {
+      "carbon_mass_fraction": 0.2,
+      "density_exponent": -1.5,
+      "ice_mass_fraction": 0.04,
+      "inclination_deg": 70.0,
+      "index": 13,
+      "material_id": "draine",
+      "role": "composition",
+      "silicate_mass_fraction": 0.76,
+      "stages": [
+        1
+      ]
+    },
+    {
+      "carbon_mass_fraction": 0.2,
+      "density_exponent": -1.5,
+      "ice_mass_fraction": 0.08,
+      "inclination_deg": 60.0,
+      "index": 14,
+      "material_id": "draine",
+      "role": "composition",
+      "silicate_mass_fraction": 0.72,
+      "stages": [
+        1,
+        2
+      ]
+    },
+    {
+      "carbon_mass_fraction": 0.2,
+      "density_exponent": -1.5,
+      "ice_mass_fraction": 0.08,
+      "inclination_deg": 70.0,
+      "index": 15,
+      "material_id": "draine",
+      "role": "composition",
+      "silicate_mass_fraction": 0.72,
+      "stages": [
+        1
+      ]
+    },
+    {
+      "carbon_mass_fraction": 0.2,
+      "density_exponent": -1.5,
+      "ice_mass_fraction": 0.12,
+      "inclination_deg": 60.0,
+      "index": 16,
+      "material_id": "draine",
+      "role": "composition",
+      "silicate_mass_fraction": 0.68,
+      "stages": [
+        1,
+        2
+      ]
+    },
+    {
+      "carbon_mass_fraction": 0.2,
+      "density_exponent": -1.5,
+      "ice_mass_fraction": 0.12,
+      "inclination_deg": 70.0,
+      "index": 17,
+      "material_id": "draine",
+      "role": "composition",
+      "silicate_mass_fraction": 0.68,
+      "stages": [
+        1
+      ]
+    },
+    {
+      "carbon_mass_fraction": 0.3,
+      "density_exponent": -1.5,
+      "ice_mass_fraction": 0.04,
+      "inclination_deg": 60.0,
+      "index": 18,
+      "material_id": "draine",
+      "role": "composition",
+      "silicate_mass_fraction": 0.66,
+      "stages": [
+        1
+      ]
+    },
+    {
+      "carbon_mass_fraction": 0.3,
+      "density_exponent": -1.5,
+      "ice_mass_fraction": 0.04,
+      "inclination_deg": 70.0,
+      "index": 19,
+      "material_id": "draine",
+      "role": "composition",
+      "silicate_mass_fraction": 0.66,
+      "stages": [
+        1
+      ]
+    },
+    {
+      "carbon_mass_fraction": 0.3,
+      "density_exponent": -1.5,
+      "ice_mass_fraction": 0.08,
+      "inclination_deg": 60.0,
+      "index": 20,
+      "material_id": "draine",
+      "role": "composition",
+      "silicate_mass_fraction": 0.62,
+      "stages": [
+        1
+      ]
+    },
+    {
+      "carbon_mass_fraction": 0.3,
+      "density_exponent": -1.5,
+      "ice_mass_fraction": 0.08,
+      "inclination_deg": 70.0,
+      "index": 21,
+      "material_id": "draine",
+      "role": "composition",
+      "silicate_mass_fraction": 0.62,
+      "stages": [
+        1
+      ]
+    },
+    {
+      "carbon_mass_fraction": 0.3,
+      "density_exponent": -1.5,
+      "ice_mass_fraction": 0.12,
+      "inclination_deg": 60.0,
+      "index": 22,
+      "material_id": "draine",
+      "role": "composition",
+      "silicate_mass_fraction": 0.58,
+      "stages": [
+        1
+      ]
+    },
+    {
+      "carbon_mass_fraction": 0.3,
+      "density_exponent": -1.5,
+      "ice_mass_fraction": 0.12,
+      "inclination_deg": 70.0,
+      "index": 23,
+      "material_id": "draine",
+      "role": "composition",
+      "silicate_mass_fraction": 0.58,
+      "stages": [
+        1
+      ]
+    },
+    {
+      "carbon_mass_fraction": 0.2,
+      "density_exponent": -1.75,
+      "ice_mass_fraction": 0.08,
+      "inclination_deg": 60.0,
+      "index": 24,
+      "material_id": "draine",
+      "role": "material_structure",
+      "silicate_mass_fraction": 0.72,
+      "stages": [
+        2
+      ]
+    },
+    {
+      "carbon_mass_fraction": 0.2,
+      "density_exponent": -1.75,
+      "ice_mass_fraction": 0.12,
+      "inclination_deg": 60.0,
+      "index": 25,
+      "material_id": "draine",
+      "role": "material_structure",
+      "silicate_mass_fraction": 0.68,
+      "stages": [
+        2
+      ]
+    },
+    {
+      "carbon_mass_fraction": 0.2,
+      "density_exponent": -1.5,
+      "ice_mass_fraction": 0.08,
+      "inclination_deg": 60.0,
+      "index": 26,
+      "material_id": "pyroxene_mg50",
+      "role": "material_structure",
+      "silicate_mass_fraction": 0.72,
+      "stages": [
+        2
+      ]
+    },
+    {
+      "carbon_mass_fraction": 0.2,
+      "density_exponent": -1.5,
+      "ice_mass_fraction": 0.12,
+      "inclination_deg": 60.0,
+      "index": 27,
+      "material_id": "pyroxene_mg50",
+      "role": "material_structure",
+      "silicate_mass_fraction": 0.68,
+      "stages": [
+        2
+      ]
+    },
+    {
+      "carbon_mass_fraction": 0.2,
+      "density_exponent": -1.75,
+      "ice_mass_fraction": 0.08,
+      "inclination_deg": 60.0,
+      "index": 28,
+      "material_id": "pyroxene_mg50",
+      "role": "material_structure",
+      "silicate_mass_fraction": 0.72,
+      "stages": [
+        2
+      ]
+    },
+    {
+      "carbon_mass_fraction": 0.2,
+      "density_exponent": -1.75,
+      "ice_mass_fraction": 0.12,
+      "inclination_deg": 60.0,
+      "index": 29,
+      "material_id": "pyroxene_mg50",
+      "role": "material_structure",
+      "silicate_mass_fraction": 0.68,
+      "stages": [
+        2
+      ]
+    },
+    {
+      "carbon_mass_fraction": 0.2,
+      "density_exponent": -1.5,
+      "ice_mass_fraction": 0.08,
+      "inclination_deg": 60.0,
+      "index": 30,
+      "material_id": "olivine_mg50",
+      "role": "material_structure",
+      "silicate_mass_fraction": 0.72,
+      "stages": [
+        2
+      ]
+    },
+    {
+      "carbon_mass_fraction": 0.2,
+      "density_exponent": -1.5,
+      "ice_mass_fraction": 0.12,
+      "inclination_deg": 60.0,
+      "index": 31,
+      "material_id": "olivine_mg50",
+      "role": "material_structure",
+      "silicate_mass_fraction": 0.68,
+      "stages": [
+        2
+      ]
+    },
+    {
+      "carbon_mass_fraction": 0.2,
+      "density_exponent": -1.75,
+      "ice_mass_fraction": 0.08,
+      "inclination_deg": 60.0,
+      "index": 32,
+      "material_id": "olivine_mg50",
+      "role": "material_structure",
+      "silicate_mass_fraction": 0.72,
+      "stages": [
+        2
+      ]
+    },
+    {
+      "carbon_mass_fraction": 0.2,
+      "density_exponent": -1.75,
+      "ice_mass_fraction": 0.12,
+      "inclination_deg": 60.0,
+      "index": 33,
+      "material_id": "olivine_mg50",
+      "role": "material_structure",
+      "silicate_mass_fraction": 0.68,
+      "stages": [
+        2
+      ]
+    }
+  ],
+  "comparison_count": 48,
+  "created_utc": "2026-09-29T22:37:17.832813+00:00",
+  "dust_prescription": {
+    "amax_um": 0.4,
+    "amin_um": 0.03,
+    "carbon_size_distribution_assumption": "Same as envelope silicate; disk remains 70/30 silicate/carbon Mie",
+    "family": "separate_DHS_silicate_carbon_H2O30K",
+    "grain_bins": 50,
+    "ice_laboratory_temperature_k": 30.0,
+    "native_out_of_range_treatment_accepted": true,
+    "optical_tables_modified": false,
+    "porosity": 0.0,
+    "size_exponent": 2.75,
+    "species": {
+      "carbon": {
+        "density_g_cm3": 1.8,
+        "filename": "ac_opct.dat",
+        "sha256": "ef8f09849580a0859f29f61216486e7e249103759f851bcfa7abe11c09a44de2"
+      },
+      "draine": {
+        "density_g_cm3": 3.5,
+        "filename": "Draine_Si_sUV.dat",
+        "label": "Draine astronomical silicate",
+        "rows": 1201,
+        "sha256": "3a6af751429f6f8dc948e60675b13be01ffcbed0662eec62934ec6d9c61dea80",
+        "wavelength_max_um": 1000.0,
+        "wavelength_min_um": 0.001
+      },
+      "ice": {
+        "density_g_cm3": 0.94,
+        "filename": "H2O_30K_Leiden_mcfost.dat",
+        "sha256": "29b572f8907993870d0b15823e1182a9c4813b8cdb8f4fbdd40ef39cf28fb00c"
+      },
+      "olivine_mg50": {
+        "density_g_cm3": 3.71,
+        "filename": "Olivine_MgFeSiO4_Dorschner1995_mcfost.dat",
+        "label": "Amorphous MgFeSiO4 glass",
+        "rows": 109,
+        "sha256": "41e34acb22986f83aeb1113d31e73acee19707add259198036ca51baa25f3965",
+        "wavelength_max_um": 500.0,
+        "wavelength_min_um": 0.2
+      },
+      "pyroxene_mg50": {
+        "density_g_cm3": 3.2,
+        "filename": "Pyroxene_Mg05Fe05SiO3_Dorschner1995_mcfost.dat",
+        "label": "Amorphous Mg0.5Fe0.5SiO3 glass",
+        "rows": 109,
+        "sha256": "05c1ebf12963ff3c9de9dd32e168135e62986e527e60343da5e432ff018b44a2",
+        "wavelength_max_um": 500.0,
+        "wavelength_min_um": 0.2
+      }
+    },
+    "tail_physical_accuracy_certified": false,
+    "temperature_dependent_ice_survival": false,
+    "vmax": 0.1
+  },
+  "experiment_id": "silicate_search_v2",
+  "input_hashes": {
+    ".gitignore": "ad5e129a3c5fd73a31c44316b80a85ce3f021ac920bb5d4e44ba50a711acd3f6",
+    "DESIGN.md": "3d63e07d43f028d7cc1118355d7527d2b4639c6276d4d048c9bf3b064e82c786",
+    "README.md": "047459275e4cd515acdcfe6d636668abb594cb994fbfe0a16faf57c1a11ec748",
+    "code/analyze_extinction_ice_production.py": "7473a8cbcb3daccc6d85785dc230d7f85c068356daf60192904a8d649a0f3e12",
+    "code/analyze_silicate_search_v2.py": "99d14a9447d2f806e9ef8c8d578e8939367483431fcb06aec8cb7ccc0bd4d365",
+    "code/analyze_silicate_structure_production.py": "63edd248440ca0342fd2d3e369f86a070652c802352dc329c3b575666f91d5c8",
+    "code/build_silicate_search_v2.py": "aaddeeaeb05c74a98e7df3e40f529634d9c685e3154bd5bf2f7234a87541c312",
+    "code/configure_extinction_ice_numerics_v2.py": "48c9cadd2c7320e89da2f8d9935beb0660e3500088bbb5638aedc63293fbf1de",
+    "code/configure_silicate_search_v2.py": "4f175e5c1124acd97306438e84acf1e14354ab50e079c5de278d7924a42ed258",
+    "code/production_task.py": "8c93fbcfc2ead9378968cd2a22a3493e1af16dea455398b11c244bdd04cb8112",
+    "code/silicate_pilot_design.py": "4b2f245a84a04d81704b732ad1f12b35124a2cb99309e61066b5d90eec11580b",
+    "code/silicate_search_v2_design.py": "6a60e5daf00ab677e9d5f9fd9f053f79b50892bad5fd958735df872f1b13da1b",
+    "code/silicate_search_v2_stage0.py": "851f3a0a4fe64a90ee04fb954523271b0479155c8f886cef99f83219bde9a515",
+    "code/silicate_search_v2_task.py": "ead56536783483a90a6eb3948dfbd54d6c149de17f420e2202aaf921b507dd0b",
+    "code/silicate_structure_design.py": "a30371db4d777772db2340ad47c1c683720ffecd2a77c6f85689474e8a11fa34",
+    "code/src/mcfost_grid/__init__.py": "609e7d7dd83b26d760ec8b34a4be2ec17b8e41edf14fb4ba14cc9d81c9a9438a",
+    "code/src/mcfost_grid/analysis.py": "03650a73ffea799fde12fd4689baeb690019d6acad063ff096c9935f16729618",
+    "code/src/mcfost_grid/configuration.py": "a4c9d1da5ffd578695cf7d462e6eda2ce907f520f2360fe99d1c329636659f08",
+    "code/src/mcfost_grid/photometry.py": "5ef6bbebaece535a22c85ab2913cca08089bad00f82e2cff36323415b8142bbf",
+    "code/src/mcfost_grid/physics.py": "15e83d1861c089827719aee7e12ead523f93dc7a2be33b7ca8cfde3310bf54bc",
+    "code/src/mcfost_grid/quality.py": "de0766c55fff0d2898440a764ec0c4cd4321562f1bdb9ec6614a1a4fc0b8052b",
+    "code/src/mcfost_grid/runner.py": "de3aa63fc7f6fd25847f480f8e7a67c0ce404e842f2e91ef027341dc750b4e8f",
+    "code/src/mcfost_grid/slurm.py": "3176e60f7be1881b65b2500f33bb5f6b8d9aaa9bc9be6223c3cdc356ac55c7f6",
+    "code/workflow.py": "c368a04f5e1d2ddeee0cbb5d77bfd59c5f055b6247a88b66f7d5110b4ec6e468",
+    "inputs/H2O30K_laboratory_reference.dat": "29b572f8907993870d0b15823e1182a9c4813b8cdb8f4fbdd40ef39cf28fb00c",
+    "inputs/ice_input_provenance.json": "d90291e8f03de9dde6f7c08f326c7a398aa4432cd5df7439afbdd038cd9bdd50",
+    "inputs/laboratory_silicates_manifest.json": "5d18ab8f7013f9eb30dbbc179c6aae286ef74ce47c9269901d1d04b2a4fd49f6",
+    "inputs/observed_spectrum.ecsv": "d2d51c6b0c0c229145b147d8793b03fa721e6a4cca191d790fb2082625d3e0d6",
+    "inputs/production_anchors.json": "b7c37ab3f69b340f45ad7d7fa5e94fa68e35c93cd83122084c8a8061c8b62835",
+    "inputs/production_observation_contract.json": "436aff5f403b0c61d5fe0022ca70dd49d09e2ecb2ab297938d7ac24ef4ae2bc1",
+    "inputs/production_probes.ecsv": "3109fc84252a80b15c975e0e7ea970740ecbadb9bf6b9165d362e6468a63555e",
+    "inputs/stage0_wavelengths.json": "0bf5f1d290540a45ec54a1b98ed179cd8eede104c21b25e461bdc431eb79b2de",
+    "inputs/template.para": "28e8ce08b312e24af72cf45cb679b895e70d6ea7d2dd1e03b1cab2169f03b9ca",
+    "inputs/utils/Dust/Draine_Si_sUV.dat": "3a6af751429f6f8dc948e60675b13be01ffcbed0662eec62934ec6d9c61dea80",
+    "inputs/utils/Dust/H2O_30K_Leiden_mcfost.dat": "29b572f8907993870d0b15823e1182a9c4813b8cdb8f4fbdd40ef39cf28fb00c",
+    "inputs/utils/Dust/Olivine_MgFeSiO4_Dorschner1995_mcfost.dat": "41e34acb22986f83aeb1113d31e73acee19707add259198036ca51baa25f3965",
+    "inputs/utils/Dust/Pyroxene_Mg05Fe05SiO3_Dorschner1995_mcfost.dat": "05c1ebf12963ff3c9de9dd32e168135e62986e527e60343da5e432ff018b44a2",
+    "inputs/utils/Dust/ac_opct.dat": "ef8f09849580a0859f29f61216486e7e249103759f851bcfa7abe11c09a44de2",
+    "inputs/utils/Dust/ice_opct.dat": "44625b4918b7015e97d3c92b3f19e9e06eb57d209f3b1a946ee8f141215c8697",
+    "inputs/utils/Stellar_Spectra/lte4000-3.5.NextGen.fits.gz": "a626d82c52e07dec12b7fe141aeb2c9af974516ffe39178a4c9a2094c2a6d87d",
+    "requirements-cluster.txt": "335be12610625b9f8097df832a2d9e170aa7fbf523ac170a7155e03dc9e8c34b"
+  },
+  "matched_masses_available": false,
+  "model_count": 34,
+  "numerics": {
+    "grains": 50,
+    "grid_n_inner": 20,
+    "grid_nr": 100,
+    "grid_ntheta": 70,
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "photons_image": 512000,
+    "photons_sed": 512000,
+    "photons_temperature": 512000,
+    "random_seed": 43001
+  },
+  "parent_manifest_sha256": "921fbdd772e456d5266a750b1049caa3f33b4fd5555e23f96b4f151a63bdc258",
+  "production_parameters_rendered": false,
+  "schema_version": 1,
+  "selection_rule": "All compositions and comparisons fixed before opacity/RT outputs; Stage 0 sets only mass normalization",
+  "stage0_required": true,
+  "success_criteria": {
+    "h04_in_success_criterion": false,
+    "ice_bands": [
+      "h02",
+      "h03"
+    ],
+    "ice_normalized_shapes_also_reported": true,
+    "ice_raw_log_residual_abs_dex_max": 0.15,
+    "long_miri_bands": [
+      "s05",
+      "s06"
+    ],
+    "long_miri_raw_log_residual_abs_dex_max": 0.15,
+    "nir_continuum_log_residual_rms_dex_max": 0.2,
+    "silicate_log_shape_abs_dex_max": 0.1,
+    "statistical_acceptance_region": false
+  }
+}
