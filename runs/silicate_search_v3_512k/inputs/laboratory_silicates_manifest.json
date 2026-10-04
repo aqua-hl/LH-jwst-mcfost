@@ -1,0 +1,126 @@
+{
+  "cautions": [
+    "Both candidates are amorphous glasses, not anisotropic crystalline minerals.",
+    "No material is selected as a preferred TMC1A fit.",
+    "Downloaded tabulation spans 0.2-500 micron, narrower than the historical 0.1-3000 micron temperature grid.",
+    "MCFOST 4.1.13 holds n,k constant below minimum wavelength and extends each with its endpoint log-log slope above maximum.",
+    "This numerical extension is not laboratory evidence and requires sensitivity checks before physical inference.",
+    "Bulk densities differ from historical Draine density; this changes opacity per dust mass as well as spectral shape.",
+    "A new temperature solution is required after changing material; old temperature fields are not reusable for a self-consistent model.",
+    "MCFOST Tsub in the header is not measurement temperature, and the current physical template disables sublimation.",
+    "The unchanged laboratory H2O companion has zero k values and only extends to 19.94054 micron; combined use needs explicit numerical and coverage checks."
+  ],
+  "citation": "Dorschner, Begemann, Henning, Jaeger & Mutschke (1995), Astronomy & Astrophysics 300, 503",
+  "companion_inputs": {
+    "Draine_Si_sUV.dat": {
+      "file": "Dust/Draine_Si_sUV.dat",
+      "modified": false,
+      "sha256": "3a6af751429f6f8dc948e60675b13be01ffcbed0662eec62934ec6d9c61dea80",
+      "source": "reference/dust/Draine_Si_sUV.dat"
+    },
+    "H2O_30K_Leiden_mcfost.dat": {
+      "file": "Dust/H2O_30K_Leiden_mcfost.dat",
+      "modified": false,
+      "sha256": "29b572f8907993870d0b15823e1182a9c4813b8cdb8f4fbdd40ef39cf28fb00c",
+      "source": "reference/dust/H2O_30K_Leiden_mcfost.dat",
+      "wavelength_max_um": 19.940540101,
+      "wavelength_min_um": 0.25004000002,
+      "zero_k_intervals_um": [
+        [
+          2.2657099981,
+          2.3444900016,
+          13
+        ],
+        [
+          2.3576299977,
+          2.364189998,
+          2
+        ],
+        [
+          2.3970199998,
+          2.3970199998,
+          1
+        ],
+        [
+          9.0086700071,
+          10.236450019,
+          188
+        ],
+        [
+          10.269280034,
+          10.275849951,
+          2
+        ]
+      ],
+      "zero_k_policy": "original zero values preserved; logarithmic interpolation risk, not silently floored",
+      "zero_k_rows": 206
+    },
+    "ac_opct.dat": {
+      "file": "Dust/ac_opct.dat",
+      "modified": false,
+      "sha256": "ef8f09849580a0859f29f61216486e7e249103759f851bcfa7abe11c09a44de2",
+      "source": "reference/runtime_assets/Dust/ac_opct.dat"
+    },
+    "ice_opct.dat": {
+      "file": "Dust/ice_opct.dat",
+      "modified": false,
+      "sha256": "44625b4918b7015e97d3c92b3f19e9e06eb57d209f3b1a946ee8f141215c8697",
+      "source": "reference/runtime_assets/Dust/ice_opct.dat"
+    }
+  },
+  "download_date": "2026-09-23",
+  "materials": {
+    "olivine_mg50": {
+      "density_g_cm3": 3.71,
+      "file": "Dust/Olivine_MgFeSiO4_Dorschner1995_mcfost.dat",
+      "filename": "Olivine_MgFeSiO4_Dorschner1995_mcfost.dat",
+      "formula": "MgFeSiO4",
+      "input_format": "MCFOST density/Tsub header, blank line, wavelength_um n k",
+      "label": "Amorphous olivine-stoichiometry glass",
+      "measurement_temperature_k": null,
+      "measurement_temperature_status": "not specified by verified primary table/landing page",
+      "n_k_modified": false,
+      "output_sha256": "41e34acb22986f83aeb1113d31e73acee19707add259198036ca51baa25f3965",
+      "phase": "amorphous glass",
+      "raw_file": "olmg50.txt",
+      "rows": 109,
+      "source_sha256": "4241a2d0e50f81d7c53bd486741bf1eb33878ea5b1b6337924f94682440c6f6a",
+      "source_url": "https://www2.astro.uni-jena.de/Laboratory/OCDB/data/silicate/amorph/olmg50.txt",
+      "sublimation_temperature_basis": "adopted historical silicate header value, not a laboratory measurement",
+      "sublimation_temperature_k": 1500.0,
+      "wavelength_max_um": 500.0,
+      "wavelength_min_um": 0.2
+    },
+    "pyroxene_mg50": {
+      "density_g_cm3": 3.2,
+      "file": "Dust/Pyroxene_Mg05Fe05SiO3_Dorschner1995_mcfost.dat",
+      "filename": "Pyroxene_Mg05Fe05SiO3_Dorschner1995_mcfost.dat",
+      "formula": "Mg0.5Fe0.5SiO3",
+      "input_format": "MCFOST density/Tsub header, blank line, wavelength_um n k",
+      "label": "Amorphous pyroxene-stoichiometry glass",
+      "measurement_temperature_k": null,
+      "measurement_temperature_status": "not specified by verified primary table/landing page",
+      "n_k_modified": false,
+      "output_sha256": "05c1ebf12963ff3c9de9dd32e168135e62986e527e60343da5e432ff018b44a2",
+      "phase": "amorphous glass",
+      "raw_file": "pyrmg50.txt",
+      "rows": 109,
+      "source_sha256": "a753e2a2a09dcc05e7975f694bafd52c1e86d27bed765d1ae9a583f2d100e53b",
+      "source_url": "https://www2.astro.uni-jena.de/Laboratory/OCDB/data/silicate/amorph/pyrmg50.txt",
+      "sublimation_temperature_basis": "adopted historical silicate header value, not a laboratory measurement",
+      "sublimation_temperature_k": 1500.0,
+      "wavelength_max_um": 500.0,
+      "wavelength_min_um": 0.2
+    }
+  },
+  "methodology_page": "https://www2.mpia-hd.mpg.de/HJPDOC/PAPERS/4-dor95.html",
+  "new_laboratory_measurements": false,
+  "package": "laboratory_silicates_v1",
+  "paper_url": "https://ui.adsabs.harvard.edu/abs/1995A%26A...300..503D",
+  "purpose": "alternative material inputs, not fitted TMC1A optical constants",
+  "schema_version": 1,
+  "source_code_sha256": "5636b18f330c0ec5aa593797adf3eda685180756fd86cc13ffd57b5b72b91e10",
+  "source_page": "https://www2.astro.uni-jena.de/Laboratory/OCDB/amsilicates.html",
+  "source_simulations_run": 0,
+  "source_terms": "Jena requests citation of original papers; no explicit reuse licence verified on source pages"
+}

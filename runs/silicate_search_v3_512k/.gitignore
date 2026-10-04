@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+.DS_Store
+logs/
+results/
+stage0/
+production/
+build_attempts/
+submissions/
+.mplconfig/
+machine*.cluster.json
+cluster_environment.json
+job_*.sh
+submit.sh
+*.lock

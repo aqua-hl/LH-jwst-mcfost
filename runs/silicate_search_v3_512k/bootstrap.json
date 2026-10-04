@@ -1,0 +1,547 @@
+{
+  "cases": [
+    {
+      "carbon_mass_fraction": 0.15,
+      "column_factor": 1.0,
+      "configuration_id": "anchor",
+      "density_exponent": -1.5,
+      "inclination_deg": 70.0,
+      "index": 0,
+      "material_id": "draine",
+      "random_seed": 43001,
+      "replica_of": null,
+      "role": "primary"
+    },
+    {
+      "carbon_mass_fraction": 0.2,
+      "column_factor": 1.0,
+      "configuration_id": "anchor",
+      "density_exponent": -1.5,
+      "inclination_deg": 70.0,
+      "index": 1,
+      "material_id": "draine",
+      "random_seed": 43001,
+      "replica_of": null,
+      "role": "primary"
+    },
+    {
+      "carbon_mass_fraction": 0.25,
+      "column_factor": 1.0,
+      "configuration_id": "anchor",
+      "density_exponent": -1.5,
+      "inclination_deg": 70.0,
+      "index": 2,
+      "material_id": "draine",
+      "random_seed": 43001,
+      "replica_of": null,
+      "role": "primary"
+    },
+    {
+      "carbon_mass_fraction": 0.15,
+      "column_factor": 1.0,
+      "configuration_id": "anchor",
+      "density_exponent": -1.5,
+      "inclination_deg": 70.0,
+      "index": 3,
+      "material_id": "pyroxene_mg50",
+      "random_seed": 43001,
+      "replica_of": null,
+      "role": "primary"
+    },
+    {
+      "carbon_mass_fraction": 0.2,
+      "column_factor": 1.0,
+      "configuration_id": "anchor",
+      "density_exponent": -1.5,
+      "inclination_deg": 70.0,
+      "index": 4,
+      "material_id": "pyroxene_mg50",
+      "random_seed": 43001,
+      "replica_of": null,
+      "role": "primary"
+    },
+    {
+      "carbon_mass_fraction": 0.25,
+      "column_factor": 1.0,
+      "configuration_id": "anchor",
+      "density_exponent": -1.5,
+      "inclination_deg": 70.0,
+      "index": 5,
+      "material_id": "pyroxene_mg50",
+      "random_seed": 43001,
+      "replica_of": null,
+      "role": "primary"
+    },
+    {
+      "carbon_mass_fraction": 0.15,
+      "column_factor": 0.86,
+      "configuration_id": "shallow",
+      "density_exponent": -1.25,
+      "inclination_deg": 70.0,
+      "index": 6,
+      "material_id": "draine",
+      "random_seed": 43001,
+      "replica_of": null,
+      "role": "primary"
+    },
+    {
+      "carbon_mass_fraction": 0.2,
+      "column_factor": 0.86,
+      "configuration_id": "shallow",
+      "density_exponent": -1.25,
+      "inclination_deg": 70.0,
+      "index": 7,
+      "material_id": "draine",
+      "random_seed": 43001,
+      "replica_of": null,
+      "role": "primary"
+    },
+    {
+      "carbon_mass_fraction": 0.25,
+      "column_factor": 0.86,
+      "configuration_id": "shallow",
+      "density_exponent": -1.25,
+      "inclination_deg": 70.0,
+      "index": 8,
+      "material_id": "draine",
+      "random_seed": 43001,
+      "replica_of": null,
+      "role": "primary"
+    },
+    {
+      "carbon_mass_fraction": 0.15,
+      "column_factor": 0.86,
+      "configuration_id": "shallow",
+      "density_exponent": -1.25,
+      "inclination_deg": 70.0,
+      "index": 9,
+      "material_id": "pyroxene_mg50",
+      "random_seed": 43001,
+      "replica_of": null,
+      "role": "primary"
+    },
+    {
+      "carbon_mass_fraction": 0.2,
+      "column_factor": 0.86,
+      "configuration_id": "shallow",
+      "density_exponent": -1.25,
+      "inclination_deg": 70.0,
+      "index": 10,
+      "material_id": "pyroxene_mg50",
+      "random_seed": 43001,
+      "replica_of": null,
+      "role": "primary"
+    },
+    {
+      "carbon_mass_fraction": 0.25,
+      "column_factor": 0.86,
+      "configuration_id": "shallow",
+      "density_exponent": -1.25,
+      "inclination_deg": 70.0,
+      "index": 11,
+      "material_id": "pyroxene_mg50",
+      "random_seed": 43001,
+      "replica_of": null,
+      "role": "primary"
+    },
+    {
+      "carbon_mass_fraction": 0.15,
+      "column_factor": 0.83,
+      "configuration_id": "flat_high",
+      "density_exponent": -1.0,
+      "inclination_deg": 70.0,
+      "index": 12,
+      "material_id": "draine",
+      "random_seed": 43001,
+      "replica_of": null,
+      "role": "primary"
+    },
+    {
+      "carbon_mass_fraction": 0.2,
+      "column_factor": 0.83,
+      "configuration_id": "flat_high",
+      "density_exponent": -1.0,
+      "inclination_deg": 70.0,
+      "index": 13,
+      "material_id": "draine",
+      "random_seed": 43001,
+      "replica_of": null,
+      "role": "primary"
+    },
+    {
+      "carbon_mass_fraction": 0.25,
+      "column_factor": 0.83,
+      "configuration_id": "flat_high",
+      "density_exponent": -1.0,
+      "inclination_deg": 70.0,
+      "index": 14,
+      "material_id": "draine",
+      "random_seed": 43001,
+      "replica_of": null,
+      "role": "primary"
+    },
+    {
+      "carbon_mass_fraction": 0.15,
+      "column_factor": 0.83,
+      "configuration_id": "flat_high",
+      "density_exponent": -1.0,
+      "inclination_deg": 70.0,
+      "index": 15,
+      "material_id": "pyroxene_mg50",
+      "random_seed": 43001,
+      "replica_of": null,
+      "role": "primary"
+    },
+    {
+      "carbon_mass_fraction": 0.2,
+      "column_factor": 0.83,
+      "configuration_id": "flat_high",
+      "density_exponent": -1.0,
+      "inclination_deg": 70.0,
+      "index": 16,
+      "material_id": "pyroxene_mg50",
+      "random_seed": 43001,
+      "replica_of": null,
+      "role": "primary"
+    },
+    {
+      "carbon_mass_fraction": 0.25,
+      "column_factor": 0.83,
+      "configuration_id": "flat_high",
+      "density_exponent": -1.0,
+      "inclination_deg": 70.0,
+      "index": 17,
+      "material_id": "pyroxene_mg50",
+      "random_seed": 43001,
+      "replica_of": null,
+      "role": "primary"
+    },
+    {
+      "carbon_mass_fraction": 0.15,
+      "column_factor": 0.66,
+      "configuration_id": "flat_low",
+      "density_exponent": -1.0,
+      "inclination_deg": 70.0,
+      "index": 18,
+      "material_id": "draine",
+      "random_seed": 43001,
+      "replica_of": null,
+      "role": "primary"
+    },
+    {
+      "carbon_mass_fraction": 0.2,
+      "column_factor": 0.66,
+      "configuration_id": "flat_low",
+      "density_exponent": -1.0,
+      "inclination_deg": 70.0,
+      "index": 19,
+      "material_id": "draine",
+      "random_seed": 43001,
+      "replica_of": null,
+      "role": "primary"
+    },
+    {
+      "carbon_mass_fraction": 0.25,
+      "column_factor": 0.66,
+      "configuration_id": "flat_low",
+      "density_exponent": -1.0,
+      "inclination_deg": 70.0,
+      "index": 20,
+      "material_id": "draine",
+      "random_seed": 43001,
+      "replica_of": null,
+      "role": "primary"
+    },
+    {
+      "carbon_mass_fraction": 0.15,
+      "column_factor": 0.66,
+      "configuration_id": "flat_low",
+      "density_exponent": -1.0,
+      "inclination_deg": 70.0,
+      "index": 21,
+      "material_id": "pyroxene_mg50",
+      "random_seed": 43001,
+      "replica_of": null,
+      "role": "primary"
+    },
+    {
+      "carbon_mass_fraction": 0.2,
+      "column_factor": 0.66,
+      "configuration_id": "flat_low",
+      "density_exponent": -1.0,
+      "inclination_deg": 70.0,
+      "index": 22,
+      "material_id": "pyroxene_mg50",
+      "random_seed": 43001,
+      "replica_of": null,
+      "role": "primary"
+    },
+    {
+      "carbon_mass_fraction": 0.25,
+      "column_factor": 0.66,
+      "configuration_id": "flat_low",
+      "density_exponent": -1.0,
+      "inclination_deg": 70.0,
+      "index": 23,
+      "material_id": "pyroxene_mg50",
+      "random_seed": 43001,
+      "replica_of": null,
+      "role": "primary"
+    },
+    {
+      "carbon_mass_fraction": 0.2,
+      "column_factor": 0.86,
+      "configuration_id": "shallow",
+      "density_exponent": -1.25,
+      "inclination_deg": 70.0,
+      "index": 24,
+      "material_id": "draine",
+      "random_seed": 43002,
+      "replica_of": 7,
+      "role": "seed_replica"
+    },
+    {
+      "carbon_mass_fraction": 0.2,
+      "column_factor": 0.86,
+      "configuration_id": "shallow",
+      "density_exponent": -1.25,
+      "inclination_deg": 70.0,
+      "index": 25,
+      "material_id": "pyroxene_mg50",
+      "random_seed": 43002,
+      "replica_of": 10,
+      "role": "seed_replica"
+    }
+  ],
+  "comparison_count": 54,
+  "created_utc": "2026-10-04T17:09:58.319972+00:00",
+  "derived_ice_fractions_available": false,
+  "design_provenance": {
+    "column_factor_derivation": {
+      "measured_factor": 0.8596426620519859,
+      "p-1.0_centre": 0.7395999999999999,
+      "v1_optimum_column_msun": 0.00019341959896169682,
+      "v1_optimum_nir_rms": 0.16700918662228442
+    },
+    "column_factor_method": "v1 log-linear band interpolation on a 2001-point log-column grid; round optimum/reference to .86; bracket .86 squared by +/-0.05 dex then round to .83/.66",
+    "configurations": [
+      [
+        -1.5,
+        1.0
+      ],
+      [
+        -1.25,
+        0.86
+      ],
+      [
+        -1.0,
+        0.83
+      ],
+      [
+        -1.0,
+        0.66
+      ]
+    ],
+    "frozen_source_hashes": {
+      "inputs/provenance/ice_column_crossings.csv": "4fb5bdb9cc9e593dc5217a7e3ef808bf12bdeb5b175f19e09cc8c584ca97a079",
+      "inputs/provenance/v1_band_predictions.csv": "4fea433fe0dfda7c0e35d297b975a4df40e33023be1934f296f108200d81c4eb",
+      "inputs/provenance/v1_ranking.csv": "944492030b2a43c2b7c9d2520f3e4feb5f62a3cea553527c28a72dd97d68ab4a",
+      "inputs/provenance/v2_opacity_matched_catalogue.csv": "f47b1cd94dd0ea52c214fdb4a5c6994656917c3f920ee6a86c41223a528deaca",
+      "inputs/provenance/v2_review_source.py": "d5125475c5c82cbab33a06f899484e5fcf38bf1bc9830811350d7f2f9da57c1e",
+      "inputs/provenance/v3_planning_source.py": "46a2f3d8e6d66f252b98d961cec12d82667a53daaed315f384e670ad403d13c2"
+    },
+    "ice_column_crossings_sha256": "4fb5bdb9cc9e593dc5217a7e3ef808bf12bdeb5b175f19e09cc8c584ca97a079",
+    "ice_column_target_crossings": {
+      "draine": 7,
+      "pyroxene_mg50": 2
+    },
+    "ice_fraction_formula": "f_ice = T*((1-f_C)*k_sil+f_C*k_C)/(M_ref*c*k_ref-T*(k_ice-k_sil))",
+    "ice_target_method": "Per-material median column-equivalent ice mass of bracketed v2 raw-ice zero crossings; no extrapolated crossings",
+    "interpretation": "User-provided v3 design is tested conditionally; introductory projections are not simulated outcomes",
+    "miri_reduction_status": {
+      "collaborators_level_change_known": false,
+      "corrected_reduction_available": false,
+      "recorded_date": "2026-10-04",
+      "spectrum_policy": "Retain the existing frozen observations; a corrected 12-20 um level shift greater than 0.1 dex requires new residuals/projections and a new frozen package before launch",
+      "user_update": "No corrected reduction or update yet"
+    },
+    "opacity_recovery": {
+      "carbon": {
+        "abs_18": 285.555906082142,
+        "abs_9p7": 675.7331910524244,
+        "ext_2p2": 10808.290039062496
+      },
+      "draine": {
+        "abs_18": 1114.7719342155096,
+        "abs_9p7": 3032.604632315978,
+        "ext_2p2": 1485.7525634765636
+      },
+      "ice": {
+        "abs_18": 417.5813248029929,
+        "abs_9p7": -1.836582393511927e-13,
+        "ext_2p2": 193.22640991210758
+      },
+      "pyroxene_mg50": {
+        "abs_18": 1397.0458975448787,
+        "abs_9p7": 2829.2201540675837,
+        "ext_2p2": 1053.4128417968766
+      }
+    },
+    "opacity_recovery_max_relative_fit_residual": 8.881784197001252e-16,
+    "source_hashes": {
+      "runs/silicate_search_v2_512k/results/opacity_matched_catalogue.csv": "f47b1cd94dd0ea52c214fdb4a5c6994656917c3f920ee6a86c41223a528deaca",
+      "runs/silicate_structure_production_v1_512k/results/band_predictions.csv": "4fea433fe0dfda7c0e35d297b975a4df40e33023be1934f296f108200d81c4eb",
+      "runs/silicate_structure_production_v1_512k/results/ranking.csv": "944492030b2a43c2b7c9d2520f3e4feb5f62a3cea553527c28a72dd97d68ab4a",
+      "scripts/review_silicate_search_v2.py": "d5125475c5c82cbab33a06f899484e5fcf38bf1bc9830811350d7f2f9da57c1e",
+      "scripts/silicate_search_v3_plan.py": "46a2f3d8e6d66f252b98d961cec12d82667a53daaed315f384e670ad403d13c2",
+      "validation/silicate_search_v2_512k/ice_column_crossings.csv": "4fb5bdb9cc9e593dc5217a7e3ef808bf12bdeb5b175f19e09cc8c584ca97a079"
+    },
+    "v2_campaign_summary_sha256": "8b12ebccfc139c701ae99fdc93da611c9bf9a8c2d7c115680284d747c6727120",
+    "v2_raw_stage0_revalidated": false,
+    "v2_reported_production_manifest_sha256": "4c58dcbf1b4b6bc09c3189e23bd22aaed3086bcb5ff1bb979d1cfdb06ab8b9dd",
+    "v2_summary_sha256": "c685d1409ac2a0bf45dc98e60d004fa4290768e311469bfed5b7218d65d9e759"
+  },
+  "dust_prescription": {
+    "amax_um": 0.4,
+    "amin_um": 0.03,
+    "carbon_size_distribution_assumption": "Same as envelope silicate; disk remains 70/30 silicate/carbon Mie",
+    "family": "separate_DHS_silicate_carbon_H2O30K",
+    "grain_bins": 50,
+    "ice_fraction_policy": "Derived from the exact per-silicate v2 median bracketed ice-column crossing",
+    "ice_laboratory_temperature_k": 30.0,
+    "native_out_of_range_treatment_accepted": true,
+    "optical_tables_modified": false,
+    "porosity": 0.0,
+    "size_exponent": 2.75,
+    "species": {
+      "carbon": {
+        "density_g_cm3": 1.8,
+        "filename": "ac_opct.dat",
+        "sha256": "ef8f09849580a0859f29f61216486e7e249103759f851bcfa7abe11c09a44de2"
+      },
+      "draine": {
+        "density_g_cm3": 3.5,
+        "filename": "Draine_Si_sUV.dat",
+        "label": "Draine astronomical silicate",
+        "rows": 1201,
+        "sha256": "3a6af751429f6f8dc948e60675b13be01ffcbed0662eec62934ec6d9c61dea80",
+        "wavelength_max_um": 1000.0,
+        "wavelength_min_um": 0.001
+      },
+      "ice": {
+        "density_g_cm3": 0.94,
+        "filename": "H2O_30K_Leiden_mcfost.dat",
+        "sha256": "29b572f8907993870d0b15823e1182a9c4813b8cdb8f4fbdd40ef39cf28fb00c"
+      },
+      "pyroxene_mg50": {
+        "density_g_cm3": 3.2,
+        "filename": "Pyroxene_Mg05Fe05SiO3_Dorschner1995_mcfost.dat",
+        "label": "Amorphous Mg0.5Fe0.5SiO3 glass",
+        "rows": 109,
+        "sha256": "05c1ebf12963ff3c9de9dd32e168135e62986e527e60343da5e432ff018b44a2",
+        "wavelength_max_um": 500.0,
+        "wavelength_min_um": 0.2
+      }
+    },
+    "tail_physical_accuracy_certified": false,
+    "temperature_dependent_ice_survival": false,
+    "vmax": 0.1
+  },
+  "experiment_id": "silicate_search_v3",
+  "ice_column_targets_msun": {
+    "draine": 9.144280744583792e-06,
+    "pyroxene_mg50": 1.1086300567771168e-05
+  },
+  "input_hashes": {
+    ".gitignore": "ad5e129a3c5fd73a31c44316b80a85ce3f021ac920bb5d4e44ba50a711acd3f6",
+    "DESIGN.md": "84bbe24d8d6c487cf9037624cccb43aeb81a9022142522aa615e2fc6a4916bdc",
+    "README.md": "b7ad16577e4a310ff86a9adf86746ab5e9301bea48f530712e04c1647d4e7561",
+    "code/analyze_extinction_ice_production.py": "d31d3f9298c5a7aacb7dfce858e8c63d4efc63bbee5e657a756e990ef48e332a",
+    "code/analyze_silicate_search_v3.py": "7505886470eb8646c30084dfea31dac7db1ee7d8aa22910b184266219e775bc3",
+    "code/analyze_silicate_structure_production.py": "63edd248440ca0342fd2d3e369f86a070652c802352dc329c3b575666f91d5c8",
+    "code/build_silicate_search_v3.py": "ef27af53db1c0b43f64be2fc36b21c6ba882110e4ea5240e09a4058072c9e20b",
+    "code/configure_extinction_ice_numerics_v2.py": "5002f105ca86df8b699cb86106b96e3904d99ee04e5f07942d31a6dc1a5666ef",
+    "code/configure_silicate_search_v3.py": "34e94b7941b281436b6a6ffcf989bfa2d08aa4111351643fa19ab9576f6c218a",
+    "code/production_task.py": "7d7ebb7d55fecb7f3e7e5f0511d9bfa55bbea70f3bd71044cfd7b33e891fefa1",
+    "code/silicate_pilot_design.py": "4b2f245a84a04d81704b732ad1f12b35124a2cb99309e61066b5d90eec11580b",
+    "code/silicate_search_v2_design.py": "6a60e5daf00ab677e9d5f9fd9f053f79b50892bad5fd958735df872f1b13da1b",
+    "code/silicate_search_v3_design.py": "61d2d7f60a073f7f728cb31ab3285d19b5a9e869b41c96e3cb81058b0abc13ec",
+    "code/silicate_search_v3_stage0.py": "b1253f33a59e3d7ae299bd235f7114b589be20064b7fc75de7433e49f3b0039d",
+    "code/silicate_search_v3_task.py": "c1a6d9b4fedc3bf043175cf8ada8a97c130f9ca737aabf2db3e0fc29a1475f39",
+    "code/silicate_structure_design.py": "a30371db4d777772db2340ad47c1c683720ffecd2a77c6f85689474e8a11fa34",
+    "code/src/mcfost_grid/__init__.py": "609e7d7dd83b26d760ec8b34a4be2ec17b8e41edf14fb4ba14cc9d81c9a9438a",
+    "code/src/mcfost_grid/analysis.py": "03650a73ffea799fde12fd4689baeb690019d6acad063ff096c9935f16729618",
+    "code/src/mcfost_grid/configuration.py": "a4c9d1da5ffd578695cf7d462e6eda2ce907f520f2360fe99d1c329636659f08",
+    "code/src/mcfost_grid/photometry.py": "5ef6bbebaece535a22c85ab2913cca08089bad00f82e2cff36323415b8142bbf",
+    "code/src/mcfost_grid/physics.py": "15e83d1861c089827719aee7e12ead523f93dc7a2be33b7ca8cfde3310bf54bc",
+    "code/src/mcfost_grid/quality.py": "de0766c55fff0d2898440a764ec0c4cd4321562f1bdb9ec6614a1a4fc0b8052b",
+    "code/src/mcfost_grid/runner.py": "676a8052de06e4376d88d01fd9ba397a1ae21f4d14869d690a0b5523938bac5c",
+    "code/src/mcfost_grid/slurm.py": "3176e60f7be1881b65b2500f33bb5f6b8d9aaa9bc9be6223c3cdc356ac55c7f6",
+    "code/workflow.py": "c368a04f5e1d2ddeee0cbb5d77bfd59c5f055b6247a88b66f7d5110b4ec6e468",
+    "inputs/H2O30K_laboratory_reference.dat": "29b572f8907993870d0b15823e1182a9c4813b8cdb8f4fbdd40ef39cf28fb00c",
+    "inputs/ice_input_provenance.json": "fbead88cda7ae12a212e0967281884ccc1c647088faef271e4ec289fab20dc80",
+    "inputs/laboratory_silicates_manifest.json": "5d18ab8f7013f9eb30dbbc179c6aae286ef74ce47c9269901d1d04b2a4fd49f6",
+    "inputs/observed_spectrum.ecsv": "d2d51c6b0c0c229145b147d8793b03fa721e6a4cca191d790fb2082625d3e0d6",
+    "inputs/production_anchors.json": "b7c37ab3f69b340f45ad7d7fa5e94fa68e35c93cd83122084c8a8061c8b62835",
+    "inputs/production_observation_contract.json": "436aff5f403b0c61d5fe0022ca70dd49d09e2ecb2ab297938d7ac24ef4ae2bc1",
+    "inputs/production_probes.ecsv": "3109fc84252a80b15c975e0e7ea970740ecbadb9bf6b9165d362e6468a63555e",
+    "inputs/provenance/ice_column_crossings.csv": "4fb5bdb9cc9e593dc5217a7e3ef808bf12bdeb5b175f19e09cc8c584ca97a079",
+    "inputs/provenance/v1_band_predictions.csv": "4fea433fe0dfda7c0e35d297b975a4df40e33023be1934f296f108200d81c4eb",
+    "inputs/provenance/v1_ranking.csv": "944492030b2a43c2b7c9d2520f3e4feb5f62a3cea553527c28a72dd97d68ab4a",
+    "inputs/provenance/v2_opacity_matched_catalogue.csv": "f47b1cd94dd0ea52c214fdb4a5c6994656917c3f920ee6a86c41223a528deaca",
+    "inputs/provenance/v2_review_source.py": "d5125475c5c82cbab33a06f899484e5fcf38bf1bc9830811350d7f2f9da57c1e",
+    "inputs/provenance/v3_planning_source.py": "46a2f3d8e6d66f252b98d961cec12d82667a53daaed315f384e670ad403d13c2",
+    "inputs/stage0_wavelengths.json": "0bf5f1d290540a45ec54a1b98ed179cd8eede104c21b25e461bdc431eb79b2de",
+    "inputs/template.para": "28e8ce08b312e24af72cf45cb679b895e70d6ea7d2dd1e03b1cab2169f03b9ca",
+    "inputs/utils/Dust/Draine_Si_sUV.dat": "3a6af751429f6f8dc948e60675b13be01ffcbed0662eec62934ec6d9c61dea80",
+    "inputs/utils/Dust/H2O_30K_Leiden_mcfost.dat": "29b572f8907993870d0b15823e1182a9c4813b8cdb8f4fbdd40ef39cf28fb00c",
+    "inputs/utils/Dust/Olivine_MgFeSiO4_Dorschner1995_mcfost.dat": "41e34acb22986f83aeb1113d31e73acee19707add259198036ca51baa25f3965",
+    "inputs/utils/Dust/Pyroxene_Mg05Fe05SiO3_Dorschner1995_mcfost.dat": "05c1ebf12963ff3c9de9dd32e168135e62986e527e60343da5e432ff018b44a2",
+    "inputs/utils/Dust/ac_opct.dat": "ef8f09849580a0859f29f61216486e7e249103759f851bcfa7abe11c09a44de2",
+    "inputs/utils/Dust/ice_opct.dat": "44625b4918b7015e97d3c92b3f19e9e06eb57d209f3b1a946ee8f141215c8697",
+    "inputs/utils/Stellar_Spectra/lte4000-3.5.NextGen.fits.gz": "a626d82c52e07dec12b7fe141aeb2c9af974516ffe39178a4c9a2094c2a6d87d",
+    "inputs/v2_reference.json": "fc4234c6f8c6517df4a2e03a2565daab2c5027184eaacd5dd974dde17e7f363c",
+    "requirements-cluster.txt": "335be12610625b9f8097df832a2d9e170aa7fbf523ac170a7155e03dc9e8c34b"
+  },
+  "matched_masses_available": false,
+  "model_count": 26,
+  "numerics": {
+    "grains": 50,
+    "grid_n_inner": 20,
+    "grid_nr": 100,
+    "grid_ntheta": 70,
+    "image_npix": 6001,
+    "image_size_au": 6000.0,
+    "photons_image": 512000,
+    "photons_sed": 512000,
+    "photons_temperature": 512000,
+    "random_seed": 43001
+  },
+  "parent_bootstrap_sha256": "38a981ac377b41273e9811f3c80ef34da8c92cbad9145becc6dc21967950abd6",
+  "physical_models": 24,
+  "production_parameters_rendered": false,
+  "schema_version": 1,
+  "seed_replicas": 2,
+  "selection_rule": "All configurations fixed before RT outputs; Stage 0 sets mass and ice fraction from frozen column targets",
+  "stage0_required": true,
+  "success_criteria": {
+    "h04_in_success_criterion": false,
+    "ice_bands": [
+      "h02",
+      "h03"
+    ],
+    "ice_normalized_shapes_also_reported": true,
+    "ice_raw_log_residual_abs_dex_max": 0.15,
+    "ice_success_quantity": "raw_flux",
+    "long_miri_bands": [
+      "s05",
+      "s06"
+    ],
+    "long_miri_raw_log_residual_abs_dex_max": 0.15,
+    "nir_continuum_log_residual_rms_dex_max": 0.2,
+    "seed_difference_warning_dex": 0.03,
+    "seed_margin_policy": "Success within the measured seed difference of a tolerance is marginal",
+    "silicate_log_shape_abs_dex_max": 0.1,
+    "statistical_acceptance_region": false
+  }
+}

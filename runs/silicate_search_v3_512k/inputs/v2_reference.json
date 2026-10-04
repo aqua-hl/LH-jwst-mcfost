@@ -1,0 +1,2401 @@
+{
+  "bridge_models": [
+    {
+      "band_flux_jy": [
+        0.00011318550845457805,
+        0.0001897735713822041,
+        0.0015432324149983116,
+        0.005130457995355065,
+        0.035836764118560675,
+        0.04801139920296948,
+        0.07755821555361526,
+        0.4495958596346927,
+        0.6429404817776644,
+        0.11529685099617054,
+        0.04300093621303178,
+        0.04726342369308798,
+        0.255569641191768,
+        1.5531532745285481,
+        0.9772091884266125,
+        1.9004571248182331,
+        3.3018477057552347,
+        5.893625090167365,
+        6.429567804060003
+      ],
+      "band_predictions": [
+        {
+          "band_id": "c01",
+          "block": "nir_continuum",
+          "effective_wavelength_um": 1.13,
+          "five_minus_three_over_five": -0.010013027343392503,
+          "model_flux_jy": 0.00011318550845457805,
+          "observed_flux_jy": 0.00011280459058311971,
+          "quadrature_unresolved": true,
+          "three_node_flux_jy": 0.00011431883804560952
+        },
+        {
+          "band_id": "c02",
+          "block": "nir_continuum",
+          "effective_wavelength_um": 1.21,
+          "five_minus_three_over_five": -0.017662122917426342,
+          "model_flux_jy": 0.0001897735713822041,
+          "observed_flux_jy": 0.00020968344816331647,
+          "quadrature_unresolved": true,
+          "three_node_flux_jy": 0.00019312537552643557
+        },
+        {
+          "band_id": "c03",
+          "block": "nir_continuum",
+          "effective_wavelength_um": 1.521,
+          "five_minus_three_over_five": -0.014802752467946427,
+          "model_flux_jy": 0.0015432324149983116,
+          "observed_flux_jy": 0.001938644984729536,
+          "quadrature_unresolved": true,
+          "three_node_flux_jy": 0.0015660765024380428
+        },
+        {
+          "band_id": "c04",
+          "block": "nir_continuum",
+          "effective_wavelength_um": 1.74,
+          "five_minus_three_over_five": -0.014872331903482309,
+          "model_flux_jy": 0.005130457995355065,
+          "observed_flux_jy": 0.0066964785327128075,
+          "quadrature_unresolved": true,
+          "three_node_flux_jy": 0.00520675986947886
+        },
+        {
+          "band_id": "c05",
+          "block": "nir_continuum",
+          "effective_wavelength_um": 2.2,
+          "five_minus_three_over_five": 0.010555289573178682,
+          "model_flux_jy": 0.035836764118560675,
+          "observed_flux_jy": 0.044436987446273134,
+          "quadrature_unresolved": true,
+          "three_node_flux_jy": 0.03545849669592357
+        },
+        {
+          "band_id": "c06",
+          "block": "nir_continuum",
+          "effective_wavelength_um": 2.3,
+          "five_minus_three_over_five": -0.008362757102454292,
+          "model_flux_jy": 0.04801139920296948,
+          "observed_flux_jy": 0.061174555951986266,
+          "quadrature_unresolved": false,
+          "three_node_flux_jy": 0.04841290687265288
+        },
+        {
+          "band_id": "c07",
+          "block": "nir_continuum",
+          "effective_wavelength_um": 2.55,
+          "five_minus_three_over_five": -0.04728984912426414,
+          "model_flux_jy": 0.07755821555361526,
+          "observed_flux_jy": 0.12292927588858787,
+          "quadrature_unresolved": true,
+          "three_node_flux_jy": 0.08122593186549289
+        },
+        {
+          "band_id": "c08",
+          "block": "nir_continuum",
+          "effective_wavelength_um": 3.91,
+          "five_minus_three_over_five": 0.004695584366671599,
+          "model_flux_jy": 0.4495958596346927,
+          "observed_flux_jy": 0.471292322592436,
+          "quadrature_unresolved": false,
+          "three_node_flux_jy": 0.44748474434487173
+        },
+        {
+          "band_id": "c09",
+          "block": "nir_continuum",
+          "effective_wavelength_um": 4.525,
+          "five_minus_three_over_five": -0.007902403307856267,
+          "model_flux_jy": 0.6429404817776644,
+          "observed_flux_jy": 0.7883862647800575,
+          "quadrature_unresolved": false,
+          "three_node_flux_jy": 0.6480212567676189
+        },
+        {
+          "band_id": "h01",
+          "block": "nir_ice",
+          "effective_wavelength_um": 2.77,
+          "five_minus_three_over_five": 0.04066598981392606,
+          "model_flux_jy": 0.11529685099617054,
+          "observed_flux_jy": 0.1667887218763796,
+          "quadrature_unresolved": true,
+          "three_node_flux_jy": 0.11060819042798252
+        },
+        {
+          "band_id": "h02",
+          "block": "nir_ice",
+          "effective_wavelength_um": 2.95,
+          "five_minus_three_over_five": 0.1635828334708162,
+          "model_flux_jy": 0.04300093621303178,
+          "observed_flux_jy": 0.03981732977517519,
+          "quadrature_unresolved": true,
+          "three_node_flux_jy": 0.035966721225406215
+        },
+        {
+          "band_id": "h03",
+          "block": "nir_ice",
+          "effective_wavelength_um": 3.1100000000000003,
+          "five_minus_three_over_five": -0.004069489515534338,
+          "model_flux_jy": 0.04726342369308798,
+          "observed_flux_jy": 0.033334526346008767,
+          "quadrature_unresolved": false,
+          "three_node_flux_jy": 0.04745576170027526
+        },
+        {
+          "band_id": "h04",
+          "block": "nir_ice",
+          "effective_wavelength_um": 3.3600000000000003,
+          "five_minus_three_over_five": 0.005645139052616339,
+          "model_flux_jy": 0.255569641191768,
+          "observed_flux_jy": 0.18794238036499775,
+          "quadrature_unresolved": false,
+          "three_node_flux_jy": 0.2541269150296132
+        },
+        {
+          "band_id": "s01",
+          "block": "miri",
+          "effective_wavelength_um": 8.399999999999999,
+          "five_minus_three_over_five": 0.004938682537794985,
+          "model_flux_jy": 1.5531532745285481,
+          "observed_flux_jy": 1.1932705614272665,
+          "quadrature_unresolved": false,
+          "three_node_flux_jy": 1.5454827435731149
+        },
+        {
+          "band_id": "s02",
+          "block": "miri",
+          "effective_wavelength_um": 9.7,
+          "five_minus_three_over_five": -0.00011792419930192538,
+          "model_flux_jy": 0.9772091884266125,
+          "observed_flux_jy": 0.49919728831445087,
+          "quadrature_unresolved": false,
+          "three_node_flux_jy": 0.9773244250377082
+        },
+        {
+          "band_id": "s03",
+          "block": "miri",
+          "effective_wavelength_um": 11.0,
+          "five_minus_three_over_five": -0.002262116467150429,
+          "model_flux_jy": 1.9004571248182331,
+          "observed_flux_jy": 0.986303694733075,
+          "quadrature_unresolved": false,
+          "three_node_flux_jy": 1.9047561801753978
+        },
+        {
+          "band_id": "s04",
+          "block": "miri",
+          "effective_wavelength_um": 12.7,
+          "five_minus_three_over_five": 0.0004278699554473803,
+          "model_flux_jy": 3.3018477057552347,
+          "observed_flux_jy": 1.836899064256267,
+          "quadrature_unresolved": false,
+          "three_node_flux_jy": 3.300434944324479
+        },
+        {
+          "band_id": "s05",
+          "block": "miri",
+          "effective_wavelength_um": 18.450000000000003,
+          "five_minus_three_over_five": 0.0019744670570296936,
+          "model_flux_jy": 5.893625090167365,
+          "observed_flux_jy": 3.2846375481516548,
+          "quadrature_unresolved": false,
+          "three_node_flux_jy": 5.881988321580346
+        },
+        {
+          "band_id": "s06",
+          "block": "miri",
+          "effective_wavelength_um": 19.8,
+          "five_minus_three_over_five": 0.00047035583619125225,
+          "model_flux_jy": 6.429567804060003,
+          "observed_flux_jy": 3.9092068681040057,
+          "quadrature_unresolved": false,
+          "three_node_flux_jy": 6.426543619319176
+        }
+      ],
+      "baseline_profile": {
+        "adjusted_residual_jy": [
+          -2.9705060124486076e-05,
+          -6.898308310176901e-05,
+          -0.0007788977006594227,
+          -0.0028241370483614893,
+          -0.01514271147909232,
+          -0.021730108780251105,
+          -0.05629923796755249,
+          -0.14972664178381404,
+          -0.3233465590021709,
+          -0.06966425640911361,
+          -0.009300076864144994,
+          -0.0002651077071627178,
+          -0.00877591735730758,
+          -0.153413011557334,
+          0.14651973013197256,
+          0.267121124085982,
+          0.3110215033276722,
+          0.4280460934831902,
+          0.11901609155097992
+        ],
+        "block_adjusted_residual_rms_jy": {
+          "miri": 0.2615594075579809,
+          "nir_continuum": 0.12057766334765463,
+          "nir_ice": 0.03541428757674091
+        },
+        "block_contribution_note": "Sum of r_i*(P*r)_i within each block; sums to weighted_data_term. Cross-block base covariance could make individual contributions signed.",
+        "block_standardized_residual_rms": {
+          "miri": 14.896434846744732,
+          "nir_continuum": 14.286752307532408,
+          "nir_ice": 4.288405680789434
+        },
+        "block_weighted_data_contribution": {
+          "miri": 55.475942785827684,
+          "nir_continuum": 91.85008117355216,
+          "nir_ice": 5.517126984908126
+        },
+        "block_weights": {
+          "miri": 0.25,
+          "nir_continuum": 0.45,
+          "nir_ice": 0.3
+        },
+        "common_scale": 0.6677059791627209,
+        "common_scale_prior_sigma_fraction": 0.03,
+        "interpretation": "regularized block-normalized screening objective; not a posterior or formal chi-square",
+        "nuisance_penalty": 161.07036828117316,
+        "score": 313.91351922546113,
+        "segment_gain_fraction": {
+          "MIRI/CH2_long": 0.015737309560288532,
+          "MIRI/CH2_medium": 0.013564576004888708,
+          "MIRI/CH2_short": -0.00235304716451193,
+          "MIRI/CH3_short": 0.03089058562753283,
+          "MIRI/CH4_short": 0.06774722225852738,
+          "NIRSpec/G140H_F100LP": -0.06670730038592246,
+          "NIRSpec/G235H_F170LP": -0.12075198162029822,
+          "NIRSpec/G395H_F290LP": -0.04533881860454733
+        },
+        "segment_gain_prior_sigma_fraction": {
+          "MIRI/CH2_long": 0.02,
+          "MIRI/CH2_medium": 0.02,
+          "MIRI/CH2_short": 0.02,
+          "MIRI/CH3_short": 0.02,
+          "MIRI/CH4_short": 0.02,
+          "NIRSpec/G140H_F100LP": 0.03,
+          "NIRSpec/G235H_F170LP": 0.03,
+          "NIRSpec/G395H_F290LP": 0.03
+        },
+        "weighted_data_term": 152.84315094428797
+      },
+      "baseline_score": 313.91351922546113,
+      "catalogue": {
+        "carbon_mass_fraction": 0.2,
+        "density_exponent": -1.5,
+        "ice_mass_fraction": 0.08,
+        "inclination_deg": 70.0,
+        "index": 15,
+        "material_id": "draine",
+        "opacity_matching": {
+          "S": 0.7141125351146999,
+          "S_over_reference": 0.3517583235270406,
+          "absolute_ice_mass_msun": 7.9501251917584e-06,
+          "absorption_18_over_9p7": 0.3852087533251843,
+          "actual_mass_msun": 9.937656489698e-05,
+          "composition_mass_factor": 0.44167362176436104,
+          "discrete_optical_depth_match_certified": false,
+          "mass_significant_digits": 13,
+          "method": "mass-weighted pure-species DHS extinction at 2.2 um, then analytic radial-column profile factor",
+          "mixture_absorption_18_cm2_g": 893.1534798358346,
+          "mixture_absorption_9p7_cm2_g": 2318.621973477989,
+          "mixture_extinction_cm2_g": 3246.857966308594,
+          "normalization_wavelength_um": 2.2,
+          "profile_mass_factor": 1.0,
+          "reference_extinction_cm2_g": 1434.0515173339843,
+          "reference_mass_msun": 0.000225
+        },
+        "parameters": {
+          "accretion_rate_msun_per_year": 7.3011756855e-08,
+          "cavity_half_opening_deg": 17.5,
+          "distance_pc": 140.0,
+          "envelope_amax_um": 0.4,
+          "envelope_carbon_mass_fraction": 0.2,
+          "envelope_density_exponent": -1.5,
+          "envelope_dust_mass_msun": 9.937656489698e-05,
+          "envelope_ice_mass_fraction": 0.08,
+          "envelope_silicate_file": "Draine_Si_sUV.dat",
+          "envelope_size_exponent": 2.75,
+          "inclination_deg": 70.0,
+          "stellar_mass_msun": 0.5,
+          "stellar_radius_rsun": 2.5,
+          "stellar_temperature_k": 4000.0
+        },
+        "reference_mass_msun": 0.000225,
+        "role": "composition",
+        "silicate_mass_fraction": 0.72,
+        "stages": [
+          1
+        ]
+      },
+      "consistency_checks": [
+        {
+          "common_scale_adjusted_model_flux_jy": 0.6823052824579477,
+          "formal_sigma_jy": 0.00046198162643842667,
+          "id": "w007",
+          "model_flux_jy": 1.0218648682965725,
+          "observed_flux_jy": 1.3918125079951504,
+          "primary_score_weight": 0.0,
+          "probe_id": "w007",
+          "segment": "CH1_short",
+          "source_row_zero_based": 172,
+          "wavelength_um": 5.3906283153397085
+        },
+        {
+          "common_scale_adjusted_model_flux_jy": 2.7938080674387376,
+          "formal_sigma_jy": 0.000577269649040398,
+          "id": "w008",
+          "model_flux_jy": 4.184189081161249,
+          "observed_flux_jy": 2.2656402783529344,
+          "primary_score_weight": 0.0,
+          "probe_id": "w008",
+          "segment": "CH3_medium",
+          "source_row_zero_based": 277,
+          "wavelength_um": 13.799908320389276
+        },
+        {
+          "common_scale_adjusted_model_flux_jy": 5.214974586139791,
+          "formal_sigma_jy": 0.004945887424724462,
+          "id": "w009",
+          "model_flux_jy": 7.810285887628534,
+          "observed_flux_jy": 7.851055855671131,
+          "primary_score_weight": 0.0,
+          "probe_id": "w009",
+          "segment": "CH4_long",
+          "source_row_zero_based": 353,
+          "wavelength_um": 27.513091575690556
+        }
+      ],
+      "flux_by_probe": {
+        "c01_q0": 9.335951897151699e-05,
+        "c01_q1": 0.00010208125508150305,
+        "c01_q2": 0.00011396181115821421,
+        "c01_q3": 0.00012297791879292393,
+        "c01_q4": 0.00013670626466928332,
+        "c02_q0": 0.00015978045125376113,
+        "c02_q1": 0.0001706550774242224,
+        "c02_q2": 0.00019207700539926385,
+        "c02_q3": 0.0002050160761323684,
+        "c02_q4": 0.000230663780307797,
+        "c03_q0": 0.0012678489514043676,
+        "c03_q1": 0.001383922229720648,
+        "c03_q2": 0.0015641054957426185,
+        "c03_q3": 0.0016787130094885314,
+        "c03_q4": 0.0018721880802534164,
+        "c04_q0": 0.004299869883744067,
+        "c04_q1": 0.00454849534979728,
+        "c04_q2": 0.005213907557286679,
+        "c04_q3": 0.005639692610692965,
+        "c04_q4": 0.006085059103982375,
+        "c05_q0": 0.030079767891979546,
+        "c05_q1": 0.033910465515072916,
+        "c05_q2": 0.035975466696305886,
+        "c05_q3": 0.0383998151448767,
+        "c05_q4": 0.03876934549833832,
+        "c06_q0": 0.04245291215603006,
+        "c06_q1": 0.04559716680874778,
+        "c06_q2": 0.04851424466558363,
+        "c06_q3": 0.05007479282397315,
+        "c06_q4": 0.05396755041755272,
+        "c07_q0": 0.06579681673086595,
+        "c07_q1": 0.07856019043771348,
+        "c07_q2": 0.08293161510463089,
+        "c07_q3": 0.07374136597720844,
+        "c07_q4": 0.08983231404356785,
+        "c08_q0": 0.43246952121923943,
+        "c08_q1": 0.4385559748950336,
+        "c08_q2": 0.4469584365727405,
+        "c08_q3": 0.4624837057781071,
+        "c08_q4": 0.46460519855902915,
+        "c09_q0": 0.6328771112890789,
+        "c09_q1": 0.6325512227359824,
+        "c09_q2": 0.6482226922136032,
+        "c09_q3": 0.6483496835523839,
+        "c09_q4": 0.662359660462222,
+        "h01_q0": 0.09826004197624279,
+        "h01_q1": 0.11750581253213388,
+        "h01_q2": 0.11423614375809087,
+        "h01_q3": 0.11959052669344943,
+        "h01_q4": 0.10844452555928888,
+        "h02_q0": 0.06281865563172813,
+        "h02_q1": 0.057298649627422295,
+        "h02_q2": 0.031478201923834104,
+        "h02_q3": 0.03349317813548078,
+        "h02_q4": 0.027068864025372747,
+        "h03_q0": 0.025264249257389224,
+        "h03_q1": 0.029982567032826004,
+        "h03_q2": 0.04196010370204066,
+        "h03_q3": 0.061604113347045394,
+        "h03_q4": 0.09162990613609971,
+        "h04_q0": 0.14162847762965267,
+        "h04_q1": 0.22547402244312437,
+        "h04_q2": 0.266074576413516,
+        "h04_q3": 0.2930818167945179,
+        "h04_q4": 0.3188347068939626,
+        "s01_q0": 1.7186836422268714,
+        "s01_q1": 1.6325079416819803,
+        "s01_q2": 1.534990886269977,
+        "s01_q3": 1.4762232096789802,
+        "s01_q4": 1.4142492741319104,
+        "s02_q0": 0.8797035747795302,
+        "s02_q1": 0.8730973505036161,
+        "s02_q2": 0.9495632454204768,
+        "s02_q3": 1.067325199929898,
+        "s02_q4": 1.185989993764812,
+        "s03_q0": 1.666176823008373,
+        "s03_q1": 1.7879760181395978,
+        "s03_q2": 1.9081184447771542,
+        "s03_q3": 2.0103203084405816,
+        "s03_q4": 2.1298864789353975,
+        "s04_q0": 3.019821815994839,
+        "s04_q1": 3.174245723106362,
+        "s04_q2": 3.3007706566094015,
+        "s04_q3": 3.4310303059773255,
+        "s04_q4": 3.579705223514429,
+        "s05_q0": 5.736545896590659,
+        "s05_q1": 5.850679444961865,
+        "s05_q2": 5.882093970510625,
+        "s05_q3": 5.948260328425026,
+        "s05_q4": 6.027008150848919,
+        "s06_q0": 6.245815351394104,
+        "s06_q1": 6.329083387728792,
+        "s06_q2": 6.413697519737339,
+        "s06_q3": 6.526653355341123,
+        "s06_q4": 6.658656285571598,
+        "w007": 1.0218648682965725,
+        "w008": 4.184189081161249,
+        "w009": 7.810285887628534
+      },
+      "interpretation": "Finite-grid screening only; unresolved quadrature retained and flagged",
+      "model_id": "m0015_0b03ea10",
+      "model_index": 15,
+      "parameters": {
+        "accretion_rate_msun_per_year": 7.3011756855e-08,
+        "cavity_half_opening_deg": 17.5,
+        "distance_pc": 140.0,
+        "envelope_amax_um": 0.4,
+        "envelope_carbon_mass_fraction": 0.2,
+        "envelope_density_exponent": -1.5,
+        "envelope_dust_mass_msun": 9.937656489698e-05,
+        "envelope_ice_mass_fraction": 0.08,
+        "envelope_silicate_file": "Draine_Si_sUV.dat",
+        "envelope_size_exponent": 2.75,
+        "inclination_deg": 70.0,
+        "stellar_mass_msun": 0.5,
+        "stellar_radius_rsun": 2.5,
+        "stellar_temperature_k": 4000.0
+      },
+      "profiles": {
+        "miri_gain_0.01": {
+          "baseline": {
+            "adjusted_residual_jy": [
+              -3.145088523069764e-05,
+              -7.186479973252193e-05,
+              -0.0008018153864273969,
+              -0.002899770550166012,
+              -0.015629201225238677,
+              -0.022376506496597538,
+              -0.057264638586941204,
+              -0.15653937310258215,
+              -0.33281886657474247,
+              -0.07115156124923547,
+              -0.009964087980500816,
+              -0.0010195668769598046,
+              -0.012837377479154574,
+              -0.18276396796443062,
+              0.1345105342961706,
+              0.24557371585456367,
+              0.2960554464276939,
+              0.4822841051229205,
+              0.19387501751069758
+            ],
+            "block_adjusted_residual_rms_jy": {
+              "miri": 0.2797726784283547,
+              "nir_continuum": 0.12441250822107659,
+              "nir_ice": 0.03649542949002576
+            },
+            "block_contribution_note": "Sum of r_i*(P*r)_i within each block; sums to weighted_data_term. Cross-block base covariance could make individual contributions signed.",
+            "block_standardized_residual_rms": {
+              "miri": 15.15998340395071,
+              "nir_continuum": 14.71455211876461,
+              "nir_ice": 4.427741135609213
+            },
+            "block_weighted_data_contribution": {
+              "miri": 57.45627420201524,
+              "nir_continuum": 97.43311982512802,
+              "nir_ice": 5.88146746918979
+            },
+            "block_weights": {
+              "miri": 0.25,
+              "nir_continuum": 0.45,
+              "nir_ice": 0.3
+            },
+            "common_scale": 0.6500777202851842,
+            "common_scale_prior_sigma_fraction": 0.03,
+            "interpretation": "regularized block-normalized screening objective; not a posterior or formal chi-square",
+            "nuisance_penalty": 165.56271691391237,
+            "score": 326.3335784102454,
+            "segment_gain_fraction": {
+              "MIRI/CH2_long": 0.00361696365225465,
+              "MIRI/CH2_medium": 0.0031131956840815384,
+              "MIRI/CH2_short": -0.0007008079566199835,
+              "MIRI/CH3_short": 0.007351040057138111,
+              "MIRI/CH4_short": 0.019604205521313447,
+              "NIRSpec/G140H_F100LP": -0.06891854317951747,
+              "NIRSpec/G235H_F170LP": -0.12402065525044625,
+              "NIRSpec/G395H_F290LP": -0.04770011504795089
+            },
+            "segment_gain_prior_sigma_fraction": {
+              "MIRI/CH2_long": 0.01,
+              "MIRI/CH2_medium": 0.01,
+              "MIRI/CH2_short": 0.01,
+              "MIRI/CH3_short": 0.01,
+              "MIRI/CH4_short": 0.01,
+              "NIRSpec/G140H_F100LP": 0.03,
+              "NIRSpec/G235H_F170LP": 0.03,
+              "NIRSpec/G395H_F290LP": 0.03
+            },
+            "weighted_data_term": 160.77086149633303
+          },
+          "nir_miri_equal": {
+            "adjusted_residual_jy": [
+              -3.808502866821701e-05,
+              -8.333458037819997e-05,
+              -0.0008990256740080149,
+              -0.003227186506289997,
+              -0.018388230762724216,
+              -0.026119417570858366,
+              -0.06399504167741428,
+              -0.18028047034415762,
+              -0.36797049884380284,
+              -0.08070411032727355,
+              -0.012179577018617313,
+              -0.0033452015424479987,
+              -0.02549360899319536,
+              -0.246273554861143,
+              0.09306354110903586,
+              0.16490454023799217,
+              0.1571912161754474,
+              0.2443861265343248,
+              -0.06481558948372479
+            ],
+            "block_adjusted_residual_rms_jy": {
+              "miri": 0.17566052099817,
+              "nir_continuum": 0.13865636329750872,
+              "nir_ice": 0.042786125066797936
+            },
+            "block_contribution_note": "Sum of r_i*(P*r)_i within each block; sums to weighted_data_term. Cross-block base covariance could make individual contributions signed.",
+            "block_standardized_residual_rms": {
+              "miri": 8.99171004584647,
+              "nir_continuum": 16.79607621602403,
+              "nir_ice": 5.193558281216541
+            },
+            "block_weighted_data_contribution": {
+              "miri": 40.425424774288146,
+              "nir_continuum": 84.63245287634642,
+              "nir_ice": 5.394609524078581
+            },
+            "block_weights": {
+              "miri": 0.5,
+              "nir_continuum": 0.3,
+              "nir_ice": 0.2
+            },
+            "common_scale": 0.6082743583839882,
+            "common_scale_prior_sigma_fraction": 0.03,
+            "interpretation": "regularized block-normalized screening objective; not a posterior or formal chi-square",
+            "nuisance_penalty": 189.17639738310888,
+            "score": 319.62888455782206,
+            "segment_gain_fraction": {
+              "MIRI/CH2_long": 0.004857634914689492,
+              "MIRI/CH2_medium": 0.004307841256329667,
+              "MIRI/CH2_short": -0.001888670602570485,
+              "MIRI/CH3_short": 0.007806098085198943,
+              "MIRI/CH4_short": 0.01702390135033786,
+              "NIRSpec/G140H_F100LP": -0.05205213148663662,
+              "NIRSpec/G235H_F170LP": -0.09564491715177116,
+              "NIRSpec/G395H_F290LP": -0.03720455088348903
+            },
+            "segment_gain_prior_sigma_fraction": {
+              "MIRI/CH2_long": 0.01,
+              "MIRI/CH2_medium": 0.01,
+              "MIRI/CH2_short": 0.01,
+              "MIRI/CH3_short": 0.01,
+              "MIRI/CH4_short": 0.01,
+              "NIRSpec/G140H_F100LP": 0.03,
+              "NIRSpec/G235H_F170LP": 0.03,
+              "NIRSpec/G395H_F290LP": 0.03
+            },
+            "weighted_data_term": 130.45248717471316
+          },
+          "nir_only": {
+            "adjusted_residual_jy": [
+              8.445459692418686e-06,
+              -5.889473563063274e-06,
+              -0.0002757296661295457,
+              -0.0011620303804013793,
+              -0.004152233082884093,
+              -0.0071020715511871755,
+              -0.03408164128996509,
+              -0.0038339635819029105,
+              -0.12070094975109037,
+              -0.03570086777313051,
+              0.004928773781605741,
+              0.015919911826410584,
+              0.07833963713341441,
+              0.43296278951842193,
+              0.5239922443170348,
+              1.003575095149975,
+              1.6203095364033016,
+              2.886298596260595,
+              2.8228895492974706
+            ],
+            "block_adjusted_residual_rms_jy": {
+              "miri": 1.843638413974095,
+              "nir_continuum": 0.041918020160969065,
+              "nir_ice": 0.04384457523314749
+            },
+            "block_contribution_note": "Sum of r_i*(P*r)_i within each block; sums to weighted_data_term. Cross-block base covariance could make individual contributions signed.",
+            "block_standardized_residual_rms": {
+              "miri": 83.86714083150606,
+              "nir_continuum": 5.454425258558832,
+              "nir_ice": 5.167057347948787
+            },
+            "block_weighted_data_contribution": {
+              "miri": 0.0,
+              "nir_continuum": 17.85045294072274,
+              "nir_ice": 10.679392654796622
+            },
+            "block_weights": {
+              "miri": 0.0,
+              "nir_continuum": 0.6,
+              "nir_ice": 0.4
+            },
+            "common_scale": 1.0470527137376853,
+            "common_scale_prior_sigma_fraction": 0.03,
+            "interpretation": "regularized block-normalized screening objective; not a posterior or formal chi-square",
+            "nuisance_penalty": 7.4610216561189615,
+            "score": 35.99086725163832,
+            "segment_gain_fraction": {
+              "MIRI/CH2_long": 0.0,
+              "MIRI/CH2_medium": 0.0,
+              "MIRI/CH2_short": 0.0,
+              "MIRI/CH3_short": 0.0,
+              "MIRI/CH4_short": 0.0,
+              "NIRSpec/G140H_F100LP": -0.024279654562237046,
+              "NIRSpec/G235H_F170LP": -0.062150325667596644,
+              "NIRSpec/G395H_F290LP": 0.006985485965673937
+            },
+            "segment_gain_prior_sigma_fraction": {
+              "MIRI/CH2_long": 0.01,
+              "MIRI/CH2_medium": 0.01,
+              "MIRI/CH2_short": 0.01,
+              "MIRI/CH3_short": 0.01,
+              "MIRI/CH4_short": 0.01,
+              "NIRSpec/G140H_F100LP": 0.03,
+              "NIRSpec/G235H_F170LP": 0.03,
+              "NIRSpec/G395H_F290LP": 0.03
+            },
+            "weighted_data_term": 28.52984559551936
+          }
+        },
+        "miri_gain_0.02": {
+          "baseline": {
+            "adjusted_residual_jy": [
+              -2.9705060124486076e-05,
+              -6.898308310176901e-05,
+              -0.0007788977006594227,
+              -0.0028241370483614893,
+              -0.01514271147909232,
+              -0.021730108780251105,
+              -0.05629923796755249,
+              -0.14972664178381404,
+              -0.3233465590021709,
+              -0.06966425640911361,
+              -0.009300076864144994,
+              -0.0002651077071627178,
+              -0.00877591735730758,
+              -0.153413011557334,
+              0.14651973013197256,
+              0.267121124085982,
+              0.3110215033276722,
+              0.4280460934831902,
+              0.11901609155097992
+            ],
+            "block_adjusted_residual_rms_jy": {
+              "miri": 0.2615594075579809,
+              "nir_continuum": 0.12057766334765463,
+              "nir_ice": 0.03541428757674091
+            },
+            "block_contribution_note": "Sum of r_i*(P*r)_i within each block; sums to weighted_data_term. Cross-block base covariance could make individual contributions signed.",
+            "block_standardized_residual_rms": {
+              "miri": 14.896434846744732,
+              "nir_continuum": 14.286752307532408,
+              "nir_ice": 4.288405680789434
+            },
+            "block_weighted_data_contribution": {
+              "miri": 55.475942785827684,
+              "nir_continuum": 91.85008117355216,
+              "nir_ice": 5.517126984908126
+            },
+            "block_weights": {
+              "miri": 0.25,
+              "nir_continuum": 0.45,
+              "nir_ice": 0.3
+            },
+            "common_scale": 0.6677059791627209,
+            "common_scale_prior_sigma_fraction": 0.03,
+            "interpretation": "regularized block-normalized screening objective; not a posterior or formal chi-square",
+            "nuisance_penalty": 161.07036828117316,
+            "score": 313.91351922546113,
+            "segment_gain_fraction": {
+              "MIRI/CH2_long": 0.015737309560288532,
+              "MIRI/CH2_medium": 0.013564576004888708,
+              "MIRI/CH2_short": -0.00235304716451193,
+              "MIRI/CH3_short": 0.03089058562753283,
+              "MIRI/CH4_short": 0.06774722225852738,
+              "NIRSpec/G140H_F100LP": -0.06670730038592246,
+              "NIRSpec/G235H_F170LP": -0.12075198162029822,
+              "NIRSpec/G395H_F290LP": -0.04533881860454733
+            },
+            "segment_gain_prior_sigma_fraction": {
+              "MIRI/CH2_long": 0.02,
+              "MIRI/CH2_medium": 0.02,
+              "MIRI/CH2_short": 0.02,
+              "MIRI/CH3_short": 0.02,
+              "MIRI/CH4_short": 0.02,
+              "NIRSpec/G140H_F100LP": 0.03,
+              "NIRSpec/G235H_F170LP": 0.03,
+              "NIRSpec/G395H_F290LP": 0.03
+            },
+            "weighted_data_term": 152.84315094428797
+          },
+          "nir_miri_equal": {
+            "adjusted_residual_jy": [
+              -3.635008785114754e-05,
+              -8.045607288768717e-05,
+              -0.0008759631746191605,
+              -0.003150887510276876,
+              -0.01788656895656629,
+              -0.02545104031607361,
+              -0.06296985267710169,
+              -0.17346650197229188,
+              -0.358406003056285,
+              -0.07914399702864164,
+              -0.011519603281381595,
+              -0.002603422004294753,
+              -0.021494634155144646,
+              -0.21457570417682148,
+              0.10218842418838275,
+              0.18063570489056913,
+              0.16632217991015885,
+              0.21482645110630383,
+              -0.1098208631550075
+            ],
+            "block_adjusted_residual_rms_jy": {
+              "miri": 0.1707769297219347,
+              "nir_continuum": 0.1347792766298388,
+              "nir_ice": 0.04142846433620854
+            },
+            "block_contribution_note": "Sum of r_i*(P*r)_i within each block; sums to weighted_data_term. Cross-block base covariance could make individual contributions signed.",
+            "block_standardized_residual_rms": {
+              "miri": 9.037859421082693,
+              "nir_continuum": 16.357975393194987,
+              "nir_ice": 5.022613533806259
+            },
+            "block_weighted_data_contribution": {
+              "miri": 40.84145145762659,
+              "nir_continuum": 80.2750076893118,
+              "nir_ice": 5.045329341994761
+            },
+            "block_weights": {
+              "miri": 0.5,
+              "nir_continuum": 0.3,
+              "nir_ice": 0.2
+            },
+            "common_scale": 0.6250769867474635,
+            "common_scale_prior_sigma_fraction": 0.03,
+            "interpretation": "regularized block-normalized screening objective; not a posterior or formal chi-square",
+            "nuisance_penalty": 182.88084442370106,
+            "score": 309.04263291263425,
+            "segment_gain_fraction": {
+              "MIRI/CH2_long": 0.02128412730540012,
+              "MIRI/CH2_medium": 0.018920900898119392,
+              "MIRI/CH2_short": -0.006582319806657663,
+              "MIRI/CH3_short": 0.033038162862069606,
+              "MIRI/CH4_short": 0.05617222917850768,
+              "NIRSpec/G140H_F100LP": -0.05057281919303951,
+              "NIRSpec/G235H_F170LP": -0.09338351220848441,
+              "NIRSpec/G395H_F290LP": -0.03563350095154794
+            },
+            "segment_gain_prior_sigma_fraction": {
+              "MIRI/CH2_long": 0.02,
+              "MIRI/CH2_medium": 0.02,
+              "MIRI/CH2_short": 0.02,
+              "MIRI/CH3_short": 0.02,
+              "MIRI/CH4_short": 0.02,
+              "NIRSpec/G140H_F100LP": 0.03,
+              "NIRSpec/G235H_F170LP": 0.03,
+              "NIRSpec/G395H_F290LP": 0.03
+            },
+            "weighted_data_term": 126.16178848893317
+          },
+          "nir_only": {
+            "adjusted_residual_jy": [
+              8.445459692418686e-06,
+              -5.889473563063274e-06,
+              -0.0002757296661295457,
+              -0.0011620303804013793,
+              -0.004152233082884093,
+              -0.0071020715511871755,
+              -0.03408164128996509,
+              -0.0038339635819029105,
+              -0.12070094975109037,
+              -0.03570086777313051,
+              0.004928773781605741,
+              0.015919911826410584,
+              0.07833963713341441,
+              0.43296278951842193,
+              0.5239922443170348,
+              1.003575095149975,
+              1.6203095364033016,
+              2.886298596260595,
+              2.8228895492974706
+            ],
+            "block_adjusted_residual_rms_jy": {
+              "miri": 1.843638413974095,
+              "nir_continuum": 0.041918020160969065,
+              "nir_ice": 0.04384457523314749
+            },
+            "block_contribution_note": "Sum of r_i*(P*r)_i within each block; sums to weighted_data_term. Cross-block base covariance could make individual contributions signed.",
+            "block_standardized_residual_rms": {
+              "miri": 83.86714083150606,
+              "nir_continuum": 5.454425258558832,
+              "nir_ice": 5.167057347948787
+            },
+            "block_weighted_data_contribution": {
+              "miri": 0.0,
+              "nir_continuum": 17.85045294072274,
+              "nir_ice": 10.679392654796622
+            },
+            "block_weights": {
+              "miri": 0.0,
+              "nir_continuum": 0.6,
+              "nir_ice": 0.4
+            },
+            "common_scale": 1.0470527137376853,
+            "common_scale_prior_sigma_fraction": 0.03,
+            "interpretation": "regularized block-normalized screening objective; not a posterior or formal chi-square",
+            "nuisance_penalty": 7.4610216561189615,
+            "score": 35.99086725163832,
+            "segment_gain_fraction": {
+              "MIRI/CH2_long": 0.0,
+              "MIRI/CH2_medium": 0.0,
+              "MIRI/CH2_short": 0.0,
+              "MIRI/CH3_short": 0.0,
+              "MIRI/CH4_short": 0.0,
+              "NIRSpec/G140H_F100LP": -0.024279654562237046,
+              "NIRSpec/G235H_F170LP": -0.062150325667596644,
+              "NIRSpec/G395H_F290LP": 0.006985485965673937
+            },
+            "segment_gain_prior_sigma_fraction": {
+              "MIRI/CH2_long": 0.02,
+              "MIRI/CH2_medium": 0.02,
+              "MIRI/CH2_short": 0.02,
+              "MIRI/CH3_short": 0.02,
+              "MIRI/CH4_short": 0.02,
+              "NIRSpec/G140H_F100LP": 0.03,
+              "NIRSpec/G235H_F170LP": 0.03,
+              "NIRSpec/G395H_F290LP": 0.03
+            },
+            "weighted_data_term": 28.52984559551936
+          }
+        },
+        "miri_gain_0.05": {
+          "baseline": {
+            "adjusted_residual_jy": [
+              -2.2574033293165043e-05,
+              -5.721237448894836e-05,
+              -0.0006852877327756161,
+              -0.0025152031644370037,
+              -0.0131555872129851,
+              -0.019089821707639565,
+              -0.05235594622811032,
+              -0.12189924392141369,
+              -0.28465581087728564,
+              -0.0635891858401735,
+              -0.00658784579919949,
+              0.0028165690105206136,
+              0.007813591523155021,
+              -0.03983033598744379,
+              0.173531385719074,
+              0.30772680180690737,
+              0.28291656871785387,
+              0.28245462767903184,
+              -0.09636211543108164
+            ],
+            "block_adjusted_residual_rms_jy": {
+              "miri": 0.22192470227816014,
+              "nir_continuum": 0.10497290224787849,
+              "nir_ice": 0.03223340480608548
+            },
+            "block_contribution_note": "Sum of r_i*(P*r)_i within each block; sums to weighted_data_term. Cross-block base covariance could make individual contributions signed.",
+            "block_standardized_residual_rms": {
+              "miri": 13.885518306437797,
+              "nir_continuum": 12.551024749205954,
+              "nir_ice": 3.8644022399893467
+            },
+            "block_weighted_data_contribution": {
+              "miri": 48.2019046596048,
+              "nir_continuum": 70.88770001483115,
+              "nir_ice": 4.480081401730404
+            },
+            "block_weights": {
+              "miri": 0.25,
+              "nir_continuum": 0.45,
+              "nir_ice": 0.3
+            },
+            "common_scale": 0.7397106642814799,
+            "common_scale_prior_sigma_fraction": 0.03,
+            "interpretation": "regularized block-normalized screening objective; not a posterior or formal chi-square",
+            "nuisance_penalty": 138.00225673835223,
+            "score": 261.5719428145186,
+            "segment_gain_fraction": {
+              "MIRI/CH2_long": 0.11330983174308133,
+              "MIRI/CH2_medium": 0.10040796505272112,
+              "MIRI/CH2_short": -0.003818232976354568,
+              "MIRI/CH3_short": 0.17562006159384616,
+              "MIRI/CH4_short": 0.2412701989261989,
+              "NIRSpec/G140H_F100LP": -0.05767522057701837,
+              "NIRSpec/G235H_F170LP": -0.10740070188644353,
+              "NIRSpec/G395H_F290LP": -0.03569382711330164
+            },
+            "segment_gain_prior_sigma_fraction": {
+              "MIRI/CH2_long": 0.05,
+              "MIRI/CH2_medium": 0.05,
+              "MIRI/CH2_short": 0.05,
+              "MIRI/CH3_short": 0.05,
+              "MIRI/CH4_short": 0.05,
+              "NIRSpec/G140H_F100LP": 0.03,
+              "NIRSpec/G235H_F170LP": 0.03,
+              "NIRSpec/G395H_F290LP": 0.03
+            },
+            "weighted_data_term": 123.56968607616636
+          },
+          "nir_miri_equal": {
+            "adjusted_residual_jy": [
+              -2.9111213191161573e-05,
+              -6.844577563336961e-05,
+              -0.0007797371012111276,
+              -0.0028325372453066374,
+              -0.015793433040487373,
+              -0.022662300132333606,
+              -0.05869234960434875,
+              -0.14503587050881545,
+              -0.31849905896308295,
+              -0.0726345734719063,
+              -0.00876592597105029,
+              0.0004915821878964406,
+              -0.004809294035022366,
+              -0.09240283022562501,
+              0.1141818885407665,
+              0.1939730229036516,
+              0.13976316895616603,
+              0.15840700050803758,
+              -0.21796171100699002
+            ],
+            "block_adjusted_residual_rms_jy": {
+              "miri": 0.15881600936856677,
+              "nir_continuum": 0.11864676582222762,
+              "nir_ice": 0.036660584023370545
+            },
+            "block_contribution_note": "Sum of r_i*(P*r)_i within each block; sums to weighted_data_term. Cross-block base covariance could make individual contributions signed.",
+            "block_standardized_residual_rms": {
+              "miri": 8.596626266972306,
+              "nir_continuum": 14.53868558361508,
+              "nir_ice": 4.4134618849213485
+            },
+            "block_weighted_data_contribution": {
+              "miri": 36.9509915869991,
+              "nir_continuum": 63.4120135497651,
+              "nir_ice": 3.8957291619307006
+            },
+            "block_weights": {
+              "miri": 0.5,
+              "nir_continuum": 0.3,
+              "nir_ice": 0.2
+            },
+            "common_scale": 0.6951843468861076,
+            "common_scale_prior_sigma_fraction": 0.03,
+            "interpretation": "regularized block-normalized screening objective; not a posterior or formal chi-square",
+            "nuisance_penalty": 157.37422586734883,
+            "score": 261.63296016604374,
+            "segment_gain_fraction": {
+              "MIRI/CH2_long": 0.1428478147425135,
+              "MIRI/CH2_medium": 0.1321348415071732,
+              "MIRI/CH2_short": -0.01771592052787077,
+              "MIRI/CH3_short": 0.17351558059585714,
+              "MIRI/CH4_short": 0.19914263015350644,
+              "NIRSpec/G140H_F100LP": -0.04440053010342442,
+              "NIRSpec/G235H_F170LP": -0.08394801632362954,
+              "NIRSpec/G395H_F290LP": -0.029078445338117393
+            },
+            "segment_gain_prior_sigma_fraction": {
+              "MIRI/CH2_long": 0.05,
+              "MIRI/CH2_medium": 0.05,
+              "MIRI/CH2_short": 0.05,
+              "MIRI/CH3_short": 0.05,
+              "MIRI/CH4_short": 0.05,
+              "NIRSpec/G140H_F100LP": 0.03,
+              "NIRSpec/G235H_F170LP": 0.03,
+              "NIRSpec/G395H_F290LP": 0.03
+            },
+            "weighted_data_term": 104.25873429869489
+          },
+          "nir_only": {
+            "adjusted_residual_jy": [
+              8.445459692418686e-06,
+              -5.889473563063274e-06,
+              -0.0002757296661295457,
+              -0.0011620303804013793,
+              -0.004152233082884093,
+              -0.0071020715511871755,
+              -0.03408164128996509,
+              -0.0038339635819029105,
+              -0.12070094975109037,
+              -0.03570086777313051,
+              0.004928773781605741,
+              0.015919911826410584,
+              0.07833963713341441,
+              0.43296278951842193,
+              0.5239922443170348,
+              1.003575095149975,
+              1.6203095364033016,
+              2.886298596260595,
+              2.8228895492974706
+            ],
+            "block_adjusted_residual_rms_jy": {
+              "miri": 1.843638413974095,
+              "nir_continuum": 0.041918020160969065,
+              "nir_ice": 0.04384457523314749
+            },
+            "block_contribution_note": "Sum of r_i*(P*r)_i within each block; sums to weighted_data_term. Cross-block base covariance could make individual contributions signed.",
+            "block_standardized_residual_rms": {
+              "miri": 83.86714083150606,
+              "nir_continuum": 5.454425258558832,
+              "nir_ice": 5.167057347948787
+            },
+            "block_weighted_data_contribution": {
+              "miri": 0.0,
+              "nir_continuum": 17.85045294072274,
+              "nir_ice": 10.679392654796622
+            },
+            "block_weights": {
+              "miri": 0.0,
+              "nir_continuum": 0.6,
+              "nir_ice": 0.4
+            },
+            "common_scale": 1.0470527137376853,
+            "common_scale_prior_sigma_fraction": 0.03,
+            "interpretation": "regularized block-normalized screening objective; not a posterior or formal chi-square",
+            "nuisance_penalty": 7.4610216561189615,
+            "score": 35.99086725163832,
+            "segment_gain_fraction": {
+              "MIRI/CH2_long": 0.0,
+              "MIRI/CH2_medium": 0.0,
+              "MIRI/CH2_short": 0.0,
+              "MIRI/CH3_short": 0.0,
+              "MIRI/CH4_short": 0.0,
+              "NIRSpec/G140H_F100LP": -0.024279654562237046,
+              "NIRSpec/G235H_F170LP": -0.062150325667596644,
+              "NIRSpec/G395H_F290LP": 0.006985485965673937
+            },
+            "segment_gain_prior_sigma_fraction": {
+              "MIRI/CH2_long": 0.05,
+              "MIRI/CH2_medium": 0.05,
+              "MIRI/CH2_short": 0.05,
+              "MIRI/CH3_short": 0.05,
+              "MIRI/CH4_short": 0.05,
+              "NIRSpec/G140H_F100LP": 0.03,
+              "NIRSpec/G235H_F170LP": 0.03,
+              "NIRSpec/G395H_F290LP": 0.03
+            },
+            "weighted_data_term": 28.52984559551936
+          }
+        }
+      },
+      "quadrature_unresolved": true,
+      "quality_warnings": {},
+      "reason": "",
+      "status": "screened",
+      "unresolved_quadrature_bands": [
+        "c01",
+        "c02",
+        "c03",
+        "c04",
+        "c05",
+        "c07",
+        "h01",
+        "h02"
+      ]
+    },
+    {
+      "band_flux_jy": [
+        0.0001135984558477906,
+        0.00019043246899808316,
+        0.0015166163304561615,
+        0.005193545929321921,
+        0.03556703583521088,
+        0.04804396294235109,
+        0.08177149065331325,
+        0.44783442298497345,
+        0.6352822262842381,
+        0.10862238875411068,
+        0.024680860565842656,
+        0.02254589489601902,
+        0.2450003260741065,
+        1.587368245309954,
+        1.0378959842787026,
+        1.8908977402992857,
+        3.1042904388685066,
+        5.92146225320934,
+        6.489008410597725
+      ],
+      "band_predictions": [
+        {
+          "band_id": "c01",
+          "block": "nir_continuum",
+          "effective_wavelength_um": 1.13,
+          "five_minus_three_over_five": -0.02665228763956558,
+          "model_flux_jy": 0.0001135984558477906,
+          "observed_flux_jy": 0.00011280459058311971,
+          "quadrature_unresolved": true,
+          "three_node_flux_jy": 0.00011662611456845641
+        },
+        {
+          "band_id": "c02",
+          "block": "nir_continuum",
+          "effective_wavelength_um": 1.21,
+          "five_minus_three_over_five": -0.005645912037731397,
+          "model_flux_jy": 0.00019043246899808316,
+          "observed_flux_jy": 0.00020968344816331647,
+          "quadrature_unresolved": false,
+          "three_node_flux_jy": 0.00019150763396717435
+        },
+        {
+          "band_id": "c03",
+          "block": "nir_continuum",
+          "effective_wavelength_um": 1.521,
+          "five_minus_three_over_five": -0.012702135918936111,
+          "model_flux_jy": 0.0015166163304561615,
+          "observed_flux_jy": 0.001938644984729536,
+          "quadrature_unresolved": true,
+          "three_node_flux_jy": 0.0015358805972224938
+        },
+        {
+          "band_id": "c04",
+          "block": "nir_continuum",
+          "effective_wavelength_um": 1.74,
+          "five_minus_three_over_five": 0.003923059883456146,
+          "model_flux_jy": 0.005193545929321921,
+          "observed_flux_jy": 0.0066964785327128075,
+          "quadrature_unresolved": false,
+          "three_node_flux_jy": 0.005173171337633712
+        },
+        {
+          "band_id": "c05",
+          "block": "nir_continuum",
+          "effective_wavelength_um": 2.2,
+          "five_minus_three_over_five": 0.0012037456106184688,
+          "model_flux_jy": 0.03556703583521088,
+          "observed_flux_jy": 0.044436987446273134,
+          "quadrature_unresolved": false,
+          "three_node_flux_jy": 0.03552422217194154
+        },
+        {
+          "band_id": "c06",
+          "block": "nir_continuum",
+          "effective_wavelength_um": 2.3,
+          "five_minus_three_over_five": 0.0011207902335730682,
+          "model_flux_jy": 0.04804396294235109,
+          "observed_flux_jy": 0.061174555951986266,
+          "quadrature_unresolved": false,
+          "three_node_flux_jy": 0.047990115737903155
+        },
+        {
+          "band_id": "c07",
+          "block": "nir_continuum",
+          "effective_wavelength_um": 2.55,
+          "five_minus_three_over_five": 0.011699117237291341,
+          "model_flux_jy": 0.08177149065331325,
+          "observed_flux_jy": 0.12292927588858787,
+          "quadrature_unresolved": true,
+          "three_node_flux_jy": 0.08081483639749207
+        },
+        {
+          "band_id": "c08",
+          "block": "nir_continuum",
+          "effective_wavelength_um": 3.91,
+          "five_minus_three_over_five": 0.004583580935176169,
+          "model_flux_jy": 0.44783442298497345,
+          "observed_flux_jy": 0.471292322592436,
+          "quadrature_unresolved": false,
+          "three_node_flux_jy": 0.4457817376616639
+        },
+        {
+          "band_id": "c09",
+          "block": "nir_continuum",
+          "effective_wavelength_um": 4.525,
+          "five_minus_three_over_five": 0.0016077301187998865,
+          "model_flux_jy": 0.6352822262842381,
+          "observed_flux_jy": 0.7883862647800575,
+          "quadrature_unresolved": false,
+          "three_node_flux_jy": 0.6342608639151027
+        },
+        {
+          "band_id": "h01",
+          "block": "nir_ice",
+          "effective_wavelength_um": 2.77,
+          "five_minus_three_over_five": 0.04108815804238172,
+          "model_flux_jy": 0.10862238875411068,
+          "observed_flux_jy": 0.1667887218763796,
+          "quadrature_unresolved": true,
+          "three_node_flux_jy": 0.10415929487804075
+        },
+        {
+          "band_id": "h02",
+          "block": "nir_ice",
+          "effective_wavelength_um": 2.95,
+          "five_minus_three_over_five": -0.009244760835533312,
+          "model_flux_jy": 0.024680860565842656,
+          "observed_flux_jy": 0.03981732977517519,
+          "quadrature_unresolved": false,
+          "three_node_flux_jy": 0.024909029218989017
+        },
+        {
+          "band_id": "h03",
+          "block": "nir_ice",
+          "effective_wavelength_um": 3.1100000000000003,
+          "five_minus_three_over_five": -0.015374652218255985,
+          "model_flux_jy": 0.02254589489601902,
+          "observed_flux_jy": 0.033334526346008767,
+          "quadrature_unresolved": true,
+          "three_node_flux_jy": 0.022892530188994665
+        },
+        {
+          "band_id": "h04",
+          "block": "nir_ice",
+          "effective_wavelength_um": 3.3600000000000003,
+          "five_minus_three_over_five": 0.01538662010386607,
+          "model_flux_jy": 0.2450003260741065,
+          "observed_flux_jy": 0.18794238036499775,
+          "quadrature_unresolved": true,
+          "three_node_flux_jy": 0.2412305991314809
+        },
+        {
+          "band_id": "s01",
+          "block": "miri",
+          "effective_wavelength_um": 8.399999999999999,
+          "five_minus_three_over_five": 0.002339936493982291,
+          "model_flux_jy": 1.587368245309954,
+          "observed_flux_jy": 1.1932705614272665,
+          "quadrature_unresolved": false,
+          "three_node_flux_jy": 1.5836539044233646
+        },
+        {
+          "band_id": "s02",
+          "block": "miri",
+          "effective_wavelength_um": 9.7,
+          "five_minus_three_over_five": 0.0022006004473203093,
+          "model_flux_jy": 1.0378959842787026,
+          "observed_flux_jy": 0.49919728831445087,
+          "quadrature_unresolved": false,
+          "three_node_flux_jy": 1.0356119899114269
+        },
+        {
+          "band_id": "s03",
+          "block": "miri",
+          "effective_wavelength_um": 11.0,
+          "five_minus_three_over_five": 0.0013674470805453876,
+          "model_flux_jy": 1.8908977402992857,
+          "observed_flux_jy": 0.986303694733075,
+          "quadrature_unresolved": false,
+          "three_node_flux_jy": 1.8883120377047036
+        },
+        {
+          "band_id": "s04",
+          "block": "miri",
+          "effective_wavelength_um": 12.7,
+          "five_minus_three_over_five": -0.0012059188255508077,
+          "model_flux_jy": 3.1042904388685066,
+          "observed_flux_jy": 1.836899064256267,
+          "quadrature_unresolved": false,
+          "three_node_flux_jy": 3.1080339611487156
+        },
+        {
+          "band_id": "s05",
+          "block": "miri",
+          "effective_wavelength_um": 18.450000000000003,
+          "five_minus_three_over_five": 0.0006818266136981375,
+          "model_flux_jy": 5.92146225320934,
+          "observed_flux_jy": 3.2846375481516548,
+          "quadrature_unresolved": false,
+          "three_node_flux_jy": 5.917424842653093
+        },
+        {
+          "band_id": "s06",
+          "block": "miri",
+          "effective_wavelength_um": 19.8,
+          "five_minus_three_over_five": 0.00014646279754324692,
+          "model_flux_jy": 6.489008410597725,
+          "observed_flux_jy": 3.9092068681040057,
+          "quadrature_unresolved": false,
+          "three_node_flux_jy": 6.488058012272627
+        }
+      ],
+      "baseline_profile": {
+        "adjusted_residual_jy": [
+          -2.9090684825398742e-05,
+          -6.799282184379538e-05,
+          -0.0007925136936111301,
+          -0.0027678306289273596,
+          -0.015222842935217723,
+          -0.021574257527112617,
+          -0.053272948782763244,
+          -0.1456604978130936,
+          -0.32012561416876417,
+          -0.07384063523874178,
+          -0.021139855485285398,
+          -0.01643323757621699,
+          -0.01348890626497136,
+          -0.1250234470108228,
+          0.18904026302290594,
+          0.26791520272455027,
+          0.20949247416432026,
+          0.45232504938420703,
+          0.16334607712112925
+        ],
+        "block_adjusted_residual_rms_jy": {
+          "miri": 0.2576537169471039,
+          "nir_continuum": 0.1189027962060751,
+          "nir_ice": 0.03984763102074338
+        },
+        "block_contribution_note": "Sum of r_i*(P*r)_i within each block; sums to weighted_data_term. Cross-block base covariance could make individual contributions signed.",
+        "block_standardized_residual_rms": {
+          "miri": 15.159602061216006,
+          "nir_continuum": 14.072594801403136,
+          "nir_ice": 6.14034524975188
+        },
+        "block_weighted_data_contribution": {
+          "miri": 57.45338366360615,
+          "nir_continuum": 89.11706600001537,
+          "nir_ice": 11.311151935845139
+        },
+        "block_weights": {
+          "miri": 0.25,
+          "nir_continuum": 0.45,
+          "nir_ice": 0.3
+        },
+        "common_scale": 0.6715258995562836,
+        "common_scale_prior_sigma_fraction": 0.03,
+        "interpretation": "regularized block-normalized screening objective; not a posterior or formal chi-square",
+        "nuisance_penalty": 159.55633033898772,
+        "score": 317.43793193845437,
+        "segment_gain_fraction": {
+          "MIRI/CH2_long": 0.015784092312469293,
+          "MIRI/CH2_medium": 0.017501062917933984,
+          "MIRI/CH2_short": -0.0019176083208325542,
+          "MIRI/CH3_short": 0.02080674532872682,
+          "MIRI/CH4_short": 0.07290078896950558,
+          "NIRSpec/G140H_F100LP": -0.06586257232904132,
+          "NIRSpec/G235H_F170LP": -0.11994419702076058,
+          "NIRSpec/G395H_F290LP": -0.052832201668647584
+        },
+        "segment_gain_prior_sigma_fraction": {
+          "MIRI/CH2_long": 0.02,
+          "MIRI/CH2_medium": 0.02,
+          "MIRI/CH2_short": 0.02,
+          "MIRI/CH3_short": 0.02,
+          "MIRI/CH4_short": 0.02,
+          "NIRSpec/G140H_F100LP": 0.03,
+          "NIRSpec/G235H_F170LP": 0.03,
+          "NIRSpec/G395H_F290LP": 0.03
+        },
+        "weighted_data_term": 157.88160159946665
+      },
+      "baseline_score": 317.43793193845437,
+      "catalogue": {
+        "carbon_mass_fraction": 0.2,
+        "density_exponent": -1.5,
+        "ice_mass_fraction": 0.12,
+        "inclination_deg": 70.0,
+        "index": 17,
+        "material_id": "draine",
+        "opacity_matching": {
+          "S": 0.6877026209001279,
+          "S_over_reference": 0.3387492994701829,
+          "absolute_ice_mass_msun": 1.2118150042536001e-05,
+          "absorption_18_over_9p7": 0.3937827564641489,
+          "actual_mass_msun": 0.0001009845836878,
+          "composition_mass_factor": 0.44882037194576124,
+          "discrete_optical_depth_match_certified": false,
+          "mass_significant_digits": 13,
+          "method": "mass-weighted pure-species DHS extinction at 2.2 um, then analytic radial-column profile factor",
+          "mixture_absorption_18_cm2_g": 865.2658554593339,
+          "mixture_absorption_9p7_cm2_g": 2197.31778818535,
+          "mixture_extinction_cm2_g": 3195.156920166016,
+          "normalization_wavelength_um": 2.2,
+          "profile_mass_factor": 1.0,
+          "reference_extinction_cm2_g": 1434.0515173339843,
+          "reference_mass_msun": 0.000225
+        },
+        "parameters": {
+          "accretion_rate_msun_per_year": 7.3011756855e-08,
+          "cavity_half_opening_deg": 17.5,
+          "distance_pc": 140.0,
+          "envelope_amax_um": 0.4,
+          "envelope_carbon_mass_fraction": 0.2,
+          "envelope_density_exponent": -1.5,
+          "envelope_dust_mass_msun": 0.0001009845836878,
+          "envelope_ice_mass_fraction": 0.12,
+          "envelope_silicate_file": "Draine_Si_sUV.dat",
+          "envelope_size_exponent": 2.75,
+          "inclination_deg": 70.0,
+          "stellar_mass_msun": 0.5,
+          "stellar_radius_rsun": 2.5,
+          "stellar_temperature_k": 4000.0
+        },
+        "reference_mass_msun": 0.000225,
+        "role": "composition",
+        "silicate_mass_fraction": 0.68,
+        "stages": [
+          1
+        ]
+      },
+      "consistency_checks": [
+        {
+          "common_scale_adjusted_model_flux_jy": 0.6906144985559203,
+          "formal_sigma_jy": 0.00046198162643842667,
+          "id": "w007",
+          "model_flux_jy": 1.0284257077980903,
+          "observed_flux_jy": 1.3918125079951504,
+          "primary_score_weight": 0.0,
+          "probe_id": "w007",
+          "segment": "CH1_short",
+          "source_row_zero_based": 172,
+          "wavelength_um": 5.3906283153397085
+        },
+        {
+          "common_scale_adjusted_model_flux_jy": 2.738976665292122,
+          "formal_sigma_jy": 0.000577269649040398,
+          "id": "w008",
+          "model_flux_jy": 4.078735707888443,
+          "observed_flux_jy": 2.2656402783529344,
+          "primary_score_weight": 0.0,
+          "probe_id": "w008",
+          "segment": "CH3_medium",
+          "source_row_zero_based": 277,
+          "wavelength_um": 13.799908320389276
+        },
+        {
+          "common_scale_adjusted_model_flux_jy": 5.241567553753429,
+          "formal_sigma_jy": 0.004945887424724462,
+          "id": "w009",
+          "model_flux_jy": 7.805458519495434,
+          "observed_flux_jy": 7.851055855671131,
+          "primary_score_weight": 0.0,
+          "probe_id": "w009",
+          "segment": "CH4_long",
+          "source_row_zero_based": 353,
+          "wavelength_um": 27.513091575690556
+        }
+      ],
+      "flux_by_probe": {
+        "c01_q0": 9.812814720761833e-05,
+        "c01_q1": 0.00010144307707726637,
+        "c01_q2": 0.00011530177142219067,
+        "c01_q3": 0.00012206400432451617,
+        "c01_q4": 0.0001404214545143575,
+        "c02_q0": 0.00015365483289461661,
+        "c02_q1": 0.0001736155939082343,
+        "c02_q2": 0.00019134510034879,
+        "c02_q3": 0.00020609291230964865,
+        "c02_q4": 0.00023001056951326953,
+        "c03_q0": 0.0012449578919430486,
+        "c03_q1": 0.0013873745132226634,
+        "c03_q2": 0.001532978113905361,
+        "c03_q3": 0.0016251426392647616,
+        "c03_q4": 0.0018384132357704708,
+        "c04_q0": 0.004230030435889807,
+        "c04_q1": 0.0046168156002846785,
+        "c04_q2": 0.005174222876414084,
+        "c04_q3": 0.005791176619437558,
+        "c04_q4": 0.006112106084256132,
+        "c05_q0": 0.03029313418942497,
+        "c05_q1": 0.03311527098015959,
+        "c05_q2": 0.0358998806852068,
+        "c05_q3": 0.038249443610164156,
+        "c05_q4": 0.03925267610139705,
+        "c06_q0": 0.04326490468614766,
+        "c06_q1": 0.04566996569418939,
+        "c06_q2": 0.04770343172746967,
+        "c06_q3": 0.05032846538974399,
+        "c06_q4": 0.05386206283139258,
+        "c07_q0": 0.06580197300251034,
+        "c07_q1": 0.07934550098397716,
+        "c07_q2": 0.082455550225952,
+        "c07_q3": 0.08597449149270048,
+        "c07_q4": 0.08926484447863417,
+        "c08_q0": 0.4325589419273177,
+        "c08_q1": 0.44145965689943373,
+        "c08_q2": 0.4454776522547928,
+        "c08_q3": 0.45610983169038705,
+        "c08_q4": 0.4602208750234948,
+        "c09_q0": 0.622240059841331,
+        "c09_q1": 0.6348687250975855,
+        "c09_q2": 0.6340515024143538,
+        "c09_q3": 0.6366124090896517,
+        "c09_q4": 0.6471191139918703,
+        "h01_q0": 0.09868513053647221,
+        "h01_q1": 0.11551652933349182,
+        "h01_q2": 0.10889881400977351,
+        "h01_q3": 0.10856110161666582,
+        "h01_q4": 0.09067538269267833,
+        "h02_q0": 0.05914414573100742,
+        "h02_q1": 0.03315066647327799,
+        "h02_q2": 0.020151550945336886,
+        "h02_q3": 0.013604146868434898,
+        "h02_q4": 0.009703825801579144,
+        "h03_q0": 0.008681227727664524,
+        "h03_q1": 0.011098303022834825,
+        "h03_q2": 0.018066142117723186,
+        "h03_q3": 0.03123365744059184,
+        "h03_q4": 0.05640938493541072,
+        "h04_q0": 0.10484926647827944,
+        "h04_q1": 0.21125896744262398,
+        "h04_q2": 0.2573595390432827,
+        "h04_q3": 0.29057588160411557,
+        "h04_q4": 0.31309617213747537,
+        "s01_q0": 1.732376553524057,
+        "s01_q1": 1.6540032055377376,
+        "s01_q2": 1.5764704549842972,
+        "s01_q3": 1.520855901249226,
+        "s01_q4": 1.463665053078943,
+        "s02_q0": 0.930017329622942,
+        "s02_q1": 0.9320496886379993,
+        "s02_q2": 1.0073038011412285,
+        "s02_q3": 1.1318721799015825,
+        "s02_q4": 1.2544394052807055,
+        "s03_q0": 1.708767373821275,
+        "s03_q1": 1.8056216978704354,
+        "s03_q2": 1.8885205241512304,
+        "s03_q3": 1.978863728545982,
+        "s03_q4": 2.0670227558020255,
+        "s04_q0": 2.836439168975062,
+        "s04_q1": 2.9467941013628707,
+        "s04_q2": 3.104656773959854,
+        "s04_q3": 3.256354660499503,
+        "s04_q4": 3.3931375020778174,
+        "s05_q0": 5.788022378117971,
+        "s05_q1": 5.843984990039113,
+        "s05_q2": 5.913334628049951,
+        "s05_q3": 6.000931819634244,
+        "s05_q4": 6.063188165600781,
+        "s06_q0": 6.280724029233037,
+        "s06_q1": 6.391440858263106,
+        "s06_q2": 6.490284125738261,
+        "s06_q3": 6.588639417990257,
+        "s06_q4": 6.686487541449686,
+        "w007": 1.0284257077980903,
+        "w008": 4.078735707888443,
+        "w009": 7.805458519495434
+      },
+      "interpretation": "Finite-grid screening only; unresolved quadrature retained and flagged",
+      "model_id": "m0017_4ab38b09",
+      "model_index": 17,
+      "parameters": {
+        "accretion_rate_msun_per_year": 7.3011756855e-08,
+        "cavity_half_opening_deg": 17.5,
+        "distance_pc": 140.0,
+        "envelope_amax_um": 0.4,
+        "envelope_carbon_mass_fraction": 0.2,
+        "envelope_density_exponent": -1.5,
+        "envelope_dust_mass_msun": 0.0001009845836878,
+        "envelope_ice_mass_fraction": 0.12,
+        "envelope_silicate_file": "Draine_Si_sUV.dat",
+        "envelope_size_exponent": 2.75,
+        "inclination_deg": 70.0,
+        "stellar_mass_msun": 0.5,
+        "stellar_radius_rsun": 2.5,
+        "stellar_temperature_k": 4000.0
+      },
+      "profiles": {
+        "miri_gain_0.01": {
+          "baseline": {
+            "adjusted_residual_jy": [
+              -3.0912307605177825e-05,
+              -7.099900174480519e-05,
+              -0.0008158346274013178,
+              -0.0028475582349448162,
+              -0.015723594533512998,
+              -0.02224676471242898,
+              -0.054353590271673614,
+              -0.1528145587544958,
+              -0.3300061068699046,
+              -0.07526423845236672,
+              -0.02150316414399581,
+              -0.01677191490893115,
+              -0.017559054651800007,
+              -0.15569345270501,
+              0.1767119275729831,
+              0.24526277591627732,
+              0.18249173345759462,
+              0.5135350525665281,
+              0.24642996035502396
+            ],
+            "block_adjusted_residual_rms_jy": {
+              "miri": 0.2808827140069225,
+              "nir_continuum": 0.12290988697681335,
+              "nir_ice": 0.04097776588589131
+            },
+            "block_contribution_note": "Sum of r_i*(P*r)_i within each block; sums to weighted_data_term. Cross-block base covariance could make individual contributions signed.",
+            "block_standardized_residual_rms": {
+              "miri": 15.481310647829636,
+              "nir_continuum": 14.521668933616647,
+              "nir_ice": 6.2781126458555185
+            },
+            "block_weighted_data_contribution": {
+              "miri": 59.91774484365082,
+              "nir_continuum": 94.8954908779051,
+              "nir_ice": 11.82440951821529
+            },
+            "block_weights": {
+              "miri": 0.25,
+              "nir_continuum": 0.45,
+              "nir_ice": 0.3
+            },
+            "common_scale": 0.65319734216545,
+            "common_scale_prior_sigma_fraction": 0.03,
+            "interpretation": "regularized block-normalized screening objective; not a posterior or formal chi-square",
+            "nuisance_penalty": 164.08440881309107,
+            "score": 330.7220540528623,
+            "segment_gain_fraction": {
+              "MIRI/CH2_long": 0.0036123839338963472,
+              "MIRI/CH2_medium": 0.004089931046103968,
+              "MIRI/CH2_short": -0.0005970061367377578,
+              "MIRI/CH3_short": 0.00453125946146371,
+              "MIRI/CH4_short": 0.02122328682822926,
+              "NIRSpec/G140H_F100LP": -0.06817163649381311,
+              "NIRSpec/G235H_F170LP": -0.12334543702189613,
+              "NIRSpec/G395H_F290LP": -0.05506881349391664
+            },
+            "segment_gain_prior_sigma_fraction": {
+              "MIRI/CH2_long": 0.01,
+              "MIRI/CH2_medium": 0.01,
+              "MIRI/CH2_short": 0.01,
+              "MIRI/CH3_short": 0.01,
+              "MIRI/CH4_short": 0.01,
+              "NIRSpec/G140H_F100LP": 0.03,
+              "NIRSpec/G235H_F170LP": 0.03,
+              "NIRSpec/G395H_F290LP": 0.03
+            },
+            "weighted_data_term": 166.63764523977122
+          },
+          "nir_miri_equal": {
+            "adjusted_residual_jy": [
+              -3.756223599803444e-05,
+              -8.248849080565884e-05,
+              -0.0009117999070700628,
+              -0.003177143171112445,
+              -0.01847018585269207,
+              -0.025989210645888543,
+              -0.06125282524981341,
+              -0.1777947577276094,
+              -0.367005609044833,
+              -0.0845273012391459,
+              -0.02306048956893343,
+              -0.018154882047324024,
+              -0.030313253635357168,
+              -0.22112932695116305,
+              0.13205966693178472,
+              0.16453515273122943,
+              0.05524386226621325,
+              0.26963141824862014,
+              -0.02037101795186258
+            ],
+            "block_adjusted_residual_rms_jy": {
+              "miri": 0.16811589045930145,
+              "nir_continuum": 0.1378741464022633,
+              "nir_ice": 0.047236489925813564
+            },
+            "block_contribution_note": "Sum of r_i*(P*r)_i within each block; sums to weighted_data_term. Cross-block base covariance could make individual contributions signed.",
+            "block_standardized_residual_rms": {
+              "miri": 9.453587073952212,
+              "nir_continuum": 16.629141729153908,
+              "nir_ice": 6.9915866103901925
+            },
+            "block_weighted_data_contribution": {
+              "miri": 44.68515428239818,
+              "nir_continuum": 82.95850639448636,
+              "nir_ice": 9.776456666117486
+            },
+            "block_weights": {
+              "miri": 0.5,
+              "nir_continuum": 0.3,
+              "nir_ice": 0.2
+            },
+            "common_scale": 0.6111484476338067,
+            "common_scale_prior_sigma_fraction": 0.03,
+            "interpretation": "regularized block-normalized screening objective; not a posterior or formal chi-square",
+            "nuisance_penalty": 187.57446809162417,
+            "score": 324.9945854346262,
+            "segment_gain_fraction": {
+              "MIRI/CH2_long": 0.0048467537731071405,
+              "MIRI/CH2_medium": 0.006112942562967457,
+              "MIRI/CH2_short": -0.0016958396504015152,
+              "MIRI/CH3_short": 0.002743403976046314,
+              "MIRI/CH4_short": 0.019674468316043515,
+              "NIRSpec/G140H_F100LP": -0.05156558443270432,
+              "NIRSpec/G235H_F170LP": -0.09519238587157479,
+              "NIRSpec/G395H_F290LP": -0.04202116502055731
+            },
+            "segment_gain_prior_sigma_fraction": {
+              "MIRI/CH2_long": 0.01,
+              "MIRI/CH2_medium": 0.01,
+              "MIRI/CH2_short": 0.01,
+              "MIRI/CH3_short": 0.01,
+              "MIRI/CH4_short": 0.01,
+              "NIRSpec/G140H_F100LP": 0.03,
+              "NIRSpec/G235H_F170LP": 0.03,
+              "NIRSpec/G395H_F290LP": 0.03
+            },
+            "weighted_data_term": 137.420117343002
+          },
+          "nir_only": {
+            "adjusted_residual_jy": [
+              9.899049885091864e-06,
+              -3.5405393488208844e-06,
+              -0.0002910759984985122,
+              -0.001053241241513668,
+              -0.004149986468180997,
+              -0.006686701975751682,
+              -0.0290744490957231,
+              0.006149528640005605,
+              -0.11024792939512432,
+              -0.04190800618315767,
+              -0.013405857931893172,
+              -0.00922943003433082,
+              0.07275621249226291,
+              0.4871083010759467,
+              0.5995134101084909,
+              1.0153897392524192,
+              1.4492848769670852,
+              2.9837882155631164,
+              2.960019982055671
+            ],
+            "block_adjusted_residual_rms_jy": {
+              "miri": 1.888246285691381,
+              "nir_continuum": 0.03815301757761661,
+              "nir_ice": 0.04276285433678277
+            },
+            "block_contribution_note": "Sum of r_i*(P*r)_i within each block; sums to weighted_data_term. Cross-block base covariance could make individual contributions signed.",
+            "block_standardized_residual_rms": {
+              "miri": 85.19078676824681,
+              "nir_continuum": 4.968962823736333,
+              "nir_ice": 4.935984750713151
+            },
+            "block_weighted_data_contribution": {
+              "miri": 0.0,
+              "nir_continuum": 14.814354926204249,
+              "nir_ice": 9.745578183709107
+            },
+            "block_weights": {
+              "miri": 0.0,
+              "nir_continuum": 0.6,
+              "nir_ice": 0.4
+            },
+            "common_scale": 1.0585942281937848,
+            "common_scale_prior_sigma_fraction": 0.03,
+            "interpretation": "regularized block-normalized screening objective; not a posterior or formal chi-square",
+            "nuisance_penalty": 8.304822579726267,
+            "score": 32.86475568963962,
+            "segment_gain_fraction": {
+              "MIRI/CH2_long": 0.0,
+              "MIRI/CH2_medium": 0.0,
+              "MIRI/CH2_short": 0.0,
+              "MIRI/CH3_short": 0.0,
+              "MIRI/CH4_short": 0.0,
+              "NIRSpec/G140H_F100LP": -0.021709850311538697,
+              "NIRSpec/G235H_F170LP": -0.05931865053101071,
+              "NIRSpec/G395H_F290LP": -0.00714400747191101
+            },
+            "segment_gain_prior_sigma_fraction": {
+              "MIRI/CH2_long": 0.01,
+              "MIRI/CH2_medium": 0.01,
+              "MIRI/CH2_short": 0.01,
+              "MIRI/CH3_short": 0.01,
+              "MIRI/CH4_short": 0.01,
+              "NIRSpec/G140H_F100LP": 0.03,
+              "NIRSpec/G235H_F170LP": 0.03,
+              "NIRSpec/G395H_F290LP": 0.03
+            },
+            "weighted_data_term": 24.559933109913352
+          }
+        },
+        "miri_gain_0.02": {
+          "baseline": {
+            "adjusted_residual_jy": [
+              -2.9090684825398742e-05,
+              -6.799282184379538e-05,
+              -0.0007925136936111301,
+              -0.0027678306289273596,
+              -0.015222842935217723,
+              -0.021574257527112617,
+              -0.053272948782763244,
+              -0.1456604978130936,
+              -0.32012561416876417,
+              -0.07384063523874178,
+              -0.021139855485285398,
+              -0.01643323757621699,
+              -0.01348890626497136,
+              -0.1250234470108228,
+              0.18904026302290594,
+              0.26791520272455027,
+              0.20949247416432026,
+              0.45232504938420703,
+              0.16334607712112925
+            ],
+            "block_adjusted_residual_rms_jy": {
+              "miri": 0.2576537169471039,
+              "nir_continuum": 0.1189027962060751,
+              "nir_ice": 0.03984763102074338
+            },
+            "block_contribution_note": "Sum of r_i*(P*r)_i within each block; sums to weighted_data_term. Cross-block base covariance could make individual contributions signed.",
+            "block_standardized_residual_rms": {
+              "miri": 15.159602061216006,
+              "nir_continuum": 14.072594801403136,
+              "nir_ice": 6.14034524975188
+            },
+            "block_weighted_data_contribution": {
+              "miri": 57.45338366360615,
+              "nir_continuum": 89.11706600001537,
+              "nir_ice": 11.311151935845139
+            },
+            "block_weights": {
+              "miri": 0.25,
+              "nir_continuum": 0.45,
+              "nir_ice": 0.3
+            },
+            "common_scale": 0.6715258995562836,
+            "common_scale_prior_sigma_fraction": 0.03,
+            "interpretation": "regularized block-normalized screening objective; not a posterior or formal chi-square",
+            "nuisance_penalty": 159.55633033898772,
+            "score": 317.43793193845437,
+            "segment_gain_fraction": {
+              "MIRI/CH2_long": 0.015784092312469293,
+              "MIRI/CH2_medium": 0.017501062917933984,
+              "MIRI/CH2_short": -0.0019176083208325542,
+              "MIRI/CH3_short": 0.02080674532872682,
+              "MIRI/CH4_short": 0.07290078896950558,
+              "NIRSpec/G140H_F100LP": -0.06586257232904132,
+              "NIRSpec/G235H_F170LP": -0.11994419702076058,
+              "NIRSpec/G395H_F290LP": -0.052832201668647584
+            },
+            "segment_gain_prior_sigma_fraction": {
+              "MIRI/CH2_long": 0.02,
+              "MIRI/CH2_medium": 0.02,
+              "MIRI/CH2_short": 0.02,
+              "MIRI/CH3_short": 0.02,
+              "MIRI/CH4_short": 0.02,
+              "NIRSpec/G140H_F100LP": 0.03,
+              "NIRSpec/G235H_F170LP": 0.03,
+              "NIRSpec/G395H_F290LP": 0.03
+            },
+            "weighted_data_term": 157.88160159946665
+          },
+          "nir_miri_equal": {
+            "adjusted_residual_jy": [
+              -3.5755322372609624e-05,
+              -7.949117805652698e-05,
+              -0.0008883434301384004,
+              -0.003096907119239708,
+              -0.017954364357459087,
+              -0.025295137592690482,
+              -0.060115680529326185,
+              -0.17068577808267846,
+              -0.35709903803762405,
+              -0.083024963729096,
+              -0.022689264356208338,
+              -0.017811255850110546,
+              -0.02632027907750481,
+              -0.18857104610904574,
+              0.14024630012742478,
+              0.18122626885339077,
+              0.08382666001769312,
+              0.23032713280101413,
+              -0.07688610535536533
+            ],
+            "block_adjusted_residual_rms_jy": {
+              "miri": 0.1602394015649643,
+              "nir_continuum": 0.13384893791258734,
+              "nir_ice": 0.04587468050275513
+            },
+            "block_contribution_note": "Sum of r_i*(P*r)_i within each block; sums to weighted_data_term. Cross-block base covariance could make individual contributions signed.",
+            "block_standardized_residual_rms": {
+              "miri": 9.433379514495243,
+              "nir_continuum": 16.17104906508155,
+              "nir_ice": 6.8373904253739575
+            },
+            "block_weighted_data_contribution": {
+              "miri": 44.49432453224924,
+              "nir_continuum": 78.4508483595825,
+              "nir_ice": 9.349981565799093
+            },
+            "block_weights": {
+              "miri": 0.5,
+              "nir_continuum": 0.3,
+              "nir_ice": 0.2
+            },
+            "common_scale": 0.6285856628630005,
+            "common_scale_prior_sigma_fraction": 0.03,
+            "interpretation": "regularized block-normalized screening objective; not a posterior or formal chi-square",
+            "nuisance_penalty": 181.0090981300656,
+            "score": 313.3042525876964,
+            "segment_gain_fraction": {
+              "MIRI/CH2_long": 0.02135371287584032,
+              "MIRI/CH2_medium": 0.025967582601597514,
+              "MIRI/CH2_short": -0.005784601460484476,
+              "MIRI/CH3_short": 0.01665128996832448,
+              "MIRI/CH4_short": 0.0630759380789965,
+              "NIRSpec/G140H_F100LP": -0.05002374027549322,
+              "NIRSpec/G235H_F170LP": -0.09284369912011069,
+              "NIRSpec/G395H_F290LP": -0.04053587544094064
+            },
+            "segment_gain_prior_sigma_fraction": {
+              "MIRI/CH2_long": 0.02,
+              "MIRI/CH2_medium": 0.02,
+              "MIRI/CH2_short": 0.02,
+              "MIRI/CH3_short": 0.02,
+              "MIRI/CH4_short": 0.02,
+              "NIRSpec/G140H_F100LP": 0.03,
+              "NIRSpec/G235H_F170LP": 0.03,
+              "NIRSpec/G395H_F290LP": 0.03
+            },
+            "weighted_data_term": 132.29515445763082
+          },
+          "nir_only": {
+            "adjusted_residual_jy": [
+              9.899049885091864e-06,
+              -3.5405393488208844e-06,
+              -0.0002910759984985122,
+              -0.001053241241513668,
+              -0.004149986468180997,
+              -0.006686701975751682,
+              -0.0290744490957231,
+              0.006149528640005605,
+              -0.11024792939512432,
+              -0.04190800618315767,
+              -0.013405857931893172,
+              -0.00922943003433082,
+              0.07275621249226291,
+              0.4871083010759467,
+              0.5995134101084909,
+              1.0153897392524192,
+              1.4492848769670852,
+              2.9837882155631164,
+              2.960019982055671
+            ],
+            "block_adjusted_residual_rms_jy": {
+              "miri": 1.888246285691381,
+              "nir_continuum": 0.03815301757761661,
+              "nir_ice": 0.04276285433678277
+            },
+            "block_contribution_note": "Sum of r_i*(P*r)_i within each block; sums to weighted_data_term. Cross-block base covariance could make individual contributions signed.",
+            "block_standardized_residual_rms": {
+              "miri": 85.19078676824681,
+              "nir_continuum": 4.968962823736333,
+              "nir_ice": 4.935984750713151
+            },
+            "block_weighted_data_contribution": {
+              "miri": 0.0,
+              "nir_continuum": 14.814354926204249,
+              "nir_ice": 9.745578183709107
+            },
+            "block_weights": {
+              "miri": 0.0,
+              "nir_continuum": 0.6,
+              "nir_ice": 0.4
+            },
+            "common_scale": 1.0585942281937848,
+            "common_scale_prior_sigma_fraction": 0.03,
+            "interpretation": "regularized block-normalized screening objective; not a posterior or formal chi-square",
+            "nuisance_penalty": 8.304822579726267,
+            "score": 32.86475568963962,
+            "segment_gain_fraction": {
+              "MIRI/CH2_long": 0.0,
+              "MIRI/CH2_medium": 0.0,
+              "MIRI/CH2_short": 0.0,
+              "MIRI/CH3_short": 0.0,
+              "MIRI/CH4_short": 0.0,
+              "NIRSpec/G140H_F100LP": -0.021709850311538697,
+              "NIRSpec/G235H_F170LP": -0.05931865053101071,
+              "NIRSpec/G395H_F290LP": -0.00714400747191101
+            },
+            "segment_gain_prior_sigma_fraction": {
+              "MIRI/CH2_long": 0.02,
+              "MIRI/CH2_medium": 0.02,
+              "MIRI/CH2_short": 0.02,
+              "MIRI/CH3_short": 0.02,
+              "MIRI/CH4_short": 0.02,
+              "NIRSpec/G140H_F100LP": 0.03,
+              "NIRSpec/G235H_F170LP": 0.03,
+              "NIRSpec/G395H_F290LP": 0.03
+            },
+            "weighted_data_term": 24.559933109913352
+          }
+        },
+        "miri_gain_0.05": {
+          "baseline": {
+            "adjusted_residual_jy": [
+              -2.1883154260906722e-05,
+              -5.609840892834116e-05,
+              -0.0007002408339658098,
+              -0.002452376099272056,
+              -0.013241542256506873,
+              -0.018913379464533687,
+              -0.04899722460592556,
+              -0.1173543559116136,
+              -0.28103192587818027,
+              -0.06820793027489894,
+              -0.019702368926011307,
+              -0.015093208644796841,
+              0.0026152615274643853,
+              -0.010944210163596146,
+              0.21185252044651304,
+              0.30855270209526076,
+              0.22092474860548328,
+              0.289401765627173,
+              -0.07105272933227935
+            ],
+            "block_adjusted_residual_rms_jy": {
+              "miri": 0.21518040995329912,
+              "nir_continuum": 0.10311335655970205,
+              "nir_ice": 0.036315112672737695
+            },
+            "block_contribution_note": "Sum of r_i*(P*r)_i within each block; sums to weighted_data_term. Cross-block base covariance could make individual contributions signed.",
+            "block_standardized_residual_rms": {
+              "miri": 14.312322557213863,
+              "nir_continuum": 12.30647074512279,
+              "nir_ice": 5.649159535327356
+            },
+            "block_weighted_data_contribution": {
+              "miri": 51.210644245433194,
+              "nir_continuum": 68.15214999025336,
+              "nir_ice": 9.573901036673993
+            },
+            "block_weights": {
+              "miri": 0.25,
+              "nir_continuum": 0.45,
+              "nir_ice": 0.3
+            },
+            "common_scale": 0.7440456545043972,
+            "common_scale_prior_sigma_fraction": 0.03,
+            "interpretation": "regularized block-normalized screening objective; not a posterior or formal chi-square",
+            "nuisance_penalty": 135.46499602468694,
+            "score": 264.4016912970475,
+            "segment_gain_fraction": {
+              "MIRI/CH2_long": 0.11361394117443534,
+              "MIRI/CH2_medium": 0.12258117101514202,
+              "MIRI/CH2_short": -0.0010491386304140324,
+              "MIRI/CH3_short": 0.13713872656356574,
+              "MIRI/CH4_short": 0.25323918753272207,
+              "NIRSpec/G140H_F100LP": -0.056726404990935904,
+              "NIRSpec/G235H_F170LP": -0.10648666808695408,
+              "NIRSpec/G395H_F290LP": -0.043982703149812494
+            },
+            "segment_gain_prior_sigma_fraction": {
+              "MIRI/CH2_long": 0.05,
+              "MIRI/CH2_medium": 0.05,
+              "MIRI/CH2_short": 0.05,
+              "MIRI/CH3_short": 0.05,
+              "MIRI/CH4_short": 0.05,
+              "NIRSpec/G140H_F100LP": 0.03,
+              "NIRSpec/G235H_F170LP": 0.03,
+              "NIRSpec/G395H_F290LP": 0.03
+            },
+            "weighted_data_term": 128.93669527236054
+          },
+          "nir_miri_equal": {
+            "adjusted_residual_jy": [
+              -2.8616636236396275e-05,
+              -6.764950800265676e-05,
+              -0.0007956724666123504,
+              -0.002779913554595058,
+              -0.015916476267531815,
+              -0.022553019976958102,
+              -0.05562309209743481,
+              -0.14259988968169876,
+              -0.31796053129801793,
+              -0.07708958541106205,
+              -0.02122264180037343,
+              -0.01645367044283306,
+              -0.010544985938248264,
+              -0.07008529148586551,
+              0.14243018512551991,
+              0.19263358096890226,
+              0.10006656633251176,
+              0.159378948118706,
+              -0.1997941389301765
+            ],
+            "block_adjusted_residual_rms_jy": {
+              "miri": 0.1514588321328638,
+              "nir_continuum": 0.11799147601571298,
+              "nir_ice": 0.04115557284049026
+            },
+            "block_contribution_note": "Sum of r_i*(P*r)_i within each block; sums to weighted_data_term. Cross-block base covariance could make individual contributions signed.",
+            "block_standardized_residual_rms": {
+              "miri": 8.993592832504188,
+              "nir_continuum": 14.368669456854843,
+              "nir_ice": 6.268524723962159
+            },
+            "block_weighted_data_contribution": {
+              "miri": 40.44235601843534,
+              "nir_continuum": 61.93759858810597,
+              "nir_ice": 7.858880442984971
+            },
+            "block_weights": {
+              "miri": 0.5,
+              "nir_continuum": 0.3,
+              "nir_ice": 0.2
+            },
+            "common_scale": 0.6974759544958106,
+            "common_scale_prior_sigma_fraction": 0.03,
+            "interpretation": "regularized block-normalized screening objective; not a posterior or formal chi-square",
+            "nuisance_penalty": 155.54163872877805,
+            "score": 265.7804737783043,
+            "segment_gain_fraction": {
+              "MIRI/CH2_long": 0.1418614077128696,
+              "MIRI/CH2_medium": 0.16482465107133512,
+              "MIRI/CH2_short": -0.013437093334744245,
+              "MIRI/CH3_short": 0.12423236024982535,
+              "MIRI/CH4_short": 0.20886963348019924,
+              "NIRSpec/G140H_F100LP": -0.04393228058732103,
+              "NIRSpec/G235H_F170LP": -0.08356459617071411,
+              "NIRSpec/G395H_F290LP": -0.034667849442864086
+            },
+            "segment_gain_prior_sigma_fraction": {
+              "MIRI/CH2_long": 0.05,
+              "MIRI/CH2_medium": 0.05,
+              "MIRI/CH2_short": 0.05,
+              "MIRI/CH3_short": 0.05,
+              "MIRI/CH4_short": 0.05,
+              "NIRSpec/G140H_F100LP": 0.03,
+              "NIRSpec/G235H_F170LP": 0.03,
+              "NIRSpec/G395H_F290LP": 0.03
+            },
+            "weighted_data_term": 110.23883504952627
+          },
+          "nir_only": {
+            "adjusted_residual_jy": [
+              9.899049885091864e-06,
+              -3.5405393488208844e-06,
+              -0.0002910759984985122,
+              -0.001053241241513668,
+              -0.004149986468180997,
+              -0.006686701975751682,
+              -0.0290744490957231,
+              0.006149528640005605,
+              -0.11024792939512432,
+              -0.04190800618315767,
+              -0.013405857931893172,
+              -0.00922943003433082,
+              0.07275621249226291,
+              0.4871083010759467,
+              0.5995134101084909,
+              1.0153897392524192,
+              1.4492848769670852,
+              2.9837882155631164,
+              2.960019982055671
+            ],
+            "block_adjusted_residual_rms_jy": {
+              "miri": 1.888246285691381,
+              "nir_continuum": 0.03815301757761661,
+              "nir_ice": 0.04276285433678277
+            },
+            "block_contribution_note": "Sum of r_i*(P*r)_i within each block; sums to weighted_data_term. Cross-block base covariance could make individual contributions signed.",
+            "block_standardized_residual_rms": {
+              "miri": 85.19078676824681,
+              "nir_continuum": 4.968962823736333,
+              "nir_ice": 4.935984750713151
+            },
+            "block_weighted_data_contribution": {
+              "miri": 0.0,
+              "nir_continuum": 14.814354926204249,
+              "nir_ice": 9.745578183709107
+            },
+            "block_weights": {
+              "miri": 0.0,
+              "nir_continuum": 0.6,
+              "nir_ice": 0.4
+            },
+            "common_scale": 1.0585942281937848,
+            "common_scale_prior_sigma_fraction": 0.03,
+            "interpretation": "regularized block-normalized screening objective; not a posterior or formal chi-square",
+            "nuisance_penalty": 8.304822579726267,
+            "score": 32.86475568963962,
+            "segment_gain_fraction": {
+              "MIRI/CH2_long": 0.0,
+              "MIRI/CH2_medium": 0.0,
+              "MIRI/CH2_short": 0.0,
+              "MIRI/CH3_short": 0.0,
+              "MIRI/CH4_short": 0.0,
+              "NIRSpec/G140H_F100LP": -0.021709850311538697,
+              "NIRSpec/G235H_F170LP": -0.05931865053101071,
+              "NIRSpec/G395H_F290LP": -0.00714400747191101
+            },
+            "segment_gain_prior_sigma_fraction": {
+              "MIRI/CH2_long": 0.05,
+              "MIRI/CH2_medium": 0.05,
+              "MIRI/CH2_short": 0.05,
+              "MIRI/CH3_short": 0.05,
+              "MIRI/CH4_short": 0.05,
+              "NIRSpec/G140H_F100LP": 0.03,
+              "NIRSpec/G235H_F170LP": 0.03,
+              "NIRSpec/G395H_F290LP": 0.03
+            },
+            "weighted_data_term": 24.559933109913352
+          }
+        }
+      },
+      "quadrature_unresolved": true,
+      "quality_warnings": {},
+      "reason": "",
+      "status": "screened",
+      "unresolved_quadrature_bands": [
+        "c01",
+        "c03",
+        "c07",
+        "h01",
+        "h03",
+        "h04"
+      ]
+    }
+  ],
+  "design_provenance": {
+    "column_factor_derivation": {
+      "measured_factor": 0.8596426620519859,
+      "p-1.0_centre": 0.7395999999999999,
+      "v1_optimum_column_msun": 0.00019341959896169682,
+      "v1_optimum_nir_rms": 0.16700918662228442
+    },
+    "column_factor_method": "v1 log-linear band interpolation on a 2001-point log-column grid; round optimum/reference to .86; bracket .86 squared by +/-0.05 dex then round to .83/.66",
+    "configurations": [
+      [
+        -1.5,
+        1.0
+      ],
+      [
+        -1.25,
+        0.86
+      ],
+      [
+        -1.0,
+        0.83
+      ],
+      [
+        -1.0,
+        0.66
+      ]
+    ],
+    "frozen_source_hashes": {
+      "inputs/provenance/ice_column_crossings.csv": "4fb5bdb9cc9e593dc5217a7e3ef808bf12bdeb5b175f19e09cc8c584ca97a079",
+      "inputs/provenance/v1_band_predictions.csv": "4fea433fe0dfda7c0e35d297b975a4df40e33023be1934f296f108200d81c4eb",
+      "inputs/provenance/v1_ranking.csv": "944492030b2a43c2b7c9d2520f3e4feb5f62a3cea553527c28a72dd97d68ab4a",
+      "inputs/provenance/v2_opacity_matched_catalogue.csv": "f47b1cd94dd0ea52c214fdb4a5c6994656917c3f920ee6a86c41223a528deaca",
+      "inputs/provenance/v2_review_source.py": "d5125475c5c82cbab33a06f899484e5fcf38bf1bc9830811350d7f2f9da57c1e",
+      "inputs/provenance/v3_planning_source.py": "46a2f3d8e6d66f252b98d961cec12d82667a53daaed315f384e670ad403d13c2"
+    },
+    "ice_column_crossings_sha256": "4fb5bdb9cc9e593dc5217a7e3ef808bf12bdeb5b175f19e09cc8c584ca97a079",
+    "ice_column_target_crossings": {
+      "draine": 7,
+      "pyroxene_mg50": 2
+    },
+    "ice_fraction_formula": "f_ice = T*((1-f_C)*k_sil+f_C*k_C)/(M_ref*c*k_ref-T*(k_ice-k_sil))",
+    "ice_target_method": "Per-material median column-equivalent ice mass of bracketed v2 raw-ice zero crossings; no extrapolated crossings",
+    "interpretation": "User-provided v3 design is tested conditionally; introductory projections are not simulated outcomes",
+    "miri_reduction_status": {
+      "collaborators_level_change_known": false,
+      "corrected_reduction_available": false,
+      "recorded_date": "2026-10-04",
+      "spectrum_policy": "Retain the existing frozen observations; a corrected 12-20 um level shift greater than 0.1 dex requires new residuals/projections and a new frozen package before launch",
+      "user_update": "No corrected reduction or update yet"
+    },
+    "opacity_recovery": {
+      "carbon": {
+        "abs_18": 285.555906082142,
+        "abs_9p7": 675.7331910524244,
+        "ext_2p2": 10808.290039062496
+      },
+      "draine": {
+        "abs_18": 1114.7719342155096,
+        "abs_9p7": 3032.604632315978,
+        "ext_2p2": 1485.7525634765636
+      },
+      "ice": {
+        "abs_18": 417.5813248029929,
+        "abs_9p7": -1.836582393511927e-13,
+        "ext_2p2": 193.22640991210758
+      },
+      "pyroxene_mg50": {
+        "abs_18": 1397.0458975448787,
+        "abs_9p7": 2829.2201540675837,
+        "ext_2p2": 1053.4128417968766
+      }
+    },
+    "opacity_recovery_max_relative_fit_residual": 8.881784197001252e-16,
+    "source_hashes": {
+      "runs/silicate_search_v2_512k/results/opacity_matched_catalogue.csv": "f47b1cd94dd0ea52c214fdb4a5c6994656917c3f920ee6a86c41223a528deaca",
+      "runs/silicate_structure_production_v1_512k/results/band_predictions.csv": "4fea433fe0dfda7c0e35d297b975a4df40e33023be1934f296f108200d81c4eb",
+      "runs/silicate_structure_production_v1_512k/results/ranking.csv": "944492030b2a43c2b7c9d2520f3e4feb5f62a3cea553527c28a72dd97d68ab4a",
+      "scripts/review_silicate_search_v2.py": "d5125475c5c82cbab33a06f899484e5fcf38bf1bc9830811350d7f2f9da57c1e",
+      "scripts/silicate_search_v3_plan.py": "46a2f3d8e6d66f252b98d961cec12d82667a53daaed315f384e670ad403d13c2",
+      "validation/silicate_search_v2_512k/ice_column_crossings.csv": "4fb5bdb9cc9e593dc5217a7e3ef808bf12bdeb5b175f19e09cc8c584ca97a079"
+    },
+    "v2_campaign_summary_sha256": "8b12ebccfc139c701ae99fdc93da611c9bf9a8c2d7c115680284d747c6727120",
+    "v2_raw_stage0_revalidated": false,
+    "v2_reported_production_manifest_sha256": "4c58dcbf1b4b6bc09c3189e23bd22aaed3086bcb5ff1bb979d1cfdb06ab8b9dd",
+    "v2_summary_sha256": "c685d1409ac2a0bf45dc98e60d004fa4290768e311469bfed5b7218d65d9e759"
+  },
+  "ice_column_targets_msun": {
+    "draine": 9.144280744583792e-06,
+    "pyroxene_mg50": 1.1086300567771168e-05
+  },
+  "observation_contract_sha256": "436aff5f403b0c61d5fe0022ca70dd49d09e2ecb2ab297938d7ac24ef4ae2bc1",
+  "schema_version": 1,
+  "species_opacities_cm2_g": {
+    "carbon": {
+      "abs_18": 285.55590608214237,
+      "abs_9p7": 675.7331910524235,
+      "ext_2p2": 10808.2900390625
+    },
+    "draine": {
+      "abs_18": 1114.771934215509,
+      "abs_9p7": 3032.604632315978,
+      "ext_2p2": 1485.7525634765625
+    },
+    "ice": {
+      "abs_18": 417.5813248029947,
+      "abs_9p7": 0.0,
+      "ext_2p2": 193.22640991210938
+    },
+    "pyroxene_mg50": {
+      "abs_18": 1397.0458975448782,
+      "abs_9p7": 2829.2201540675846,
+      "ext_2p2": 1053.412841796875
+    }
+  }
+}
